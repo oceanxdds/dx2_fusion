@@ -1,6 +1,130 @@
 <!doctype html>
 <html>
-    <body>
-        Hello
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Dx2 二身合體</title>
+    <link type="text/css" rel="stylesheet" href="http://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"/>
+    <style>
+    [v-cloak] {
+      display: none;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src="http://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    
+</head>
+
+<body>
+    <div class="container" id="app" v-cloak>
+
+        <b-card no-body>
+            <b-tabs card v-model="tabIndex">
+                <b-tab title="目標">
+                    
+                    <!--tab1 start-->
+                    <b-card no-body>
+                        <b-tabs pills card>
+                            <b-tab :title="race.name" v-for="race in races">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="devil in race.devils" >
+                                        
+                                        <b-card header="" >
+                                            <div class="card-text row align-items-end"
+                                                v-b-tooltip.hover :title=" devil.race.name + ' ' +(lang_value == 1 ? devil.name : devil.name_tw) ">
+                                                <div class="col">
+                                                    <div class="font-weight-bold">
+                                                        {{ lang_value == 0 ? devil.name : devil.name_tw }}
+                                                    </div>
+                                                    <div class="small">
+                                                        {{ 'G.'+devil.grade }}
+                                                        <span v-for="n in devil.rarity">&#9733;</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <b-button class="" variant="info" @click="analyze(devil)">選擇</b-button>
+                                                </div>
+                                            </div>
+                                        </b-card>
+                                    </div>
+                                </div>
+                            </b-tab>
+                        </b-tabs>
+                    </b-card>
+                    <!--tab1 end-->
+
+                </b-tab>
+                <b-tab title="分析">
+                    
+                    <!--tab2 start-->
+
+                    <div v-if="master">
+                            
+                        <div>
+                                {{ master.devil.race.name }}
+                            <span class="font-weight-bold">{{ lang_value == 0 ? master.devil.name : master.devil.name_tw }}</span>
+                        </div>
+                        <div> G.{{ master.devil.grade }} <span v-for="n in master.devil.rarity">&#9733;</span></div>
+
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="f in master.formula">
+
+                                <b-card :header="f.name">
+                                    <div class="card-text row" v-for="c in f.combination">
+                                        <div class="col-6 py-2" v-for="d in c"
+                                            v-b-tooltip.hover :title=" d.race.name + ' ' +(lang_value == 1 ? d.name : d.name_tw) ">
+                                                <div class="font-weight-bold">{{ lang_value == 0 ? d.name : d.name_tw }}</div>
+                                                <div class="small">G.{{d.grade}} <span v-for="n in d.rarity">&#9733;</span></div>
+                                        </div>
+                                    </div>
+                                </b-card>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--tab2 end-->
+
+                </b-tab>
+                <b-tab title="設定">
+                    
+                    <!--tab3 start-->
+
+                    <div class="row">
+                        <div class="col-12 py-2">
+                            <div class="font-weight-bold py-2">語言</div>
+                            <div>
+                                <b-form-radio-group id="lang"
+                                    buttons
+                                    button-variant="outline-info"
+                                    v-model="lang_value"
+                                    :options="lang_options"
+                                    name="lang_radio" />
+                                </b-form-group>
+                            </div>
+                        </div>
+                        <div class="col-12 py-2">
+                            <div class="font-weight-bold py-2">允許降階</div>
+                            <div>
+                                <b-form-radio-group id="lang"
+                                    buttons
+                                    button-variant="outline-info"
+                                    v-model="allow_down_grade"
+                                    :options="allow_down_grade_options"
+                                    name="lang_radio" />
+                                </b-form-group>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <!--tab3 end-->
+    
+                    </b-tab>
+            </b-tabs>
+        </b-card>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
 </html>
