@@ -619,7 +619,7 @@ function bom(devil){
                     }
                 }
                 
-                var g = ((d1.grade + d2.grade)/2)+1;
+                var g = (d1.grade + d2.grade)/2;
 
                 if( g <= this.devil.max && g > this.devil.min ){
                     f_mats.push([d1,d2]);
