@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dx2 二身合體</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap-vue.min.css"/>
@@ -23,14 +24,17 @@
                 <b-tab title="目標">
                     
                     <!--tab1 start-->
-                    <b-card no-body>
+
+                    <b-form-input v-model="keyword" type="text" placeholder="Search"></b-form-input>
+
+                    <b-card no-body v-show="keyword==''">
                         <b-tabs pills card>
                             <b-tab :title="race.name" v-for="race in races">
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="devil in race.devils" >
                                         
-                                        <b-card header="" >
-                                            <div class="card-text row align-items-end"
+                                        <b-card>
+                                            <div class="row align-items-end"
                                                 v-b-tooltip.hover :title=" devil.race.name + ' ' +(lang_value == 1 ? devil.name : devil.name_tw) ">
                                                 <div class="col">
                                                     <div class="font-weight-bold">
@@ -51,6 +55,35 @@
                             </b-tab>
                         </b-tabs>
                     </b-card>
+
+                    <b-card v-show="keyword">
+                        
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="devil in filtered_devil_data" >
+                                
+                                <b-card header="">
+                                    <div class="card-text row align-items-end"
+                                        v-b-tooltip.hover :title=" devil.race.name + ' ' +(lang_value == 1 ? devil.name : devil.name_tw) ">
+                                        <div class="col">
+                                            <div class="font-weight-bold">
+                                                {{ lang_value == 0 ? devil.name : devil.name_tw }}
+                                            </div>
+                                            <div class="small">
+                                                {{ 'G.'+devil.grade }}
+                                                <span v-for="n in devil.rarity">&#9733;</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <b-button class="" variant="info" @click="analyze(devil)">選擇</b-button>
+                                        </div>
+                                    </div>
+                                </b-card>
+                            </div>
+                        </div>
+                    
+
+                    </b-card>
+
                     <!--tab1 end-->
 
                 </b-tab>
@@ -61,21 +94,36 @@
                     <div v-if="master">
                             
                         <div>
-                                {{ master.devil.race.name }}
+                            {{ master.devil.race.name }}
                             <span class="font-weight-bold">{{ lang_value == 0 ? master.devil.name : master.devil.name_tw }}</span>
                         </div>
                         <div> G.{{ master.devil.grade }} <span v-for="n in master.devil.rarity">&#9733;</span></div>
 
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="f in master.formula">
+                            <div class="col-12 py-2" v-for="f in master.formula">
+                                <b-card :header="f.name" body-class="p-2" header-class="font-weight-bold">
+                                    <div class="row no-gutters">
 
-                                <b-card :header="f.name">
-                                    <div class="card-text row" v-for="c in f.combination">
-                                        <div class="col-6 py-2" v-for="d in c"
-                                            v-b-tooltip.hover :title=" d.race.name + ' ' +(lang_value == 1 ? d.name : d.name_tw) ">
-                                                <div class="font-weight-bold">{{ lang_value == 0 ? d.name : d.name_tw }}</div>
-                                                <div class="small">G.{{d.grade}} <span v-for="n in d.rarity">&#9733;</span></div>
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-1 px-1" v-for="c in f.combination">
+
+                                            <b-card body-class="p-2" :class="{'border-primary':c.order==0, 'border-danger':c.order==2}">
+
+                                                <div class="row no-gutters">
+                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.order==0,'text-danger':c.order==2}"
+                                                        :title=" c.d1.race.name + ' ' +(lang_value == 1 ? c.d1.name : c.d1.name_tw) ">
+                                                            <div class="font-weight-bold">{{ lang_value == 0 ? c.d1.name : c.d1.name_tw }}</div>
+                                                            <div class="small">G.{{c.d1.grade}} <span v-for="n in c.d1.rarity">&#9733;</span></div>
+                                                    </div>
+                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.order==0,'text-danger':c.order==2}"
+                                                        :title=" c.d2.race.name + ' ' +(lang_value == 1 ? c.d2.name : c.d2.name_tw) ">
+                                                            <div class="font-weight-bold">{{ lang_value == 0 ? c.d2.name : c.d2.name_tw }}</div>
+                                                            <div class="small">G.{{c.d2.grade}} <span v-for="n in c.d2.rarity">&#9733;</span></div>
+                                                    </div>
+                                                </div>
+
+                                            </b-card>
                                         </div>
+
                                     </div>
                                 </b-card>
 

@@ -567,66 +567,75 @@ var ddd = [
 ];
 
 var race_data = {};
-var devil_data = {};
+var devil_data = [];
 
-for(i=0;i<ddd.length;i++){
-    var r = ddd[i];
+ddd.forEach(function(r){
     race_data[r.name] = r;
-    for(j=0;j<r.devils.length;j++){
-        var d = r.devils[j];
-        devil_data[d.name] = d;
+    r.devils.forEach(function(d, idx){
         d.race = r;
-        d.max = j==0 ? 999 : d.grade;
-        d.min = (j==r.devils.length-1 ? 0 : r.devils[j+1].grade);
-    }
-}
+        d.max = idx==0 ? 999 : d.grade;
+        d.min = (idx==r.devils.length-1 ? 0 : r.devils[idx+1].grade);
+        devil_data.push(d);
+    });
+});
 
-for(i=0;i<ddd.length;i++){
-    var r = ddd[i];
-    for(j=0;j<r.formula.length;j++){
-        f = r.formula[j];
-        for(k=0;k<f.length;k++){
-            f[k]=race_data[f[k]];
-        }
-    }
-}
+ddd.forEach(function(r){
+    r.formula.forEach(function(f){
+        f[0] = race_data[f[0]];
+        f[1] = race_data[f[1]];
+    });
+});
 
 function bom(devil){
 
     this.devil = devil;
-    this.formula = [];
+    this.formula = formula = [];
   
-    for(i=0; i<this.devil.race.formula.length;i++){
-        
-        var f = this.devil.race.formula[i];
+    this.devil.race.formula.forEach(function(f){
+
         var r1 = f[0];
         var r2 = f[1];
 
         var f_name = r1.name + ' x ' + r2.name;
         var f_mats = [];
 
-        for(j=0; j < r1.devils.length ; j++){
+        r1.devils.forEach(function(d1){
+            r2.devils.forEach(function(d2){
 
-            var d1 = r1.devils[j];
-
-            for(k=0; k < r2.devils.length ; k++){
-
-                var d2 = r2.devils[k];
-
-                if(!app.allow_down_grade){
-                    //if(d1.grade>=this.devil.grade||d2.grade>=this.devil.grade){
-                    if(d1.rarity>this.devil.rarity||d2.rarity>this.devil.rarity){
-                        continue;
-                    }
-                }
-                
+                var flag_success = true;
                 var g = (d1.grade + d2.grade)/2;
 
-                if( g <= this.devil.max && g > this.devil.min ){
-                    f_mats.push([d1,d2]);
+                if( !app.allow_down_grade && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
+
+                    flag_success = false;
                 }
-            }
-        }
+
+                if( flag_success && (devil.max >= g && g > devil.min )){
+                    
+                    var order = 0;
+
+                    if( d1.rarity > devil.rarity || d2.rarity > devil.rarity ){
+                        order = 2;
+                    }
+                    else if ( d1.rarity == devil.rarity || d2.rarity == devil.rarity){
+                        order = 1;
+                    }
+                    else {
+                        order = 0;
+                    }
+
+                    f_mats.push({
+                        'd1':d1,
+                        'd2':d2,
+                        'order':order
+                    });
+                }
+            });
+        });
+
+        f_mats.sort(function(d1,d2){
+            return d1.order - d2.order;
+        });
 
         var obj = {
             'name': f_name,
@@ -634,8 +643,9 @@ function bom(devil){
         }
 
         if(f_mats.length>0)
-            this.formula.push(obj);
-    }
+            formula.push(obj);
+    });
+   
 }
 
 // application
@@ -644,6 +654,7 @@ var app = new Vue({
     el:'#app',
     data:{
         races:ddd,
+        devils:devil_data,
         master:null,
         lang_value:0,
         lang_options:[
@@ -656,7 +667,8 @@ var app = new Vue({
             {text:'不允許', value:false}
         ],
         display:true,
-        tabIndex:0
+        tabIndex:0,
+        keyword:''
     },
     methods:{
         analyze : function(devil){
@@ -667,8 +679,17 @@ var app = new Vue({
     },
     watch:{
         allow_down_grade:function(){
+
             if(this.master!=null)
                 this.master = new bom(this.master.devil);
+        }
+    },
+    computed:{
+        filtered_devil_data: function(){
+            var keyword = this.keyword;
+            return this.devils.filter(function(d){
+                return d.name.match(keyword)||d.name_tw.match(keyword);
+            });
         }
     }
 });
