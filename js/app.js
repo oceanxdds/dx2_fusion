@@ -556,7 +556,7 @@ var ddd = [
         ],
         devils:[
             {                name:'ヴェータラ',        name_tw:'毘陀羅',        rarity:3,                grade:55            },
-            {                name:'ラフィン・スカル',   name_tw:'校面骷髏',             rarity:3,                grade:44            },
+            {                name:'ラフィン・スカル',   name_tw:'笑面骷髏',             rarity:3,                grade:44            },
             {                name:'レギオン',          name_tw:'惡靈軍團',      rarity:2,                grade:34            },
             {                name:'ピシャーチャ',      name_tw:'畢舍遮',          rarity:2,                grade:26            },
             {                name:'モウリョウ',        name_tw:'魍魎',        rarity:2,                grade:20            },
