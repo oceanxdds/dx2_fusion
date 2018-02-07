@@ -614,7 +614,8 @@ function bom(devil){
                 var d2 = r2.devils[k];
 
                 if(!app.allow_down_grade){
-                    if(d1.grade>=this.devil.grade||d2.grade>=this.devil.grade){
+                    //if(d1.grade>=this.devil.grade||d2.grade>=this.devil.grade){
+                    if(d1.rarity>this.devil.rarity||d2.rarity>this.devil.rarity){
                         continue;
                     }
                 }
