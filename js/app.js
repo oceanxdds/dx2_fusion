@@ -143,7 +143,7 @@ var ddd = [
         devils:[
             {                name:'クー・フーリン',    name_tw:'庫夫林',            rarity:5,                grade:81, icon:'genma_kuhurin.png'            },
             {                name:'ツクヨミ',          name_tw:'月讀',      rarity:4,                grade:67, icon:'genma_tukuyomi.png'            },
-            {                name:'ハヌマーン',        name_tw:'哈奴曼',        rarity:4,                grade:60, icon:'hakaisin_seitentaisei.png'            },
+            {                name:'ハヌマーン',        name_tw:'哈奴曼',        rarity:4,                grade:60, icon:'genma_hanuman.png'            },
             {                name:'クルースニク',      name_tw:'克雷斯尼克',          rarity:3,                grade:49, icon:'genma_kurusuniku.png'            },
             {                name:'タム・リン',        name_tw:'塔姆林',        rarity:3,                grade:40, icon:'genma_tamurin.png'            },
             {                name:'クラマテング',      name_tw:'鞍馬天狗',          rarity:2,                grade:27, icon:'genma_muramatengu.png'           }
