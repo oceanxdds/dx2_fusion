@@ -17,11 +17,11 @@
 </head>
 
 <body>
-    <div class="container" id="app" v-cloak>
+    <div class="container px-0" id="app" v-cloak>
 
         <b-card no-body>
             <b-tabs card v-model="tabIndex">
-                <b-tab title="目標">
+                <b-tab title="目標" class="p-2">
                     
                     <!--tab1 start-->
 
@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="devil in race.devils" >
                                         
-                                        <b-card>
+                                        <b-card :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain" @click="analyze(devil, true)">
                                             <div class="row align-items-end"
                                                 v-b-tooltip.hover :title=" devil.race.name + ' ' +(lang_value == 1 ? devil.name : devil.name_tw) ">
                                                 <div class="col">
@@ -45,11 +45,9 @@
                                                         <span v-for="n in devil.rarity">&#9733;</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-auto">
-                                                    <b-button class="" variant="info" @click="analyze(devil)">選擇</b-button>
-                                                </div>
                                             </div>
                                         </b-card>
+
                                     </div>
                                 </div>
                             </b-tab>
@@ -61,7 +59,7 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2" v-for="devil in filtered_devil_data" >
                                 
-                                <b-card header="">
+                                <b-card :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain" @click="analyze(devil, true)">
                                     <div class="card-text row align-items-end"
                                         v-b-tooltip.hover :title=" devil.race.name + ' ' +(lang_value == 1 ? devil.name : devil.name_tw) ">
                                         <div class="col">
@@ -72,9 +70,6 @@
                                                 {{ 'G.'+devil.grade }}
                                                 <span v-for="n in devil.rarity">&#9733;</span>
                                             </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <b-button class="" variant="info" @click="analyze(devil)">選擇</b-button>
                                         </div>
                                     </div>
                                 </b-card>
@@ -87,35 +82,47 @@
                     <!--tab1 end-->
 
                 </b-tab>
-                <b-tab title="分析">
+                <b-tab title="分析" class="p-2">
                     
                     <!--tab2 start-->
 
                     <div v-if="master">
                             
-                        <div>
-                            {{ master.devil.race.name }}
-                            <span class="font-weight-bold">{{ lang_value == 0 ? master.devil.name : master.devil.name_tw }}</span>
+                        <div class="row">
+                            
+                            <div class="col-auto py-2" v-for="(devil, idx) in queue" >
+                                <div class="border rounded p-2" :class="{'border-primary':idx==queue.length-1,'text-primary':idx==queue.length-1}"
+                                    @click="preview()">
+                                    <div>
+                                        {{ devil.race.name }}
+                                        <span class="font-weight-bold">{{ lang_value == 0 ? devil.name : devil.name_tw }}</span>
+                                    </div>
+                                    <div class="small"> G.{{ devil.grade }} <span v-for="n in devil.rarity">&#9733;</span></div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div> G.{{ master.devil.grade }} <span v-for="n in master.devil.rarity">&#9733;</span></div>
 
                         <div class="row">
                             <div class="col-12 py-2" v-for="f in master.formula">
-                                <b-card :header="f.name" body-class="p-2" header-class="font-weight-bold">
-                                    <div class="row no-gutters">
+                           
+                                    <div class="text-center text-sm-left">{{ f.name }}</div>
+                                    <div class="row no-gutters pt-2">
 
-                                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-1 px-1" v-for="c in f.combination">
+                                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-2 px-2" v-for="c in f.combination">
 
-                                            <b-card body-class="p-2" :class="{'border-primary':c.upgrade, 'border-danger':c.downgrade}">
+                                            <b-card no-body :class="{'border-primary':c.upgrade, 'border-danger':c.downgrade}">
 
                                                 <div class="row no-gutters">
-                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
-                                                        :title=" c.d1.race.name + ' ' +(lang_value == 1 ? c.d1.name : c.d1.name_tw) ">
+                                                    <div class="col-6 p-2" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
+                                                        :title=" c.d1.race.name + ' ' +(lang_value == 1 ? c.d1.name : c.d1.name_tw) "
+                                                        :style="{backgroundImage:'url(\'images/devil/'+c.d1.icon+'\')'}" style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain" @click="analyze(c.d1)">
                                                             <div class="font-weight-bold">{{ lang_value == 0 ? c.d1.name : c.d1.name_tw }}</div>
                                                             <div class="small">G.{{c.d1.grade}} <span v-for="n in c.d1.rarity">&#9733;</span></div>
                                                     </div>
-                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
-                                                        :title=" c.d2.race.name + ' ' +(lang_value == 1 ? c.d2.name : c.d2.name_tw) ">
+                                                    <div class="col-6 p-2" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
+                                                        :title=" c.d2.race.name + ' ' +(lang_value == 1 ? c.d2.name : c.d2.name_tw) "
+                                                        :style="{backgroundImage:'url(\'images/devil/'+c.d2.icon+'\')'}" style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain" @click="analyze(c.d2)">
                                                             <div class="font-weight-bold">{{ lang_value == 0 ? c.d2.name : c.d2.name_tw }}</div>
                                                             <div class="small">G.{{c.d2.grade}} <span v-for="n in c.d2.rarity">&#9733;</span></div>
                                                     </div>
@@ -125,8 +132,7 @@
                                         </div>
 
                                     </div>
-                                </b-card>
-
+                                  
                             </div>
                         </div>
                     </div>
@@ -170,7 +176,7 @@
                     </b-tab>
             </b-tabs>
         </b-card>
-        <div class="small text-right">Last Updated: {{ updated_at }}</div>
+        <div class="small text-right">部分圖片預計於2/11補齊 / Last Updated: {{ updated_at }}</div>
     </div>
 
     <script src="js/app.js"></script>
