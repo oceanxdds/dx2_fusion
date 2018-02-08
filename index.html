@@ -106,15 +106,15 @@
 
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-4 py-1 px-1" v-for="c in f.combination">
 
-                                            <b-card body-class="p-2" :class="{'border-primary':c.order==0, 'border-danger':c.order==2}">
+                                            <b-card body-class="p-2" :class="{'border-primary':c.upgrade, 'border-danger':c.downgrade}">
 
                                                 <div class="row no-gutters">
-                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.order==0,'text-danger':c.order==2}"
+                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
                                                         :title=" c.d1.race.name + ' ' +(lang_value == 1 ? c.d1.name : c.d1.name_tw) ">
                                                             <div class="font-weight-bold">{{ lang_value == 0 ? c.d1.name : c.d1.name_tw }}</div>
                                                             <div class="small">G.{{c.d1.grade}} <span v-for="n in c.d1.rarity">&#9733;</span></div>
                                                     </div>
-                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.order==0,'text-danger':c.order==2}"
+                                                    <div class="col-6" v-b-tooltip.hover :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
                                                         :title=" c.d2.race.name + ' ' +(lang_value == 1 ? c.d2.name : c.d2.name_tw) ">
                                                             <div class="font-weight-bold">{{ lang_value == 0 ? c.d2.name : c.d2.name_tw }}</div>
                                                             <div class="small">G.{{c.d2.grade}} <span v-for="n in c.d2.rarity">&#9733;</span></div>
@@ -170,7 +170,7 @@
                     </b-tab>
             </b-tabs>
         </b-card>
-
+        <div class="small text-right">Last Updated: {{ updated_at }}</div>
     </div>
 
     <script src="js/app.js"></script>

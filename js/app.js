@@ -604,6 +604,13 @@ function bom(devil){
 
                 var flag_success = true;
                 var g = (d1.grade + d2.grade)/2;
+                var obj = {
+                    'd1':d1,
+                    'd2':d2,
+                    'maxgrade':d1.grade>d2.grade?d1.grade:d2.grade,
+                    'upgrade':false,
+                    'downgrade':false
+                };
 
                 if( !app.allow_down_grade && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
 
@@ -612,29 +619,20 @@ function bom(devil){
 
                 if( flag_success && (devil.max >= g && g > devil.min )){
                     
-                    var order = 0;
-
                     if( d1.rarity > devil.rarity || d2.rarity > devil.rarity ){
-                        order = 2;
+                        obj.downgrade = true;
                     }
-                    else if ( d1.rarity == devil.rarity || d2.rarity == devil.rarity){
-                        order = 1;
-                    }
-                    else {
-                        order = 0;
+                    else if ( d1.rarity < devil.rarity && d2.rarity < devil.rarity){
+                        obj.upgrade = true;
                     }
 
-                    f_mats.push({
-                        'd1':d1,
-                        'd2':d2,
-                        'order':order
-                    });
+                    f_mats.push(obj);
                 }
             });
         });
 
-        f_mats.sort(function(d1,d2){
-            return d1.order - d2.order;
+        f_mats.sort(function(c1,c2){
+            return c1.maxgrade - c2.maxgrade;
         });
 
         var obj = {
@@ -668,7 +666,8 @@ var app = new Vue({
         ],
         display:true,
         tabIndex:0,
-        keyword:''
+        keyword:'',
+        updated_at:'2018.2.8'
     },
     methods:{
         analyze : function(devil){
