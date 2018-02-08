@@ -445,7 +445,7 @@ var ddd = [
             {                name:'リリム',        name_tw:'莉莉姆',        rarity:3,                grade:47            },
             {                name:'キオン',        name_tw:'迦溫',        rarity:3,                grade:42            },
             {                name:'フォーモリア',   name_tw:'弗莫爾',             rarity:2,                grade:30            },
-            {                name:'インキュバス',   name_tw:'南夢魔',             rarity:2,                grade:21            },
+            {                name:'インキュバス',   name_tw:'男夢魔',             rarity:2,                grade:21            },
             {                name:'ザントマン',     name_tw:'睡魔',           rarity:1,                grade:10            },
             {                name:'モコイ',         name_tw:'惡靈',       rarity:1,                grade:5            }
         ]
@@ -586,6 +586,7 @@ ddd.forEach(function(r){
     });
 });
 
+
 function bom(devil){
 
     this.devil = devil;
@@ -609,7 +610,6 @@ function bom(devil){
                     'd2':d2,
                     'max_rarity':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
                     'upgrade':false,
-                    'samegrade':false,
                     'downgrade':false
                 };
 
@@ -618,13 +618,10 @@ function bom(devil){
                     flag_success = false;
                 }
 
-                if( flag_success && (devil.max >= g && g > devil.min )){
+                if( flag_success && (devil.min <= g && g < devil.max )){
                     
                     if( d1.rarity > devil.rarity || d2.rarity > devil.rarity ){
                         obj.downgrade = true;
-                    }
-                    else if ( d1.rarity == devil.rarity && d2.rarity == devil.rarity){
-                        obj.samegrade = true;
                     }
                     else if ( d1.rarity < devil.rarity && d2.rarity < devil.rarity){
                         obj.upgrade = true;
@@ -649,6 +646,7 @@ function bom(devil){
     });
    
 }
+
 
 // application
 
