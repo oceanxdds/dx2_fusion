@@ -607,8 +607,9 @@ function bom(devil){
                 var obj = {
                     'd1':d1,
                     'd2':d2,
-                    'maxgrade':d1.grade>d2.grade?d1.grade:d2.grade,
+                    'max_rarity':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
                     'upgrade':false,
+                    'samegrade':false,
                     'downgrade':false
                 };
 
@@ -622,6 +623,9 @@ function bom(devil){
                     if( d1.rarity > devil.rarity || d2.rarity > devil.rarity ){
                         obj.downgrade = true;
                     }
+                    else if ( d1.rarity == devil.rarity && d2.rarity == devil.rarity){
+                        obj.samegrade = true;
+                    }
                     else if ( d1.rarity < devil.rarity && d2.rarity < devil.rarity){
                         obj.upgrade = true;
                     }
@@ -632,7 +636,7 @@ function bom(devil){
         });
 
         f_mats.sort(function(c1,c2){
-            return c1.maxgrade - c2.maxgrade;
+            return c1.max_rarity - c2.max_rarity;
         });
 
         var obj = {
