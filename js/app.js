@@ -686,15 +686,29 @@ var app = new Vue({
             {text:'日文', value:0},
             {text:'中文', value:1}
         ],
-        allow_down_grade:false,
+        allow_down_grade:0,
         allow_down_grade_options:[
-            {text:'允許', value:true},
-            {text:'不允許', value:false}
+            {text:'允許', value:1},
+            {text:'不允許', value:0}
         ],
         display:true,
         tabIndex:0,
         keyword:'',
         updated_at:'2018.2.10'
+    },
+    created:function(){
+
+        var c_lang_value = getCookie('lang_value');
+        
+        if(c_lang_value!=null){
+            this.lang_value = c_lang_value;
+        }
+
+        var c_allow_down_grade = getCookie('allow_down_grade');
+
+        if(c_allow_down_grade!=null){
+            this.allow_down_grade = c_allow_down_grade;
+        }
     },
     methods:{
         analyze : function(devil, reset=false){
@@ -717,10 +731,16 @@ var app = new Vue({
         }
     },
     watch:{
+        lang_value:function(){
+
+            setCookie('lang_value', this.lang_value);
+        },
         allow_down_grade:function(){
 
             if(this.master!=null)
                 this.master = new bom(this.master.devil);
+            
+            setCookie('allow_down_grade', this.allow_down_grade);
         }
     },
     computed:{
