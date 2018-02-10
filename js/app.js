@@ -624,7 +624,7 @@ function bom(devil){
                     'downgrade':false
                 };
 
-                if( !app.allow_down_grade && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
+                if( app.allow_down_grade==0 && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
 
                     flag_success = false;
                 }
