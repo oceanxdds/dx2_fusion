@@ -574,6 +574,8 @@ var ddd = [
     }
 ];
 
+// Initialize
+
 var race_data = {};
 var devil_data = [];
 
@@ -594,6 +596,7 @@ ddd.forEach(function(r){
     });
 });
 
+// sub fucntion
 
 function bom(devil){
 
@@ -655,6 +658,19 @@ function bom(devil){
    
 }
 
+function setCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+{
+    var Days = 365; //此 cookie 将被保存 30 天
+    var exp  = new Date();    //new Date("December 31, 9998");
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name)//取cookies函数        
+{
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+     if(arr != null) return unescape(arr[2]); return null;
+
+}
 
 // application
 
