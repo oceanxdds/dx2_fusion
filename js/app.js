@@ -578,15 +578,11 @@ var ddd = [
 
 var race_data = {};
 var devil_data = [];
+var formula_data = [];
 
+// build race_data & replace formula name with race_data
 ddd.forEach(function(r){
     race_data[r.name] = r;
-    r.devils.forEach(function(d, idx){
-        d.race = r;
-        d.max = idx==0 ? 999 : d.grade;
-        d.min = (idx==r.devils.length-1 ? 0 : r.devils[idx+1].grade);
-        devil_data.push(d);
-    });
 });
 
 ddd.forEach(function(r){
@@ -596,6 +592,53 @@ ddd.forEach(function(r){
     });
 });
 
+// 1. caculate devils's grade range (bom)
+// 2. build devil_data (search)
+// 3. build 
+
+ddd.forEach(function(r1){
+
+    r1.devils.forEach(function(d, idx){
+        d.race = r1;
+        d.max = idx==0 ? 999 : d.grade;
+        d.min = (idx==r1.devils.length-1 ? 0 : r1.devils[idx+1].grade);
+        devil_data.push(d);
+    });
+
+    var usage_temp = {};
+
+    ddd.forEach(function(target){
+
+        target.formula.forEach(function(f){
+            
+            var r2 = null;
+
+            if(f[0].name==r1.name){
+                r2 = f[1];
+            }
+            if(f[1].name==r1.name){
+                r2 = f[0];
+            }
+            if(r2){
+
+                if(! (target.name in usage_temp)){
+                    usage_temp[target.name] = [];
+                }
+
+                usage_temp[target.name].push(r2);
+            }
+        });
+    });
+
+    r1.usage = [];
+
+    for(name in usage_temp){
+        r1.usage.push({
+            target:race_data[name],
+            r2s:usage_temp[name]
+        })
+    }
+});
 // sub fucntion
 
 function bom(devil){
@@ -614,32 +657,10 @@ function bom(devil){
         r1.devils.forEach(function(d1){
             r2.devils.forEach(function(d2){
 
-                var flag_success = true;
-                var g = (d1.grade + d2.grade)/2;
-                var obj = {
-                    'd1':d1,
-                    'd2':d2,
-                    'max_rarity':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
-                    'upgrade':false,
-                    'downgrade':false
-                };
+                var obj = combine(d1,d2,devil);
 
-                if( app.allow_down_grade==0 && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
-
-                    flag_success = false;
-                }
-
-                if( flag_success && (devil.min <= g && g < devil.max )){
-                    
-                    if( d1.rarity > devil.rarity || d2.rarity > devil.rarity ){
-                        obj.downgrade = true;
-                    }
-                    else if ( d1.rarity < devil.rarity && d2.rarity < devil.rarity){
-                        obj.upgrade = true;
-                    }
-
+                if(obj)
                     f_mats.push(obj);
-                }
             });
         });
 
@@ -656,6 +677,83 @@ function bom(devil){
             formula.push(obj);
     });
    
+}
+
+function find_bom(d1){
+    
+    var formula = this.formula = [];
+    this.devil = d1;
+
+    d1.race.usage.forEach(function(u){
+
+        // Target Race Loop
+        u.target.devils.forEach(function(target){
+
+            var f_mats = [];
+
+            // Target Devil Loop
+            u.r2s.forEach(function(r2){
+
+                r2.devils.forEach(function(d2){
+
+                    // Pair Devil Loop
+                    var obj = combine(d1, d2, target);
+
+                    if(obj)
+                        f_mats.push(obj)
+                });
+            });
+
+            f_mats.sort(function(c1,c2){
+                return c1.max_rarity - c2.max_rarity;
+            });
+
+            var obj = {
+                'target':target,
+                'upgrade':target.rarity > d1.rarity,
+                'downgrade':target.rarity < d1.rarity,
+                'combination':f_mats
+            }
+
+            if(f_mats.length>0){
+
+                formula.push(obj);
+            }
+        });
+    });
+}
+
+function combine(d1, d2, target){
+
+    var flag_success = true;
+    var g = (d1.grade + d2.grade)/2;
+    var obj = {
+        'd1':d1,
+        'd2':d2,
+        'target':target,
+        'max_rarity':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
+        'upgrade':false,
+        'downgrade':false
+    };
+
+    if( app.allow_down_grade==0 && (d1.rarity>target.rarity||d2.rarity>target.rarity)){
+
+        flag_success = false;
+    }
+
+    if( flag_success && (target.min <= g && g < target.max )){
+        
+        if( d1.rarity > target.rarity || d2.rarity > target.rarity ){
+            obj.downgrade = true;
+        }
+        else if ( d1.rarity < target.rarity && d2.rarity < target.rarity){
+            obj.upgrade = true;
+        }
+
+        return obj;
+    }
+
+    return null;
 }
 
 function setCookie(name,value)
@@ -680,6 +778,7 @@ var app = new Vue({
         races:ddd,
         devils:devil_data,
         master:null,
+        usage_master:null,
         queue:[],
         lang_value:0,
         lang_options:[
@@ -728,6 +827,11 @@ var app = new Vue({
                this.queue.pop();
                this.master = new bom(this.queue[this.queue.length-1]);
             }
+        },
+        parse : function(devil){
+
+            this.usage_master = new find_bom(devil);
+            this.tabIndex = 2;
         }
     },
     watch:{
@@ -739,6 +843,8 @@ var app = new Vue({
 
             if(this.master!=null)
                 this.master = new bom(this.master.devil);
+            if(this.usage_master!=null)
+                this.usage_master = new find_bom(this.usage_master.devil);
             
             setCookie('allow_down_grade', this.allow_down_grade);
         }
