@@ -376,7 +376,7 @@ var ddd = [
             {                name:'オセ',          name_tw:'歐賽',      rarity:3,                grade:54, icon:'datensi_ose.png'            },
             {                name:'フォルネウス',   name_tw:'佛鈕司',             rarity:3,                grade:41, icon:'datensi_huoruneosu.png'            },
             {                name:'デカラビア',     name_tw:'丹卡拉比',           rarity:2,                grade:23, icon:'datensi_dekarabia.png'            },
-            {                name:'エリゴール',     name_tw:'埃力格',           rarity:1,                grade:10, icon:'datensi_erigoru'            },
+            {                name:'エリゴール',     name_tw:'埃力格',           rarity:1,                grade:10, icon:'datensi_erigoru.png'            },
             {                name:'メルコム',       name_tw:'梅爾克',         rarity:1,                grade:4, icon:'datensi_merukomu.png'            }
         ]
     },
