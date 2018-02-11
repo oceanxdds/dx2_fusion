@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/theme/favicon.ico">
     <title>Dx2 二身合體</title>
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/bootstrap-vue.min.css"/>
@@ -153,8 +154,8 @@
                                     button-variant="outline-info"
                                     v-model="lang_value"
                                     :options="lang_options"
-                                    name="lang_radio" />
-                                </b-form-group>
+                                    name="lang_radio">
+                                    </b-form-radio-group>
                             </div>
                         </div>
                         <div class="col-12 py-2">
@@ -165,8 +166,8 @@
                                     button-variant="outline-info"
                                     v-model="allow_down_grade"
                                     :options="allow_down_grade_options"
-                                    name="lang_radio" />
-                                </b-form-group>
+                                    name="lang_radio">
+                                    </b-form-radio-group>
                             </div>
                         </div>
                     </div>
@@ -176,7 +177,7 @@
                     </b-tab>
             </b-tabs>
         </b-card>
-        <div class="small text-right">部分圖片預計於2/11補齊 / Last Updated: {{ updated_at }}</div>
+        <div class="small text-right">Last Updated: {{ updated_at }}</div>
     </div>
 
     <script src="js/app.js"></script>

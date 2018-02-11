@@ -293,9 +293,9 @@ var ddd = [
             ['幽鬼','鬼神']
         ],
         devils:[
-            {                name:'アナンタ',      name_tw:'阿南塔',          rarity:5,                grade:83            },
-            {                name:'ユルング',      name_tw:'虹蛇',          rarity:4,                grade:70            },
-            {                name:'ヤマタノオロチ',    name_tw:'八岐大蛇',            rarity:4,                grade:61            },
+            {                name:'アナンタ',      name_tw:'阿南塔',          rarity:5,                grade:83, icon:'ryuuou_ananta.png'            },
+            {                name:'ユルング',      name_tw:'虹蛇',          rarity:4,                grade:70, icon:'ryuuou_yurungu.png'            },
+            {                name:'ヤマタノオロチ',    name_tw:'八岐大蛇',            rarity:4,                grade:61, icon:'ryuuou_yamatanooroti.png'            },
             {                name:'ゲンブ',        name_tw:'玄武',        rarity:3,                grade:45, icon:'ryuuou_genbu.png'            },
             {                name:'ナーガ',        name_tw:'那迦',        rarity:2,                grade:28, icon:'ryuuou_naga.png'            },
             {                name:'ノズチ',        name_tw:'野槌',        rarity:1,                grade:15, icon:'ryuuou_nozuti.png'            }
@@ -318,12 +318,12 @@ var ddd = [
             ['幽鬼','魔王']
         ],
         devils:[
-            {                name:'ケルベロス',     name_tw:'地獄犬',           rarity:4,                grade:61            },
-            {                name:'アーマーン',     name_tw:'阿米特',           rarity:3,                grade:44            },
-            {                name:'オルトロス',     name_tw:'雙頭犬',           rarity:2,                grade:35            },
-            {                name:'ネコマタ',       name_tw:'貓怪',         rarity:1,                grade:14            },
-            {                name:'イヌガミ',       name_tw:'犬神',         rarity:1,                grade:9            },
-            {                name:'カーシー',       name_tw:'犬妖',         rarity:1,                grade:3            }
+            {                name:'ケルベロス',     name_tw:'地獄犬',           rarity:4,                grade:61, icon:'majyuu_keruberosu.png'            },
+            {                name:'アーマーン',     name_tw:'阿米特',           rarity:3,                grade:44, icon:'majyuu_aman.png'            },
+            {                name:'オルトロス',     name_tw:'雙頭犬',           rarity:2,                grade:35, icon:'majyuu_orutorosu.png'            },
+            {                name:'ネコマタ',       name_tw:'貓怪',         rarity:1,                grade:14, icon:'majyuu_nekomata.png'            },
+            {                name:'イヌガミ',       name_tw:'犬神',         rarity:1,                grade:9, icon:'majyuu_inugami.png'            },
+            {                name:'カーシー',       name_tw:'犬妖',         rarity:1,                grade:3, icon:'majyuu_kasi.png'            }
         ]
     },
     {
@@ -343,15 +343,15 @@ var ddd = [
             ['外道','鬼神']
         ],
         devils:[
-            {                name:'オペロン',        name_tw:'奧伯隆',        rarity:4,                grade:67            },
-            {                name:'ティターニア',    name_tw:'提泰妮婭',            rarity:4,                grade:62            },
-            {                name:'セタンタ',        name_tw:'瑟坦特',        rarity:3,                grade:47            },
-            {                name:'シルキー',        name_tw:'希路奇',        rarity:3,                grade:42            },
-            {                name:'ケルピー',        name_tw:'凱爾皮',        rarity:2,                grade:35            },
-            {                name:'ハイピクシー',      name_tw:'高等皮克希',          rarity:2,                grade:24            },
-            {                name:'ジャックランタン',  name_tw:'燈籠傑克',              rarity:1,                grade:13            },
-            {                name:'ジャックフロスト',  name_tw:'冰霜傑克',              rarity:1,                grade:7            },
-            {                name:'ピクシー',         name_tw:'皮克希',       rarity:1,                grade:2            }
+            {                name:'オペロン',        name_tw:'奧伯隆',        rarity:4,                grade:67, icon:'yousei_oberon.png'            },
+            {                name:'ティターニア',    name_tw:'提泰妮婭',            rarity:4,                grade:62, icon:'yousei_teitania.png'            },
+            {                name:'セタンタ',        name_tw:'瑟坦特',        rarity:3,                grade:47, icon:'yousei_setanta.png'           },
+            {                name:'シルキー',        name_tw:'希路奇',        rarity:3,                grade:42, icon:'yousei_siruki.png'            },
+            {                name:'ケルピー',        name_tw:'凱爾皮',        rarity:2,                grade:35, icon:'yousei_kerupi.png'            },
+            {                name:'ハイピクシー',      name_tw:'高等皮克希',          rarity:2,                grade:24, icon:'yousei_hiipikusi.png'            },
+            {                name:'ジャックランタン',  name_tw:'燈籠傑克',              rarity:1,                grade:13, icon:'yousei_jyakurantan.png'            },
+            {                name:'ジャックフロスト',  name_tw:'冰霜傑克',              rarity:1,                grade:7, icon:'yousei_jyakufurosuto.png'            },
+            {                name:'ピクシー',         name_tw:'皮克希',       rarity:1,                grade:2, icon:'yousei_pikusi.png'            }
         ]
     },
     {
@@ -371,13 +371,13 @@ var ddd = [
             ['幽鬼','大天使']
         ],
         devils:[
-            {                name:'サマエル',       name_tw:'薩麥爾',         rarity:5,                grade:84            },
-            {                name:'ダンタリアン',   name_tw:'但他林',             rarity:4,                grade:70            },
-            {                name:'オセ',          name_tw:'歐賽',      rarity:3,                grade:54            },
-            {                name:'フォルネウス',   name_tw:'佛鈕司',             rarity:3,                grade:41            },
-            {                name:'デカラビア',     name_tw:'丹卡拉比',           rarity:2,                grade:23            },
-            {                name:'エリゴール',     name_tw:'埃力格',           rarity:1,                grade:10            },
-            {                name:'メルコム',       name_tw:'梅爾克',         rarity:1,                grade:4            }
+            {                name:'サマエル',       name_tw:'薩麥爾',         rarity:5,                grade:84, icon:'datensi_samaeru.png'            },
+            {                name:'ダンタリアン',   name_tw:'但他林',             rarity:4,                grade:70, icon:'datensi_dantarian.png'            },
+            {                name:'オセ',          name_tw:'歐賽',      rarity:3,                grade:54, icon:'datensi_ose.png'            },
+            {                name:'フォルネウス',   name_tw:'佛鈕司',             rarity:3,                grade:41, icon:'datensi_huoruneosu.png'            },
+            {                name:'デカラビア',     name_tw:'丹卡拉比',           rarity:2,                grade:23, icon:'datensi_dekarabia.png'            },
+            {                name:'エリゴール',     name_tw:'埃力格',           rarity:1,                grade:10, icon:'datensi_erigoru'            },
+            {                name:'メルコム',       name_tw:'梅爾克',         rarity:1,                grade:4, icon:'datensi_merukomu.png'            }
         ]
     },
     {
@@ -397,13 +397,13 @@ var ddd = [
             ['幽鬼','外道']
         ],
         devils:[
-            {                name:'オンギョウキ',     name_tw:'隱形鬼',           rarity:4,                grade:68            },
-            {                name:'ベルセルク',       name_tw:'狂戰士',         rarity:3,                grade:54            },
-            {                name:'シキオウジ',       name_tw:'式王子',         rarity:3,                grade:49            },
-            {                name:'ヨモツイクサ',     name_tw:'黃泉軍',           rarity:3,                grade:41            },
-            {                name:'オ二',            name_tw:'鬼',    rarity:2,                grade:27            },
-            {                name:'モムノフ',         name_tw:'桃生',       rarity:1,                grade:15            },
-            {                name:'アズミ',          name_tw:'安曇神',      rarity:1,                grade:3            }
+            {                name:'オンギョウキ',     name_tw:'隱形鬼',           rarity:4,                grade:68, icon:'youki_ongyouki.png'            },
+            {                name:'ベルセルク',       name_tw:'狂戰士',         rarity:3,                grade:54, icon:'youki_beruseruku.png'            },
+            {                name:'シキオウジ',       name_tw:'式王子',         rarity:3,                grade:49, icon:'youki_sikiouji.png'            },
+            {                name:'ヨモツイクサ',     name_tw:'黃泉軍',           rarity:3,                grade:41, icon:'youki_yomotuikusa.png'            },
+            {                name:'オ二',            name_tw:'鬼',    rarity:2,                grade:27, icon:'youki_oni.png'            },
+            {                name:'モムノフ',         name_tw:'桃生',       rarity:1,                grade:15, icon:'youki_momunohu.png'            },
+            {                name:'アズミ',          name_tw:'安曇神',      rarity:1,                grade:3, icon:'youki_azumi.png'            }
         ]
     },
     {
@@ -422,12 +422,12 @@ var ddd = [
             ['幽鬼','夜魔']
         ],
         devils:[
-            {                name:'ランダ',          name_tw:'讓特',     rarity:4,                grade:67            },
-            {                name:'ダーキニー',      name_tw:'荼吉尼',          rarity:3,                grade:53            },
-            {                name:'マーメイド',      name_tw:'美人魚',          rarity:3,                grade:42            },
-            {                name:'ヤクシニー',      name_tw:'夜叉女',          rarity:2,                grade:34            },
-            {                name:'ヨモツシコメ',    name_tw:'黃泉醜女',            rarity:2,                grade:23            },
-            {                name:'リャナンシー',    name_tw:'菈南希',            rarity:1,                grade:12            }
+            {                name:'ランダ',          name_tw:'讓特',     rarity:4,                grade:67, icon:'kijyo_randa.png'            },
+            {                name:'ダーキニー',      name_tw:'荼吉尼',          rarity:3,                grade:53, icon:'kijyo_dakini.png'            },
+            {                name:'マーメイド',      name_tw:'美人魚',          rarity:3,                grade:42, icon:'kijyo_mameido.png'            },
+            {                name:'ヤクシニー',      name_tw:'夜叉女',          rarity:2,                grade:34, icon:'kijyo_yakusini.png'            },
+            {                name:'ヨモツシコメ',    name_tw:'黃泉醜女',            rarity:2,                grade:23, icon:'kijyo_yomotusikome.png'            },
+            {                name:'リャナンシー',    name_tw:'菈南希',            rarity:1,                grade:12, icon:'kijyo_ryanansi.png'            }
         ]
     },
     {
@@ -448,14 +448,14 @@ var ddd = [
             ['幽鬼','妖獸']
         ],
         devils:[
-            {                name:'リリス',        name_tw:'莉莉絲',        rarity:5,                grade:80            },
-            {                name:'サキュバス',    name_tw:'女夢魔',            rarity:4,                grade:63            },
-            {                name:'リリム',        name_tw:'莉莉姆',        rarity:3,                grade:47            },
-            {                name:'キオン',        name_tw:'迦溫',        rarity:3,                grade:42            },
-            {                name:'フォーモリア',   name_tw:'弗莫爾',             rarity:2,                grade:30            },
-            {                name:'インキュバス',   name_tw:'男夢魔',             rarity:2,                grade:21            },
-            {                name:'ザントマン',     name_tw:'睡魔',           rarity:1,                grade:10            },
-            {                name:'モコイ',         name_tw:'惡靈',       rarity:1,                grade:5            }
+            {                name:'リリス',        name_tw:'莉莉絲',        rarity:5,                grade:80, icon:'yoma_ririsu.png'            },
+            {                name:'サキュバス',    name_tw:'女夢魔',            rarity:4,                grade:63, icon:'yoma_sakyubasu.png'            },
+            {                name:'リリム',        name_tw:'莉莉姆',        rarity:3,                grade:47, icon:'yoma_ririmu.png'            },
+            {                name:'キオン',        name_tw:'迦溫',        rarity:3,                grade:42, icon:'yoma_kiun.png'            },
+            {                name:'フォーモリア',   name_tw:'弗莫爾',             rarity:2,                grade:30, icon:'yoma_huomoria.png'            },
+            {                name:'インキュバス',   name_tw:'男夢魔',             rarity:2,                grade:21, icon:'yoma_inkyubasu.png'            },
+            {                name:'ザントマン',     name_tw:'睡魔',           rarity:1,                grade:10, icon:'yoma_zandoman.png'            },
+            {                name:'モコイ',         name_tw:'惡靈',       rarity:1,                grade:5, icon:'yoma_mokoi.png'            }
         ]
     },
     {
@@ -468,12 +468,12 @@ var ddd = [
             ['魔王','魔獸']
         ],
         devils:[
-            {                name:'セト',         name_tw:'賽特',       rarity:5,                grade:84            },
-            {                name:'ギリメカラ',    name_tw:'獨眼魔象',            rarity:4,                grade:67            },
-            {                name:'パズス',        name_tw:'帕祖祖',        rarity:4,                grade:62            },
-            {                name:'アラハバキ',    name_tw:'荒霸吐',            rarity:3,                grade:50            },
-            {                name:'バフォメット',  name_tw:'巴風特',              rarity:3,                grade:41            },
-            {                name:'アブラクサス',  name_tw:'亞布拉薩',              rarity:2,                grade:26            }
+            {                name:'セト',         name_tw:'賽特',       rarity:5,                grade:84, icon:'jyasin_seto.png'            },
+            {                name:'ギリメカラ',    name_tw:'獨眼魔象',            rarity:4,                grade:67, icon:'jyasin_girimekara.png'            },
+            {                name:'パズス',        name_tw:'帕祖祖',        rarity:4,                grade:62, icon:'jyasin_pazusu.png'            },
+            {                name:'アラハバキ',    name_tw:'荒霸吐',            rarity:3,                grade:50, icon:'jyasin_arahabaki.png'            },
+            {                name:'バフォメット',  name_tw:'巴風特',              rarity:3,                grade:41, icon:'jyasin_bahuometo.png'            },
+            {                name:'アブラクサス',  name_tw:'亞布拉薩',              rarity:2,                grade:26, icon:'jyasin_aburakusasu.png'            }
         ]
     },
     {
@@ -494,13 +494,13 @@ var ddd = [
             ['幽鬼','魔獸']
         ],
         devils:[
-            {                name:'フェンリル',    name_tw:'芬里爾',            rarity:4,                grade:61            },
-            {                name:'ピアレイ',     name_tw:'皮亞雷',           rarity:3,                grade:46            },
-            {                name:'モスマン',     name_tw:'天蛾人',           rarity:3,                grade:41            },
-            {                name:'ヌエ',         name_tw:'鵺',       rarity:2,                grade:25            },
-            {                name:'ライジュウ',    name_tw:'雷獸',            rarity:2,                grade:20            },
-            {                name:'バイコーン',    name_tw:'雙角獸',            rarity:1,                grade:9            },
-            {                name:'チャグリン',    name_tw:'恰古林',            rarity:1,                grade:4            }
+            {                name:'フェンリル',    name_tw:'芬里爾',            rarity:4,                grade:61, icon:'youjyuu_huenriru.png'            },
+            {                name:'ピアレイ',     name_tw:'皮亞雷',           rarity:3,                grade:46, icon:'youjyuu_piarei.png'            },
+            {                name:'モスマン',     name_tw:'天蛾人',           rarity:3,                grade:41, icon:'youjyuu_mosuman.png'            },
+            {                name:'ヌエ',         name_tw:'鵺',       rarity:2,                grade:25, icon:'youjyuu_nue.png'            },
+            {                name:'ライジュウ',    name_tw:'雷獸',            rarity:2,                grade:20, icon:'youjyuu_raijyuu.png'            },
+            {                name:'バイコーン',    name_tw:'雙角獸',            rarity:1,                grade:9, icon:'youjyuu_baikon.png'            },
+            {                name:'チャグリン',    name_tw:'恰古林',            rarity:1,                grade:4, icon:'youjyuu_tyagurinn.png'            }
         ]
     },
     {
@@ -516,12 +516,12 @@ var ddd = [
             ['幽鬼','邪神']
         ],
         devils:[
-            {                name:'マッドガッサー',     name_tw:'毒氣怪客',           rarity:3,                grade:45            },
-            {                name:'シャドウ',          name_tw:'黑影',      rarity:2,                grade:35            },
-            {                name:'ブラックウーズ',    name_tw:'黑泥怪',            rarity:2,                grade:25            },
-            {                name:'ブロブ',           name_tw:'果凍怪',     rarity:2,                grade:20            },
-            {                name:'ファントム',       name_tw:'鬼魅',         rarity:1,               grade:10            },
-            {                name:'スライム',        name_tw:'軟泥怪',        rarity:1,                grade:1            }
+            {                name:'マッドガッサー',     name_tw:'毒氣怪客',           rarity:3,                grade:45, icon:'gedou_madogasa.png'            },
+            {                name:'シャドウ',          name_tw:'黑影',      rarity:2,                grade:35, icon:'gedou_syadou.png'            },
+            {                name:'ブラックウーズ',    name_tw:'黑泥怪',            rarity:2,                grade:25, icon:'gedou_burakuuzu.png'            },
+            {                name:'ブロブ',           name_tw:'果凍怪',     rarity:2,                grade:20, icon:'gedou_burobu.png'            },
+            {                name:'ファントム',       name_tw:'鬼魅',         rarity:1,               grade:10, icon:'gedou_huantomu.png'            },
+            {                name:'スライム',        name_tw:'軟泥怪',        rarity:1,                grade:1, icon:'gedou_suraimu.png'            }
         ]
     },
     {
@@ -536,13 +536,13 @@ var ddd = [
             ['邪神','破壞神']
         ],
         devils:[
-            {                name:'ルシファー',     name_tw:'露西法',           rarity:5,                grade:98            },
-            {                name:'マーラ',         name_tw:'魔羅',       rarity:5,                grade:90            },
-            {                name:'スルト',         name_tw:'史爾特爾',      rarity:5,                grade:83            },
-            {                name:'ロキ',           name_tw:'洛基',     rarity:4,                grade:75           },
-            {                name:'ベルゼブブ',     name_tw:'別西卜',           rarity:4,                grade:68            },
-            {                name:'アバドン',       name_tw:'阿巴頓',         rarity:4,                grade:60            },
-            {                name:'オーカス',       name_tw:'奧迦斯',         rarity:3,                grade:46            }
+            {                name:'ルシファー',     name_tw:'露西法',           rarity:5,                grade:98, icon:'maou_rusifua.png'            },
+            {                name:'マーラ',         name_tw:'魔羅',       rarity:5,                grade:90, icon:'maou_mara.png'            },
+            {                name:'スルト',         name_tw:'史爾特爾',      rarity:5,                grade:83, icon:'maou_suruto.png'            },
+            {                name:'ロキ',           name_tw:'洛基',     rarity:4,                grade:75, icon:'maou_roki.png'           },
+            {                name:'ベルゼブブ',     name_tw:'別西卜',           rarity:4,                grade:68, icon:'maou_beruzebubu.png'            },
+            {                name:'アバドン',       name_tw:'阿巴頓',         rarity:4,                grade:60, icon:'maou_abadon.png'            },
+            {                name:'オーカス',       name_tw:'奧迦斯',         rarity:3,                grade:46, icon:'maou_okasu.png'            }
         ]
     },
     {
@@ -563,13 +563,13 @@ var ddd = [
             ['魔王','邪神']
         ],
         devils:[
-            {                name:'ヴェータラ',        name_tw:'毘陀羅',        rarity:3,                grade:55            },
-            {                name:'ラフィン・スカル',   name_tw:'笑面骷髏',             rarity:3,                grade:44            },
-            {                name:'レギオン',          name_tw:'惡靈軍團',      rarity:2,                grade:34            },
-            {                name:'ピシャーチャ',      name_tw:'畢舍遮',          rarity:2,                grade:26            },
-            {                name:'モウリョウ',        name_tw:'魍魎',        rarity:2,                grade:20            },
-            {                name:'オバリヨン',        name_tw:'背負小鬼',        rarity:1,                grade:7            },
-            {                name:'ガキ',             name_tw:'餓鬼',   rarity:1,                grade:4            }
+            {                name:'ヴェータラ',        name_tw:'毘陀羅',        rarity:3,                grade:55, icon:'yuuki_vetara.png'            },
+            {                name:'ラフィン・スカル',   name_tw:'笑面骷髏',             rarity:3,                grade:44, icon:'yuuki_rahuinsukaru.png'            },
+            {                name:'レギオン',          name_tw:'惡靈軍團',      rarity:2,                grade:34, icon:'yuuki_region.png'            },
+            {                name:'ピシャーチャ',      name_tw:'畢舍遮',          rarity:2,                grade:26, icon:'yuuki_pisyatya.png'            },
+            {                name:'モウリョウ',        name_tw:'魍魎',        rarity:2,                grade:20, icon:'yuuki_mouryou.png'            },
+            {                name:'オバリヨン',        name_tw:'背負小鬼',        rarity:1,                grade:7, icon:'yuuki_obariyon.png'            },
+            {                name:'ガキ',             name_tw:'餓鬼',   rarity:1,                grade:4, icon:'yuuki_gaki.png'            }
         ]
     }
 ];
@@ -658,14 +658,14 @@ function bom(devil){
    
 }
 
-function setCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+function setCookie(name,value)
 {
-    var Days = 365; //此 cookie 将被保存 30 天
-    var exp  = new Date();    //new Date("December 31, 9998");
+    var Days = 365;
+    var exp  = new Date();
     exp.setTime(exp.getTime() + Days*24*60*60*1000);
     document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
-function getCookie(name)//取cookies函数        
+function getCookie(name)
 {
     var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
      if(arr != null) return unescape(arr[2]); return null;
@@ -694,7 +694,7 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.2.10'
+        updated_at:'2018.2.11'
     },
     created:function(){
 
@@ -711,7 +711,7 @@ var app = new Vue({
         }
     },
     methods:{
-        analyze : function(devil, reset=false){
+        analyze : function(devil, reset){
 
             if(reset){
                 this.queue = [devil];
