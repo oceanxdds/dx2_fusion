@@ -102,10 +102,11 @@
                         <div class="row">
                             
                             <div class="col-auto py-2" v-for="(devil, idx) in queue" >
-                                <div class="border rounded p-2 pr-5" :class="{'border-primary':idx==queue.length-1,'text-primary':idx==queue.length-1}"
-                                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" 
+                                <div class="border rounded p-2 pr-5" 
+                                    :class="{'border-primary':idx==queue.length-1,'text-primary':idx==queue.length-1}"
+                                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')','cursor':(idx==queue.length-1&&idx>0?'pointer':'')}" 
                                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                                    @click="preview()">
+                                    @click="preview(idx)">
                                     <div>
                                         {{ devil.race.name }}
                                         <span class="font-weight-bold">{{ lang_value == 0 ? devil.name : devil.name_tw }}</span>

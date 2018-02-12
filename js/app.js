@@ -822,8 +822,9 @@ var app = new Vue({
             this.master = new bom(devil);
             this.tabIndex = 1;
         },
-        preview : function(){
-            if(this.queue.length>1){
+        preview : function(index){
+            
+            if(index == this.queue.length-1 && index>0){
                this.queue.pop();
                this.master = new bom(this.queue[this.queue.length-1]);
             }
