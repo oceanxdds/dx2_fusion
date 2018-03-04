@@ -1,9 +1,9 @@
 /*/////////////////////////////////////////////////
-Dx2 Devil Fushion Emulator
+Dx2 Devil Fusion Emulator
 Author: Robin Chiu
 E-mail: oceanxdds@gmail.com
-Github: https://github.com/oceanxdds/dx2_fushion
-Publish: https://oceanxdds.github.io/dx2_fushion/
+Github: https://github.com/oceanxdds/dx2_fusion
+Publish: https://oceanxdds.github.io/dx2_fusion/
 //////////////////////////////////////////////////*/
 
 // Devil Data
@@ -574,7 +574,23 @@ var ddd = [
     }
 ];
 
+
+var Devil = function(devil){
+    
+    this.name = devil.name;
+    this.name_tw = devil.name_tw;
+    this.rarity = devil.rarity;
+    this.grade = devil.grade;
+    this.icon = devil.icon;
+};
+
+Devil.prototype.fission = function(){
+
+    console.log('fission');
+}
+
 // Initialize
+
 
 var race_data = {};
 var devil_data = [];
@@ -583,6 +599,13 @@ var formula_data = [];
 // build race_data & replace formula name with race_data
 ddd.forEach(function(r){
     race_data[r.name] = r;
+
+    r.devils.forEach(function(d, idx){
+
+        r.devils[idx] = new Devil(d);
+        //d.fission();
+        //console.log(d);
+    });
 });
 
 ddd.forEach(function(r){
@@ -599,6 +622,7 @@ ddd.forEach(function(r){
 ddd.forEach(function(r1){
 
     r1.devils.forEach(function(d, idx){
+
         d.race = r1;
         d.max = idx==0 ? 999 : d.grade;
         d.min = (idx==r1.devils.length-1 ? 0 : r1.devils[idx+1].grade);
@@ -772,6 +796,11 @@ function getCookie(name)
 
 // application
 
+Vue.component('devil',{
+    props:['devil','bom','parse-reset','usage','fission'],
+    template:'#template_devil'
+});
+
 var app = new Vue({
     el:'#app',
     data:{
@@ -793,7 +822,7 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.2.12'
+        updated_at:'2018.3.4'
     },
     created:function(){
 
@@ -810,7 +839,8 @@ var app = new Vue({
         }
     },
     methods:{
-        analyze : function(devil, reset){
+        
+        fission: function(devil, reset){
 
             if(reset){
                 this.queue = [devil];
@@ -829,7 +859,7 @@ var app = new Vue({
                this.master = new bom(this.queue[this.queue.length-1]);
             }
         },
-        parse : function(devil){
+        fusion : function(devil){
 
             this.usage_master = new find_bom(devil);
             this.tabIndex = 2;
@@ -852,10 +882,18 @@ var app = new Vue({
     },
     computed:{
         filtered_devil_data: function(){
-            var keyword = this.keyword;
-            return this.devils.filter(function(d){
-                return d.name.match(keyword)||d.name_tw.match(keyword);
-            });
+            
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = null;
+
+            if(keyword){
+                result = this.devils.filter(function(d){
+                    return d.name.match(keyword)||d.name_tw.match(keyword);
+                });
+            }
+
+            return result;
         }
     }
 });
