@@ -689,7 +689,7 @@ function bom(devil){
         });
 
         f_mats.sort(function(c1,c2){
-            return c1.max_rarity - c2.max_rarity;
+            return c1.order - c2.order;
         });
 
         var obj = {
@@ -729,7 +729,7 @@ function find_bom(d1){
             });
 
             f_mats.sort(function(c1,c2){
-                return c1.max_rarity - c2.max_rarity;
+                return c1.order - c2.order;
             });
 
             var obj = {
@@ -749,35 +749,70 @@ function find_bom(d1){
 
 function combine(d1, d2, target){
 
-    var flag_success = true;
     var g = (d1.grade + d2.grade)/2;
+
+    if( ! (target.min <= g && g < target.max ) ){
+        return null;
+    }
+    
+    if( app.allow_down_grade==0 && (d1.rarity>target.rarity||d2.rarity>target.rarity)){
+        return null;
+    }
+
     var obj = {
         'd1':d1,
         'd2':d2,
         'target':target,
-        'max_rarity':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
-        'upgrade':false,
-        'downgrade':false
+        'order':(d1.rarity>d2.rarity) ? (d1.rarity*10+d2.rarity) : (d2.rarity*10+d1.rarity),
+        'upgrade':(d1.rarity < target.rarity && d2.rarity < target.rarity),
+        'downgrade':(d1.rarity > target.rarity || d2.rarity > target.rarity),
+        'mag':0
     };
 
-    if( app.allow_down_grade==0 && (d1.rarity>target.rarity||d2.rarity>target.rarity)){
+    if(target.rarity==5){
 
-        flag_success = false;
+    }
+    else if(target.rarity==4){
+
+    }
+    
+    A = B = 0;
+    r = (target.rarity*2)-d1.rarity-d2.rarity;
+
+    switch(target.rarity){
+        case 1: A=5;    break;
+        case 2: if(r==2) A=50;
+                if(r==1) A=25;
+                if(r==0) A=5;
+                if(r==-1)A=5;
+                break;
+        case 3: if(r==4) A=5400;
+                if(r==3) A=5200; 
+                if(r==2) A=5000; 
+                if(r==1) A=2500;
+                if(r==0) A=500;
+                if(r==-1)A=250;
+                break;
+        case 4: if(r==2) A=300000; 
+                if(r==1) A=150000;
+                if(r==0) A=30000;
+                if(r==-1)A=15000;
+                break;
+        case 5: if(r==3) A=4200000;
+                if(r==2) A=3000000; 
+                if(r==1) A=1500000;
+                if(r==0) A=300000;
+                break;
     }
 
-    if( flag_success && (target.min <= g && g < target.max )){
-        
-        if( d1.rarity > target.rarity || d2.rarity > target.rarity ){
-            obj.downgrade = true;
-        }
-        else if ( d1.rarity < target.rarity && d2.rarity < target.rarity){
-            obj.upgrade = true;
-        }
+    B = [0,0,0.3,0.45,60,75,1080,1260,14400,0][Math.floor(target.grade/10)];
 
-        return obj;
-    }
+    obj.mag = Math.floor(A + (target.grade-g) * B);
 
-    return null;
+    if( A==0 || (target.rarity>1 && B==0) )
+        obj.mag = 0;
+
+    return obj;
 }
 
 function setCookie(name,value)
@@ -822,7 +857,7 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.3.4'
+        updated_at:'2018.3.6'
     },
     created:function(){
 
@@ -863,6 +898,11 @@ var app = new Vue({
 
             this.usage_master = new find_bom(devil);
             this.tabIndex = 2;
+        },
+        formatPrice(value) {
+            
+            val = (value/1).toFixed(0);
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
     },
     watch:{

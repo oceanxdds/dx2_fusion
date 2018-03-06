@@ -143,6 +143,9 @@
                                                         <div class="small">G.{{ devil.grade }} <span v-for="n in devil.rarity">&#9733;</span></div>
                                                 </div>
                                             </div>
+                                            <b-card-footer class="p-1 text-right small">
+                                                {{ c.mag==0?'NO_DATA':('&diams; '+formatPrice(c.mag)) }}
+                                            </b-card-footer>
                                         </b-card>
 
                                     </div>
@@ -198,7 +201,9 @@
                                                                 <div class="small">G.{{ devil.grade }} <span v-for="n in devil.rarity">&#9733;</span></div>
                                                         </div>
                                                     </div>
-        
+                                                    <b-card-footer class="p-1 text-right small">
+                                                        {{ c.mag==0?'NO_DATA':('&diams; '+formatPrice(c.mag)) }}
+                                                   </b-card-footer>
                                                 </b-card>
 
                                             </div>
@@ -251,7 +256,7 @@
         <div class="small text-right">Last Updated: {{ updated_at }}</div>
     </div>
 
-    <script src="js/app.js?t=180304-1"></script>
+    <script src="js/app.js?t=180306-1"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
