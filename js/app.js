@@ -860,7 +860,7 @@ const messages = {
             reverse:'逆向',
             normal:'順向',
             reverse_fusion: '逆向合體',
-            normal_fusion: '順向合体',
+            normal_fusion: '順向合體',
             devil: '惡魔',
             setting:'設定',
             language: '語言',
