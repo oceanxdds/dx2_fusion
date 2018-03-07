@@ -11,7 +11,8 @@
   "devDependencies": {
     "bootstrap": "^4.0.0",
     "bootstrap-vue": "^2.0.0-rc.1",
-    "vue": "^2.5.13"
+    "vue": "^2.5.13",
+    "vue-i18n": "^7.4.2"
   },
   "dependencies": {}
 }

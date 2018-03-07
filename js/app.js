@@ -20,7 +20,7 @@ var ddd = [
             ['墮天使','聖獸']
         ],
         devils:[
-            {   name:'メタトロン',       name_tw:'梅塔特隆',   rarity:5,   grade:99,  icon:'daitensi_metatoron.png'     },
+            {   name:'メタトロン',       name_tw:'梅塔特隆', name_en:'Metatron',   rarity:5,   grade:99,  icon:'daitensi_metatoron.png'     },
             {   name:'ミカエル',        name_tw:'米迦勒',      rarity:5,    grade:90, icon:'daitensi_mikaeru.png'     },
             {   name:'アズラエル',      name_tw:'阿斯萊爾',    rarity:4,    grade:67, icon:'daitensi_azuraeru.png'            },
             {   name:'サンダルフォン',   name_tw:'聖達芬',     rarity:4,           grade:61, icon:'daitensi_sandaruhuon.png'         },
@@ -574,23 +574,18 @@ var ddd = [
     }
 ];
 
-
 var Devil = function(devil){
     
     this.name = devil.name;
     this.name_tw = devil.name_tw;
+    this.name_en = devil.name_en;
     this.rarity = devil.rarity;
     this.grade = devil.grade;
     this.icon = devil.icon;
 };
 
-Devil.prototype.fission = function(){
-
-    console.log('fission');
-}
 
 // Initialize
-
 
 var race_data = {};
 var devil_data = [];
@@ -603,8 +598,6 @@ ddd.forEach(function(r){
     r.devils.forEach(function(d, idx){
 
         r.devils[idx] = new Devil(d);
-        //d.fission();
-        //console.log(d);
     });
 });
 
@@ -612,6 +605,7 @@ ddd.forEach(function(r){
     r.formula.forEach(function(f){
         f[0] = race_data[f[0]];
         f[1] = race_data[f[1]];
+        formula_data.push({target:r, r1:f[0], r2:f[1]});
     });
 });
 
@@ -708,19 +702,19 @@ function find_bom(d1){
     var formula = this.formula = [];
     this.devil = d1;
 
+    // Target Race Loop
     d1.race.usage.forEach(function(u){
 
-        // Target Race Loop
+        // Target Devil Loop
         u.target.devils.forEach(function(target){
 
             var f_mats = [];
-
-            // Target Devil Loop
+            
             u.r2s.forEach(function(r2){
 
+                // Pair Devil Loop
                 r2.devils.forEach(function(d2){
 
-                    // Pair Devil Loop
                     var obj = combine(d1, d2, target);
 
                     if(obj)
@@ -745,6 +739,7 @@ function find_bom(d1){
             }
         });
     });
+
 }
 
 function combine(d1, d2, target){
@@ -828,15 +823,62 @@ function getCookie(name)
      if(arr != null) return unescape(arr[2]); return null;
 
 }
-
-// application
-
-Vue.component('devil',{
-    props:['devil','bom','parse-reset','usage','fission'],
-    template:'#template_devil'
+// Ready translated locale messages
+const messages = {
+    en: {
+      message: {
+        reverse:'Reverse',
+        normal:'Normal',
+        reverse_fusion: 'Reverse Fusion',
+        normal_fusion: 'Normal Fusion',
+        devil: 'Devil',
+        setting:'Setting',
+        language: 'Language',
+        downgrade_fusion: 'Downgrade Fusion',
+        allow: 'Allow',
+        deny: 'Deny',
+        search:'Search'
+      }
+    },
+    ja: {
+      message: {
+        reverse:'逆引き',
+        normal:'通常',
+        reverse_fusion: '逆引き合体',
+        normal_fusion: '通常合体',
+        devil: '仲魔',
+        setting:'環境',
+        language: '言語',
+        downgrade_fusion: 'ダウングレイド合体',
+        allow: '許可する',
+        deny: '許可しない',
+        search:'探す'
+      }
+    },
+    tw: {
+        message:{
+            reverse:'逆向',
+            normal:'順向',
+            reverse_fusion: '逆向合體',
+            normal_fusion: '順向合体',
+            devil: '惡魔',
+            setting:'設定',
+            language: '語言',
+            downgrade_fusion: '降階合體',
+            allow:'允許',
+            deny:'不允許',
+            search:'查詢'
+        }
+    }
+  }
+  
+const i18n = new VueI18n({
+locale: 'ja', // set locale
+messages: messages // set locale messages
 });
-
+    
 var app = new Vue({
+    i18n:i18n,
     el:'#app',
     data:{
         races:ddd,
@@ -846,18 +888,19 @@ var app = new Vue({
         queue:[],
         lang_value:0,
         lang_options:[
-            {text:'日文', value:0},
-            {text:'中文', value:1}
+            {text:'日本語', value:0},
+            {text:'繁體中文', value:1}
+//            {text:'English', value:2},
         ],
         allow_down_grade:0,
         allow_down_grade_options:[
-            {text:'允許', value:1},
-            {text:'不允許', value:0}
+            {text: 'message.allow', value:1},
+            {text: 'message.deny', value:0}
         ],
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.3.6'
+        updated_at:'2018.3.7'
     },
     created:function(){
 
@@ -865,6 +908,13 @@ var app = new Vue({
         
         if(c_lang_value!=null){
             this.lang_value = c_lang_value;
+        }
+
+        switch(this.lang_value){
+            case 0: i18n.locale='ja';break;
+            case 1: i18n.locale='tw';break;
+            case 2: i18n.locale='en';break;
+            default: i18n.locale='ja';break;
         }
 
         var c_allow_down_grade = getCookie('allow_down_grade');
@@ -899,14 +949,47 @@ var app = new Vue({
             this.usage_master = new find_bom(devil);
             this.tabIndex = 2;
         },
-        formatPrice(value) {
+        formatPrice: function(value) {
             
             val = (value/1).toFixed(0);
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+        getDevilName: function(devil){
+
+            var name;
+            
+            switch(i18n.locale){
+                case 'ja': name = devil.name; break;
+                case 'tw': name = devil.name_tw; break;
+                case 'en': name = devil.name_en; break;
+                default: name = devil.name;
+            }
+            if(typeof name=='undefined')
+                name = devil.name;
+            return name;
+        },
+        getRaceName: function(race){
+            var name;
+            
+            switch(i18n.locale){
+                case 'ja': name = race.name; break;
+                case 'tw': name = race.name_tw; break;
+                case 'en': name = race.name_en; break;
+                default: name = race.name;
+            }
+            if(typeof name=='undefined')
+                name = race.name;
+            return name;
         }
     },
     watch:{
         lang_value:function(){
+
+            switch(this.lang_value){
+                case 0: i18n.locale='ja';break;
+                case 1: i18n.locale='tw';break;
+                case 2: i18n.locale='en';break;
+            }
 
             setCookie('lang_value', this.lang_value);
         },
@@ -937,3 +1020,28 @@ var app = new Vue({
         }
     }
 });
+
+Vue.component('devil',{
+    props:['devil'],
+    template:'#devil-t',
+    data: function(){
+        return app;
+    }
+});
+
+Vue.component('devil-list',{
+   props:['devils'] ,
+   template:'#devil-list-t',
+   data:function(){
+       return app;
+   }
+});
+
+Vue.component('combination',{
+   props:['c','can_fission'] ,
+   template:'#combination-t',
+   data:function(){
+       return app;
+   }
+});
+
