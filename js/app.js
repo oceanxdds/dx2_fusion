@@ -911,13 +911,11 @@ var app = new Vue({
         }
 
         switch(this.lang_value){
-            case 0: i18n.locale='ja';break;
-            case 1: i18n.locale='tw';break;
-            case 2: i18n.locale='en';break;
+            case '0': i18n.locale='ja';break;
+            case '1': i18n.locale='tw';break;
+            case '2': i18n.locale='en';break;
             default: i18n.locale='ja';break;
         }
-
-        console.log(this.lang_value+' '+i18n.locale);
 
         var c_allow_down_grade = getCookie('allow_down_grade');
 
