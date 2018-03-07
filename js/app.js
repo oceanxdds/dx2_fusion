@@ -917,6 +917,8 @@ var app = new Vue({
             default: i18n.locale='ja';break;
         }
 
+        console.log(this.lang_value+' '+i18n.locale);
+
         var c_allow_down_grade = getCookie('allow_down_grade');
 
         if(c_allow_down_grade!=null){
