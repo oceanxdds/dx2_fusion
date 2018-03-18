@@ -11,7 +11,7 @@ Publish: https://oceanxdds.github.io/dx2_fusion/
 var ddd = [
     {
         name:'大天使',
-        formula:[
+        formulas:[
             ['神獸','女神'],
             ['神獸','魔神'],
             ['聖獸','女神'],
@@ -29,7 +29,7 @@ var ddd = [
     },
     {
         name:'女神',
-        formula:[
+        formulas:[
             ['聖獸','大天使'],
             ['聖獸','神獸'],
             ['地母神','魔神'],
@@ -51,11 +51,33 @@ var ddd = [
             {                name:'ハトホル',          name_tw:'哈索爾',      rarity:2,                grade:27, icon:'megami_htohoru.png'            }
         ]
     },
+    /*
+    {
+        name:'靈鳥',              //180323 update add
+        formulas:[
+            ['神獸','大天使'],
+            ['天使','神獸'],
+            ['妖魔','女神'],
+            ['魔獸','神獸'],
+            ['妖精','龍王'],
+            ['妖精','魔獸'],
+            ['鬼女','聖獸'],
+            ['夜魔','妖鬼'],
+            ['邪神','夜魔'],
+            ['妖獸','妖魔'],
+            ['妖獸','龍王'],
+            ['魔王','妖魔']
+        ],
+        devils:[
+            {                name:'???',         name_tw:'???',       rarity:5,                grade:1, icon:''            }
+        ]
+    },
+    */
     {
         name:'魔神',
-        formula:[
+        formulas:[
             ['女神','大天使'],
-            ['神獸','大天使'],
+            ['神獸','大天使'],     //180323 update remove
             ['破壞神','女神'],
             ['地母神','大天使'],
             ['魔獸','大天使'],
@@ -76,7 +98,7 @@ var ddd = [
     },
     {
         name:'神獸',
-        formula:[
+        formulas:[
             ['聖獸','魔神'],
             ['地母神','聖獸'],
             ['龍王','幻魔'],
@@ -98,7 +120,7 @@ var ddd = [
     },
     {
         name:'聖獸',
-        formula:[
+        formulas:[
             ['破壞神','神獸'],
             ['鬼神','神獸'],
             ['天使','幻魔'],
@@ -123,7 +145,7 @@ var ddd = [
     },
     {
         name:'幻魔',
-        formula:[
+        formulas:[
             ['魔神','女神'],
             ['地母神','神獸'],
             ['地母神','破壞神'],
@@ -133,7 +155,7 @@ var ddd = [
             ['邪神','地母神'],
             ['邪神','鬼神'],
             ['妖獸','鬼神'],
-            ['妖獸','妖魔'],
+            ['妖獸','妖魔'],  //180323 update remove
             ['外道','神獸'],
             ['外道','墮天使'],
             ['魔王','神獸'],
@@ -151,7 +173,7 @@ var ddd = [
     },
     {
         name:'破壞神',
-        formula:[
+        formulas:[
             ['地母神','女神'],
             ['鬼神','大天使'],
             ['鬼神','魔神'],
@@ -175,7 +197,7 @@ var ddd = [
     },
     {
         name:'地母神',
-        formula:[
+        formulas:[
             ['破壞神','幻魔'],
             ['鬼神','女神'],
             ['鬼神','聖獸'],
@@ -183,10 +205,10 @@ var ddd = [
             ['墮天使','大天使'],
             ['妖鬼','破壞神'],
             ['鬼女','魔神'],
-            ['鬼女','聖獸'],
+            ['鬼女','聖獸'],      //180323 update remove
             ['鬼女','破壞神'],
             ['鬼女','鬼神'],
-            ['邪神','夜魔'],
+            ['邪神','夜魔'],      //180323 update remove
             ['魔王','鬼女'],
             ['魔王','夜魔']
         ],
@@ -201,16 +223,16 @@ var ddd = [
     },
     {
         name:'鬼神',
-        formula:[
+        formulas:[
             ['幻魔','神獸'],
             ['破壞神','聖獸'],
-            ['妖魔','女神'],
+            ['妖魔','女神'],      //180323 update remove
             ['龍王','聖獸'],
             ['妖鬼','魔神'],
             ['妖鬼','神獸'],
             ['鬼女','龍王'],
             ['夜魔','地母神'],
-            ['夜魔','妖鬼'],
+            ['夜魔','妖鬼'],      //180323 update remove
             ['邪神','龍王'],
             ['外道','魔神'],
             ['魔王','龍王']
@@ -227,7 +249,7 @@ var ddd = [
     },
     {
         name:'天使',
-        formula:[
+        formulas:[
             ['幻魔','女神'],
             ['妖魔','聖獸'],
             ['妖精','神獸'],
@@ -253,10 +275,10 @@ var ddd = [
     },
     {
         name:'妖魔',
-        formula:[
+        formulas:[
             ['幻魔','聖獸'],
             ['鬼神','幻魔'],
-            ['妖精','龍王'],
+            ['妖精','龍王'],      //180323 update remove
             ['墮天使','幻魔'],
             ['妖鬼','天使'],
             ['邪神','聖獸'],
@@ -278,10 +300,10 @@ var ddd = [
     },
     {
         name:'龍王',
-        formula:[
-            ['天使','神獸'],
+        formulas:[
+            ['天使','神獸'],      //180323 update remove
             ['妖魔','幻魔'],
-            ['魔獸','神獸'],
+            ['魔獸','神獸'],      //180323 update remove
             ['妖精','聖獸'],
             ['妖精','幻魔'],
             ['妖鬼','墮天使'],
@@ -303,7 +325,7 @@ var ddd = [
     },
     {
         name:'魔獸',
-        formula:[
+        formulas:[
             ['龍王','大天使'],
             ['龍王','神獸'],
             ['墮天使','鬼神'],
@@ -328,7 +350,7 @@ var ddd = [
     },
     {
         name:'妖精',
-        formula:[
+        formulas:[
             ['妖魔','神獸'],
             ['妖魔','天使'],
             ['龍王','女神'],
@@ -356,7 +378,7 @@ var ddd = [
     },
     {
         name:'墮天使',
-        formula:[
+        formulas:[
             ['魔神','大天使'],
             ['魔獸','天使'],
             ['魔獸','妖魔'],
@@ -382,7 +404,7 @@ var ddd = [
     },
     {
         name:'妖鬼',
-        formula:[
+        formulas:[
             ['妖魔','大天使'],
             ['魔獸','龍王'],
             ['妖精','破壞神'],
@@ -408,7 +430,7 @@ var ddd = [
     },
     {
         name:'鬼女',
-        formula:[
+        formulas:[
             ['妖魔','鬼神'],
             ['龍王','地母神'],
             ['龍王','鬼神'],
@@ -432,7 +454,7 @@ var ddd = [
     },
     {
         name:'夜魔',
-        formula:[
+        formulas:[
             ['天使','鬼神'],
             ['龍王','妖魔'],
             ['妖精','魔神'],
@@ -440,9 +462,9 @@ var ddd = [
             ['妖鬼','妖精'],
             ['鬼女','幻魔'],
             ['妖獸','魔神'],
-            ['妖獸','龍王'],
+            ['妖獸','龍王'],      //180323 update remove
             ['妖獸','墮天使'],
-            ['魔王','妖魔'],
+            ['魔王','妖魔'],      //180323 update remove
             ['魔王','妖精'],
             ['魔王','妖獸'],
             ['幽鬼','妖獸']
@@ -460,7 +482,7 @@ var ddd = [
     },
     {
         name:'邪神',
-        formula:[
+        formulas:[
             ['天使','破壞神'],
             ['妖獸','魔獸'],
             ['外道','地母神'],
@@ -478,9 +500,9 @@ var ddd = [
     },
     {
         name:'妖獸',
-        formula:[
+        formulas:[
             ['幻魔','大天使'],
-            ['妖精','魔獸'],
+            ['妖精','魔獸'],      //180323 update remove
             ['妖鬼','大天使'],
             ['鬼女','墮天使'],
             ['夜魔','魔神'],
@@ -505,7 +527,7 @@ var ddd = [
     },
     {
         name:'外道',
-        formula:[
+        formulas:[
             ['妖精','地母神'],
             ['鬼女','天使'],
             ['鬼女','魔獸'],
@@ -526,7 +548,7 @@ var ddd = [
     },
     {
         name:'魔王',
-        formula:[
+        formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
             ['破壞神','魔神'],
@@ -547,7 +569,7 @@ var ddd = [
     },
     {
         name:'幽鬼',
-        formula:[
+        formulas:[
             ['魔獸','女神'],
             ['妖精','女神'],
             ['邪神','大天使'],
@@ -584,34 +606,281 @@ var Devil = function(devil){
     this.icon = devil.icon;
 };
 
+Devil.prototype.showName = function(){
+    
+    var name;
+            
+    switch(i18n.locale){
+        case 'ja': name = this.name; break;
+        case 'tw': name = this.name_tw; break;
+        case 'en': name = this.name_en; break;
+        default: name = this.name;
+    }
+    if(!name)
+        name = this.name;
+
+    return name;
+}
+
+Devil.prototype.showGrade = function(){
+    
+    return 'G.'+this.grade;
+}
+
+Devil.prototype.fission_formulas = function(){
+    
+    var devil = this;
+    
+    var formulas = [];
+  
+    this.race.formulas.forEach(function(f){
+
+        var r1 = f[0];
+        var r2 = f[1];
+
+        var boms = [];
+
+        r1.devils.forEach(function(d1){
+            r2.devils.forEach(function(d2){
+
+                var bom = DevilBom.bom(devil,d1,d2);
+
+                if(bom)
+                    boms.push(bom);
+            });
+        });
+
+        boms.sort(function(bom1,bom2){
+            return bom1.order - bom2.order;
+        });
+
+        if(boms.length>0){
+            formulas.push({
+                'name': r1.name + ' x ' + r2.name,
+                'boms':boms
+            });
+        }
+
+    });
+
+    return formulas;
+}
+
+Devil.prototype.fusion_formulas = function(){
+
+    var d1 = this;
+    var multi_formulas = [];
+
+    // Target Race Loop
+    this.race.usage.forEach(function(u){
+
+        // Target Devil Loop
+        u.target.devils.forEach(function(target){
+
+            var formulas = [];
+           
+            u.r2s.forEach(function(r2){
+
+                var boms = [];
+
+                // Pair Devil Loop
+                r2.devils.forEach(function(d2){
+
+                    var bom = DevilBom.bom(target, d1, d2);
+
+                    if(bom)
+                        boms.push(bom)
+                });
+
+                boms.sort(function(c1,c2){
+                    return c1.order - c2.order;
+                });
+
+                if(boms.length>0){
+
+                    formulas.push({
+                        'name': d1.race.name + ' x ' + r2.name,
+                        'boms': boms
+                    });
+                }
+            });
+            
+            if(formulas.length>0){
+                multi_formulas.push({
+                    devil:target,
+                    formulas:formulas
+                });
+            }
+        });
+
+    });
+
+    return multi_formulas;
+}
+
+var Race = function(race){
+    
+    this.name = race.name;
+    this.formulas = race.formulas;
+    this.devils = race.devils;
+}
+
+Race.prototype.showName = function(){
+
+    var name;
+            
+    switch(i18n.locale){
+        case 'ja': name = this.name; break;
+        case 'tw': name = this.name_tw; break;
+        case 'en': name = this.name_en; break;
+        default: name = this.name;
+    }
+    if(!name)
+        name = this.name;
+    return name;
+}
+
+
+function DevilBom(devil, d1, d2){
+
+    this.devil = devil;
+    this.child1 = d1==null?null:new DevilBom(d1);
+    this.child2 = d2==null?null:new DevilBom(d2);
+    this.order = 0;
+    this.upgrade = false;
+    this.downgrade = false;
+    this.mag = 0;
+    
+    this.init();
+}
+
+DevilBom.prototype.set = function(bom){
+
+    this.child1 = bom.child1;
+    this.child2 = bom.child2;
+    this.order = bom.order;
+    this.upgrade = bom.upgrade;
+    this.downgrade = bom.downgrade;
+    this.mag = bom.mag;
+}
+
+DevilBom.prototype.unset = function(){
+
+    this.child1 = null;
+    this.child2 = null;
+    this.order = 0;
+    this.upgrade = false;
+    this.downgrade = false;
+    this.mag = 0;
+}
+
+DevilBom.prototype.init = function(){
+
+    if(this.child1 && this.child2){
+
+        var devil = this.devil;
+        var d1 = this.child1.devil;
+        var d2 = this.child2.devil;
+        
+        this.order = (d1.rarity>d2.rarity) 
+            ? (d1.rarity*10+d2.rarity) 
+            : (d2.rarity*10+d1.rarity);
+        this.upgrade = (d1.rarity < devil.rarity && d2.rarity < devil.rarity);
+        this.downgrade = (d1.rarity > devil.rarity || d2.rarity > devil.rarity);
+
+        var g = (d1.grade + d2.grade)/2;
+        var A = B = 0;
+        var r = (devil.rarity*2)-d1.rarity-d2.rarity;
+
+        A = [
+            //-1 ~ 4
+            [5,     5,          5,          5,          5,          5],
+            [5,     5,          25,         50,         0,          0],
+            [250,   500,        2500,       5000,       5200,       5400],
+            [0,     6000,       150000,     300000,     320000,     0],
+            [0,     60000,      1500000,    3000000,    4200000,    0]
+        ][devil.rarity-1][r+1];
+
+        B = [0,0,0.3,0.45,60,75,1080,1260,14400,16200][Math.floor(devil.grade/10)];
+
+        this.mag = Math.floor(A + (devil.grade-g) * B);
+
+        if( A==0 )
+            this.mag = 0;
+    }
+    else{
+        this.order = 0;
+        this.upgrade = false;
+        this.downgrade = false;
+        this.mag = 0;
+    }
+};
+
+DevilBom.prototype.showMag = function(){
+
+    var mag = this.mag;
+
+    return mag==0 ? 'NO DATA' : 'MAG: '+(mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+DevilBom.prototype.caculate_mag = function(bom){
+
+    var mag = 0;
+    if(bom){
+        mag += bom.mag;
+        if(bom.child1)      mag += this.caculate_mag(bom.child1);
+        if(bom.child2)      mag += this.caculate_mag(bom.child2);
+    }
+    return mag;
+};
+
+DevilBom.prototype.showTotalMag = function(){
+
+    var mag = this.caculate_mag(this);
+
+    return mag==0 ? 'NO DATA' : 'Total MAG: '+(mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+DevilBom.bom = function(devil, d1, d2){
+
+    var g = (d1.grade + d2.grade)/2;
+
+    if( ! (devil.min <= g && g < devil.max ) ){
+        return null;
+    }
+    
+    if( app.allow_down_grade==0 && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
+        return null;
+    }
+
+    return new DevilBom(devil, d1, d2);
+}
 
 // Initialize
 
 var race_data = {};
 var devil_data = [];
-var formula_data = [];
 
-// build race_data & replace formula name with race_data
-ddd.forEach(function(r){
-    race_data[r.name] = r;
+// build race_data
 
-    r.devils.forEach(function(d, idx){
-
-        r.devils[idx] = new Devil(d);
+ddd = ddd.map(function(r){
+    
+    r.devils = r.devils.map(function(d){
+        return new Devil(d);
     });
+    race_data[r.name] = r;
+    return new Race(r);
+
 });
 
 ddd.forEach(function(r){
-    r.formula.forEach(function(f){
+
+    r.formulas.forEach(function(f){
         f[0] = race_data[f[0]];
         f[1] = race_data[f[1]];
-        formula_data.push({target:r, r1:f[0], r2:f[1]});
     });
-});
 
-// 1. caculate devils's grade range (bom)
-// 2. build devil_data (search)
-// 3. build 
+});
 
 ddd.forEach(function(r1){
 
@@ -627,7 +896,7 @@ ddd.forEach(function(r1){
 
     ddd.forEach(function(target){
 
-        target.formula.forEach(function(f){
+        target.formulas.forEach(function(f){
             
             var r2 = null;
 
@@ -657,90 +926,8 @@ ddd.forEach(function(r1){
         })
     }
 });
-// sub fucntion
 
-function bom(devil){
 
-    this.devil = devil;
-    this.formula = formula = [];
-  
-    this.devil.race.formula.forEach(function(f){
-
-        var r1 = f[0];
-        var r2 = f[1];
-
-        var f_name = r1.name + ' x ' + r2.name;
-        var f_mats = [];
-
-        r1.devils.forEach(function(d1){
-            r2.devils.forEach(function(d2){
-
-                var obj = combine(d1,d2,devil);
-
-                if(obj)
-                    f_mats.push(obj);
-            });
-        });
-
-        f_mats.sort(function(c1,c2){
-            return c1.order - c2.order;
-        });
-
-        var obj = {
-            'name': f_name,
-            'combination':f_mats
-        }
-
-        if(f_mats.length>0)
-            formula.push(obj);
-    });
-   
-}
-
-function find_bom(d1){
-    
-    var formula = this.formula = [];
-    this.devil = d1;
-
-    // Target Race Loop
-    d1.race.usage.forEach(function(u){
-
-        // Target Devil Loop
-        u.target.devils.forEach(function(target){
-
-            var f_mats = [];
-            
-            u.r2s.forEach(function(r2){
-
-                // Pair Devil Loop
-                r2.devils.forEach(function(d2){
-
-                    var obj = combine(d1, d2, target);
-
-                    if(obj)
-                        f_mats.push(obj)
-                });
-            });
-
-            f_mats.sort(function(c1,c2){
-                return c1.order - c2.order;
-            });
-
-            var obj = {
-                'target':target,
-                'upgrade':target.rarity > d1.rarity,
-                'downgrade':target.rarity < d1.rarity,
-                'combination':f_mats
-            }
-
-            if(f_mats.length>0){
-
-                formula.push(obj);
-            }
-        });
-    });
-
-}
 
 function combine(d1, d2, target){
 
@@ -763,48 +950,24 @@ function combine(d1, d2, target){
         'downgrade':(d1.rarity > target.rarity || d2.rarity > target.rarity),
         'mag':0
     };
-
-    if(target.rarity==5){
-
-    }
-    else if(target.rarity==4){
-
-    }
     
     A = B = 0;
     r = (target.rarity*2)-d1.rarity-d2.rarity;
 
-    switch(target.rarity){
-        case 1: A=5;    break;
-        case 2: if(r==2) A=50;
-                if(r==1) A=25;
-                if(r==0) A=5;
-                if(r==-1)A=5;
-                break;
-        case 3: if(r==4) A=5400;
-                if(r==3) A=5200; 
-                if(r==2) A=5000; 
-                if(r==1) A=2500;
-                if(r==0) A=500;
-                if(r==-1)A=250;
-                break;
-        case 4: if(r==2) A=300000; 
-                if(r==1) A=150000;
-                if(r==0) A=30000;
-                if(r==-1)A=15000;
-                break;
-        case 5: if(r==3) A=4200000;
-                if(r==2) A=3000000; 
-                if(r==1) A=1500000;
-                if(r==0) A=300000;
-                break;
-    }
+    A = [
+        //-1 ~ 4
+        [5,     5,          5,          5,          5,          5],     //R1
+        [5,     5,          25,         50,         0,          0],     //R2
+        [250,   500,        2500,       5000,       5200,       5400],  //R3
+        [0,     6000,       150000,     300000,     320000,     0],     //R4
+        [0,     60000,      1500000,    3000000,    4200000,    0]      //R5
+    ][target.rarity-1][r+1];
 
-    B = [0,0,0.3,0.45,60,75,1080,1260,14400,0][Math.floor(target.grade/10)];
+    B = [0,0,0.3,0.45,60,75,1080,1260,14400,16200][Math.floor(target.grade/10)];
 
     obj.mag = Math.floor(A + (target.grade-g) * B);
 
-    if( A==0 || (target.rarity>1 && B==0) )
+    if( A==0 )
         obj.mag = 0;
 
     return obj;
@@ -883,8 +1046,18 @@ var app = new Vue({
     data:{
         races:ddd,
         devils:devil_data,
-        master:null,
-        usage_master:null,
+        
+        fission_target:null,
+        fission_options:null,
+
+        fusion_target:null,
+        fusion_options:null,
+        
+        builder_target:null,
+        builder_options:null,
+
+        current_bom:null,
+
         queue:[],
         lang_value:0,
         lang_options:[
@@ -900,7 +1073,7 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.3.7'
+        updated_at:'2018.3.18'
     },
     created:function(){
 
@@ -934,52 +1107,59 @@ var app = new Vue({
                 this.queue.push(devil);
             }
 
-            this.master = new bom(devil);
+            this.fission_target = devil,
+            this.fission_options = devil.fission_formulas();
             this.tabIndex = 1;
+        },
+        start_bom: function(devil){
+          
+            this.builder_target = new DevilBom(devil);
+            this.current_bom = null;
+            this.builder_options = null;
+            this.tabIndex = 1;
+
+            this.list_bom(this.builder_target);
+        },
+        list_bom: function(bom){
+
+            if(this.current_bom==bom){
+                this.cancel_choose();
+            }
+            else{
+                this.current_bom = bom;
+                this.builder_options = bom.devil.fission_formulas();
+            }
+        },
+        reset_bom:function(bom){
+
+            bom.unset();
+            this.current_bom = null;
+            this.builder_options = null;
+        },
+        choose_bom: function(bom){
+
+            this.current_bom.set(bom);
+            this.current_bom = null;
+            this.builder_options = null;
+        },
+        cancel_choose: function(){
+
+            this.current_bom = null;
+            this.builder_options = null;
         },
         preview : function(index){
             
             if(index == this.queue.length-1 && index>0){
                this.queue.pop();
-               this.master = new bom(this.queue[this.queue.length-1]);
+               this.fission_target = this.queue[this.queue.length-1];
+               this.fission_options = this.fission_target.fission_formulas();
             }
         },
         fusion : function(devil){
 
-            this.usage_master = new find_bom(devil);
+            this.fusion_target = devil;
+            this.fusion_options = devil.fusion_formulas();
             this.tabIndex = 2;
-        },
-        formatPrice: function(value) {
-            
-            val = (value/1).toFixed(0);
-            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        },
-        getDevilName: function(devil){
-
-            var name;
-            
-            switch(i18n.locale){
-                case 'ja': name = devil.name; break;
-                case 'tw': name = devil.name_tw; break;
-                case 'en': name = devil.name_en; break;
-                default: name = devil.name;
-            }
-            if(typeof name=='undefined')
-                name = devil.name;
-            return name;
-        },
-        getRaceName: function(race){
-            var name;
-            
-            switch(i18n.locale){
-                case 'ja': name = race.name; break;
-                case 'tw': name = race.name_tw; break;
-                case 'en': name = race.name_en; break;
-                default: name = race.name;
-            }
-            if(typeof name=='undefined')
-                name = race.name;
-            return name;
         }
     },
     watch:{
@@ -995,11 +1175,14 @@ var app = new Vue({
         },
         allow_down_grade:function(){
 
-            if(this.master!=null)
-                this.master = new bom(this.master.devil);
-            if(this.usage_master!=null)
-                this.usage_master = new find_bom(this.usage_master.devil);
-            
+            if(this.current_bom!=null){
+                this.builder_options = this.current_bom.devil.fission_formulas();
+            }
+                
+            if(this.fusion_target!=null){
+                this.fusion_options = this.fusion_target.fusion_formulas();
+            }
+                
             setCookie('allow_down_grade', this.allow_down_grade);
         }
     },
@@ -1017,31 +1200,92 @@ var app = new Vue({
             }
 
             return result;
+        },
+        builder_total_mag: function(){
+            
+            return this.builder_target?this.builder_target.showTotalMag():'';
         }
     }
 });
 
 Vue.component('devil',{
-    props:['devil'],
+    props:['devil','usage'],
     template:'#devil-t',
-    data: function(){
-        return app;
+    methods:{
+        click:function(){
+            if(this.usage=='fission'){
+                app.start_bom(this.devil);
+            }
+            if(this.usage=='builder'){
+                this.$emit('click');
+            }
+        }
     }
 });
 
 Vue.component('devil-list',{
-   props:['devils'] ,
-   template:'#devil-list-t',
-   data:function(){
-       return app;
-   }
+    props:['devils','usage'] ,
+    template:'#devil-list-t',
+    methods:{
+        click:function(devil){
+            if(this.usage=='fission'){
+                app.fission(devil);
+            }
+            if(this.usage=='builder'){
+                this.start_bom(devil);
+            }
+        },
+        fusion:function(devil){
+            app.fusion(devil);
+        },
+        fission:function(devil){
+            app.fission(devil, true);
+        },
+        start_bom:function(devil){
+            app.start_bom(devil);
+        }
+    }
 });
 
-Vue.component('combination',{
-   props:['c','can_fission'] ,
-   template:'#combination-t',
-   data:function(){
-       return app;
-   }
+Vue.component('devil-bom',{
+    props:['bom','usage'],
+    template:'#devil-bom-t',
+    methods:{
+        click:function(){
+            if(this.usage=='builder')
+                this.choose_bom(this.bom);
+        },
+        choose_bom: function(){
+            app.choose_bom(this.bom);
+        },
+        cancel_choose: function(){
+            app.cancel_choose();
+        }
+    }
 });
 
+Vue.component('devil-bom-list',{
+    props:['boms','usage'],
+    template:'#devil-bom-list-t'
+});
+
+Vue.component('devil-bom-builder',{
+    props:['bom'],
+    template:'#devil-bom-builder-t',
+    methods:{
+        list_bom:function(bom){
+            app.list_bom(bom);
+        },
+        reset_bom:function(bom){
+            app.reset_bom(bom);
+        },
+        is_current:function(){
+            return this.bom==app.current_bom;
+        }
+    }
+});
+
+Vue.component('devil-bom-options',{
+    props:['options','usage'],
+    template:'#devil-bom-options-t'
+});

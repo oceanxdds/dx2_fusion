@@ -13,6 +13,35 @@
     [v-cloak] {
       display: none;
     }
+     /* Extra Small Devices, Phones */ 
+     @media (max-width: 575.98px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .border-left-md-none{
+            border-left-width: 0px !important;
+        }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        .border-left-md-none{
+            border-left-width: 0px !important;
+        }
+    }
+    /* Extra Large Devices */
+    @media (min-width: 1200px) {
+        .border-left-md-none{
+            border-left-width: 0px !important;
+        }
+    }
     </style>
     <script src="js/vue.min.js"></script>
     <script src="js/bootstrap-vue.min.js"></script>
@@ -23,12 +52,12 @@
 <body>
 
     <!--Main-->
-    <div class="container px-0" id="app" v-cloak>
+    <div class="container-fluid px-0" style="max-width:1920px" id="app" v-cloak>
 
         <b-card no-body>
             <b-tabs card v-model="tabIndex" content-class="p-2">
 
-                <!--tab1-->
+                <!--tab1 devil-->
 
                 <b-tab :title="$t('message.devil')" no-body>
                     
@@ -36,119 +65,59 @@
 
                     <b-card no-body v-show="keyword==''" class="mt-2">
                         <b-tabs pills card content-class="">
-                            <b-tab :title="getRaceName(race)" v-for="race in races" no-body>
-                            
-                                <devil-list :devils="race.devils"></devil-list>
-
+                            <b-tab :title="race.showName()" v-for="race in races" no-body>
+                                <devil-list :devils="race.devils" usage="fission"></devil-list>
                             </b-tab>
                         </b-tabs>
                     </b-card>
 
                     <b-card no-body v-show="keyword">
-                        
-                        <devil-list :devils="filtered_devil_data"></devil-list>
-
+                        <devil-list :devils="filtered_devil_data" usage="fission"></devil-list>
                     </b-card>
 
                 </b-tab>
 
-                <!--tab2-->
+                <!--tab2 fission/builder-->
                 
                 <b-tab :title="$t('message.reverse')" no-body>
-                    
-                    <b-card no-body v-if="master">
-                         
-                        <b-card-header class="p-0">
-
-                            <div class="row no-gutters">
-                                <div class="col-6 col-md-4 col-lg-3 p-2" v-for="(devil, idx) in queue" >
-    
-                                    <b-card no-body>
-                                        <b-card-body class="p-2" @click="preview(idx)"
-                                            :class="{'border-primary':idx==queue.length-1,'text-primary':idx==queue.length-1}"
-                                            :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" 
-                                            style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain">
-                                            <div class="font-weight-bold">
-                                                {{ getDevilName( devil ) }}
-                                            </div>
-                                            <div class="small">
-                                                {{ 'G.'+devil.grade }}
-                                                <span v-for="n in devil.rarity">&#9733;</span>
-                                            </div>
-                                        </b-card-body>
-                                    </b-card>
-    
-                                </div><!--col-->
-                            </div><!--row-->
-                        </b-card-header>
-
+                    <b-card no-body v-if="builder_target">
                         <b-list-group flush>
-                            <b-list-group-item v-for="f in master.formula" class="p-0">
-
-                                <div class="row no-gutters pt-2">
-                                    <div class="col-12 p-2 text-center text-sm-left">{{ f.name }}</div>
-                                    <div class="col-12 col-md-6 col-lg-4 p-2" v-for="c in f.combination">
-
-                                       <combination :c="c" can_fission="true"></combination>
-
-                                    </div>
-                                </div>
-
+                            <b-list-group-item class="p-2">
+                                {{ builder_total_mag }}
+                            </b-list-group-item>    
+                            <b-list-group-item class="p-2">
+                                <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
+                            </b-list-group-item>
+                            <b-list-group-item class="p-0" v-if="builder_options">
+                                <devil-bom-options :options="builder_options" usage="builder"></devil-bom-options>
                             </b-list-group-item>
                         </b-list-group>
-
                     </b-card>
-
                 </b-tab>
 
-                <!--tab3-->
+                <!--tab3 fusion-->
 
                 <b-tab :title="$t('message.normal')" no-body>
-                    
-                    <b-card v-if="usage_master" no-body>
 
-                        <b-list-group flush>
-                            <b-list-group-item v-for="f in usage_master.formula" class="p-0">
+                    <b-card no-body v-for="options in fusion_options" class="my-3">
 
-                                <div class="row no-gutters">
-                                    <div class="col-6 col-sm-4 p-2">
-
-                                        <b-card no-body>
-                                            <b-card-body class="p-2"
-                                                :class="{'border-primary':f.upgrade, 'text-primary':f.upgrade, 'border-danger': f.downgrade, 'text-danger':f.downgrade}"
-                                                :style="{backgroundImage:'url(\'images/devil/'+f.target.icon+'\')'}" 
-                                                style="background-position:right;background-repeat:no-repeat;background-size:contain">
-                                                <div class="font-weight-bold">
-                                                    {{ getDevilName( f.target ) }}
-                                                </div>
-                                                <div class="small">
-                                                    {{ 'G.'+f.target.grade }}
-                                                    <span v-for="n in f.target.rarity">&#9733;</span>
-                                                </div>
-                                            </b-card-body>
-                                        </b-card>
-
-                                    </div>
-                                    <div class="col-12 col-sm-8">
-
-                                        <div class="row no-gutters">
-                                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-2" v-for="c in f.combination">
-        
-                                                <combination :c="c"></combination>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
+                        <b-card-header class="p-2">
+                            <div class="row no-gutters justify-content-center">
+                                <div class="col-auto">
+                                    <devil :devil="options.devil" usage="fusion" style="width:200px"></devil>
                                 </div>
+                            </div>
+                            
+                        </b-card-header>
+                        <b-card-body class="p-0">
+                            <devil-bom-options :options="options.formulas" usage="fusion"></devil-bom-options>
+                        </b-card-body>
 
-                            </b-list-group-item>
-                        </b-list-group>
                     </b-card>
 
                 </b-tab>
 
-                <!--tab4-->
+                <!--tab4 setting-->
 
                 <b-tab :title="$t('message.setting')" style="background:url('images/theme/berukerosu.png') no-repeat right; background-size:contain">
                 
@@ -184,55 +153,118 @@
 
             </b-tabs>
         </b-card>
-        <div class="small text-right">Last Updated: {{ updated_at }}</div>
+
+        <div class="row no-gutters">
+            <div class="col-12 p-2">
+                <div class="small text-right">Last Updated: {{ updated_at }}</div>
+            </div>  
+        </div>
+        
     </div>
 
     <script id="devil-t" type="text/x-template">
+
         <b-card no-body>
-            <b-card-body class="p-2" @click="fission(devil, true)"
-                :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" 
-                style="cursor:pointer;background-position:right;background-repeat:no-repeat;background-size:contain">
+            <b-card-body class="p-2" @click="click()"
+                :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
+                style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
-                    {{ getDevilName( devil ) }}
+                    {{ devil.showName() }}
                 </div>
                 <div class="small">
-                    {{ 'G.'+devil.grade }}
+                    {{ devil.showGrade() }}
                     <span v-for="n in devil.rarity">&#9733;</span>
                 </div>
             </b-card-body>
 
-            <b-card-footer class="p-1">
-                <b-button variant="sencondary" size="sm" @click="fusion(devil)" class="font-weight-bold">{{ $t('message.normal_fusion') }}</b-button>
-                <b-button variant="warning" size="sm" @click="fission(devil, true)" class="font-weight-bold">{{ $t('message.reverse_fusion') }}</b-button>
+            <b-card-footer class="p-1" v-if="usage=='fission'">
+                <slot></slot>
             </b-card-footer>
         </b-card>
+
     </script>
 
     <script id="devil-list-t" type="text/x-template">
+
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 p-2" v-for="devil in devils">
-                <devil :devil="devil"></devil>
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils">
+                
+                <devil :devil="devil" :usage="usage" @click="click()">
+                    <b-button variant="sencondary" size="sm" @click="fusion(devil)" class="font-weight-bold small">{{ $t('message.normal_fusion') }}</b-button>
+                    <b-button variant="warning" size="sm" @click="start_bom(devil)" class="font-weight-bold small">{{ $t('message.reverse_fusion') }}</b-button>
+                </devil>
+
+            </div>
+        </div>
+
+    </script>
+
+    <script id="devil-bom-t" type="text/x-template">
+    
+        <b-card v-if="bom" no-body :class="{'border-primary':bom.upgrade, 'border-danger':bom.downgrade}">
+            <div class="row no-gutters">
+                <div class="col-6 p-2" v-for="devil in [bom.child1.devil,bom.child2.devil]" :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
+                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" style="background-position:right;background-repeat:no-repeat;background-size:contain"
+                    @click="click()">
+                        <div class="font-weight-bold">{{ devil.showName() }}</div>
+                        <div class="small">{{ devil.showGrade() }} <span v-for="n in devil.rarity">&#9733;</span></div>
+                </div>
+            </div>
+            <b-card-footer class="p-1 text-right small">
+                <span>{{ bom.showMag() }}</span>
+            </b-card-footer>
+        </b-card>
+
+    </script>
+
+    <script id="devil-bom-list-t" type="text/x-template">
+    
+        <div class="row no-gutters">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms">
+                <devil-bom :bom="bom" :usage="usage" @click="click()"></devi-bom>
+            </div>
+        </div>
+
+    </script>
+
+    <script id="devil-bom-builder-t" type="text/x-template">
+        
+        <div class="row no-gutters" v-if="bom">
+            <div class="col-12">
+                <div class="row no-gutters justify-content-start justify-content-md-center">
+                    <div class="col-auto">
+                        <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" style="min-width:130px" :class="{'bg-warning':is_current()}"></devil>
+                    </div>
+                    <div class="col-auto">
+                        <b-button v-if="bom.child1||bom.child2" size="sm" @click="reset_bom(bom)">X</b-button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12"></div>
+            <div class="col-12 col-md-6 pl-4 pl-md-0 border-left border-left-md-none" v-if="bom.child1">
+                <devil-bom-builder :bom="bom.child1"></devil-bom-builder>
+            </div>
+            <div class="col-12 col-md-6 pl-4 pl-md-0 border-left border-left-md-none" v-if="bom.child2">
+                <devil-bom-builder :bom="bom.child2"></devil-bom-builder>
+            </div>
+        </div>
+
+    </script>
+
+    <script id="devil-bom-options-t" type="text/x-template">
+        <div>
+            <div v-for="option in options">
+                <div class="row no-gutters">
+                    <div class="col-12 p-2">
+                        {{ option.name }}
+                    </div>
+                </div>
+                <devil-bom-list :boms="option.boms" :usage="usage"></devil-bom-list>
             </div>
         </div>
     </script>
 
-    <script id="combination-t" type="text/x-template">
-        <b-card no-body :class="{'border-primary':c.upgrade, 'border-danger':c.downgrade}">
-            <div class="row no-gutters">
-                <div class="col-6 p-2" v-for="devil in [c.d1,c.d2]" :class="{'text-primary':c.upgrade,'text-danger':c.downgrade}"
-                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')'}" style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                    @click="can_fission&&fission(devil)">
-                        <div class="font-weight-bold">{{ getDevilName( devil ) }}</div>
-                        <div class="small">G.{{ devil.grade }} <span v-for="n in devil.rarity">&#9733;</span></div>
-                </div>
-            </div>
-            <b-card-footer class="p-1 text-right small">
-                {{ c.mag==0?'NO_DATA':('&diams; '+formatPrice(c.mag)) }}
-            </b-card-footer>
-        </b-card>
-    </script>
-
-    <script src="js/app.js?t=180307-2"></script>
+    <script src="js/app.js?t=180318"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
