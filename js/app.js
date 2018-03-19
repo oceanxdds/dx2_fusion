@@ -841,9 +841,7 @@ DevilBom.prototype.init = function(){
 
 DevilBom.prototype.showMag = function(){
 
-    var mag = this.mag;
-
-    return mag==0 ? 'NO DATA' : 'MAG: '+(mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return (this.mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 DevilBom.prototype.caculate_mag = function(bom){
@@ -861,7 +859,7 @@ DevilBom.prototype.showTotalMag = function(){
 
     var mag = this.caculate_mag(this);
 
-    return mag==0 ? 'NO DATA' : 'Total MAG: '+(mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return (mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 DevilBom.bom = function(devil, d1, d2){
@@ -1050,7 +1048,7 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
-        updated_at:'2018.3.18'
+        updated_at:'2018.3.19'
     },
     created:function(){
 
