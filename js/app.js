@@ -908,7 +908,7 @@ ddd.forEach(function(r1){
     r1.devils.forEach(function(d, idx){
 
         d.race = r1;
-        d.max = idx==0 ? 999 : d.grade;
+        d.max = d.grade;
         d.min = (idx==r1.devils.length-1 ? 0 : r1.devils[idx+1].grade);
         devil_data.push(d);
     });
@@ -1050,7 +1050,7 @@ var app = new Vue({
         keyword:'',
         now:new Date(),
         gate_status:false,
-        updated_at:'2018.3.19'
+        updated_at:'2018.3.20'
     },
     created:function(){
 
