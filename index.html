@@ -99,19 +99,19 @@
 
                 <b-tab :title="$t('message.normal')" no-body>
                     
-                    <div v-for="options in fusion_options">
+                    <div v-for="(options, index) in fusion_options">
 
                         <div class="p-2">
                             <div class="row no-gutters justify-content-center">
                                 <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
                                     <devil :devil="options.devil" usage="fusion" style="cursor:pointer"
-                                        v-b-toggle="'fusion_'+options.devil.showName()">
+                                        v-b-toggle="'fusion_'+index">
                                     </devil>
                                 </div>
                             </div>
                         </div>
                             
-                        <b-collapse :id="'fusion_'+options.devil.showName()" accordion="fusion_accrodion">
+                        <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion">
                             <b-card no-body style="background-color:#eee">
                                 <devil-bom-options :options="options.formulas" usage="fusion"></devil-bom-options>
                             </b-card>
