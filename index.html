@@ -169,8 +169,13 @@
             </b-tabs>
         </b-card>
 
-        <div class="row no-gutters">
-            <div class="col-12 p-2">
+        <div class="row no-gutters justify-content-between">
+            <div class="col-auto p-2">
+                <div class="font-weight-bold">
+                    <b-badge :variant="gate_status?'success':'danger'">{{ (gate_status?'OPEN':'CLOSE')+' - '+ auragate_status }}</b-badge>
+                </div>
+            </div>
+            <div class="col-auto p-2">
                 <div class="small text-right">Last Updated: {{ updated_at }}</div>
             </div>  
         </div>
@@ -285,7 +290,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180319"></script>
+    <script src="js/app.js?t=180319-2"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

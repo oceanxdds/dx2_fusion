@@ -1048,6 +1048,8 @@ var app = new Vue({
         display:true,
         tabIndex:0,
         keyword:'',
+        now:new Date(),
+        gate_status:false,
         updated_at:'2018.3.19'
     },
     created:function(){
@@ -1070,6 +1072,12 @@ var app = new Vue({
         if(c_allow_down_grade!=null){
             this.allow_down_grade = c_allow_down_grade;
         }
+
+        setInterval(function(){
+
+            app.now = new Date();
+
+        },1000);
     },
     methods:{
         
@@ -1179,6 +1187,46 @@ var app = new Vue({
         builder_total_mag: function(){
             
             return this.builder_target?this.builder_target.showTotalMag():'';
+        },
+        auragate_status:function(){
+
+            var next = new Date(this.now.getTime());
+            next.setMinutes(0);
+            next.setSeconds(0);
+            var gate_schedule = [6,11,16,18,21,23];
+            var h = this.now.getUTCHours()+8;
+            var m ;
+            var s ;
+
+            for(var i=0; i<gate_schedule.length;i++){
+                
+                var gate_hour = gate_schedule[i];
+                
+                if(h<gate_hour){
+                    next.setHours(gate_hour);
+                    this.gate_status = false;
+                    break;
+                }
+                if(h==gate_hour){
+                    next.setHours(next.getHours()+1);
+                    this.gate_status = true;
+                    break;
+                }
+                if(i==gate_schedule.length-1){
+                    gate_hour = gate_schedule[0];
+                    next.setHours(next.getHours()+24-h+gate_hour);
+                    this.gate_status = false;
+                    break;
+                }
+            }
+
+            var diff = new Date(next.getTime() - this.now.getTime());
+
+            h = diff.getUTCHours();
+            m = diff.getUTCMinutes();
+            s = diff.getUTCSeconds();
+
+            return (h+':'+m+':'+s).replace(/\b(?=(\d{1})(?!\d))/g,'0');
         }
     }
 });
