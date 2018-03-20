@@ -1049,8 +1049,11 @@ var app = new Vue({
         tabIndex:0,
         keyword:'',
         now:new Date(),
-        gate_status:false,
-        updated_at:'2018.3.20'
+        gate_status_ch:false,
+        gate_status_jp:false,
+        gate_timer_ch:null,
+        gate_timer_jp:null,
+        updated_at:'180320'
     },
     created:function(){
 
@@ -1143,7 +1146,7 @@ var app = new Vue({
             this.fusion_target = devil;
             this.fusion_options = devil.fusion_formulas();
             this.tabIndex = 2;
-        }
+        },
     },
     watch:{
         lang_value:function(){
@@ -1167,6 +1170,66 @@ var app = new Vue({
             }
                 
             setCookie('allow_down_grade', this.allow_down_grade);
+        },
+        now:function(){
+
+            var next, diff, h;
+            var gate_hours_ch = [8,11,16,18,21,23];     //TW-JPT 9,12,17,19,22,0
+            var gate_hours_jp = [6,11,16,18,21,23];     //JP-JPT 7,12,17,19,22,0
+            var h = (this.now.getUTCHours()+8)%24;
+
+            next = new Date(this.now.getTime());
+            next.setMinutes(0);
+            next.setSeconds(0);
+            
+            for(var i=0; i<gate_hours_ch.length;i++){
+                var gate_hour = gate_hours_ch[i];
+                if(h<gate_hour){
+                    next.setHours(gate_hour);
+                    this.gate_status_ch = false;
+                    break;
+                }
+                if(h==gate_hour){
+                    next.setHours(next.getHours()+1);
+                    this.gate_status_ch = true;
+                    break;
+                }
+                if(i==gate_hours_ch.length-1){
+                    gate_hour = gate_hours_ch[0];
+                    next.setHours(next.getHours()+24-h+gate_hour);
+                    this.gate_status_ch = false;
+                    break;
+                }
+            }
+            var diff = new Date(next.getTime() - this.now.getTime());
+            this.gate_timer_ch =  (diff.getUTCHours()+':'+diff.getUTCMinutes()+':'+diff.getUTCSeconds()).replace(/\b(?=(\d{1})(?!\d))/g,'0');
+
+            next = new Date(this.now.getTime());
+            next.setMinutes(0);
+            next.setSeconds(0);
+
+            for(var i=0; i<gate_hours_jp.length;i++){
+
+                var gate_hour = gate_hours_jp[i];
+                if(h<gate_hour){
+                    next.setHours(gate_hour);
+                    this.gate_status_jp = false;
+                    break;
+                }
+                if(h==gate_hour){
+                    next.setHours(next.getHours()+1);
+                    this.gate_status_jp = true;
+                    break;
+                }
+                if(i==gate_hours_jp.length-1){
+                    gate_hour = gate_hours_jp[0];
+                    next.setHours(next.getHours()+24-h+gate_hour);
+                    this.gate_status_jp = false;
+                    break;
+                }
+            }
+            diff = new Date(next.getTime() - this.now.getTime());
+            this.gate_timer_jp =  (diff.getUTCHours()+':'+diff.getUTCMinutes()+':'+diff.getUTCSeconds()).replace(/\b(?=(\d{1})(?!\d))/g,'0');
         }
     },
     computed:{
@@ -1187,35 +1250,35 @@ var app = new Vue({
         builder_total_mag: function(){
             
             return this.builder_target?this.builder_target.showTotalMag():'';
-        },
-        auragate_status:function(){
-
+        }/*,
+        gate_timer_ch:function(){
+            this.now = new Date(2018,3,20,7,30);
             var next = new Date(this.now.getTime());
             next.setMinutes(0);
             next.setSeconds(0);
-            var gate_schedule = [8,11,16,18,21,23];
+            var gate_hours_ch = [8,11,16,18,21,23];     //TW-JPT 9,12,17,19,22,0
             var h = this.now.getUTCHours()+8;
             var m ;
             var s ;
 
-            for(var i=0; i<gate_schedule.length;i++){
-                
-                var gate_hour = gate_schedule[i];
+            for(var i=0; i<gate_hours_ch.length;i++){
+
+                var gate_hour = gate_hours_ch[i];
                 
                 if(h<gate_hour){
                     next.setHours(gate_hour);
-                    this.gate_status = false;
+                    this.gate_status_ch = false;
                     break;
                 }
                 if(h==gate_hour){
                     next.setHours(next.getHours()+1);
-                    this.gate_status = true;
+                    this.gate_status_ch = true;
                     break;
                 }
-                if(i==gate_schedule.length-1){
-                    gate_hour = gate_schedule[0];
+                if(i==gate_hours_ch.length-1){
+                    gate_hour = gate_hours_ch[0];
                     next.setHours(next.getHours()+24-h+gate_hour);
-                    this.gate_status = false;
+                    this.gate_status_ch = false;
                     break;
                 }
             }
@@ -1227,7 +1290,50 @@ var app = new Vue({
             s = diff.getUTCSeconds();
 
             return (h+':'+m+':'+s).replace(/\b(?=(\d{1})(?!\d))/g,'0');
-        }
+        },
+        gate_timer_jp:function(){
+
+            var next = new Date(this.now.getTime());
+            next.setMinutes(0);
+            next.setSeconds(0);
+            var gate_hours_jp = [6,11,16,18,21,23];  //JP-JPT 7,12,17,19,22,0
+            var h = this.now.getUTCHours()+8;
+            var m ;
+            var s ;
+
+            for(var i=0; i<gate_hours_jp.length;i++){
+
+                var gate_hour = gate_hours_jp[i];
+                
+                if(h<gate_hour){
+                    next.setHours(gate_hour);
+                    this.gate_status_jp = false;
+                    console.log();
+                    break;
+                }
+                if(h==gate_hour){
+                    next.setHours(next.getHours()+1);
+                    this.gate_status_jp = true;
+                    console.log(2);
+                    break;
+                }
+                if(i==gate_hours_jp.length-1){
+                    gate_hour = gate_hours_jp[0];
+                    next.setHours(next.getHours()+24-h+gate_hour);
+                    this.gate_status_jp = false;
+                    console.log(3);
+                    break;
+                }
+            }
+
+            var diff = new Date(next.getTime() - this.now.getTime());
+
+            h = diff.getUTCHours();
+            m = diff.getUTCMinutes();
+            s = diff.getUTCSeconds();
+
+            return (h+':'+m+':'+s).replace(/\b(?=(\d{1})(?!\d))/g,'0');
+        }*/
     }
 });
 

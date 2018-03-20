@@ -172,11 +172,12 @@
         <div class="row no-gutters justify-content-between">
             <div class="col-auto p-2">
                 <div class="font-weight-bold">
-                    <b-badge :variant="gate_status?'success':'danger'">{{ (gate_status?'OPEN':'CLOSE')+' - '+ auragate_status }}</b-badge>
+                    <b-badge :variant="gate_status_jp?'success':'secondary'">JP {{ gate_timer_jp }}</b-badge>
+                    <b-badge :variant="gate_status_ch?'success':'secondary'">CH {{ gate_timer_ch }}</b-badge>
                 </div>
             </div>
             <div class="col-auto p-2">
-                <div class="small text-right">Last Updated: {{ updated_at }}</div>
+                <div class="small text-right">Version: {{ updated_at }}</div>
             </div>  
         </div>
         
@@ -290,7 +291,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180320-2"></script>
+    <script src="js/app.js?t=180320-3"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
