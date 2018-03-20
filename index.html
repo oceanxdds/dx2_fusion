@@ -96,6 +96,8 @@
                                         </b-button>
                                     </div>
                                 </div>
+                            </b-list-group-item>
+                            <b-list-group-item class="p-0" v-if="filtered_builder_options.length>0">
                                 <devil-bom-options :options="filtered_builder_options" usage="builder"></devil-bom-options>
                             </b-list-group-item>
                         </b-list-group>
@@ -106,7 +108,7 @@
 
                 <b-tab :title="$t('message.normal')" no-body>
                     
-                    <b-card no-body>
+                    <b-card no-body v-if="fusion_target">
                         <b-list-group flush>
                             <b-list-group-item class="p-2">
                                 <div class="row no-gutters justify-content-center">
