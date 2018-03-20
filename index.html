@@ -83,7 +83,7 @@
                     <b-card no-body v-if="builder_target">
                         <b-list-group flush>
                             <b-list-group-item class="p-2">
-                                Total MAG: {{ builder_total_mag }}
+                                Total MAG: {{ builder_total_mag_pure }} ~ {{ builder_total_mag }}
                             </b-list-group-item>    
                             <b-list-group-item class="p-2">
                                 <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
@@ -235,7 +235,7 @@
                 </div>
             </div>
             <b-card-footer class="p-1 text-right small">
-                <span>MAG: {{ bom.showMag() }}</span>
+                <span>MAG: {{ bom.showMagPure() }} ~ {{ bom.showMag() }}</span>
             </b-card-footer>
         </b-card>
 
@@ -259,7 +259,7 @@
                     <div class="col-auto">
                         <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
                             style="min-width:130px" :class="{'bg-warning':is_current()}"
-                            v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()">
+                            v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMagPure()+' ~ '+bom.showMag()">
                         </devil>
                     </div>
                     <div class="col-auto">
@@ -291,7 +291,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180320-3"></script>
+    <script src="js/app.js?t=180320-4"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
