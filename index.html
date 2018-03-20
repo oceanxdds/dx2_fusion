@@ -89,7 +89,7 @@
                                 <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                             </b-list-group-item>
                             <b-list-group-item class="p-0">
-                                <div class="row justify-content-center">
+                                <div class="row no-gutters justify-content-center">
                                     <div class="col-auto p-2">
                                         <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-2">
                                             {{ option.caption }}
@@ -109,15 +109,15 @@
                     <b-card no-body>
                         <b-list-group flush>
                             <b-list-group-item class="p-2">
-                                <div class="row justify-content-center">
-                                    <div class="col-auto p-2">
+                                <div class="row no-gutters justify-content-center">
+                                    <div class="col-auto">
                                         <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-2">
                                             {{ option.caption }}
                                         </b-button>
                                     </div>
                                 </div>
                             </b-list-group-item>    
-                            <b-list-group-item class="p-0">
+                            <b-list-group-item class="p-2">
                                 
                                 <div v-for="(option, index) in filtered_fusion_options">
 
@@ -319,7 +319,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180320-6"></script>
+    <script src="js/app.js?t=180321"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

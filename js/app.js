@@ -1100,7 +1100,7 @@ var app = new Vue({
         gate_status_jp:false,
         gate_timer_ch:null,
         gate_timer_jp:null,
-        updated_at:'180320'
+        updated_at:'180321'
     },
     created:function(){
 
