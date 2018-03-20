@@ -83,7 +83,7 @@
                     <b-card no-body v-if="builder_target">
                         <b-list-group flush>
                             <b-list-group-item class="p-2">
-                                Total MAG: {{ builder_total_mag_pure }} ~ {{ builder_total_mag }}
+                                <h6 class="m-0"><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }}</h6>
                             </b-list-group-item>    
                             <b-list-group-item class="p-2">
                                 <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
@@ -185,7 +185,7 @@
 
     <script id="devil-t" type="text/x-template">
 
-        <b-card no-body>
+        <b-card no-body class="border-secondary">
             <b-card-body class="p-2" @click="click()"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
@@ -224,18 +224,22 @@
     <script id="devil-bom-t" type="text/x-template">
     
         <b-card v-if="bom" no-body 
-            :class="{'border-primary':bom.upgrade, 'border-danger':bom.downgrade}"
+            :class="{'border-primary':bom.upgrade, 'border-danger':bom.downgrade,'border-dark':!(bom.upgrade||bom.downgrade)}"
             @click="click()">
             <div class="row no-gutters">
-                <div class="col-6 p-2" v-for="devil in [bom.child1.devil,bom.child2.devil]" :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
-                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" style="background-position:right;background-repeat:no-repeat;background-size:contain"
+                <div v-for="devil in [bom.child1.devil,bom.child2.devil]" 
+                    class="col-6 p-2"
+                    :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
+                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
+                    style="background-position:right;background-repeat:no-repeat;background-size:contain"
                     v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
                         <div class="small">{{ devil.showGrade() }} <span v-for="n in devil.rarity">&#9733;</span></div>
                 </div>
             </div>
-            <b-card-footer class="p-1 text-right small">
-                <span>MAG: {{ bom.showMagPure() }} ~ {{ bom.showMag() }}</span>
+            <b-card-footer class="p-1 text-right">
+                <span v-if="bom.mag_pure!=bom.mag"><b-badge variant="success"> 素体 </b-badge> {{ bom.showMagPure() }} </span>
+                <span v-if="bom.mag>0"><b-badge variant="secondary"> MAG </b-badge> {{ bom.showMag() }} </span>
             </b-card-footer>
         </b-card>
 
@@ -259,10 +263,10 @@
                     <div class="col-auto">
                         <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
                             style="min-width:130px" :class="{'bg-warning':is_current()}"
-                            v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMagPure()+' ~ '+bom.showMag()">
+                            v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
                         </devil>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-auto pl-1">
                         <b-button v-if="bom.child1||bom.child2" size="sm" @click="reset_bom(bom)">X</b-button>
                     </div>
                 </div>
@@ -283,7 +287,7 @@
             <div v-for="option in options">
                 <div class="row no-gutters">
                     <div class="col-12 p-2">
-                        {{ option.name }}
+                        <h6 class="m-0">{{ option.name }}</h6>
                     </div>
                 </div>
                 <devil-bom-list :boms="option.boms" :usage="usage"></devil-bom-list>
@@ -291,7 +295,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180320-4"></script>
+    <script src="js/app.js?t=180320-5"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

@@ -862,38 +862,38 @@ DevilBom.prototype.showMagPure = function(){
     return (this.mag_pure/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-DevilBom.prototype.caculate_mag = function(bom){
+DevilBom.prototype.caculate_mag = function(layer){
 
-    var mag = 0;
-    if(bom){
-        mag += bom.mag;
-        if(bom.child1)      mag += this.caculate_mag(bom.child1);
-        if(bom.child2)      mag += this.caculate_mag(bom.child2);
+    var mag = this.mag;
+    var mag1 = (this.child1?this.child1.caculate_mag(layer+1):0);
+    var mag2 = (this.child2?this.child2.caculate_mag(layer+1):0);
+    
+    if(layer==1){
+        if(mag1>mag2){  mag += mag1 + (this.child2?this.child2.caculate_mag_pure():0);   }
+        else{           mag += (this.child1?this.child1.caculate_mag_pure():0) + mag2;   }
     }
+    else{               mag += mag1 + mag2;                                   }
+
     return mag;
 };
 
-DevilBom.prototype.caculate_mag_pure = function(bom){
+DevilBom.prototype.caculate_mag_pure = function(){
 
-    var mag_pure = 0;
-    if(bom){
-        mag_pure += bom.mag_pure;
-        if(bom.child1)      mag_pure += this.caculate_mag_pure(bom.child1);
-        if(bom.child2)      mag_pure += this.caculate_mag_pure(bom.child2);
-    }
-    return mag_pure;
+    return this.mag_pure 
+        + (this.child1?this.child1.caculate_mag_pure():0)
+        + (this.child2?this.child2.caculate_mag_pure():0);
 };
 
 DevilBom.prototype.showTotalMag = function(){
 
-    var mag = this.caculate_mag(this);
+    var mag = this.caculate_mag(1);
 
     return (mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 DevilBom.prototype.showTotalMagPure = function(){
 
-    var mag_pure = this.caculate_mag_pure(this);
+    var mag_pure = this.caculate_mag_pure();
 
     return (mag_pure/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
