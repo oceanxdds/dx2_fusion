@@ -88,8 +88,15 @@
                             <b-list-group-item class="p-2">
                                 <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                             </b-list-group-item>
-                            <b-list-group-item class="p-0" v-if="builder_options">
-                                <devil-bom-options :options="builder_options" usage="builder"></devil-bom-options>
+                            <b-list-group-item class="p-0">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto p-2">
+                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-2">
+                                            {{ option.caption }}
+                                        </b-button>
+                                    </div>
+                                </div>
+                                <devil-bom-options :options="filtered_builder_options" usage="builder"></devil-bom-options>
                             </b-list-group-item>
                         </b-list-group>
                     </b-card>
@@ -99,25 +106,42 @@
 
                 <b-tab :title="$t('message.normal')" no-body>
                     
-                    <div v-for="(options, index) in fusion_options">
-
-                        <div class="p-2">
-                            <div class="row no-gutters justify-content-center">
-                                <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
-                                    <devil :devil="options.devil" usage="fusion" style="cursor:pointer"
-                                        v-b-toggle="'fusion_'+index">
-                                    </devil>
+                    <b-card no-body>
+                        <b-list-group flush>
+                            <b-list-group-item class="p-2">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto p-2">
+                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-2">
+                                            {{ option.caption }}
+                                        </b-button>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                            
-                        <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion">
-                            <b-card no-body style="background-color:#eee">
-                                <devil-bom-options :options="options.formulas" usage="fusion"></devil-bom-options>
-                            </b-card>
-                        </b-collapse>
-                    </div>
+                            </b-list-group-item>    
+                            <b-list-group-item class="p-0">
+                                
+                                <div v-for="(option, index) in filtered_fusion_options">
 
+                                    <div class="p-2">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                                                <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
+                                                    v-b-toggle="'fusion_'+index">
+                                                </devil>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion">
+                                        <b-card no-body style="background-color:#eee">
+                                            <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
+                                        </b-card>
+                                    </b-collapse>
+                                </div>
+                                
+                            </b-list-group-item>
+                        </b-list-group>
+                    </b-card>
+                    
                 </b-tab>
 
                 <!--tab4 setting-->
@@ -190,7 +214,7 @@
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
-                    {{usage=='fusion'?devil.race.showName():''}} {{ devil.showName() }}
+                    {{usage=='fusion'||usage=='fission'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
                 <div class="small">
                     {{ devil.showGrade() }}
@@ -295,7 +319,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180320-5"></script>
+    <script src="js/app.js?t=180320-6"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

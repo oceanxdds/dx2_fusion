@@ -1057,19 +1057,31 @@ var app = new Vue({
     data:{
         races:ddd,
         devils:devil_data,
-        
+//fission        
         fission_target:null,
         fission_options:null,
-
-        fusion_target:null,
-        fusion_options:null,
-        
+//builder
         builder_target:null,
         builder_options:null,
-
         current_bom:null,
-
-        queue:[],
+        builder_rarity_options:[
+            {caption:" ★ 1 ",  state:true},
+            {caption:" ★ 2 ",  state:true},
+            {caption:" ★ 3 ",  state:true},
+            {caption:" ★ 4 ",  state:true},
+            {caption:" ★ 5 ",  state:true}
+        ],
+//fusion
+        fusion_target:null,
+        fusion_options:null,
+        fusion_rarity_options:[
+            {caption:"★1",  state:true},
+            {caption:"★2",  state:true},
+            {caption:"★3",  state:true},
+            {caption:"★4",  state:true},
+            {caption:"★5",  state:true}
+        ],
+        //setting
         lang_value:0,
         lang_options:[
             {text:'日本語', value:0},
@@ -1081,7 +1093,6 @@ var app = new Vue({
             {text: 'message.allow', value:1},
             {text: 'message.deny', value:0}
         ],
-        display:true,
         tabIndex:0,
         keyword:'',
         now:new Date(),
@@ -1119,20 +1130,7 @@ var app = new Vue({
         },1000);
     },
     methods:{
-        
-        fission: function(devil, reset){
 
-            if(reset){
-                this.queue = [devil];
-            }
-            else{
-                this.queue.push(devil);
-            }
-
-            this.fission_target = devil,
-            this.fission_options = devil.fission_formulas();
-            this.tabIndex = 1;
-        },
         start_bom: function(devil){
           
             this.builder_target = new DevilBom(devil);
@@ -1149,7 +1147,7 @@ var app = new Vue({
             }
             else{
                 this.current_bom = bom;
-                this.builder_options = bom.devil.fission_formulas();
+                this.builder_options = this.current_bom.devil.fission_formulas();
             }
         },
         reset_bom:function(bom){
@@ -1168,14 +1166,6 @@ var app = new Vue({
 
             this.current_bom = null;
             this.builder_options = null;
-        },
-        preview : function(index){
-            
-            if(index == this.queue.length-1 && index>0){
-               this.queue.pop();
-               this.fission_target = this.queue[this.queue.length-1];
-               this.fission_options = this.fission_target.fission_formulas();
-            }
         },
         fusion : function(devil){
 
@@ -1289,6 +1279,59 @@ var app = new Vue({
         },
         builder_total_mag_pure:function(){
             return this.builder_target?this.builder_target.showTotalMagPure():'';
+        },
+        filtered_builder_options:function(){
+
+            var options = [];
+
+            if(this.builder_options){
+
+                this.builder_options.forEach(function(option){
+
+                    var boms = option.boms.filter(function(bom){
+                        
+                        return app.builder_rarity_options[bom.child1.devil.rarity-1].state 
+                            && app.builder_rarity_options[bom.child2.devil.rarity-1].state;
+                    });
+
+                    if(boms.length){
+                        options.push({name:option.name,boms:boms});
+                    }
+                });
+            }
+
+            return options;
+        },
+        filtered_fusion_options:function(){
+
+            var options = [];
+
+            if(this.fusion_options){
+
+                this.fusion_options.forEach(function(option){
+
+                    var formulas = [];
+
+                    option.formulas.forEach(function(formula){
+
+                        var boms = formula.boms.filter(function(bom){
+                        
+                            return app.fusion_rarity_options[bom.child1.devil.rarity-1].state 
+                                && app.fusion_rarity_options[bom.child2.devil.rarity-1].state;
+                        });
+
+                        if(boms.length){
+                            formulas.push({name:formula.name,boms:boms});
+                        }
+                    });
+
+                    if(formulas.length){
+                        options.push({devil:option.devil,formulas:formulas});
+                    }
+                });
+            }
+
+            return options;
         }
     }
 });
