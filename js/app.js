@@ -1193,7 +1193,7 @@ var app = new Vue({
             var next = new Date(this.now.getTime());
             next.setMinutes(0);
             next.setSeconds(0);
-            var gate_schedule = [6,11,16,18,21,23];
+            var gate_schedule = [8,11,16,18,21,23];
             var h = this.now.getUTCHours()+8;
             var m ;
             var s ;
