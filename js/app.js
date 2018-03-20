@@ -1065,11 +1065,11 @@ var app = new Vue({
         builder_options:null,
         current_bom:null,
         builder_rarity_options:[
-            {caption:" ★ 1 ",  state:true},
-            {caption:" ★ 2 ",  state:true},
-            {caption:" ★ 3 ",  state:true},
-            {caption:" ★ 4 ",  state:true},
-            {caption:" ★ 5 ",  state:true}
+            {caption:"★1",  state:true},
+            {caption:"★2",  state:true},
+            {caption:"★3",  state:true},
+            {caption:"★4",  state:true},
+            {caption:"★5",  state:true}
         ],
 //fusion
         fusion_target:null,
