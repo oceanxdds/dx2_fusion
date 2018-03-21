@@ -42,6 +42,9 @@
             border-left-width: 0px !important;
         }
     }
+    *:focus{
+        outline:none;
+    }
     </style>
     <script src="js/vue.min.js"></script>
     <script src="js/bootstrap-vue.min.js"></script>
@@ -64,7 +67,7 @@
                     <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')"></b-form-input>
 
                     <b-card no-body v-show="keyword==''" class="mt-2">
-                        <b-tabs pills card content-class="">
+                        <b-tabs pills card>
                             <b-tab :title="race.showName()" v-for="race in races" no-body>
                                 <devil-list :devils="race.devils" usage="fission"></devil-list>
                             </b-tab>
