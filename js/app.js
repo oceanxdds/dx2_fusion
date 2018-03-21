@@ -1316,8 +1316,7 @@ var app = new Vue({
 
                         var boms = formula.boms.filter(function(bom){
                         
-                            return app.fusion_rarity_options[bom.child1.devil.rarity-1].state 
-                                && app.fusion_rarity_options[bom.child2.devil.rarity-1].state;
+                            return app.fusion_rarity_options[bom.child2.devil.rarity-1].state;
                         });
 
                         if(boms.length){
