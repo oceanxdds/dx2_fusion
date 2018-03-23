@@ -851,7 +851,7 @@ DevilBom.prototype.init = function(){
     }
 };
 
-DevilBom.prototype.showMag = function(isPure=true){
+DevilBom.prototype.showMag = function(){
 
     return (this.mag/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
