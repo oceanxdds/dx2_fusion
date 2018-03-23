@@ -159,9 +159,9 @@
 
                 <!--tab4 setting-->
 
-                <b-tab :title="$t('message.setting')" style="background:url('images/theme/steven.png') no-repeat right; background-size:contain" no-body>
+                <b-tab :title="$t('message.setting')" no-body>
                 
-                    <div class="row no-gutters">
+                    <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right; background-size:contain">
                         <div class="col-12 py-2">
                             <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
                             <div>
@@ -200,6 +200,10 @@
                            </div>
                         </div>
                     </div>
+
+                    <div class="">
+                        <div class="small text-right">Version: {{ updated_at }}</div>
+                    </div>  
                     
                 </b-tab>
                 <b-tab  no-body title-link-class="d-none">
@@ -218,9 +222,6 @@
             <div class="col p-0">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
-            <div class="col-auto p-2">
-                <div class="small text-right">Version: {{ updated_at }}</div>
-            </div>  
         </div>
         
     </div>
