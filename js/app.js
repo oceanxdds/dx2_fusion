@@ -1095,12 +1095,21 @@ var app = new Vue({
         ],
         tabIndex:0,
         keyword:'',
-        now:new Date(),
+        //orb
+        orbs:[
+            {'name':'ライト', icon:'images/theme/light.png', state:false},
+            {'name':'ダーク', icon:'images/theme/dark.png', state:false},
+            {'name':'ニュートラル', icon:'images/theme/natural.png', state:false },
+            {'name':'ロー', icon:'images/theme/law.png', state:false},
+            {'name':'カオス', icon:'images/theme/chaos.png', state:false}
+        ],
+        //timer
+        now:null,
         gate_status_ch:false,
         gate_status_jp:false,
         gate_timer_ch:null,
         gate_timer_jp:null,
-        updated_at:'180321'
+        updated_at:'180323'
     },
     created:function(){
 
@@ -1122,11 +1131,12 @@ var app = new Vue({
         if(c_allow_down_grade!=null){
             this.allow_down_grade = c_allow_down_grade;
         }
-
+        
         setInterval(function(){
 
             app.now = new Date();
-
+            //set timezone to UTC+9
+            app.now.setHours(app.now.getUTCHours()+9);
         },1000);
     },
     methods:{
@@ -1200,9 +1210,10 @@ var app = new Vue({
         now:function(){
 
             var next, diff, h;
-            var gate_hours_ch = [8,11,16,18,21,23];     //TW-JPT 9,12,17,19,22,0
-            var gate_hours_jp = [6,11,16,18,21,23];     //JP-JPT 7,12,17,19,22,0
-            var h = (this.now.getUTCHours()+8)%24;
+            var gate_hours_ch = [0,9,12,17,19,22];    //utc+8 [8,11,16,18,21,23]
+            var gate_hours_jp = [0,7,12,17,19,22];    //utc+8 [6,11,16,18,21,23]
+
+            var h = this.now.getHours();
 
             next = new Date(this.now.getTime());
             next.setMinutes(0);
@@ -1256,6 +1267,26 @@ var app = new Vue({
             }
             diff = new Date(next.getTime() - this.now.getTime());
             this.gate_timer_jp =  (diff.getUTCHours()+':'+diff.getUTCMinutes()+':'+diff.getUTCSeconds()).replace(/\b(?=(\d{1})(?!\d))/g,'0');
+
+            //orb
+
+            var day = this.now.getDay();
+
+            //light
+            this.orbs[0].state = (day==1||day==6);
+            //dark
+            this.orbs[1].state = (day==2||day==6);
+            //natural
+            this.orbs[2].state = (day==3||day==6||day==7);
+            //law
+            this.orbs[3].state = (day==4||day==7);
+            //chaos
+            this.orbs[4].state = (day==5||day==7);
+
+        },
+        keyword:function(){
+            //if(this.keyword=='atlus' && this.tabIndex!=4)
+            //    this.tabIndex = 4;
         }
     },
     computed:{

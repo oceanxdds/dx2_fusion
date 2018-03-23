@@ -13,6 +13,14 @@
     [v-cloak] {
       display: none;
     }
+    .element-orb{
+        border-radius: 50%;
+        width:20px;
+        height:20px;
+    }
+    .element-orb.light{
+        background-color:gold;
+    }
      /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
@@ -194,16 +202,21 @@
                     </div>
                     
                 </b-tab>
-
+                <b-tab  no-body title-link-class="d-none">
+                    ^_>
+                </b-tab>
             </b-tabs>
         </b-card>
 
-        <div class="row no-gutters justify-content-between">
+        <div class="row no-gutters justify-content-between align-items-center">
             <div class="col-auto p-2">
                 <div class="font-weight-bold">
                     <b-badge :variant="gate_status_jp?'success':'secondary'">JP {{ gate_timer_jp }}</b-badge>
                     <b-badge :variant="gate_status_ch?'success':'secondary'">CH {{ gate_timer_ch }}</b-badge>
                 </div>
+            </div>
+            <div class="col p-0">
+                <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
             <div class="col-auto p-2">
                 <div class="small text-right">Version: {{ updated_at }}</div>
@@ -324,7 +337,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180321-2"></script>
+    <script src="js/app.js?t=180323"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
