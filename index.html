@@ -13,15 +13,7 @@
     [v-cloak] {
       display: none;
     }
-    .element-orb{
-        border-radius: 50%;
-        width:20px;
-        height:20px;
-    }
-    .element-orb.light{
-        background-color:gold;
-    }
-     /* Extra Small Devices, Phones */ 
+    /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
     }
@@ -76,14 +68,14 @@
 
                     <b-card no-body v-show="keyword==''" class="mt-2">
                         <b-tabs pills card>
-                            <b-tab :title="race.showName()" v-for="race in races" no-body>
+                            <b-tab :title="race.showName()" v-for="race in data.races" no-body>
                                 <devil-list :devils="race.devils" usage="fission"></devil-list>
                             </b-tab>
                         </b-tabs>
                     </b-card>
 
                     <b-card no-body v-show="keyword">
-                        <devil-list :devils="filtered_devil_data" usage="fission"></devil-list>
+                        <devil-list :devils="filtered_devils" usage="fission"></devil-list>
                     </b-card>
 
                 </b-tab>
@@ -212,6 +204,8 @@
             </b-tabs>
         </b-card>
 
+        <!-- footer -->
+
         <div class="row no-gutters justify-content-between align-items-center">
             <div class="col-auto p-2">
                 <div class="font-weight-bold">
@@ -219,8 +213,20 @@
                     <b-badge :variant="gate_status_ch?'success':'secondary'">CH {{ gate_timer_ch }}</b-badge>
                 </div>
             </div>
-            <div class="col p-0">
+            <div class="col-auto p-2">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
+            </div>
+            <div class="col-12"></div>
+            <div class="col p-2">
+                <b-form-radio-group id="lang"
+                    buttons
+                    button-variant="outline-info"
+                    v-model="preview"
+                    name="lang_radio" size="sm">
+                    <b-form-radio value="0">Stable</b-form-radio>
+                    <b-form-radio value="1">Preview (2018.4.12)</b-form-radio>
+                    </b-form-radio-group>
+                </div>
             </div>
         </div>
         
