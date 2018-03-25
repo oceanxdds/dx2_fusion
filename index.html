@@ -56,7 +56,7 @@
 
     <!--Main-->
     <div class="container-fluid px-0" style="max-width:1920px" id="app" v-cloak>
-
+        
         <b-card no-body>
             <b-tabs card v-model="tabIndex" content-class="p-2">
 
@@ -225,12 +225,85 @@
                     name="lang_radio" size="sm">
                     <b-form-radio value="0">Stable</b-form-radio>
                     <b-form-radio value="1">Preview (2018.4.12)</b-form-radio>
-                    </b-form-radio-group>
-                </div>
+                </b-form-radio-group>
             </div>
         </div>
-        
+
+        <!-- Modal -->
+
+        <b-modal id="modal_devil_info" size="lg" hide-header="true" hide-footer="true">
+            <div v-if="devil" v-for="devil in [info_target]">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <devil :devil="devil" usage="info"></devil>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <span class="small">自動模式: {{ devil.type }}</span>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <table class="table table-bordered table-sm">
+                            <tboty>
+                                <tr v-for="(skill, index) in devil.skills">
+                                    <td class="text-center align-middle">{{index+1}}</td>
+                                    <td>{{skill.showName()}}</td>
+                                </tr>
+                                <tr v-if="devil.skill4">
+                                    <td class="text-center align-middle">4</td>
+                                    <td>
+                                        <div v-for="(skill, index) in devil.skill4">
+                                            <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
+                                            <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
+                                            <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
+                                            <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
+                                            <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
+                                            {{skill.showName()}}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr v-if="devil.skill5">
+                                        <td class="text-center align-middle">5</td>
+                                        <td>
+                                            <div v-for="(skill, index) in devil.skill5">
+                                                <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
+                                                <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
+                                                <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
+                                                <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
+                                                <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
+                                                {{skill.showName()}}
+                                            </div>
+                                        </td>
+                                    </tr>
+                            </tboty>
+                        </table>
+                    </div>
+
+                    <div class="col-12 col-md-10 col-xl-8">
+                        <table class="table table-bordered table-sm">
+                            <tboty>
+                                <tr class="text-center">
+                                    <th style="background:rgb(185, 185, 185)">物</th>
+                                    <th style="background:rgb(219, 120, 120)">火</th>
+                                    <th style="background:rgb(150, 220, 230)">冰</th>
+                                    <th style="background:rgb(233, 230, 64)">雷</th>
+                                    <th style="background:rgb(133, 240, 156)">衝</th>
+                                    <th style="background:rgb(240, 236, 196)">破</th>
+                                    <th style="background:rgb(218, 142, 221)">咒</th>
+                                </tr>
+                                <tr class="text-center">
+                                    <td v-for="ele in devil.elements">
+                                        <span class="font-weight-bold">{{ele?ele:'ー'}}</span>
+                                    </td>
+                                </tr>
+                            </tboty>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </b-modal>
     </div>
+
+    <!--Vue Template-->
 
     <script id="devil-t" type="text/x-template">
 
@@ -239,7 +312,7 @@
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
-                    {{usage=='fusion'||usage=='fission'?devil.race.showName():''}} {{ devil.showName() }}
+                    {{usage=='fusion'||usage=='fission'||usage=='info'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
                 <div class="small">
                     {{ devil.showGrade() }}
@@ -249,9 +322,11 @@
 
             <b-card-footer class="p-1" v-if="usage=='fission'">
                 <slot></slot>
+                <b-button variant="info" size="sm" @click="info()" class="font-weight-bold small">{{ $t('message.info') }}</b-button>
             </b-card-footer>
         </b-card>
 
+        
     </script>
 
     <script id="devil-list-t" type="text/x-template">
@@ -283,7 +358,7 @@
                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
                     v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
-                        <div class="small">{{ devil.showGrade() }} <span v-for="n in devil.rarity">&#9733;</span></div>
+                        <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
             </div>
             <b-card-footer class="p-1 text-right">
@@ -344,7 +419,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180324"></script>
+    <script src="js/app.js?t=180326"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
