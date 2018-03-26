@@ -94,7 +94,7 @@
                             <b-list-group-item class="p-0">
                                 <div class="row no-gutters justify-content-center">
                                     <div class="col-auto p-2">
-                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1">
+                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" onclick="this.blur()">
                                             {{ option.caption }}
                                         </b-button>
                                     </div>
@@ -116,7 +116,7 @@
                             <b-list-group-item class="p-2">
                                 <div class="row no-gutters justify-content-center">
                                     <div class="col-auto">
-                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1">
+                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" onclick="this.blur()">
                                             {{ option.caption }}
                                         </b-button>
                                     </div>
@@ -297,6 +297,10 @@
                             </tboty>
                         </table>
                     </div>
+
+                    <div class="col-12 text-center">
+                        <span class="small">Hint: Open Info by press any devil for 1 second.</span>
+                    </div>
                 </div>
                 
             </div>
@@ -309,6 +313,7 @@
 
         <b-card no-body class="border-secondary">
             <b-card-body class="p-2" @click="click()"
+                @mousedown="down(devil)"  @mouseup="up()"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
@@ -320,7 +325,7 @@
                 </div>
             </b-card-body>
 
-            <b-card-footer class="p-1" v-if="usage=='fission'">
+            <b-card-footer class="p-1" v-if="$slots.default">
                 <slot></slot>
                 <b-button variant="info" size="sm" @click="info()" class="font-weight-bold small">{{ $t('message.info') }}</b-button>
             </b-card-footer>
@@ -356,7 +361,8 @@
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                    v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()">
+                    v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()"
+                    @mousedown="down(devil)"  @mouseup="up()">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
                         <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
@@ -419,7 +425,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180326"></script>
+    <script src="js/app.js?t=180326-1"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

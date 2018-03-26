@@ -1442,7 +1442,7 @@ Race.prototype.showName = function(){
 }
 
 ////////////////////
-// Devil Bom Class
+// Skill Class
 ////////////////////
 
 var Skill = function(skill){
@@ -2184,6 +2184,11 @@ var app = new Vue({
 Vue.component('devil',{
     props:['devil','usage'],
     template:'#devil-t',
+    data:function(){
+        return {
+            'timer':null
+        };
+    },
     methods:{
         click:function(){
             if(this.usage=='fission'){
@@ -2195,6 +2200,16 @@ Vue.component('devil',{
         },
         info:function(){
             app.show_devil_info(this.devil);
+        },
+        down:function(devil){
+           
+            this.timer = setTimeout(function(){
+                app.show_devil_info(devil);
+            },1000);
+        },
+        up:function(){
+            if(this.timer)
+                clearTimeout(this.timer);
         }
     }
 });
@@ -2226,6 +2241,11 @@ Vue.component('devil-list',{
 Vue.component('devil-bom',{
     props:['bom','usage'],
     template:'#devil-bom-t',
+    data:function(){
+        return {
+            'timer':null
+        };
+    },
     methods:{
         click:function(){
             if(this.usage=='builder')
@@ -2236,6 +2256,16 @@ Vue.component('devil-bom',{
         },
         cancel_choose: function(){
             app.cancel_choose();
+        },
+        down:function(devil){
+           
+            this.timer = setTimeout(function(){
+                app.show_devil_info(devil);
+            },1000);
+        },
+        up:function(){
+            if(this.timer)
+                clearTimeout(this.timer);
         }
     }
 });
