@@ -1902,7 +1902,7 @@ var app = new Vue({
         
         //modal
         info_target:null,
-
+        info_timer:null,
         updated_at:'180326',
     },
     created:function(){
@@ -2073,6 +2073,20 @@ var app = new Vue({
         show_devil_info:function(devil){
             this.info_target = devil;
             this.$root.$emit('bv::show::modal','modal_devil_info');
+        },
+        info_touchdown:function(devil){
+            
+            if(this.info_timer)
+                clearTimeout(this.info_timer);
+
+            this.info_timer = setTimeout(function(){
+                app.show_devil_info(devil);
+            },1000);
+        },
+        info_touchup:function(){
+            
+            if(this.info_timer)
+                clearTimeout(this.info_timer);
         }
     },
     watch:{
@@ -2189,11 +2203,6 @@ var app = new Vue({
 Vue.component('devil',{
     props:['devil','usage'],
     template:'#devil-t',
-    data:function(){
-        return {
-            'timer':null
-        };
-    },
     methods:{
         click:function(){
             if(this.usage=='fission'){
@@ -2208,17 +2217,11 @@ Vue.component('devil',{
         },
         down:function(devil){
 
-           if(this.timer)
-                clearTimeout(this.timer);
-
-            this.timer = setTimeout(function(){
-                app.show_devil_info(devil);
-            },1000);
+           app.info_touchdown(devil);
         },
         up:function(){
 
-            if(this.timer)
-                clearTimeout(this.timer);
+            app.info_touchup();
         }
     }
 });
@@ -2250,11 +2253,6 @@ Vue.component('devil-list',{
 Vue.component('devil-bom',{
     props:['bom','usage'],
     template:'#devil-bom-t',
-    data:function(){
-        return {
-            'timer':null
-        };
-    },
     methods:{
         click:function(){
             if(this.usage=='builder')
@@ -2268,18 +2266,12 @@ Vue.component('devil-bom',{
         },
         down:function(devil){
 
-            if(this.timer)
-                 clearTimeout(this.timer);
+            app.info_touchdown(devil);
+        },
+        up:function(){
  
-             this.timer = setTimeout(function(){
-                 app.show_devil_info(devil);
-             },1000);
-         },
-         up:function(){
- 
-             if(this.timer)
-                 clearTimeout(this.timer);
-         }
+            app.info_touchup();
+        }
     }
 });
 

@@ -67,7 +67,7 @@
 
                     <b-card no-body v-show="keyword==''" class="mt-2">
                         <b-tabs pills card>
-                            <b-tab :title="race.showName()" v-for="race in data.races" no-body>
+                            <b-tab :title="race.showName()" v-for="race in data.races" no-body :key="race.name">
                                 <devil-list :devils="race.devils" usage="fission"></devil-list>
                             </b-tab>
                         </b-tabs>
@@ -93,7 +93,7 @@
                             <b-list-group-item class="p-0">
                                 <div class="row no-gutters justify-content-center">
                                     <div class="col-auto p-2">
-                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1">
+                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" :key="option.caption">
                                             {{ option.caption }}
                                         </b-button>
                                     </div>
@@ -115,7 +115,7 @@
                             <b-list-group-item class="p-2">
                                 <div class="row no-gutters justify-content-center">
                                     <div class="col-auto">
-                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1">
+                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" :key="option.caption">
                                             {{ option.caption }}
                                         </b-button>
                                     </div>
@@ -123,7 +123,7 @@
                             </b-list-group-item>    
                             <b-list-group-item class="p-2">
                                 
-                                <div v-for="(option, index) in filtered_fusion_options">
+                                <div v-for="(option, index) in filtered_fusion_options" :key="option.devil.name">
 
                                     <div class="p-2">
                                         <div class="row no-gutters justify-content-center">
@@ -242,14 +242,14 @@
                     <div class="col-12 mt-2">
                         <table class="table table-bordered table-sm">
                             <tboty>
-                                <tr v-for="(skill, index) in devil.skills">
+                                <tr v-for="(skill, index) in devil.skills" :key="skill.name">
                                     <td class="text-center align-middle">{{index+1}}</td>
                                     <td>{{skill.showName()}}</td>
                                 </tr>
                                 <tr v-if="devil.skill4">
                                     <td class="text-center align-middle">4</td>
                                     <td>
-                                        <div v-for="(skill, index) in devil.skill4">
+                                        <div v-for="(skill, index) in devil.skill4" :key="skill.name">
                                             <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
                                             <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
@@ -262,7 +262,7 @@
                                 <tr v-if="devil.skill5">
                                         <td class="text-center align-middle">5</td>
                                         <td>
-                                            <div v-for="(skill, index) in devil.skill5">
+                                            <div v-for="(skill, index) in devil.skill5" :key="skill.name">
                                                 <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
                                                 <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
                                                 <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
@@ -312,18 +312,14 @@
 
         <b-card no-body class="border-secondary">
             <b-card-body class="p-2" @click="click()"
-                @mousedown="down(devil)"  @mouseup="up()"
-                @touchstart="down(devil)" @touchend="up()"
-                @touchcancel="up()"
+            @mousedown="down(devil)"  @mouseup="up()"
+            @touchstart="down(devil)" @touchend="up()"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
                     {{usage=='fusion'||usage=='fission'||usage=='info'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
-                <div class="small">
-                    {{ devil.showGrade() }}
-                    <span v-for="n in devil.rarity">&#9733;</span>
-                </div>
+                <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
             </b-card-body>
 
             <b-card-footer class="p-1" v-if="$slots.default">
@@ -338,7 +334,7 @@
     <script id="devil-list-t" type="text/x-template">
 
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils" :key="devil.name">
                 
                 <devil :devil="devil" :usage="usage" @click="click()"
                     v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()">
@@ -358,6 +354,7 @@
             @click="click()">
             <div class="row no-gutters">
                 <div v-for="devil in [bom.child1.devil,bom.child2.devil]" 
+                    :key="devil.name"
                     class="col-6 p-2"
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
@@ -380,7 +377,7 @@
     <script id="devil-bom-list-t" type="text/x-template">
     
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms" :key="bom.devil.name">
                 <devil-bom :bom="bom" :usage="usage" @click="click()"></devi-bom>
             </div>
         </div>
@@ -416,7 +413,7 @@
 
     <script id="devil-bom-options-t" type="text/x-template">
         <div>
-            <div v-for="option in options">
+            <div v-for="option in options" :key="option.name">
                 <div class="row no-gutters">
                     <div class="col-12 p-2">
                         <h6 class="m-0">{{ option.name }}</h6>
@@ -427,7 +424,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180326-3"></script>
+    <script src="js/app.js?t=180326-9"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
