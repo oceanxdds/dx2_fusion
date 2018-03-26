@@ -298,7 +298,7 @@
                     </div>
 
                     <div class="col-12 text-center">
-                        <span class="small">Hint: Open Info by press Devil for 1 second.</span>
+                        <span class="small">{{ $t('message.info_hint') }}</span>
                     </div>
                 </div>
                 
@@ -314,6 +314,7 @@
             <b-card-body class="p-2" @click="click()"
                 @mousedown="down(devil)"  @mouseup="up()"
                 @touchstart="down(devil)" @touchend="up()"
+                @touchcancel="up()"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
@@ -426,7 +427,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180326-2"></script>
+    <script src="js/app.js?t=180326-3"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

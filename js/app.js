@@ -1789,7 +1789,9 @@ const messages = {
         downgrade_fusion: 'Downgrade Fusion',
         allow: 'Allow',
         deny: 'Deny',
-        search:'Search'
+        search:'Search',
+        info:'Info',
+        info_hint:'Hint: Open Devil Info by press Devil Icon for 1 sec.'
       }
     },
     ja: {
@@ -1805,7 +1807,8 @@ const messages = {
         allow: '許可する',
         deny: '許可しない',
         search:'探す',
-        info:'情報'
+        info:'情報',
+        info_hint:'ヒント: 悪魔を一秒間ホールド、悪魔情報が出ます'
       }
     },
     tw: {
@@ -1821,7 +1824,8 @@ const messages = {
             allow:'允許',
             deny:'不允許',
             search:'查詢',
-            info:'資訊'
+            info:'資訊',
+            info_hint:'提醒: 按住惡魔1秒可開啟惡魔資訊'
         }
     }
   }
@@ -1831,7 +1835,6 @@ locale: 'ja', // set locale
 messages: messages // set locale messages
 });
   
-//Vue.use(VueTouch);
 
 var app = new Vue({
     i18n:i18n,
