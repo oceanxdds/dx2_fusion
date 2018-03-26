@@ -1830,7 +1830,9 @@ const i18n = new VueI18n({
 locale: 'ja', // set locale
 messages: messages // set locale messages
 });
-    
+  
+//Vue.use(VueTouch);
+
 var app = new Vue({
     i18n:i18n,
     el:'#app',
@@ -2202,12 +2204,16 @@ Vue.component('devil',{
             app.show_devil_info(this.devil);
         },
         down:function(devil){
-           
+
+           if(this.timer)
+                clearTimeout(this.timer);
+
             this.timer = setTimeout(function(){
                 app.show_devil_info(devil);
             },1000);
         },
         up:function(){
+
             if(this.timer)
                 clearTimeout(this.timer);
         }
@@ -2258,15 +2264,19 @@ Vue.component('devil-bom',{
             app.cancel_choose();
         },
         down:function(devil){
-           
-            this.timer = setTimeout(function(){
-                app.show_devil_info(devil);
-            },1000);
-        },
-        up:function(){
+
             if(this.timer)
-                clearTimeout(this.timer);
-        }
+                 clearTimeout(this.timer);
+ 
+             this.timer = setTimeout(function(){
+                 app.show_devil_info(devil);
+             },1000);
+         },
+         up:function(){
+ 
+             if(this.timer)
+                 clearTimeout(this.timer);
+         }
     }
 });
 
