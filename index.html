@@ -236,18 +236,21 @@
                     <div class="col-12">
                         <devil :devil="devil" usage="info"></devil>
                     </div>
-                    <div class="col-12 mt-2">
-                        <span class="small">自動模式: {{ devil.type }}</span>
-                    </div>
-                    <div class="col-12 mt-2">
-                        <table class="table table-bordered table-sm">
+
+                    <div class="col-12">
+                        <table class="table table-bordered table-sm my-0">
                             <tboty>
-                                <tr v-for="(skill, index) in devil.skills" :key="skill.name">
-                                    <td class="text-center align-middle">{{index+1}}</td>
-                                    <td>{{skill.showName()}}</td>
+                                <tr>
+                                    <td class="text-center align-middle">基本</td>
+                                    <td>
+                                        <div v-for="(skill, index) in devil.skills">
+                                            <span class="small">{{skill.showName()}}</span>
+                                        </div>
+                                    </td>
                                 </tr>
+                        
                                 <tr v-if="devil.skill4">
-                                    <td class="text-center align-middle">4</td>
+                                    <td class="text-center align-middle">覺醒</td>
                                     <td>
                                         <div v-for="(skill, index) in devil.skill4" :key="skill.name">
                                             <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
@@ -255,23 +258,23 @@
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
                                             <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
                                             <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
-                                            {{skill.showName()}}
+                                            <span class="small">{{skill.showName()}}</span>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr v-if="devil.skill5">
-                                        <td class="text-center align-middle">5</td>
-                                        <td>
-                                            <div v-for="(skill, index) in devil.skill5" :key="skill.name">
-                                                <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
-                                                <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
-                                                <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
-                                                <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
-                                                <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
-                                                {{skill.showName()}}
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <td class="text-center align-middle">特典</td>
+                                    <td>
+                                        <div v-for="(skill, index) in devil.skill5" :key="skill.name">
+                                            <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
+                                            <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
+                                            <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
+                                            <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
+                                            <span class="small" v-if="index!=0">{{skill.showName()}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+
                             </tboty>
                         </table>
                     </div>
@@ -319,7 +322,10 @@
                 <div class="font-weight-bold">
                     {{usage=='fusion'||usage=='fission'||usage=='info'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
-                <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
+                <div class="small">
+                    {{ devil.showGrade() }} {{ devil.showRarity() }}
+                    <span class="ml-2" v-if="usage=='info'">AI: {{ devil.type }}</span>
+                </div>
             </b-card-body>
 
             <b-card-footer class="p-1" v-if="$slots.default">
