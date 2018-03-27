@@ -13,6 +13,10 @@
     [v-cloak] {
       display: none;
     }
+    .btn-outline-secondary:hover{
+        color:#6c767d;
+        background-color:transparent;
+    }
     /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
@@ -67,7 +71,7 @@
 
                     <b-card no-body v-show="keyword==''" class="mt-2">
                         <b-tabs pills card>
-                            <b-tab :title="race.showName()" v-for="race in data.races" no-body :key="race.name">
+                            <b-tab :title="race.showName()" v-for="race in data.races" no-body>
                                 <devil-list :devils="race.devils" usage="fission"></devil-list>
                             </b-tab>
                         </b-tabs>
@@ -90,11 +94,13 @@
                             <b-list-group-item class="p-2">
                                 <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                             </b-list-group-item>
-                            <b-list-group-item class="p-0">
+                            <b-list-group-item class="p-0" v-if="builder_options.length">
                                 <div class="row no-gutters justify-content-center">
-                                    <div class="col-auto p-2">
-                                        <b-button v-for="option in builder_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" :key="option.caption">
-                                            {{ option.caption }}
+                                    <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
+                                        <b-button :pressed.sync="option.state"
+                                            @click="builder_rarity_option_click(option)"
+                                             variant="outline-secondary">
+                                            {{ option.text }}
                                         </b-button>
                                     </div>
                                 </div>
@@ -112,18 +118,22 @@
                     
                     <b-card no-body v-if="fusion_target">
                         <b-list-group flush>
-                            <b-list-group-item class="p-2">
+                            <b-list-group-item class="p-2" v-if="fusion_options.length">
                                 <div class="row no-gutters justify-content-center">
-                                    <div class="col-auto">
-                                        <b-button v-for="option in fusion_rarity_options" :pressed.sync="option.state" variant="outline-secondary" class="m-1" :key="option.caption">
-                                            {{ option.caption }}
+                                    <div class="col-auto p-1"
+                                    v-for="option in fusion_rarity_options"
+                                    v-if="option.active">
+                                        <b-button :pressed.sync="option.state" 
+                                            @click="fusion_rarity_option_click(option)"
+                                            variant="outline-secondary">
+                                            {{ option.text }}
                                         </b-button>
                                     </div>
                                 </div>
                             </b-list-group-item>    
-                            <b-list-group-item class="p-2">
+                            <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
                                 
-                                <div v-for="(option, index) in filtered_fusion_options" :key="option.devil.name">
+                                <div v-for="(option, index) in filtered_fusion_options">
 
                                     <div class="p-2">
                                         <div class="row no-gutters justify-content-center">
@@ -230,7 +240,7 @@
 
         <!-- Modal -->
 
-        <b-modal id="modal_devil_info" size="lg" hide-header="true" ok-only="true" ok-title="CLOSE" ok-variant="secondary">
+        <b-modal id="modal_devil_info" size="lg" hide-header="true" ok-only="true" ok-title="CLOSE" ok-variant="secondary" footer-class="py-2">
             <div v-if="devil" v-for="devil in [info_target]">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -252,7 +262,7 @@
                                 <tr v-if="devil.skill4">
                                     <td class="text-center align-middle">覺醒</td>
                                     <td>
-                                        <div v-for="(skill, index) in devil.skill4" :key="skill.name">
+                                        <div v-for="(skill, index) in devil.skill4">
                                             <b-badge v-if="index==0" class="bg-secondary text-white">素体</b-badge>
                                             <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
@@ -265,7 +275,7 @@
                                 <tr v-if="devil.skill5">
                                     <td class="text-center align-middle">特典</td>
                                     <td>
-                                        <div v-for="(skill, index) in devil.skill5" :key="skill.name">
+                                        <div v-for="(skill, index) in devil.skill5">
                                             <b-badge v-if="index==1" class="bg-danger text-white">荒神</b-badge>
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
                                             <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
@@ -280,7 +290,7 @@
                     </div>
 
                     <div class="col-12 col-md-10 col-xl-8">
-                        <table class="table table-bordered table-sm">
+                        <table class="table table-bordered table-sm my-0">
                             <tboty>
                                 <tr class="text-center">
                                     <th style="background:rgb(185, 185, 185)">物</th>
@@ -300,9 +310,6 @@
                         </table>
                     </div>
 
-                    <div class="col-12 text-center">
-                        <span class="small">{{ $t('message.info_hint') }}</span>
-                    </div>
                 </div>
                 
             </div>
@@ -314,9 +321,8 @@
     <script id="devil-t" type="text/x-template">
 
         <b-card no-body class="border-secondary">
+            
             <b-card-body class="p-2" @click="click()"
-            @mousedown="down(devil)"  @mouseup="up()"
-            @touchstart="down(devil)" @touchend="up()"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
@@ -325,13 +331,15 @@
                 <div class="small">
                     {{ devil.showGrade() }} {{ devil.showRarity() }}
                     <span class="ml-2" v-if="usage=='info'">AI: {{ devil.type }}</span>
+                    <b-button v-if="usage=='fusion'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>    
                 </div>
             </b-card-body>
 
-            <b-card-footer class="p-1" v-if="$slots.default">
+            <b-card-footer class="p-1" v-if="usage=='fission'">
                 <slot></slot>
-                <b-button variant="info" size="sm" @click="info()" class="font-weight-bold small">{{ $t('message.info') }}</b-button>
+                <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold small">⚝</b-button>
             </b-card-footer>
+
         </b-card>
 
         
@@ -340,10 +348,9 @@
     <script id="devil-list-t" type="text/x-template">
 
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils" :key="devil.name">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils">
                 
-                <devil :devil="devil" :usage="usage" @click="click()"
-                    v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()">
+                <devil :devil="devil" :usage="usage" @click="click()">
                     <b-button variant="sencondary" size="sm" @click="fusion(devil)" class="font-weight-bold small">{{ $t('message.normal_fusion') }}</b-button>
                     <b-button variant="warning" size="sm" @click="start_bom(devil)" class="font-weight-bold small">{{ $t('message.reverse_fusion') }}</b-button>
                 </devil>
@@ -360,19 +367,17 @@
             @click="click()">
             <div class="row no-gutters">
                 <div v-for="devil in [bom.child1.devil,bom.child2.devil]" 
-                    :key="devil.name"
                     class="col-6 p-2"
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
-                    style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                    v-b-popover.hover.top="devil.race.showName()+' '+devil.showName()"
-                    @mousedown="down(devil)"  @mouseup="up()"
-                    @touchstart="down(devil)" @touchend="up()">
+                    style="background-position:right;background-repeat:no-repeat;background-size:contain">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
                         <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
             </div>
             <b-card-footer class="p-1 text-right">
+                <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="font-weight-bold small py-0">⚝</b-button>
+                <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="font-weight-bold small py-0">⚝</b-button>
                 <span v-if="bom.mag_pure!=bom.mag"><b-badge variant="success"> 素体 </b-badge> {{ bom.showMagPure() }} </span>
                 <span v-if="bom.mag>0"><b-badge variant="secondary"> MAG </b-badge> {{ bom.showMag() }} </span>
             </b-card-footer>
@@ -383,7 +388,7 @@
     <script id="devil-bom-list-t" type="text/x-template">
     
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms" :key="bom.devil.name">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms">
                 <devil-bom :bom="bom" :usage="usage" @click="click()"></devi-bom>
             </div>
         </div>
@@ -400,6 +405,9 @@
                             style="min-width:130px" :class="{'bg-warning':is_current()}"
                             v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
                         </devil>
+                    </div>
+                    <div class="col-auto pl-1" v-if="is_current()">
+                        <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold small">⚝</b-button>
                     </div>
                     <div class="col-auto pl-1">
                         <b-button v-if="bom.child1||bom.child2" size="sm" @click="reset_bom(bom)">X</b-button>
@@ -419,7 +427,7 @@
 
     <script id="devil-bom-options-t" type="text/x-template">
         <div>
-            <div v-for="option in options" :key="option.name">
+            <div v-for="option in options">
                 <div class="row no-gutters">
                     <div class="col-12 p-2">
                         <h6 class="m-0">{{ option.name }}</h6>
@@ -430,7 +438,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180326-9"></script>
+    <script src="js/app.js?t=180328"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>

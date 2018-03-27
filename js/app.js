@@ -1789,9 +1789,7 @@ const messages = {
         downgrade_fusion: 'Downgrade Fusion',
         allow: 'Allow',
         deny: 'Deny',
-        search:'Search',
-        info:'Info',
-        info_hint:'Hint: Open Devil Info by press Devil Icon for 1 sec.'
+        search:'Search'
       }
     },
     ja: {
@@ -1806,9 +1804,7 @@ const messages = {
         downgrade_fusion: 'ダウングレイド合体',
         allow: '許可する',
         deny: '許可しない',
-        search:'探す',
-        info:'情報',
-        info_hint:'ヒント: 悪魔を一秒間ホールド、悪魔情報が出ます'
+        search:'探す'
       }
     },
     tw: {
@@ -1823,9 +1819,7 @@ const messages = {
             downgrade_fusion: '降階合體',
             allow:'允許',
             deny:'不允許',
-            search:'查詢',
-            info:'資訊',
-            info_hint:'提醒: 按住惡魔1秒可開啟惡魔資訊'
+            search:'查詢'
         }
     }
   }
@@ -1844,29 +1838,48 @@ var app = new Vue({
         preview:0,
         //fission        
         fission_target:null,
-        fission_options:null,
+        fission_options:[],
         
         //builder
         builder_target:null,
-        builder_options:null,
+        builder_options:[],
         current_bom:null,
         builder_rarity_options:[
-            {caption:"★1",  state:true},
-            {caption:"★2",  state:true},
-            {caption:"★3",  state:true},
-            {caption:"★4",  state:true},
-            {caption:"★5",  state:true}
+            {text:"1+1", r1:1, r2:1, state:true, active:false},
+            {text:"1+2", r1:1, r2:2, state:true, active:false},
+            {text:"1+3", r1:1, r2:3, state:true, active:false},
+            {text:"1+4", r1:1, r2:4, state:true, active:false},
+            {text:"1+5", r1:1, r2:5, state:true, active:false},
+            {text:"2+2", r1:2, r2:2, state:true, active:false},
+            {text:"2+3", r1:2, r2:3, state:true, active:false},
+            {text:"2+4", r1:2, r2:4, state:true, active:false},
+            {text:"2+5", r1:2, r2:5, state:true, active:false},
+            {text:"3+3", r1:3, r2:3, state:true, active:false},
+            {text:"3+4", r1:3, r2:4, state:true, active:false},
+            {text:"3+5", r1:3, r2:5, state:true, active:false},
+            {text:"4+4", r1:4, r2:4, state:true, active:false},
+            {text:"4+5", r1:4, r2:5, state:true, active:false},
+            {text:"5+5", r1:5, r2:5, state:true, active:false}
         ],
-        
         //fusion
         fusion_target:null,
         fusion_options:null,
         fusion_rarity_options:[
-            {caption:"★1",  state:true},
-            {caption:"★2",  state:true},
-            {caption:"★3",  state:true},
-            {caption:"★4",  state:true},
-            {caption:"★5",  state:true}
+            {text:"1+1", r1:1, r2:1, state:true, active:false},
+            {text:"1+2", r1:1, r2:2, state:true, active:false},
+            {text:"1+3", r1:1, r2:3, state:true, active:false},
+            {text:"1+4", r1:1, r2:4, state:true, active:false},
+            {text:"1+5", r1:1, r2:5, state:true, active:false},
+            {text:"2+2", r1:2, r2:2, state:true, active:false},
+            {text:"2+3", r1:2, r2:3, state:true, active:false},
+            {text:"2+4", r1:2, r2:4, state:true, active:false},
+            {text:"2+5", r1:2, r2:5, state:true, active:false},
+            {text:"3+3", r1:3, r2:3, state:true, active:false},
+            {text:"3+4", r1:3, r2:4, state:true, active:false},
+            {text:"3+5", r1:3, r2:5, state:true, active:false},
+            {text:"4+4", r1:4, r2:4, state:true, active:false},
+            {text:"4+5", r1:4, r2:5, state:true, active:false},
+            {text:"5+5", r1:5, r2:5, state:true, active:false}
         ],
         
         //setting
@@ -1903,7 +1916,8 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180326',
+        info_mobile:false,      //fix laggy cause by touch event
+        updated_at:'180328',
     },
     created:function(){
 
@@ -1940,12 +1954,11 @@ var app = new Vue({
 
     },
     methods:{
-
+        
         start_bom: function(devil){
           
             this.builder_target = new DevilBom(devil);
             this.current_bom = null;
-            this.builder_options = null;
             this.tabIndex = 1;
 
             this.list_bom(this.builder_target);
@@ -1957,40 +1970,187 @@ var app = new Vue({
             }
             else{
                 this.current_bom = bom;
-                this.builder_options = this.current_bom.devil.fission_formulas();
+                this.update_builder();    
             }
         },
         reset_bom:function(bom){
 
             bom.unset();
             this.current_bom = null;
-            this.builder_options = null;
+            this.update_builder();
         },
         choose_bom: function(bom){
 
             this.current_bom.set(bom);
             this.current_bom = null;
-            this.builder_options = null;
+            this.update_builder();
         },
         cancel_choose: function(){
 
             this.current_bom = null;
-            this.builder_options = null;
+            this.update_builder();
         },
         reset_builder:function(){
+            
             this.builder_target = null;
             this.current_bom = null;
-            this.builder_options = null;
+            this.update_builder();
+        },
+        builder_rarity_option_click:function(option){
+
+            var flag_first_down = true;
+            var flag_last_down = true;
+
+            if(option.state)
+                return false;
+
+            this.builder_rarity_options.forEach(function(opt){
+
+                if(opt.active && opt!=option && !opt.state){
+                    flag_first_down = false;
+                }
+
+                if(opt.active && opt!=option && opt.state){
+                    flag_last_down = false;
+                }
+            });
+
+            if(flag_first_down){
+                this.builder_rarity_options.forEach(function(opt){
+                    opt.state = opt==option ;
+                });
+            }
+
+            if(flag_last_down){
+                this.builder_rarity_options.forEach(function(opt){
+                    opt.state=true;
+                });
+            }
+  
+        },
+        update_builder(){
+            
+            if(this.current_bom){
+                this.builder_options = this.current_bom.devil.fission_formulas();
+            }
+            else{
+                this.builder_options = [];
+            }
+            this.update_builder_filter();
+        },
+        update_builder_filter:function(){
+            
+            var combs = {};
+
+            this.builder_options.forEach(function(option){
+
+                option.boms.forEach(function(bom){
+
+                    var r1 = bom.child1.devil.rarity;
+                    var r2 = bom.child2.devil.rarity;
+                    
+                    [r1,r2] = [r1,r2].sort();
+                    
+                    if(!combs[r1+'+'+r2])
+                        combs[r1+'+'+r2] = r1+'+'+r2;
+                });
+            });
+            
+            this.builder_rarity_options.forEach(function(option){
+
+                if(combs[option.text]){
+                    option.active=true;
+                    option.state=true;
+                }
+                else{
+                    option.active=false;
+                }
+            });
+
+            
+        },
+        fusion_rarity_option_click:function(option){
+
+            var flag_first_down = true;
+            var flag_last_down = true;
+
+            if(option.state)
+                return false;
+
+            this.fusion_rarity_options.forEach(function(opt){
+
+                if(opt.active && opt!=option && !opt.state){
+                    flag_first_down = false;
+                }
+
+                if(opt.active && opt!=option && opt.state){
+                    flag_last_down = false;
+                }
+            });
+
+            if(flag_first_down){
+                this.fusion_rarity_options.forEach(function(opt){
+                    opt.state = opt==option ;
+                });
+            }
+
+            if(flag_last_down){
+                this.fusion_rarity_options.forEach(function(opt){
+                    opt.state=true;
+                });
+            }
+  
+        },
+        update_fusion:function(){
+
+            if(this.fusion_target){
+                this.fusion_options = this.fusion_target.fusion_formulas();
+            }
+            else{
+                this.fusion_options = [];
+            }
+            this.update_fusion_filter();
         },
         fusion : function(devil){
 
             this.fusion_target = devil;
-            this.fusion_options = devil.fusion_formulas();
+            this.update_fusion();
             this.tabIndex = 2;
         },
         reset_fusion : function(){
+            
             this.fusion_target = null;
-            this.fusion_options = null;
+            this.update_fusion();
+        },
+        update_fusion_filter(){
+
+            var combs = {};
+
+            this.fusion_options.forEach(function(option){
+                option.formulas.forEach(function(formula){
+                    formula.boms.forEach(function(bom){
+
+                        var r1 = bom.child1.devil.rarity;
+                        var r2 = bom.child2.devil.rarity;
+                        
+                        [r1,r2] = [r1,r2].sort();
+                        
+                        if(!combs[r1+'+'+r2])
+                            combs[r1+'+'+r2] = r1+'+'+r2;
+                    });
+                });
+            });
+            
+            this.fusion_rarity_options.forEach(function(option){
+
+                if(combs[option.text]){
+                    option.active=true;
+                    option.state=true;
+                }
+                else{
+                    option.active=false;
+                }
+            });
         },
         tick:function(){
 
@@ -2056,37 +2216,16 @@ var app = new Vue({
             this.gate_timer_jp =  (diff.getUTCHours()+':'+diff.getUTCMinutes()+':'+diff.getUTCSeconds()).replace(/\b(?=(\d{1})(?!\d))/g,'0');
 
             //orb
-
             var day = this.now.getDay();
-
-            //light
-            this.orbs[0].state = (day==1||day==6);
-            //dark
-            this.orbs[1].state = (day==2||day==6);
-            //natural
-            this.orbs[2].state = (day==3||day==6||day==7);
-            //law
-            this.orbs[3].state = (day==4||day==7);
-            //chaos
-            this.orbs[4].state = (day==5||day==7);
+            this.orbs[0].state = (day==1||day==6);          //light
+            this.orbs[1].state = (day==2||day==6);          //dark
+            this.orbs[2].state = (day==3||day==6||day==7);  //natural
+            this.orbs[3].state = (day==4||day==7);          //law
+            this.orbs[4].state = (day==5||day==7);          //chaos
         },
         show_devil_info:function(devil){
             this.info_target = devil;
             this.$root.$emit('bv::show::modal','modal_devil_info');
-        },
-        info_touchdown:function(devil){
-            
-            if(this.info_timer)
-                clearTimeout(this.info_timer);
-
-            this.info_timer = setTimeout(function(){
-                app.show_devil_info(devil);
-            },1000);
-        },
-        info_touchup:function(){
-            
-            if(this.info_timer)
-                clearTimeout(this.info_timer);
         }
     },
     watch:{
@@ -2102,13 +2241,9 @@ var app = new Vue({
         },
         allow_down_grade:function(){
 
-            if(this.current_bom!=null){
-                this.builder_options = this.current_bom.devil.fission_formulas();
-            }
-                
-            if(this.fusion_target!=null){
-                this.fusion_options = this.fusion_target.fusion_formulas();
-            }
+            this.update_builder();
+                            
+            this.update_fusion();
                 
             setCookie('allow_down_grade', this.allow_down_grade);
         },
@@ -2148,53 +2283,65 @@ var app = new Vue({
         filtered_builder_options:function(){
 
             var options = [];
+            var filters = this.builder_rarity_options;
+      
+            this.builder_options.forEach(function(option){
 
-            if(this.builder_options){
+                var boms = option.boms.filter(function(bom){
+                    
+                    var r1 = bom.child1.devil.rarity;
+                    var r2 = bom.child2.devil.rarity;
 
-                this.builder_options.forEach(function(option){
+                    [r1,r2] = [r1,r2].sort();
 
-                    var boms = option.boms.filter(function(bom){
-                        
-                        return app.builder_rarity_options[bom.child1.devil.rarity-1].state 
-                            && app.builder_rarity_options[bom.child2.devil.rarity-1].state;
-                    });
-
-                    if(boms.length){
-                        options.push({name:option.name,boms:boms});
-                    }
+                    return filters.filter(function(filter){
+                        if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                            return true;
+                        }
+                    }).length > 0;
                 });
-            }
+
+                if(boms.length)
+                    options.push({name:option.name,boms:boms});
+            });
 
             return options;
         },
         filtered_fusion_options:function(){
 
             var options = [];
+            var filters = this.fusion_rarity_options;
 
-            if(this.fusion_options){
+            this.fusion_options.forEach(function(option){
 
-                this.fusion_options.forEach(function(option){
+                var formulas = [];
 
-                    var formulas = [];
+                option.formulas.forEach(function(formula){
 
-                    option.formulas.forEach(function(formula){
+                    var boms = formula.boms.filter(function(bom){
+                    
+                        var r1 = bom.child1.devil.rarity;
+                        var r2 = bom.child2.devil.rarity;
 
-                        var boms = formula.boms.filter(function(bom){
-                        
-                            return app.fusion_rarity_options[bom.child2.devil.rarity-1].state;
-                        });
+                        [r1,r2] = [r1,r2].sort();
 
-                        if(boms.length){
-                            formulas.push({name:formula.name,boms:boms});
-                        }
+                        return filters.filter(function(filter){
+                            if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                                return true;
+                            }
+                        }).length > 0;
                     });
 
-                    if(formulas.length){
-                        options.push({devil:option.devil,formulas:formulas});
+                    if(boms.length){
+                        formulas.push({name:formula.name,boms:boms});
                     }
                 });
-            }
 
+                if(formulas.length){
+                    options.push({devil:option.devil,formulas:formulas});
+                }
+            });
+            
             return options;
         }
     }
@@ -2214,14 +2361,6 @@ Vue.component('devil',{
         },
         info:function(){
             app.show_devil_info(this.devil);
-        },
-        down:function(devil){
-
-           app.info_touchdown(devil);
-        },
-        up:function(){
-
-            app.info_touchup();
         }
     }
 });
@@ -2264,13 +2403,8 @@ Vue.component('devil-bom',{
         cancel_choose: function(){
             app.cancel_choose();
         },
-        down:function(devil){
-
-            app.info_touchdown(devil);
-        },
-        up:function(){
- 
-            app.info_touchup();
+        info:function(devil){
+            app.show_devil_info(devil);
         }
     }
 });
@@ -2292,6 +2426,9 @@ Vue.component('devil-bom-builder',{
         },
         is_current:function(){
             return this.bom==app.current_bom;
+        },
+        info:function(){
+            app.show_devil_info(this.bom.devil);
         }
     }
 });
