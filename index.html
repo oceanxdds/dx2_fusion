@@ -92,7 +92,8 @@
                                 <h6 class="m-0"><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }}</h6>
                             </b-list-group-item>    
                             <b-list-group-item class="p-2">
-                                <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
+                                        <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
+                                
                             </b-list-group-item>
                             <b-list-group-item class="p-0" v-if="builder_options.length">
                                 <div class="row no-gutters justify-content-center">
@@ -253,7 +254,7 @@
                                     <td class="text-center align-middle">基本</td>
                                     <td>
                                         <div v-for="(skill, index) in devil.skills">
-                                            <span class="small">{{skill.showName()}}</span>
+                                            <span class="small" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -267,7 +268,7 @@
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
                                             <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
                                             <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
-                                            <span class="small">{{skill.showName()}}</span>
+                                            <span class="small" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -279,7 +280,7 @@
                                             <b-badge v-if="index==2" class="text-white" style="background:peru">加護</b-badge>
                                             <b-badge v-if="index==3" class="text-white" style="background:orchid">異能</b-badge>
                                             <b-badge v-if="index==4" class="bg-info text-white">防魔</b-badge>
-                                            <span class="small" v-if="index!=0">{{skill.showName()}}</span>
+                                            <span class="small" v-if="index!=0" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -401,33 +402,41 @@
     </script>
 
     <script id="devil-bom-builder-t" type="text/x-template">
-        
-        <div class="row no-gutters" v-if="bom">
-            <div class="col-12">
-                <div class="row no-gutters justify-content-start justify-content-md-center">
-                    <div class="col-auto">
-                        <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
-                            style="min-width:130px" :class="{'bg-warning':is_current()}"
-                            v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
-                        </devil>
-                    </div>
-                    <div class="col-auto pl-1" v-if="is_current()">
-                        <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold small">⚝</b-button>
-                    </div>
-                    <div class="col-auto pl-1">
-                        <b-button v-if="bom.child1||bom.child2" size="sm" @click="reset_bom(bom)">X</b-button>
+        <div v-if="bom">
+            <div class="row no-gutters justify-content-md-center pt-1">
+                <div class="col-auto col-md align-self-center pr-md-1">
+                    <hr v-if="bom.parent?bom.parent.child2==bom:false">
+                </div>
+                <div class="col-auto item">
+                    <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
+                        style="min-width:130px" :class="{'bg-warning':is_current(bom), 'text-primary':is_current(bom.parent)}"
+                        v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
+                    </devil>
+                </div>
+                <div class="col-auto col-md align-self-center pl-1">
+                    <div class="row no-gutters">
+                        <div class="col-auto pr-1" v-if="is_current(bom)">
+                            <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold">⚝</b-button>
+                        </div>
+                        <div class="col-auto" v-if="bom.child1||bom.child2">
+                            <b-button size="sm" @click="reset_bom(bom)" class="">✕</b-button>
+                        </div>
+                        <div class="col align-self-center">
+                            <hr v-if="bom.parent?bom.parent.child1==bom:false">
+                        </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-12"></div>
-            <div class="col-12 col-md-6 pl-4 pl-md-0 border-left border-left-md-none" v-if="bom.child1">
-                <devil-bom-builder :bom="bom.child1"></devil-bom-builder>
-            </div>
-            <div class="col-12 col-md-6 pl-4 pl-md-0 border-left border-left-md-none" v-if="bom.child2">
-                <devil-bom-builder :bom="bom.child2"></devil-bom-builder>
+            <div class="row no-gutters justify-content-md-center">
+                <div class="col-12 col-md-auto pl-3 pl-md-0 border-left border-left-md-none" v-if="bom.child1">
+                    <devil-bom-builder :bom="bom.child1"></devil-bom-builder>
+                </div>
+                <div class="col-12 col-md-auto pl-3 pl-md-0 border-left border-left-md-none" v-if="bom.child2">
+                    <devil-bom-builder :bom="bom.child2"></devil-bom-builder>
+                </div>
             </div>
         </div>
-
     </script>
 
     <script id="devil-bom-options-t" type="text/x-template">
@@ -443,7 +452,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180328-1"></script>
+    <script src="js/app.js?t=180329"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
