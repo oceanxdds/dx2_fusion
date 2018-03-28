@@ -1965,36 +1965,27 @@ var app = new Vue({
         },
         list_bom: function(bom){
 
-            if(this.current_bom==bom){
-                this.cancel_choose();
-            }
-            else{
-                this.current_bom = bom;
-                this.update_builder();    
-            }
+            this.update_current_bom(this.current_bom==bom?null:bom);
         },
-        reset_bom:function(bom){
+        update_current_bom:function(bom){
 
-            bom.unset();
-            this.current_bom = null;
+            this.current_bom = bom;
             this.update_builder();
         },
         choose_bom: function(bom){
 
             this.current_bom.set(bom);
-            this.current_bom = null;
-            this.update_builder();
+            this.update_current_bom(null);
         },
-        cancel_choose: function(){
+        reset_bom:function(bom){
 
-            this.current_bom = null;
-            this.update_builder();
+            bom.unset();
+            this.update_current_bom(null);
         },
         reset_builder:function(){
             
             this.builder_target = null;
-            this.current_bom = null;
-            this.update_builder();
+            this.update_current_bom(null);
         },
         builder_rarity_option_click:function(option){
 
@@ -2399,9 +2390,6 @@ Vue.component('devil-bom',{
         },
         choose_bom: function(){
             app.choose_bom(this.bom);
-        },
-        cancel_choose: function(){
-            app.cancel_choose();
         },
         info:function(devil){
             app.show_devil_info(devil);
