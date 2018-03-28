@@ -1774,7 +1774,7 @@ Skill.prototype.showDesc = function(){
 }
 Skill.prototype.showHint = function(){
 
-    var hint = '屬性: '+this.element+' MP:'+this.mp+' 繼承:'+this.point+'\n'+this.showDesc();
+    var hint = '屬性: '+this.element+' MP: '+this.mp+' 繼承: '+this.point+'\n'+this.showDesc();
     return hint;
 }
 
