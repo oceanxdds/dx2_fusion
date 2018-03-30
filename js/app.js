@@ -2457,8 +2457,8 @@ var app = new Vue({
         tick:function(){
 
             var sec = this.now.getSeconds()+1;
-            
-            if(sec==0)
+
+            if(sec==60)
                 this.update_now();
             
             this.now.setSeconds( sec );
