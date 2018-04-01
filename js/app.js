@@ -2256,7 +2256,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180330',
+        updated_at:'180401',
     },
     created:function(){
 
