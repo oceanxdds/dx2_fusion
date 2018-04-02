@@ -1292,45 +1292,45 @@ var skill_stable = [
 {"name":"アイスブレス","name_tw":"極寒吐息","desc":"ランダムな敵に２〜４回、氷結属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"氷結"},
 {"name":"絶対零度","name_tw":"絕對零度","desc":"ランダムな敵に２～４回、氷結属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"氷結"},
 //雷
-{"name":"ジオ","name_tw":"","desc":"敵単体に電撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"電撃"},
-{"name":"ジオンガ","name_tw":"","desc":"敵単体に電撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"電撃"},
-{"name":"ジオダイン","name_tw":"","desc":"敵単体に電撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"電撃"},
-{"name":"真理の雷","name_tw":"","desc":"敵単体に電撃属性の魔法型ダメージを威力180で与える。","mp":"7","point":null,"element":"電撃"},
-{"name":"マハジオ","name_tw":"","desc":"敵全体に電撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"電撃"},
-{"name":"マハジオンガ","name_tw":"","desc":"敵全体に電撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"電撃"},
-{"name":"マハジオダイン","name_tw":"","desc":"敵全体に電撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"電撃"},
-{"name":"放電","name_tw":"","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"電撃"},
-{"name":"ショックウェーブ","name_tw":"","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"電撃"},
+{"name":"ジオ","name_tw":"吉歐","desc":"敵単体に電撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"電撃"},
+{"name":"ジオンガ","name_tw":"吉歐加","desc":"敵単体に電撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"電撃"},
+{"name":"ジオダイン","name_tw":"吉歐達因","desc":"敵単体に電撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"電撃"},
+{"name":"真理の雷","name_tw":"真理之雷","desc":"敵単体に電撃属性の魔法型ダメージを威力180で与える。","mp":"7","point":null,"element":"電撃"},
+{"name":"マハジオ","name_tw":"瑪哈吉歐","desc":"敵全体に電撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"電撃"},
+{"name":"マハジオンガ","name_tw":"瑪哈吉歐加","desc":"敵全体に電撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"電撃"},
+{"name":"マハジオダイン","name_tw":"瑪哈吉歐達因","desc":"敵全体に電撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"電撃"},
+{"name":"放電","name_tw":"放電","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"電撃"},
+{"name":"ショックウェーブ","name_tw":"衝擊波","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"電撃"},
 //衝
-{"name":"ザン","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"衝撃"},
-{"name":"ザンマ","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"衝撃"},
-{"name":"ザンダイン","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"衝撃"},
-{"name":"殺風激","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"衝撃"},
-{"name":"マハザン","name_tw":"","desc":"敵全体に衝撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"衝撃"},
-{"name":"マハザンマ","name_tw":"","desc":"敵全体に衝撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"衝撃"},
-{"name":"マハザンダイン","name_tw":"","desc":"敵全体に衝撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"衝撃"},
-{"name":"ウィンドブレス","name_tw":"","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"衝撃"},
-{"name":"ツイスター","name_tw":"","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"衝撃"},
+{"name":"ザン","name_tw":"颯","desc":"敵単体に衝撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"衝撃"},
+{"name":"ザンマ","name_tw":"颯瑪","desc":"敵単体に衝撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"衝撃"},
+{"name":"ザンダイン","name_tw":"颯達因","desc":"敵単体に衝撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"衝撃"},
+{"name":"殺風激","name_tw":"殺風激","desc":"敵単体に衝撃属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"衝撃"},
+{"name":"マハザン","name_tw":"瑪哈颯","desc":"敵全体に衝撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"衝撃"},
+{"name":"マハザンマ","name_tw":"瑪哈颯瑪","desc":"敵全体に衝撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"衝撃"},
+{"name":"マハザンダイン","name_tw":"瑪哈颯達因","desc":"敵全体に衝撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"衝撃"},
+{"name":"ウィンドブレス","name_tw":"狂風吐息","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"衝撃"},
+{"name":"ツイスター","name_tw":"龍捲風","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"衝撃"},
 //破魔
-{"name":"ハマ","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"破魔"},
-{"name":"ハマオン","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"破魔"},
-{"name":"ハマダイン","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"破魔"},
-{"name":"裁きの雷火","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"破魔"},
-{"name":"マハンマ","name_tw":"","desc":"敵全体に破魔属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"破魔"},
-{"name":"マハンマオン","name_tw":"","desc":"敵全体に破魔属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"破魔"},
-{"name":"マハンマダイン","name_tw":"","desc":"敵全体に破魔属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"破魔"},
-{"name":"審判の光","name_tw":"","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
-{"name":"天罰","name_tw":"","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"破魔"},
+{"name":"ハマ","name_tw":"哈瑪","desc":"敵単体に破魔属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"破魔"},
+{"name":"ハマオン","name_tw":"哈瑪翁","desc":"敵単体に破魔属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"破魔"},
+{"name":"ハマダイン","name_tw":"哈瑪達因","desc":"敵単体に破魔属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"破魔"},
+{"name":"裁きの雷火","name_tw":"制裁雷火","desc":"敵単体に破魔属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"破魔"},
+{"name":"マハンマ","name_tw":"瑪哈瑪","desc":"敵全体に破魔属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"破魔"},
+{"name":"マハンマオン","name_tw":"瑪哈瑪翁","desc":"敵全体に破魔属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"破魔"},
+{"name":"マハンマダイン","name_tw":"瑪哈瑪達因","desc":"敵全体に破魔属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"破魔"},
+{"name":"審判の光","name_tw":"審判之光","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
+{"name":"天罰","name_tw":"天譴","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"破魔"},
 //咒殺
-{"name":"ムド","name_tw":"","desc":"敵単体に呪殺属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"呪殺"},
-{"name":"ムドオン","name_tw":"","desc":"敵単体に呪殺属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"呪殺"},
-{"name":"ムドダイン","name_tw":"","desc":"敵単体に呪殺属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"呪殺"},
-{"name":"ヘルズアイ","name_tw":"","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":6,"point":null,"element":"呪殺"},
-{"name":"マハムド","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"呪殺"},
-{"name":"マハムドオン","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"呪殺"},
-{"name":"マハムドダイン","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"呪殺"},
-{"name":"イービルアイ","name_tw":"","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
-{"name":"煉獄","name_tw":"","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
+{"name":"ムド","name_tw":"姆多","desc":"敵単体に呪殺属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"呪殺"},
+{"name":"ムドオン","name_tw":"姆多翁","desc":"敵単体に呪殺属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"呪殺"},
+{"name":"ムドダイン","name_tw":"姆多達因","desc":"敵単体に呪殺属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"呪殺"},
+{"name":"ヘルズアイ","name_tw":"地獄之眼","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":6,"point":null,"element":"呪殺"},
+{"name":"マハムド","name_tw":"瑪哈姆多","desc":"敵全体に呪殺属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"呪殺"},
+{"name":"マハムドオン","name_tw":"瑪哈姆多翁","desc":"敵全体に呪殺属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"呪殺"},
+{"name":"マハムドダイン","name_tw":"瑪哈姆多達因","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"呪殺"},
+{"name":"イービルアイ","name_tw":"邪惡之眼","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
+{"name":"煉獄","name_tw":"煉獄","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
 //毒
 {"name":"ポイズマ","name_tw":"","desc":"敵単体を基礎確率40%で毒状態にする。","mp":5,"point":2,"element":"無"},
 {"name":"ポイズマオン","name_tw":"","desc":"敵単体を基礎確率50%で毒状態にする。","mp":6,"point":null,"element":"無"},
@@ -1611,6 +1611,12 @@ var Devil = function(devil){
     this.skill4 = devil.skill4;
     this.skill5 = devil.skill5;
     this.type = devil.type;
+    this.max = null;
+    this.min = null;
+    this.race = null;
+    this.fission_options = [];
+    this.fusion_options = [];
+    this.cost = null;
 };
 
 Devil.prototype.showName = function(){
@@ -1754,9 +1760,8 @@ Race.prototype.showName = function(){
         case 'en': name = this.name_en; break;
         default: name = this.name;
     }
-    if(!name)
-        name = this.name;
-    return name;
+
+    return name ? name : this.name;
 }
 
 ////////////////////
@@ -1830,7 +1835,8 @@ function DevilBom(devil, d1, d2){
     this.downgrade = false;
     this.mag = 0;
     this.mag_pure = 0;
-    
+    this.collapse = false;
+
     this.init();
 }
 
@@ -1964,10 +1970,6 @@ DevilBom.bom = function(devil, d1, d2){
     if( ! (devil.min <= g && g < devil.max ) ){
         return null;
     }
-    
-    if( app.allow_down_grade==0 && (d1.rarity>devil.rarity||d2.rarity>devil.rarity)){
-        return null;
-    }
 
     return new DevilBom(devil, d1, d2);
 }
@@ -2020,32 +2022,23 @@ function DDDClass(ddd, skills){
             devil.race = r1;
             devil.max = devil.grade;
             devil.min = (index==r1.devils.length-1 ? 0 : r1.devils[index+1].grade);
-
+            
             if(devil.skills){
                 devil.skills = devil.skills.map(function(name){
                     var skill = skill_data[name];
-                    if(!skill){
-                        skill = new Skill({name:name});
-                    }
-                    return skill;
+                    return skill ? skill : new Skill({name:name});
                 });
             }
             if(devil.skill4){
                 devil.skill4 = devil.skill4.map(function(name){
                     var skill = skill_data[name];
-                    if(!skill){
-                        skill = new Skill({name:name});
-                    }
-                    return skill;
+                    return skill ? skill : new Skill({name:name});
                 });
             }
             if(devil.skill5){
                 devil.skill5 = devil.skill5.map(function(name){
                     var skill = skill_data[name];
-                    if(!skill){
-                        skill = new Skill({name:name});
-                    }
-                    return skill;
+                    return skill ? skill : new Skill({name:name});
                 });
             }
             devil_data.push(devil);
@@ -2086,6 +2079,88 @@ function DDDClass(ddd, skills){
         }
     });
 
+    devil_data.sort(function(d1,d2){
+        if(d1.grade==d2.grad2)  return 0;
+        return d1.grade > d2.grade ? 1 : -1;
+    });
+
+    //create fission and fusion options
+    devil_data.forEach(function(devil){
+        devil.fission_options = devil.fission_formulas();
+        devil.fusion_options = devil.fusion_formulas();
+        devil.fission_boms = [];
+        
+        devil.fission_options.forEach(function(option){
+             option.boms.forEach(function(bom){
+                devil.fission_boms.push(bom);
+             });
+        });
+    });
+
+    //caculate each devil's cost
+
+    var i=0;
+    while(true&&i<10){
+
+        var all_pass = true;
+        
+        devil_data.forEach(function(devil){
+
+             //console.log(devil.fission_boms.length);
+             //cost changed
+     
+            var pass = true;
+
+            devil.fission_boms.forEach(function(bom){
+                if( bom.child1.devil.cost==null || bom.child2.devil.cost==null){
+                    pass = false;
+                }
+            });
+
+            devil.fission_boms.sort(function(bom1, bom2){
+
+                var cost1 = bom1.child1.devil.cost + bom1.child2.devil.cost + bom1.mag_pure;
+                var cost2 = bom2.child1.devil.cost + bom2.child2.devil.cost + bom2.mag_pure;
+
+                if(bom1.child1.devil.cost==null)  cost1 = null;
+                if(bom1.child2.devil.cost==null)  cost1 = null;
+                if(bom2.child1.devil.cost==null)  cost2 = null;
+                if(bom2.child2.devil.cost==null)  cost2 = null;
+
+                if(cost1==cost2) return 0;
+                if(cost1==null)  return 1;
+                if(cost2==null) return -1;
+
+                return cost1 > cost2 ? 1 : -1;
+            });
+
+            //pass & caculate devil's cost
+            if(devil.fission_boms.length>0){
+                var bom = devil.fission_boms[0];
+                var cost = bom.child1.devil.cost + bom.child2.devil.cost + bom.mag_pure;
+                if(bom.child1.devil.cost==null) cost = null;
+                if(bom.child2.devil.cost==null) cost = null;
+                if(cost!=null && devil.cost != cost){
+                    devil.cost = cost;
+                    pass = false;
+                }
+            }
+            else{
+                devil.cost = 0;
+            }
+
+            if(!pass){         
+                all_pass = false;
+            }
+        });
+
+        i++;
+        if(all_pass){
+            break;
+        }
+    }
+    
+    
     this.races = ddd;
     this.devils = devil_data;
 }
@@ -2256,7 +2331,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180401',
+        updated_at:'180403',
     },
     created:function(){
 
@@ -2563,6 +2638,38 @@ var app = new Vue({
         show_devil_info:function(devil){
             this.info_target = devil;
             this.$root.$emit('bv::show::modal','modal_devil_info');
+        },
+        auto_costdown(bom, rarity){
+
+            if(bom && bom.devil.rarity>rarity){
+
+                var options = bom.devil.fission_formulas();
+                var boms = [];
+
+                options.forEach(function(option){
+                    boms = boms.concat(option.boms);
+                });
+
+                boms.sort(function(bom1, bom2){
+                    var cost1 = bom1.child1.devil.cost + bom1.child2.devil.cost + bom1.mag_pure;
+                    var cost2 = bom2.child1.devil.cost + bom2.child2.devil.cost + bom2.mag_pure;
+                    if(cost1==cost2) return 0;
+                    return cost1 > cost2 ? 1 : -1;
+                });
+
+                if(boms.length>0){
+                    bom.set(boms[0]);
+                }
+
+                this.auto_costdown(bom.child1, rarity);
+                this.auto_costdown(bom.child2, rarity);
+                
+            }
+        },
+        builder_auto_costdown:function(rarity){
+            if(rarity==null)
+                rarity = 3;
+            this.auto_costdown(this.builder_target, rarity);
         }
     },
     watch:{
@@ -2577,10 +2684,6 @@ var app = new Vue({
             setCookie('lang_value', this.lang_value);
         },
         allow_down_grade:function(){
-
-            this.update_builder();
-                            
-            this.update_fusion();
                 
             setCookie('allow_down_grade', this.allow_down_grade);
         },
@@ -2621,15 +2724,21 @@ var app = new Vue({
 
             var options = [];
             var filters = this.builder_rarity_options;
-      
+            var allow_down_grade = this.allow_down_grade;
+
             this.builder_options.forEach(function(option){
 
                 var boms = option.boms.filter(function(bom){
                     
+                    var r = bom.devil.rarity;
                     var r1 = bom.child1.devil.rarity;
                     var r2 = bom.child2.devil.rarity;
 
                     [r1,r2] = [r1,r2].sort();
+
+                    if( allow_down_grade==0 && (r1>r||r2>r)){
+                        return false;
+                    }
 
                     return filters.filter(function(filter){
                         if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
@@ -2648,19 +2757,25 @@ var app = new Vue({
 
             var options = [];
             var filters = this.fusion_rarity_options;
+            var allow_down_grade = this.allow_down_grade;
 
             this.fusion_options.forEach(function(option){
 
                 var formulas = [];
-
+                
                 option.formulas.forEach(function(formula){
 
                     var boms = formula.boms.filter(function(bom){
                     
+                        var r = bom.devil.rarity;
                         var r1 = bom.child1.devil.rarity;
                         var r2 = bom.child2.devil.rarity;
 
                         [r1,r2] = [r1,r2].sort();
+
+                        if( allow_down_grade==0 && (r1>r||r2>r)){
+                            return false;
+                        }
 
                         return filters.filter(function(filter){
                             if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
@@ -2763,6 +2878,9 @@ Vue.component('devil-bom-builder',{
         },
         info:function(){
             app.show_devil_info(this.bom.devil);
+        },
+        toggle:function(){
+            this.bom.collapse = !this.bom.collapse;
         }
     }
 });

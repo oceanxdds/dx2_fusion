@@ -89,7 +89,18 @@
                     <b-card no-body v-if="builder_target">
                         <b-list-group flush>
                             <b-list-group-item class="p-2">
-                                <h6 class="m-0"><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }}</h6>
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }} </h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <b-button size="sm" variant="warning" @click="builder_auto_costdown(3)">AUTO★3</b-button>
+                                        <b-button size="sm" variant="warning" @click="builder_auto_costdown(2)">AUTO★2</b-button>
+                                        <b-button size="sm" variant="warning" @click="builder_auto_costdown(1)">AUTO★1</b-button>
+                                    </div>
+                                </div>
+                                
+                                
                             </b-list-group-item>    
                             <b-list-group-item class="p-2">
                                         <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
@@ -246,7 +257,6 @@
                     <div class="col-12">
                         <devil :devil="devil" usage="info"></devil>
                     </div>
-
                     <div class="col-12">
                         <table class="table table-bordered table-sm my-0">
                             <tboty>
@@ -418,8 +428,11 @@
                         <div class="col-auto pr-1" v-if="is_current(bom)">
                             <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold">⚝</b-button>
                         </div>
-                        <div class="col-auto" v-if="bom.child1||bom.child2">
+                        <div class="col-auto" v-if="is_current(bom)&&(bom.child1||bom.child2)">
                             <b-button size="sm" @click="reset_bom(bom)" class="">✕</b-button>
+                        </div>
+                        <div class="col-auto" v-if="!is_current(bom)&&(bom.child1||bom.child2)">
+                                <b-button size="sm" @click="toggle()" class="">{{bom.collapse?'+':'-'}}</b-button>
                         </div>
                         <div class="col align-self-center">
                             <hr v-if="bom.parent?bom.parent.child1==bom:false">
@@ -428,7 +441,7 @@
                 </div>
                 
             </div>
-            <div class="row no-gutters justify-content-md-center">
+            <div class="row no-gutters justify-content-md-center" v-if="!bom.collapse">
                 <div class="col-12 col-md-auto pl-3 pl-md-0 border-left border-left-md-none" v-if="bom.child1">
                     <devil-bom-builder :bom="bom.child1"></devil-bom-builder>
                 </div>
@@ -452,7 +465,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180401"></script>
+    <script src="js/app.js?t=180403"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
