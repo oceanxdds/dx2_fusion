@@ -2331,7 +2331,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180403',
+        updated_at:'180403-1',
     },
     created:function(){
 
@@ -2427,7 +2427,6 @@ var app = new Vue({
                     opt.state=true;
                 });
             }
-  
         },
         update_builder(){
             
@@ -2670,6 +2669,7 @@ var app = new Vue({
             if(rarity==null)
                 rarity = 3;
             this.auto_costdown(this.builder_target, rarity);
+            this.update_current_bom(null);
         }
     },
     watch:{
