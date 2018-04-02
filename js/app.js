@@ -2278,7 +2278,7 @@ var app = new Vue({
         ],
         //fusion
         fusion_target:null,
-        fusion_options:null,
+        fusion_options:[],
         fusion_rarity_options:[
             {text:"1+1", state:true, active:false},
             {text:"1+2", state:true, active:false},
@@ -2331,7 +2331,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180403-1',
+        updated_at:'180403',
     },
     created:function(){
 
@@ -2441,18 +2441,26 @@ var app = new Vue({
         update_builder_filter:function(){
             
             var combs = {};
+            var allow_down_grade = this.allow_down_grade;
 
             this.builder_options.forEach(function(option){
 
                 option.boms.forEach(function(bom){
 
+                    var r = bom.devil.rarity;
                     var r1 = bom.child1.devil.rarity;
                     var r2 = bom.child2.devil.rarity;
                     
                     [r1,r2] = [r1,r2].sort();
                     
-                    if(!combs[r1+'+'+r2])
-                        combs[r1+'+'+r2] = r1+'+'+r2;
+                    if( allow_down_grade==0 && (r1>r||r2>r)){
+                        //skip
+                    }
+                    else{
+                        if(!combs[r1+'+'+r2])
+                            combs[r1+'+'+r2] = r1+'+'+r2;
+                    }
+                    
                 });
             });
             
@@ -2525,18 +2533,25 @@ var app = new Vue({
         update_fusion_filter(){
 
             var combs = {};
-
+            var allow_down_grade = this.allow_down_grade;
+            
             this.fusion_options.forEach(function(option){
                 option.formulas.forEach(function(formula){
                     formula.boms.forEach(function(bom){
 
+                        var r = bom.devil.rarity;
                         var r1 = bom.child1.devil.rarity;
                         var r2 = bom.child2.devil.rarity;
                         
                         [r1,r2] = [r1,r2].sort();
                         
-                        if(!combs[r1+'+'+r2])
-                            combs[r1+'+'+r2] = r1+'+'+r2;
+                        if( allow_down_grade==0 && (r1>r||r2>r)){
+                            //skip
+                        }
+                        else{
+                            if(!combs[r1+'+'+r2])
+                                combs[r1+'+'+r2] = r1+'+'+r2;
+                        }
                     });
                 });
             });
@@ -2684,7 +2699,10 @@ var app = new Vue({
             setCookie('lang_value', this.lang_value);
         },
         allow_down_grade:function(){
-                
+            
+            this.update_builder_filter();
+            this.update_fusion_filter();
+
             setCookie('allow_down_grade', this.allow_down_grade);
         },
         preview:function(){
