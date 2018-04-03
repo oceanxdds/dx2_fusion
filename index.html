@@ -84,7 +84,7 @@
                 </b-tab>
 
                 <!--tab2 fission/builder-->
-                
+
                 <b-tab :title="$t('message.reverse')" no-body>
                     <b-card no-body v-if="builder_target">
                         <b-list-group flush>
@@ -324,6 +324,7 @@
                 
             </div>
         </b-modal>
+
     </div>
 
     <!--Vue Template-->
@@ -412,6 +413,7 @@
     </script>
 
     <script id="devil-bom-builder-t" type="text/x-template">
+
         <div v-if="bom">
             <div class="row no-gutters justify-content-md-center pt-1">
                 <div class="col-auto col-md align-self-center pr-md-1">
@@ -432,7 +434,7 @@
                             <b-button size="sm" @click="reset_bom(bom)" class="">✕</b-button>
                         </div>
                         <div class="col-auto" v-if="!is_current(bom)&&(bom.child1||bom.child2)">
-                                <b-button size="sm" @click="toggle()" class="">{{bom.collapse?'+':'-'}}</b-button>
+                            <b-button size="sm" @click="toggle()" class="">{{bom.collapse?'+':'-'}}</b-button>
                         </div>
                         <div class="col align-self-center">
                             <hr v-if="bom.parent?bom.parent.child1==bom:false">
@@ -450,6 +452,7 @@
                 </div>
             </div>
         </div>
+
     </script>
 
     <script id="devil-bom-options-t" type="text/x-template">
@@ -465,9 +468,10 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180403-2"></script>
+    <script src="js/app.js?t=180404"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

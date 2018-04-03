@@ -1332,29 +1332,29 @@ var skill_stable = [
 {"name":"イービルアイ","name_tw":"邪惡之眼","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
 {"name":"煉獄","name_tw":"煉獄","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
 //毒
-{"name":"ポイズマ","name_tw":"","desc":"敵単体を基礎確率40%で毒状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"ポイズマオン","name_tw":"","desc":"敵単体を基礎確率50%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハポイズマ","name_tw":"","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハポイズマオン","name_tw":"","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"毒ガスブレス","name_tw":"","desc":"ランダムな敵を２〜４回、基礎確率30％で毒状態にする。","mp":6,"point":7,"element":"無"},
+{"name":"ポイズマ","name_tw":"波伊佐瑪","desc":"敵単体を基礎確率40%で毒状態にする。","mp":5,"point":2,"element":"無"},
+{"name":"ポイズマオン","name_tw":"波伊佐瑪翁","desc":"敵単体を基礎確率50%で毒状態にする。","mp":6,"point":null,"element":"無"},
+{"name":"マハポイズマ","name_tw":"瑪哈波伊佐瑪","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
+{"name":"マハポイズマオン","name_tw":"瑪哈波伊佐瑪翁","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
+{"name":"毒ガスブレス","name_tw":"猛毒吐息","desc":"ランダムな敵を２〜４回、基礎確率30％で毒状態にする。","mp":6,"point":7,"element":"無"},
 //縛
-{"name":"シバブー","name_tw":"","desc":"敵単体を基礎確率40%で緊縛状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"シバブオン","name_tw":"","desc":"敵単体を基礎確率50%で緊縛状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハシバブー","name_tw":"","desc":"敵全体を基礎確率30%で緊縛状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハシバブオン","name_tw":"","desc":"敵全体を基礎確率40%で緊縛状態にする。","mp":7,"point":null,"element":"無"},
-{"name":"バインドボイス","name_tw":"","desc":"ランダムな敵を２～４回、基礎確率30%で緊縛状態にする。","mp":6,"point":null,"element":"無"},
+{"name":"シバブー","name_tw":"希巴縛","desc":"敵単体を基礎確率40%で緊縛状態にする。","mp":5,"point":2,"element":"無"},
+{"name":"シバブオン","name_tw":"希巴縛翁","desc":"敵単体を基礎確率50%で緊縛状態にする。","mp":6,"point":8,"element":"無"},
+{"name":"マハシバブー","name_tw":"瑪哈希巴縛","desc":"敵全体を基礎確率30%で緊縛状態にする。","mp":6,"point":5,"element":"無"},
+{"name":"マハシバブオン","name_tw":"瑪哈希巴縛翁","desc":"敵全体を基礎確率40%で緊縛状態にする。","mp":7,"point":null,"element":"無"},
+{"name":"バインドボイス","name_tw":"束縛咆嘯","desc":"ランダムな敵を２～４回、基礎確率30%で緊縛状態にする。","mp":6,"point":null,"element":"無"},
 //魅
-{"name":"マリンカリン","name_tw":"","desc":"敵単体を基礎確率40%で魅了状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"マリンカリオン","name_tw":"","desc":"敵単体を基礎確率50%で魅了状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハマリンカリン","name_tw":"","desc":"敵全体を基礎確率30%で魅了状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハマリカリオン","name_tw":"","desc":"敵全体を基礎確率40%で魅了状態にする。","mp":7,"point":null,"element":"無"},
-{"name":"セクシーダンス","name_tw":"","desc":"ランダムな敵を２～４回、基礎確率30%で魅了状態にする。","mp":6,"point":7,"element":"無"},
+{"name":"マリンカリン","name_tw":"瑪琳卡琳","desc":"敵単体を基礎確率40%で魅了状態にする。","mp":5,"point":2,"element":"無"},
+{"name":"マリンカリオン","name_tw":"瑪琳卡琳翁","desc":"敵単体を基礎確率50%で魅了状態にする。","mp":6,"point":null,"element":"無"},
+{"name":"マハマリンカリン","name_tw":"瑪哈瑪琳卡琳","desc":"敵全体を基礎確率30%で魅了状態にする。","mp":6,"point":5,"element":"無"},
+{"name":"マハマリカリオン","name_tw":"瑪哈瑪琳卡琳翁","desc":"敵全体を基礎確率40%で魅了状態にする。","mp":7,"point":null,"element":"無"},
+{"name":"セクシーダンス","name_tw":"色誘之舞","desc":"ランダムな敵を２～４回、基礎確率30%で魅了状態にする。","mp":6,"point":7,"element":"無"},
 //封
-{"name":"マカジャマ","name_tw":"","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"マカジャマオン","name_tw":"","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハマカジャマ","name_tw":"","desc":"敵全体を基礎確率30%で魔封状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハマカジャオン","name_tw":"","desc":"敵全体を基礎確率40%で魔封状態にする。","mp":7,"point":9,"element":"無"},
-{"name":"ホワイトノイズ","name_tw":"","desc":"ランダムな敵を２～４回、基礎確率30%で魔封状態にする。","mp":6,"point":7,"element":"無"},
+{"name":"マカジャマ","name_tw":"瑪卡加瑪","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":5,"point":2,"element":"無"},
+{"name":"マカジャマオン","name_tw":"瑪卡加瑪翁","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":6,"point":8,"element":"無"},
+{"name":"マハマカジャマ","name_tw":"瑪哈瑪卡加瑪","desc":"敵全体を基礎確率30%で魔封状態にする。","mp":6,"point":5,"element":"無"},
+{"name":"マハマカジャオン","name_tw":"瑪哈瑪卡加瑪翁","desc":"敵全体を基礎確率40%で魔封状態にする。","mp":7,"point":9,"element":"無"},
+{"name":"ホワイトノイズ","name_tw":"白茫噪音","desc":"ランダムな敵を２～４回、基礎確率30%で魔封状態にする。","mp":6,"point":7,"element":"無"},
 //萬
 {"name":"吸血","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力120で与え、そのダメージの25％分、自身を回復する。","mp":5,"point":3,"element":"万能"},
 {"name":"デスタッチ","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力140で与え、そのダメージの40％分、自身を回復する。","mp":6,"point":6,"element":"万能"},
@@ -2022,7 +2022,7 @@ function DDDClass(ddd, skills){
             devil.race = r1;
             devil.max = devil.grade;
             devil.min = (index==r1.devils.length-1 ? 0 : r1.devils[index+1].grade);
-            
+
             if(devil.skills){
                 devil.skills = devil.skills.map(function(name){
                     var skill = skill_data[name];
@@ -2041,6 +2041,7 @@ function DDDClass(ddd, skills){
                     return skill ? skill : new Skill({name:name});
                 });
             }
+
             devil_data.push(devil);
         });
 
@@ -2106,7 +2107,6 @@ function DDDClass(ddd, skills){
         
         devil_data.forEach(function(devil){
 
-             //console.log(devil.fission_boms.length);
              //cost changed
      
             var pass = true;
@@ -2160,7 +2160,6 @@ function DDDClass(ddd, skills){
         }
     }
     
-    
     this.races = ddd;
     this.devils = devil_data;
 }
@@ -2174,6 +2173,7 @@ function DDDClass(ddd, skills){
 skill_stable = skill_stable.map(function(skill){
     return new Skill(skill);
 });
+
 ddd_stable = new DDDClass(ddd_stable, skill_stable);
 ddd_preview = new DDDClass(ddd_preview, skill_stable);
 
@@ -2188,8 +2188,8 @@ function getCookie(name)
 {
     var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
      if(arr != null) return unescape(arr[2]); return null;
-
 }
+
 // Ready translated locale messages
 const messages = {
     en: {
@@ -2331,7 +2331,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180403',
+        updated_at:'180404'
     },
     created:function(){
 
@@ -2361,7 +2361,6 @@ var app = new Vue({
             app.tick();
 
         },1000);
-
     },
     methods:{
         
@@ -2474,8 +2473,6 @@ var app = new Vue({
                     option.active=false;
                 }
             });
-
-            
         },
         fusion_rarity_option_click:function(option){
 
@@ -2507,7 +2504,6 @@ var app = new Vue({
                     opt.state=true;
                 });
             }
-  
         },
         update_fusion:function(){
 
@@ -2677,7 +2673,6 @@ var app = new Vue({
 
                 this.auto_costdown(bom.child1, rarity);
                 this.auto_costdown(bom.child2, rarity);
-                
             }
         },
         builder_auto_costdown:function(rarity){
@@ -2702,12 +2697,12 @@ var app = new Vue({
             
             this.update_builder_filter();
             this.update_fusion_filter();
-
+            
             setCookie('allow_down_grade', this.allow_down_grade);
         },
         preview:function(){
             
-            this.data = this.preview=='0' ? ddd_stable : ddd_preview ;
+            this.data = this.preview == '0' ? ddd_stable : ddd_preview ;
             this.reset_builder();
             this.reset_fusion();
         },
@@ -2718,7 +2713,7 @@ var app = new Vue({
     },
     computed:{
         filtered_devils: function(){
-            
+
             var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
 
             var result = null;
@@ -2732,10 +2727,11 @@ var app = new Vue({
             return result;
         },
         builder_total_mag: function(){
-            
+
             return this.builder_target?this.builder_target.showTotalMag():'';
         },
         builder_total_mag_pure:function(){
+
             return this.builder_target?this.builder_target.showTotalMagPure():'';
         },
         filtered_builder_options:function(){
