@@ -2194,6 +2194,8 @@ function getCookie(name)
 const messages = {
     en: {
       message: {
+        fusion: 'Fusion',
+        skill:'Skill',
         reverse:'Reverse',
         normal:'Normal',
         reverse_fusion: 'Reverse Fusion',
@@ -2209,6 +2211,8 @@ const messages = {
     },
     ja: {
       message: {
+        fusion:'合体',
+        skill:'スキル',
         reverse:'逆引き',
         normal:'通常',
         reverse_fusion: '逆引き合体',
@@ -2224,6 +2228,8 @@ const messages = {
     },
     tw: {
         message:{
+            fusion:'合體',
+            skill:'技能',
             reverse:'逆向',
             normal:'順向',
             reverse_fusion: '逆向合體',
@@ -2309,9 +2315,12 @@ var app = new Vue({
             {text: 'message.allow', value:1},
             {text: 'message.deny', value:0}
         ],
-        tabIndex:0,
+        index_main:0,
+        index_main_last:0,
+        index_fusion:0,
+        index_fusion_last:0,
         keyword:'',
-        
+        searchBar:false,
         //orb
         orbs:[
             {'name':'ライト', icon:'images/theme/light.png', state:false},
@@ -2331,7 +2340,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180404'
+        updated_at:'180407'
     },
     created:function(){
 
@@ -2362,13 +2371,126 @@ var app = new Vue({
 
         },1000);
     },
+    watch:{
+        lang_value:function(){
+
+            switch(this.lang_value){
+                case 0: i18n.locale='ja';break;
+                case 1: i18n.locale='tw';break;
+                case 2: i18n.locale='en';break;
+            }
+
+            setCookie('lang_value', this.lang_value);
+        },
+        allow_down_grade:function(){
+            
+            this.update_builder_filter();
+            this.update_fusion_filter();
+            
+            setCookie('allow_down_grade', this.allow_down_grade);
+        },
+        preview:function(){
+            
+            this.data = this.preview == '0' ? ddd_stable : ddd_preview ;
+            this.reset_builder();
+            this.reset_fusion();
+        }
+    },
     methods:{
-        
+
+        route:function(name, skip_update_last){
+            
+            var index_main = this.index_main;
+            var index_fusion = this.index_fusion;
+
+            switch(name){
+                case 'fusion.devil':
+                    index_main = 0;
+                    index_fusion = 0;
+                    break;
+                case 'fusion.fission':
+                    index_main = 0;
+                    index_fusion = 1;
+                    break;
+                case 'fusion.fusion':
+                    index_main = 0;
+                    index_fusion = 2;
+                    break;
+                case 'skill':
+                    index_main = 1;
+                    break;
+                case 'customize':
+                    index_main = 2;
+                    break;
+                case 'search':
+                    index_main = 3;
+                    break;
+                case 'setting':
+                    index_main = 4;
+                    break;
+                case 'last':
+                    index_main = this.index_main_last;
+                    index_fusion = this.index_fusion_last;
+                    break;
+                default:
+                    index_main = 0;
+                    index_fusion = 0;
+            }
+
+            if(!skip_update_last){
+                this.index_main_last = index_main;
+                this.index_fusion_last = index_fusion;
+            }
+
+            this.index_main = index_main;
+            this.index_fusion = index_fusion;
+        },
+        isRoute:function(name){
+            
+            var index_main = this.index_main;
+            var index_fusion = this.index_fusion;
+
+            switch(name){
+                case 'home':
+                    index_main = 0;
+                    index_fusion = 0;
+                    break;
+                case 'fusion.devil':
+                    index_main = 0;
+                    index_fusion = 0;
+                    break;
+                case 'fusion.fission':
+                    index_main = 0;
+                    index_fusion = 1;
+                    break;
+                case 'fusion.fusion':
+                    index_main = 0;
+                    index_fusion = 2;
+                    break;
+                case 'skill':
+                    index_main = 1;
+                    break;
+                case 'customize':
+                    index_main = 2;
+                    break;
+                case 'search':
+                    index_main = 3;
+                    break;
+                case 'setting':
+                    index_main = 4;
+                    break;
+                default:
+                    index_main = 0;
+                    index_fusion = 0;
+            }
+
+            return index_main == this.index_main && index_fusion == this.index_fusion;
+        },
         start_bom: function(devil){
           
             this.builder_target = new DevilBom(devil);
             this.current_bom = null;
-            this.tabIndex = 1;
+            this.route('fusion.fission');
 
             this.list_bom(this.builder_target);
         },
@@ -2427,7 +2549,7 @@ var app = new Vue({
                 });
             }
         },
-        update_builder(){
+        update_builder:function(){
             
             if(this.current_bom){
                 this.builder_options = this.current_bom.devil.fission_formulas();
@@ -2515,18 +2637,18 @@ var app = new Vue({
             }
             this.update_fusion_filter();
         },
-        fusion : function(devil){
+        fusion: function(devil){
 
             this.fusion_target = devil;
             this.update_fusion();
-            this.tabIndex = 2;
+            this.route('fusion.fusion');
         },
-        reset_fusion : function(){
+        reset_fusion: function(){
             
             this.fusion_target = null;
             this.update_fusion();
         },
-        update_fusion_filter(){
+        update_fusion_filter: function(){
 
             var combs = {};
             var allow_down_grade = this.allow_down_grade;
@@ -2649,7 +2771,7 @@ var app = new Vue({
             this.info_target = devil;
             this.$root.$emit('bv::show::modal','modal_devil_info');
         },
-        auto_costdown(bom, rarity){
+        auto_costdown: function(bom, rarity){
 
             if(bom && bom.devil.rarity>rarity){
 
@@ -2682,41 +2804,12 @@ var app = new Vue({
             this.update_current_bom(null);
         }
     },
-    watch:{
-        lang_value:function(){
-
-            switch(this.lang_value){
-                case 0: i18n.locale='ja';break;
-                case 1: i18n.locale='tw';break;
-                case 2: i18n.locale='en';break;
-            }
-
-            setCookie('lang_value', this.lang_value);
-        },
-        allow_down_grade:function(){
-            
-            this.update_builder_filter();
-            this.update_fusion_filter();
-            
-            setCookie('allow_down_grade', this.allow_down_grade);
-        },
-        preview:function(){
-            
-            this.data = this.preview == '0' ? ddd_stable : ddd_preview ;
-            this.reset_builder();
-            this.reset_fusion();
-        },
-        keyword:function(){
-            //if(this.keyword=='atlus' && this.tabIndex!=4)
-            //    this.tabIndex = 4;
-        }
-    },
     computed:{
         filtered_devils: function(){
 
             var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
 
-            var result = null;
+            var result = [];
 
             if(keyword){
                 result = this.data.devils.filter(function(d){
