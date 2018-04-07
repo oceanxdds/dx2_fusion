@@ -2897,7 +2897,7 @@ var app = new Vue({
                 });
 
                 if(formulas.length){
-                    options.push({devil:option.devil,formulas:formulas});
+                    options.push({devil:option.devil,formulas:formulas,active:false});
                 }
             });
             

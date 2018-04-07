@@ -20,6 +20,7 @@
     *:focus{
         outline:none;
     }
+    
     /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
@@ -175,24 +176,28 @@
                                             </div>
                                         </b-list-group-item>    
                                         <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
-                                            
-                                            <div v-for="(option, index) in filtered_fusion_options">
 
-                                                <div class="p-2">
-                                                    <div class="row no-gutters justify-content-center">
-                                                        <div class="col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+                                            <div class="row no-gutters">
+                                                <div v-for="(option, index) in filtered_fusion_options"
+                                                 class="col-12"
+                                                 :class="{'col-md-6':!option.active, 'col-lg-4':!option.active, 'col-xl-3':!option.active}">
+
+                                                    <div class="row no-gutters">
+                                                        <div class="col-12 p-2"
+                                                        :class="{'col-md-6':option.active, 'col-lg-4':option.active, 'col-xl-3':option.active}">
                                                             <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
                                                                 v-b-toggle="'fusion_'+index">
                                                             </devil>
                                                         </div>
                                                     </div>
+
+                                                    <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" v-model="option.active" class="p-2">
+                                                        <b-card no-body style="background-color:#eee">
+                                                            <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
+                                                        </b-card>
+                                                    </b-collapse>
                                                 </div>
-                                                    
-                                                <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion">
-                                                    <b-card no-body style="background-color:#eee">
-                                                        <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
-                                                    </b-card>
-                                                </b-collapse>
+                                                
                                             </div>
                                             
                                         </b-list-group-item>
@@ -523,7 +528,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180407"></script>
+    <script src="js/app.js?t=180407-1"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
