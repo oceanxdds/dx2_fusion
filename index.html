@@ -74,6 +74,7 @@
                     <b-nav-item href="#" @click="route('fusion.devil')" :active="isRoute('fusion.devil')">{{ $t('message.devil') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('fusion.fission')" :active="isRoute('fusion.fission')">{{ $t('message.reverse_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('fusion.fusion')" :active="isRoute('fusion.fusion')">{{ $t('message.normal_fusion') }}</b-nav-item>
+                    <b-nav-item href="#" @click="route('skill')" :active="isRoute('skill')">{{ $t('message.skill') }}</b-nav-item>
                 </b-navbar-nav>
 
                 <!-- Right aligned nav items -->
@@ -90,200 +91,212 @@
             </b-collapse>
         </b-navbar>
         
-            <b-tabs v-model="index_main" nav-wrapper-class="d-none" content-class="">
+        <b-tabs v-model="index_main" nav-wrapper-class="d-none" content-class="">
 
-                <!-- index_main : 0 -->
-                <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
-                    <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')" onfocus="app.route('search',true)" onblur="if(!app.keyword)app.route('last')"></b-form-input>
-                </div>
-                <b-tab no-body>
+            <!-- index_main : 0 -->
+            <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
+                <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')" onfocus="app.route('search',true)" onblur="if(!app.keyword)app.route('last')"></b-form-input>
+            </div>
+            <b-tab no-body>
 
-                    <b-card no-body class="border-0">
-                        <b-tabs card v-model="index_fusion" nav-wrapper-class="d-block d-md-none" content-class="p-2">
+                <b-card no-body class="border-0">
+                    <b-tabs card v-model="index_fusion" nav-wrapper-class="d-block d-md-none" content-class="p-2">
 
-                            <!-- index_fusion : 0 // devil-->
+                        <!-- index_fusion : 0 // devil-->
 
-                            <b-tab :title="$t('message.devil')" no-body>
-                                
-                                <b-card no-body>
-                                    <b-tabs pills card>
-                                        <b-tab :title="race.showName()" v-for="race in data.races" no-body>
-                                            <devil-list :devils="race.devils" usage="fission"></devil-list>
-                                        </b-tab>
-                                    </b-tabs>
-                                </b-card>
-
-                            </b-tab>
-
-                            <!-- index_fusion : 1 // fission/builder-->
-
-                            <b-tab :title="$t('message.reverse')" no-body>
-                                <b-card no-body v-if="builder_target">
-                                    <b-list-group flush>
-                                        <b-list-group-item class="p-2">
-                                            <div class="row align-items-center">
-                                                <div class="col-auto">
-                                                    <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }} </h5>
-                                                </div>
-                                                <div class="col-auto">
-                                                    <b-button size="sm" variant="warning" @click="builder_auto_costdown(3)">AUTO★3</b-button>
-                                                    <b-button size="sm" variant="warning" @click="builder_auto_costdown(2)">AUTO★2</b-button>
-                                                    <b-button size="sm" variant="warning" @click="builder_auto_costdown(1)">AUTO★1</b-button>
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                        </b-list-group-item>    
-                                        <b-list-group-item class="p-2">
-                                                    <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
-                                            
-                                        </b-list-group-item>
-                                        <b-list-group-item class="p-0" v-if="builder_options.length">
-                                            <div class="row no-gutters justify-content-center">
-                                                <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
-                                                    <b-button :pressed.sync="option.state"
-                                                        @click="builder_rarity_option_click(option)"
-                                                        variant="outline-secondary">
-                                                        {{ option.text }}
-                                                    </b-button>
-                                                </div>
-                                            </div>
-                                        </b-list-group-item>
-                                        <b-list-group-item class="p-0" v-if="filtered_builder_options.length>0">
-                                            <devil-bom-options :options="filtered_builder_options" usage="builder"></devil-bom-options>
-                                        </b-list-group-item>
-                                    </b-list-group>
-                                </b-card>
-                            </b-tab>
-
-                            <!-- index_fusion : 2 // fusion-->
-
-                            <b-tab :title="$t('message.normal')" no-body>
-                                
-                                <b-card no-body v-if="fusion_target">
-                                    <b-list-group flush>
-                                        <b-list-group-item class="p-2" v-if="fusion_options.length">
-                                            <div class="row no-gutters justify-content-center">
-                                                <div class="col-auto p-1"
-                                                v-for="option in fusion_rarity_options"
-                                                v-if="option.active">
-                                                    <b-button :pressed.sync="option.state" 
-                                                        @click="fusion_rarity_option_click(option)"
-                                                        variant="outline-secondary">
-                                                        {{ option.text }}
-                                                    </b-button>
-                                                </div>
-                                            </div>
-                                        </b-list-group-item>    
-                                        <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
-
-                                            <div class="row no-gutters">
-                                                <div v-for="(option, index) in filtered_fusion_options"
-                                                 class="col-12"
-                                                 :class="{'col-md-6':!option.active, 'col-lg-4':!option.active, 'col-xl-3':!option.active}">
-
-                                                    <div class="row no-gutters">
-                                                        <div class="col-12 p-2"
-                                                        :class="{'col-md-6':option.active, 'col-lg-4':option.active, 'col-xl-3':option.active}">
-                                                            <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
-                                                                v-b-toggle="'fusion_'+index">
-                                                            </devil>
-                                                        </div>
-                                                    </div>
-
-                                                    <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" v-model="option.active" class="p-2">
-                                                        <b-card no-body style="background-color:#eee">
-                                                            <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
-                                                        </b-card>
-                                                    </b-collapse>
-                                                </div>
-                                                
-                                            </div>
-                                            
-                                        </b-list-group-item>
-                                    </b-list-group>
-                                </b-card>
-                                
-                            </b-tab>
+                        <b-tab :title="$t('message.devil')" no-body>
                             
+                            <b-card no-body>
+                                <b-tabs pills card>
+                                    <b-tab :title="race.showName()" v-for="race in data.races" no-body>
+                                        <devil-list :devils="race.devils" usage="fission"></devil-list>
+                                    </b-tab>
+                                </b-tabs>
+                            </b-card>
 
-                        </b-tabs>
-                    </b-card>
-                </b-tab>
+                        </b-tab>
 
-                <!-- index_main : 1 // skill-->
+                        <!-- index_fusion : 1 // fission/builder-->
 
-                <b-tab no-body class="p-2">
-        
-                </b-tab>
+                        <b-tab :title="$t('message.reverse')" no-body>
+                            <b-card no-body v-if="builder_target">
+                                <b-list-group flush>
+                                    <b-list-group-item class="p-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }} </h5>
+                                            </div>
+                                            <div class="col-auto">
+                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(3)">AUTO★3</b-button>
+                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(2)">AUTO★2</b-button>
+                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(1)">AUTO★1</b-button>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </b-list-group-item>    
+                                    <b-list-group-item class="p-2">
+                                                <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
+                                        
+                                    </b-list-group-item>
+                                    <b-list-group-item class="p-0" v-if="builder_options.length">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
+                                                <b-button :pressed.sync="option.state"
+                                                    @click="builder_rarity_option_click(option)"
+                                                    variant="outline-secondary">
+                                                    {{ option.text }}
+                                                </b-button>
+                                            </div>
+                                        </div>
+                                    </b-list-group-item>
+                                    <b-list-group-item class="p-0" v-if="filtered_builder_options.length>0">
+                                        <devil-bom-options :options="filtered_builder_options" usage="builder"></devil-bom-options>
+                                    </b-list-group-item>
+                                </b-list-group>
+                            </b-card>
+                        </b-tab>
 
-                <!-- index_main : 2 // customize-->
+                        <!-- index_fusion : 2 // fusion-->
 
-                <b-tab no-body class="p-2">
-                    
-                </b-tab>
+                        <b-tab :title="$t('message.normal')" no-body>
+                            
+                            <b-card no-body v-if="fusion_target">
+                                <b-list-group flush>
+                                    <b-list-group-item class="p-2" v-if="fusion_options.length">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-auto p-1"
+                                            v-for="option in fusion_rarity_options"
+                                            v-if="option.active">
+                                                <b-button :pressed.sync="option.state" 
+                                                    @click="fusion_rarity_option_click(option)"
+                                                    variant="outline-secondary">
+                                                    {{ option.text }}
+                                                </b-button>
+                                            </div>
+                                        </div>
+                                    </b-list-group-item>    
+                                    <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
 
-                <!-- index_main : 3 // search-->
+                                        <div class="row no-gutters">
+                                            <div v-for="(option, index) in filtered_fusion_options"
+                                                class="col-12"
+                                                :class="{'col-md-6':!option.active, 'col-lg-4':!option.active, 'col-xl-3':!option.active}">
 
-                <b-tab no-body class="p-2">
-                    
-                    <b-card no-body class="mt-2" v-if="filtered_devils.length>0">
-                        <devil-list :devils="filtered_devils" usage="fission"></devil-list>
-                    </b-card>
+                                                <div class="row no-gutters">
+                                                    <div class="col-12 p-2"
+                                                    :class="{'col-md-6':option.active, 'col-lg-4':option.active, 'col-xl-3':option.active}">
+                                                        <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
+                                                            v-b-toggle="'fusion_'+index">
+                                                        </devil>
+                                                    </div>
+                                                </div>
 
-                </b-tab>
+                                                <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" v-model="option.active" class="p-2">
+                                                    <b-card no-body style="background-color:#eee">
+                                                        <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
+                                                    </b-card>
+                                                </b-collapse>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </b-list-group-item>
+                                </b-list-group>
+                            </b-card>
+                            
+                        </b-tab>
+                        
 
-                <!-- index_main : 4 // setting-->
+                    </b-tabs>
+                </b-card>
+            </b-tab>
 
-                <b-tab no-body class="p-2">
+            <!-- index_main : 1 // skill-->
+
+            <b-tab no-body class="p-2">
+    
+                <b-card no-body>
+                    <b-tabs pills card>
+                        <b-tab :title="type.showName()" v-for="type in data.skillTypes" no-body>
+                            <skill-list :skills="type.skills"></skill-list>
+                        </b-tab>
+                    </b-tabs>
+                </b-card>
+
+            </b-tab>
+
+            <!-- index_main : 2 // customize-->
+
+            <b-tab no-body class="p-2">
                 
-                    <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right; background-size:contain">
-                        <div class="col-12 py-2">
-                            <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
-                            <div>
-                                <b-form-radio-group id="lang"
-                                    buttons
-                                    button-variant="outline-info"
-                                    v-model="lang_value"
-                                    :options="lang_options"
-                                    name="lang_radio">
-                                    </b-form-radio-group>
-                            </div>
+            </b-tab>
+
+            <!-- index_main : 3 // search-->
+
+            <b-tab no-body class="p-2">
+                
+                <b-card no-body class="mt-2" v-if="filtered_devils.length>0">
+                    <devil-list :devils="filtered_devils" usage="fission"></devil-list>
+                </b-card>
+
+                <b-card no-body class="mt-2" v-if="filtered_skills.length>0">
+                    <skill-list :skills="filtered_skills"></skill-list>
+                </b-card>
+
+            </b-tab>
+
+            <!-- index_main : 4 // setting-->
+
+            <b-tab no-body class="p-2">
+            
+                <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right; background-size:contain">
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
+                        <div>
+                            <b-form-radio-group id="lang"
+                                buttons
+                                button-variant="outline-info"
+                                v-model="lang_value"
+                                :options="lang_options"
+                                name="lang_radio">
+                                </b-form-radio-group>
                         </div>
-                        <div class="col-12 py-2">
-                            <div class="font-weight-bold py-2">{{ $t('message.downgrade_fusion') }}</div>
-                            <div>
-                                <b-form-radio-group id="lang"
-                                    buttons
-                                    button-variant="outline-info"
-                                    v-model="allow_down_grade"
-                                    name="lang_radio">
-                                    <b-form-radio value="0">{{ $t('message.deny') }}</b-form-radio>
-                                    <b-form-radio value="1">{{ $t('message.allow') }}</b-form-radio>
-                                    </b-form-radio-group>
-                            </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.downgrade_fusion') }}</div>
+                        <div>
+                            <b-form-radio-group id="lang"
+                                buttons
+                                button-variant="outline-info"
+                                v-model="allow_down_grade"
+                                name="lang_radio">
+                                <b-form-radio value="0">{{ $t('message.deny') }}</b-form-radio>
+                                <b-form-radio value="1">{{ $t('message.allow') }}</b-form-radio>
+                                </b-form-radio-group>
                         </div>
-                        <div class="col-12 py-2">
-                            <div class="p-1 border rounded text-center" style="background-color:rgba(200, 200, 200, 0.5);">
-                                <div class="small">
-                                君は私が作った悪魔召喚プログラムを使ってるね<br>
-                                もし君が秩序にも混沌にも偏らず<br>
-                                中庸の道を往くのなら<br>
-                                私が僅かばかりだが協力してあげよう<br><br>
-                                人間が持つ価値を　可能性を　私に証明してくれ<br><br>
-                                スティーヴン・ホーキング (1942-2018)
-                                </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="p-1 border rounded text-center" style="background-color:rgba(200, 200, 200, 0.5);">
+                            <div class="small">
+                            君は私が作った悪魔召喚プログラムを使ってるね<br>
+                            もし君が秩序にも混沌にも偏らず<br>
+                            中庸の道を往くのなら<br>
+                            私が僅かばかりだが協力してあげよう<br><br>
+                            人間が持つ価値を　可能性を　私に証明してくれ<br><br>
+                            スティーヴン・ホーキング (1942-2018)
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="">
-                        <div class="small text-right">Version: {{ updated_at }}</div>
-                    </div>  
-                        
-                </b-tab>
-            
-            </b-tabs>
+                <div class="">
+                    <div class="small text-right">Version: {{ updated_at }}</div>
+                </div>  
+                    
+            </b-tab>
+        
+        </b-tabs>
 
         <!-- footer -->
 
@@ -388,6 +401,47 @@
     </div>
 
     <!--Vue Template-->
+
+    <script id="skill-t" type="text/x-template">
+
+        <b-card no-body class="border-secondary">
+            
+            <b-card-body class="p-2">
+                <div class="font-weight-bold">
+                    {{ skill.showName() }}
+                </div>
+                <div class="small">
+                    {{ $t('message.element') }}: {{ skill.type.showName() }} MP: {{ skill.mp }} {{ $t('message.inherit') }}: {{ skill.point }}
+                </div>
+            </b-card-body>
+
+            <b-card-body class="p-2" style="border-top:1px solid rgba(0,0,0,.125);">
+                <div class="small">
+                    {{ skill.showDesc() }}
+                </div>
+            </b-card-body>
+<!--
+            <b-card-footer class="p-1">
+                <div class="small">
+                    <b-button variant="info" size="sm">{{ $t('message.devil') }}</b-button>
+                </div>
+            </b-card-footer>
+        -->
+        </b-card>
+        
+    </script>
+
+    <script id="skill-list-t" type="text/x-template">
+
+        <div class="row no-gutters">
+            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="skill in skills">
+                
+                <skill :skill="skill"></skill>
+
+            </div>
+        </div>
+
+    </script>
 
     <script id="devil-t" type="text/x-template">
 
@@ -528,7 +582,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180407-1"></script>
+    <script src="js/app.js?t=180411"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

@@ -1241,358 +1241,498 @@ var ddd_preview = [
 ];
 
 var skill_stable = [
-//物理
-{"name":"スラッシュ","name_tw":"斬擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与える。","mp":4,"point":1,"element":"物理"},
-{"name":"絶命剣","name_tw":"絕命劍","desc":"敵単体に物理属性の打撃型ダメージを威力140で与える。","mp":5,"point":6,"element":"物理"},
-{"name":"怪力乱神","name_tw":"怪力亂神","desc":"敵単体に物理属性の打撃型ダメージを威力160で与える。","mp":6,"point":9,"element":"物理"},
-{"name":"メガトンレイド","name_tw":"百萬噸襲擊","desc":"敵単体に物理属性の打撃型ダメージを威力180で与える。","mp":7,"point":"12","element":"物理"},
-{"name":"ゴッドハンド","name_tw":"神之手","desc":"敵単体に物理属性の打撃型ダメージを威力200で与える。","mp":8,"point":"15","element":"物理"},
-{"name":"なぎ払い","name_tw":"橫斬","desc":"敵全体に物理属性の打撃型ダメージを威力80で与える。","mp":4,"point":2,"element":"物理"},
-{"name":"金剛発破","name_tw":"金剛發破","desc":"敵全体に物理属性の打撃型ダメージを威力100で与える。","mp":5,"point":4,"element":"物理"},
-{"name":"冥界波","name_tw":"冥界波","desc":"敵全体に物理属性の打撃型ダメージを威力120で与える。","mp":6,"point":6,"element":"物理"},
-{"name":"空間殺法","name_tw":"空間殺法","desc":"敵全体に物理属性の打撃型ダメージを威力140で与える。","mp":7,"point":8,"element":"物理"},
-{"name":"ギガントマキア","name_tw":"巨人之戰","desc":"敵全体に物理属性の打撃型ダメージを威力160で与える。","mp":8,"point":"10","element":"物理"},
-{"name":"突撃","name_tw":"突擊","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力115で与える。","mp":4,"point":2,"element":"物理"},
-{"name":"鬼神楽","name_tw":"鬼神樂","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力130で与える。","mp":5,"point":5,"element":"物理"},
-{"name":"モータルジハード","name_tw":"絕命鬥爭","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力145で与える。","mp":6,"point":7,"element":"物理"},
-{"name":"ヒートウェイブ","name_tw":"灼熱波浪","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力70で与える。","mp":5,"point":2,"element":"物理"},
-{"name":"メガトンプレス","name_tw":"百萬噸重壓","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力90で与える。","mp":6,"point":4,"element":"物理"},
-{"name":"ティタノマキア","name_tw":"泰坦之戰","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力110で与える。","mp":7,"point":6,"element":"物理"},
-{"name":"暴れまくり","name_tw":"橫衝直撞","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力45で与える。","mp":3,"point":3,"element":"物理"},
-{"name":"デスバウンド","name_tw":"神威之擊","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力55で与える。","mp":4,"point":5,"element":"物理"},
-{"name":"狂乱の剛爪","name_tw":"狂亂硬爪","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力65で与える。","mp":5,"point":7,"element":"物理"},
-{"name":"虚空爪激","name_tw":"虛空爪激","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力75で与える。","mp":6,"point":9,"element":"物理"},
-{"name":"五月雨斬り","name_tw":"五月雨斬","desc":"ランダムな敵に２～５回、物理属性の打撃型ダメージを威力50で与える。","mp":5,"point":7,"element":"物理"},
-{"name":"刹那五月雨撃ち","name_tw":"剎那五月雨擊","desc":"ランダムな敵に２～５回、物理属性の打撃型ダメージを威力65で与える。","mp":7,"point":9,"element":"物理"},
-{"name":"毒針","name_tw":"毒針","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で毒状態にする。","mp":5,"point":6,"element":"物理"},
-{"name":"バインドクロー","name_tw":"束縛爪擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で緊縛状態にする。","mp":5,"point":6,"element":"物理"},
-{"name":"暗夜剣","name_tw":"暗夜劍","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で魔封状態にする。","mp":5,"point":6,"element":"物理"},
-{"name":"甘噛み","name_tw":"甜蜜輕咬","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で魅了状態にする。","mp":5,"point":6,"element":"物理"},
-{"name":"丸かじり","name_tw":"大快朵頤","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、そのダメージの25%分、自身を回復する。","mp":5,"point":6,"element":"物理"},
-{"name":"暴飲暴食","name_tw":"暴飲暴食","desc":"敵単体に物理属性の打撃型ダメージを威力140で与え、そのダメージの40%分、自身を回復する。","mp":6,"point":8,"element":"物理"},
-{"name":"捨て身の一撃","name_tw":"捨身一擊","desc":"自身のＨＰを10%消費して、敵単体に物理属性の打撃型ダメージを威力170で与える。","mp":7,"point":6,"element":"物理"},
-//火
-{"name":"アギ","name_tw":"亞基","desc":"敵単体に火炎属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"火炎"},
-{"name":"アギラオ","name_tw":"亞基拉歐","desc":"敵単体に火炎属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"火炎"},
-{"name":"アギダイン","name_tw":"亞基達因","desc":"敵単体に火炎属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"火炎"},
-{"name":"トリスアギオン","name_tw":"多利斯亞基翁","desc":"敵単体に火炎属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"火炎"},
-{"name":"マハラギ","name_tw":"瑪哈拉基","desc":"敵全体に火炎属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"火炎"},
-{"name":"マハラギオン","name_tw":"瑪哈拉基翁","desc":"敵全体に火炎属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"火炎"},
-{"name":"マハラギダイン","name_tw":"瑪哈拉基達因","desc":"敵全体に火炎属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"火炎"},
-{"name":"ファイアブレス","name_tw":"火焰吐息","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"火炎"},
-{"name":"地獄の業火","name_tw":"地獄業火","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力50で与える。","mp":5,"point":"10","element":"火炎"},
-//冰
-{"name":"ブフ","name_tw":"布芙","desc":"敵単体に氷結属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"氷結"},
-{"name":"ブフーラ","name_tw":"布芙拉","desc":"敵単体に氷結属性の魔法型ダメージを威力140で与える。","mp":"5","point":"6","element":"氷結"},
-{"name":"ブフダイン","name_tw":"布芙達因","desc":"敵単体に氷結属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"氷結"},
-{"name":"アイスエイジ","name_tw":"大冰河時期","desc":"敵単体に氷結属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"氷結"},
-{"name":"マハブフ","name_tw":"瑪哈布芙","desc":"敵全体に氷結属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"氷結"},
-{"name":"マハブフーラ","name_tw":"瑪哈布芙拉","desc":"敵全体に氷結属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"氷結"},
-{"name":"マハブフダイン","name_tw":"瑪哈布芙達因","desc":"敵全体に氷結属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"氷結"},
-{"name":"アイスブレス","name_tw":"極寒吐息","desc":"ランダムな敵に２〜４回、氷結属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"氷結"},
-{"name":"絶対零度","name_tw":"絕對零度","desc":"ランダムな敵に２～４回、氷結属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"氷結"},
-//雷
-{"name":"ジオ","name_tw":"吉歐","desc":"敵単体に電撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"電撃"},
-{"name":"ジオンガ","name_tw":"吉歐加","desc":"敵単体に電撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"電撃"},
-{"name":"ジオダイン","name_tw":"吉歐達因","desc":"敵単体に電撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"電撃"},
-{"name":"真理の雷","name_tw":"真理之雷","desc":"敵単体に電撃属性の魔法型ダメージを威力180で与える。","mp":"7","point":null,"element":"電撃"},
-{"name":"マハジオ","name_tw":"瑪哈吉歐","desc":"敵全体に電撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"電撃"},
-{"name":"マハジオンガ","name_tw":"瑪哈吉歐加","desc":"敵全体に電撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"電撃"},
-{"name":"マハジオダイン","name_tw":"瑪哈吉歐達因","desc":"敵全体に電撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"電撃"},
-{"name":"放電","name_tw":"放電","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"電撃"},
-{"name":"ショックウェーブ","name_tw":"衝擊波","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"電撃"},
-//衝
-{"name":"ザン","name_tw":"颯","desc":"敵単体に衝撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"衝撃"},
-{"name":"ザンマ","name_tw":"颯瑪","desc":"敵単体に衝撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"衝撃"},
-{"name":"ザンダイン","name_tw":"颯達因","desc":"敵単体に衝撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"衝撃"},
-{"name":"殺風激","name_tw":"殺風激","desc":"敵単体に衝撃属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"衝撃"},
-{"name":"マハザン","name_tw":"瑪哈颯","desc":"敵全体に衝撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"衝撃"},
-{"name":"マハザンマ","name_tw":"瑪哈颯瑪","desc":"敵全体に衝撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"衝撃"},
-{"name":"マハザンダイン","name_tw":"瑪哈颯達因","desc":"敵全体に衝撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"衝撃"},
-{"name":"ウィンドブレス","name_tw":"狂風吐息","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"衝撃"},
-{"name":"ツイスター","name_tw":"龍捲風","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"衝撃"},
-//破魔
-{"name":"ハマ","name_tw":"哈瑪","desc":"敵単体に破魔属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"破魔"},
-{"name":"ハマオン","name_tw":"哈瑪翁","desc":"敵単体に破魔属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"破魔"},
-{"name":"ハマダイン","name_tw":"哈瑪達因","desc":"敵単体に破魔属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"破魔"},
-{"name":"裁きの雷火","name_tw":"制裁雷火","desc":"敵単体に破魔属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"破魔"},
-{"name":"マハンマ","name_tw":"瑪哈瑪","desc":"敵全体に破魔属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"破魔"},
-{"name":"マハンマオン","name_tw":"瑪哈瑪翁","desc":"敵全体に破魔属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"破魔"},
-{"name":"マハンマダイン","name_tw":"瑪哈瑪達因","desc":"敵全体に破魔属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"破魔"},
-{"name":"審判の光","name_tw":"審判之光","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
-{"name":"天罰","name_tw":"天譴","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"破魔"},
-//咒殺
-{"name":"ムド","name_tw":"姆多","desc":"敵単体に呪殺属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"呪殺"},
-{"name":"ムドオン","name_tw":"姆多翁","desc":"敵単体に呪殺属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"呪殺"},
-{"name":"ムドダイン","name_tw":"姆多達因","desc":"敵単体に呪殺属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"呪殺"},
-{"name":"ヘルズアイ","name_tw":"地獄之眼","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":6,"point":null,"element":"呪殺"},
-{"name":"マハムド","name_tw":"瑪哈姆多","desc":"敵全体に呪殺属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"呪殺"},
-{"name":"マハムドオン","name_tw":"瑪哈姆多翁","desc":"敵全体に呪殺属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"呪殺"},
-{"name":"マハムドダイン","name_tw":"瑪哈姆多達因","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"呪殺"},
-{"name":"イービルアイ","name_tw":"邪惡之眼","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
-{"name":"煉獄","name_tw":"煉獄","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
-//毒
-{"name":"ポイズマ","name_tw":"波伊佐瑪","desc":"敵単体を基礎確率40%で毒状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"ポイズマオン","name_tw":"波伊佐瑪翁","desc":"敵単体を基礎確率50%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハポイズマ","name_tw":"瑪哈波伊佐瑪","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハポイズマオン","name_tw":"瑪哈波伊佐瑪翁","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"毒ガスブレス","name_tw":"猛毒吐息","desc":"ランダムな敵を２〜４回、基礎確率30％で毒状態にする。","mp":6,"point":7,"element":"無"},
-//縛
-{"name":"シバブー","name_tw":"希巴縛","desc":"敵単体を基礎確率40%で緊縛状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"シバブオン","name_tw":"希巴縛翁","desc":"敵単体を基礎確率50%で緊縛状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハシバブー","name_tw":"瑪哈希巴縛","desc":"敵全体を基礎確率30%で緊縛状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハシバブオン","name_tw":"瑪哈希巴縛翁","desc":"敵全体を基礎確率40%で緊縛状態にする。","mp":7,"point":null,"element":"無"},
-{"name":"バインドボイス","name_tw":"束縛咆嘯","desc":"ランダムな敵を２～４回、基礎確率30%で緊縛状態にする。","mp":6,"point":null,"element":"無"},
-//魅
-{"name":"マリンカリン","name_tw":"瑪琳卡琳","desc":"敵単体を基礎確率40%で魅了状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"マリンカリオン","name_tw":"瑪琳卡琳翁","desc":"敵単体を基礎確率50%で魅了状態にする。","mp":6,"point":null,"element":"無"},
-{"name":"マハマリンカリン","name_tw":"瑪哈瑪琳卡琳","desc":"敵全体を基礎確率30%で魅了状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハマリカリオン","name_tw":"瑪哈瑪琳卡琳翁","desc":"敵全体を基礎確率40%で魅了状態にする。","mp":7,"point":null,"element":"無"},
-{"name":"セクシーダンス","name_tw":"色誘之舞","desc":"ランダムな敵を２～４回、基礎確率30%で魅了状態にする。","mp":6,"point":7,"element":"無"},
-//封
-{"name":"マカジャマ","name_tw":"瑪卡加瑪","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"マカジャマオン","name_tw":"瑪卡加瑪翁","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハマカジャマ","name_tw":"瑪哈瑪卡加瑪","desc":"敵全体を基礎確率30%で魔封状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハマカジャオン","name_tw":"瑪哈瑪卡加瑪翁","desc":"敵全体を基礎確率40%で魔封状態にする。","mp":7,"point":9,"element":"無"},
-{"name":"ホワイトノイズ","name_tw":"白茫噪音","desc":"ランダムな敵を２～４回、基礎確率30%で魔封状態にする。","mp":6,"point":7,"element":"無"},
-//萬
-{"name":"吸血","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力120で与え、そのダメージの25％分、自身を回復する。","mp":5,"point":3,"element":"万能"},
-{"name":"デスタッチ","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力140で与え、そのダメージの40％分、自身を回復する。","mp":6,"point":6,"element":"万能"},
-{"name":"吸魔","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、MPを１奪う。","mp":6,"point":3,"element":"万能"},
-{"name":"エナジードレイン","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、そのダメージの25％分、自身を回復し、MPを１奪う。","mp":7,"point":6,"element":"万能"},
-{"name":"ソウルドレイン","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力140で与え、そのダメージの40％分、自身を回復し、MPを１奪う。","mp":8,"point":7,"element":"万能"},
-{"name":"メギド","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力80で与える。","mp":6,"point":5,"element":"万能"},
-{"name":"メギドラ","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与える。","mp":7,"point":8,"element":"万能"},
-{"name":"メギドラオン","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力120で与える。","mp":8,"point":"12","element":"万能"},
-{"name":"混沌の海","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の防御力を20%減少させる。","mp":9,"point":null,"element":"万能"},
-{"name":"ジャッジメント","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の攻撃力を20%増加させる。","mp":9,"point":"12","element":"万能"},
-{"name":"精神漏出","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力80で与え、MPを３失わせる。","mp":5,"point":6,"element":"万能"},
-//呪
-{"name":"ジュ","name_tw":"","desc":"敵単体を基礎確率50％で呪い状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"ジュオン","name_tw":"","desc":"敵単体を基礎確率60％で呪い状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハジュ","name_tw":"","desc":"敵全体を基礎確率40％で呪い状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハジュオン","name_tw":"","desc":"敵全体を基礎確率50％で呪い状態にする。","mp":7,"point":9,"element":"無"},
-{"name":"祟り","name_tw":"","desc":"ランダムな敵を１～４回、基礎確率40％で呪い状態にする。","mp":6,"point":7,"element":"無"},
-//虛
-{"name":"デゾレト","name_tw":"","desc":"敵単体を基礎確率70％で虚弱状態にする。","mp":5,"point":2,"element":"無"},
-{"name":"デゾレトオン","name_tw":"","desc":"敵単体を基礎確率80％で虚弱状態にする。","mp":6,"point":8,"element":"無"},
-{"name":"マハデゾレト","name_tw":"","desc":"敵全体を基礎確率60％で虚弱状態にする。","mp":6,"point":5,"element":"無"},
-{"name":"マハデゾレトオン","name_tw":"","desc":"敵全体を基礎確率70％で虚弱状態にする。","mp":7,"point":9,"element":"無"},
-{"name":"アウトブレイク","name_tw":"","desc":"ランダムな敵を１～４回、基礎確率60％で虚弱状態にする。","mp":6,"point":7,"element":"無"},
-//回
-{"name":"ディア","name_tw":"","desc":"味方単体を回復力50で回復する。","mp":4,"point":1,"element":"無"},
-{"name":"ディアラ","name_tw":"","desc":"味方単体を回復力90で回復する。","mp":5,"point":5,"element":"無"},
-{"name":"ディアラマ","name_tw":"","desc":"味方単体を回復力130で回復する。","mp":6,"point":8,"element":"無"},
-{"name":"ディアラハン","name_tw":"","desc":"味方単体を回復力170で回復する。","mp":7,"point":"11","element":"無"},
-{"name":"メディア","name_tw":"","desc":"味方全体を回復力25で回復する。","mp":6,"point":2,"element":"無"},
-{"name":"メディラ","name_tw":"","desc":"味方全体を回復力60で回復する。","mp":7,"point":5,"element":"無"},
-{"name":"メディラマ","name_tw":"","desc":"味方全体を回復力95で回復する。","mp":8,"point":8,"element":"無"},
-{"name":"メディアラハン","name_tw":"","desc":"味方全体を回復力130で回復する。","mp":9,"point":"11","element":"無"},
-{"name":"メシアライザー","name_tw":"","desc":"味方全体を回復力95で回復し、状態異常を全て回復する。","mp":"10","point":"15","element":"無"},
-//解毒
-{"name":"ポズムディ","name_tw":"","desc":"味方単体の毒を回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メポズムディ","name_tw":"","desc":"味方全体の毒を回復する。","mp":4,"point":5,"element":"無"},
-//解封
-{"name":"クロズディ","name_tw":"","desc":"味方単体の魔封を回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メクロズディ","name_tw":"","desc":"味方全体の魔封を回復する。","mp":4,"point":5,"element":"無"},
-//解縛
-{"name":"パララディ","name_tw":"","desc":"味方単体の緊縛を回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メパララディ","name_tw":"","desc":"味方全体の緊縛を回復する。","mp":4,"point":5,"element":"無"},
-//解魅
-{"name":"チャームディ","name_tw":"","desc":"味方単体の魅了を回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メチャームディ","name_tw":"","desc":"味方全体の魅了を回復する。","mp":4,"point":5,"element":"無"},
-//解呪
-{"name":"カースディ","name_tw":"","desc":"味方単体の呪いを回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メカースディ","name_tw":"","desc":"味方全体の呪いを回復する。","mp":4,"point":5,"element":"無"},
-//解虛
-{"name":"ウィークディ","name_tw":"","desc":"味方単体の虚弱を回復する。","mp":3,"point":1,"element":"無"},
-{"name":"メウィークディ","name_tw":"","desc":"味方全体の虚弱を回復する。","mp":4,"point":5,"element":"無"},
-//解異常
-{"name":"アムリタ","name_tw":"","desc":"味方単体の状態異常を全て回復する。","mp":4,"point":3,"element":"無"},
-{"name":"常世の祈り","name_tw":"","desc":"味方全体の状態異常を全て回復する。","mp":5,"point":8,"element":"無"},
-{"name":"静寂の祈り","name_tw":"","desc":"敵味方全体の状態異常を全て回復する。","mp":7,"point":8,"element":"無"},
-//復活
-{"name":"リカーム","name_tw":"","desc":"死亡している味方単体をHP10％で復活させる。","mp":6,"point":6,"element":"無"},
-{"name":"サマリカーム","name_tw":"","desc":"死亡している味方単体を完全回復で復活させる。","mp":8,"point":8,"element":"無"},
-{"name":"リカームドラ","name_tw":"","desc":"死亡している味方全体を完全回復で復活させるが、自身は死亡する。","mp":8,"point":"10","element":"無"},
-//強弱化
-{"name":"タルカジャ","name_tw":"","desc":"３ターンの間、味方全体の攻撃力を20％増加させる。","mp":5,"point":6,"element":"無"},
-{"name":"ラクカジャ","name_tw":"","desc":"３ターンの間、味方全体の防御力を20％増加させる。","mp":5,"point":6,"element":"無"},
-{"name":"スクカジャ","name_tw":"","desc":"３ターンの間、味方全体の回避と命中を20％増加させる。","mp":5,"point":6,"element":"無"},
-{"name":"タルンダ","name_tw":"","desc":"３ターンの間、敵全体の攻撃力を20％減少させる。","mp":5,"point":6,"element":"無"},
-{"name":"ラクンダ","name_tw":"","desc":"３ターンの間、敵全体の防御力を20％減少させる。","mp":5,"point":6,"element":"無"},
-{"name":"スクンダ","name_tw":"","desc":"３ターンの間、敵全体の回避と命中を20％減少させる。","mp":5,"point":6,"element":"無"},
-{"name":"デカジャ","name_tw":"","desc":"敵全体のステータス強化効果を解除する。","mp":5,"point":4,"element":"無"},
-{"name":"デクンダ","name_tw":"","desc":"味方全体のステータス弱体化効果を解除する。","mp":5,"point":4,"element":"無"},
-{"name":"ランダマイザ","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ減少させる。","mp":8,"point":"15","element":"無"},
-{"name":"雄叫び","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・防御力をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
-{"name":"溶解ブレス","name_tw":"","desc":"３ターンの間、敵全体の防御力・回避と命中をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
-{"name":"フォッグブレス","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・回避と命中をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
-{"name":"挑発","name_tw":"","desc":"３ターンの間、敵全体の攻撃力を20％増加させ、防御力を20％減少させる。","mp":5,"point":8,"element":"無"},
-//反射
-{"name":"テトラカーン","name_tw":"","desc":"１ターンの間、味方全体を打撃型ダメージ反射状態にする。","mp":7,"point":8,"element":"無"},
-{"name":"マカラカーン","name_tw":"","desc":"１ターンの間、味方全体を魔法型ダメージ反射状態にする。","mp":7,"point":8,"element":"無"},
-{"name":"テトラコワース","name_tw":"","desc":"敵全体の打撃型ダメージ反射状態を解除する。","mp":3,"point":6,"element":"無"},
-{"name":"マカラコワース","name_tw":"","desc":"敵全体の魔法型ダメージ反射状態を解除する。","mp":3,"point":6,"element":"無"},
-//蓄力
-{"name":"チャージ","name_tw":"","desc":"自身をチャージ状態にし、次に与える打撃型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
-{"name":"コンセントレイト","name_tw":"","desc":"自身をコンセントレイト状態にし、次に与える魔法型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
-{"name":"リベリオン","name_tw":"","desc":"自身を会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。","mp":6,"point":8,"element":"無"},
-{"name":"ディスコード","name_tw":"","desc":"敵全体のチャージ、コンセントレイト、会心状態を解除する。","mp":3,"point":6,"element":"無"},
-{"name":"バトンタッチ","name_tw":"","desc":"自身のプレスターンアイコンを消費せずにパスを行う。","mp":3,"point":6,"element":"無"},
-{"name":"バリア","name_tw":"","desc":"３ターンの間、味方単体をバリア状態にし、状態異常を無効にする。","mp":4,"point":8,"element":"無"},
-{"name":"バリアコワース","name_tw":"","desc":"敵全体のバリア状態を解除する。","mp":3,"point":6,"element":"無"},
-{"name":"リディア","name_tw":"","desc":"３回行動するまでの間、味方単体をリディア状態にし、行動する前にHPを回復する。","mp":4,"point":8,"element":"無"},
-{"name":"リディアコワース","name_tw":"","desc":"敵全体のリディア状態を解除する。","mp":3,"point":6,"element":"無"},
-{"name":"バロンダンス","name_tw":"","desc":"味方全体を回復力95で回復し、３ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。","mp":7,"point":null,"element":"無"},
-{"name":"シナイの神火","name_tw":"","desc":"ランダムな敵に５回、万能属性の魔法型ダメージを威力45で与える。","mp":7,"point":null,"element":"万能"},
-{"name":"プララヤ","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力125で与える。","mp":8,"point":null,"element":"万能"},
-{"name":"天叢雲剣","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力205で与え、３ターンの間、味方全体の攻撃力を20％増加させる。","mp":7,"point":null,"element":"衝撃"},
-{"name":"死んでくれる？","name_tw":"","desc":"敵単体を死亡させる。","mp":7,"point":null,"element":"呪殺"},
-{"name":"アポカリプス","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力110で与え、基礎確率30％で魔封状態にする。","mp":8,"point":null,"element":"万能"},
-{"name":"八艘飛び","name_tw":"","desc":"ランダムな敵に８回、物理属性の打撃型ダメージを威力35で与える。","mp":7,"point":null,"element":"物理"},
-{"name":"ミョルニル","name_tw":"","desc":"ランダムな敵に３～５回、電撃属性の魔法型ダメージを威力60で与える。","mp":7,"point":null,"element":"電撃"},
-{"name":"ゲイボルグ","name_tw":"","desc":"ランダムな敵に４～６回、物理属性の打撃型ダメージを威力50で与える。","mp":7,"point":null,"element":"物理"},
-{"name":"明けの明星","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力135で与える。","mp":8,"point":null,"element":"万能"},
-{"name":"地獄突き","name_tw":"","desc":"ランダムな敵に４回、物理属性の打撃型ダメージを威力35で与え、基礎確率35％で魅了状態にする。","mp":7,"point":null,"element":"物理"},
-{"name":"ラグナロク","name_tw":"","desc":"敵単体に火炎属性の魔法型ダメージを威力215で与える。","mp":7,"point":null,"element":"火炎"},
-{"name":"天孫降臨","name_tw":"","desc":"６ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。","mp":8,"point":null,"element":"無"},
-{"name":"肉体の解放","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力90で与え、基礎確率25％で魅了状態にする。","mp":7,"point":null,"element":"呪殺"},
-{"name":"暴食の大罪","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力130で与え、そのダメージの50％分、自身を回復する。","mp":7,"point":null,"element":"呪殺"},
-{"name":"グングニル","name_tw":"","desc":"敵全体にクリティカル率30％の物理属性の打撃型ダメージを威力145で与える。","mp":7,"point":null,"element":"物理"},
-{"name":"ゴッドアロー","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力200で与え、50％の確率で死亡させる。","mp":7,"point":null,"element":"破魔"},
-{"name":"魅了の神弓","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力190で与え、基礎確率45％で魅了状態にする。","mp":8,"point":null,"element":"万能"},
-{"name":"痺れかみつき","name_tw":"","desc":"敵単体に物理属性の打撃型ダメージを威力160で与え、基礎確率35％で緊縛状態にする。","mp":5,"point":null,"element":"物理"},
-{"name":"トリックスター","name_tw":"","desc":"敵の弱点をついたとき、20％の確率でプレスターンアイコンを消費しない。","mp":null,"point":null,"element":"Passive"},
-{"name":"月の加護","name_tw":"","desc":"MPを消費するとき、消費するMPが１減少する。","mp":null,"point":null,"element":"Passive"},
-{"name":"ステルス","name_tw":"","desc":"物理回避率が20％増加する。さらに、この悪魔が死亡するとき、一度だけHP1で踏みとどまる。","mp":null,"point":null,"element":"Passive"},
-{"name":"コウウン","name_tw":"","desc":"D×2とパーティ悪魔がバトルで獲得する経験値を20％、バトルで獲得するマッカを20％増加させる。","mp":null,"point":null,"element":"Passive"},
-{"name":"ワナフーリ","name_tw":"","desc":"アウラゲート内でダメージ床のダメージが30％減少し、ダークゾーンの効果を無効にする。","mp":null,"point":null,"element":"Passive"},
-{"name":"マレビト","name_tw":"","desc":"全ての状態異常にかからなくなる。","mp":null,"point":null,"element":"Passive"},
-{"name":"武道の素養","name_tw":"","desc":"物理属性で与えるダメージが15％増加し、物理命中率も15％増加する。","mp":null,"point":null,"element":"Passive"},
-{"name":"アヴァターラ","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHP1で踏みとどまる。ウェーブをまたぐとき、HPが10％回復する。","mp":null,"point":null,"element":"Passive"},
-//耐性
-{"name":"物理耐性","name_tw":"","desc":"物理耐性を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"火炎耐性","name_tw":"","desc":"火炎耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"氷結耐性","name_tw":"","desc":"氷結耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"電撃耐性","name_tw":"","desc":"電撃耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"衝撃耐性","name_tw":"","desc":"衝撃耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"破魔耐性","name_tw":"","desc":"破魔耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"呪殺耐性","name_tw":"","desc":"呪殺耐性を得る。","mp":null,"point":8,"element":"Passive"},
-{"name":"物理無効","name_tw":"","desc":"物理無効を得る。","mp":null,"point":"18","element":"Passive"},
-{"name":"火炎無効","name_tw":"","desc":"火炎無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"氷結無効","name_tw":"","desc":"氷結無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"電撃無効","name_tw":"","desc":"電撃無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"衝撃無効","name_tw":"","desc":"衝撃無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"破魔無効","name_tw":"","desc":"破魔無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"呪殺無効","name_tw":"","desc":"呪殺無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"火炎反射","name_tw":"","desc":"火炎反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"氷結反射","name_tw":"","desc":"氷結反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"電撃反射","name_tw":"","desc":"電撃反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"衝撃反射","name_tw":"","desc":"衝撃反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"破魔反射","name_tw":"","desc":"破魔反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"呪殺反射","name_tw":"","desc":"呪殺反射を得る。","mp":null,"point":"16","element":"Passive"},
-{"name":"物理吸収","name_tw":"","desc":"物理吸収を得る。","mp":null,"point":"30","element":"Passive"},
-{"name":"火炎吸収","name_tw":"","desc":"火炎吸収を得る。","mp":null,"point":"20","element":"Passive"},
-{"name":"氷結吸収","name_tw":"","desc":"氷結吸収を得る。","mp":null,"point":"20","element":"Passive"},
-{"name":"電撃吸収","name_tw":"","desc":"電撃吸収を得る。","mp":null,"point":"20","element":"Passive"},
-{"name":"破魔吸収","name_tw":"","desc":"破魔吸収を得る。","mp":null,"point":"20","element":"Passive"},
-{"name":"毒無効","name_tw":"","desc":"毒無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"緊縛無効","name_tw":"","desc":"緊縛無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"魅了無効","name_tw":"","desc":"魅了無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"魔封無効","name_tw":"","desc":"魔封無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"毒耐性","name_tw":"","desc":"毒になる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"緊縛耐性","name_tw":"","desc":"緊縛になる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"魅了耐性","name_tw":"","desc":"魅了になる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"魔封耐性","name_tw":"","desc":"魔封になる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"呪い無効","name_tw":"","desc":"呪い無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"虚弱無効","name_tw":"","desc":"虚弱無効を得る。","mp":null,"point":"12","element":"Passive"},
-{"name":"呪い耐性","name_tw":"","desc":"呪いになる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"虚弱耐性","name_tw":"","desc":"虚弱になる確率が50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"物理貫通","name_tw":"","desc":"物理貫通を得る。","mp":null,"point":"32","element":"Passive"},
-{"name":"火炎貫通","name_tw":"","desc":"火炎貫通を得る。","mp":null,"point":"32","element":"Passive"},
-{"name":"電撃貫通","name_tw":"","desc":"電撃貫通を得る。","mp":null,"point":"32","element":"Passive"},
-{"name":"衝撃貫通","name_tw":"","desc":"衝撃貫通を得る。","mp":null,"point":"32","element":"Passive"},
-//屬性強化
-{"name":"物理ブースタ","name_tw":"","desc":"物理属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"物理ハイブースタ","name_tw":"","desc":"物理属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"Passive"},
-{"name":"火炎ブースタ","name_tw":"","desc":"火炎属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"氷結ブースタ","name_tw":"","desc":"氷結属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"電撃ブースタ","name_tw":"","desc":"電撃属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"電撃ハイブースタ","name_tw":"","desc":"電撃属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"Passive"},
-{"name":"衝撃ブースタ","name_tw":"","desc":"衝撃属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"衝撃ハイブースタ","name_tw":"","desc":"衝撃属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"Passive"},
-{"name":"破魔ブースタ","name_tw":"","desc":"破魔属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"呪殺ブースタ","name_tw":"","desc":"呪殺属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"呪殺ハイブースタ","name_tw":"","desc":"呪殺属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"Passive"},
-{"name":"回復ブースタ","name_tw":"","desc":"回復スキルの回復量が15％増加する。","mp":null,"point":6,"element":"Passive"},
-{"name":"回復ハイブースタ","name_tw":"","desc":"回復スキルの回復量が25％増加する。","mp":null,"point":"21","element":"Passive"},
-{"name":"暗殺者","name_tw":"","desc":"単体攻撃スキルで与えるダメージが10％増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"虐殺者","name_tw":"","desc":"全体攻撃スキルで与えるダメージが10％増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"大虐殺者","name_tw":"","desc":"全体攻撃スキルで与えるダメージが20％増加する。","mp":null,"point":"24","element":"Passive"},
-{"name":"毒追撃","name_tw":"","desc":"敵が毒状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"緊縛追撃","name_tw":"","desc":"敵が緊縛状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"魅了追撃","name_tw":"","desc":"敵が魅了状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"魔封追撃","name_tw":"","desc":"敵が魔封状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"狂戦士","name_tw":"","desc":"敵に与えるダメージが10％増加し、自身が受けるダメージも20％増加する。","mp":null,"point":"18","element":"Passive"},
-//能力強化
-{"name":"初段の剛力","name_tw":"","desc":"力が５増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"初段の賢魔","name_tw":"","desc":"魔が５増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"初段の恵体","name_tw":"","desc":"体が５増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"初段の猛速","name_tw":"","desc":"速が５増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"初段の強運","name_tw":"","desc":"運が５増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"二段の剛力","name_tw":"","desc":"力が10増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"二段の賢魔","name_tw":"","desc":"魔が10増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"二段の恵体","name_tw":"","desc":"体が10増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"二段の猛速","name_tw":"","desc":"速が10増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"二段の強運","name_tw":"","desc":"運が10増加する。","mp":null,"point":13,"element":"Passive"},
-{"name":"三段の剛力","name_tw":"","desc":"力が15増加する。","mp":null,"point":"32","element":"Passive"},
-{"name":"三段の賢魔","name_tw":"","desc":"魔が15増加する。","mp":null,"point":"32","element":"Passive"},
-{"name":"三段の恵体","name_tw":"","desc":"体が15増加する。","mp":null,"point":"32","element":"Passive"},
-{"name":"三段の猛速","name_tw":"","desc":"速が15増加する。","mp":null,"point":"32","element":"Passive"},
-{"name":"三段の強運","name_tw":"","desc":"運が15増加する。","mp":null,"point":"32","element":"Passive"},
-{"name":"百発百中","name_tw":"","desc":"物理命中率が10％増加する。","mp":null,"point":4,"element":"Passive"},
-{"name":"千発千中","name_tw":"","desc":"物理命中率が20％増加する。","mp":null,"point":"16","element":"Passive"},
-{"name":"見切り","name_tw":"","desc":"物理回避率が10％増加する。","mp":null,"point":4,"element":"Passive"},
-{"name":"寸分の見切り","name_tw":"","desc":"物理回避率が20％増加する。","mp":null,"point":"16","element":"Passive"},
-{"name":"乱れ狂い","name_tw":"","desc":"状態異常にする確率が10％増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"狂い咲き","name_tw":"","desc":"状態異常にする確率が20％増加する。","mp":null,"point":"24","element":"Passive"},
-{"name":"地獄のマスク","name_tw":"","desc":"状態異常になる確率が35％減少する。","mp":null,"point":8,"element":"Passive"},
-{"name":"奈落のマスク","name_tw":"","desc":"状態異常になる確率が60％減少する。","mp":null,"point":"16","element":"Passive"},
-{"name":"自然治癒","name_tw":"","desc":"状態異常の自然回復率が20％増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"超自然治癒","name_tw":"","desc":"状態異常の自然回復率が30％増加する。","mp":null,"point":"16","element":"Passive"},
-{"name":"コロシの愉悦","name_tw":"","desc":"クリティカル率が15％増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"ミナゴロシの愉悦","name_tw":"","desc":"クリティカル率が25％増加する。","mp":null,"point":"14","element":"Passive"},
-{"name":"野生の勘","name_tw":"","desc":"自身が受ける攻撃のクリティカル率を15％減少させる。","mp":null,"point":8,"element":"Passive"},
-{"name":"野獣の勘","name_tw":"","desc":"自身が受ける攻撃のクリティカル率を25％減少させる。","mp":null,"point":"14","element":"Passive"},
-{"name":"一分の活泉","name_tw":"","desc":"最大HPが10％増加する。","mp":null,"point":3,"element":"Passive"},
-{"name":"二分の活泉","name_tw":"","desc":"最大HPが20％増加する。","mp":null,"point":7,"element":"Passive"},
-{"name":"三分の活泉","name_tw":"","desc":"最大HPが30％増加する。","mp":null,"point":"15","element":"Passive"},
-{"name":"一分の魔脈","name_tw":"","desc":"最大MPが１増加する。","mp":null,"point":8,"element":"Passive"},
-{"name":"二分の魔脈","name_tw":"","desc":"最大MPが２増加する。","mp":null,"point":"15","element":"Passive"},
-//被動
-{"name":"反撃","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力50で与える。","mp":null,"point":6,"element":"Passive"},
-{"name":"猛反撃","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力100で与える。","mp":null,"point":"12","element":"Passive"},
-{"name":"デスカウンター","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力150で与える。","mp":null,"point":"18","element":"Passive"},
-{"name":"食いしばり","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHP1で踏みとどまる。","mp":null,"point":6,"element":"Passive"},
-{"name":"不屈の闘志","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHPが200回復する。","mp":null,"point":"18","element":"Passive"},
-{"name":"勝利の息吹","name_tw":"","desc":"ウェーブをまたぐとき、HPが30％回復する。","mp":null,"point":6,"element":"Passive"},
-{"name":"勝利のチャクラ","name_tw":"","desc":"ウェーブをまたぐとき、MPが10回復する。","mp":null,"point":"12","element":"Passive"},
-{"name":"無限のチャクラ","name_tw":"","desc":"MPの自然回復量が１増加する。","mp":null,"point":"18","element":"Passive"},
-{"name":"テトラカシフト","name_tw":"","desc":"後攻でバトルを開始したとき、テトラカーンが発動する。","mp":null,"point":"18","element":"Passive"},
-{"name":"マカラカシフト","name_tw":"","desc":"後攻でバトルを開始したとき、マカラカーンが発動する。","mp":null,"point":"18","element":"Passive"},
-{"name":"タルカオート","name_tw":"","desc":"１ターン目開始時、タルカジャが発動する。","mp":null,"point":"12","element":"Passive"},
-{"name":"ラクカオート","name_tw":"","desc":"１ターン目開始時、ラクカジャが発動する。","mp":null,"point":"12","element":"Passive"},
-{"name":"スクカオート","name_tw":"","desc":"１ターン目開始時、スクカジャが発動する。","mp":null,"point":"12","element":"Passive"},
-{"name":"威圧の構え","name_tw":"","desc":"後攻でバトルを開始したとき、敵のプレスターンアイコンを１つ減少させる。","mp":null,"point":"21","element":"Passive"},
-{"name":"スピードスター","name_tw":"","desc":"悪魔のバトルスピードへの影響が50％増加する。","mp":null,"point":"10","element":"Passive"},
-{"name":"追い打ち","name_tw":"","desc":"敵の弱点をついたとき、ダメージが10％増加する。","mp":null,"point":"12","element":"Passive"},
-{"name":"無慈悲な一撃","name_tw":"","desc":"敵の弱点をついたとき、ダメージが20％増加する。","mp":null,"point":"12","element":"Passive"},
-{"name":"毒床歩き","name_tw":"","desc":"アウラゲート内のダメージ床のダメージが25％減少する。","mp":null,"point":2,"element":"Passive"},
-{"name":"毒床渡り","name_tw":"","desc":"アウラゲート内のダメージ床のダメージが50％減少する。","mp":null,"point":4,"element":"Passive"},
-{"name":"毒床無効","name_tw":"","desc":"アウラゲート内のダメージ床のダメージを無効にする。","mp":null,"point":8,"element":"Passive"},
-{"name":"ダークゾーン無効","name_tw":"","desc":"アウラゲート内のダークゾーンの効果を無効にする。","mp":null,"point":8,"element":"Passive"}
+    {
+        name:"物理",
+        name_tw:"物理",
+        name_en:"",
+        skills:[
+            //物理
+            {"name":"スラッシュ","name_tw":"斬擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与える。","mp":4,"point":1,"element":"物理"},
+            {"name":"絶命剣","name_tw":"絕命劍","desc":"敵単体に物理属性の打撃型ダメージを威力140で与える。","mp":5,"point":6,"element":"物理"},
+            {"name":"怪力乱神","name_tw":"怪力亂神","desc":"敵単体に物理属性の打撃型ダメージを威力160で与える。","mp":6,"point":9,"element":"物理"},
+            {"name":"メガトンレイド","name_tw":"百萬噸襲擊","desc":"敵単体に物理属性の打撃型ダメージを威力180で与える。","mp":7,"point":"12","element":"物理"},
+            {"name":"ゴッドハンド","name_tw":"神之手","desc":"敵単体に物理属性の打撃型ダメージを威力200で与える。","mp":8,"point":"15","element":"物理"},
+            {"name":"なぎ払い","name_tw":"橫斬","desc":"敵全体に物理属性の打撃型ダメージを威力80で与える。","mp":4,"point":2,"element":"物理"},
+            {"name":"金剛発破","name_tw":"金剛發破","desc":"敵全体に物理属性の打撃型ダメージを威力100で与える。","mp":5,"point":4,"element":"物理"},
+            {"name":"冥界波","name_tw":"冥界波","desc":"敵全体に物理属性の打撃型ダメージを威力120で与える。","mp":6,"point":6,"element":"物理"},
+            {"name":"空間殺法","name_tw":"空間殺法","desc":"敵全体に物理属性の打撃型ダメージを威力140で与える。","mp":7,"point":8,"element":"物理"},
+            {"name":"ギガントマキア","name_tw":"巨人之戰","desc":"敵全体に物理属性の打撃型ダメージを威力160で与える。","mp":8,"point":"10","element":"物理"},
+            {"name":"突撃","name_tw":"突擊","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力115で与える。","mp":4,"point":2,"element":"物理"},
+            {"name":"鬼神楽","name_tw":"鬼神樂","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力130で与える。","mp":5,"point":5,"element":"物理"},
+            {"name":"モータルジハード","name_tw":"絕命鬥爭","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力145で与える。","mp":6,"point":7,"element":"物理"},
+            {"name":"ヒートウェイブ","name_tw":"灼熱波浪","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力70で与える。","mp":5,"point":2,"element":"物理"},
+            {"name":"メガトンプレス","name_tw":"百萬噸重壓","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力90で与える。","mp":6,"point":4,"element":"物理"},
+            {"name":"ティタノマキア","name_tw":"泰坦之戰","desc":"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力110で与える。","mp":7,"point":6,"element":"物理"},
+            {"name":"暴れまくり","name_tw":"橫衝直撞","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力45で与える。","mp":3,"point":3,"element":"物理"},
+            {"name":"デスバウンド","name_tw":"神威之擊","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力55で与える。","mp":4,"point":5,"element":"物理"},
+            {"name":"狂乱の剛爪","name_tw":"狂亂硬爪","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力65で与える。","mp":5,"point":7,"element":"物理"},
+            {"name":"虚空爪激","name_tw":"虛空爪激","desc":"ランダムな敵に２～３回、物理属性の打撃型ダメージを威力75で与える。","mp":6,"point":9,"element":"物理"},
+            {"name":"五月雨斬り","name_tw":"五月雨斬","desc":"ランダムな敵に２～５回、物理属性の打撃型ダメージを威力50で与える。","mp":5,"point":7,"element":"物理"},
+            {"name":"刹那五月雨撃ち","name_tw":"剎那五月雨擊","desc":"ランダムな敵に２～５回、物理属性の打撃型ダメージを威力65で与える。","mp":7,"point":9,"element":"物理"},
+            {"name":"毒針","name_tw":"毒針","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で毒状態にする。","mp":5,"point":6,"element":"物理"},
+            {"name":"バインドクロー","name_tw":"束縛爪擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で緊縛状態にする。","mp":5,"point":6,"element":"物理"},
+            {"name":"暗夜剣","name_tw":"暗夜劍","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で魔封状態にする。","mp":5,"point":6,"element":"物理"},
+            {"name":"甘噛み","name_tw":"甜蜜輕咬","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、基礎確率40%で魅了状態にする。","mp":5,"point":6,"element":"物理"},
+            {"name":"丸かじり","name_tw":"大快朵頤","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、そのダメージの25%分、自身を回復する。","mp":5,"point":6,"element":"物理"},
+            {"name":"暴飲暴食","name_tw":"暴飲暴食","desc":"敵単体に物理属性の打撃型ダメージを威力140で与え、そのダメージの40%分、自身を回復する。","mp":6,"point":8,"element":"物理"},
+            {"name":"捨て身の一撃","name_tw":"捨身一擊","desc":"自身のＨＰを10%消費して、敵単体に物理属性の打撃型ダメージを威力170で与える。","mp":7,"point":6,"element":"物理"},
+            {"name":"八艘飛び","name_tw":"","desc":"ランダムな敵に８回、物理属性の打撃型ダメージを威力35で与える。","mp":7,"point":null,"element":"物理"},
+            {"name":"ゲイボルグ","name_tw":"","desc":"ランダムな敵に４～６回、物理属性の打撃型ダメージを威力50で与える。","mp":7,"point":null,"element":"物理"},
+            {"name":"地獄突き","name_tw":"","desc":"ランダムな敵に４回、物理属性の打撃型ダメージを威力35で与え、基礎確率35％で魅了状態にする。","mp":7,"point":null,"element":"物理"},
+            {"name":"痺れかみつき","name_tw":"","desc":"敵単体に物理属性の打撃型ダメージを威力160で与え、基礎確率35％で緊縛状態にする。","mp":5,"point":null,"element":"物理"},
+            {"name":"グングニル","name_tw":"","desc":"敵全体にクリティカル率30％の物理属性の打撃型ダメージを威力145で与える。","mp":7,"point":null,"element":"物理"}
+        ]
+    },
+    {
+        name:"火炎",
+        name_tw:"火炎",
+        name_en:"",
+        skills:[
+            //火
+            {"name":"アギ","name_tw":"亞基","desc":"敵単体に火炎属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"火炎"},
+            {"name":"アギラオ","name_tw":"亞基拉歐","desc":"敵単体に火炎属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"火炎"},
+            {"name":"アギダイン","name_tw":"亞基達因","desc":"敵単体に火炎属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"火炎"},
+            {"name":"トリスアギオン","name_tw":"多利斯亞基翁","desc":"敵単体に火炎属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"火炎"},
+            {"name":"マハラギ","name_tw":"瑪哈拉基","desc":"敵全体に火炎属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"火炎"},
+            {"name":"マハラギオン","name_tw":"瑪哈拉基翁","desc":"敵全体に火炎属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"火炎"},
+            {"name":"マハラギダイン","name_tw":"瑪哈拉基達因","desc":"敵全体に火炎属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"火炎"},
+            {"name":"ファイアブレス","name_tw":"火焰吐息","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"火炎"},
+            {"name":"地獄の業火","name_tw":"地獄業火","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力50で与える。","mp":5,"point":"10","element":"火炎"},
+            {"name":"ラグナロク","name_tw":"","desc":"敵単体に火炎属性の魔法型ダメージを威力215で与える。","mp":7,"point":null,"element":"火炎"}
+        ]
+    },
+    {
+        name:"氷結",
+        name_tw:"冰凍",
+        name_en:"",
+        skills:[
+            //冰
+            {"name":"ブフ","name_tw":"布芙","desc":"敵単体に氷結属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"氷結"},
+            {"name":"ブフーラ","name_tw":"布芙拉","desc":"敵単体に氷結属性の魔法型ダメージを威力140で与える。","mp":"5","point":"6","element":"氷結"},
+            {"name":"ブフダイン","name_tw":"布芙達因","desc":"敵単体に氷結属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"氷結"},
+            {"name":"アイスエイジ","name_tw":"大冰河時期","desc":"敵単体に氷結属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"氷結"},
+            {"name":"マハブフ","name_tw":"瑪哈布芙","desc":"敵全体に氷結属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"氷結"},
+            {"name":"マハブフーラ","name_tw":"瑪哈布芙拉","desc":"敵全体に氷結属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"氷結"},
+            {"name":"マハブフダイン","name_tw":"瑪哈布芙達因","desc":"敵全体に氷結属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"氷結"},
+            {"name":"アイスブレス","name_tw":"極寒吐息","desc":"ランダムな敵に２〜４回、氷結属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"氷結"},
+            {"name":"絶対零度","name_tw":"絕對零度","desc":"ランダムな敵に２～４回、氷結属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"氷結"}
+        ]
+    },
+    {
+        name:"電撃",
+        name_tw:"電擊",
+        name_en:"",
+        skills:[
+            //雷
+            {"name":"ジオ","name_tw":"吉歐","desc":"敵単体に電撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"電撃"},
+            {"name":"ジオンガ","name_tw":"吉歐加","desc":"敵単体に電撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"電撃"},
+            {"name":"ジオダイン","name_tw":"吉歐達因","desc":"敵単体に電撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":null,"element":"電撃"},
+            {"name":"真理の雷","name_tw":"真理之雷","desc":"敵単体に電撃属性の魔法型ダメージを威力180で与える。","mp":"7","point":null,"element":"電撃"},
+            {"name":"マハジオ","name_tw":"瑪哈吉歐","desc":"敵全体に電撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"電撃"},
+            {"name":"マハジオンガ","name_tw":"瑪哈吉歐加","desc":"敵全体に電撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"電撃"},
+            {"name":"マハジオダイン","name_tw":"瑪哈吉歐達因","desc":"敵全体に電撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"電撃"},
+            {"name":"放電","name_tw":"放電","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"電撃"},
+            {"name":"ショックウェーブ","name_tw":"衝擊波","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"電撃"},
+            {"name":"ミョルニル","name_tw":"","desc":"ランダムな敵に３～５回、電撃属性の魔法型ダメージを威力60で与える。","mp":7,"point":null,"element":"電撃"}
+        ]
+    },
+    {
+        name:"衝撃",
+        name_tw:"衝擊",
+        name_en:"",
+        skills:[
+            //衝
+            {"name":"ザン","name_tw":"颯","desc":"敵単体に衝撃属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"衝撃"},
+            {"name":"ザンマ","name_tw":"颯瑪","desc":"敵単体に衝撃属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"衝撃"},
+            {"name":"ザンダイン","name_tw":"颯達因","desc":"敵単体に衝撃属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"衝撃"},
+            {"name":"殺風激","name_tw":"殺風激","desc":"敵単体に衝撃属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"衝撃"},
+            {"name":"マハザン","name_tw":"瑪哈颯","desc":"敵全体に衝撃属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"衝撃"},
+            {"name":"マハザンマ","name_tw":"瑪哈颯瑪","desc":"敵全体に衝撃属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"衝撃"},
+            {"name":"マハザンダイン","name_tw":"瑪哈颯達因","desc":"敵全体に衝撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"衝撃"},
+            {"name":"ウィンドブレス","name_tw":"狂風吐息","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"衝撃"},
+            {"name":"ツイスター","name_tw":"龍捲風","desc":"ランダムな敵に２～４回、衝撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"衝撃"},
+            {"name":"天叢雲剣","name_tw":"","desc":"敵単体に衝撃属性の魔法型ダメージを威力205で与え、３ターンの間、味方全体の攻撃力を20％増加させる。","mp":7,"point":null,"element":"衝撃"}
+        ]
+    },
+    {
+        name:"破魔",
+        name_tw:"破魔",
+        name_en:"",
+        skills:[
+            //破魔
+            {"name":"ハマ","name_tw":"哈瑪","desc":"敵単体に破魔属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"破魔"},
+            {"name":"ハマオン","name_tw":"哈瑪翁","desc":"敵単体に破魔属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"破魔"},
+            {"name":"ハマダイン","name_tw":"哈瑪達因","desc":"敵単体に破魔属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"破魔"},
+            {"name":"裁きの雷火","name_tw":"制裁雷火","desc":"敵単体に破魔属性の魔法型ダメージを威力180で与える。","mp":7,"point":null,"element":"破魔"},
+            {"name":"マハンマ","name_tw":"瑪哈瑪","desc":"敵全体に破魔属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"破魔"},
+            {"name":"マハンマオン","name_tw":"瑪哈瑪翁","desc":"敵全体に破魔属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"破魔"},
+            {"name":"マハンマダイン","name_tw":"瑪哈瑪達因","desc":"敵全体に破魔属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"破魔"},
+            {"name":"審判の光","name_tw":"審判之光","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
+            {"name":"天罰","name_tw":"天譴","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"破魔"},
+            {"name":"ゴッドアロー","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力200で与え、50％の確率で死亡させる。","mp":7,"point":null,"element":"破魔"}
+        ]
+    },
+    {
+        name:"呪殺",
+        name_tw:"咒殺",
+        name_en:"",
+        skills:[
+            //呪殺
+            {"name":"ムド","name_tw":"姆多","desc":"敵単体に呪殺属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"呪殺"},
+            {"name":"ムドオン","name_tw":"姆多翁","desc":"敵単体に呪殺属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"呪殺"},
+            {"name":"ムドダイン","name_tw":"姆多達因","desc":"敵単体に呪殺属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"呪殺"},
+            {"name":"ヘルズアイ","name_tw":"地獄之眼","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":6,"point":null,"element":"呪殺"},
+            {"name":"マハムド","name_tw":"瑪哈姆多","desc":"敵全体に呪殺属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"呪殺"},
+            {"name":"マハムドオン","name_tw":"瑪哈姆多翁","desc":"敵全体に呪殺属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"呪殺"},
+            {"name":"マハムドダイン","name_tw":"瑪哈姆多達因","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"呪殺"},
+            {"name":"イービルアイ","name_tw":"邪惡之眼","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
+            {"name":"煉獄","name_tw":"煉獄","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
+            {"name":"肉体の解放","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力90で与え、基礎確率25％で魅了状態にする。","mp":7,"point":null,"element":"呪殺"},
+            {"name":"暴食の大罪","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力130で与え、そのダメージの50％分、自身を回復する。","mp":7,"point":null,"element":"呪殺"},
+            {"name":"死んでくれる？","name_tw":"","desc":"敵単体を死亡させる。","mp":7,"point":null,"element":"呪殺"}
+        ]
+    },
+    {
+        name:"万能",
+        name_tw:"萬能",
+        name_en:"",
+        skills:[
+            //萬
+            {"name":"吸血","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力120で与え、そのダメージの25％分、自身を回復する。","mp":5,"point":3,"element":"万能"},
+            {"name":"デスタッチ","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力140で与え、そのダメージの40％分、自身を回復する。","mp":6,"point":6,"element":"万能"},
+            {"name":"吸魔","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、MPを１奪う。","mp":6,"point":3,"element":"万能"},
+            {"name":"エナジードレイン","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、そのダメージの25％分、自身を回復し、MPを１奪う。","mp":7,"point":6,"element":"万能"},
+            {"name":"ソウルドレイン","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力140で与え、そのダメージの40％分、自身を回復し、MPを１奪う。","mp":8,"point":7,"element":"万能"},
+            {"name":"メギド","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力80で与える。","mp":6,"point":5,"element":"万能"},
+            {"name":"メギドラ","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与える。","mp":7,"point":8,"element":"万能"},
+            {"name":"メギドラオン","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力120で与える。","mp":8,"point":"12","element":"万能"},
+            {"name":"混沌の海","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の防御力を20%減少させる。","mp":9,"point":null,"element":"万能"},
+            {"name":"ジャッジメント","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の攻撃力を20%増加させる。","mp":9,"point":"12","element":"万能"},
+            {"name":"精神漏出","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力80で与え、MPを３失わせる。","mp":5,"point":6,"element":"万能"},
+            {"name":"シナイの神火","name_tw":"","desc":"ランダムな敵に５回、万能属性の魔法型ダメージを威力45で与える。","mp":7,"point":null,"element":"万能"},
+            {"name":"プララヤ","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力125で与える。","mp":8,"point":null,"element":"万能"},
+            {"name":"アポカリプス","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力110で与え、基礎確率30％で魔封状態にする。","mp":8,"point":null,"element":"万能"},
+            {"name":"明けの明星","name_tw":"","desc":"敵全体に万能属性の魔法型ダメージを威力135で与える。","mp":8,"point":null,"element":"万能"},
+            {"name":"魅了の神弓","name_tw":"","desc":"敵単体に万能属性の魔法型ダメージを威力190で与え、基礎確率45％で魅了状態にする。","mp":8,"point":null,"element":"万能"}
+        ]
+    },
+    {
+        name:"無",
+        name_tw:"無",
+        name_en:"None",
+        skills:[
+            //毒
+            {"name":"ポイズマ","name_tw":"波伊佐瑪","desc":"敵単体を基礎確率40%で毒状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"ポイズマオン","name_tw":"波伊佐瑪翁","desc":"敵単体を基礎確率50%で毒状態にする。","mp":6,"point":null,"element":"無"},
+            {"name":"マハポイズマ","name_tw":"瑪哈波伊佐瑪","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
+            {"name":"マハポイズマオン","name_tw":"瑪哈波伊佐瑪翁","desc":"敵全体を基礎確率30%で毒状態にする。","mp":6,"point":null,"element":"無"},
+            {"name":"毒ガスブレス","name_tw":"猛毒吐息","desc":"ランダムな敵を２〜４回、基礎確率30％で毒状態にする。","mp":6,"point":7,"element":"無"},
+            //縛
+            {"name":"シバブー","name_tw":"希巴縛","desc":"敵単体を基礎確率40%で緊縛状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"シバブオン","name_tw":"希巴縛翁","desc":"敵単体を基礎確率50%で緊縛状態にする。","mp":6,"point":8,"element":"無"},
+            {"name":"マハシバブー","name_tw":"瑪哈希巴縛","desc":"敵全体を基礎確率30%で緊縛状態にする。","mp":6,"point":5,"element":"無"},
+            {"name":"マハシバブオン","name_tw":"瑪哈希巴縛翁","desc":"敵全体を基礎確率40%で緊縛状態にする。","mp":7,"point":null,"element":"無"},
+            {"name":"バインドボイス","name_tw":"束縛咆嘯","desc":"ランダムな敵を２～４回、基礎確率30%で緊縛状態にする。","mp":6,"point":null,"element":"無"},
+            //魅
+            {"name":"マリンカリン","name_tw":"瑪琳卡琳","desc":"敵単体を基礎確率40%で魅了状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"マリンカリオン","name_tw":"瑪琳卡琳翁","desc":"敵単体を基礎確率50%で魅了状態にする。","mp":6,"point":null,"element":"無"},
+            {"name":"マハマリンカリン","name_tw":"瑪哈瑪琳卡琳","desc":"敵全体を基礎確率30%で魅了状態にする。","mp":6,"point":5,"element":"無"},
+            {"name":"マハマリカリオン","name_tw":"瑪哈瑪琳卡琳翁","desc":"敵全体を基礎確率40%で魅了状態にする。","mp":7,"point":null,"element":"無"},
+            {"name":"セクシーダンス","name_tw":"色誘之舞","desc":"ランダムな敵を２～４回、基礎確率30%で魅了状態にする。","mp":6,"point":7,"element":"無"},
+            //封
+            {"name":"マカジャマ","name_tw":"瑪卡加瑪","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"マカジャマオン","name_tw":"瑪卡加瑪翁","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":6,"point":8,"element":"無"},
+            {"name":"マハマカジャマ","name_tw":"瑪哈瑪卡加瑪","desc":"敵全体を基礎確率30%で魔封状態にする。","mp":6,"point":5,"element":"無"},
+            {"name":"マハマカジャオン","name_tw":"瑪哈瑪卡加瑪翁","desc":"敵全体を基礎確率40%で魔封状態にする。","mp":7,"point":9,"element":"無"},
+            {"name":"ホワイトノイズ","name_tw":"白茫噪音","desc":"ランダムな敵を２～４回、基礎確率30%で魔封状態にする。","mp":6,"point":7,"element":"無"},
+            //呪
+            {"name":"ジュ","name_tw":"","desc":"敵単体を基礎確率50％で呪い状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"ジュオン","name_tw":"","desc":"敵単体を基礎確率60％で呪い状態にする。","mp":6,"point":8,"element":"無"},
+            {"name":"マハジュ","name_tw":"","desc":"敵全体を基礎確率40％で呪い状態にする。","mp":6,"point":5,"element":"無"},
+            {"name":"マハジュオン","name_tw":"","desc":"敵全体を基礎確率50％で呪い状態にする。","mp":7,"point":9,"element":"無"},
+            {"name":"祟り","name_tw":"","desc":"ランダムな敵を１～４回、基礎確率40％で呪い状態にする。","mp":6,"point":7,"element":"無"},
+            //虛
+            {"name":"デゾレト","name_tw":"","desc":"敵単体を基礎確率70％で虚弱状態にする。","mp":5,"point":2,"element":"無"},
+            {"name":"デゾレトオン","name_tw":"","desc":"敵単体を基礎確率80％で虚弱状態にする。","mp":6,"point":8,"element":"無"},
+            {"name":"マハデゾレト","name_tw":"","desc":"敵全体を基礎確率60％で虚弱状態にする。","mp":6,"point":5,"element":"無"},
+            {"name":"マハデゾレトオン","name_tw":"","desc":"敵全体を基礎確率70％で虚弱状態にする。","mp":7,"point":9,"element":"無"},
+            {"name":"アウトブレイク","name_tw":"","desc":"ランダムな敵を１～４回、基礎確率60％で虚弱状態にする。","mp":6,"point":7,"element":"無"},
+            //回
+            {"name":"ディア","name_tw":"","desc":"味方単体を回復力50で回復する。","mp":4,"point":1,"element":"無"},
+            {"name":"ディアラ","name_tw":"","desc":"味方単体を回復力90で回復する。","mp":5,"point":5,"element":"無"},
+            {"name":"ディアラマ","name_tw":"","desc":"味方単体を回復力130で回復する。","mp":6,"point":8,"element":"無"},
+            {"name":"ディアラハン","name_tw":"","desc":"味方単体を回復力170で回復する。","mp":7,"point":"11","element":"無"},
+            {"name":"メディア","name_tw":"","desc":"味方全体を回復力25で回復する。","mp":6,"point":2,"element":"無"},
+            {"name":"メディラ","name_tw":"","desc":"味方全体を回復力60で回復する。","mp":7,"point":5,"element":"無"},
+            {"name":"メディラマ","name_tw":"","desc":"味方全体を回復力95で回復する。","mp":8,"point":8,"element":"無"},
+            {"name":"メディアラハン","name_tw":"","desc":"味方全体を回復力130で回復する。","mp":9,"point":"11","element":"無"},
+            {"name":"メシアライザー","name_tw":"","desc":"味方全体を回復力95で回復し、状態異常を全て回復する。","mp":"10","point":"15","element":"無"},
+            //解毒
+            {"name":"ポズムディ","name_tw":"","desc":"味方単体の毒を回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メポズムディ","name_tw":"","desc":"味方全体の毒を回復する。","mp":4,"point":5,"element":"無"},
+            //解封
+            {"name":"クロズディ","name_tw":"","desc":"味方単体の魔封を回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メクロズディ","name_tw":"","desc":"味方全体の魔封を回復する。","mp":4,"point":5,"element":"無"},
+            //解縛
+            {"name":"パララディ","name_tw":"","desc":"味方単体の緊縛を回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メパララディ","name_tw":"","desc":"味方全体の緊縛を回復する。","mp":4,"point":5,"element":"無"},
+            //解魅
+            {"name":"チャームディ","name_tw":"","desc":"味方単体の魅了を回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メチャームディ","name_tw":"","desc":"味方全体の魅了を回復する。","mp":4,"point":5,"element":"無"},
+            //解呪
+            {"name":"カースディ","name_tw":"","desc":"味方単体の呪いを回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メカースディ","name_tw":"","desc":"味方全体の呪いを回復する。","mp":4,"point":5,"element":"無"},
+            //解虛
+            {"name":"ウィークディ","name_tw":"","desc":"味方単体の虚弱を回復する。","mp":3,"point":1,"element":"無"},
+            {"name":"メウィークディ","name_tw":"","desc":"味方全体の虚弱を回復する。","mp":4,"point":5,"element":"無"},
+            //解異常
+            {"name":"アムリタ","name_tw":"","desc":"味方単体の状態異常を全て回復する。","mp":4,"point":3,"element":"無"},
+            {"name":"常世の祈り","name_tw":"","desc":"味方全体の状態異常を全て回復する。","mp":5,"point":8,"element":"無"},
+            {"name":"静寂の祈り","name_tw":"","desc":"敵味方全体の状態異常を全て回復する。","mp":7,"point":8,"element":"無"},
+            //復活
+            {"name":"リカーム","name_tw":"","desc":"死亡している味方単体をHP10％で復活させる。","mp":6,"point":6,"element":"無"},
+            {"name":"サマリカーム","name_tw":"","desc":"死亡している味方単体を完全回復で復活させる。","mp":8,"point":8,"element":"無"},
+            {"name":"リカームドラ","name_tw":"","desc":"死亡している味方全体を完全回復で復活させるが、自身は死亡する。","mp":8,"point":"10","element":"無"},
+            //強弱化
+            {"name":"タルカジャ","name_tw":"","desc":"３ターンの間、味方全体の攻撃力を20％増加させる。","mp":5,"point":6,"element":"無"},
+            {"name":"ラクカジャ","name_tw":"","desc":"３ターンの間、味方全体の防御力を20％増加させる。","mp":5,"point":6,"element":"無"},
+            {"name":"スクカジャ","name_tw":"","desc":"３ターンの間、味方全体の回避と命中を20％増加させる。","mp":5,"point":6,"element":"無"},
+            {"name":"タルンダ","name_tw":"","desc":"３ターンの間、敵全体の攻撃力を20％減少させる。","mp":5,"point":6,"element":"無"},
+            {"name":"ラクンダ","name_tw":"","desc":"３ターンの間、敵全体の防御力を20％減少させる。","mp":5,"point":6,"element":"無"},
+            {"name":"スクンダ","name_tw":"","desc":"３ターンの間、敵全体の回避と命中を20％減少させる。","mp":5,"point":6,"element":"無"},
+            {"name":"デカジャ","name_tw":"","desc":"敵全体のステータス強化効果を解除する。","mp":5,"point":4,"element":"無"},
+            {"name":"デクンダ","name_tw":"","desc":"味方全体のステータス弱体化効果を解除する。","mp":5,"point":4,"element":"無"},
+            {"name":"ランダマイザ","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ減少させる。","mp":8,"point":"15","element":"無"},
+            {"name":"雄叫び","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・防御力をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
+            {"name":"溶解ブレス","name_tw":"","desc":"３ターンの間、敵全体の防御力・回避と命中をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
+            {"name":"フォッグブレス","name_tw":"","desc":"３ターンの間、敵全体の攻撃力・回避と命中をそれぞれ20％ずつ減少させる。","mp":6,"point":8,"element":"無"},
+            {"name":"挑発","name_tw":"","desc":"３ターンの間、敵全体の攻撃力を20％増加させ、防御力を20％減少させる。","mp":5,"point":8,"element":"無"},
+            //反射
+            {"name":"テトラカーン","name_tw":"","desc":"１ターンの間、味方全体を打撃型ダメージ反射状態にする。","mp":7,"point":8,"element":"無"},
+            {"name":"マカラカーン","name_tw":"","desc":"１ターンの間、味方全体を魔法型ダメージ反射状態にする。","mp":7,"point":8,"element":"無"},
+            {"name":"テトラコワース","name_tw":"","desc":"敵全体の打撃型ダメージ反射状態を解除する。","mp":3,"point":6,"element":"無"},
+            {"name":"マカラコワース","name_tw":"","desc":"敵全体の魔法型ダメージ反射状態を解除する。","mp":3,"point":6,"element":"無"},
+            //蓄力
+            {"name":"チャージ","name_tw":"","desc":"自身をチャージ状態にし、次に与える打撃型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
+            {"name":"コンセントレイト","name_tw":"","desc":"自身をコンセントレイト状態にし、次に与える魔法型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
+            {"name":"リベリオン","name_tw":"","desc":"自身を会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。","mp":6,"point":8,"element":"無"},
+            {"name":"ディスコード","name_tw":"","desc":"敵全体のチャージ、コンセントレイト、会心状態を解除する。","mp":3,"point":6,"element":"無"},
+            {"name":"バトンタッチ","name_tw":"","desc":"自身のプレスターンアイコンを消費せずにパスを行う。","mp":3,"point":6,"element":"無"},
+            {"name":"バリア","name_tw":"","desc":"３ターンの間、味方単体をバリア状態にし、状態異常を無効にする。","mp":4,"point":8,"element":"無"},
+            {"name":"バリアコワース","name_tw":"","desc":"敵全体のバリア状態を解除する。","mp":3,"point":6,"element":"無"},
+            {"name":"リディア","name_tw":"","desc":"３回行動するまでの間、味方単体をリディア状態にし、行動する前にHPを回復する。","mp":4,"point":8,"element":"無"},
+            {"name":"リディアコワース","name_tw":"","desc":"敵全体のリディア状態を解除する。","mp":3,"point":6,"element":"無"},
+            {"name":"バロンダンス","name_tw":"","desc":"味方全体を回復力95で回復し、３ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。","mp":7,"point":null,"element":"無"},
+            //buff
+            {"name":"天孫降臨","name_tw":"","desc":"６ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。","mp":8,"point":null,"element":"無"}
+        ]
+    },
+    {
+        name:"パシップ",
+        name_tw:"被動",
+        name_en:"Passive",
+        skills:[
+            {"name":"トリックスター","name_tw":"","desc":"敵の弱点をついたとき、20％の確率でプレスターンアイコンを消費しない。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"月の加護","name_tw":"","desc":"MPを消費するとき、消費するMPが１減少する。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ステルス","name_tw":"","desc":"物理回避率が20％増加する。さらに、この悪魔が死亡するとき、一度だけHP1で踏みとどまる。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"コウウン","name_tw":"","desc":"D×2とパーティ悪魔がバトルで獲得する経験値を20％、バトルで獲得するマッカを20％増加させる。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ワナフーリ","name_tw":"","desc":"アウラゲート内でダメージ床のダメージが30％減少し、ダークゾーンの効果を無効にする。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"マレビト","name_tw":"","desc":"全ての状態異常にかからなくなる。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"武道の素養","name_tw":"","desc":"物理属性で与えるダメージが15％増加し、物理命中率も15％増加する。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"アヴァターラ","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHP1で踏みとどまる。ウェーブをまたぐとき、HPが10％回復する。","mp":null,"point":null,"element":"パシップ"},
+            //耐性
+            {"name":"物理耐性","name_tw":"","desc":"物理耐性を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"火炎耐性","name_tw":"","desc":"火炎耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"氷結耐性","name_tw":"","desc":"氷結耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"電撃耐性","name_tw":"","desc":"電撃耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"衝撃耐性","name_tw":"","desc":"衝撃耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"破魔耐性","name_tw":"","desc":"破魔耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"呪殺耐性","name_tw":"","desc":"呪殺耐性を得る。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"物理無効","name_tw":"","desc":"物理無効を得る。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"火炎無効","name_tw":"","desc":"火炎無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"氷結無効","name_tw":"","desc":"氷結無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"電撃無効","name_tw":"","desc":"電撃無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"衝撃無効","name_tw":"","desc":"衝撃無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"破魔無効","name_tw":"","desc":"破魔無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"呪殺無効","name_tw":"","desc":"呪殺無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"火炎反射","name_tw":"","desc":"火炎反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"氷結反射","name_tw":"","desc":"氷結反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"電撃反射","name_tw":"","desc":"電撃反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"衝撃反射","name_tw":"","desc":"衝撃反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"破魔反射","name_tw":"","desc":"破魔反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"呪殺反射","name_tw":"","desc":"呪殺反射を得る。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"物理吸収","name_tw":"","desc":"物理吸収を得る。","mp":null,"point":"30","element":"パシップ"},
+            {"name":"火炎吸収","name_tw":"","desc":"火炎吸収を得る。","mp":null,"point":"20","element":"パシップ"},
+            {"name":"氷結吸収","name_tw":"","desc":"氷結吸収を得る。","mp":null,"point":"20","element":"パシップ"},
+            {"name":"電撃吸収","name_tw":"","desc":"電撃吸収を得る。","mp":null,"point":"20","element":"パシップ"},
+            {"name":"破魔吸収","name_tw":"","desc":"破魔吸収を得る。","mp":null,"point":"20","element":"パシップ"},
+            {"name":"毒無効","name_tw":"","desc":"毒無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"緊縛無効","name_tw":"","desc":"緊縛無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"魅了無効","name_tw":"","desc":"魅了無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"魔封無効","name_tw":"","desc":"魔封無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"毒耐性","name_tw":"","desc":"毒になる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"緊縛耐性","name_tw":"","desc":"緊縛になる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"魅了耐性","name_tw":"","desc":"魅了になる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"魔封耐性","name_tw":"","desc":"魔封になる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"呪い無効","name_tw":"","desc":"呪い無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"虚弱無効","name_tw":"","desc":"虚弱無効を得る。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"呪い耐性","name_tw":"","desc":"呪いになる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"虚弱耐性","name_tw":"","desc":"虚弱になる確率が50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"物理貫通","name_tw":"","desc":"物理貫通を得る。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"火炎貫通","name_tw":"","desc":"火炎貫通を得る。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"電撃貫通","name_tw":"","desc":"電撃貫通を得る。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"衝撃貫通","name_tw":"","desc":"衝撃貫通を得る。","mp":null,"point":"32","element":"パシップ"},
+            //屬性強化
+            {"name":"物理ブースタ","name_tw":"","desc":"物理属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"物理ハイブースタ","name_tw":"","desc":"物理属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"火炎ブースタ","name_tw":"","desc":"火炎属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"氷結ブースタ","name_tw":"","desc":"氷結属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"電撃ブースタ","name_tw":"","desc":"電撃属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"電撃ハイブースタ","name_tw":"","desc":"電撃属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"衝撃ブースタ","name_tw":"","desc":"衝撃属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"衝撃ハイブースタ","name_tw":"","desc":"衝撃属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"破魔ブースタ","name_tw":"","desc":"破魔属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"呪殺ブースタ","name_tw":"","desc":"呪殺属性で与えるダメージが15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"呪殺ハイブースタ","name_tw":"","desc":"呪殺属性で与えるダメージが25％増加する。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"回復ブースタ","name_tw":"","desc":"回復スキルの回復量が15％増加する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"回復ハイブースタ","name_tw":"","desc":"回復スキルの回復量が25％増加する。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"暗殺者","name_tw":"","desc":"単体攻撃スキルで与えるダメージが10％増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"虐殺者","name_tw":"","desc":"全体攻撃スキルで与えるダメージが10％増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"大虐殺者","name_tw":"","desc":"全体攻撃スキルで与えるダメージが20％増加する。","mp":null,"point":"24","element":"パシップ"},
+            {"name":"毒追撃","name_tw":"","desc":"敵が毒状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"緊縛追撃","name_tw":"","desc":"敵が緊縛状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"魅了追撃","name_tw":"","desc":"敵が魅了状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"魔封追撃","name_tw":"","desc":"敵が魔封状態のときに与えるダメージが30％増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"狂戦士","name_tw":"","desc":"敵に与えるダメージが10％増加し、自身が受けるダメージも20％増加する。","mp":null,"point":"18","element":"パシップ"},
+            //能力強化
+            {"name":"初段の剛力","name_tw":"","desc":"力が５増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"初段の賢魔","name_tw":"","desc":"魔が５増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"初段の恵体","name_tw":"","desc":"体が５増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"初段の猛速","name_tw":"","desc":"速が５増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"初段の強運","name_tw":"","desc":"運が５増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"二段の剛力","name_tw":"","desc":"力が10増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"二段の賢魔","name_tw":"","desc":"魔が10増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"二段の恵体","name_tw":"","desc":"体が10増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"二段の猛速","name_tw":"","desc":"速が10増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"二段の強運","name_tw":"","desc":"運が10増加する。","mp":null,"point":13,"element":"パシップ"},
+            {"name":"三段の剛力","name_tw":"","desc":"力が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"三段の賢魔","name_tw":"","desc":"魔が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"三段の恵体","name_tw":"","desc":"体が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"三段の猛速","name_tw":"","desc":"速が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"三段の強運","name_tw":"","desc":"運が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"百発百中","name_tw":"","desc":"物理命中率が10％増加する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"千発千中","name_tw":"","desc":"物理命中率が20％増加する。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"見切り","name_tw":"","desc":"物理回避率が10％増加する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"寸分の見切り","name_tw":"","desc":"物理回避率が20％増加する。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"乱れ狂い","name_tw":"","desc":"状態異常にする確率が10％増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"狂い咲き","name_tw":"","desc":"状態異常にする確率が20％増加する。","mp":null,"point":"24","element":"パシップ"},
+            {"name":"地獄のマスク","name_tw":"","desc":"状態異常になる確率が35％減少する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"奈落のマスク","name_tw":"","desc":"状態異常になる確率が60％減少する。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"自然治癒","name_tw":"","desc":"状態異常の自然回復率が20％増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"超自然治癒","name_tw":"","desc":"状態異常の自然回復率が30％増加する。","mp":null,"point":"16","element":"パシップ"},
+            {"name":"コロシの愉悦","name_tw":"","desc":"クリティカル率が15％増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"ミナゴロシの愉悦","name_tw":"","desc":"クリティカル率が25％増加する。","mp":null,"point":"14","element":"パシップ"},
+            {"name":"野生の勘","name_tw":"","desc":"自身が受ける攻撃のクリティカル率を15％減少させる。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"野獣の勘","name_tw":"","desc":"自身が受ける攻撃のクリティカル率を25％減少させる。","mp":null,"point":"14","element":"パシップ"},
+            {"name":"一分の活泉","name_tw":"","desc":"最大HPが10％増加する。","mp":null,"point":3,"element":"パシップ"},
+            {"name":"二分の活泉","name_tw":"","desc":"最大HPが20％増加する。","mp":null,"point":7,"element":"パシップ"},
+            {"name":"三分の活泉","name_tw":"","desc":"最大HPが30％増加する。","mp":null,"point":"15","element":"パシップ"},
+            {"name":"一分の魔脈","name_tw":"","desc":"最大MPが１増加する。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"二分の魔脈","name_tw":"","desc":"最大MPが２増加する。","mp":null,"point":"15","element":"パシップ"},
+            //被動
+            {"name":"反撃","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力50で与える。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"猛反撃","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力100で与える。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"デスカウンター","name_tw":"","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力150で与える。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"食いしばり","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHP1で踏みとどまる。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"不屈の闘志","name_tw":"","desc":"この悪魔が死亡するとき、一度だけHPが200回復する。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"勝利の息吹","name_tw":"","desc":"ウェーブをまたぐとき、HPが30％回復する。","mp":null,"point":6,"element":"パシップ"},
+            {"name":"勝利のチャクラ","name_tw":"","desc":"ウェーブをまたぐとき、MPが10回復する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"無限のチャクラ","name_tw":"","desc":"MPの自然回復量が１増加する。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"テトラカシフト","name_tw":"","desc":"後攻でバトルを開始したとき、テトラカーンが発動する。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"マカラカシフト","name_tw":"","desc":"後攻でバトルを開始したとき、マカラカーンが発動する。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"タルカオート","name_tw":"","desc":"１ターン目開始時、タルカジャが発動する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"ラクカオート","name_tw":"","desc":"１ターン目開始時、ラクカジャが発動する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"スクカオート","name_tw":"","desc":"１ターン目開始時、スクカジャが発動する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"威圧の構え","name_tw":"","desc":"後攻でバトルを開始したとき、敵のプレスターンアイコンを１つ減少させる。","mp":null,"point":"21","element":"パシップ"},
+            {"name":"スピードスター","name_tw":"","desc":"悪魔のバトルスピードへの影響が50％増加する。","mp":null,"point":"10","element":"パシップ"},
+            {"name":"追い打ち","name_tw":"","desc":"敵の弱点をついたとき、ダメージが10％増加する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"無慈悲な一撃","name_tw":"","desc":"敵の弱点をついたとき、ダメージが20％増加する。","mp":null,"point":"12","element":"パシップ"},
+            {"name":"毒床歩き","name_tw":"","desc":"アウラゲート内のダメージ床のダメージが25％減少する。","mp":null,"point":2,"element":"パシップ"},
+            {"name":"毒床渡り","name_tw":"","desc":"アウラゲート内のダメージ床のダメージが50％減少する。","mp":null,"point":4,"element":"パシップ"},
+            {"name":"毒床無効","name_tw":"","desc":"アウラゲート内のダメージ床のダメージを無効にする。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"ダークゾーン無効","name_tw":"","desc":"アウラゲート内のダークゾーンの効果を無効にする。","mp":null,"point":8,"element":"パシップ"}
+        ]
+    }
 ];
+
+
+//////////////////////
+// i18n
+//////////////////////
+
+const messages = {
+    en: {
+      message: {
+        fusion: 'Fusion',
+        skill:'Skill',
+        reverse:'Reverse',
+        normal:'Normal',
+        reverse_fusion: 'Reverse Fusion',
+        normal_fusion: 'Normal Fusion',
+        devil: 'Devil',
+        setting:'Setting',
+        language: 'Language',
+        downgrade_fusion: 'Downgrade Fusion',
+        allow: 'Allow',
+        deny: 'Deny',
+        search:'Search',
+        element:'Element',
+        inherit:'Inherit',
+        description:'Description'
+      }
+    },
+    ja: {
+      message: {
+        fusion:'合体',
+        skill:'スキル',
+        reverse:'逆引き',
+        normal:'通常',
+        reverse_fusion: '逆引き合体',
+        normal_fusion: '通常合体',
+        devil: '仲魔',
+        setting:'環境',
+        language: '言語',
+        downgrade_fusion: 'ダウングレイド合体',
+        allow: '許可する',
+        deny: '許可しない',
+        search:'探す',
+        element:'属性',
+        inherit:'継承',
+        description:'説明'
+      }
+    },
+    tw: {
+        message:{
+            fusion:'合體',
+            skill:'技能',
+            reverse:'逆向',
+            normal:'順向',
+            reverse_fusion: '逆向合體',
+            normal_fusion: '順向合體',
+            devil: '惡魔',
+            setting:'設定',
+            language: '語言',
+            downgrade_fusion: '降階合體',
+            allow:'允許',
+            deny:'不允許',
+            search:'查詢',
+            element:'屬性',
+            inherit:'繼承',
+            description:'說明'
+        }
+    }
+};
+
 
 //////////////////////
 // Devil Class
@@ -1778,6 +1918,7 @@ var Skill = function(skill){
     this.mp = skill.mp==null ? "" : skill.mp;
     this.point = skill.point == null ? "" : skill.point;
     this.element = skill.element == null ? "" : skill.element;
+    this.type = null;
 }
 Skill.prototype.showName = function(){
     
@@ -1814,6 +1955,31 @@ Skill.prototype.showHint = function(){
     return hint;
 }
 
+////////////////////
+// Skill Type Class
+////////////////////
+
+var SkillType = function(type){
+
+    this.name = type.name;
+    this.name_tw = type.name_tw == null ? "" : type.name_tw;
+    this.name_en = type.name_en == null ? "" : type.name_en;
+    this.skills = type.skills;
+}
+SkillType.prototype.showName = function(){
+    
+    switch(i18n.locale){
+        case 'ja': name = this.name; break;
+        case 'tw': name = this.name_tw; break;
+        case 'en': name = this.name_en; break;
+        default: name = this.name;
+    }
+    if(!name)
+        name = this.name;
+    if(!name)
+        name = '';
+    return name;
+}
 ////////////////////
 // Devil Bom Class
 ////////////////////
@@ -1978,18 +2144,32 @@ DevilBom.bom = function(devil, d1, d2){
 // Digital Devil Data Class
 /////////////////////////////
 
-function DDDClass(ddd, skills){
+function DDDClass(ddd, sss){
     
     this.races = [];
     this.devils = [];
-    this.skills = skills;
+    this.skillTypes = [];
+    this.skills = [];
     
     var race_data = {};
     var devil_data = [];
+    var type_data = {};
     var skill_data = {};
-    
-    this.skills.forEach(function(skill){
-        skill_data[skill.name] = skill;
+    var skill_array = [];
+
+    sss = sss.map(function(type){
+
+        type = new SkillType(type);
+        type_data[type.name] = type;
+
+        type.skills = type.skills.map(function(skill){
+            skill = new Skill(skill);
+            skill.type = type;
+            skill_data[skill.name] = skill;
+            skill_array.push(skill);
+            return skill;
+        });
+        return type;
     });
 
     //create race_data
@@ -2162,6 +2342,8 @@ function DDDClass(ddd, skills){
     
     this.races = ddd;
     this.devils = devil_data;
+    this.skillTypes = sss;
+    this.skills = skill_array;
 }
 
 ////////////////////
@@ -2169,10 +2351,6 @@ function DDDClass(ddd, skills){
 ////////////////////
 
 // Initialize
-
-skill_stable = skill_stable.map(function(skill){
-    return new Skill(skill);
-});
 
 ddd_stable = new DDDClass(ddd_stable, skill_stable);
 ddd_preview = new DDDClass(ddd_preview, skill_stable);
@@ -2190,60 +2368,6 @@ function getCookie(name)
      if(arr != null) return unescape(arr[2]); return null;
 }
 
-// Ready translated locale messages
-const messages = {
-    en: {
-      message: {
-        fusion: 'Fusion',
-        skill:'Skill',
-        reverse:'Reverse',
-        normal:'Normal',
-        reverse_fusion: 'Reverse Fusion',
-        normal_fusion: 'Normal Fusion',
-        devil: 'Devil',
-        setting:'Setting',
-        language: 'Language',
-        downgrade_fusion: 'Downgrade Fusion',
-        allow: 'Allow',
-        deny: 'Deny',
-        search:'Search'
-      }
-    },
-    ja: {
-      message: {
-        fusion:'合体',
-        skill:'スキル',
-        reverse:'逆引き',
-        normal:'通常',
-        reverse_fusion: '逆引き合体',
-        normal_fusion: '通常合体',
-        devil: '仲魔',
-        setting:'環境',
-        language: '言語',
-        downgrade_fusion: 'ダウングレイド合体',
-        allow: '許可する',
-        deny: '許可しない',
-        search:'探す'
-      }
-    },
-    tw: {
-        message:{
-            fusion:'合體',
-            skill:'技能',
-            reverse:'逆向',
-            normal:'順向',
-            reverse_fusion: '逆向合體',
-            normal_fusion: '順向合體',
-            devil: '惡魔',
-            setting:'設定',
-            language: '語言',
-            downgrade_fusion: '降階合體',
-            allow:'允許',
-            deny:'不允許',
-            search:'查詢'
-        }
-    }
-  }
   
 const i18n = new VueI18n({
 locale: 'ja', // set locale
@@ -2340,7 +2464,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180407'
+        updated_at:'180411'
     },
     created:function(){
 
@@ -2819,6 +2943,20 @@ var app = new Vue({
 
             return result;
         },
+        filtered_skills: function(){
+
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = [];
+
+            if(keyword){
+                result = this.data.skills.filter(function(s){
+                    return s.name.match(keyword)||s.name_tw.match(keyword);
+                });
+            }
+
+            return result;
+        },
         builder_total_mag: function(){
 
             return this.builder_target?this.builder_target.showTotalMag():'';
@@ -2903,6 +3041,22 @@ var app = new Vue({
             
             return options;
         }
+    }
+});
+
+Vue.component('skill',{
+    props:['skill'],
+    template:'#skill-t',
+    methods:{
+
+    }
+});
+
+Vue.component('skill-list',{
+    props:['skills'] ,
+    template:'#skill-list-t',
+    methods:{
+
     }
 });
 
