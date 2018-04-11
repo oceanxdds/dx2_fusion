@@ -1996,6 +1996,15 @@ Skill.prototype.showHint = function(){
     var hint = '屬性: '+this.element+' MP: '+this.mp+' 繼承: '+this.point+'\n'+this.showDesc();
     return hint;
 }
+Skill.prototype.addDevil = function(new_devil){
+    
+    var devils = this.devils.filter(function(devil){
+        return devil.name == new_devil.name;
+    });
+
+    if(devils.length==0)
+        this.devils.push(new_devil);
+}
 
 ////////////////////
 // Skill Type Class
@@ -2249,7 +2258,7 @@ function DDDClass(ddd, sss){
                 devil.skills = devil.skills.map(function(name){
                     var skill = skill_data[name];
                     if(skill){
-                        skill.devils.push(devil);
+                        skill.addDevil(devil);
                     }
                     return skill ? skill : new Skill({name:name});
                 });
@@ -2258,7 +2267,7 @@ function DDDClass(ddd, sss){
                 devil.skill4 = devil.skill4.map(function(name){
                     var skill = skill_data[name];
                     if(skill){
-                        skill.devils.push(devil);
+                        skill.addDevil(devil);
                     }
                     return skill ? skill : new Skill({name:name});
                 });
@@ -2267,7 +2276,7 @@ function DDDClass(ddd, sss){
                 devil.skill5 = devil.skill5.map(function(name){
                     var skill = skill_data[name];
                     if(skill){
-                        skill.devils.push(devil);
+                        skill.addDevil(devil);
                     }
                     return skill ? skill : new Skill({name:name});
                 });
