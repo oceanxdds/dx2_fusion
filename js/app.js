@@ -621,6 +621,47 @@ var ddd_stable = [
             {                name:'オバリヨン',        name_tw:'背負小鬼',        rarity:1,                grade:7, icon:'yuuki_obariyon.png', skills:["クロズディ","メディア",""], skill4:["突撃","暴れまくり","スクンダ","見切り","火炎耐性"], skill5:["","乱れ狂い","メカースディ","地獄のマスク","マハンマ"],elements:["","","弱","耐","","弱","無"], type:"回復"            },
             {                name:'ガキ',             name_tw:'餓鬼',   rarity:1,                grade:4, icon:'yuuki_gaki.png', skills:["ブフ","ムド",""], skill4:["マハブフ","吸血","ディスコード","百発百中","衝撃耐性"], skill5:["","ヒートウェイブ","メパララディ","マハムド","初段の剛力"],elements:["","弱","耐","","弱","弱","無"], type:"攻擊"            }
         ]
+    },
+    {
+        name:'魔人',
+        formulas:[],
+        devils:[
+            { name:'トランペッター', name_tw:'吹號者', rarity:5, grade:94, icon:'majin_toranpeta.png', skills:['コンセントレイト','ソウルドレイン','アポカリプス'], skill4:['マハマカジャオン','ジャッジメント','祟り','ラクカオート','物理耐性'], skill5:['','タルカジャ','マハブフーラ','空間殺法','火炎耐性'], elements:['','','','','','無','無'], type:'攻擊'},
+            { name:'アリス', name_tw:'愛麗絲', rarity:5, grade:89, icon:'majin_arisu.png', skills:['マハムドオン','ムドダイン','死んでくれる？'], skill4:['ソウルドレイン','ヘルズアイ','マハジュオン','呪殺ハイブースタ','破魔反射'], skill5:['','絶対零度','マハブフダイン','呪い耐性','刹那五月雨撃ち'], elements:['','','','','','弱','反'], type:'攻擊'},
+            {   name:'ワイトナイト', name_tw:'白騎士', rarity:4, grade:74, icon:'majin_waitonaito.png', skills:['ジオダイン','ホワイトノイズ','ゴッドアロー'], skill4:['ショックウェーブ','ソウルドレイン','リカームドラ','緊縛無効','衝撃無効'], skill5:['','ブフーラ','百発百中','ヒートウェイブ','ブフ'], elements:['','','','吸','弱','耐','耐'], type:'攻擊'}
+        ]
+    },
+    {
+        name:'英雄',
+        formulas:[],
+        devils:[
+            { name:'ヨシツネ', name_tw:'義經', rarity:5, grade:97, icon:'eiyuu_yositune.png', skills:['空間殺法','勝利のチャクラ','八艘飛び'], skill4:['不屈の闘志','ギガントマキア','テトラカーン','物理ハイブースタ','物理吸収'], skill5:['','マハマカジャマ','マハブフダイン','殺風激','ウィンドブレス'], elements:['耐','','','','','無','無'], type:'攻擊'},
+            { name:'ジークフリード', name_tw:'齊格飛', rarity:5, grade:83, icon:'eiyuu_jikuhurito.png', skills:['怪力乱神','リベリオン','武道の素養'], skill4:['勝利の息吹','ティタノマキア','チャージ','不屈の闘志','衝撃無効'], skill5:['','マハジオダイン','トリスアギオン','メギドラ','イービルアイ'], elements:['吸','','','','','',''], type:'攻擊'}
+        ]
+    },
+    {
+        name:'怪異',
+        formulas:[],
+        devils:[
+            { name:'かみおとこ', name_tw:'啃咬魔', rarity:2, grade:25, icon:'kaii_kamiotoko.png', skills:['ムドオン','狂い咲き','痺れかみつき'], skill4:['雄叫び','丸かじり','ディスコード','初段の強運','衝撃無効'], skill5:['','暴れまくり','ディア','マハンマ','コロシの愉悦'], elements:['','','','','','弱','反'], type:'支援'}
+        ]
+    },
+    {
+        name:'珍獣',
+        formulas:[],
+        devils:[
+            { name:'イナバシロウサギ', name_tw:'因幡白兔', rarity:3, grade:41, icon:'tinjyuu_inabasirousagi.png', skills:['デカジャ','メディア','ワナフーリ'], skill4:['リカーム','狂乱の剛爪','ディスコード','初段の猛速','火炎無効'], skill5:['','マハムド','マハンマ','メカースディ','メウィークディ'], elements:['','弱','','','','',''], type:'回復'},
+            { name:'チュパカブラ', name_tw:'卓柏卡布拉', rarity:1, grade:15, icon:'tinjyuu_typakabura.png', skills:['マハザン','ステルス','ワナフーリ'], skill4:['スクカオート','吸魔','パララディ','地獄のマスク','電撃耐性'], skill5:['','マハムド','メディア','初段の恵体','野生の勘'], elements:['','','','弱','','',''], type:'攻擊'}
+        ]
+    },
+    {
+        name:'秘神',
+        formulas:[],
+        devils:[
+            { name:'カーマ', name_tw:'伽摩', rarity:4, grade:75, icon:'hisin_kama.png', skills:['スピードスター','デクンダ','魅了の神弓'], skill4:['空間殺法','刹那五月雨撃ち','静寂の祈り','スクカオート','火炎反射'], skill5:['','衝撃耐性','メポズムディ','毒針','タルンダ'], elements:['耐','弱','','','','耐',''], type:'支援'},
+            { name:'キンマモン', name_tw:'君真物', rarity:3, grade:55, icon:'hisin_kinmamon.png', skills:['メギド','バリア','マレビト'], skill4:['メギドラ','エナジードレイン','アムリタ','見切り','呪殺無効'], skill5:['','初段の恵体','毒床歩き','乱れ狂い','カースディ'], elements:['','無','弱','','','耐','耐'], type:'支援'},
+            { name:'カンバリ', name_tw:'加牟波理', rarity:2, grade:30, icon:'hisin_kanbari.png', skills:['暴れまくり','ハマオン','コウウン'], skill4:['メガトンプレス','マハンマ','メカースディ','勝利のチャクラ','火炎耐性'], skill5:['','','','',''], elements:['弱','','','','','耐','弱'], type:'攻擊'}
+        ]
     }
 ];
 
@@ -1254,7 +1295,7 @@ var skill_stable = [
             {"name":"ゴッドハンド","name_tw":"神之手","desc":"敵単体に物理属性の打撃型ダメージを威力200で与える。","mp":8,"point":"15","element":"物理"},
             {"name":"なぎ払い","name_tw":"橫斬","desc":"敵全体に物理属性の打撃型ダメージを威力80で与える。","mp":4,"point":2,"element":"物理"},
             {"name":"金剛発破","name_tw":"金剛發破","desc":"敵全体に物理属性の打撃型ダメージを威力100で与える。","mp":5,"point":4,"element":"物理"},
-            {"name":"冥界波","name_tw":"冥界波","desc":"敵全体に物理属性の打撃型ダメージを威力120で与える。","mp":6,"point":6,"element":"物理"},
+            {"name":"冥界破","name_tw":"冥界破","desc":"敵全体に物理属性の打撃型ダメージを威力120で与える。","mp":6,"point":6,"element":"物理"},
             {"name":"空間殺法","name_tw":"空間殺法","desc":"敵全体に物理属性の打撃型ダメージを威力140で与える。","mp":7,"point":8,"element":"物理"},
             {"name":"ギガントマキア","name_tw":"巨人之戰","desc":"敵全体に物理属性の打撃型ダメージを威力160で与える。","mp":8,"point":"10","element":"物理"},
             {"name":"突撃","name_tw":"突擊","desc":"敵単体にクリティカル率30%の物理属性の打撃型ダメージを威力115で与える。","mp":4,"point":2,"element":"物理"},
@@ -1369,7 +1410,7 @@ var skill_stable = [
             {"name":"マハンマダイン","name_tw":"瑪哈瑪達因","desc":"敵全体に破魔属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"破魔"},
             {"name":"審判の光","name_tw":"審判之光","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
             {"name":"天罰","name_tw":"天譴","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"破魔"},
-            {"name":"ゴッドアロー","name_tw":"","desc":"敵単体に破魔属性の魔法型ダメージを威力200で与え、50％の確率で死亡させる。","mp":7,"point":null,"element":"破魔"}
+            {"name":"ゴッドアロー","name_tw":"神差箭矢","desc":"敵単体に破魔属性の魔法型ダメージを威力200で与え、50％の確率で死亡させる。","mp":7,"point":null,"element":"破魔"}
         ]
     },
     {
@@ -1919,6 +1960,7 @@ var Skill = function(skill){
     this.point = skill.point == null ? "" : skill.point;
     this.element = skill.element == null ? "" : skill.element;
     this.type = null;
+    this.devils = [];
 }
 Skill.prototype.showName = function(){
     
@@ -2206,18 +2248,27 @@ function DDDClass(ddd, sss){
             if(devil.skills){
                 devil.skills = devil.skills.map(function(name){
                     var skill = skill_data[name];
+                    if(skill){
+                        skill.devils.push(devil);
+                    }
                     return skill ? skill : new Skill({name:name});
                 });
             }
             if(devil.skill4){
                 devil.skill4 = devil.skill4.map(function(name){
                     var skill = skill_data[name];
+                    if(skill){
+                        skill.devils.push(devil);
+                    }
                     return skill ? skill : new Skill({name:name});
                 });
             }
             if(devil.skill5){
                 devil.skill5 = devil.skill5.map(function(name){
                     var skill = skill_data[name];
+                    if(skill){
+                        skill.devils.push(devil);
+                    }
                     return skill ? skill : new Skill({name:name});
                 });
             }
@@ -2464,7 +2515,7 @@ var app = new Vue({
         //modal
         info_target:null,
         info_timer:null,
-        updated_at:'180411'
+        updated_at:'180412'
     },
     created:function(){
 

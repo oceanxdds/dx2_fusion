@@ -219,7 +219,27 @@
                 <b-card no-body>
                     <b-tabs pills card>
                         <b-tab :title="type.showName()" v-for="type in data.skillTypes" no-body>
-                            <skill-list :skills="type.skills"></skill-list>
+                            
+                            <div class="row no-gutters">
+                                <div v-for="(skill, index) in type.skills"
+                                    class="col-12"
+                                    :class="{'col-md-6':!skill.active, 'col-lg-4':!skill.active, 'col-xl-3':!skill.active}">
+
+                                    <div class="row no-gutters">
+                                        <div class="col-12 p-2"
+                                        :class="{'col-md-6':skill.active, 'col-lg-4':skill.active, 'col-xl-3':skill.active}">
+                                            <skill :skill="skill" style="cursor:pointer" v-b-toggle="'skill_'+skill.name"></skill>
+                                        </div>
+                                    </div>
+
+                                    <b-collapse :id="'skill_'+skill.name" accordion="skill_accrodion" v-model="skill.active" class="p-2">
+                                        <b-card no-body style="background-color:#eee">
+                                            <devil-list :devils="skill.devils" usage="skill"></devil-list>
+                                        </b-card>
+                                    </b-collapse>
+                                </div>
+                            </div>
+
                         </b-tab>
                     </b-tabs>
                 </b-card>
@@ -411,22 +431,17 @@
                     {{ skill.showName() }}
                 </div>
                 <div class="small">
-                    {{ $t('message.element') }}: {{ skill.type.showName() }} MP: {{ skill.mp }} {{ $t('message.inherit') }}: {{ skill.point }}
+                    {{ $t('message.element') }}: {{ skill.type.showName() }} 
+                    {{ skill.mp ? "MP: "+skill.mp : "" }} 
+                    {{ skill.point ? $t('message.inherit') +": "+skill.point : "" }}
                 </div>
             </b-card-body>
 
-            <b-card-body class="p-2" style="border-top:1px solid rgba(0,0,0,.125);">
+            <b-card-footer class="p-2">
                 <div class="small">
                     {{ skill.showDesc() }}
                 </div>
-            </b-card-body>
-<!--
-            <b-card-footer class="p-1">
-                <div class="small">
-                    <b-button variant="info" size="sm">{{ $t('message.devil') }}</b-button>
-                </div>
             </b-card-footer>
-        -->
         </b-card>
         
     </script>
@@ -451,12 +466,12 @@
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold">
-                    {{usage=='fusion'||usage=='fission'||usage=='info'?devil.race.showName():''}} {{ devil.showName() }}
+                    {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
                 <div class="small">
                     {{ devil.showGrade() }} {{ devil.showRarity() }}
                     <span class="ml-2" v-if="usage=='info'">AI: {{ devil.type }}</span>
-                    <b-button v-if="usage=='fusion'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>    
+                    <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>    
                 </div>
             </b-card-body>
 
@@ -582,7 +597,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180411"></script>
+    <script src="js/app.js?t=180412"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
