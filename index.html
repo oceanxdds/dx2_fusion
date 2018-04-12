@@ -200,7 +200,7 @@
                                                 </div>
 
                                                 <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" v-model="option.active" class="p-2">
-                                                    <b-card no-body style="background-color:#eee" v-if="option.active">
+                                                    <b-card no-body style="background-color:#eee">
                                                         <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
                                                     </b-card>
                                                 </b-collapse>
@@ -239,7 +239,7 @@
                                     </div>
 
                                     <b-collapse :id="'skill_'+skill.name" accordion="skill_accrodion" v-model="skill.active" class="p-2">
-                                            <b-card no-body style="background-color:#eee" v-if="skill.active">
+                                            <b-card no-body style="background-color:#eee">
                                                 <devil-list :devils="skill.devils" usage="skill"></devil-list>
                                             </b-card>
                                     </b-collapse>
@@ -604,7 +604,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180412-2"></script>
+    <script src="js/app.js?t=180413"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
