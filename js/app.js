@@ -2526,7 +2526,7 @@ var app = new Vue({
         info_timer:null,
         updated_at:'180412'
     },
-    created:function(){
+     created:function(){
 
         var c_lang_value = getCookie('lang_value');
         
