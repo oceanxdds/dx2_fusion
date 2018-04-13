@@ -1739,6 +1739,7 @@ const messages = {
         setting:'Setting',
         language: 'Language',
         downgrade_fusion: 'Downgrade Fusion',
+        prevent_unload:'Prevent Unload',
         allow: 'Allow',
         deny: 'Deny',
         search:'Search',
@@ -1759,6 +1760,7 @@ const messages = {
         setting:'環境',
         language: '言語',
         downgrade_fusion: 'ダウングレイド合体',
+        prevent_unload:'アンロードを防止する',
         allow: '許可する',
         deny: '許可しない',
         search:'探す',
@@ -1779,6 +1781,7 @@ const messages = {
             setting:'設定',
             language: '語言',
             downgrade_fusion: '降階合體',
+            prevent_unload:'防止換頁',
             allow:'允許',
             deny:'不允許',
             search:'查詢',
@@ -2514,6 +2517,7 @@ var app = new Vue({
             {text: 'message.allow', value:1},
             {text: 'message.deny', value:0}
         ],
+        allow_prevent_unload:0,
         index_main:0,
         index_main_last:0,
         index_fusion:0,
@@ -2562,6 +2566,12 @@ var app = new Vue({
             this.allow_down_grade = c_allow_down_grade;
         }
 
+        var c_allow_prevent_unload = getCookie('allow_prevent_unload');
+
+        if(c_allow_prevent_unload!=null){
+            this.allow_prevent_unload = c_allow_prevent_unload;
+        }
+
         this.update_now();
 
         setInterval(function(){
@@ -2587,6 +2597,10 @@ var app = new Vue({
             this.update_fusion_filter();
             
             setCookie('allow_down_grade', this.allow_down_grade);
+        },
+        allow_prevent_unload:function(){
+            
+            setCookie('allow_prevent_unload', this.allow_prevent_unload);
         },
         preview:function(){
             
@@ -3237,3 +3251,10 @@ Vue.component('devil-bom-options',{
     props:['options','usage'],
     template:'#devil-bom-options-t'
 });
+
+var window_before_unload = function(){
+    
+    if(app.allow_prevent_unload=='1'){
+        return true;
+    }
+}

@@ -55,7 +55,7 @@
     <script src="js/vue-i18n.min.js"></script>
 </head>
 
-<body>
+<body onbeforeunload="return window_before_unload()">
 
     <!--Main-->
     <div class="container-fluid px-0" style="max-width:1920px" id="app" v-cloak>
@@ -269,7 +269,7 @@
 
             <b-tab no-body class="p-2">
             
-                <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right; background-size:contain">
+                <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right center; background-size:auto 300px">
                     <div class="col-12 py-2">
                         <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
                         <div>
@@ -289,6 +289,19 @@
                                 buttons
                                 button-variant="outline-info"
                                 v-model="allow_down_grade"
+                                name="lang_radio">
+                                <b-form-radio value="0">{{ $t('message.deny') }}</b-form-radio>
+                                <b-form-radio value="1">{{ $t('message.allow') }}</b-form-radio>
+                                </b-form-radio-group>
+                        </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.prevent_unload') }}</div>
+                        <div>
+                            <b-form-radio-group id="lang"
+                                buttons
+                                button-variant="outline-info"
+                                v-model="allow_prevent_unload"
                                 name="lang_radio">
                                 <b-form-radio value="0">{{ $t('message.deny') }}</b-form-radio>
                                 <b-form-radio value="1">{{ $t('message.allow') }}</b-form-radio>
@@ -600,7 +613,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180413-1"></script>
+    <script src="js/app.js?t=180413-2"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
