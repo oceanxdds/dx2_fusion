@@ -20,14 +20,6 @@
     *:focus{
         outline:none;
     }
-    /* remove collapse animation */
-    /*
-    .collapsing {
-        -webkit-transition: none;
-        transition: none;
-        display: none;
-    }
-    */
     /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
@@ -240,7 +232,7 @@
 
                                     <b-collapse :id="'skill_'+skill.name" accordion="skill_accrodion" v-model="skill.active" class="p-2">
                                             <b-card no-body style="background-color:#eee">
-                                                <devil-list :devils="skill.devils" usage="skill"></devil-list>
+                                                <devil-list :devils="skill.devils" usage="skill" :skill="skill"></devil-list>
                                             </b-card>
                                     </b-collapse>
                                 
@@ -478,7 +470,11 @@
                 <div class="small">
                     {{ devil.showGrade() }} {{ devil.showRarity() }}
                     <span class="ml-2" v-if="usage=='info'">AI: {{ devil.type }}</span>
-                    <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>    
+                    <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>
+                    <span v-if="usage=='skill'">
+                        <b-badge class="ml-2" variant="success" v-if="isSkillAvailable(0)">持有</b-badge>
+                        <b-badge class="ml-2" variant="warning" v-if="isSkillAvailable(1)">繼承</b-badge>
+                    </span>
                 </div>
             </b-card-body>
 
@@ -497,7 +493,7 @@
         <div class="row no-gutters">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils">
                 
-                <devil :devil="devil" :usage="usage" @click="click()">
+                <devil :devil="devil" :usage="usage" @click="click()" :skill="skill">
                     <b-button variant="sencondary" size="sm" @click="fusion(devil)" class="font-weight-bold small">{{ $t('message.normal_fusion') }}</b-button>
                     <b-button variant="warning" size="sm" @click="start_bom(devil)" class="font-weight-bold small">{{ $t('message.reverse_fusion') }}</b-button>
                 </devil>
@@ -604,7 +600,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180413"></script>
+    <script src="js/app.js?t=180413-1"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
