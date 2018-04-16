@@ -59,43 +59,35 @@
 
     <!--Main-->
     <div class="container-fluid px-0" style="max-width:1920px" id="app" v-cloak>
-
         <b-navbar toggleable="md" type="dark" variant="info">
 
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
-            
             <b-navbar-brand href="#" @click="route('home')" class="d-none d-md-block">Dx2</b-navbar-brand>
             <b-navbar-brand href="#" @click="searchBar=!searchBar" class="d-block d-md-none">{{ $t('message.search') }}</b-navbar-brand>
 
             <b-collapse is-nav id="nav_collapse">
-
                 <b-navbar-nav>
                     <b-nav-item href="#" @click="route('fusion.devil')" :active="isRoute('fusion.devil')">{{ $t('message.devil') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('fusion.fission')" :active="isRoute('fusion.fission')">{{ $t('message.reverse_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('fusion.fusion')" :active="isRoute('fusion.fusion')">{{ $t('message.normal_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('skill')" :active="isRoute('skill')">{{ $t('message.skill') }}</b-nav-item>
                 </b-navbar-nav>
-
-                <!-- Right aligned nav items -->
                 <b-navbar-nav class="ml-auto">
-
                     <b-nav-form action="#" class="d-none d-md-block">
                         <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')" onfocus="app.route('search',true)" onblur="if(!app.keyword)app.route('last')"></b-form-input>
                     </b-nav-form>
-
                     <b-nav-item href="#" @click="route('setting')" :active="isRoute('setting')">{{ $t('message.setting') }}</b-nav-item>
-
                 </b-navbar-nav>
-          
             </b-collapse>
         </b-navbar>
-        
-        <b-tabs v-model="index_main" nav-wrapper-class="d-none" content-class="" lazy>
 
-            <!-- index_main : 0 -->
+        <b-tabs v-model="index_main" nav-wrapper-class="d-none" lazy>
             <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
                 <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')" onfocus="app.route('search',true)" onblur="if(!app.keyword)app.route('last')"></b-form-input>
             </div>
+
+            <!-- index_main : 0 -->
+
             <b-tab no-body>
 
                 <b-card no-body class="border-0">
@@ -104,15 +96,12 @@
                         <!-- index_fusion : 0 // devil-->
 
                         <b-tab :title="$t('message.devil')" no-body>
-                            
                             <b-card no-body>
-                                <b-tabs pills card>
-                                    <b-tab :title="race.showName()" v-for="race in data.races" no-body>
-                                        <devil-list :devils="race.devils" usage="fission"></devil-list>
-                                    </b-tab>
+                                <b-tabs pills card v-model="race_id" lazy content-class="d-none">
+                                    <b-tab :title="race.showName()" v-for="race in races"></b-tab>
                                 </b-tabs>
+                                <devil-list :devils="devils_by_race" usage="fission"></devil-list>
                             </b-card>
-
                         </b-tab>
 
                         <!-- index_fusion : 1 // fission/builder-->
@@ -123,7 +112,7 @@
                                     <b-list-group-item class="p-2">
                                         <div class="row align-items-center">
                                             <div class="col-auto">
-                                                <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_total_mag_pure }} ~ {{ builder_total_mag }} </h5>
+                                                <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_target.showTotalMagPure() }} ~ {{ builder_target.showTotalMag() }} </h5>
                                             </div>
                                             <div class="col-auto">
                                                 <b-button size="sm" variant="warning" @click="builder_auto_costdown(3)">AUTO★3</b-button>
@@ -131,12 +120,9 @@
                                                 <b-button size="sm" variant="warning" @click="builder_auto_costdown(1)">AUTO★1</b-button>
                                             </div>
                                         </div>
-                                        
-                                        
-                                    </b-list-group-item>    
+                                    </b-list-group-item>
                                     <b-list-group-item class="p-2">
-                                                <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
-                                        
+                                            <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                                     </b-list-group-item>
                                     <b-list-group-item class="p-0" v-if="builder_options.length">
                                         <div class="row no-gutters justify-content-center">
@@ -159,7 +145,7 @@
                         <!-- index_fusion : 2 // fusion-->
 
                         <b-tab :title="$t('message.normal')" no-body>
-                            
+
                             <b-card no-body v-if="fusion_target">
                                 <b-list-group flush>
                                     <b-list-group-item class="p-2" v-if="fusion_options.length">
@@ -202,8 +188,9 @@
                                         
                                     </b-list-group-item>
                                 </b-list-group>
-                            </b-card>
                             
+                            </b-card>
+
                         </b-tab>
                         
 
@@ -214,33 +201,13 @@
             <!-- index_main : 1 // skill-->
 
             <b-tab no-body class="p-2">
-    
+
                 <b-card no-body>
-                    <b-tabs pills card lazy>
-                        <b-tab :title="type.showName()" v-for="type in data.skillTypes" no-body>
-                            <div class="row no-gutters">
-                                <div v-for="(skill, index) in type.skills"
-                                    class="col-12"
-                                    :class="{'col-md-6':!skill.active, 'col-lg-4':!skill.active, 'col-xl-3':!skill.active}">
-
-                                    <div class="row no-gutters">
-                                        <div class="col-12 p-2"
-                                        :class="{'col-md-6':skill.active, 'col-lg-4':skill.active, 'col-xl-3':skill.active}">
-                                            <skill :skill="skill" style="cursor:pointer" v-b-toggle="'skill_'+skill.name"></skill>
-                                        </div>
-                                    </div>
-
-                                    <b-collapse :id="'skill_'+skill.name" accordion="skill_accrodion" v-model="skill.active" class="p-2">
-                                            <b-card no-body style="background-color:#eee">
-                                                <devil-list :devils="skill.devils" usage="skill" :skill="skill"></devil-list>
-                                            </b-card>
-                                    </b-collapse>
-                                
-                                </div>
-                            </div>
-                            
-                        </b-tab>
+                    <b-tabs pills card v-model="skillType_id" content-class="d-none" lazy>
+                        <b-tab :title="type.showName()" v-for="type in skillTypes"></b-tab>
                     </b-tabs>
+
+                    <skill-list :skills="skills_by_type"></skill-list>
                 </b-card>
 
             </b-tab>
@@ -346,7 +313,7 @@
                 <b-form-radio-group id="lang"
                     buttons
                     button-variant="outline-info"
-                    v-model="preview"
+                    v-model="resource_id"
                     name="lang_radio" size="sm">
                     <b-form-radio value="0">Stable</b-form-radio>
                     <b-form-radio value="1">Preview (2018.4.20)</b-form-radio>
@@ -357,6 +324,7 @@
         <!-- Modal -->
 
         <b-modal id="modal_devil_info" size="lg" hide-header="true" ok-only="true" ok-title="CLOSE" ok-variant="secondary" footer-class="py-2">
+
             <div v-if="devil" v-for="devil in [info_target]">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -364,7 +332,7 @@
                     </div>
                     <div class="col-12">
                         <table class="table table-bordered table-sm my-0">
-                            <tboty>
+                            <tbody>
                                 <tr>
                                     <td class="text-center align-middle">基本</td>
                                     <td>
@@ -399,14 +367,13 @@
                                         </div>
                                     </td>
                                 </tr>
-
-                            </tboty>
+                            </tbody>
                         </table>
                     </div>
 
                     <div class="col-12 col-md-10 col-xl-8">
                         <table class="table table-bordered table-sm my-0">
-                            <tboty>
+                            <thead>
                                 <tr class="text-center">
                                     <th style="background:rgb(185, 185, 185)">物</th>
                                     <th style="background:rgb(219, 120, 120)">火</th>
@@ -416,18 +383,21 @@
                                     <th style="background:rgb(240, 236, 196)">破</th>
                                     <th style="background:rgb(218, 142, 221)">咒</th>
                                 </tr>
+                            </thead>
+                            <tbody>
                                 <tr class="text-center">
                                     <td v-for="ele in devil.elements">
                                         <span class="font-weight-bold">{{ele?ele:'ー'}}</span>
                                     </td>
                                 </tr>
-                            </tboty>
+                            </tbody>
                         </table>
                     </div>
 
                 </div>
                 
             </div>
+
         </b-modal>
 
     </div>
@@ -438,7 +408,7 @@
 
         <b-card no-body class="border-secondary">
             
-            <b-card-body class="p-2">
+            <b-card-body class="p-2">                
                 <div class="font-weight-bold">
                     {{ skill.showName() }}
                 </div>
@@ -450,21 +420,34 @@
             </b-card-body>
 
             <b-card-footer class="p-2">
-                <div class="small">
-                    {{ skill.showDesc() }}
-                </div>
+                <div class="small">{{ skill.showDesc() }}</div>
             </b-card-footer>
+
         </b-card>
-        
+
     </script>
 
     <script id="skill-list-t" type="text/x-template">
 
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="skill in skills">
-                
-                <skill :skill="skill"></skill>
-
+            <div class="col-12" v-for="(skill, index) in skills"
+                :class="{'col-md-6':!actives[index], 'col-lg-4':!actives[index], 'col-xl-3':!actives[index]}">
+                <div class="row no-gutters">
+                    <div class="col-12 p-2"
+                    :class="{'col-md-6':actives[index], 'col-lg-4':actives[index], 'col-xl-3':actives[index]}">
+                        <skill :skill="skill" v-b-toggle="'skill_'+index" style="cursor:pointer"></skill>
+                    </div>
+                </div>
+                <b-collapse :id="'skill_'+index" accordion="skill_accrodion" v-model="actives[index]" class="px-2">
+                    <b-card no-body>
+                        <div class="row no-gutters">
+                            <div class="col-12 p-2" v-for="devil in skill.devils"
+                            :class="{'col-md-6':actives[index], 'col-lg-4':actives[index], 'col-xl-3':actives[index]}">
+                                <devil :devil="devil" usage="skill" @click="click()" :skill="skill"></devil>
+                            </div>
+                        </div>
+                    </b-card>
+                </b-collapse>
             </div>
         </div>
 
@@ -566,20 +549,20 @@
                 </div>
                 <div class="col-auto item">
                     <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
-                        style="min-width:130px" :class="{'bg-warning':is_current(bom), 'text-primary':is_current(bom.parent)}"
+                        style="min-width:130px" :class="{'bg-warning':isCurrent(), 'text-primary':isParentCurrent()}"
                         v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
                     </devil>
                 </div>
                 <div class="col-auto col-md align-self-center pl-1">
                     <div class="row no-gutters">
-                        <div class="col-auto pr-1" v-if="is_current(bom)">
+                        <div class="col-auto pr-1" v-if="isCurrent()">
                             <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold">⚝</b-button>
                         </div>
-                        <div class="col-auto" v-if="is_current(bom)&&(bom.child1||bom.child2)">
+                        <div class="col-auto" v-if="isCurrent()&&hasChild()">
                             <b-button size="sm" @click="reset_bom(bom)" class="">✕</b-button>
                         </div>
-                        <div class="col-auto" v-if="!is_current(bom)&&(bom.child1||bom.child2)">
-                            <b-button size="sm" @click="toggle()" class="">{{bom.collapse?'+':'-'}}</b-button>
+                        <div class="col-auto" v-if="!isCurrent()&&(bom.child1||bom.child2)">
+                            <b-button size="sm" @click="toggle()" class="">{{ collapsed_sign }}</b-button>
                         </div>
                         <div class="col align-self-center">
                             <hr v-if="bom.parent?bom.parent.child1==bom:false">
@@ -588,7 +571,7 @@
                 </div>
                 
             </div>
-            <div class="row no-gutters justify-content-md-center" v-if="!bom.collapse">
+            <div class="row no-gutters justify-content-md-center" v-if="!collapsed">
                 <div class="col-12 col-md-auto pl-3 pl-md-0 border-left border-left-md-none" v-if="bom.child1">
                     <devil-bom-builder :bom="bom.child1"></devil-bom-builder>
                 </div>
@@ -613,7 +596,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180413-2"></script>
+    <script src="js/app.js?t=180416"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

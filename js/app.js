@@ -6,9 +6,11 @@ Github: https://github.com/oceanxdds/dx2_fusion
 Publish: https://oceanxdds.github.io/dx2_fusion/
 //////////////////////////////////////////////////*/
 
+const start_stamp = new Date();
+
 // Digital Devil Data (Stable Version)
 
-var ddd_stable = [
+const ddd_stable = [
     {
         name:'大天使',
         formulas:[
@@ -674,7 +676,7 @@ var ddd_stable = [
 
 // Digital Devil Data (Preview Version)
 
-var ddd_preview = [
+const ddd_preview = [
     {
         name:'大天使',
         formulas:[
@@ -1288,7 +1290,8 @@ var ddd_preview = [
     }
 ];
 
-var skill_stable = [
+
+const skill_stable = [
     {
         name:"物理",
         name_tw:"物理",
@@ -1565,7 +1568,7 @@ var skill_stable = [
             {"name":"チャージ","name_tw":"蓄力","desc":"自身をチャージ状態にし、次に与える打撃型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
             {"name":"コンセントレイト","name_tw":"專注","desc":"自身をコンセントレイト状態にし、次に与える魔法型ダメージを125％増加させる。","mp":6,"point":8,"element":"無"},
             {"name":"リベリオン","name_tw":"反叛","desc":"自身を会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。","mp":6,"point":8,"element":"無"},
-            {"name":"ディスコード","name_tw":"同性相斥","desc":"敵全体のチャージ、コンセントレイト、会心状態を解除する。","mp":3,"point":6,"element":"無"},
+            {"name":"ディスコード","name_tw":"異調相斥","desc":"敵全体のチャージ、コンセントレイト、会心状態を解除する。","mp":3,"point":6,"element":"無"},
             {"name":"バトンタッチ","name_tw":"下一位","desc":"自身のプレスターンアイコンを消費せずにパスを行う。","mp":3,"point":6,"element":"無"},
             {"name":"バリア","name_tw":"防壁","desc":"３ターンの間、味方単体をバリア状態にし、状態異常を無効にする。","mp":4,"point":8,"element":"無"},
             {"name":"バリアコワース","name_tw":"防壁破壞","desc":"敵全体のバリア状態を解除する。","mp":3,"point":6,"element":"無"},
@@ -2213,7 +2216,7 @@ DevilBom.bom = function(devil, d1, d2){
 // Digital Devil Data Class
 /////////////////////////////
 
-function DDDClass(ddd, sss){
+function Resource(ddd, sss){
     
     this.races = [];
     this.devils = [];
@@ -2221,7 +2224,8 @@ function DDDClass(ddd, sss){
     this.skills = [];
     
     var race_data = {};
-    var devil_data = [];
+    var devil_data = {};
+    var devil_array = [];
     var type_data = {};
     var skill_data = {};
     var skill_array = [];
@@ -2300,7 +2304,8 @@ function DDDClass(ddd, sss){
                 });
             }
 
-            devil_data.push(devil);
+            devil_array.push(devil);
+            devil_data[devil.name] = devil;
         });
 
         var usage_temp = {};
@@ -2338,13 +2343,13 @@ function DDDClass(ddd, sss){
         }
     });
 
-    devil_data.sort(function(d1,d2){
+    devil_array.sort(function(d1,d2){
         if(d1.grade==d2.grad2)  return 0;
         return d1.grade > d2.grade ? 1 : -1;
     });
 
     //create fission and fusion options
-    devil_data.forEach(function(devil){
+    devil_array.forEach(function(devil){
         devil.fission_options = devil.fission_formulas();
         devil.fusion_options = devil.fusion_formulas();
         devil.fission_boms = [];
@@ -2363,7 +2368,7 @@ function DDDClass(ddd, sss){
 
         var all_pass = true;
         
-        devil_data.forEach(function(devil){
+        devil_array.forEach(function(devil){
 
              //cost changed
      
@@ -2419,9 +2424,13 @@ function DDDClass(ddd, sss){
     }
     
     this.races = ddd;
-    this.devils = devil_data;
+    this.race_data = race_data;
+    this.devils = devil_array;
+    this.devil_data = devil_data;
     this.skillTypes = sss;
     this.skills = skill_array;
+    this.skill_data = skill_data;
+
 }
 
 ////////////////////
@@ -2430,8 +2439,9 @@ function DDDClass(ddd, sss){
 
 // Initialize
 
-ddd_stable = new DDDClass(ddd_stable, skill_stable);
-ddd_preview = new DDDClass(ddd_preview, skill_stable);
+var resource = [];
+resource.push(new Resource(ddd_stable, skill_stable));
+resource.push(new Resource(ddd_preview, skill_stable));
 
 function setCookie(name,value)
 {
@@ -2448,25 +2458,27 @@ function getCookie(name)
 
   
 const i18n = new VueI18n({
-locale: 'ja', // set locale
-messages: messages // set locale messages
+    locale: 'ja', // set locale
+    messages: messages // set locale messages
 });
   
-
 var app = new Vue({
     i18n:i18n,
     el:'#app',
     data:{
-        data: ddd_stable,
-        preview:0,
+        resource_id:0,
+        race_id:0,
+        skillType_id:0,
+
         //fission        
-        fission_target:null,
-        fission_options:[],
+        //fission_target:null,
+        //fission_options:[],
         
         //builder
-        builder_target:null,
-        builder_options:[],
-        current_bom:null,
+        //builder_target:null,
+        //builder_target_name:"",
+        //builder_options:[],
+        //current_bom:null,
         builder_rarity_options:[
             {text:"1+1", state:true, active:false},
             {text:"1+2", state:true, active:false},
@@ -2485,8 +2497,8 @@ var app = new Vue({
             {text:"5+5", state:true, active:false}
         ],
         //fusion
-        fusion_target:null,
-        fusion_options:[],
+        //fusion_target:null,
+        //fusion_options:[],
         fusion_rarity_options:[
             {text:"1+1", state:true, active:false},
             {text:"1+2", state:true, active:false},
@@ -2541,11 +2553,20 @@ var app = new Vue({
         gate_timer_jp:null,
         
         //modal
-        info_target:null,
-        info_timer:null,
-        updated_at:'180413'
+
+        updated_at:'180416',
+        
+        //important for update computed's getter from setter
+        computed_counter:{
+            builder_target:0,
+            builder_options:0,
+            info_target:0,
+            current_bom:0,
+            fusion_target:0,
+            fusion_options:0
+        }
     },
-     created:function(){
+    created:function(){
 
         var c_lang_value = getCookie('lang_value');
         
@@ -2579,6 +2600,16 @@ var app = new Vue({
             app.tick();
 
         },1000);
+
+        //const created_stamp = new Date();
+
+        //console.log(created_stamp - start_stamp);
+    },
+    updated:function(){
+
+        //const updated_stamp = new Date();
+
+        //console.log(updated_stamp - start_stamp);
     },
     watch:{
         lang_value:function(){
@@ -2602,11 +2633,225 @@ var app = new Vue({
             
             setCookie('allow_prevent_unload', this.allow_prevent_unload);
         },
-        preview:function(){
+        resource_id:function(){
             
-            this.data = this.preview == '0' ? ddd_stable : ddd_preview ;
             this.reset_builder();
             this.reset_fusion();
+        }
+    },
+    computed:{
+        resource:function(){
+
+            return resource[this.resource_id];
+        },
+        races:function(){
+
+            return this.resource.races;
+        },
+        devils:function(){
+
+            return this.resource.devils;
+        },
+        devils_by_race:function(){
+
+            if(this.race_id >= this.races.length)
+                this.race_id = this.races.length-1;
+
+            return this.races[this.race_id].devils;
+        },
+        skillTypes:function(){
+
+            return this.resource.skillTypes;
+        },
+        skills:function(){
+
+            return this.resource.skills;
+        },
+        skills_by_type:function(){
+
+            if(this.skillType_id >= this.skillTypes.length)
+                this.skillType_id = this.skillType.length-1;
+
+            return this.skillTypes[this.skillType_id].skills;
+        },
+        builder_target:{
+            get:function(){
+
+                this.computed_counter.builder_target;
+                return this.resource.builder_target;
+            },
+            set:function(bom){
+
+                this.resource.builder_target = bom;
+                this.computed_counter.builder_target++;
+            }
+        },
+        builder_options:{
+            get: function(){
+
+                this.computed_counter.builder_options;
+                return this.resource.builder_options;
+            },
+            set:function(options){
+
+                this.resource.builder_options = options;
+                this.computed_counter.builder_options++;
+            }
+        },
+        current_bom:{
+            get:function(){
+                
+                this.computed_counter.current_bom;
+                return this.resource.current_bom;
+            },
+            set:function(bom){
+                this.resource.current_bom = bom;
+                this.computed_counter.current_bom++;
+            }
+        },
+        fusion_target:{
+            get:function(){
+
+                this.computed_counter.fusion_target;
+                return this.resource.fusion_target;
+            },
+            set:function(bom){
+
+                this.resource.fusion_target = bom;
+                this.computed_counter.fusion_target++;
+            }
+        },
+        fusion_options:{
+            get: function(){
+
+                this.computed_counter.fusion_options;
+                return this.resource.fusion_options;
+            },
+            set:function(options){
+
+                this.resource.fusion_options = options;
+                this.computed_counter.fusion_options++;
+            }
+        },
+        info_target:{
+            get:function(){
+
+                this.computed_counter.info_target;
+                return this.resource.info_target;
+            },
+            set:function(devil){
+
+                this.resource.info_target = devil;
+                this.computed_counter.info_target++;
+            }
+        },
+        filtered_devils: function(){
+
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = [];
+
+            if(keyword){
+                result = this.devils.filter(function(d){
+                    return d.name.match(keyword)||d.name_tw.match(keyword);
+                });
+            }
+
+            return result;
+        },
+        filtered_skills: function(){
+
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = [];
+
+            if(keyword){
+                result = this.skills.filter(function(s){
+                    return s.name.match(keyword)||s.name_tw.match(keyword);
+                });
+            }
+
+            return result;
+        },
+        filtered_builder_options:function(){
+
+            var options = [];
+            var filters = this.builder_rarity_options;
+            var allow_down_grade = this.allow_down_grade;
+
+            this.builder_options.forEach(function(option){
+
+                var boms = option.boms.filter(function(bom){
+                    
+                    var r = bom.devil.rarity;
+                    var r1 = bom.child1.devil.rarity;
+                    var r2 = bom.child2.devil.rarity;
+                    var temp = [r1,r2].sort();
+                    
+                    r1 = temp[0];
+                    r2 = temp[1];
+
+                    if( allow_down_grade==0 && (r1>r||r2>r)){
+                        return false;
+                    }
+
+                    return filters.filter(function(filter){
+                        if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                            return true;
+                        }
+                    }).length > 0;
+                });
+
+                if(boms.length)
+                    options.push({name:option.name,boms:boms});
+            });
+
+            return options;
+        },
+        filtered_fusion_options:function(){
+
+            var options = [];
+            var filters = this.fusion_rarity_options;
+            var allow_down_grade = this.allow_down_grade;
+
+            this.fusion_options.forEach(function(option){
+
+                var formulas = [];
+                
+                option.formulas.forEach(function(formula){
+
+                    var boms = formula.boms.filter(function(bom){
+                    
+                        var r = bom.devil.rarity;
+                        var r1 = bom.child1.devil.rarity;
+                        var r2 = bom.child2.devil.rarity;
+                        var temp = [r1,r2].sort();
+                        
+                        r1 = temp[0];
+                        r2 = temp[1];
+
+                        if( allow_down_grade==0 && (r1>r||r2>r)){
+                            return false;
+                        }
+
+                        return filters.filter(function(filter){
+                            if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                                return true;
+                            }
+                        }).length > 0;
+                    });
+
+                    if(boms.length){
+                        formulas.push({name:formula.name,boms:boms});
+                    }
+                });
+
+                if(formulas.length){
+                    options.push({devil:option.devil,formulas:formulas,active:false});
+                }
+            });
+            
+            return options;
         }
     },
     methods:{
@@ -2617,37 +2862,16 @@ var app = new Vue({
             var index_fusion = this.index_fusion;
 
             switch(name){
-                case 'fusion.devil':
-                    index_main = 0;
-                    index_fusion = 0;
-                    break;
-                case 'fusion.fission':
-                    index_main = 0;
-                    index_fusion = 1;
-                    break;
-                case 'fusion.fusion':
-                    index_main = 0;
-                    index_fusion = 2;
-                    break;
-                case 'skill':
-                    index_main = 1;
-                    break;
-                case 'customize':
-                    index_main = 2;
-                    break;
-                case 'search':
-                    index_main = 3;
-                    break;
-                case 'setting':
-                    index_main = 4;
-                    break;
-                case 'last':
-                    index_main = this.index_main_last;
-                    index_fusion = this.index_fusion_last;
-                    break;
-                default:
-                    index_main = 0;
-                    index_fusion = 0;
+                case 'fusion.devil':    index_main = 0; index_fusion = 0;   break;
+                case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
+                case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
+                case 'skill':           index_main = 1;                     break;
+                case 'customize':       index_main = 2;                     break;
+                case 'search':          index_main = 3;                     break;
+                case 'setting':         index_main = 4;                     break;
+                case 'last':            index_main = this.index_main_last;
+                                        index_fusion = this.index_fusion_last;  break;
+                default:                index_main = 0; index_fusion = 0;   break;
             }
 
             if(!skip_update_last){
@@ -2664,47 +2888,24 @@ var app = new Vue({
             var index_fusion = this.index_fusion;
 
             switch(name){
-                case 'home':
-                    index_main = 0;
-                    index_fusion = 0;
-                    break;
-                case 'fusion.devil':
-                    index_main = 0;
-                    index_fusion = 0;
-                    break;
-                case 'fusion.fission':
-                    index_main = 0;
-                    index_fusion = 1;
-                    break;
-                case 'fusion.fusion':
-                    index_main = 0;
-                    index_fusion = 2;
-                    break;
-                case 'skill':
-                    index_main = 1;
-                    break;
-                case 'customize':
-                    index_main = 2;
-                    break;
-                case 'search':
-                    index_main = 3;
-                    break;
-                case 'setting':
-                    index_main = 4;
-                    break;
-                default:
-                    index_main = 0;
-                    index_fusion = 0;
+                case 'home':            index_main = 0; index_fusion = 0;   break;
+                case 'fusion.devil':    index_main = 0; index_fusion = 0;   break;
+                case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
+                case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
+                case 'skill':           index_main = 1;                     break;
+                case 'customize':       index_main = 2;                     break;
+                case 'search':          index_main = 3;                     break;
+                case 'setting':         index_main = 4;                     break;
+                default:                index_main = 0; index_fusion = 0;   break;
             }
 
             return index_main == this.index_main && index_fusion == this.index_fusion;
         },
         start_bom: function(devil){
-          
+
             this.builder_target = new DevilBom(devil);
             this.current_bom = null;
             this.route('fusion.fission');
-
             this.list_bom(this.builder_target);
         },
         list_bom: function(bom){
@@ -2728,7 +2929,7 @@ var app = new Vue({
         },
         reset_builder:function(){
             
-            this.builder_target = null;
+            this.builder_target = null; 
             this.update_current_bom(null);
         },
         builder_rarity_option_click:function(option){
@@ -2784,8 +2985,10 @@ var app = new Vue({
                     var r = bom.devil.rarity;
                     var r1 = bom.child1.devil.rarity;
                     var r2 = bom.child2.devil.rarity;
+                    var temp = [r1,r2].sort();
                     
-                    [r1,r2] = [r1,r2].sort();
+                    r1 = temp[0];
+                    r2 = temp[1];
                     
                     if( allow_down_grade==0 && (r1>r||r2>r)){
                         //skip
@@ -2873,8 +3076,10 @@ var app = new Vue({
                         var r = bom.devil.rarity;
                         var r1 = bom.child1.devil.rarity;
                         var r2 = bom.child2.devil.rarity;
+                        var temp = [r1,r2].sort();
                         
-                        [r1,r2] = [r1,r2].sort();
+                        r1 = temp[0];
+                        r2 = temp[1];
                         
                         if( allow_down_grade==0 && (r1>r||r2>r)){
                             //skip
@@ -2981,6 +3186,8 @@ var app = new Vue({
             this.orbs[4].state = (day==5||day==0);          //chaos
         },
         show_devil_info:function(devil){
+
+            //this.info_name = devil.name;
             this.info_target = devil;
             this.$root.$emit('bv::show::modal','modal_devil_info');
         },
@@ -3016,136 +3223,29 @@ var app = new Vue({
             this.auto_costdown(this.builder_target, rarity);
             this.update_current_bom(null);
         }
-    },
-    computed:{
-        filtered_devils: function(){
-
-            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
-
-            var result = [];
-
-            if(keyword){
-                result = this.data.devils.filter(function(d){
-                    return d.name.match(keyword)||d.name_tw.match(keyword);
-                });
-            }
-
-            return result;
-        },
-        filtered_skills: function(){
-
-            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
-
-            var result = [];
-
-            if(keyword){
-                result = this.data.skills.filter(function(s){
-                    return s.name.match(keyword)||s.name_tw.match(keyword);
-                });
-            }
-
-            return result;
-        },
-        builder_total_mag: function(){
-
-            return this.builder_target?this.builder_target.showTotalMag():'';
-        },
-        builder_total_mag_pure:function(){
-
-            return this.builder_target?this.builder_target.showTotalMagPure():'';
-        },
-        filtered_builder_options:function(){
-
-            var options = [];
-            var filters = this.builder_rarity_options;
-            var allow_down_grade = this.allow_down_grade;
-
-            this.builder_options.forEach(function(option){
-
-                var boms = option.boms.filter(function(bom){
-                    
-                    var r = bom.devil.rarity;
-                    var r1 = bom.child1.devil.rarity;
-                    var r2 = bom.child2.devil.rarity;
-
-                    [r1,r2] = [r1,r2].sort();
-
-                    if( allow_down_grade==0 && (r1>r||r2>r)){
-                        return false;
-                    }
-
-                    return filters.filter(function(filter){
-                        if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
-                            return true;
-                        }
-                    }).length > 0;
-                });
-
-                if(boms.length)
-                    options.push({name:option.name,boms:boms});
-            });
-
-            return options;
-        },
-        filtered_fusion_options:function(){
-
-            var options = [];
-            var filters = this.fusion_rarity_options;
-            var allow_down_grade = this.allow_down_grade;
-
-            this.fusion_options.forEach(function(option){
-
-                var formulas = [];
-                
-                option.formulas.forEach(function(formula){
-
-                    var boms = formula.boms.filter(function(bom){
-                    
-                        var r = bom.devil.rarity;
-                        var r1 = bom.child1.devil.rarity;
-                        var r2 = bom.child2.devil.rarity;
-
-                        [r1,r2] = [r1,r2].sort();
-
-                        if( allow_down_grade==0 && (r1>r||r2>r)){
-                            return false;
-                        }
-
-                        return filters.filter(function(filter){
-                            if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
-                                return true;
-                            }
-                        }).length > 0;
-                    });
-
-                    if(boms.length){
-                        formulas.push({name:formula.name,boms:boms});
-                    }
-                });
-
-                if(formulas.length){
-                    options.push({devil:option.devil,formulas:formulas,active:false});
-                }
-            });
-            
-            return options;
-        }
     }
 });
 
 Vue.component('skill',{
     props:['skill'],
-    template:'#skill-t',
-    methods:{
-
-    }
+    template:'#skill-t'
 });
 
 Vue.component('skill-list',{
     props:['skills'] ,
     template:'#skill-list-t',
+    data:function(){
+        return {
+            actives:[]
+        }
+    },
     methods:{
-
+        
+    },
+    watch:{
+        skills:function(){
+            this.actives=[];
+        }
     }
 });
 
@@ -3235,14 +3335,28 @@ Vue.component('devil-bom-builder',{
         reset_bom:function(bom){
             app.reset_bom(bom);
         },
-        is_current:function(bom){
-            return bom?bom==app.current_bom:false;
-        },
         info:function(){
             app.show_devil_info(this.bom.devil);
         },
         toggle:function(){
-            this.bom.collapse = !this.bom.collapse;
+            this.collapsed = !this.collapsed;
+        },
+        hasChild:function(){
+            return this.bom.child1 || this.bom.child2;
+        },
+        isCurrent:function(){
+            return this.bom ? this.bom == app.current_bom : false;
+        },
+        isParentCurrent:function(){
+            return this.parent ? this.parent == app.current_bom : false;
+        }
+    },
+    data:function(){
+        return {collapsed: false}
+    },
+    computed:{
+        collapsed_sign:function(){
+            return this.collapsed ? '+' : '-';
         }
     }
 });

@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^4.0.0",
-    "bootstrap-vue": "^2.0.0-rc.2",
+    "bootstrap": "^4.1.0",
+    "bootstrap-vue": "^2.0.0-rc.6",
     "vue": "^2.5.16",
     "vue-i18n": "^7.6.0"
   },
