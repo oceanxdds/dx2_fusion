@@ -81,7 +81,7 @@
             </b-collapse>
         </b-navbar>
 
-        <b-tabs v-model="index_main" nav-wrapper-class="d-none" lazy>
+        <b-tabs v-model="index_main" nav-wrapper-class="d-none">
             <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
                 <b-form-input v-model="keyword" type="text" :placeholder="$t('message.search')" onfocus="app.route('search',true)" onblur="if(!app.keyword)app.route('last')"></b-form-input>
             </div>
@@ -91,13 +91,13 @@
             <b-tab no-body>
 
                 <b-card no-body class="border-0">
-                    <b-tabs card v-model="index_fusion" nav-wrapper-class="d-block d-md-none" content-class="p-2" lazy>
+                    <b-tabs card v-model="index_fusion" nav-wrapper-class="d-block d-md-none" content-class="p-2">
 
                         <!-- index_fusion : 0 // devil-->
 
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
-                                <b-tabs pills card v-model="race_id" lazy content-class="d-none">
+                                <b-tabs pills card v-model="race_id" content-class="d-none">
                                     <b-tab :title="race.showName()" v-for="race in races"></b-tab>
                                 </b-tabs>
                                 <devil-list :devils="devils_by_race" usage="fission"></devil-list>
@@ -203,7 +203,7 @@
             <b-tab no-body class="p-2">
 
                 <b-card no-body>
-                    <b-tabs pills card v-model="skillType_id" content-class="d-none" lazy>
+                    <b-tabs pills card v-model="skillType_id" content-class="d-none">
                         <b-tab :title="type.showName()" v-for="type in skillTypes"></b-tab>
                     </b-tabs>
 
@@ -596,7 +596,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180416"></script>
+    <script src="js/app.js?t=180417"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
