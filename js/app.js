@@ -2433,7 +2433,8 @@ function Resource(ddd, sss){
     this.skillTypes = sss;
     this.skills = skill_array;
     this.skill_data = skill_data;
-
+    this.builder_options = [];
+    this.fusion_options = [];
 }
 
 ////////////////////
@@ -2473,15 +2474,8 @@ var app = new Vue({
         race_id:0,
         skillType_id:0,
 
-        //fission        
-        //fission_target:null,
-        //fission_options:[],
         
         //builder
-        //builder_target:null,
-        //builder_target_name:"",
-        //builder_options:[],
-        //current_bom:null,
         builder_rarity_options:[
             {text:"1+1", state:true, active:false},
             {text:"1+2", state:true, active:false},
@@ -2500,8 +2494,6 @@ var app = new Vue({
             {text:"5+5", state:true, active:false}
         ],
         //fusion
-        //fusion_target:null,
-        //fusion_options:[],
         fusion_rarity_options:[
             {text:"1+1", state:true, active:false},
             {text:"1+2", state:true, active:false},
