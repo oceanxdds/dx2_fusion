@@ -671,6 +671,13 @@ const ddd_stable = [
         devils:[
             { name:'アティス', name_tw:'阿提斯', rarity:4, grade:65, icon:'kyousin_ateisu.png', skills:['不屈の闘志','リカームドラ','乱・かすみ斬り'], skill4:['勝利の息吹','マハブフダイン','ディアラマ','魅了無効','氷結無効'], skill5:['','二段の猛速','マハラギオン','毒床歩き','メチャームディ'], elements:['耐','','','','','',''], type:'攻擊'}
         ]
+    },
+    {
+        name:'威靈',
+        formulas:[],
+        devils:[
+            { name:'アリラト', name_tw:'阿利拉特(暫)', rarity:5, grade:85, icon:'irei_arirato.png', skills:['メギドラ','奈落のマスク','貫反の霊圧'], skill4:['ディアラハン','','','',''], skill5:['','','','',''], elements:['耐','','','','','耐','耐'], type:'回復'}
+        ]
     }
 ];
 
@@ -1350,7 +1357,7 @@ const skill_stable = [
             {"name":"マハラギダイン","name_tw":"瑪哈拉基達因","desc":"敵全体に火炎属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"火炎"},
             {"name":"ファイアブレス","name_tw":"火焰吐息","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"火炎"},
             {"name":"地獄の業火","name_tw":"地獄業火","desc":"ランダムな敵に２～４回、火炎属性の魔法型ダメージを威力50で与える。","mp":5,"point":"10","element":"火炎"},
-            {"name":"ラグナロク","name_tw":"","desc":"敵単体に火炎属性の魔法型ダメージを威力215で与える。","mp":7,"point":null,"element":"火炎"}
+            {"name":"ラグナロク","name_tw":"諸神的黃昏","desc":"敵単体に火炎属性の魔法型ダメージを威力215で与える。","mp":7,"point":null,"element":"火炎"}
         ]
     },
     {
@@ -1385,7 +1392,7 @@ const skill_stable = [
             {"name":"マハジオダイン","name_tw":"瑪哈吉歐達因","desc":"敵全体に電撃属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"電撃"},
             {"name":"放電","name_tw":"放電","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"電撃"},
             {"name":"ショックウェーブ","name_tw":"衝擊波","desc":"ランダムな敵に２〜４回、電撃属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"電撃"},
-            {"name":"ミョルニル","name_tw":"","desc":"ランダムな敵に３～５回、電撃属性の魔法型ダメージを威力60で与える。","mp":7,"point":null,"element":"電撃"}
+            {"name":"ミョルニル","name_tw":"雷神之槌","desc":"ランダムな敵に３～５回、電撃属性の魔法型ダメージを威力60で与える。","mp":7,"point":null,"element":"電撃"}
         ]
     },
     {
@@ -1439,9 +1446,9 @@ const skill_stable = [
             {"name":"マハムドダイン","name_tw":"瑪哈姆多達因","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":null,"element":"呪殺"},
             {"name":"イービルアイ","name_tw":"邪惡之眼","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力40で与える。","mp":4,"point":7,"element":"呪殺"},
             {"name":"煉獄","name_tw":"煉獄","desc":"ランダムな敵に２～４回、呪殺属性の魔法型ダメージを威力50で与える。","mp":5,"point":null,"element":"呪殺"},
-            {"name":"肉体の解放","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力90で与え、基礎確率25％で魅了状態にする。","mp":7,"point":null,"element":"呪殺"},
-            {"name":"暴食の大罪","name_tw":"","desc":"敵全体に呪殺属性の魔法型ダメージを威力130で与え、そのダメージの50％分、自身を回復する。","mp":7,"point":null,"element":"呪殺"},
-            {"name":"死んでくれる？","name_tw":"","desc":"敵単体を死亡させる。","mp":7,"point":null,"element":"呪殺"}
+            {"name":"肉体の解放","name_tw":"肉體的解放","desc":"敵全体に呪殺属性の魔法型ダメージを威力90で与え、基礎確率25％で魅了状態にする。","mp":7,"point":null,"element":"呪殺"},
+            {"name":"暴食の大罪","name_tw":"暴食重罪","desc":"敵全体に呪殺属性の魔法型ダメージを威力130で与え、そのダメージの50％分、自身を回復する。","mp":7,"point":null,"element":"呪殺"},
+            {"name":"死んでくれる？","name_tw":"可以為我而死嗎？","desc":"敵単体を死亡させる。","mp":7,"point":null,"element":"呪殺"}
         ]
     },
     {
@@ -1540,7 +1547,7 @@ const skill_stable = [
             //解異常
             {"name":"アムリタ","name_tw":"甘露","desc":"味方単体の状態異常を全て回復する。","mp":4,"point":3,"element":"無"},
             {"name":"常世の祈り","name_tw":"永恆的祈禱","desc":"味方全体の状態異常を全て回復する。","mp":5,"point":8,"element":"無"},
-            {"name":"静寂の祈り","name_tw":"","寂靜的禱告":"敵味方全体の状態異常を全て回復する。","mp":7,"point":8,"element":"無"},
+            {"name":"静寂の祈り","name_tw":"寂靜的禱告","desc":"敵味方全体の状態異常を全て回復する。","mp":7,"point":8,"element":"無"},
             //復活
             {"name":"リカーム","name_tw":"利卡姆","desc":"死亡している味方単体をHP10％で復活させる。","mp":6,"point":6,"element":"無"},
             {"name":"サマリカーム","name_tw":"薩瑪利卡姆","desc":"死亡している味方単体を完全回復で復活させる。","mp":8,"point":8,"element":"無"},
@@ -1722,7 +1729,8 @@ const skill_stable = [
             {"name":"毒床歩き","name_tw":"漫步雷池","desc":"アウラゲート内のダメージ床のダメージが25％減少する。","mp":null,"point":2,"element":"パシップ"},
             {"name":"毒床渡り","name_tw":"闊步雷池","desc":"アウラゲート内のダメージ床のダメージが50％減少する。","mp":null,"point":4,"element":"パシップ"},
             {"name":"毒床無効","name_tw":"雷池無懼","desc":"アウラゲート内のダメージ床のダメージを無効にする。","mp":null,"point":8,"element":"パシップ"},
-            {"name":"ダークゾーン無効","name_tw":"黑暗區域無效","desc":"アウラゲート内のダークゾーンの効果を無効にする。","mp":null,"point":8,"element":"パシップ"}
+            {"name":"ダークゾーン無効","name_tw":"黑暗區域無效","desc":"アウラゲート内のダークゾーンの効果を無効にする。","mp":null,"point":8,"element":"パシップ"},
+            {"name":"貫反の霊圧","name_tw":"貫反靈壓","desc":"","mp":null,"point":null,"element":"パシップ"}
         ]
     }
 ];
@@ -2549,7 +2557,7 @@ var app = new Vue({
         
         //modal
 
-        updated_at:'180417',
+        updated_at:'180419',
          
         //important for update computed's getter from setter
         computed_counter:{
