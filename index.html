@@ -114,10 +114,15 @@
                                             <div class="col-auto">
                                                 <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_target.showTotalMagPure() }} ~ {{ builder_target.showTotalMag() }} </h5>
                                             </div>
-                                            <div class="col-auto">
-                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(3)">AUTO★3</b-button>
-                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(2)">AUTO★2</b-button>
-                                                <b-button size="sm" variant="warning" @click="builder_auto_costdown(1)">AUTO★1</b-button>
+                                            <div class="col-12 col-md-auto">
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(4,0)">素★4</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(3,0)">素★3</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(2,0)">素★2</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(1,0)">素★1</b-button>
+                                                <!--
+                                                <b-button class="m-1" size="sm" variant="warning" @click="builder_auto_costdown(4,1)">雜★4</b-button>
+                                                <b-button class="m-1" size="sm" variant="warning" @click="builder_auto_costdown(3,1)">雜★3</b-button>
+                                                -->
                                             </div>
                                         </div>
                                     </b-list-group-item>
@@ -309,18 +314,16 @@
             <div class="col-auto p-2">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
-            <!--
+
             <div class="col-auto p-2">
                 <b-form-radio-group id="lang"
                     buttons
                     button-variant="outline-info"
                     v-model="resource_id"
-                    name="lang_radio" size="sm">
-                    <b-form-radio value="0">Stable</b-form-radio>
-                    <b-form-radio value="1">Preview (2018.4.20)</b-form-radio>
+                    name="lang_radio" size="sm" :options="resource_options">
                 </b-form-radio-group>
             </div>
-            -->
+
         </div>
 
         <!-- Modal -->
@@ -511,7 +514,8 @@
                     class="col-6 p-2"
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
-                    style="background-position:right;background-repeat:no-repeat;background-size:contain">
+                    style="background-position:right;background-repeat:no-repeat;background-size:contain"
+                    v-b-tooltip.hover :title="$t('message.cost_others')+': '+devil.showCost()+'\n'+$t('message.cost_pure')+': '+devil.showCostPure()">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
                         <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
@@ -552,7 +556,7 @@
                 <div class="col-auto item">
                     <devil :devil="bom.devil" @click="list_bom(bom)" usage="builder" 
                         style="min-width:130px" :class="{'bg-warning':isCurrent(), 'text-primary':isParentCurrent()}"
-                        v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\nMAG: '+bom.showMag()+'\n素体: '+bom.showMagPure()">
+                        v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\n'+$t('message.fusion_mag_others')+': '+bom.showMag()+'\n'+$t('message.fusion_mag_pure')+': '+bom.showMagPure()">
                     </devil>
                 </div>
                 <div class="col-auto col-md align-self-center pl-1">
@@ -598,7 +602,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180424-3"></script>
+    <script src="js/app.js?t=180604"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
