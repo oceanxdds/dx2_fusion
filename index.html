@@ -514,8 +514,7 @@
                     class="col-6 p-2"
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
-                    style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                    v-b-tooltip.hover :title="$t('message.cost_others')+': '+devil.showCost()+'\n'+$t('message.cost_pure')+': '+devil.showCostPure()">
+                    style="background-position:right;background-repeat:no-repeat;background-size:contain">
                         <div class="font-weight-bold">{{ devil.showName() }}</div>
                         <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
@@ -602,7 +601,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180604"></script>
+    <script src="js/app.js?t=180605"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

@@ -1881,7 +1881,7 @@ const messages = {
         inherit:'Inherit',
         description:'Description',
         cost:'Cost',
-        cost_pure:'Cost(Others)',
+        cost_others:'Cost(Others)',
         cost_pure:'Cost(Pure)',
         fusion_mag:'Fusion',
         fusion_mag_others:'Fusion(Others)',
@@ -1935,7 +1935,7 @@ const messages = {
             inherit:'繼承',
             description:'說明',
             cost:'成本',
-            cost:'成本(他)',
+            cost_others:'成本(他)',
             cost_pure:'成本(素)',
             fusion_mag:'合體費',
             fusion_mag_others:'合體費(他)',
@@ -2756,7 +2756,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'180604',
+        updated_at:'180605',
          
         //important for update computed's getter from setter
         computed_counter:{
