@@ -1778,7 +1778,7 @@ const skill_stable = [
             {"name":"二段の恵体","name_tw":"二段之惠體","desc":"体が10増加する。","mp":null,"point":13,"element":"パシップ"},
             {"name":"二段の猛速","name_tw":"二段之猛速","desc":"速が10増加する。","mp":null,"point":13,"element":"パシップ"},
             {"name":"二段の強運","name_tw":"二段之強運","desc":"運が10増加する。","mp":null,"point":13,"element":"パシップ"},
-            {"name":"三段の剛力","name_tw":"二段之剛力","desc":"力が15増加する。","mp":null,"point":"32","element":"パシップ"},
+            {"name":"三段の剛力","name_tw":"三段之剛力","desc":"力が15増加する。","mp":null,"point":"32","element":"パシップ"},
             {"name":"三段の賢魔","name_tw":"三段之賢魔","desc":"魔が15増加する。","mp":null,"point":"32","element":"パシップ"},
             {"name":"三段の恵体","name_tw":"三段之惠體","desc":"体が15増加する。","mp":null,"point":"32","element":"パシップ"},
             {"name":"三段の猛速","name_tw":"三段之猛速","desc":"速が15増加する。","mp":null,"point":"32","element":"パシップ"},
@@ -2756,7 +2756,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'180605',
+        updated_at:'180612',
          
         //important for update computed's getter from setter
         computed_counter:{
