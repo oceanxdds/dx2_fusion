@@ -2807,7 +2807,7 @@ var app = new Vue({
         resource_id:0,
         resource_options:[
             {text:'Stable', value:0},
-            {text:'Preview (コウテイ)',value:1}
+            {text:'Preview (キングフロスト)',value:1}
         ],
         race_id:0,
         skillType_id:0,
