@@ -23,7 +23,7 @@ const ddd_stable = [
         ],
         devils:[
             {   name:'メタトロン',       name_tw:'梅塔特隆', name_en:'Metatron',   rarity:5,   grade:99,  icon:'daitensi_metatoron.png',  skills:['天罰','無限のチャクラ','シナイの神火'], skill4:['不屈の闘志','マハンマダイン','メシアライザー','二分の魔脈','電撃反射'], skill5:['','吸魔','マハポイズマ','マハジオダイン','マハラギダイン'], elements:['','耐','耐','耐','耐','無',''], type:"攻擊"     },
-            {   name:'ミカエル',        name_tw:'米迦勒', name_en:'',      rarity:5,    grade:90, icon:'daitensi_mikaeru.png', skills:["勝利の息吹","天罰","メギドラオン"], skill4:["食いしばり","裁きの雷火","メディアラハン","地獄のマスク","呪殺反射"], skill5:['','ティタノマキア','火炎耐性','ジオダイン','刹那五月雨撃ち'], elements:["","","無","無","","反","弱"], type:"攻擊"     },
+            {   name:'ミカエル',        name_tw:'米迦勒', name_en:'',      rarity:5,    grade:90, icon:'daitensi_mikaeru.png', skills:["勝利の息吹","魂の審判","メギドラオン"], skill4:["食いしばり","裁きの雷火","メディアラハン","地獄のマスク","呪殺反射"], skill5:['','ティタノマキア','火炎耐性','ジオダイン','刹那五月雨撃ち'], elements:["","","無","無","","反","弱"], type:"攻擊"     },
             {   name:'マンセマット',        name_tw:'莫塞瑪特', name_en:'',     rarity:5,    grade:83, icon:'daitensi_mansemato.png', skills:["審判の光","バインドボイス","憎悪の試練"], skill4:["二分の魔脈","アイスエイジ","マカジャマオン","破魔ハイブースタ","氷結反射"], skill5:['','殺風激','乱れ狂い','ハマダイン','電撃耐性'], elements:["","弱","無","","反","反",""], type:"攻擊"     },
             {   name:'アズラエル',      name_tw:'阿斯萊爾',    name_en:'', rarity:4,    grade:67, icon:'daitensi_azuraeru.png', skills:["テトラカーン","イービルアイ","アギダイン"], skill4:["マカラカーン","ムドダイン","祟り","マカラカシフト","呪殺無効"], skill5:["","甘噛み","デクンダ","野獣の勘","審判の光"], elements:["耐","耐","弱","","","反","耐"], type:"支援"            },
             {   name:'サンダルフォン',   name_tw:'聖達芬',     name_en:'', rarity:4,           grade:61, icon:'daitensi_sandaruhuon.png', skills:["ハマダイン","ザンダイン","スクカオート"], skill4:["アムリタ","マハンマオン","サマリカーム","野獣の勘","衝撃耐性"],skill5:["","メポズムディ","反撃","ラクンダ","メガトンプレス"], elements:["耐","","","耐","","反","無"], type:"攻擊"         },
@@ -50,7 +50,7 @@ const ddd_stable = [
             ['鬼女','妖精']
         ],
         devils:[
-            {                name:'ラクシュミ',         name_tw:'吉祥天', name_en:'',       rarity:5,                grade:85, icon:'megami_rakusyumi.png', skills:["ディアラハン","ツイスター","セクシーダンス"], skill4:["二分の魔脈","殺風激","マカラカーン","狂い咲き","衝撃無効"], skill5:["","甘噛み","ジオダイン","虚弱無効","毒針"], elements:["","","","","弱","耐","無"], type:"支援"            },
+            {                name:'ラクシュミ',         name_tw:'吉祥天', name_en:'',       rarity:5,                grade:85, icon:'megami_rakusyumi.png', skills:["ディアラハン","ツイスター","蓮華の舞"], skill4:["二分の魔脈","殺風激","マカラカーン","狂い咲き","衝撃無効"], skill5:["","甘噛み","ジオダイン","虚弱無効","毒針"], elements:["","","","","弱","耐","無"], type:"支援"            },
             {                name:'イシュタル',        name_tw:'伊絲塔', name_en:'',       rarity:5,                grade:82, icon:'megami_isyutaru.png', skills:["マハンマオン","ディアラハン","ジャッジメント"], skill4:["サマリカーム","裁きの雷火","コンセントレイト","テトラカシフト","衝撃無効"], skill5:["","ゴッドハンド","毒床渡り","デクンダ","アギラオ"],elements:["","","","無","弱","無","弱"], type:"回復"            },
             {                name:'サラスヴァティ',    name_tw:'妙音天女', name_en:'',           rarity:4,                grade:69, icon:'megami_sarasuvatei.png', skills:["マハブフーラ","バリア","静寂の祈り"], skill4:["ブフダイン","絶対零度","メディラマ","追い打ち","氷結反射"],skill5:["","メチャームディ","呪い耐性","ミナゴロシの愉悦","イービルアイ"], elements:["","弱","無","","","","弱"], type:"支援"            },
             {                name:'パラスアテナ',      name_tw:'帕拉斯雅典娜', name_en:'',         rarity:4,                grade:62, icon:'megami_parasuatena.png', skills:["衝撃耐性","刹那五月雨撃ち","天罰"], skill4:["マカラカーン","モータルジハード","ディアラハン","勝利のチャクラ","火炎無効"],skill5:["","五月雨斬り","静寂の祈り","毒針","ツイスター"], elements:["耐","","","","","無","弱"], type:"攻擊"            },
@@ -877,7 +877,8 @@ const skill_stable = [
             {"name":"審判の光","name_tw":"審判之光","desc":"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力40で与える。","mp":7,"point":7,"element":"破魔"},
             {"name":"天罰","name_tw":"天譴","desc":"ランダムな敵に２～４回、破魔属性の魔法型ダメージを威力50で与える。","mp":5,"point":10,"element":"破魔"},
             {"name":"ゴッドアロー","name_tw":"神差箭矢","desc":"敵単体に破魔属性の魔法型ダメージを威力200で与え、50％の確率で死亡させる。","mp":7,"point":null,"element":"破魔"},
-            {"name":"憎悪の試練","name_tw":"","desc":"敵全体に破魔属性の魔法型ダメージを威力130で与え、3ターンの間、敵全体の攻撃力．防御力．回避と命中のいずれかを20%減少させる","mp":null,"point":null,"element":"破魔"}
+            {"name":"憎悪の試練","name_tw":"憎惡的試煉","desc":"敵全体に破魔属性の魔法型ダメージを威力130で与え、3ターンの間、敵全体の攻撃力．防御力．回避と命中のいずれかを20%減少させる","mp":7,"point":null,"element":"破魔"},
+            {"name":"魂の審判","name_tw":"斷罪刑魂","desc":"ランダムな敵に7回、破魔属性の魔法型ダメージを威力30で与える。","mp":5,"point":null,"element":"破魔"}
         ]
     },
     {
@@ -998,6 +999,7 @@ const skill_stable = [
             {"name":"マハマリンカリン","name_tw":"瑪哈瑪琳卡琳","desc":"敵全体を基礎確率30%で魅了状態にする。","mp":6,"point":5,"element":"無"},
             {"name":"マハマリカリオン","name_tw":"瑪哈瑪琳卡琳翁","desc":"敵全体を基礎確率40%で魅了状態にする。","mp":7,"point":null,"element":"無"},
             {"name":"セクシーダンス","name_tw":"色誘之舞","desc":"ランダムな敵を２～４回、基礎確率30%で魅了状態にする。","mp":6,"point":7,"element":"無"},
+            {"name":"蓮華の舞","name_tw":"蓮華之舞","desc":"敵全体を基礎確率60％で魅了状態にする。","mp":6,"point":null,"element":"無"},
             //封
             {"name":"マカジャマ","name_tw":"瑪卡加瑪","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":5,"point":2,"element":"無"},
             {"name":"マカジャマオン","name_tw":"瑪卡加瑪翁","desc":"敵単体を基礎確率40%で魔封状態にする。","mp":6,"point":8,"element":"無"},
@@ -2152,7 +2154,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'180628',
+        updated_at:'180705',
          
         //important for update computed's getter from setter
         computed_counter:{
