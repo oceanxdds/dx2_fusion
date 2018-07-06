@@ -890,7 +890,7 @@ const skill_stable = [
             {"name":"ムド","name_tw":"姆多","desc":"敵単体に呪殺属性の魔法型ダメージを威力120で与える。","mp":4,"point":1,"element":"呪殺"},
             {"name":"ムドオン","name_tw":"姆多翁","desc":"敵単体に呪殺属性の魔法型ダメージを威力140で与える。","mp":5,"point":6,"element":"呪殺"},
             {"name":"ムドダイン","name_tw":"姆多達因","desc":"敵単体に呪殺属性の魔法型ダメージを威力160で与える。","mp":6,"point":9,"element":"呪殺"},
-            {"name":"ヘルズアイ","name_tw":"地獄之眼","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":6,"point":12,"element":"呪殺"},
+            {"name":"ヘルズアイ","name_tw":"地獄之眼","desc":"敵単体に呪殺属性の魔法型ダメージを威力180で与える。","mp":7,"point":12,"element":"呪殺"},
             {"name":"マハムド","name_tw":"瑪哈姆多","desc":"敵全体に呪殺属性の魔法型ダメージを威力80で与える。","mp":5,"point":2,"element":"呪殺"},
             {"name":"マハムドオン","name_tw":"瑪哈姆多翁","desc":"敵全体に呪殺属性の魔法型ダメージを威力100で与える。","mp":6,"point":6,"element":"呪殺"},
             {"name":"マハムドダイン","name_tw":"瑪哈姆多達因","desc":"敵全体に呪殺属性の魔法型ダメージを威力120で与える。","mp":7,"point":9,"element":"呪殺"},
@@ -2154,7 +2154,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'180705',
+        updated_at:'180706',
          
         //important for update computed's getter from setter
         computed_counter:{
