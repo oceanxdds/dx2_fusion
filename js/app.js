@@ -2867,7 +2867,7 @@ var app = new Vue({
         resource_id:0,
         resource_options:[
             {text:'Stable', value:0},
-            {text:'Preview (神龍)',value:1}
+            {text:'Preview (龍神)',value:1}
         ],
         race_id:0,
         skillType_id:0,
