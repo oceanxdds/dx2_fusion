@@ -314,8 +314,8 @@
             <div class="col-auto p-2">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
-<!--
-            <div class="col-auto p-2">
+
+            <div class="col-auto p-2" v-if="resource_options.length>1">
                 <b-form-radio-group id="lang"
                     buttons
                     button-variant="outline-info"
@@ -323,7 +323,7 @@
                     name="lang_radio" size="sm" :options="resource_options">
                 </b-form-radio-group>
             </div>
-        -->
+
 
         </div>
 
@@ -602,7 +602,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180706"></script>
+    <script src="js/app.js?t=180712"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
