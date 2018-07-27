@@ -98,7 +98,7 @@
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
                                 <b-tabs pills card v-model="race_id" content-class="d-none">
-                                    <b-tab :title="race.showName()" v-for="race in races"></b-tab>
+                                    <b-tab :title="race.showName()" v-for="race in races" :title-link-class="{'border border-warning':race.is_new}"></b-tab>
                                 </b-tabs>
                                 <devil-list :devils="devils_by_race" usage="fission"></devil-list>
                             </b-card>
@@ -293,11 +293,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="">
-                    <div class="small text-right">Version: {{ updated_at }}</div>
-                </div>  
-                    
+                   
             </b-tab>
         
         </b-tabs>
@@ -305,12 +301,14 @@
         <!-- footer -->
 
         <div class="row no-gutters justify-content-start align-items-center">
+            <!--
             <div class="col-auto p-2">
                 <div class="font-weight-bold">
                     <b-badge :variant="gate_status_jp?'success':'secondary'">JP {{ gate_timer_jp }}</b-badge>
                     <b-badge :variant="gate_status_ch?'success':'secondary'">CH {{ gate_timer_ch }}</b-badge>
                 </div>
             </div>
+            -->
             <div class="col-auto p-2">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
@@ -324,7 +322,9 @@
                 </b-form-radio-group>
             </div>
 
-
+            <div class="col p-2">
+                <div class="small text-right">Version: {{ updated_at }}</div>
+            </div>  
         </div>
 
         <!-- Modal -->
@@ -602,7 +602,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180719"></script>
+    <script src="js/app.js?t=180727"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

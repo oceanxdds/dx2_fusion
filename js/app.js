@@ -236,6 +236,7 @@ const ddd_stable = [
         name:'龍神',
         name_tw:'龍神',
         name_en:'',
+        is_new:true,
         formulas:[
             ['破壞神','神獸'],
             ['破壞神','幻魔'],
@@ -1565,6 +1566,7 @@ Devil.prototype.fusion_formulas = function(){
 var Race = function(race){
     
     this.name = race.name;
+    this.is_new = race.is_new;
     this.formulas = race.formulas;
     this.devils = race.devils;
 }
@@ -2208,7 +2210,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'180719',
+        updated_at:'180727',
          
         //important for update computed's getter from setter
         computed_counter:{
@@ -2760,13 +2762,14 @@ var app = new Vue({
         },
         tick:function(){
 
+        /*
             var sec = this.now.getSeconds()+1;
 
             if(sec==60)
                 this.update_now();
             
             this.now.setSeconds( sec );
-
+        
             var next, diff, h;
             var gate_hours_ch = [0,9,12,17,19,22];    //utc+8 [8,11,16,18,21,23]
             var gate_hours_jp = [0,7,12,17,19,22];    //utc+8 [6,11,16,18,21,23]
@@ -2825,7 +2828,7 @@ var app = new Vue({
             }
             diff = new Date(next.getTime() - this.now.getTime());
             this.gate_timer_jp =  (diff.getUTCHours()+':'+diff.getUTCMinutes()+':'+diff.getUTCSeconds()).replace(/\b(?=(\d{1})(?!\d))/g,'0');
-
+        */
             //orb
             var day = this.now.getDay();
             this.orbs[0].state = (day==1||day==6);          //light
