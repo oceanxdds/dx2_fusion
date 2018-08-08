@@ -98,7 +98,7 @@
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
                                 <b-tabs pills card v-model="race_id" content-class="d-none">
-                                    <b-tab :title="race.showName()" v-for="race in races" :title-link-class="{'border border-warning':race.is_new}"></b-tab>
+                                    <b-tab :title="race.showName()" v-for="race in races" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab>
                                 </b-tabs>
                                 <devil-list :devils="devils_by_race" usage="fission"></devil-list>
                             </b-card>
@@ -602,7 +602,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=180727"></script>
+    <script src="js/app.js?t=180808"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
