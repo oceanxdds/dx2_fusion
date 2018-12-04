@@ -35,6 +35,7 @@ const ddd_stable = [
         name:'女神',
         name_tw:'女神',
         name_en:'',
+        highlight:true,
         formulas:[
             ['靈鳥','大天使'],    //180419 add
             ['魔神','靈鳥'],      //180419 add
@@ -52,6 +53,7 @@ const ddd_stable = [
             ['鬼女','妖精']
         ],
         devils:[
+            {                name:'イザナミ',         name_tw:'伊邪那美', name_en:'',       rarity:5,                grade:89, icon:'megami_izanami.png', skills:["ショックウェーブ","無慈悲な一撃","黄泉津大神"], skill4:["三分の活泉","ヘルズアイ","コンセントレイト","電撃ハイブースタ","氷結反射"], skill5:["","ラクンダオート","静寂の祈り","マハジオダイン","リカームドラ"], elements:["","弱","無","","","耐","吸"], type:"支援"            },
             {                name:'ラクシュミ',         name_tw:'吉祥天', name_en:'',       rarity:5,                grade:85, icon:'megami_rakusyumi.png', skills:["ディアラハン","ツイスター","蓮華の舞"], skill4:["二分の魔脈","殺風激","マカラカーン","狂い咲き","衝撃無効"], skill5:["","ジオダイン","ラクンダオート","虚弱無効","イービルアイ"], elements:["","","","","弱","耐","無"], type:"支援"            },
             {                name:'イシュタル',        name_tw:'伊絲塔', name_en:'',       rarity:5,                grade:82, icon:'megami_isyutaru.png', skills:["マハンマオン","ディアラハン","ジャッジメント"], skill4:["サマリカーム","裁きの雷火","コンセントレイト","テトラカシフト","衝撃無効"], skill5:["","ゴッドハンド","毒床渡り","デクンダ","アギラオ"],elements:["","","","無","弱","無","弱"], type:"回復"            },
             {                name:'サラスヴァティ',    name_tw:'妙音天女', name_en:'',           rarity:4,                grade:69, icon:'megami_sarasuvatei.png', skills:["マハブフーラ","バリア","静寂の祈り"], skill4:["ブフダイン","絶対零度","メディラマ","追い打ち","氷結反射"],skill5:["","メチャームディ","呪い耐性","ミナゴロシの愉悦","イービルアイ"], elements:["","弱","無","","","","弱"], type:"支援"            },
@@ -485,7 +487,7 @@ const ddd_stable = [
         name:'邪鬼',
         name_tw:'邪鬼',
         name_en:'',
-        highlight:true,
+        highlight:false,
         formulas:[
             ['妖魔','地母神'],  //181004 add
             ['妖鬼','聖獸'],    //181004 add
@@ -769,8 +771,10 @@ const ddd_stable = [
         name:'魔人',
         name_tw:'魔人',
         name_en:'',
+        highlight:true,
         formulas:[],
         devils:[
+            { name:'マザーハーロット', name_tw:'巴比倫大淫婦', name_en:'', rarity:5, grade:95, icon:'majin_mazaharodo.png', skills:['二分の魔脈','女帝のリビドー','バビロンの杯'], skill4:['三段の賢魔','デスタッチ','ランダマイザ','魅了追撃','物理吸収'], skill5:['','テトラカシフト','奈落のマスク','狂い咲き','マカラカシフト'], elements:['無','','','吸','弱','耐','耐'], type:'支援'},
             { name:'トランペッター', name_tw:'吹號者', name_en:'', rarity:5, grade:94, icon:'majin_toranpeta.png', skills:['コンセントレイト','ソウルドレイン','アポカリプス'], skill4:['マハマカジャオン','ジャッジメント','祟り','ラクカオート','物理耐性'], skill5:['','タルカジャ','マハブフーラ','空間殺法','火炎耐性'], elements:['','','','','','無','無'], type:'攻擊'},
             { name:'アリス', name_tw:'愛麗絲', name_en:'', rarity:5, grade:89, icon:'majin_arisu.png', skills:['マハムドオン','ムドダイン','死んでくれる？'], skill4:['ソウルドレイン','ヘルズアイ','マハジュオン','呪殺ハイブースタ','破魔反射'], skill5:['','絶対零度','超自然治癒','野獣の勘','真理の雷'], elements:['','','','','','弱','反'], type:'攻擊'},
             { name:'ヘルズエンジェル', name_tw:'地獄天使', name_en:'', rarity:4, grade:77, icon:'majin_heruzuenjieru.png', skills:['マハラギオン','スピードスター','レッドゾーン'], skill4:['捨て身の一撃','マハムドオン','リカームドラ','スクカオート','破魔反射'], skill5:['','アギダイン','雄叫び','緊縛追撃','呪殺耐性'], elements:['','反','','','耐','弱',''], type:'攻擊'},
@@ -794,8 +798,10 @@ const ddd_stable = [
         name:'怪異',
         name_tw:'怪異',
         name_en:'',
+        highlight:true,
         formulas:[],
         devils:[
+            { name:'カシマレイコ', name_tw:'鹿島零子', name_en:'', rarity:3, grade:42, icon:'kaii_kasimareiko.png', skills:['ムド','突撃','次はお前だ'], skill4:['呪い無効','マハムド','スクンダ','狂戦士','火炎耐性'], skill5:['','','','',''], elements:['','弱','','','','弱','吸'], type:'攻擊'},
             { name:'かみおとこ', name_tw:'啃咬魔', name_en:'', rarity:2, grade:25, icon:'kaii_kamiotoko.png', skills:['ムドオン','狂い咲き','痺れかみつき'], skill4:['雄叫び','丸かじり','ディスコード','初段の強運','衝撃無効'], skill5:['','暴れまくり','ディア','マハンマ','コロシの愉悦'], elements:['','','','','','弱','反'], type:'支援'}
         ]
     },
@@ -824,9 +830,11 @@ const ddd_stable = [
         name:'狂神',
         name_tw:'狂神',
         name_en:'',
+        highlight:true,
         formulas:[],
         devils:[
-            { name:'アティス', name_tw:'阿提斯', name_en:'',rarity:4, grade:65, icon:'kyousin_ateisu.png', skills:['不屈の闘志','リカームドラ','乱・かすみ斬り'], skill4:['勝利の息吹','マハブフダイン','ディアラマ','魅了無効','氷結無効'], skill5:['','二段の猛速','マハラギオン','毒床歩き','メチャームディ'], elements:['耐','','','','','',''], type:'攻擊'}
+            { name:'アティス', name_tw:'阿提斯', name_en:'',rarity:4, grade:65, icon:'kyousin_ateisu.png', skills:['不屈の闘志','リカームドラ','乱・かすみ斬り'], skill4:['勝利の息吹','マハブフダイン','ディアラマ','魅了無効','氷結無効'], skill5:['','二段の猛速','マハラギオン','毒床歩き','メチャームディ'], elements:['耐','','','','','',''], type:'攻擊'},
+            { name:'ディオニュソス', name_tw:'戴奧尼索斯', name_en:'',rarity:4, grade:64, icon:'kyousin_deioniyusosu.png', skills:['追い打ち','奈落のマスク','狂乱の陶酔'], skill4:['二段の強運','メギドラ','マハデゾレトオン','二分の活泉','氷結耐性'], skill5:['','','','',''], elements:['','無','弱','無','','',''], type:'支援'}
         ]
     },
     {
@@ -1023,7 +1031,8 @@ const skill_stable = [
             {"name":"アポカリプス","name_tw":"默示錄","desc":"敵全体に万能属性の魔法型ダメージを威力110で与え、基礎確率30％で魔封状態にする。","mp":8,"point":null,"element":"万能"},
             {"name":"明けの明星","name_tw":"拂曉明星","desc":"敵全体に万能属性の魔法型ダメージを威力135で与える。","mp":8,"point":null,"element":"万能"},
             {"name":"魅了の神弓","name_tw":"魅惑神弓","desc":"敵単体に万能属性の魔法型ダメージを威力190で与え、基礎確率45％で魅了状態にする。","mp":8,"point":null,"element":"万能"},
-            {"name":"ブラフマーストラ","name_tw":"梵天法寶","desc":"敵全体に3回、万能属性の魔法型ダメージを威力40で与える。","mp":7,"point":null,"element":"万能"}
+            {"name":"ブラフマーストラ","name_tw":"梵天法寶","desc":"敵全体に3回、万能属性の魔法型ダメージを威力40で与える。","mp":7,"point":null,"element":"万能"},
+            {"name":"バビロンの杯","name_tw":"巴比倫之杯","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、MPを1奪う。","mp":8,"point":null,"element":"万能"}
         ]
     },
     {
@@ -1325,6 +1334,7 @@ const skill_stable = [
             {"name":"反撃","name_tw":"反擊","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力50で与える。","mp":null,"point":6,"element":"パシップ"},
             {"name":"猛反撃","name_tw":"兇猛反擊","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力100で与える。","mp":null,"point":"12","element":"パシップ"},
             {"name":"デスカウンター","name_tw":"死亡反擊","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力150で与える。","mp":null,"point":"18","element":"パシップ"},
+            {"name":"狂乱の陶酔","name_tw":"狂亂陶醉","desc":"敵の打撃型攻撃を受けた時、攻撃してきた敵を基礎確率50%で魅了状態にする。","mp":null,"point":null,"element":"パシップ"},
             //防禦
             {"name":"タルタロスの牢番","name_tw":"塔爾塔洛斯獄卒","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「全体攻撃スキルで自身が受けるダメージが15%減少する。」","mp":null,"point":null,"element":"パシップ"},
             //防死
@@ -1343,6 +1353,8 @@ const skill_stable = [
             {"name":"金剛蔵王","name_tw":"金剛蔵王","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「会心状態の場合、物理貫通を得る。」","mp":null,"point":null,"element":"パシップ"},
             //貫吸
             {"name":"貫吸の気魄","name_tw":"貫吸之氣魄","desc":"このスキルを持っている悪魔が生きている間、味方全員の属性吸収が貫通に対しても効果を発揮する。","mp":null,"point":null,"element":"パシップ"},
+            //強化
+            {"name":"黄泉津大神","name_tw":"黃泉津大神","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「電撃属性、呪殺属性で与えるダメージが10%増加する。」","mp":null,"point":null,"element":"パシップ"},
             //增強
             {"name":"タルカオート","name_tw":"自動塔爾卡","desc":"１ターン目開始時、タルカジャが発動する。","mp":null,"point":"12","element":"パシップ"},
             {"name":"ラクカオート","name_tw":"自動拉庫卡","desc":"１ターン目開始時、ラクカジャが発動する。","mp":null,"point":"12","element":"パシップ"},
@@ -1350,10 +1362,13 @@ const skill_stable = [
             {"name":"タルンダオート","name_tw":"自動塔倫達","desc":"１ターン目開始時、タルンダが発動する。","mp":null,"point":"12","element":"パシップ"},
             {"name":"ラクンダオート","name_tw":"自動拉昆達","desc":"１ターン目開始時、ラクンダが発動する。","mp":null,"point":"12","element":"パシップ"},
             {"name":"スクンダオート","name_tw":"自動斯坤達","desc":"１ターン目開始時、スクンダが発動する。","mp":null,"point":"12","element":"パシップ"},
+            //誘惑
+            {"name":"女帝のリビドー","name_tw":"女帝狂慾","desc":"敵が魅了状態のときに与えるダメージが25%増加し、自分の1ターン目開始時、敵全体を基礎確率30%で魅了状態にする。","mp":null,"point":"","element":"パシップ"},
             //壓制
             {"name":"威圧の構え","name_tw":"威攝姿態","desc":"後攻でバトルを開始したとき、敵のプレスターンアイコンを１つ減少させる。","mp":null,"point":"21","element":"パシップ"},
             {"name":"制圧の構え：吸","name_tw":"威攝姿態:吸","desc":"このスキルを持っている悪魔が生きている間、味方の属性吸収が発動した際、敵のプレスターンアイコンを1つ減少させる。","mp":null,"point":null,"element":"パシップ"},
             {"name":"富の信仰","name_tw":"","desc":"最大HPが10%増加する。敵のスキル効果によってこちらのプレスターンアイコンが減少するたび、味方全体のMPを1回復する。","mp":null,"point":null,"element":"パシップ"},
+            {"name":"次はお前だ","name_tw":"下個就是你","desc":"このスキルを持っている悪魔が単体攻撃で敵を死亡させた場合、敵が復活したとき、Lv.1のカシマレイコとして復活する。","mp":null,"point":null,"element":"パシップ"},
             //節省
             {"name":"トリックスター","name_tw":"狡計之星","desc":"敵の弱点をついたとき、20％の確率でプレスターンアイコンを消費しない。","mp":null,"point":null,"element":"パシップ"},
             {"name":"月の加護","name_tw":"月之庇佑","desc":"MPを消費するとき、消費するMPが１減少する。","mp":null,"point":null,"element":"パシップ"}
@@ -2275,7 +2290,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'181013',
+        updated_at:'181205',
          
         //important for update computed's getter from setter
         computed_counter:{
