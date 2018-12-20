@@ -126,10 +126,12 @@
                                             </div>
                                         </div>
                                     </b-list-group-item>
+
                                     <b-list-group-item class="p-2">
-                                            <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
+                                        <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                                     </b-list-group-item>
-                                    <b-list-group-item class="p-0" v-if="builder_options.length">
+
+                                    <b-list-group-item class="p-0 bg-info" v-if="builder_options.length">
                                         <div class="row no-gutters justify-content-center">
                                             <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
                                                 <b-button :pressed.sync="option.state"
@@ -140,9 +142,11 @@
                                             </div>
                                         </div>
                                     </b-list-group-item>
+
                                     <b-list-group-item class="p-0" v-if="filtered_builder_options.length>0">
                                         <devil-bom-options :options="filtered_builder_options" usage="builder"></devil-bom-options>
                                     </b-list-group-item>
+
                                 </b-list-group>
                             </b-card>
                         </b-tab>
@@ -170,23 +174,22 @@
 
                                         <div class="row no-gutters">
                                             <div v-for="(option, index) in filtered_fusion_options"
-                                                class="col-12"
-                                                :class="{'col-md-6':!option.active, 'col-lg-4':!option.active, 'col-xl-3':!option.active}">
+                                                class="col-12 col-md-6 col-lg-4 col-xl-3">
 
                                                 <div class="row no-gutters">
-                                                    <div class="col-12 p-2"
-                                                        :class="{'col-md-6':option.active, 'col-lg-4':option.active, 'col-xl-3':option.active}">
+                                                    <div class="col-12 p-2">
                                                         <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
                                                             v-b-toggle="'fusion_'+index">
                                                         </devil>
                                                     </div>
                                                 </div>
-
-                                                <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" v-model="option.active" class="p-2">
+                
+                                                <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" class="p-2">
                                                     <b-card no-body style="background-color:#eee">
                                                         <devil-bom-options :options="option.formulas" usage="fusion"></devil-bom-options>
                                                     </b-card>
                                                 </b-collapse>
+
                                             </div>
                                             
                                         </div>
@@ -545,7 +548,7 @@
     <script id="devil-bom-list-t" type="text/x-template">
     
         <div class="row no-gutters">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="bom in boms">
+            <div class="col-12 p-2" :class="{'col-md-6 col-lg-4 col-xl-3':usage!='fusion'}" v-for="bom in boms">
                 <devil-bom :bom="bom" :usage="usage" @click="click()"></devi-bom>
             </div>
         </div>
