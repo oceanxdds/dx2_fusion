@@ -837,7 +837,7 @@ const ddd_stable = [
         highlight:true,
         formulas:[],
         devils:[
-            { name:'マサカド', name_tw:'平將門', name_en:'Masakato',rarity:5, grade:98, icon:'mousyou_masakado.png', skills:['空間殺法','猛将の逆鱗','奥義一閃'], skill4:['','刹那五月雨撃ち','暴飲暴食','物理ハイブースタ','物理吸収'], skill5:['','ラクンダオート','スクンダオート','タルカオート','ラクカオート'], elements:['nu','','','','','rs','dr'], type:'attack'}
+            { name:'マサカド', name_tw:'平將門', name_en:'Masakato',rarity:5, grade:98, icon:'mousyou_masakado.png', skills:['空間殺法','猛将の逆鱗','奥義一閃'], skill4:['不屈の闘志','刹那五月雨撃ち','暴飲暴食','物理ハイブースタ','物理吸収'], skill5:['','ラクンダオート','スクンダオート','タルカオート','ラクカオート'], elements:['nu','','','','','rs','dr'], type:'attack'}
         ]
     },
     {
@@ -847,8 +847,8 @@ const ddd_stable = [
         highlight:true,
         formulas:[],
         devils:[
-            { name:'マンイーター', name_tw:'辣妹食人鬼', name_en:'Man Eater',rarity:4, grade:60, icon:'siki_manita.png', skills:['セクシーダンス','丸かじり','猟奇的な愛情'], skill4:['','血管断ち','バインドクロー','狂い咲き','電撃反射'], skill5:['','狂戦士','緊縛追撃','猛反撃','破魔耐性'], elements:['','','','rs','','wk','rp'], type:'support'},
-            { name:'ボディコニアン', name_tw:'短裙辣妹殭屍', name_en:'Bodyconian',rarity:3, grade:40, icon:'siki_bodeikonian.png', skills:['乱れ狂い','セクシーダンス','ナイトフィーバー'], skill4:['','甘噛み','挑発','寸分の見切り','破魔耐性'], skill5:['','百発百中','リディア','野生の勘','自然治癒'], elements:['','wk','','','','wk','rs'], type:'support'}
+            { name:'マンイーター', name_tw:'辣妹食人鬼', name_en:'Man Eater',rarity:4, grade:60, icon:'siki_manita.png', skills:['セクシーダンス','丸かじり','猟奇的な愛情'], skill4:['デスタッチ','血管断ち','バインドクロー','狂い咲き','電撃反射'], skill5:['','狂戦士','緊縛追撃','猛反撃','破魔耐性'], elements:['','','','rs','','wk','rp'], type:'support'},
+            { name:'ボディコニアン', name_tw:'短裙辣妹殭屍', name_en:'Bodyconian',rarity:3, grade:40, icon:'siki_bodeikonian.png', skills:['乱れ狂い','セクシーダンス','ナイトフィーバー'], skill4:['二段の強運','甘噛み','挑発','寸分の見切り','破魔耐性'], skill5:['','百発百中','リディア','野生の勘','自然治癒'], elements:['','wk','','','','wk','rs'], type:'support'}
         ]
     },
     {
