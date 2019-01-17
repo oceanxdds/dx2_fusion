@@ -20,6 +20,15 @@
     *:focus{
         outline:none;
     }
+    .skill_only{
+        background:url(images/theme/icon-skill-only.png) center left no-repeat / 1.4em 1.4em;
+    }
+    .skill_lock{
+        background:url(images/theme/icon-skill-lock.png) center left no-repeat / 1.4em 1.4em;
+    }
+    .skill_possible{
+        background:url(images/theme/icon-skill-possible.png) center left no-repeat / 1.4em 1.4em;
+    }
     /* Extra Small Devices, Phones */ 
      @media (max-width: 575.98px) {
 
@@ -304,14 +313,7 @@
         <!-- footer -->
 
         <div class="row no-gutters justify-content-start align-items-center">
-            <!--
-            <div class="col-auto p-2">
-                <div class="font-weight-bold">
-                    <b-badge :variant="gate_status_jp?'success':'secondary'">JP {{ gate_timer_jp }}</b-badge>
-                    <b-badge :variant="gate_status_ch?'success':'secondary'">CH {{ gate_timer_ch }}</b-badge>
-                </div>
-            </div>
-            -->
+            
             <div class="col-auto p-2">
                 <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
             </div>
@@ -342,67 +344,46 @@
 
             <div v-if="devil" v-for="devil in [info_target]">
                 <div class="row justify-content-center">
+                    
                     <div class="col-12">
                         <devil :devil="devil" usage="info"></devil>
                     </div>
-                    <div class="col-12">
-                        <table class="table table-bordered table-sm my-0">
+
+                    <div class="col-12 mt-2">
+                        <table class="table table-sm table-bordered table-sm my-0">
                             <tbody>
-                                <tr>
-                                    <td class="text-center align-middle">{{ $t('message.innate') }}</td>
-                                    <td>
-                                        <div v-for="(skill, index) in devil.skills">
-                                            <span class="small" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
-                                        </div>
-                                    </td>
+                                <tr class="text-center">
+                                    <th v-for="(ele, index) in elements" :style=" ele.style ">{{ $t( ele.slug ) }}</th>
                                 </tr>
-                        
-                                <tr v-if="devil.skill4">
-                                    <td class="text-center align-middle">{{ $t('message.skill4') }}</td>
-                                    <td>
-                                        <div v-for="(skill, index) in devil.skill4">
-                                            <b-badge v-if="index==0" class="bg-secondary text-white">{{ $t('message.common') }}</b-badge>
-                                            <b-badge v-if="index==1" class="bg-danger text-white">{{ $t('message.aragami') }}</b-badge>
-                                            <b-badge v-if="index==2" class="text-white" style="background:peru">{{ $t('message.protector') }}</b-badge>
-                                            <b-badge v-if="index==3" class="text-white" style="background:orchid">{{ $t('message.psychic') }}</b-badge>
-                                            <b-badge v-if="index==4" class="bg-info text-white">{{ $t('message.elementalist') }}</b-badge>
-                                            <span class="small" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr v-if="devil.skill5">
-                                    <td class="text-center align-middle">{{ $t('message.skill5') }}</td>
-                                    <td>
-                                        <div v-for="(skill, index) in devil.skill5">
-                                            <b-badge v-if="index==1" class="bg-danger text-white">{{ $t('message.aragami') }}</b-badge>
-                                            <b-badge v-if="index==2" class="text-white" style="background:peru">{{ $t('message.protector') }}</b-badge>
-                                            <b-badge v-if="index==3" class="text-white" style="background:orchid">{{ $t('message.psychic') }}</b-badge>
-                                            <b-badge v-if="index==4" class="bg-info text-white">{{ $t('message.elementalist') }}</b-badge>
-                                            <span class="small" v-if="index!=0" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
+                                <tr class="text-center">
+                                    <td width="14%" v-for="ele in devil.elements">
+                                        <div class="py-1">
+                                            <span class="font-weight-bold" :class="{'text-primary':(ele=='nu'||ele=='rp'||ele=='dr'),'text-danger':ele=='wk'}">{{ ele ? $t('element.'+ele) : 'ー' }}</span>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="col-12 col-md-10 col-xl-8">
-                        <table class="table table-bordered table-sm my-0">
-                            <thead>
-                                <tr class="text-center">
-                                    <th style="background:rgb(185, 185, 185)">物</th>
-                                    <th style="background:rgb(219, 120, 120)">火</th>
-                                    <th style="background:rgb(150, 220, 230)">冰</th>
-                                    <th style="background:rgb(233, 230, 64)">雷</th>
-                                    <th style="background:rgb(133, 240, 156)">衝</th>
-                                    <th style="background:rgb(240, 236, 196)">破</th>
-                                    <th style="background:rgb(218, 142, 221)">咒</th>
-                                </tr>
-                            </thead>
+                    
+                    <div class="col-12 mt-2">
+                        <table class="table table-sm table-bordered my-0">
                             <tbody>
-                                <tr class="text-center">
-                                    <td v-for="ele in devil.elements">
-                                        <span class="font-weight-bold">{{ele?ele:'ー'}}</span>
+                                <tr>
+                                    <td width="30%" class="text-center align-middle font-weight-bold">{{ $t('message.common_skills') }}</td>
+                                    <td>
+                                        <div v-for="(skill, index) in devil.skills">
+                                            <span class="pl-4 small" :class="{'skill_only':index==0}" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr v-for="(type, index) in archetypes" :style=" type.bar_style ">
+                                    <td class="text-center align-middle">
+                                        <h4><b-badge class="text-white" :style=" type.style ">{{ $t( type.slug ) }}</b-badge></h4>
+                                    </td>
+                                    <td>
+                                        <span class="pl-4 skill_lock small" v-b-popover.hover.top="devil.skill4[index].showHint()">{{ devil.skill4[index].showName() }}</span><br>
+                                        <span class="pl-4 skill_possible small" v-b-popover.hover.top="devil.skill5[index].showHint()">{{ devil.skill5[index].showName() }}</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -480,7 +461,7 @@
                 </div>
                 <div class="small">
                     {{ devil.showGrade() }} {{ devil.showRarity() }}
-                    <span class="ml-2" v-if="usage=='info'">AI: {{ devil.type }}</span>
+                    <span class="ml-2" v-if="usage=='info'">AI: {{ $t('devil.'+devil.type) }}</span>
                     <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>
                     <span v-if="usage=='skill'">
                         <b-badge class="ml-2" variant="success" v-if="isSkillAvailable(0)">{{ $t('message.possess') }}</b-badge>
@@ -533,7 +514,7 @@
                 <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="font-weight-bold small py-0">⚝</b-button>
                 <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="font-weight-bold small py-0">⚝</b-button>
                 <span v-if="bom.mag_pure!=bom.mag">
-                    <b-badge variant="success"> 素体 </b-badge> 
+                    <b-badge variant="success"> {{ $t('archetype.common') }} </b-badge> 
                     <span class="small"> {{ bom.showMagPure() }}  </span>
                 </span>
                 <span v-if="bom.mag>0">
@@ -611,7 +592,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=181220"></script>
+    <script src="js/app.js?t=190117"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
