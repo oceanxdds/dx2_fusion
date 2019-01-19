@@ -140,7 +140,7 @@
                                         <devil-bom-builder :bom="builder_target" usage="builder"></devil-bom-builder>
                                     </b-list-group-item>
 
-                                    <b-list-group-item class="p-0 bg-info" v-if="builder_options.length">
+                                    <b-list-group-item class="p-0" v-if="builder_options.length">
                                         <div class="row no-gutters justify-content-center">
                                             <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
                                                 <b-button :pressed.sync="option.state"
@@ -592,7 +592,7 @@
         </div>
     </script>
 
-    <script src="js/app.js?t=190117-1"></script>
+    <script src="js/app.js?t=190119"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 

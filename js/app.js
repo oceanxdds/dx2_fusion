@@ -758,7 +758,7 @@ const ddd_stable = [
             { name:'ヨシツネ', name_tw:'義經', name_en:'Yoshitsune', rarity:5, grade:97, icon:'eiyuu_yositune.png', skills:['空間殺法','勝利のチャクラ','八艘飛び'], skill4:['不屈の闘志','ギガントマキア','チャージ','物理ハイブースタ','物理吸収'], skill5:['','ゴッドハンド','スクカオート','ミナゴロシの愉悦','氷結耐性'], elements:['rs','','','','','nu','nu'], type:'attack'},
             { name:'コウテイ', name_tw:'皇帝', name_en:'Huang Di', rarity:5, grade:88, icon:'eiyuu_koutei.png', skills:['冥界破','帝の権威','応龍撃破'], skill4:['','怪力乱神','メシアライザー','魅了無効','破魔反射'], skill5:['','タルカオート','物理無効','虐殺者','奈落のマスク'], elements:['','rs','rs','rs','rs','',''], type:'attack'},
             { name:'ラーマ', name_tw:'羅摩', name_en:'Rama', rarity:5, grade:86, icon:'eiyuu_rama.png', skills:['マハブフダイン','貫吸の気魄','ブラフマーストラ'], skill4:['冥界破','エナジードレイン','ラスタキャンディ','氷結貫通','氷結吸収'], skill5:['','勝利のチャクラ','コンセントレイト','アイスエイジ','魔封無効'], elements:['','nu','rs','','','',''], type:'attack'},
-            { name:'ジークフリード', name_tw:'齊格飛', name_en:'Siegfried', rarity:5, grade:83, icon:'eiyuu_jikuhurito.png', skills:['怪力乱神','リベリオン','武道の素養'], skill4:['勝利の息吹','ティタノマキア','チャージ','不屈の闘志','衝撃無効'], skill5:['','マハジオダイン','トリスアギオン','メギドラ','イービルアイ'], elements:['dr','','','','','',''], type:'attack'},
+            { name:'ジークフリード', name_tw:'齊格飛', name_en:'Siegfried', rarity:5, grade:83, icon:'eiyuu_jikuhurito.png', skills:['怪力乱神','リベリオン','武道の素養'], skill4:['勝利の息吹','ティタノマキア','チャージ','不屈の闘志','衝撃無効'], skill5:['','千発千中','スクンダオート','刹那五月雨撃ち','呪殺耐性'], elements:['dr','','','','','',''], type:'attack'},
             { name:'ジャンヌ・ダルク', name_tw:'貞德', name_en:"Jeanne d'Arc", rarity:4, grade:78, icon:'eiyuu_jannu.png', skills:['回復ブースタ','天罰','オルレアンの祈り'], skill4:['勝利の息吹','ジャッジメント','静寂の祈り','魔封無効','火炎反射'], skill5:['','精神漏出','メディラマ','煉獄','ザンマ'], elements:['','wk','rs','rs','rs','',''], type:'heal'}
         ]
     },
@@ -2448,7 +2448,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'190117',
+        updated_at:'190119',
          
         //important for update computed's getter from setter
         computed_counter:{
