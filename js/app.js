@@ -83,7 +83,7 @@ const ddd_stable = [
             ['邪鬼','聖獸']
         ],
         devils:[
-            {  name:'ガルーダ',         name_tw:'迦樓羅', name_en:'Garuda',      rarity:5,                grade:80, icon:'reityou_garuda.png', skills:["ザンダイン","ラクンダオート","ヴァーハナ"], skill4:["三段の賢魔","マハラギダイン","フォッグブレス","狂戦士","破魔無效"], skill5:['',"トリスアギオン","メギドラ","寸分の見切り","氷結耐性"], elements:['','rp','wk','','nu','rs',''], type:'attack'            },
+            {  name:'ガルーダ',         name_tw:'迦樓羅', name_en:'Garuda',      rarity:5,                grade:80, icon:'reityou_garuda.png', skills:["ザンダイン","ラクンダオート","ヴァーハナ"], skill4:["三段の賢魔","マハラギダイン","フォッグブレス","狂戦士","破魔無効"], skill5:['',"トリスアギオン","メギドラ","寸分の見切り","氷結耐性"], elements:['','rp','wk','','nu','rs',''], type:'attack'            },
             {  name:'ヤタガラス',         name_tw:'八咫烏', name_en:'Yatagarasu',      rarity:4,                grade:66, icon:'reityou_yatagarasu.png', skills:["冥界破","スクンダオート","スピードスター"], skill4:["物理ブースタ","モータルジハード","スクカジャ","寸分の見切り","物理耐性"], skill5:['',"マハラギオン","一分の魔脈","ウィンドブレス","緊縛耐性"], elements:['','nu','wk','','','rs',''], type:'support'            },
             {　name:'スザク',         name_tw:'朱雀', name_en:'Feng Huang',      rarity:3,                grade:53, icon:'reityou_suzaku.png', skills:["アギラオ","タルンダオート","メディラマ"], skill4:["ダークゾーン無効","マハンマ","バインドボイス","毒床渡り","物理耐性"], skill5:['','コロシの愉悦','クロズディ','メパララディ','ジオ'], elements:['wk','nu','wk','','','',''], type:'heal'            },
             {  name:'ジャターユ',         name_tw:'佳塔由', name_en:'Jatayu',      rarity:3,                grade:44, icon:'reityou_jatayu.png', skills:["スクカジャ","スクカオート","デカジャ"], skill4:["スクンダ","デスバウンド","リカーム","野獣の勘","電撃耐性"],skill5:['',"マハザン","乱れ狂い","メポズムディ","カースディ"], elements:['','rs','','wk','rp','nu','wk'], type:'support'            },
@@ -699,7 +699,7 @@ const ddd_stable = [
         ],
         devils:[
             {   name:'ルシファー',     name_tw:'露西法', name_en:'Lucifer',          rarity:5,                grade:98, icon:'maou_rusifua.png', skills:["メギドラオン","トリスアギオン","明けの明星"], skill4:["三段の恵体","精神支配","リカームドラ","大虐殺者","破魔吸収"], skill5:['',"ムドダイン","魅了無効","電撃ブースタ","マリンカリオン"],elements:['rs','','','','','wk','rp'], type:'attack'            },
-            {   name:'マーラ',         name_tw:'魔羅', name_en:'Mara',      rarity:5,                grade:90, icon:'maou_mara.png', skills:["緊縛無効","ティタノマキア","地獄突き"], skill4:["メガトンレイド","ソウルドレイン","チャージ","物理貫通","氷結無効"], skill5:['',"三段の剛力",'千発千中',"物理ブースタ","物理耐性】"],elements:['','','wk','rp','','rs','rs'], type:'attack'            },
+            {   name:'マーラ',         name_tw:'魔羅', name_en:'Mara',      rarity:5,                grade:90, icon:'maou_mara.png', skills:["緊縛無効","ティタノマキア","地獄突き"], skill4:["メガトンレイド","ソウルドレイン","チャージ","物理貫通","氷結無効"], skill5:['',"三段の剛力",'千発千中',"物理ブースタ","物理耐性"],elements:['','','wk','rp','','rs','rs'], type:'attack'            },
             {   name:'スルト',         name_tw:'史爾特爾', name_en:'Surt',     rarity:5,                grade:83, icon:'maou_suruto.png', skills:["怪力乱神","テトラカシフト","ラグナロク"], skill4:["威圧の構え","マハラギダイン","ディスタブ","火炎貫通","氷結無効"], skill5:['',"地獄の業火","三段の賢魔","火炎ブースタ","丸かじり"],elements:['','rp','wk','','','',''], type:'attack'            },
             {   name:'ロキ',           name_tw:'洛基', name_en:'Loki',    rarity:4,                grade:75, icon:'maou_roki.png', skills:["ザンダイン","アギダイン","トリックスター"], skill4:["ジオダイン","ブフダイン","精神支配","ダークゾーン無効","破魔耐性"], skill5:['',"コロシの愉悦","丸かじり","マハムドオン","ムドオン"],elements:['','','nu','','rs','wk','rs'], type:'attack'           },
             {   name:'ベルゼブブ',     name_tw:'別西卜', name_en:'Beelzebub',          rarity:4,                grade:68, icon:'maou_beruzebubu.png', skills:["ムドダイン","マハジオンガ","暴食の大罪"], skill4:["野獣の勘","ショックウェーブ","混沌の海","マカラカシフト","破魔反射"], skill5:['',"マハデゾレトオン","物理耐性","コロシの愉悦","電撃耐性"],elements:['','','','rs','rs','nu','nu'], type:'attack'            },
@@ -909,7 +909,7 @@ const skill_stable = [
             {"name":"痺れかみつき","name_tw":"麻痺咬痕","desc":"敵単体に物理属性の打撃型ダメージを威力160で与え、基礎確率35％で緊縛状態にする。","name_en":"Paralyzing Bite","desc_en":"Inflicts Phys (Physical) damage with 160 power on a Single Enemy with 35% chance to inflict Poison.","mp":5,"point":null,"element":"物理"},
             {"name":"グングニル","name_tw":"永恆之槍","desc":"敵全体にクリティカル率30％の物理属性の打撃型ダメージを威力145で与える。","name_en":"Gungnir","desc_en":"Inflicts Phys (Physical) damage with 30% crit rate and 145 power on All Enemies. (3 uses)","mp":7,"point":null,"element":"物理"},
             {"name":"応龍撃破","name_tw":"應龍擊破","desc":"敵全体にクリティカル率50%の物理属性の打撃型ダメージを威力150で与える。","name_en":"Yinlong Killer","desc_en":"Inflicts Phys (Physical) damage with 50% crit rate and 150 power on All Enemies.","mp":8,"point":null,"element":"物理"},
-            {"name":"血管断ち","name_tw":"血管斷擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、MPを2失わせる。","name_en":"","desc_en":"","mp":6,"point":null,"element":"物理"},
+            {"name":"血管断ち","name_tw":"血管斷擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、MPを2失わせる。","name_en":"Bleeder","desc_en":"Inflicts Physical damage on a single enemy with 120 power and reduces MP by 2.","mp":6,"point":null,"element":"物理"},
             {"name":"奥義一閃","name_tw":"奥義一閃","desc":"敵単体にクリティカル率50%の物理属性の打撃型ダメージを威力200で与え、100%の確率で即死させる。","name_en":"Occult Flash","desc_en":"Inflicts Phys (Physical) damage with 50% crit rate on a single enemy, with 100% chance to inflict Mortal.","mp":8,"point":null,"element":"物理"}
         ]
     },
@@ -1051,11 +1051,11 @@ const skill_stable = [
             {"name":"魅了の神弓","name_tw":"魅惑神弓","desc":"敵単体に万能属性の魔法型ダメージを威力190で与え、基礎確率45％で魅了状態にする。","name_en":"Divine Bows' Allure","desc_en":"Inflicts Magic Almighty damage with 190 power on a Single Enemy with 45% chance to inflict Charm.","mp":8,"point":null,"element":"万能"},
             {"name":"ブラフマーストラ","name_tw":"梵天法寶","desc":"敵全体に3回、万能属性の魔法型ダメージを威力40で与える。","name_en":"Brahma Sutra","desc_en":"Inflicts Almighty (Magic) damage 3 times with 40 power on All Enemies.","mp":7,"point":null,"element":"万能"},
             {"name":"バビロンの杯","name_tw":"巴比倫之杯","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、MPを1奪う。","name_en":"Babylon Goblet","desc_en":"Inflicts Almighty (Magic) damage with 100 power and drains 1 MP on All Enemies.","mp":8,"point":null,"element":"万能"},
-            {"name":"悪魔の産声","name_tw":"惡魔啼聲","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の攻撃力を20％減少させる。","name_en":"","desc_en":"","mp":9,"point":null,"element":"万能"},
-            {"name":"ネクロ・ドグマ","name_tw":"死靈教義","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の防御力を20％増加させる。","name_en":"","desc_en":"","mp":9,"point":null,"element":"万能"},
-            {"name":"ディスタブ","name_tw":"擾亂攻擊","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の回避と命中を20％減少させる。","name_en":"","desc_en":"","mp":9,"point":null,"element":"万能"},
-            {"name":"精神支配","name_tw":"精神控制","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、MPを4失わせる。","name_en":"","desc_en":"","mp":7,"point":null,"element":"万能"},
-            {"name":"先見の啓示","name_tw":"先見啟示","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の回避と命中を20％増加させる。","name_en":"","desc_en":"","mp":9,"point":null,"element":"万能"}
+            {"name":"悪魔の産声","name_tw":"惡魔啼聲","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の攻撃力を20％減少させる。","name_en":"Demon Birth Cry","desc_en":"Inflicts Almighty (Magic) damage with 100 power on All Enemies and reduces all enemy ATK by 20% for 3 turns.","mp":9,"point":null,"element":"万能"},
+            {"name":"ネクロ・ドグマ","name_tw":"死靈教義","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の防御力を20％増加させる。","name_en":"Necro Dogma","desc_en":"Inflicts Almighty (Magic) damage with 100 power on All Enemies and reduces enemy's ATK by 20% for 3 turns.","mp":9,"point":null,"element":"万能"},
+            {"name":"ディスタブ","name_tw":"擾亂攻擊","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の回避と命中を20％減少させる。","name_en":"Rattle","desc_en":"Inflicts Almighty (Magic) damage with 100 power on All Enemies and reduces all enemy EV/AC by 20% for 3 turns.","mp":9,"point":null,"element":"万能"},
+            {"name":"精神支配","name_tw":"精神控制","desc":"敵単体に万能属性の魔法型ダメージを威力100で与え、MPを4失わせる。","name_en":"Mind Blast","desc_en":"Inflicts Almighty (Magic) damage on a single enemy with 100 power and reduces MP by 4.","mp":7,"point":null,"element":"万能"},
+            {"name":"先見の啓示","name_tw":"先見啟示","desc":"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、味方全体の回避と命中を20％増加させる。","name_en":"Foresight","desc_en":"Inflicts Almighty (Magic) damage on all enemies and increases own parties EV/AC by 20%. (3 turns) Power: 100","mp":9,"point":null,"element":"万能"}
         ]
     },
     {
@@ -1193,11 +1193,11 @@ const skill_stable = [
             {"name":"フォッグブレス","name_tw":"迷霧吐息","desc":"３ターンの間、敵全体の攻撃力・回避と命中をそれぞれ20％ずつ減少させる。","name_en":"Fog Breath","desc_en":"Reduces ATK and EV/AC of All Enemies by 20% for 3 turns.","mp":6,"point":8,"element":"無"},
             {"name":"挑発","name_tw":"挑釁","desc":"３ターンの間、敵全体の攻撃力を20％増加させ、防御力を20％減少させる。","name_en":"Taunt","desc_en":"Increases ATK and reduces of DEF of All Enemies by 20% for 3 turns.","mp":3,"point":8,"element":"無"},
             {"name":"ランダマイザ","name_tw":"女巫詛咒","desc":"３ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ減少させる。","name_en":"Debilitate","desc_en":"Reduces ATK, DEF, and EV/AC of All Enemies by 20% for 3 turns.","mp":8,"point":"15","element":"無"},
-            {"name":"宵闇の調べ","name_tw":"宵闇旋律","desc":"3ターンの間、味方全体の防御力・回避と命中をそれぞれ20％ずつ上昇させる。","name_en":"","desc_en":"","mp":6,"point":null,"element":"無"},
-            {"name":"護国の咆哮","name_tw":"護國咆哮","desc":"3ターンの間、敵全体の攻撃力を20％減少させ、味方全体の防御力を20％増加させる。","name_en":"","desc_en":"","mp":7,"point":null,"element":"無"},
-            {"name":"討滅の咆哮","name_tw":"征伐咆哮","desc":"3ターンの間、敵全体の防御力を20％減少させ、味方全体の攻撃力を20％増加させる。","name_en":"","desc_en":"","mp":7,"point":null,"element":"無"},
-            {"name":"勇奮の鼓舞","name_tw":"奮勇鼓舞","desc":"3ターンの間、味方全体の攻撃力・防御力をそれぞれ20％ずつ上昇させる。","name_en":"","desc_en":"","mp":6,"point":null,"element":"無"},
-            {"name":"早手の舞い","name_tw":"迅捷演舞","desc":"3ターンの間、味方全体の攻撃力・回避と命中をそれぞれ20％ずつ上昇させる。","name_en":"","desc_en":"","mp":6,"point":null,"element":"無"}
+            {"name":"宵闇の調べ","name_tw":"宵闇旋律","desc":"3ターンの間、味方全体の防御力・回避と命中をそれぞれ20％ずつ上昇させる。","name_en":"Nocturne","desc_en":"Increases own party's DEF and EV/AC by 20% for 3 turns.","mp":6,"point":null,"element":"無"},
+            {"name":"護国の咆哮","name_tw":"護國咆哮","desc":"3ターンの間、敵全体の攻撃力を20％減少させ、味方全体の防御力を20％増加させる。","name_en":"Defensive Cry","desc_en":"Reduce all enemy ATK and increases own party's DEF by 20% for 3 turns.","mp":7,"point":null,"element":"無"},
+            {"name":"討滅の咆哮","name_tw":"征伐咆哮","desc":"3ターンの間、敵全体の防御力を20％減少させ、味方全体の攻撃力を20％増加させる。","name_en":"Offensive Cry","desc_en":"Reduces all enemy DEF and increases own parties ATK by 20% for 3 turns.","mp":7,"point":null,"element":"無"},
+            {"name":"勇奮の鼓舞","name_tw":"奮勇鼓舞","desc":"3ターンの間、味方全体の攻撃力・防御力をそれぞれ20％ずつ上昇させる。","name_en":"War Dance","desc_en":"Increases own parties ATK and DEF by 20% for 3 turns.","mp":6,"point":null,"element":"無"},
+            {"name":"早手の舞い","name_tw":"迅捷演舞","desc":"3ターンの間、味方全体の攻撃力・回避と命中をそれぞれ20％ずつ上昇させる。","name_en":"Blood Rush","desc_en":"Increases own parties ATK and EV/AC by 20%. (3 turns)","mp":6,"point":null,"element":"無"}
         ]
     },
     {
@@ -1363,7 +1363,7 @@ const skill_stable = [
             {"name":"猛反撃","name_tw":"兇猛反擊","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力100で与える。","name_en":"Retaliate","desc_en":"When receiving a Phys Attack, 50% chance to counter dealing Phys damage with 100 power.","mp":null,"point":"12","element":"パシップ"},
             {"name":"デスカウンター","name_tw":"死亡反擊","desc":"敵の打撃型攻撃を受けたとき、50％の確率で物理属性の打撃型ダメージを威力150で与える。","name_en":"Death Counter","desc_en":"When receiving a Phys Attack, 50% chance to counter dealing Phys damage with 150 power.","mp":null,"point":"18","element":"パシップ"},
             {"name":"狂乱の陶酔","name_tw":"狂亂陶醉","desc":"敵の打撃型攻撃を受けた時、攻撃してきた敵を基礎確率50%で魅了状態にする。","name_en":"Euphoric Frenzy","desc_en":"50% chance to Charm the assailant when receiving a Phys Attack.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ヤシュチェ","name_tw":"宇宙之樹","desc":"このスキルを持っている悪魔が敵ターンに死亡したとき、攻撃してきた相手に万能属性の魔法型ダメージを威力100で与え、死亡時に踏みとどまるスキルを無視して100%の確率で即死させる。ただし、全滅時にはこの効果は発動しない。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ヤシュチェ","name_tw":"宇宙之樹","desc":"このスキルを持っている悪魔が敵ターンに死亡したとき、攻撃してきた相手に万能属性の魔法型ダメージを威力100で与え、死亡時に踏みとどまるスキルを無視して100%の確率で即死させる。ただし、全滅時にはこの効果は発動しない。","name_en":"Yaxche","desc_en":"When downed during the enemy turn, inflicts Almighty (Power:100) damage to the attacker, with 100% chance to inflict Mortal. Nullifies all death prevention skills. Won't activate when your party is wiped out.","mp":null,"point":null,"element":"パシップ"},
             //防禦
             {"name":"タルタロスの牢番","name_tw":"塔爾塔洛斯獄卒","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「全体攻撃スキルで自身が受けるダメージが15%減少する。」","name_en":"Guards of Tartarus","desc_en":"While the demon with this skill is alive, all party members will receive the following effect: Reduces damage received by 15% when the attacker attacks all party members.","mp":null,"point":null,"element":"パシップ"},
             //防死
@@ -1374,7 +1374,7 @@ const skill_stable = [
             {"name":"勝利の息吹","name_tw":"勝利的氣息","desc":"ウェーブをまたぐとき、HPが30％回復する。","name_en":"Life Aid","desc_en":"Heals 30% HP when clearing a wave.","mp":null,"point":6,"element":"パシップ"},
             {"name":"勝利のチャクラ","name_tw":"勝利的查克拉","desc":"ウェーブをまたぐとき、MPが10回復する。","name_en":"Mana Aid","desc_en":"Recovers 10 MP when clearing a wave.","mp":null,"point":"12","element":"パシップ"},
             {"name":"無限のチャクラ","name_tw":"無限的查克拉","desc":"MPの自然回復量が１増加する。","name_en":"Infinite Chakra","desc_en":"Increases naturally recovered MP by 1 MP.","mp":null,"point":"18","element":"パシップ"},
-            {"name":"穴巣始","name_tw":"冬眠儀式","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「状態異常の自然回復率が20%増加する。」","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
+            {"name":"穴巣始","name_tw":"冬眠儀式","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「状態異常の自然回復率が20%増加する。」","name_en":"Arcane Ritual","desc_en":"While the demon with this skill is alive, all party members will receive the following effect: 20% increase in status ailment auto cure rate.","mp":null,"point":null,"element":"パシップ"},
             //反射
             {"name":"テトラカシフト","name_tw":"提特拉康脈動","desc":"後攻でバトルを開始したとき、テトラカーンが発動する。","name_en":"Tetra Shift","desc_en":"Casts Tetrakarn at the beginning of a battle if the enemy attacks first.","mp":null,"point":"18","element":"パシップ"},
             {"name":"マカラカシフト","name_tw":"瑪卡拉康脈動","desc":"後攻でバトルを開始したとき、マカラカーンが発動する。","name_en":"Makara Shift","desc_en":"Casts Makarakarn at the beginning of a battle if the enemy attacks first.","mp":null,"point":"18","element":"パシップ"},
@@ -1386,7 +1386,7 @@ const skill_stable = [
             {"name":"貫吸の気魄","name_tw":"貫吸之氣魄","desc":"このスキルを持っている悪魔が生きている間、味方全員の属性吸収が貫通に対しても効果を発揮する。","name_en":"Drain Pierce","desc_en":"While the demon with this skill is alive, Pierce will have no effect on any party member that can drain the attribute they are attacked with.","mp":null,"point":null,"element":"パシップ"},
             //強化
             {"name":"黄泉津大神","name_tw":"黃泉津大神","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「電撃属性、呪殺属性で与えるダメージが10%増加する。」","name_en":"Yomotsu Okami","desc_en":"While the demon with this skill is alive, all party members gain +10% damage to Elec and Dark attacks.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"死が奏であう劇場","name_tw":"死亡合奏劇場","desc":"2ターンごとの自分のターン開始時、味方のプレスターンアイコンが1つ増加し、このスキルを持っている悪魔が敵に与えるダメージが10%増加する。（最大50%まで）","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
+            {"name":"死が奏であう劇場","name_tw":"死亡合奏劇場","desc":"2ターンごとの自分のターン開始時、味方のプレスターンアイコンが1つ増加し、このスキルを持っている悪魔が敵に与えるダメージが10%増加する。（最大50%まで）","name_en":"Harmonious Death","desc_en":"At the beginning of every second turn, damage dealt by the demon with this skill will increase by 10% (up to 50%) and all party members receive 1 additional Press Turn Icon.","mp":null,"point":null,"element":"パシップ"},
             //增強
             {"name":"タルカオート","name_tw":"自動塔爾卡","desc":"１ターン目開始時、タルカジャが発動する。","name_en":"Auto-Taraka","desc_en":"Casts Tarukaja at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
             {"name":"ラクカオート","name_tw":"自動拉庫卡","desc":"１ターン目開始時、ラクカジャが発動する。","name_en":"Auto-Rakuga","desc_en":"Casts Rakukaja at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
@@ -1394,7 +1394,7 @@ const skill_stable = [
             {"name":"タルンダオート","name_tw":"自動塔倫達","desc":"１ターン目開始時、タルンダが発動する。","name_en":"Auto-Tarunda","desc_en":"Casts Tarunda at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
             {"name":"ラクンダオート","name_tw":"自動拉昆達","desc":"１ターン目開始時、ラクンダが発動する。","name_en":"Auto-Rakunda","desc_en":"Casts Rakunda at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
             {"name":"スクンダオート","name_tw":"自動斯坤達","desc":"１ターン目開始時、スクンダが発動する。","name_en":"Auto-Sukunda","desc_en":"Casts Sukunda at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
-            {"name":"メスラムタエア","name_tw":"美斯朗塔耶亞","desc":"物理命中率が20%増加し、敵が毒状態になったとき、自身にリベリオンが発動する。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
+            {"name":"メスラムタエア","name_tw":"美斯朗塔耶亞","desc":"物理命中率が20%増加し、敵が毒状態になったとき、自身にリベリオンが発動する。","name_en":"Meslamtaea","desc_en":"Increases AC by 20%, and enters a state of Rebellion when the enemy is Poisoned.","mp":null,"point":null,"element":"パシップ"},
             //誘惑
             {"name":"女帝のリビドー","name_tw":"女帝狂慾","desc":"敵が魅了状態のときに与えるダメージが25%増加し、自分の1ターン目開始時、敵全体を基礎確率30%で魅了状態にする。","name_en":"Death Lust","desc_en":"+25% damage to Charmed enemies. Has a 30% to Charm all enemies at the beginning of the 1st turn.","mp":null,"point":'',"element":"パシップ"},
             {"name":"猟奇的な愛情","name_tw":"殘虐的愛情","desc":"敵が魅了状態になったとき、3ターンの間、敵全体の防御力を20%減少させる。","name_en":"Sass","desc_en":"When an enemy is Charmed, reduces all enemy's DEF by 20%. (3 turns)","mp":null,"point":'',"element":"パシップ"},
@@ -1403,16 +1403,16 @@ const skill_stable = [
             {"name":"制圧の構え：吸","name_tw":"威攝姿態:吸","desc":"このスキルを持っている悪魔が生きている間、味方の属性吸収が発動した際、敵のプレスターンアイコンを1つ減少させる。","name_en":"Suppress Stance Drain","desc_en":"As long as the demon who has this skill is alive, the enemy loses an extra Press Turn Icon every time you drain their attack.","mp":null,"point":null,"element":"パシップ"},
             {"name":"富の信仰","name_tw":'',"desc":"最大HPが10%増加する。敵のスキル効果によってこちらのプレスターンアイコンが減少するたび、味方全体のMPを1回復する。","name_en":"Faith in Wealth","desc_en":"Increases max HP by 10%. Recover 1 MP every time your Press Turn Icon decreases due to enemy skills.","mp":null,"point":null,"element":"パシップ"},
             {"name":"次はお前だ","name_tw":"下個就是你","desc":"このスキルを持っている悪魔が単体攻撃で敵を死亡させた場合、敵が復活したとき、Lv.1のカシマレイコとして復活する。","name_en":"You're Next","desc_en":"If the demon with this skill kills an enemy with a single target attack, and that enemy is revived, they will come back as a Lv. 1 Reiko Kashima.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ザクロの制約","name_tw":"石榴制約","desc":"このスキルを持っている悪魔が生きている間、敵に対して次の効果を発揮する。 「復活した際にHP1で復活する」","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ザクロの制約","name_tw":"石榴制約","desc":"このスキルを持っている悪魔が生きている間、敵に対して次の効果を発揮する。 「復活した際にHP1で復活する」","name_en":"Fruit of the Dead","desc_en":"While the demon with this skill is alive, any enemy demon that is revived will only have 1 HP.","mp":null,"point":null,"element":"パシップ"},
             //節省
             {"name":"トリックスター","name_tw":"狡計之星","desc":"敵の弱点をついたとき、20％の確率でプレスターンアイコンを消費しない。","name_en":"Trickster","desc_en":"20% chance to avoid using Press Turn Icons when attacking the enemy's weak point.","mp":null,"point":null,"element":"パシップ"},
             {"name":"月の加護","name_tw":"月之庇佑","desc":"MPを消費するとき、消費するMPが１減少する。","name_en":"Lunar Blessing","desc_en":"Reduces consumed MP by 1 MP.","mp":null,"point":null,"element":"パシップ"},
             //
-            {"name":"バビロニアの疫病","name_tw":"巴比倫尼亞疫病","desc":"敵全体のバリア状態を解除した後、敵全体を基礎確率80%で虚弱状態にする。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
-            {"name":"冥府の理","name_tw":"冥府之理","desc":"このスキルを持っている悪魔が生きている間、味方全体が弱点をつかれた時のボーナスターン発生を無効化する。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ヘルズゲート","name_tw":"地獄之門","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「味方全体の弱点1つにつき、全体攻撃スキルで自身が受けるダメージが3%減少する。（最大30%まで）」","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
-            {"name":"黒い夜の霧","name_tw":"暗夜濃霧","desc":"敵が虚弱状態になったとき、3ターンの間、敵全体の回避と命中率を20%減少させ、敵全体を基礎確率100%で毒状態にする。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ヘルヘイムの叫び","name_tw":"冥界吶喊","desc":"このスキルを持っている悪魔が敵を倒したとき、3ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させる。","name_en":"","desc_en":"","mp":null,"point":null,"element":"パシップ"}
+            {"name":"バビロニアの疫病","name_tw":"巴比倫尼亞疫病","desc":"敵全体のバリア状態を解除した後、敵全体を基礎確率80%で虚弱状態にする。","name_en":"Plague of Babylon","desc_en":"80% chance to inflict Weak on all enemies after removing Barriers from all enemies.","mp":null,"point":null,"element":"パシップ"},
+            {"name":"冥府の理","name_tw":"冥府之理","desc":"このスキルを持っている悪魔が生きている間、味方全体が弱点をつかれた時のボーナスターン発生を無効化する。","name_en":"Law of Hell","desc_en":"As long as the demon with this skill is alive, no bonus turn will be granted when a party member's weak point is attacked.","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ヘルズゲート","name_tw":"地獄之門","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「味方全体の弱点1つにつき、全体攻撃スキルで自身が受けるダメージが3%減少する。（最大30%まで）」","name_en":"Hell's Gate","desc_en":"While the demon with this skill is alive, all party members will receive the following effect: For every Weak attribute, all party members will receive 3% less multiple-target attack damage. (Max reduction: 30%)","mp":null,"point":null,"element":"パシップ"},
+            {"name":"黒い夜の霧","name_tw":"暗夜濃霧","desc":"敵が虚弱状態になったとき、3ターンの間、敵全体の回避と命中率を20%減少させ、敵全体を基礎確率100%で毒状態にする。","name_en":"Fog of Death","desc_en":"When an enemy is Weakened, reduces all enemy EV/AC by 20% (3 turns) and 100% chance to inflict Poison.","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ヘルヘイムの叫び","name_tw":"冥界吶喊","desc":"このスキルを持っている悪魔が敵を倒したとき、3ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させる。","name_en":"Call to Helheim","desc_en":"When the demon with this skill downs an enemy, reduces all enemy ATK and DEF by 20%. (3 turns)","mp":null,"point":null,"element":"パシップ"}
         ]
     },
     {
@@ -1489,7 +1489,7 @@ const messages = {
         rs:'Rs',
         nu:'Nu',
         rp:'Rp',
-        dr:'Rr'
+        dr:'Dr'
       }
     },
     ja: {
@@ -2449,7 +2449,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'190121',
+        updated_at:'190122',
          
         //important for update computed's getter from setter
         computed_counter:{
