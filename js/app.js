@@ -224,7 +224,7 @@ const ddd_stable = [
             ['幽鬼','女神']
         ],
         devils:[
-            {   name:'シヴァ',           name_tw:'濕婆', name_en:'Shiva',     rarity:5,  grade:93, icon:'hakaisin_siva.png' , skills:["虐殺者","空間殺法","プララヤ"], skill4:["魅了無効","ゴッドハンド","リベリオン","寸分の見切り","氷結吸収"], skill5:['','三段の剛力','モータルジハード','暴飲暴食','衝撃耐性'],elements:['rs','rp','wk','rp','','',''],type:'attack'           },
+            {   name:'シヴァ',           name_tw:'濕婆', name_en:'Shiva',     rarity:5,  grade:93, icon:'hakaisin_siva.png' , skills:["虐殺者","空間殺法","プララヤ"], skill4:["魅了無効","ゴッドハンド","リベリオン","寸分の見切り","氷結吸収"], skill5:['','三段の剛力','モータルジハード','暴飲暴食','衝撃耐性'],elements:['rs','dr','wk','dr','','',''],type:'attack'           },
             {   name:'ザオウゴンゲン',    name_tw:'藏王權現', name_en:'Zaou-Gongen', rarity:5,  grade:85, icon:'hakaisin_zaougongen.png' , skills:["マハラギダイン","ゴッドハンド","金剛蔵王"], skill4:["不屈の闘志","金剛発破","リベリオン","火炎ハイブースタ","物理吸収"], skill5:['',"三段の剛力","タルカオート","地獄の業火","デスカウンター"],elements:['nu','rp','','wk','','rs','rs'],type:'attack'   },
             {   name:'スサノオ',         name_tw:'素盞嗚尊', name_en:'Susano-o',  rarity:5,  grade:82, icon:'hakaisin_susanoo.png', skills:["暗殺者","モータルジハード","天叢雲剣"], skill4:["三段の剛力","血管断ち","チャージ","無慈悲な一撃","電撃吸収"], skill5:['','緊縛追撃','三段の猛速','フォッグブレス','火炎耐性'],elements:['rs','wk','','','rp','',''],type:'attack'            },
             {   name:'ホクトセイクン',    name_tw:'北斗星君', name_en:'Beiji-Weng',  rarity:4, grade:69, icon:'hakaisin_hokutoseikun.png', skills:["氷結ブースタ","ブフダイン","絶対零度"], skill4:["リカーム","マハブフダイン","ジャッジメント","呪い無効","氷結反射"], skill5:['',"破魔耐性","マハザン","ブフ","乱れ狂い"],elements:['','wk','nu','','','rs',''],type:'attack'            },
@@ -2449,7 +2449,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'190122',
+        updated_at:'190205',
          
         //important for update computed's getter from setter
         computed_counter:{
