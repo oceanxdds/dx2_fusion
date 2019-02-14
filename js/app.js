@@ -819,7 +819,7 @@ const ddd_stable = [
         name:'死神',
         name_tw:'死神',
         name_en:'Reaper',
-        highlight:true,
+        highlight:false,
         formulas:[],
         devils:[
             { name:'モト', name_tw:'莫特', name_en:'Mot',rarity:5, grade:91, icon:'sinigami_moto.png', skills:['メギドラオン','マハムドダイン','死が奏であう劇場'], skill4:['二分の魔脈','デスタッチ','ジャッジメント','三分の活泉','物理無効'], skill5:['','三段の賢魔','ラクカオート','不屈の闘志','電撃耐性'], elements:['rs','rs','','wk','rp','','rp'], type:'attack'},
@@ -835,7 +835,7 @@ const ddd_stable = [
         name:'猛将',
         name_tw:'猛將',
         name_en:'General',
-        highlight:true,
+        highlight:false,
         formulas:[],
         devils:[
             { name:'マサカド', name_tw:'平將門', name_en:'Masakato',rarity:5, grade:98, icon:'mousyou_masakado.png', skills:['空間殺法','猛将の逆鱗','奥義一閃'], skill4:['不屈の闘志','刹那五月雨撃ち','暴飲暴食','物理ハイブースタ','物理吸収'], skill5:['','ラクンダオート','スクンダオート','タルカオート','ラクカオート'], elements:['nu','','','','','rs','dr'], type:'attack'}
@@ -845,7 +845,7 @@ const ddd_stable = [
         name:'屍鬼',
         name_tw:'屍鬼',
         name_en:'Undead',
-        highlight:true,
+        highlight:false,
         formulas:[],
         devils:[
             { name:'マンイーター', name_tw:'辣妹食人鬼', name_en:'Man Eater',rarity:4, grade:60, icon:'siki_manita.png', skills:['セクシーダンス','丸かじり','猟奇的な愛情'], skill4:['デスタッチ','血管断ち','バインドクロー','狂い咲き','電撃反射'], skill5:['','狂戦士','緊縛追撃','猛反撃','破魔耐性'], elements:['','','','rs','','wk','rp'], type:'support'},
@@ -857,9 +857,45 @@ const ddd_stable = [
         name_tw:'邪神(活動)',
         name_en:'Vile(Event)',
         formulas:[],
-        highlight:true,
+        highlight:false,
         devils:[
             {  name:'ミシャグジさま',   name_tw:'御社宮司神', name_en:'Mishaguji', rarity:4, grade:65, icon:'jyasin_misyagujisama.png', skills:["マハジオンガ","電撃ブースタ","穴巣始"], skill4:['祟り','放電',"コンセントレイト","野獣の勘","電撃吸収"], skill5:['',"テトラジャ","二分の魔脈","スピードスター","衝撃耐性"],elements:['','','','nu','wk','wk','nu'], type:'attack'            }
+        ]
+    },
+    {
+        name:'御魂',
+        name_tw:'御魂',
+        name_en:'Mitama',
+        formulas:[],
+        highlight:true,
+        devils:[
+            {  name:'サキミタマ',   name_tw:'幸魂', name_en:'Saki Mitama', rarity:2, grade:36, icon:'mitama_skimitama.png', skills:['初段の恵体','マカラカーン','一分の活泉'], skill4:['初段の強運','放電','ラクカジャ','乱れ狂い','電撃無効'], skill5:['','','','',''],elements:['','','','rs','','rs','rs'], type:'support' },
+            {  name:'クシミタマ',   name_tw:'奇魂', name_en:'Kusi Mitama', rarity:2, grade:31, icon:'mitama_kusimitama.png', skills:['初段の猛速','チャージ','コンセントレイト'], skill4:['初段の恵体','ウィンドブレス','スクカジャ','見切り','衝撃無効'], skill5:['','','','',''],elements:['','','','','rs','rs','rs'], type:'attack'            },
+            {  name:'ニギミタマ',   name_tw:'和魂', name_en:'Nigi Mitama', rarity:2, grade:26, icon:'mitama_nigimitama.png', skills:['初段の賢魔','メディア','リカーム'], skill4:['初段の強運','アイスブレス','ディアラ','自然治癒','氷結無効'], skill5:['','','','',''],elements:['','','rs','','','rs','rs'], type:'heal'            },
+            {  name:'アラミタマ',   name_tw:'荒魂', name_en:'Ara Mitama', rarity:2, grade:21, icon:'mitama_aramitama.png', skills:['初段の剛力','チャージ','突撃'], skill4:['初段の猛速','ファイアブレス','タルカジャ','緊縛無効','火炎無効'], skill5:['','','','',''],elements:['','rs','','','','rs','rs'], type:'attack'            }
+        ]
+    },
+    {
+        name:'魔女',
+        name_tw:'魔女',
+        name_en:'Witch',
+        formulas:[],
+        highlight:true,
+        devils:[
+            {  name:'ベヨネッタ☆',   name_tw:'蓓優妮塔☆', name_en:'Bayonetta☆', rarity:5, grade:85, icon:'majyo_beyoneta.png', skills:['モータルジハード','マダムストンプ','魔獣ゴモラ召喚B'], skill4:['','刹那五月雨撃ち','甘噛み','ミナゴロシの愉悦','呪殺無効'], skill5:['','三段の剛力','魅了追撃','暗殺者','ティタノマキア'],elements:['','','','','','rs','rs'], type:'attack'            },
+            {  name:'ジャンヌ☆',   name_tw:'貞德☆', name_en:'Jeanne☆', rarity:5, grade:85, icon:'majyo_jyanu.png', skills:['冥界破','マダムアッパー','魔獣ゴモラ召喚J'], skill4:['','五月雨斬り','暗夜剣','寸分の見切り','破魔無効'], skill5:['','三段の賢魔','緊縛追撃','虐殺者','メギドラ'],elements:['','','','','','rs','rs'], type:'attack'            },
+            {  name:'ベヨネッタ',   name_tw:'蓓優妮塔', name_en:'Bayonetta', rarity:4, grade:65, icon:'majyo_beyoneta.png', skills:['モータルジハード','狂戦士','ソウルドレイン'], skill4:['二段の剛力','刹那五月雨撃ち','甘噛み','ミナゴロシの愉悦','呪殺無効'], skill5:['','二段の剛力','魅了追撃','物理ブースタ','スピードスター'],elements:['','','','','','rs','rs'], type:'attack'            },
+            {  name:'ジャンヌ',   name_tw:'貞德', name_en:'Jeanne', rarity:4, grade:65, icon:'majyo_jyanu.png', skills:['冥界破','狂戦士','ソウルドレイン'], skill4:['二段の賢魔','五月雨斬り','暗夜剣','寸分の見切り','破魔無効'], skill5:['','二段の賢魔','魔封追撃','猛反撃','スピードスター'],elements:['','','','','','rs','rs'], type:'attack'            }
+        ]
+    },
+    {
+        name:'能天使',
+        name_tw:'能天使',
+        name_en:'Powers',
+        formulas:[],
+        highlight:true,
+        devils:[
+            {  name:'ビラブド',   name_tw:'畢拉維德', name_en:'Beloved', rarity:4, grade:70, icon:'powers_birabudo.png', skills:['コロシの愉悦','鬼神楽','ビラブド斬り'], skill4:['二段の恵体','捨て身の一撃','リベリオン','猛反撃','破魔無効'], skill5:['','百発百中','物理ブースタ','野生の勘','地獄のマスク'],elements:['rs','','','','','rs','wk'], type:'attack'            }
         ]
     }
 ];
@@ -910,7 +946,10 @@ const skill_stable = [
             {"name":"グングニル","name_tw":"永恆之槍","desc":"敵全体にクリティカル率30％の物理属性の打撃型ダメージを威力145で与える。","name_en":"Gungnir","desc_en":"Inflicts Phys (Physical) damage with 30% crit rate and 145 power on All Enemies. (3 uses)","mp":7,"point":null,"element":"物理"},
             {"name":"応龍撃破","name_tw":"應龍擊破","desc":"敵全体にクリティカル率50%の物理属性の打撃型ダメージを威力150で与える。","name_en":"Yinlong Killer","desc_en":"Inflicts Phys (Physical) damage with 50% crit rate and 150 power on All Enemies.","mp":8,"point":null,"element":"物理"},
             {"name":"血管断ち","name_tw":"血管斷擊","desc":"敵単体に物理属性の打撃型ダメージを威力120で与え、MPを2失わせる。","name_en":"Bleeder","desc_en":"Inflicts Physical damage on a single enemy with 120 power and reduces MP by 2.","mp":6,"point":null,"element":"物理"},
-            {"name":"奥義一閃","name_tw":"奥義一閃","desc":"敵単体にクリティカル率50%の物理属性の打撃型ダメージを威力200で与え、100%の確率で即死させる。","name_en":"Occult Flash","desc_en":"Inflicts Phys (Physical) damage with 50% crit rate on a single enemy, with 100% chance to inflict Mortal.","mp":8,"point":null,"element":"物理"}
+            {"name":"奥義一閃","name_tw":"奥義一閃","desc":"敵単体にクリティカル率50%の物理属性の打撃型ダメージを威力200で与え、100%の確率で即死させる。","name_en":"Occult Flash","desc_en":"Inflicts Phys (Physical) damage with 50% crit rate on a single enemy, with 100% chance to inflict Mortal.","mp":8,"point":null,"element":"物理"},
+            {"name":"魔獣ゴモラ召喚B","name_tw":"魔獸蛾摩拉召喚B","desc":"このスキルは３ターン目から使用可能になる。敵単体に5回、クリティカル率50％の物理属性の打撃型ダメージを威力50で与え、敵全体を基礎確率50％で魅了状態にする。このスキルによるダメージは50％を物理攻撃力、50％を魔法攻撃力に依存し、物理貫通を得る。","name_en":"Gomorrah (B)","desc_en":"Can be used from the 3rd turn. Inflicts Phys (Physical) damage with 50% crit rate on a single enemy 5 times and a 50% chance to inflict Charm on all enemies.Power: 50*Damage inflicted by this skill is 50% dependent on Phys ATK, 50% on Mag ATK and will have Phys Pierce effect.","mp":8,"point":null,"element":"物理"},
+            {"name":"魔獣ゴモラ召喚J","name_tw":"魔獸蛾摩拉召喚J","desc":"このスキルは３ターン目から使用可能になる。敵単体に5回、クリティカル率50％の物理属性の打撃型ダメージを威力50で与え、敵全体を基礎確率50％で魅了状態にする。このスキルによるダメージは50％を物理攻撃力、50％を魔法攻撃力に依存し、物理貫通を得る。","name_en":"Gomorrah (J)","desc_en":"Can be used from the 3rd turn. Inflicts Phys (Physical) damage with 50% crit rate on a single enemy 5 times and a 50% chance to inflict Charm on all enemies.Power: 50*Damage inflicted by this skill is 50% dependent on Phys ATK, 50% on Mag ATK and will have Phys Pierce effect.","mp":8,"point":null,"element":"物理"},
+            {"name":"ビラブド斬り","name_tw":"畢拉維德斬","desc":"敵全体に2回、物理属性の打撃型ダメージを威力60で与える。","name_en":"Beloved Slash","desc_en":"Inflicts Phys (Physical) damage on all enemies twice. Power: 60","mp":6,"point":null,"element":"物理"}
         ]
     },
     {
@@ -1072,7 +1111,7 @@ const skill_stable = [
             {"name":"メディラ","name_tw":"梅迪拉","desc":"味方全体を回復力60で回復する。","name_en":"Mediara","desc_en":"Heals All Party Members with 60 power. (9 uses)","mp":7,"point":5,"element":"無"},
             {"name":"メディラマ","name_tw":"梅迪拉瑪","desc":"味方全体を回復力95で回復する。","name_en":"Mediarama","desc_en":"Heals All Party Members with 95 power. (9 uses)","mp":8,"point":8,"element":"無"},
             {"name":"メディアラハン","name_tw":"梅迪亞拉翰","desc":"味方全体を回復力130で回復する。","name_en":"Mediarahan","desc_en":"Heals All Party Members with 130 power. (9 uses)","mp":9,"point":"11","element":"無"},
-            {"name":"メシアライザー","name_tw":"救世主喚起者","desc":"味方全体を回復力95で回復し、状態異常を全て回復する。","name_en":"Salvation","desc_en":"Heals All Party Members with 95 power. Cures all status aliments. (3 uses)","mp":"10","point":"15","element":"無"},
+            {"name":"メシアライザー","name_tw":"救世主喚起者","desc":"味方全体を回復力95で回復し、状態異常を全て回復する。","name_en":"Salvation","desc_en":"Heals All Party Members with 95 power. Cures all status aliments. (3 uses)","mp":"9","point":"15","element":"無"},
             {"name":"オルレアンの祈り","name_tw":'',"desc":"味方単体のHPを回復力130で回復すると同時にMPを3回復する。","name_en":"Orlean Prayer","desc_en":"Heals a Single Party Member with 130 power and recovers 3 MP. (6 uses)","mp":null,"point":null,"element":"無"},
             //持回
             {"name":"リディア","name_tw":"利迪亞","desc":"３回行動するまでの間、味方単体をリディア状態にし、行動する前にHPを回復する。","name_en":"Lydia","desc_en":"Casts Lydia on a Single Party Member, healing their HP at the beginning of their turn for 3 turns.","mp":4,"point":8,"element":"無"},
@@ -1386,7 +1425,7 @@ const skill_stable = [
             {"name":"貫吸の気魄","name_tw":"貫吸之氣魄","desc":"このスキルを持っている悪魔が生きている間、味方全員の属性吸収が貫通に対しても効果を発揮する。","name_en":"Drain Pierce","desc_en":"While the demon with this skill is alive, Pierce will have no effect on any party member that can drain the attribute they are attacked with.","mp":null,"point":null,"element":"パシップ"},
             //強化
             {"name":"黄泉津大神","name_tw":"黃泉津大神","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「電撃属性、呪殺属性で与えるダメージが10%増加する。」","name_en":"Yomotsu Okami","desc_en":"While the demon with this skill is alive, all party members gain +10% damage to Elec and Dark attacks.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"死が奏であう劇場","name_tw":"死亡合奏劇場","desc":"2ターンごとの自分のターン開始時、味方のプレスターンアイコンが1つ増加し、このスキルを持っている悪魔が敵に与えるダメージが10%増加する。（最大50%まで）","name_en":"Harmonious Death","desc_en":"At the beginning of every second turn, damage dealt by the demon with this skill will increase by 10% (up to 50%) and all party members receive 1 additional Press Turn Icon.","mp":null,"point":null,"element":"パシップ"},
+            {"name":"死が奏であう劇場","name_tw":"死亡合奏劇場","desc":"2ターンごとの自分のターン開始時、味方のプレスターンアイコンが1つ増加し、このスキルを持っている悪魔が敵に与えるダメージが20%増加する。（最大60%まで）","name_en":"Harmonious Death","desc_en":"At the beginning of every second turn, damage dealt by the demon with this skill will increase by 20% (up to 60%) and all party members receive 1 additional Press Turn Icon.","mp":null,"point":null,"element":"パシップ"},
             //增強
             {"name":"タルカオート","name_tw":"自動塔爾卡","desc":"１ターン目開始時、タルカジャが発動する。","name_en":"Auto-Taraka","desc_en":"Casts Tarukaja at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
             {"name":"ラクカオート","name_tw":"自動拉庫卡","desc":"１ターン目開始時、ラクカジャが発動する。","name_en":"Auto-Rakuga","desc_en":"Casts Rakukaja at the beginning of the 1st turn.","mp":null,"point":"12","element":"パシップ"},
@@ -1410,9 +1449,11 @@ const skill_stable = [
             //
             {"name":"バビロニアの疫病","name_tw":"巴比倫尼亞疫病","desc":"敵全体のバリア状態を解除した後、敵全体を基礎確率80%で虚弱状態にする。","name_en":"Plague of Babylon","desc_en":"80% chance to inflict Weak on all enemies after removing Barriers from all enemies.","mp":null,"point":null,"element":"パシップ"},
             {"name":"冥府の理","name_tw":"冥府之理","desc":"このスキルを持っている悪魔が生きている間、味方全体が弱点をつかれた時のボーナスターン発生を無効化する。","name_en":"Law of Hell","desc_en":"As long as the demon with this skill is alive, no bonus turn will be granted when a party member's weak point is attacked.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ヘルズゲート","name_tw":"地獄之門","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「味方全体の弱点1つにつき、全体攻撃スキルで自身が受けるダメージが3%減少する。（最大30%まで）」","name_en":"Hell's Gate","desc_en":"While the demon with this skill is alive, all party members will receive the following effect: For every Weak attribute, all party members will receive 3% less multiple-target attack damage. (Max reduction: 30%)","mp":null,"point":null,"element":"パシップ"},
+            {"name":"ヘルズゲート","name_tw":"地獄之門","desc":"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「味方全体の弱点1つにつき、全体攻撃スキルで自身が受けるダメージが5%減少する。（最大50%まで）」","name_en":"Hell's Gate","desc_en":"While the demon with this skill is alive, all party members will receive the following effect: For every Weak attribute, all party members will receive 3% less multiple-target attack damage. (Max reduction: 30%)","mp":null,"point":null,"element":"パシップ"},
             {"name":"黒い夜の霧","name_tw":"暗夜濃霧","desc":"敵が虚弱状態になったとき、3ターンの間、敵全体の回避と命中率を20%減少させ、敵全体を基礎確率100%で毒状態にする。","name_en":"Fog of Death","desc_en":"When an enemy is Weakened, reduces all enemy EV/AC by 20% (3 turns) and 100% chance to inflict Poison.","mp":null,"point":null,"element":"パシップ"},
-            {"name":"ヘルヘイムの叫び","name_tw":"冥界吶喊","desc":"このスキルを持っている悪魔が敵を倒したとき、3ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させる。","name_en":"Call to Helheim","desc_en":"When the demon with this skill downs an enemy, reduces all enemy ATK and DEF by 20%. (3 turns)","mp":null,"point":null,"element":"パシップ"}
+            {"name":"ヘルヘイムの叫び","name_tw":"冥界吶喊","desc":"このスキルを持っている悪魔が敵を倒したとき、3ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させる。","name_en":"Call to Helheim","desc_en":"When the demon with this skill downs an enemy, reduces all enemy ATK and DEF by 20%. (3 turns)","mp":null,"point":null,"element":"パシップ"},
+            {"name":"マダムストンプ","name_tw":"女王重踏","desc":"自身がクリティカルを発生させたとき、敵単体に万能属性の魔法型ダメージを威力100で与え、基礎確率30％で魅了状態にする。","name_en":"Madama Stomp","desc_en":"When landing a critical hit, inflicts Almighty (Magic) damage on a single enemy with a 30% chance to inflict Charm. Power: 100","mp":null,"point":null,"element":"パシップ"},
+            {"name":"マダムアッパー","name_tw":"女王上鉤拳","desc":"敵が魅了状態になったとき、敵単体に万能属性の魔法型ダメージを威力100で与え、基礎確率30％で緊縛状態にする。","name_en":"Madama Uppercut","desc_en":"When an enemy is Charmed, inflicts Almighty (Magic) damage on a single enemy with a 30% chance to inflict Bind. Power: 100","mp":null,"point":null,"element":"パシップ"}
         ]
     },
     {
@@ -2449,7 +2490,7 @@ var app = new Vue({
                 
         //modal
 
-        updated_at:'190205',
+        updated_at:'190215',
          
         //important for update computed's getter from setter
         computed_counter:{
