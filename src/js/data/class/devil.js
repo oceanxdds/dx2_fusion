@@ -69,6 +69,10 @@ class Devil {
         return (this.cost_pure/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
+    bom(){
+        return new DevilBom(this);
+    }
+
     fission_formulas(){
         
         let devil = this;

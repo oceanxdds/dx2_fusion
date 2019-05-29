@@ -1,8 +1,7 @@
 <script>
-//import i18n from './lang';
+
 import {mapState} from './store';
 import {getCookie, setCookie} from './utility';
-import DevilBom from './data/class/devil_bom';
 import VueDevil from './components/devil.vue';
 import VueSkillList from './components/skill_list.vue';
 import VueDevilList from './components/devil_list.vue';
@@ -74,7 +73,6 @@ export default {
         let myApp = this;
 
         //prepare data
-
         for(let i = 1; i<=5;i++){
             for(let j=i; j<=5; j++){
                 let text = (i+'+'+j);
@@ -84,21 +82,17 @@ export default {
         }
 
         //Lang
-        
         this.lang_value = window.location.hash 
             ? window.location.hash.substring(1)
             : getCookie('lang_value'); 
 
         //allow down grade
-
         this.down_grade = getCookie('allow_down_grade');
 
         //prevent unload
-
         this.prevent_unload = getCookie('allow_prevent_unload');
 
         //Orbs
-
         let now = new Date();
         let utc = now.getTime() + now.getTimezoneOffset() * 60000;
         this.now = new Date( utc + 9 * 3600000 );
@@ -196,10 +190,7 @@ export default {
 
             if(keyword){
                 keyword = new RegExp(keyword, 'i');
-                result = this.devils.filter(function(d){
-
-                    return d.name.match(keyword)||d.name_tw.match(keyword)||d.name_en.match(keyword);
-                });
+                result = this.devils.filter( d => d.name.match(keyword)||d.name_tw.match(keyword)||d.name_en.match(keyword) );
             }
 
             return result;
@@ -212,41 +203,27 @@ export default {
 
             if(keyword){
                 keyword = new RegExp(keyword, 'i');
-                result = this.skills.filter(function(s){
-
-                    return s.name.match(keyword)||s.name_tw.match(keyword)||s.name_en.match(keyword);
-                });
+                result = this.skills.filter( s => s.name.match(keyword)||s.name_tw.match(keyword)||s.name_en.match(keyword) );
             }
 
             return result;
         },
         filtered_builder_options:function(){
 
-            var options = [];
-            var filters = this.builder_rarity_options;
-            var down_grade = this.down_grade;
+            let options = [];
+            let filters = this.builder_rarity_options.filter( opt => opt.active && opt.state);
+            let down_grade = this.down_grade;
 
             this.builder_options.forEach(function(option){
 
-                var boms = option.boms.filter(function(bom){
+                let boms = option.boms.filter(function(bom){
                     
-                    var r = bom.devil.rarity;
-                    var r1 = bom.child1.devil.rarity;
-                    var r2 = bom.child2.devil.rarity;
-                    var temp = [r1,r2].sort();
+                    let r = bom.devil.rarity;
+                    let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
                     
-                    r1 = temp[0];
-                    r2 = temp[1];
-
-                    if( down_grade==0 && (r1>r||r2>r)){
-                        return false;
-                    }
-
-                    return filters.filter(function(filter){
-                        if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
-                            return true;
-                        }
-                    }).length > 0;
+                    return ( down_grade=='1' || (r>=r1&&r>=r2) )
+                        ? filters.filter( filter => filter.text==r1+'+'+r2 ).length > 0
+                        : false;
                 });
 
                 if(boms.length)
@@ -257,35 +234,25 @@ export default {
         },
         filtered_fusion_options:function(){
 
-            var options = [];
-            var filters = this.fusion_rarity_options;
-            var down_grade = this.down_grade;
+            let options = [];
+            let filters = this.fusion_rarity_options.filter( opt => opt.active && opt.state);
+            let down_grade = this.down_grade;
 
-            this.fusion_options.forEach(function(option){
+            this.fusion_options.forEach( option => {
 
-                var formulas = [];
+                let formulas = [];
                 
-                option.formulas.forEach(function(formula){
+                option.formulas.forEach( formula =>{
 
-                    var boms = formula.boms.filter(function(bom){
+                    let boms = formula.boms.filter(function(bom){
                     
-                        var r = bom.devil.rarity;
-                        var r1 = bom.child1.devil.rarity;
-                        var r2 = bom.child2.devil.rarity;
-                        var temp = [r1,r2].sort();
-                        
-                        r1 = temp[0];
-                        r2 = temp[1];
+                        let r = bom.devil.rarity;
+                        let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
+                        let text = r1+'+'+r2;
 
-                        if( down_grade==0 && (r1>r||r2>r)){
-                            return false;
-                        }
-
-                        return filters.filter(function(filter){
-                            if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
-                                return true;
-                            }
-                        }).length > 0;
+                        return ( down_grade=='1' || (r>=r1&&r>=r2) ) 
+                            ? filters.filter( filter => filter.text==text ).length > 0
+                            : false;
                     });
 
                     if(boms.length){
@@ -302,7 +269,7 @@ export default {
         }
     },
     methods:{
-
+        
         listen:function(res){
             switch(res.name){
                 case 'info': this.show_devil_info(res.value); break;
@@ -312,6 +279,18 @@ export default {
                 case 'reset_bom': this.reset_bom(res.value);break;
                 case 'choose_bom': this.choose_bom(res.value);break;
             }
+        },
+        tick:function(){
+
+            let day = this.now.getDay();
+            this.orbs.forEach(orb=>{
+               orb.state = orb.days.includes(day);
+            });
+        },
+        show_devil_info:function(devil){
+            
+            this.info_devil = devil;
+            this.$bvModal.show(this.modal_id);
         },
         searchFocus:function(){
             this.route('search',true);
@@ -367,15 +346,12 @@ export default {
         },
         start_bom: function(devil){
 
-            this.builder_target = new DevilBom(devil);
-
-            this.current_bom = null;
+            this.update_current_bom(this.builder_target = devil.bom());
             this.route('fusion.fission');
-            this.list_bom(this.builder_target);
         },
         list_bom: function(bom){
 
-            this.update_current_bom( this.current_bom==bom?null:bom);
+            this.update_current_bom(this.current_bom==bom?null:bom);
         },
         choose_bom: function(bom){
 
@@ -390,129 +366,54 @@ export default {
         update_current_bom:function(bom){
 
             this.current_bom = bom;
-            
             this.update_builder();
         },
         update_builder:function(){
 
-            if(this.current_bom){
-                this.builder_options = this.current_bom.devil.fission_formulas();
-            }
-            else{
-                this.builder_options = [];
-            }
+            this.builder_options = this.current_bom ? this.current_bom.devil.fission_formulas() : [];
             this.update_builder_filter();
         },
         update_builder_filter:function(){
             
-            var combs = {};
-            var down_grade = this.down_grade;
+            let combs = {};
+            let down_grade = this.down_grade;
 
-            this.builder_options.forEach(function(option){
+            this.builder_options.forEach( option => {
+                option.boms.forEach( bom => {
 
-                option.boms.forEach(function(bom){
+                    let r = bom.devil.rarity;
+                    let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
+                    let text = r1+'+'+r2;
 
-                    var r = bom.devil.rarity;
-                    var r1 = bom.child1.devil.rarity;
-                    var r2 = bom.child2.devil.rarity;
-                    var temp = [r1,r2].sort();
-                    
-                    r1 = temp[0];
-                    r2 = temp[1];
-                    
-                    if( down_grade==0 && (r1>r||r2>r)){
-                        //skip
+                    if( down_grade=='1' || (r>=r1&&r>=r2) ){
+                        combs[text] = text;
                     }
-                    else{
-                        if(!combs[r1+'+'+r2])
-                            combs[r1+'+'+r2] = r1+'+'+r2;
-                    }
-                    
                 });
             });
             
-            this.builder_rarity_options.forEach(function(option){
-
-                if(combs[option.text]){
-                    option.active=true;
-                    option.state=true;
-                }
-                else{
-                    option.active=false;
-                }
-            });
+            this.builder_rarity_options.forEach( option =>　{ option.active = option.state = (option.text in combs) });
         },
         builder_rarity_option_click:function(option){
 
-            var flag_first_down = true;
-            var flag_last_down = true;
+            let filters = this.builder_rarity_options.filter( opt => opt.active );
+            let still_stands = filters.filter( opt => opt.state );
 
-            if(option.state)
+            //one choice, no choice
+            if(filters.length==1){
                 return false;
-
-            this.builder_rarity_options.forEach(function(opt){
-
-                if(opt.active && opt!=option && !opt.state){
-                    flag_first_down = false;
-                }
-
-                if(opt.active && opt!=option && opt.state){
-                    flag_last_down = false;
-                }
-            });
-
-            if(flag_first_down){
-                this.builder_rarity_options.forEach(function(opt){
-                    opt.state = opt==option ;
-                });
             }
-
-            if(flag_last_down){
-                this.builder_rarity_options.forEach(function(opt){
-                    opt.state=true;
-                });
-            }
-        },
-        fusion_rarity_option_click:function(option){
-
-            var flag_first_down = true;
-            var flag_last_down = true;
-
-            if(option.state)
-                return false;
-
-            this.fusion_rarity_options.forEach(function(opt){
-
-                if(opt.active && opt!=option && !opt.state){
-                    flag_first_down = false;
-                }
-
-                if(opt.active && opt!=option && opt.state){
-                    flag_last_down = false;
-                }
-            });
-
-            if(flag_first_down){
-                this.fusion_rarity_options.forEach(function(opt){
-                    opt.state = opt==option ;
-                });
-            }
-
-            if(flag_last_down){
-                this.fusion_rarity_options.forEach(function(opt){
-                    opt.state=true;
-                });
-            }
-        },
-        update_fusion:function(){
-
-            if(this.fusion_target){
-                this.fusion_options = this.fusion_target.fusion_formulas();
+            //all stand (first down), then all down but u
+            else if(still_stands.length==filters.length){
+                filters.forEach(opt=>{ opt.state = (opt==option) });
+            } 
+            //only u stand and is current (last down), then all stand
+            else if(still_stands.length == 1 && still_stands[0] == option){
+                filters.forEach(opt=>{opt.state=true});
             }
             else{
-                this.fusion_options = [];
+            //otherwise, inverse state
+                option.state = !option.state;
             }
-            this.update_fusion_filter();
         },
         fusion: function(devil){
 
@@ -520,72 +421,74 @@ export default {
             this.update_fusion();
             this.route('fusion.fusion');
         },
+        update_fusion:function(){
+
+            this.fusion_options = this.fusion_target ? this.fusion_target.fusion_formulas() : [];
+            this.update_fusion_filter();
+        },
         update_fusion_filter: function(){
 
-            var combs = {};
-            var down_grade = this.down_grade;
+            let combs = {};
+            let down_grade = this.down_grade;
             
-            this.fusion_options.forEach(function(option){
-                option.formulas.forEach(function(formula){
-                    formula.boms.forEach(function(bom){
+            this.fusion_options.forEach( option => {
+                option.formulas.forEach( formula => {
+                    formula.boms.forEach( bom => {
 
-                        var r = bom.devil.rarity;
-                        var r1 = bom.child1.devil.rarity;
-                        var r2 = bom.child2.devil.rarity;
-                        var temp = [r1,r2].sort();
-                        
-                        r1 = temp[0];
-                        r2 = temp[1];
-                        
-                        if( down_grade==0 && (r1>r||r2>r)){
-                            //skip
-                        }
-                        else{
-                            if(!combs[r1+'+'+r2])
-                                combs[r1+'+'+r2] = r1+'+'+r2;
+                        let r = bom.devil.rarity;
+                        let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
+                        let text = r1+'+'+r2;
+
+                        if( down_grade=='1' || (r>=r1&&r>=r2) ){
+                            combs[text] = text;
                         }
                     });
                 });
             });
             
-            this.fusion_rarity_options.forEach(function(option){
-
-                if(combs[option.text]){
-                    option.active=true;
-                    option.state=true;
-                }
-                else{
-                    option.active=false;
-                }
-            });
+            this.fusion_rarity_options.forEach( option => { option.active = option.state = ( option.text in combs) });
         },
-        tick:function(){
+        fusion_rarity_option_click:function(option){
 
-            let day = this.now.getDay();
-            this.orbs.forEach(orb=>{
-               orb.state = orb.days.includes(day);
-            });
+            let filters = this.fusion_rarity_options.filter( opt => opt.active );
+            let still_stands = filters.filter( opt => opt.state );
+
+            //one choice, no choice
+            if(filters.length==1){
+                return false;
+            }
+            //all stand (first down), then all down but u
+            else if(still_stands.length==filters.length){
+                filters.forEach(opt=>{ opt.state = (opt==option) });
+            } 
+            //only u stand and is current (last down), then all stand
+            else if(still_stands.length == 1 && still_stands[0] == option){
+                filters.forEach(opt=>{opt.state=true});
+            }
+            else{
+            //otherwise, inverse state
+                option.state = !option.state;
+            }
         },
-        show_devil_info:function(devil){
+        builder_auto_costdown:function(rarity, type){
             
-            this.info_devil = devil;
-            this.$bvModal.show(this.modal_id);
+            this.auto_costdown(this.builder_target, rarity, type);
+            this.update_current_bom(null);
         },
         auto_costdown: function(bom, rarity, type){
 
             if(bom && bom.devil.rarity>rarity){
 
-                var boms = [];
+                let boms = [];
 
-                bom.devil.fission_formulas().forEach(function(option){
+                bom.devil.fission_formulas().forEach( option => {
                     boms = boms.concat(option.boms);
                 });
 
-                boms.sort(function(bom1, bom2){
-                    var cost1 = type ? bom1.getCost(rarity) : bom1.getCostPure(rarity);
-                    var cost2 = type ? bom2.getCost(rarity) : bom2.getCostPure(rarity);
-                    if(cost1==cost2) return 0;
-                    return cost1 > cost2 ? 1 : -1;
+                boms.sort( (bom1, bom2) => {
+                    let cost1 = type ? bom1.getCost(rarity) : bom1.getCostPure(rarity);
+                    let cost2 = type ? bom2.getCost(rarity) : bom2.getCostPure(rarity);
+                    return cost1 - cost2;
                 });
 
                 if(boms.length>0){
@@ -607,12 +510,7 @@ export default {
                     this.auto_costdown(bom.child2, rarity, type);
                 }
             }
-        },
-        builder_auto_costdown:function(rarity, type){
-            
-            this.auto_costdown(this.builder_target, rarity, type);
-            this.update_current_bom(null);
-        },
+        }
     }
 };
 
@@ -696,7 +594,7 @@ export default {
                                     <b-list-group-item class="p-0" v-if="builder_options.length">
                                         <div class="row no-gutters justify-content-center">
                                             <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
-                                                <b-button :pressed.sync="option.state"
+                                                <b-button :pressed="option.state"
                                                     @click="builder_rarity_option_click(option)"
                                                     variant="outline-secondary">
                                                     {{ option.text }}
@@ -724,7 +622,7 @@ export default {
                                             <div class="col-auto p-1"
                                             v-for="option in fusion_rarity_options"
                                             v-if="option.active">
-                                                <b-button :pressed.sync="option.state" 
+                                                <b-button :pressed="option.state" 
                                                     @click="fusion_rarity_option_click(option)"
                                                     variant="outline-secondary">
                                                     {{ option.text }}
