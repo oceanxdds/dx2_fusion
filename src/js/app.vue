@@ -96,15 +96,6 @@ export default {
         //prevent unload
 
         this.prevent_unload = getCookie('allow_prevent_unload');
-        
-        let window_before_unload = ()=>{
-
-            if(myApp.prevent_unload=='1'){
-                return true;
-            }
-        };
-        
-        window.addEventListener('beforeunload', window_before_unload);
 
         //Orbs
 

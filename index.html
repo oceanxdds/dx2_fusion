@@ -9,13 +9,21 @@
     <title>Dx2 二身合体</title>
     <link type="text/css" rel="stylesheet" href="dist/bundle.css"/>
 </head>
-<body>
+<body onbeforeunload="return window_before_unload()">
 
     <!--Main-->
     <div id="app" v-cloak></div>
     <script src="dist/manifest.js"></script>
     <script src="dist/vendor.js"></script>
     <script src="dist/bundle.js"></script>
+    <script>
+        function window_before_unload(){
+
+            if(app.__vue__.prevent_unload=='1'){
+                return true;
+            }
+        }
+    </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71606599-2"></script>
     <script>
