@@ -1,0 +1,897 @@
+<script>
+//import i18n from './lang';
+import {mapState} from './store';
+import {getCookie, setCookie} from './utility';
+import DevilBom from './data/class/devil_bom';
+import VueDevil from './components/devil.vue';
+import VueSkillList from './components/skill_list.vue';
+import VueDevilList from './components/devil_list.vue';
+import VueDevilBomBuilder from './components/devil_bom_builder.vue';
+import VueDevilBomOptions from './components/devil_bom_options.vue';
+import VueDevilInfo from './components/devil_info.vue';
+
+export default {
+
+    components:{
+        'devil': VueDevil,
+        'skill-list': VueSkillList,
+        'devil-list': VueDevilList,
+        'devil-bom-builder': VueDevilBomBuilder,
+        'devil-bom-options': VueDevilBomOptions,
+        'devil-info': VueDevilInfo
+    },
+    data:function(){
+        return {
+
+        updated_at:'190529',
+        //modal
+        modal_id:'modal_devil_info',
+        //builder
+        builder_rarity_options:[],
+        //fusion
+        fusion_rarity_options:[],        
+        //setting
+        //lang_value:'ja',
+        cache_lang_value:'ja',
+        lang_options:[
+            {text:'日本語', value:'ja'},
+            {text:'繁體中文', value:'tw'},
+            {text:'English', value:'en'}
+        ],
+        cache_down_grade:'0',
+        down_grade_options:[
+            {text: 'message.allow', value:'1'},
+            {text: 'message.deny', value:'0'}
+        ],
+        cache_prevent_unload:'0',
+        prevent_unload_options:[
+            {text: 'message.allow', value:'1'},
+            {text: 'message.deny', value:'0'}
+        ],
+        //router
+        race_id:0,
+        skillType_id:0,
+        index_main:0,
+        index_main_last:0,
+        index_fusion:0,
+        index_fusion_last:0,
+        input_keyword:'',
+        keyword:'',
+        keyword_timer:null,
+        searchBar:false,
+        //orb
+        now:null,
+        orbs:[
+            {'name':'ライト', icon:'images/theme/light.png', state:false, days:[0,1,3,5,6]},
+            {'name':'ダーク', icon:'images/theme/dark.png', state:false, days:[0,1,3,5,6]},
+            {'name':'ニュートラル', icon:'images/theme/natural.png', state:false, days:[0,1,2,3,4,5,6] },
+            {'name':'ロー', icon:'images/theme/law.png', state:false, days:[0,2,4,6]},
+            {'name':'カオス', icon:'images/theme/chaos.png', state:false, days:[0,2,4,6]}
+        ],
+    }},
+    created:function(){
+
+        let myApp = this;
+
+        //prepare data
+
+        for(let i = 1; i<=5;i++){
+            for(let j=i; j<=5; j++){
+                let text = (i+'+'+j);
+                this.builder_rarity_options.push({text:text, state:true, active:false});
+                this.fusion_rarity_options.push({text:text, state:true, active:false});
+            }
+        }
+
+        //Lang
+        
+        this.lang_value = window.location.hash 
+            ? window.location.hash.substring(1)
+            : getCookie('lang_value'); 
+
+        //allow down grade
+
+        this.down_grade = getCookie('allow_down_grade');
+
+        //prevent unload
+
+        this.prevent_unload = getCookie('allow_prevent_unload');
+        
+        let window_before_unload = ()=>{
+
+            if(myApp.prevent_unload=='1'){
+                return true;
+            }
+        };
+        
+        window.addEventListener('beforeunload', window_before_unload);
+
+        //Orbs
+
+        let now = new Date();
+        let utc = now.getTime() + now.getTimezoneOffset() * 60000;
+        this.now = new Date( utc + 9 * 3600000 );
+
+        myApp.tick();
+        setInterval(()=>{ myApp.tick(); },60000);
+    },
+    watch:{
+
+        input_keyword:function(){
+            
+            let myApp = this;
+
+            clearTimeout(this.keyword_timer);
+
+            this.keyword_timer = setTimeout(function(){
+                myApp.keyword = myApp.input_keyword;
+            },1000);
+        }
+    },
+    computed:{
+        ...mapState([
+            'resource','devils','races','skillTypes','skills',
+            'builder_target','info_devil','builder_options','current_bom',
+            'fusion_target','fusion_options'
+            ]),
+        lang_value:{
+            get:function(){
+                
+                return this.cache_lang_value;
+            },
+            set:function(value){
+         
+                if(this.lang_options.map(x=>x.value).includes(value)){
+                    
+                    this.cache_lang_value = value;
+                    setCookie('lang_value', value);
+                    
+                    this.$i18n.locale = value;
+                }
+            }
+        },
+        down_grade:{
+
+            get:function(){
+
+                return this.cache_down_grade;
+            },
+            set:function(value){
+
+                if(this.down_grade_options.map(x=>x.value).includes(value)){
+                    
+                    this.cache_down_grade = value;
+                    setCookie('allow_down_grade', value);
+
+                    this.update_builder_filter();
+                    this.update_fusion_filter();
+                }
+            }
+        },
+        prevent_unload:{
+          
+            get:function(){
+
+                return this.cache_prevent_unload;
+            },
+            set:function(value){
+
+                if(this.prevent_unload_options.map(x=>x.value).includes(value)){
+                    
+                    this.cache_prevent_unload = value
+                    setCookie('allow_prevent_unload', value);
+                }
+            }
+        },
+        devils_by_race:function(){
+
+            if(this.race_id >= this.races.length)
+                this.race_id = this.races.length-1;
+
+            return this.races[this.race_id].devils;
+        },
+        skills_by_type:function(){
+
+            if(this.skillType_id >= this.skillTypes.length)
+                this.skillType_id = this.skillType.length-1;
+
+            return this.skillTypes[this.skillType_id].skills;
+        },
+        filtered_devils: function(){
+
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = [];
+
+            if(keyword){
+                keyword = new RegExp(keyword, 'i');
+                result = this.devils.filter(function(d){
+
+                    return d.name.match(keyword)||d.name_tw.match(keyword)||d.name_en.match(keyword);
+                });
+            }
+
+            return result;
+        },
+        filtered_skills: function(){
+
+            var keyword = this.keyword.replace(/[!@#$%^&*()-=_+\[\]{}|\\]/g,'');
+
+            var result = [];
+
+            if(keyword){
+                keyword = new RegExp(keyword, 'i');
+                result = this.skills.filter(function(s){
+
+                    return s.name.match(keyword)||s.name_tw.match(keyword)||s.name_en.match(keyword);
+                });
+            }
+
+            return result;
+        },
+        filtered_builder_options:function(){
+
+            var options = [];
+            var filters = this.builder_rarity_options;
+            var down_grade = this.down_grade;
+
+            this.builder_options.forEach(function(option){
+
+                var boms = option.boms.filter(function(bom){
+                    
+                    var r = bom.devil.rarity;
+                    var r1 = bom.child1.devil.rarity;
+                    var r2 = bom.child2.devil.rarity;
+                    var temp = [r1,r2].sort();
+                    
+                    r1 = temp[0];
+                    r2 = temp[1];
+
+                    if( down_grade==0 && (r1>r||r2>r)){
+                        return false;
+                    }
+
+                    return filters.filter(function(filter){
+                        if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                            return true;
+                        }
+                    }).length > 0;
+                });
+
+                if(boms.length)
+                    options.push({name:option.name,boms:boms});
+            });
+
+            return options;
+        },
+        filtered_fusion_options:function(){
+
+            var options = [];
+            var filters = this.fusion_rarity_options;
+            var down_grade = this.down_grade;
+
+            this.fusion_options.forEach(function(option){
+
+                var formulas = [];
+                
+                option.formulas.forEach(function(formula){
+
+                    var boms = formula.boms.filter(function(bom){
+                    
+                        var r = bom.devil.rarity;
+                        var r1 = bom.child1.devil.rarity;
+                        var r2 = bom.child2.devil.rarity;
+                        var temp = [r1,r2].sort();
+                        
+                        r1 = temp[0];
+                        r2 = temp[1];
+
+                        if( down_grade==0 && (r1>r||r2>r)){
+                            return false;
+                        }
+
+                        return filters.filter(function(filter){
+                            if(filter.active&&filter.state&&filter.text==r1+'+'+r2){
+                                return true;
+                            }
+                        }).length > 0;
+                    });
+
+                    if(boms.length){
+                        formulas.push({name:formula.name,boms:boms});
+                    }
+                });
+
+                if(formulas.length){
+                    options.push({devil:option.devil,formulas:formulas,active:false});
+                }
+            });
+            
+            return options;
+        }
+    },
+    methods:{
+
+        listen:function(res){
+            switch(res.name){
+                case 'info': this.show_devil_info(res.value); break;
+                case 'start_bom': this.start_bom(res.value); break;
+                case 'fusion': this.fusion(res.value); break;
+                case 'list_bom': this.list_bom(res.value);break;
+                case 'reset_bom': this.reset_bom(res.value);break;
+                case 'choose_bom': this.choose_bom(res.value);break;
+            }
+        },
+        searchFocus:function(){
+            this.route('search',true);
+        },
+        searchBlur:function(){
+            if(!this.keyword)
+                this.route('last');
+        },
+        route:function(name, skip_update_last){
+            
+            var index_main = this.index_main;
+            var index_fusion = this.index_fusion;
+
+            switch(name){
+                case 'fusion.devil':    index_main = 0; index_fusion = 0;   break;
+                case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
+                case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
+                case 'skill':           index_main = 1;                     break;
+                case 'customize':       index_main = 2;                     break;
+                case 'search':          index_main = 3;                     break;
+                case 'setting':         index_main = 4;                     break;
+                case 'last':            index_main = this.index_main_last;
+                                        index_fusion = this.index_fusion_last;  break;
+                default:                index_main = 0; index_fusion = 0;   break;
+            }
+
+            if(!skip_update_last){
+                this.index_main_last = index_main;
+                this.index_fusion_last = index_fusion;
+            }
+
+            this.index_main = index_main;
+            this.index_fusion = index_fusion;
+        },
+        isRoute:function(name){
+            
+            var index_main = this.index_main;
+            var index_fusion = this.index_fusion;
+
+            switch(name){
+                case 'home':            index_main = 0; index_fusion = 0;   break;
+                case 'fusion.devil':    index_main = 0; index_fusion = 0;   break;
+                case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
+                case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
+                case 'skill':           index_main = 1;                     break;
+                case 'customize':       index_main = 2;                     break;
+                case 'search':          index_main = 3;                     break;
+                case 'setting':         index_main = 4;                     break;
+                default:                index_main = 0; index_fusion = 0;   break;
+            }
+
+            return index_main == this.index_main && index_fusion == this.index_fusion;
+        },
+        start_bom: function(devil){
+
+            this.builder_target = new DevilBom(devil);
+
+            this.current_bom = null;
+            this.route('fusion.fission');
+            this.list_bom(this.builder_target);
+        },
+        list_bom: function(bom){
+
+            this.update_current_bom( this.current_bom==bom?null:bom);
+        },
+        choose_bom: function(bom){
+
+            this.current_bom.set(bom);
+            this.update_current_bom(null);
+        },
+        reset_bom:function(bom){
+
+            bom.unset();
+            this.update_current_bom(null);
+        },
+        update_current_bom:function(bom){
+
+            this.current_bom = bom;
+            
+            this.update_builder();
+        },
+        update_builder:function(){
+
+            if(this.current_bom){
+                this.builder_options = this.current_bom.devil.fission_formulas();
+            }
+            else{
+                this.builder_options = [];
+            }
+            this.update_builder_filter();
+        },
+        update_builder_filter:function(){
+            
+            var combs = {};
+            var down_grade = this.down_grade;
+
+            this.builder_options.forEach(function(option){
+
+                option.boms.forEach(function(bom){
+
+                    var r = bom.devil.rarity;
+                    var r1 = bom.child1.devil.rarity;
+                    var r2 = bom.child2.devil.rarity;
+                    var temp = [r1,r2].sort();
+                    
+                    r1 = temp[0];
+                    r2 = temp[1];
+                    
+                    if( down_grade==0 && (r1>r||r2>r)){
+                        //skip
+                    }
+                    else{
+                        if(!combs[r1+'+'+r2])
+                            combs[r1+'+'+r2] = r1+'+'+r2;
+                    }
+                    
+                });
+            });
+            
+            this.builder_rarity_options.forEach(function(option){
+
+                if(combs[option.text]){
+                    option.active=true;
+                    option.state=true;
+                }
+                else{
+                    option.active=false;
+                }
+            });
+        },
+        builder_rarity_option_click:function(option){
+
+            var flag_first_down = true;
+            var flag_last_down = true;
+
+            if(option.state)
+                return false;
+
+            this.builder_rarity_options.forEach(function(opt){
+
+                if(opt.active && opt!=option && !opt.state){
+                    flag_first_down = false;
+                }
+
+                if(opt.active && opt!=option && opt.state){
+                    flag_last_down = false;
+                }
+            });
+
+            if(flag_first_down){
+                this.builder_rarity_options.forEach(function(opt){
+                    opt.state = opt==option ;
+                });
+            }
+
+            if(flag_last_down){
+                this.builder_rarity_options.forEach(function(opt){
+                    opt.state=true;
+                });
+            }
+        },
+        fusion_rarity_option_click:function(option){
+
+            var flag_first_down = true;
+            var flag_last_down = true;
+
+            if(option.state)
+                return false;
+
+            this.fusion_rarity_options.forEach(function(opt){
+
+                if(opt.active && opt!=option && !opt.state){
+                    flag_first_down = false;
+                }
+
+                if(opt.active && opt!=option && opt.state){
+                    flag_last_down = false;
+                }
+            });
+
+            if(flag_first_down){
+                this.fusion_rarity_options.forEach(function(opt){
+                    opt.state = opt==option ;
+                });
+            }
+
+            if(flag_last_down){
+                this.fusion_rarity_options.forEach(function(opt){
+                    opt.state=true;
+                });
+            }
+        },
+        update_fusion:function(){
+
+            if(this.fusion_target){
+                this.fusion_options = this.fusion_target.fusion_formulas();
+            }
+            else{
+                this.fusion_options = [];
+            }
+            this.update_fusion_filter();
+        },
+        fusion: function(devil){
+
+            this.fusion_target = devil;
+            this.update_fusion();
+            this.route('fusion.fusion');
+        },
+        update_fusion_filter: function(){
+
+            var combs = {};
+            var down_grade = this.down_grade;
+            
+            this.fusion_options.forEach(function(option){
+                option.formulas.forEach(function(formula){
+                    formula.boms.forEach(function(bom){
+
+                        var r = bom.devil.rarity;
+                        var r1 = bom.child1.devil.rarity;
+                        var r2 = bom.child2.devil.rarity;
+                        var temp = [r1,r2].sort();
+                        
+                        r1 = temp[0];
+                        r2 = temp[1];
+                        
+                        if( down_grade==0 && (r1>r||r2>r)){
+                            //skip
+                        }
+                        else{
+                            if(!combs[r1+'+'+r2])
+                                combs[r1+'+'+r2] = r1+'+'+r2;
+                        }
+                    });
+                });
+            });
+            
+            this.fusion_rarity_options.forEach(function(option){
+
+                if(combs[option.text]){
+                    option.active=true;
+                    option.state=true;
+                }
+                else{
+                    option.active=false;
+                }
+            });
+        },
+        tick:function(){
+
+            let day = this.now.getDay();
+            this.orbs.forEach(orb=>{
+               orb.state = orb.days.includes(day);
+            });
+        },
+        show_devil_info:function(devil){
+            
+            this.info_devil = devil;
+            this.$bvModal.show(this.modal_id);
+        },
+        auto_costdown: function(bom, rarity, type){
+
+            if(bom && bom.devil.rarity>rarity){
+
+                var boms = [];
+
+                bom.devil.fission_formulas().forEach(function(option){
+                    boms = boms.concat(option.boms);
+                });
+
+                boms.sort(function(bom1, bom2){
+                    var cost1 = type ? bom1.getCost(rarity) : bom1.getCostPure(rarity);
+                    var cost2 = type ? bom2.getCost(rarity) : bom2.getCostPure(rarity);
+                    if(cost1==cost2) return 0;
+                    return cost1 > cost2 ? 1 : -1;
+                });
+
+                if(boms.length>0){
+                    bom.set(boms[0]);
+                }
+
+                if(type==1){
+                    //雜體
+                    //var type1 = bom.pure_child == 1 ? 0 : 1;
+                    //var type2 = bom.pure_child == 2 ? 0 : 1;
+                    type1=0; //TODO
+                    type2=0; //TODO
+                    this.auto_costdown(bom.child1, rarity, type1);
+                    this.auto_costdown(bom.child2, rarity, type2);
+                }
+                else{
+                    //純素體
+                    this.auto_costdown(bom.child1, rarity, type);
+                    this.auto_costdown(bom.child2, rarity, type);
+                }
+            }
+        },
+        builder_auto_costdown:function(rarity, type){
+            
+            this.auto_costdown(this.builder_target, rarity, type);
+            this.update_current_bom(null);
+        },
+    }
+};
+
+</script>
+
+<template>
+    
+    <div class="container-fluid px-0" style="max-width:1920px" id="app">
+        <b-navbar toggleable="md" type="dark" variant="info">
+
+            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+            <b-navbar-brand href="#" @click="route('home')" class="d-none d-md-block">Dx2</b-navbar-brand>
+            <b-navbar-brand href="#" @click="searchBar=!searchBar" class="d-block d-md-none">{{ $t('message.search') }}</b-navbar-brand>
+
+            <b-collapse is-nav id="nav_collapse">
+                <b-navbar-nav>
+                    <b-nav-item href="#" @click="route('fusion.devil')" :active="isRoute('fusion.devil')">{{ $t('message.devil') }}</b-nav-item>
+                    <b-nav-item href="#" @click="route('fusion.fission')" :active="isRoute('fusion.fission')">{{ $t('message.reverse_fusion') }}</b-nav-item>
+                    <b-nav-item href="#" @click="route('fusion.fusion')" :active="isRoute('fusion.fusion')">{{ $t('message.normal_fusion') }}</b-nav-item>
+                    <b-nav-item href="#" @click="route('skill')" :active="isRoute('skill')">{{ $t('message.skill') }}</b-nav-item>
+                </b-navbar-nav>
+                <b-navbar-nav class="ml-auto">
+                    <b-nav-form action="#" class="d-none d-md-block">
+                        <b-form-input v-model="input_keyword" type="text" :placeholder="$t('message.search')" @focus="searchFocus()" @blur="searchBlur()"></b-form-input>
+                    </b-nav-form>
+                    <b-nav-item href="#" @click="route('setting')" :active="isRoute('setting')">{{ $t('message.setting') }}</b-nav-item>
+                </b-navbar-nav>
+            </b-collapse>
+        </b-navbar>
+
+        <b-tabs v-model="index_main" nav-wrapper-class="d-none">
+            <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
+                <b-form-input v-model="input_keyword" type="text" :placeholder="$t('message.search')" @focus="searchFocus()" @blur="searchBlur()"></b-form-input>
+            </div>
+
+            <!-- index_main : 0 -->
+
+            <b-tab no-body>
+
+                <b-card no-body class="border-0">
+                    <b-tabs card v-model="index_fusion" nav-wrapper-class="d-block d-md-none" content-class="p-2">
+
+                        <!-- index_fusion : 0 // devil-->
+
+                        <b-tab :title="$t('message.devil')" no-body>
+                            <b-card no-body>
+                                <b-tabs pills card v-model="race_id" content-class="d-none">
+                                    <b-tab :title="race.showName()" v-for="race in races" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab>
+                                </b-tabs>
+                                <devil-list :devils="devils_by_race" usage="fission" @listen="listen"></devil-list>
+                            </b-card>
+                        </b-tab>
+
+                        <!-- index_fusion : 1 // fission/builder-->
+
+                        <b-tab :title="$t('message.reverse')" no-body>
+                            <b-card no-body v-if="builder_target">
+                                <b-list-group flush>
+                                    <b-list-group-item class="p-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-auto">
+                                                <h5><b-badge variant="secondary"> Total MAG </b-badge> {{ builder_target.showTotalMagPure() }} ~ {{ builder_target.showTotalMag() }} </h5>
+                                            </div>
+                                            <div class="col-12 col-md-auto">
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(4,0)" v-if="builder_target&&builder_target.devil&&builder_target.devil.rarity>4">素★4</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(3,0)" v-if="builder_target&&builder_target.devil&&builder_target.devil.rarity>3">素★3</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(2,0)" v-if="builder_target&&builder_target.devil&&builder_target.devil.rarity>2">素★2</b-button>
+                                                <b-button class="m-1" size="sm" variant="success" @click="builder_auto_costdown(1,0)" v-if="builder_target&&builder_target.devil&&builder_target.devil.rarity>1">素★1</b-button>
+                                                <!--
+                                                <b-button class="m-1" size="sm" variant="warning" @click="builder_auto_costdown(4,1)">雜★4</b-button>
+                                                <b-button class="m-1" size="sm" variant="warning" @click="builder_auto_costdown(3,1)">雜★3</b-button>
+                                                -->
+                                            </div>
+                                        </div>
+                                    </b-list-group-item>
+
+                                    <b-list-group-item class="p-2">
+                                        <devil-bom-builder :bom="builder_target" :parent_bom="null" usage="builder" @listen="listen"></devil-bom-builder>
+                                    </b-list-group-item>
+
+                                    <b-list-group-item class="p-0" v-if="builder_options.length">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
+                                                <b-button :pressed.sync="option.state"
+                                                    @click="builder_rarity_option_click(option)"
+                                                    variant="outline-secondary">
+                                                    {{ option.text }}
+                                                </b-button>
+                                            </div>
+                                        </div>
+                                    </b-list-group-item>
+
+                                    <b-list-group-item class="p-0" v-if="filtered_builder_options.length>0">
+                                        <devil-bom-options :options="filtered_builder_options" usage="builder" @listen="listen"></devil-bom-options>
+                                    </b-list-group-item>
+
+                                </b-list-group>
+                            </b-card>
+                        </b-tab>
+
+                        <!-- index_fusion : 2 // fusion-->
+
+                        <b-tab :title="$t('message.normal')" no-body>
+
+                            <b-card no-body v-if="fusion_target">
+                                <b-list-group flush>
+                                    <b-list-group-item class="p-2" v-if="fusion_options.length">
+                                        <div class="row no-gutters justify-content-center">
+                                            <div class="col-auto p-1"
+                                            v-for="option in fusion_rarity_options"
+                                            v-if="option.active">
+                                                <b-button :pressed.sync="option.state" 
+                                                    @click="fusion_rarity_option_click(option)"
+                                                    variant="outline-secondary">
+                                                    {{ option.text }}
+                                                </b-button>
+                                            </div>
+                                        </div>
+                                    </b-list-group-item>    
+                                    <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
+
+                                        <div class="row no-gutters">
+                                            <div v-for="(option, index) in filtered_fusion_options"
+                                                class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                                                <div class="row no-gutters">
+                                                    <div class="col-12 p-2">
+                                                        <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
+                                                            v-b-toggle="'fusion_'+index" @listen="listen">
+                                                        </devil>
+                                                    </div>
+                                                </div>
+                
+                                                <b-collapse :id="'fusion_'+index" accordion="fusion_accrodion" class="p-2">
+                                                    <b-card no-body style="background-color:#eee">
+                                                        <devil-bom-options :options="option.formulas" usage="fusion" @listen="listen"></devil-bom-options>
+                                                    </b-card>
+                                                </b-collapse>
+
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </b-list-group-item>
+                                </b-list-group>
+                            
+                            </b-card>
+
+                        </b-tab>
+                        
+
+                    </b-tabs>
+                </b-card>
+            </b-tab>
+
+            <!-- index_main : 1 // skill-->
+
+            <b-tab no-body class="p-2">
+
+                <b-card no-body>
+                    <b-tabs pills card v-model="skillType_id" content-class="d-none">
+                        <b-tab :title="type.showName()" v-for="type in skillTypes"></b-tab>
+                    </b-tabs>
+
+                    <skill-list :skills="skills_by_type" @listen="listen"></skill-list>
+                </b-card>
+
+            </b-tab>
+
+            <!-- index_main : 2 // customize-->
+
+            <b-tab no-body class="p-2"></b-tab>
+
+            <!-- index_main : 3 // search-->
+
+            <b-tab no-body class="p-2">
+                
+                <b-card no-body class="mt-2" v-if="filtered_devils.length>0">
+                    <devil-list :devils="filtered_devils" usage="fission" @listen="listen"></devil-list>
+                </b-card>
+
+                <b-card no-body class="mt-2" v-if="filtered_skills.length>0">
+                    <skill-list :skills="filtered_skills" @listen="listen"></skill-list>
+                </b-card>
+
+            </b-tab>
+
+            <!-- index_main : 4 // setting-->
+
+            <b-tab no-body class="p-2">
+            
+                <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right center; background-size:auto 300px">
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
+                        <div>
+                            <b-form-radio-group
+                                buttons
+                                button-variant="outline-info"
+                                v-model="lang_value"
+                                :options="lang_options">
+                            </b-form-radio-group>
+                        </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.downgrade_fusion') }}</div>
+                        <div>
+                            <b-form-radio-group
+                                buttons
+                                button-variant="outline-info"
+                                v-model="down_grade">
+                                <b-form-radio :value="option.value" v-for="option in down_grade_options">
+                                    {{ $t(option.text) }}
+                                </b-form-radio>
+                            </b-form-radio-group>
+                        </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="font-weight-bold py-2">{{ $t('message.prevent_unload') }}</div>
+                        <div>
+                            <b-form-radio-group
+                                buttons
+                                button-variant="outline-info"
+                                v-model="prevent_unload">
+                                <b-form-radio :value="option.value" v-for="option in prevent_unload_options">
+                                    {{ $t(option.text) }}
+                                </b-form-radio>
+                            </b-form-radio-group>
+                        </div>
+                    </div>
+                    <div class="col-12 py-2">
+                        <div class="p-1 border rounded text-center" style="background-color:rgba(200, 200, 200, 0.5);">
+                            <div class="small">
+                            君は私が作った悪魔召喚プログラムを使ってるね<br>
+                            もし君が秩序にも混沌にも偏らず<br>
+                            中庸の道を往くのなら<br>
+                            私が僅かばかりだが協力してあげよう<br><br>
+                            人間が持つ価値を　可能性を　私に証明してくれ<br><br>
+                            スティーヴン・ホーキング (1942-2018)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+            </b-tab>
+        
+        </b-tabs>
+
+        <!-- footer -->
+
+        <div class="row no-gutters justify-content-start align-items-center">
+            
+            <div class="col-auto p-2">
+                <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
+            </div>
+
+            <div class="col p-2 text-right">
+                <span class="small">Version: {{ updated_at }}</span>
+            </div>  
+
+            <div class="col-auto p-2">
+                <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
+                    <img src="images/theme/GitHub-Mark-32px.png" alt="GitHub">
+                </a>
+            </div>  
+        </div>
+
+        <!-- Modal -->
+        <devil-info :id="modal_id"></devil-info>
+
+    </div>
+
+    
+</template>
