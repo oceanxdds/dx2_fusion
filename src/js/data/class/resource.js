@@ -3,152 +3,98 @@ import Devil from './devil';
 import Skill from './skill';
 import SkillType from './skill_type';
 
-/////////////////////////////
-// Digital Devil Data Class
-/////////////////////////////
-
 class Resource{
     
-    constructor(ddd, sss){
+    constructor(devil_raw_data, skill_raw_data){
         
         this.races = [];
         this.devils = [];
         this.skillTypes = [];
         this.skills = [];
+
         let race_data = {};
         let devil_data = {};
         let devil_array = [];
         let type_data = {};
         let skill_data = {};
-        let skill_array = [];
 
-        sss = sss.map(function(type){
-
-            type = new SkillType(type);
-            type_data[type.name] = type;
-
-            type.skills = type.skills.map(function(skill){
-                skill = new Skill(skill);
-                skill.type = type;
-                skill_data[skill.name] = skill;
-                skill_array.push(skill);
-                return skill;
-            });
-            return type;
+        //Race & Devil (Objectization)
+        devil_raw_data = devil_raw_data.map( race => {
+            race.devils = race.devils.map( devil => new Devil(devil) );
+            return race_data[race.name] = new Race(race);
         });
 
-        //create race_data
-        //convert race to Race Class
-        //convert devil to Devil Class
-        ddd = ddd.map(function(race){
-            
-            race.devils = race.devils.map(function(devil){
-                return new Devil(devil);
-            });
-            let race_obj = new Race(race);
-            race_data[race.name] = race_obj;
-            return race_obj;
-        });
-
-        //replace formula's race from text to object
-        ddd.forEach(function(race){
-
-            race.formulas.forEach(function(formula){
+        devil_raw_data.forEach( race => {
+            race.formulas.forEach( formula => {
                 formula[0] = race_data[formula[0]];
                 formula[1] = race_data[formula[1]];
             });
         });
 
-        //create devil_data
-        //convert devil's skill from text to object
-        ddd.forEach(function(r1){
+        //Skill (Objectization)
+        skill_raw_data = skill_raw_data.map( type => {
+            type = new SkillType(type);
+            type.skills = type.skills.map( skill => {
+                skill = new Skill(skill);
+                skill.type = type;
+                return skill_data[skill.name] = skill;
+            });
+            return type_data[type.name] = type;
+        });
 
-            r1.devils.forEach(function(devil, index){
+        devil_raw_data.forEach( r1 => {
+
+            //devil's skill (Objectization)
+
+            r1.devils.forEach( (devil, index) => {
 
                 devil.race = r1;
                 devil.max = devil.grade;
                 devil.min = (index==r1.devils.length-1 ? 0 : r1.devils[index+1].grade);
+                
+                [devil.skills,devil.skill4,devil.skill5] =
+                [devil.skills,devil.skill4,devil.skill5].map( skill_list => {
+                    return skill_list.map( name => {
+                        return skill_data[name] 
+                            ? skill_data[name].addDevil(devil) 
+                            : new Skill({name:name});
+                    });
+                });
 
-                if(devil.skills){
-                    devil.skills = devil.skills.map(function(name){
-                        let skill = skill_data[name];
-                        if(skill){
-                            skill.addDevil(devil);
-                        }
-                        return skill ? skill : new Skill({name:name});
-                    });
-                }
-                if(devil.skill4){
-                    devil.skill4 = devil.skill4.map(function(name){
-                        let skill = skill_data[name];
-                        if(skill){
-                            skill.addDevil(devil);
-                        }
-                        return skill ? skill : new Skill({name:name});
-                    });
-                }
-                if(devil.skill5){
-                    devil.skill5 = devil.skill5.map(function(name){
-                        let skill = skill_data[name];
-                        if(skill){
-                            skill.addDevil(devil);
-                        }
-                        return skill ? skill : new Skill({name:name});
-                    });
-                }
-
-                devil_array.push(devil);
                 devil_data[devil.name] = devil;
             });
 
+            //race's usage (fusion options)
+
             let usage_temp = {};
 
-            ddd.forEach(function(target){
-
-                target.formulas.forEach(function(f){
+            devil_raw_data.forEach( r0 => {
+                r0.formulas.forEach( f => {
                     
-                    let r2 = null;
+                    let r2 = f[0].name == r1.name ? f[1] : (f[1].name == r1.name ? f[0] : null) ;
 
-                    if(f[0].name==r1.name){
-                        r2 = f[1];
-                    }
-                    if(f[1].name==r1.name){
-                        r2 = f[0];
-                    }
-                    if(r2){
+                    if( ! r2 ) return;
 
-                        if(! (target.name in usage_temp)){
-                            usage_temp[target.name] = [];
-                        }
-
-                        usage_temp[target.name].push(r2);
-                    }
+                    usage_temp[r0.name] = (r0.name in usage_temp) 
+                        ? usage_temp[r0.name].concat(r2)
+                        : [r2] ;
                 });
             });
 
             r1.usage = [];
 
-            for(name in usage_temp){
-                r1.usage.push({
-                    target:race_data[name],
-                    r2s:usage_temp[name]
-                })
-            }
-        });
-
-        devil_array.sort(function(d1,d2){
-            if(d1.grade==d2.grad2)  return 0;
-            return d1.grade > d2.grade ? 1 : -1;
-        });
-
-        //create fission and fusion options
-
-        devil_array.forEach(function(devil){
-            devil.fission_boms = [];
-            devil.fission_options = devil.fission_formulas();
-            devil.fission_options.forEach(function(option){
-                devil.fission_boms = devil.fission_boms.concat(option.boms);
+            Object.keys(usage_temp).forEach(name => {
+                r1.usage.push({r0:race_data[name],r2s:usage_temp[name]});
             });
+        });
+
+        //devil's fission options
+
+        devil_array = Object.values(devil_data).sort( (d1,d2) => (d1.grade - d2.grad2) );
+
+        devil_array.forEach( devil => {
+            devil.fission_options = devil.fission_formulas();
+            devil.fission_boms = devil.fission_options.flatMap( option => option.boms );
         });
 
         let break_limit=10;
@@ -158,7 +104,7 @@ class Resource{
 
             all_pass = true;
             
-            devil_array.forEach(function(devil){
+            devil_array.forEach( devil => {
 
                 let pass = true;
 
@@ -169,7 +115,7 @@ class Resource{
 
                     if(devil.fission_boms.length){
                         
-                        devil.fission_boms.forEach(function(bom){
+                        devil.fission_boms.forEach( bom => {
 
                             let l_pure_cost = bom.getCostPure(rarity);
         
@@ -211,15 +157,15 @@ class Resource{
             });
         }
 
-        this.races = ddd;
+        this.races = devil_raw_data;
         this.race_data = race_data;
+
         this.devils = devil_array;
         this.devil_data = devil_data;
-        this.skillTypes = sss;
-        this.skills = skill_array;
+        
+        this.skillTypes = skill_raw_data;
         this.skill_data = skill_data;
-        this.builder_options = [];
-        this.fusion_options = [];
+        this.skills = Object.values(skill_data);
     }
 }
 

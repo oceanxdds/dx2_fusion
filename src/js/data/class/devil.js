@@ -75,49 +75,28 @@ class Devil {
 
     fission_formulas(){
         
-        let devil = this;
-        
-        let formulas = [];
-    
-        if(!devil.race.fusion||!devil.fusion)
-            return formulas;
+        let d0 = this;
 
-        this.race.formulas.forEach(function(f){
+        if(!d0.race.fusion||!d0.fusion)
+            return [];
 
-            let r1 = f[0];
-            let r2 = f[1];
+        let formulas = d0.race.formulas.map( f => {
 
-            let boms = [];
+            let [r1,r2] = [f[0],f[1]];
 
-            r1.devils.forEach(function(d1){
-                
-                if(!d1.race.fusion||!d1.fusion)
-                    return;
+            if(!r1.fusion || !r2.fusion)
+                return null; 
 
-                r2.devils.forEach(function(d2){
+            let boms = r1.devils.flatMap( d1 => 
+                d1.fusion ? r2.devils.map( d2 => d2.fusion ? DevilBom.bom(d0,d1,d2) : null ) : null
+            ).filter(x=>x);
 
-                    if(!d2.race.fusion||!d2.fusion)
-                        return;
-
-                    let bom = DevilBom.bom(devil,d1,d2);
-
-                    if(bom)
-                        boms.push(bom);
-                });
-            });
-
-            boms.sort(function(bom1,bom2){
-                return bom1.order - bom2.order;
-            });
-
-            if(boms.length>0){
-                formulas.push({
-                    'name': r1.showName() + ' x ' + r2.showName(),
-                    'boms':boms
-                });
-            }
-
-        });
+            return boms.length > 0 
+                ? { 'name': r1.showName() + ' x ' + r2.showName(),
+                    'boms':boms.sort( (bom1,bom2) => bom1.order - bom2.order ) }
+                : null ;
+  
+        }).filter(x=>x);
 
         return formulas;
     }
@@ -131,50 +110,32 @@ class Devil {
             return multi_formulas;
 
         // Target Race Loop
-        this.race.usage.forEach(function(u){
+        d1.race.usage.forEach( usage => {
 
-            // Target Devil Loop
-            u.target.devils.forEach(function(target){
+            if(!usage.r0.fusion)
+                return;
 
-                if(!target.race.fusion||!target.fusion)
+            usage.r0.devils.forEach( d0 => {
+
+                if(!d0.fusion)
                     return;
 
-                let formulas = [];
-            
-                u.r2s.forEach(function(r2){
+                let formulas = usage.r2s.map( r2 => {
+                    
+                    if(!r2.fusion)
+                        return null;
 
-                    let boms = [];
+                    let boms = r2.devils.map( d2 => d2.fusion ? DevilBom.bom(d0, d1, d2) : null ).filter(x=>x);
 
-                    // Pair Devil Loop
-                    r2.devils.forEach(function(d2){
+                    return boms.length > 0 
+                        ? { 'name': d1.race.showName() + ' x ' + r2.showName(),
+                            'boms': boms.sort( (bom1,bom2) => (bom1.order - bom2.order) ) }
+                        : null ;
+                        
+                }).filter(x=>x) ;
 
-                        if(!d2.race.fusion||!d2.fusion)
-                            return;
-
-                        let bom = DevilBom.bom(target, d1, d2);
-
-                        if(bom)
-                            boms.push(bom)
-                    });
-
-                    boms.sort(function(c1,c2){
-                        return c1.order - c2.order;
-                    });
-
-                    if(boms.length>0){
-
-                        formulas.push({
-                            'name': d1.race.showName() + ' x ' + r2.showName(),
-                            'boms': boms
-                        });
-                    }
-                });
-                
                 if(formulas.length>0){
-                    multi_formulas.push({
-                        devil:target,
-                        formulas:formulas
-                    });
+                    multi_formulas.push({devil:d0,formulas:formulas});
                 }
             });
 

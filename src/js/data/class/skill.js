@@ -69,12 +69,12 @@ class Skill{
 
     addDevil(new_devil){
         
-        let devils = this.devils.filter(function(devil){
-            return devil.name == new_devil.name;
-        });
+        let devils = this.devils.filter( devil => devil.name == new_devil.name );
 
         if(devils.length==0)
             this.devils.push(new_devil);
+        
+        return this;
     }
 }
 

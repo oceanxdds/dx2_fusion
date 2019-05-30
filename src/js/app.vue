@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'190529',
+        updated_at:'190530',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -214,9 +214,9 @@ export default {
             let filters = this.builder_rarity_options.filter( opt => opt.active && opt.state);
             let down_grade = this.down_grade;
 
-            this.builder_options.forEach(function(option){
+            this.builder_options.forEach( option => {
 
-                let boms = option.boms.filter(function(bom){
+                let boms = option.boms.filter( bom => {
                     
                     let r = bom.devil.rarity;
                     let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
@@ -244,7 +244,7 @@ export default {
                 
                 option.formulas.forEach( formula =>{
 
-                    let boms = formula.boms.filter(function(bom){
+                    let boms = formula.boms.filter( bom => {
                     
                         let r = bom.devil.rarity;
                         let [r1,r2] = [bom.child1.devil.rarity,bom.child2.devil.rarity].sort( (a,b) => (a-b) );
