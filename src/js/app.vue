@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'190530',
+        updated_at:'190608',
         //modal
         modal_id:'modal_devil_info',
         //builder

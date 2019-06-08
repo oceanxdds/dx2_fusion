@@ -3091,6 +3091,16 @@ export default [
 				mp:null,
 				point:"null",
 				element:"パシップ"
+			},
+			{
+				name:"幸せの歌",
+				name_tw:"幸福之歌",
+				desc:"回復スキルの回復量が15％増加する。敵のスキル効果によってこちらのプレスターンアイコンが減少するたび、次の連動効果が発動する。「味方全体のMPが1回復する。」",
+				name_en:"Joy Song",
+				desc_en:"+15％ to Healing skill effectiveness.Activates the following Chain Effect when a Press Turn Icon is lost due to an enemy skill:All party members recover 1 MP.",
+				mp:null,
+				point:"null",
+				element:"パシップ"
 			}
         ]
     },

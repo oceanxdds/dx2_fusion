@@ -104,7 +104,7 @@ export default [
         name:'女神',
         name_tw:'女神',
         name_en:'Megami',
-        highlight:false,
+        highlight:true,
         formulas:[
             ['靈鳥','大天使'],
             ['魔神','靈鳥'],
@@ -192,6 +192,20 @@ export default [
 				elements:['rs','','','','','nu','wk'],
 				type:'attack',
 				fusion:true
+			},
+			{
+				name:'パールヴァティ',
+				name_tw:'帕爾瓦蒂',
+				name_en:'Parvati',
+				rarity:4,
+				grade:60,
+				icon:'megami_paruvatei.png',
+				skills:["メディラ","スクカオート","幸せの歌"],
+				skill4:["リカーム","マハンマ","アムリタ","回復ブースタ","火炎無効"],
+				skill5:["","","","",""],
+				elements:['','wk','rs','','','rs','rs'],
+				type:'heal',
+				fusion:false
 			},
             {
 				name:'スカアハ',
@@ -3197,7 +3211,7 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:true,
+		highlight:false,
 		devils:[
             {
 				name:'ヨシツネ',
