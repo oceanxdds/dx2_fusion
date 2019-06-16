@@ -385,7 +385,7 @@ export default [
 				skills:["ブフダイン","天罰","アヴァターラ"],
 				skill4:["ムドダイン","メギドラオン","勇奮の鼓舞","魔封無効","呪殺反射"],
 				skill5:['','地獄の業火','緊縛無効','ウィンドブレス','火炎耐性'],
-				elements:['','wk','rp','','','nu','nu'],
+				elements:['','wk','dr','','','nu','nu'],
 				type:'attack',
 				fusion:true
 			},
@@ -831,7 +831,7 @@ export default [
 				skills:["暗殺者","モータルジハード","天叢雲剣"],
 				skill4:["三段の剛力","血管断ち","チャージ","無慈悲な一撃","電撃吸収"],
 				skill5:['','緊縛追撃','三段の猛速','フォッグブレス','火炎耐性'],
-				elements:['rs','wk','','','rp','',''],
+				elements:['rs','wk','','','dr','',''],
 				type:'attack',
 				fusion:true
 			},
@@ -1138,7 +1138,7 @@ export default [
 				skills:["メガトンレイド","チャージ","ミョルニル"],
 				skill4:["マハジオダイン","ギガントマキア","リベリオン","電撃貫通","火炎反射"],
 				skill5:['',"マハンマダイン","ラクカオート","電撃ブースタ","衝撃耐性"],
-				elements:['rs','nu','','rp','wk','rs',''],
+				elements:['rs','nu','','dr','wk','rs',''],
 				type:'attack',
 				fusion:true
 			},

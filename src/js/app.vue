@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'190608',
+        updated_at:'190616',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -769,7 +769,11 @@ export default {
             <div class="col p-2 text-right">
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  
-
+            <div class="col-auto p-2">
+                <a href="https://extradition.g0vhk.io/index-en.html" target="_blank">
+                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Bill">
+                </a>
+            </div>
             <div class="col-auto p-2">
                 <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
                     <img src="images/theme/GitHub-Mark-32px.png" alt="GitHub">
