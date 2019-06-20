@@ -1,21 +1,21 @@
 <template>
     <b-modal size="lg" hide-header ok-only ok-title="CLOSE" ok-variant="secondary" footer-class="py-2" :id="id">
 
-        <div v-if="devil" v-for="devil in [info_devil]">
+        <div v-if="info_devil">
             <div class="row justify-content-center">
                 
                 <div class="col-12">
-                    <devil :devil="devil" usage="info"></devil>
+                    <devil :devil="info_devil" usage="info"></devil>
                 </div>
 
                 <div class="col-12 mt-2">
                     <table class="table table-sm table-bordered table-sm my-0">
                         <tbody>
                             <tr class="text-center">
-                                <th v-for="(ele, index) in elements" :style=" ele.style ">{{ $t( ele.slug ) }}</th>
+                                <th v-for="(ele, index) in elements" :style=" ele.style " :key="index">{{ $t( ele.slug ) }}</th>
                             </tr>
                             <tr class="text-center">
-                                <td width="14%" v-for="ele in devil.elements">
+                                <td width="14%" v-for="(ele,index) in info_devil.elements" :key="index">
                                     <div class="py-1">
                                         <span class="font-weight-bold" :class="{'text-primary':(ele=='nu'||ele=='rp'||ele=='dr'),'text-danger':ele=='wk'}">{{ ele ? $t('element.'+ele) : 'ー' }}</span>
                                     </div>
@@ -31,18 +31,18 @@
                             <tr>
                                 <td width="30%" class="text-center align-middle font-weight-bold">{{ $t('message.common_skills') }}</td>
                                 <td>
-                                    <div v-for="(skill, index) in devil.skills">
+                                    <div v-for="(skill, index) in info_devil.skills" :key="index">
                                         <span class="pl-4 small" :class="{'skill_only':index==0}" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
                                     </div>
                                 </td>
                             </tr>
-                            <tr v-for="(type, index) in archetypes" :style=" type.bar_style ">
+                            <tr v-for="(type, index) in archetypes" :style=" type.bar_style " :key="index">
                                 <td class="text-center align-middle">
                                     <h4><b-badge class="text-white" :style=" type.style ">{{ $t( type.slug ) }}</b-badge></h4>
                                 </td>
                                 <td>
-                                    <span class="pl-4 skill_lock small" v-b-popover.hover.top="devil.skill4[index].showHint()">{{ devil.skill4[index].showName() }}</span><br>
-                                    <span class="pl-4 skill_possible small" v-b-popover.hover.top="devil.skill5[index].showHint()">{{ devil.skill5[index].showName() }}</span>
+                                    <span class="pl-4 skill_lock small" v-b-popover.hover.top="info_devil.skill4[index].showHint()">{{ info_devil.skill4[index].showName() }}</span><br>
+                                    <span class="pl-4 skill_possible small" v-b-popover.hover.top="info_devil.skill5[index].showHint()">{{ info_devil.skill5[index].showName() }}</span>
                                 </td>
                             </tr>
                         </tbody>

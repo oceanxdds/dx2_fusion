@@ -1,6 +1,6 @@
 <template>
     <div class="row no-gutters">
-        <div class="col-12" v-for="(skill, index) in skills" 
+        <div class="col-12" v-for="(skill, index) in skills" :key="index"
             :class="{'col-md-6':!actives[index], 'col-lg-4':!actives[index], 'col-xl-3':!actives[index]}">
             <div class="row no-gutters">
                 <div class="col-12 p-2"
@@ -11,7 +11,7 @@
             <b-collapse :id="'skill_'+index" accordion="skill_accrodion" v-model="actives[index]" class="px-2">
                 <b-card no-body>
                     <div class="row no-gutters">
-                        <div class="col-12 p-2" v-for="devil in skill.devils"
+                        <div class="col-12 p-2" v-for="(devil,index2) in skill.devils" :key="index2"
                         :class="{'col-md-6':actives[index], 'col-lg-4':actives[index], 'col-xl-3':actives[index]}">
                             <devil :devil="devil" usage="skill" @listen="listen" :skill="skill"></devil>
                         </div>

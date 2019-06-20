@@ -3,7 +3,7 @@
         :class="{'border-primary':bom.upgrade, 'border-danger':bom.downgrade,'border-dark':!(bom.upgrade||bom.downgrade)}"
         @click="click()">
         <div class="row no-gutters">
-            <div v-for="devil in [bom.child1.devil,bom.child2.devil]" 
+            <div v-for="(devil,index) in [bom.child1.devil,bom.child2.devil]" :key="index"
                 class="col-6 p-2"
                 :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                 :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 

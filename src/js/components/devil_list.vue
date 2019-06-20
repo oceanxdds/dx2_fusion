@@ -1,6 +1,6 @@
 <template>
     <div class="row no-gutters">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="devil in devils">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 p-2" v-for="(devil,index) in devils" :key="index">
             
             <devil :devil="devil" :usage="usage" :skill="skill" @listen="listen">
                 <b-button v-if="devil.fusion" variant="secondary" size="sm" @click="fusion(devil)" class="font-weight-bold small">{{ $t('message.normal_fusion') }}</b-button>

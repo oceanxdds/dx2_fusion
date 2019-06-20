@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'190616',
+        updated_at:'190620',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -516,9 +516,17 @@ export default {
 
 </script>
 
+<style>
+.mw-1920{
+    max-width: 1920px;
+}
+</style>
+
+
 <template>
     
-    <div class="container-fluid px-0" style="max-width:1920px" id="app">
+<div>
+    <div class="container-fluid px-0 mw-1920">
         <b-navbar toggleable="md" type="dark" variant="info">
 
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -558,7 +566,7 @@ export default {
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
                                 <b-tabs pills card v-model="race_id" content-class="d-none">
-                                    <b-tab :title="race.showName()" v-for="race in races" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab>
+                                    <b-tab :title="race.showName()" v-for="(race,index) in races" :key="index" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab>
                                 </b-tabs>
                                 <devil-list :devils="devils_by_race" usage="fission" @listen="listen"></devil-list>
                             </b-card>
@@ -593,7 +601,7 @@ export default {
 
                                     <b-list-group-item class="p-0" v-if="builder_options.length">
                                         <div class="row no-gutters justify-content-center">
-                                            <div class="col-auto p-1" v-for="option in builder_rarity_options" v-if="option.active">
+                                            <div class="col-auto p-1" v-for="(option,index) in builder_rarity_options.filter(x=>x.active)" :key="index">
                                                 <b-button :pressed="option.state"
                                                     @click="builder_rarity_option_click(option)"
                                                     variant="outline-secondary">
@@ -620,8 +628,7 @@ export default {
                                     <b-list-group-item class="p-2" v-if="fusion_options.length">
                                         <div class="row no-gutters justify-content-center">
                                             <div class="col-auto p-1"
-                                            v-for="option in fusion_rarity_options"
-                                            v-if="option.active">
+                                            v-for="(option,index) in fusion_rarity_options.filter(x=>x.active)" :key="index"> 
                                                 <b-button :pressed="option.state" 
                                                     @click="fusion_rarity_option_click(option)"
                                                     variant="outline-secondary">
@@ -633,7 +640,7 @@ export default {
                                     <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
 
                                         <div class="row no-gutters">
-                                            <div v-for="(option, index) in filtered_fusion_options"
+                                            <div v-for="(option, index) in filtered_fusion_options" :key="index"
                                                 class="col-12 col-md-6 col-lg-4 col-xl-3">
 
                                                 <div class="row no-gutters">
@@ -672,7 +679,7 @@ export default {
 
                 <b-card no-body>
                     <b-tabs pills card v-model="skillType_id" content-class="d-none">
-                        <b-tab :title="type.showName()" v-for="type in skillTypes"></b-tab>
+                        <b-tab :title="type.showName()" v-for="(type,index) in skillTypes" :key="index"></b-tab>
                     </b-tabs>
 
                     <skill-list :skills="skills_by_type" @listen="listen"></skill-list>
@@ -721,7 +728,7 @@ export default {
                                 buttons
                                 button-variant="outline-info"
                                 v-model="down_grade">
-                                <b-form-radio :value="option.value" v-for="option in down_grade_options">
+                                <b-form-radio :value="option.value" v-for="(option,index) in down_grade_options" :key="index">
                                     {{ $t(option.text) }}
                                 </b-form-radio>
                             </b-form-radio-group>
@@ -734,7 +741,7 @@ export default {
                                 buttons
                                 button-variant="outline-info"
                                 v-model="prevent_unload">
-                                <b-form-radio :value="option.value" v-for="option in prevent_unload_options">
+                                <b-form-radio :value="option.value" v-for="(option,index) in prevent_unload_options" :key="index">
                                     {{ $t(option.text) }}
                                 </b-form-radio>
                             </b-form-radio-group>
@@ -758,33 +765,35 @@ export default {
         
         </b-tabs>
 
-        <!-- footer -->
-
-        <div class="row no-gutters justify-content-start align-items-center">
+    </div>
+    
+    <!-- footer -->
+    <div class="container-fluid mw-1920 mb-3">
+        <div class="d-flex">
             
-            <div class="col-auto p-2">
-                <img v-if="orb.state" v-for="orb in orbs" :src="orb.icon" style="width:30px">
+            <div class="mr-1 flex-grow-1">
+                <img v-for="(orb,index) in orbs.filter(x=>x.state)" :key="index" :src="orb.icon" style="width:30px">
             </div>
 
-            <div class="col p-2 text-right">
+            <div class="mx-1 p-1">
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  
-            <div class="col-auto p-2">
+            <div class="mx-1">
                 <a href="https://extradition.g0vhk.io/index-en.html" target="_blank">
-                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Bill">
+                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Law">
                 </a>
             </div>
-            <div class="col-auto p-2">
+            <div class="ml-1">
                 <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
                     <img src="images/theme/GitHub-Mark-32px.png" alt="GitHub">
                 </a>
             </div>  
         </div>
-
-        <!-- Modal -->
-        <devil-info :id="modal_id"></devil-info>
-
     </div>
 
+    <!-- Modal -->
+    <devil-info :id="modal_id"></devil-info>
+
+</div>
     
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="option in options">
+        <div v-for="(option,index) in options" :key="index">
             <div class="row no-gutters">
                 <div class="col-12 p-2">
                     <h6 class="m-0">{{ option.name }}</h6>

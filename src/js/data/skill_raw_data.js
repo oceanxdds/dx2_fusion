@@ -453,6 +453,26 @@ export default [
 				mp:7,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"アースクエイク",
+				name_tw:"天搖地動",
+				desc:"敵全体に物理属性の打撃型ダメージを威力150で与える。このスキルによるダメージは物理防御力に依存する。",
+				name_en:"Earthquake",
+				desc_en:"Inflicts Phys (Physical) damage on all enemies. The damage inflicted by this skill is dependent on Phys DEF.",
+				mp:7,
+				point:null,
+				element:"物理"
+			},
+			{
+				name:"マッスルパンチ",
+				name_tw:"肌肉鐵拳",
+				desc:"敵単体に物理属性の打撃型ダメージを威力170で与える。このスキルによるダメージは物理防御力に依存する。",
+				name_en:"Muscle Punch",
+				desc_en:"Inflicts Phys (Physical) damage on a single enemy. The damage inflicted by this skill is dependent on Phys DEF.",
+				mp:6,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -2681,6 +2701,16 @@ export default [
 				point:"32",
 				element:"パシップ"
 			},
+			{
+				name:"準物理貫通",
+				name_tw:"準物理貫通",
+				desc:"物理貫通を得る。物理貫通時に敵の物理属性が「無効」「反射」「吸収」の場合、与えるダメージが70％減少する。",
+				name_en:"Phys Pierce [weak]",
+				desc_en:"Gains Phys Pierce. Damage reduced by 70% if the enemy has Null, Repel or Drain Phys attribute.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
             {
 				name:"物理耐性",
 				name_tw:"物理耐性",
@@ -2751,7 +2781,6 @@ export default [
 				point:8,
 				element:"パシップ"
 			},
-
             {
 				name:"物理無効",
 				name_tw:"物理無效",
@@ -3518,6 +3547,26 @@ export default [
 				mp:null,
 				point:"null",
 				element:"パシップ"
+			},
+			{
+				name:"強靭の権化",
+				name_tw:"強韌的化身",
+				desc:"最大HPが20%増加し、自身が受ける攻撃のクリティカル率を50%減少させる。",
+				name_en:"Epitome of Fortitude",
+				desc_en:"+20% to max HP, -50% to Critical hit rate of damage received.",
+				mp:null,
+				point:"16",
+				element:"パシップ"
+			},
+			{
+				name:"鋭気の権化",
+				name_tw:"銳氣的化身",
+				desc:"物理命中率が15%増加し、状態異常になる確率が45%減少する。",
+				name_en:"Epitome of Aggression",
+				desc_en:"+15% to Phys hit rate, -45% chance of receiving status ailments.",
+				mp:null,
+				point:"16",
+				element:"パシップ"
 			}
         ]
     },
@@ -4149,6 +4198,36 @@ export default [
 				desc:"自身がコンセントレイト状態になったとき、1ターンのあいだ、味方全体の攻撃力・回避と命中を20％増加させる。",
 				name_en:"Voltage",
 				desc_en:"When Entering a state of Concentrate, increases own party's ATK and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"最後の敵対者",
+				name_tw:"最終敵對者",
+				desc:"自身が弱点をつかれたとき、次の連動効果が発動する。「自身のHPを15%回復させ、会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。」",
+				name_en:"Final Opposition",
+				desc_en:"Activates the following Chain Effect when own weak point is attacked: Heals own HP by 15%, enters a state of Might. The next Phys attack will have a Critical effect.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"大地の生贄",
+				name_tw:"大地祭品",
+				desc:"このスキルを持っている悪魔が死亡したとき、次の連動効果が発動する。「1ターンの間、味方全体を1度だけ打撃型ダメージを反射する状態にし、1ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ増加させる。」ただし、全滅時にはこの効果は発動しない。",
+				name_en:"Earth Sacrifice",
+				desc_en:"Activates the following Chain Effect when downed: Casts Tetrakarn on own party and increases party's ATK/DEF/EV/AC by 20% for 1 turn. Won't activate when your party is wiped out.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"鉄壁の重装兵",
+				name_tw:"鐵壁重裝兵",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「打撃型ダメージを反射する状態のときに物理貫通によるダメージを受けた場合、自身が受けるダメージが30%減少する。」",
+				name_en:"Unyielding Phalanx",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect: Reduces damage by 30% when Phys repel is Pierced.",
 				mp:null,
 				point:null,
 				element:"パシップ"
