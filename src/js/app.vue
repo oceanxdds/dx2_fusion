@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'190620',
+        updated_at:'190621',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -780,7 +780,7 @@ export default {
             </div>  
             <div class="mx-1">
                 <a href="https://extradition.g0vhk.io/index-en.html" target="_blank">
-                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Law">
+                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Bill">
                 </a>
             </div>
             <div class="ml-1">
