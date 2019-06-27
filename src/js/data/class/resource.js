@@ -44,14 +44,22 @@ class Resource{
 
         devil_raw_data.forEach( r1 => {
 
+            //devil's fusion property
+
+            let devils_with_fusion = r1.devils.filter(d=>d.fusion);
+            
+            devils_with_fusion.forEach( (devil, index) => {
+
+                devil.max = devil.grade;
+                devil.min = (index==devils_with_fusion.length-1 ? 0 : devils_with_fusion[index+1].grade);
+            });
+
             //devil's skill (Objectization)
 
             r1.devils.forEach( (devil, index) => {
 
                 devil.race = r1;
-                devil.max = devil.grade;
-                devil.min = (index==r1.devils.length-1 ? 0 : r1.devils[index+1].grade);
-                
+
                 [devil.skills,devil.skill4,devil.skill5] =
                 [devil.skills,devil.skill4,devil.skill5].map( skill_list => {
                     return skill_list.map( name => {
