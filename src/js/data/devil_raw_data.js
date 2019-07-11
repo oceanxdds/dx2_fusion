@@ -1004,7 +1004,8 @@ export default [
     {
         name:'地母神',
         name_tw:'地母神',
-        name_en:'Lady',
+		name_en:'Lady',
+		highlight:true,
         formulas:[
             ['聖獸','靈鳥'],
             ['龍神','龍王'],
@@ -1024,6 +1025,20 @@ export default [
         ],
         fusion:true,
 		devils:[
+			{
+				name:'キュベレ',
+				name_tw:'丘蓓蕾',
+				name_en:'Cybele',
+				rarity:5,
+				grade:85,
+				icon:'tibosin_kyubere.png',
+				skills:["無慈悲な一撃","マハラギダイン","マグナ・マテル"],
+				skill4:["トリスアギオン","地獄の業火","メシアライザー","火炎ハイブースタ","破魔反射"],
+				skill5:['','','','',''],
+				elements:['','dr','wk','','rs','nu','rs'],
+				type:'attack',
+				fusion:false
+			},
             {
 				name:'アシェラト',
 				name_tw:'亞舍拉',
@@ -1581,7 +1596,8 @@ export default [
     {
         name:'魔獸',
         name_tw:'魔獸',
-        name_en:'Beast',
+		name_en:'Beast',
+		highlight:true,
         formulas:[
             ['龍神','魔神'],
             ['龍神','妖獸'],
@@ -1643,6 +1659,20 @@ export default [
 				type:'attack',
 				fusion:true
 			},
+			{
+				name:'カブソ',
+				name_tw:'川童',
+				name_en:'Kabuso',
+				rarity:2,
+				grade:20,
+				icon:'majyuu_kabuso.png',
+				skills:["乱れ狂い","バインドクロー","いたずら名人"],
+				skill4:["毒針","甘噛み","丸かじり","魅了追撃","氷結無効"],
+				skill5:["","","","",""],
+				elements:['','','rs','wk','','',''],
+				type:'support',
+				fusion:false
+			},
             {
 				name:'ネコマタ',
 				name_tw:'貓怪',
@@ -1667,7 +1697,7 @@ export default [
 				skills:["アギ","パララディ",''],
 				skill4:["マハラギ","アギラオ","ラクンダ","緊縛耐性","呪殺耐性"],
 				skill5:['',"地獄のマスク","初段の賢魔","メパララディ","ムド"],
-				elements:['','rs',"	弱",'','','',''],
+				elements:['','rs','wk','','','',''],
 				type:'support',
 				fusion:true
 			},
@@ -1856,7 +1886,7 @@ export default [
         name:'地靈',
         name_tw:'地靈',
 		name_en:'Jirae',
-		highlight:true,
+		highlight:false,
         formulas:[
 			['妖魔','神獸'],
 			['妖精','聖獸'],

@@ -4231,6 +4231,26 @@ export default [
 				mp:null,
 				point:null,
 				element:"パシップ"
+			},
+			{
+				name:"いたずら名人",
+				name_tw:"搗蛋天才",
+				desc:"敵が毒状態になったとき、次の連動効果が発動する 「ランダムな敵を3～4回、基礎確率30%で魅了状態にする」",
+				name_en:"Master Prankster",
+				desc_en:"Activates the following Chain Effect when enemy is poisoned:30% chance to inflict Charm on random enemies 3 to 4 times.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"マグナ・マテル",
+				name_tw:"至上母神",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「火炎属性で与えるダメージが10%増加し、回復スキルの回復量が10%増加する。」",
+				name_en:"Magna Mater",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect:+10% to Fire damage. +10% to Healing skill effectiveness.",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },
