@@ -6,6 +6,7 @@ Github: https://github.com/oceanxdds/dx2_fusion
 Publish: https://oceanxdds.github.io/dx2_fusion/
 //////////////////////////////////////////////////*/
 
+import '@babel/polyfill/dist/polyfill';
 import Vue from 'vue';
 
 //import BootstrapVue from 'bootstrap-vue';

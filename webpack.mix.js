@@ -19,7 +19,8 @@ mix
   })
   .polyfill({
     enabled: true,
-    useBuiltIns: "entry",
+    useBuiltIns: "usage",
     targets: {"ie": 11}
   });
-//mix.bundleAnalyzer();
+
+  //mix.bundleAnalyzer();
