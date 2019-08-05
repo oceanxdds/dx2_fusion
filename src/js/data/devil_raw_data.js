@@ -3286,7 +3286,7 @@ export default [
 			{
 				name:'だいそうじょう',
 				name_tw:'大僧正',
-				name_en:'',
+				name_en:'Daisoujou',
 				rarity:5,
 				grade:81,
 				icon:'majin_daisoujyou.png',

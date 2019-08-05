@@ -1784,8 +1784,8 @@ export default [
 				name:"清浄の一喝",
 				name_tw:"清淨聲喝",
 				desc:"味方全体の状態異常をすべて回復し、ステータス弱体化効果を解除する。",
-				name_en:"",
-				desc_en:"",
+				name_en:"Cleansing Shout",
+				desc_en:"Cures all status ailments and removes debuffs from all party members.",
 				mp:5,
 				point:null,
 				element:"無"
@@ -3105,8 +3105,8 @@ export default [
 				name:"煩悩即菩提",
 				name_tw:"煩惱即菩提",
 				desc:"全ての状態異常にかからなくなる。 味方が魅了状態になったとき、次の連動効果が発動する。「敵全体を基礎確率50％で魔封状態にする。」",
-				name_en:"",
-				desc_en:"",
+				name_en:"Preach",
+				desc_en:"Becomes immune to all status ailments. Activates the following Chain Effect when an ally is Charmed: 50% chance to Mute all enemies.",
 				mp:null,
 				point:null,
 				element:"パシップ"
