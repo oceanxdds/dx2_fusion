@@ -9,10 +9,10 @@ Publish: https://oceanxdds.github.io/dx2_fusion/
 import '@babel/polyfill/dist/polyfill';
 import Vue from 'vue';
 
-//import BootstrapVue from 'bootstrap-vue';
-//Vue.use(BootstrapVue);
-
-import TabsPlugin from 'bootstrap-vue/es/components/tabs';
+import BootstrapVue from 'bootstrap-vue';
+Vue.use(BootstrapVue);
+/*
+import TabsPlugin from 'node_modules/bootstrap-vue/es/components/tabs';
 import NavbarPlugin from 'bootstrap-vue/es/components/navbar';
 import ModalPlugin from 'bootstrap-vue/es/components/modal';
 import ListGroupPlugin from 'bootstrap-vue/es/components/list-group';
@@ -35,7 +35,7 @@ Vue.use(CardPlugin);
 Vue.use(ButtonPlugin);
 Vue.use(BadgePlugin);
 Vue.use(PopoverPlugin);
-
+*/
 Vue.config.productionTip = false;
 
 import store from './store'

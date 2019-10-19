@@ -12,22 +12,22 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "css-loader": "^2.1.1",
-    "laravel-mix": "^4.1.2",
+    "laravel-mix": "^4.1.4",
     "laravel-mix-bundle-analyzer": "^1.0.2",
     "laravel-mix-polyfill": "^1.1.0",
     "resolve-url-loader": "^2.3.2",
-    "sass": "^1.22.5",
-    "sass-loader": "^7.1.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^7.3.1",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
+    "@babel/polyfill": "^7.6.0",
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.26",
+    "bootstrap-vue": "^2.0.4",
     "vue": "^2.6.10",
-    "vue-i18n": "^8.12.0",
+    "vue-i18n": "^8.15.0",
     "vuex": "^3.1.1"
   }
 }

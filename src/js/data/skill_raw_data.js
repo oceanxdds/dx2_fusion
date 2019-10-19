@@ -904,11 +904,21 @@ export default [
 			},
             {
 				name:"天叢雲剣",
-				name_tw:'',
+				name_tw:'天叢雲剣',
 				desc:"敵単体に衝撃属性の魔法型ダメージを威力180で与え、3ターンの間、味方全体の攻撃力を20%増加させる。このスキルによるダメージは物理攻撃力に依存する。",
 				name_en:"Kusanagi",
 				desc_en:"Inflicts Force (Magic) damage with 180 power on a Single Enemy and increases own party's ATK 20% for 3 turns. The damage inflicted by this skill is dependent on Phys ATK.",
 				mp:6,
+				point:null,
+				element:"衝撃"
+			},
+			{
+				name:"テンペスト",
+				name_tw:'暴雨狂風',
+				desc:"敵全体に衝撃属性の魔法型ダメージを威力130で与える。攻撃に成功した場合、3ターンの間、敵全体の回避と命中を20%減少させる。このスキルによるダメージは衝撃貫通を得る。",
+				name_en:"Tempest",
+				desc_en:"Inflicts Force (Magic) damage on all enemies. Reduces EV/AC of all enemies by 20% when the attack is successful. (3 turns)	This skill will have Force Pierce effect. Power: 130",
+				mp:8,
 				point:null,
 				element:"衝撃"
 			}
@@ -4248,6 +4258,16 @@ export default [
 				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。 「火炎属性で与えるダメージが10%増加し、回復スキルの回復量が10%増加する。」",
 				name_en:"Magna Mater",
 				desc_en:"While the demon with this skill is alive, all party members will receive the following effect:+10% to Fire damage. +10% to Healing skill effectiveness.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"カナンの慈雨",
+				name_tw:"迦南的慈雨",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「衝撃属性で与えるダメージが10%増加し、状態異常の自然回復率が10%増加する。」",
+				name_en:"Rains of Canaan",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effects: +10% to Force damage and +10% to status ailment auto cure rate.",
 				mp:null,
 				point:null,
 				element:"パシップ"
