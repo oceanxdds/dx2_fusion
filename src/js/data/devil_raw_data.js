@@ -1833,6 +1833,20 @@ export default [
 				fusion:true
 			},
 			{
+				name:'トリック・ランタン',
+				name_tw:'搗蛋燈籠傑克',
+				name_en:'Halloween Jack',
+				rarity:4,
+				grade:65,
+				icon:'yousei_jyakurantan.png',
+				skills:["アギラオ","ムドオン","食いしばり"],
+				skill4:["マハランタイン","","","",""],
+				skill5:['',"","","",""],
+				elements:['','dr','wk','','','',''],
+				type:'attack',
+				fusion:false
+			},
+			{
 				name:'おてつだいフロスト',
 				name_tw:'幫手雪人仔',
 				name_en:'Helper Frost',

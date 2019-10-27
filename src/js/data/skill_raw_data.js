@@ -610,6 +610,16 @@ export default [
 				mp:7,
 				point:null,
 				element:"火炎"
+			},
+			{
+				name:"マハランタイン",
+				name_tw:"瑪哈傑克燈",
+				desc:"敵全体に2回、火炎属性の魔法型ダメージを威力50で与える。",
+				name_en:"MahaLantine",
+				desc_en:"Inflicts Fire (Magic) damage with 50 power on All Enemies twice.",
+				mp:7,
+				point:null,
+				element:"火炎"
 			}
         ]
     },
