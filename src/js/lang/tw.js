@@ -25,7 +25,8 @@ export default {
 		fusion_mag_others:'合體費(他)',
 		fusion_mag_pure:'合體費(素)',
 		possess:'持有',
-		common_skills:'共通技能'
+		common_skills:'共通技能',
+		desc:'說明'
 	},
 	devil:{
 		attack:'攻擊',

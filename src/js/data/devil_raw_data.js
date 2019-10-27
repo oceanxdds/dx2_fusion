@@ -12,7 +12,8 @@ export default [
             ['天使','聖獸'],
             ['墮天使','聖獸']
         ],
-        fusion:true,
+		fusion:true,
+		highlight:true,
 		devils:[
             {   
                 name:'メタトロン',
@@ -41,7 +42,49 @@ export default [
                 elements:['','','nu','nu','','rp','wk'], 
                 type:'attack',
 				fusion:true     
-            },
+			},
+			{
+				name:'ガブリエル',
+				name_tw:'加百列',
+				name_en:'Gabriel',
+				rarity:5,
+				grade:88,
+				icon:'daitensi_gaburieru.png',
+				skills:["真理の雷","神の伝令","アセンション"],
+				skill4:["ジオダイン","マハンマダイン","コンセントレイト","電撃エンハンス","呪殺反射"],
+				skill5:['','破魔エンハンス','スクンダオート','マハジオダイン','魅了無効'],
+				elements:['','','','rp','rs','rp','wk'],
+				type:'attack',
+				fusion:false
+			},
+			{
+				name:'ラファエル',
+				name_tw:'拉婓爾',
+				name_en:'Raphael',
+				rarity:5,
+				grade:87,
+				icon:'daitensi_rahuaeru.png',
+				skills:["裁きの雷火","神の癒し","テイルウインド"],
+				skill4:["メディラマ","マハンマダイン","常世の祈り","衝撃エンハンス","呪殺反射"],
+				skill5:['','破魔エンハンス','緊縛無効','マハザンダイン','タルンダオート'],
+				elements:['','','','rs','rp','rp','wk'],
+				type:'attack',
+				fusion:false
+			},
+			{
+				name:'ウリエル',
+				name_tw:'尤利爾',
+				name_en:'Uriel',
+				rarity:5,
+				grade:86,
+				icon:'daitensi_urieru.png',
+				skills:["マハンマダイン","神の炎","サンライズ"],
+				skill4:["アギダイン","裁きの雷火","コンセントレイト","火炎エンハンス","呪殺反射"],
+				skill5:['','破魔エンハンス','ラクンダオート','トリスアギオン','魔封無効'],
+				elements:['','rp','','','','rp','wk'],
+				type:'attack',
+				fusion:false
+			},
             {
 				name:'マンセマット',
 				name_tw:'莫塞瑪特',
@@ -376,7 +419,7 @@ export default [
 			['地靈','大天使']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
             {
 				name:'ヴィシュヌ',
@@ -400,7 +443,7 @@ export default [
 				grade:86,
 				icon:'majin_baaru.png',
 				skills:["衝撃ハイブースタ","カナンの慈雨","テンペスト"],
-				skill4:["","殺風激","ランダマイザ","無慈悲な一撃","氷結無効"],
+				skill4:["三段の賢魔","殺風激","ランダマイザ","無慈悲な一撃","氷結無効"],
 				skill5:["","大暗殺者","衝撃エンハンス","勝利のチャクラ","超自然治癒"],
 				elements:['','','wk','nu','dr','rs',''],
 				type:'attack',
@@ -808,7 +851,8 @@ export default [
             ['魔王','墮天使'],
             ['幽鬼','女神']
         ],
-        fusion:true,
+		fusion:true,
+		highlight:true,
 		devils:[
             {
 				name:'シヴァ',
@@ -851,6 +895,20 @@ export default [
 				elements:['rs','wk','','','dr','',''],
 				type:'attack',
 				fusion:true
+			},
+			{
+				name:'カルティケーヤ',
+				name_tw:'室建陀',
+				name_en:'Kartikeya',
+				rarity:5,
+				grade:80,
+				icon:'hakaisin_karuteikeya.png',
+				skills:["千発千中","モータルジハード","韋駄天"],
+				skill4:["スピードスター","","","",""],
+				skill5:['','','','',''],
+				elements:['rs','','','','','rs','rs'],
+				type:'attack',
+				fusion:false
 			},
             {
 				name:'ホクトセイクン',
@@ -1757,7 +1815,8 @@ export default [
 			['地靈','夜魔'],
 			['地靈','外道']
         ],
-        fusion:true,
+		fusion:true,
+		highlight:true,
 		devils:[
             {
 				name:'オベロン',
@@ -1772,6 +1831,20 @@ export default [
 				elements:['','','','wk','rp','',''],
 				type:'attack',
 				fusion:true
+			},
+			{
+				name:'おてつだいフロスト',
+				name_tw:'幫手雪人仔',
+				name_en:'Helper Frost',
+				rarity:4,
+				grade:63,
+				icon:'yousei_jyakufurosuto.png',
+				skills:["ブフーラ","ハマオン","食いしばり"],
+				skill4:["マハフロストン","","","",""],
+				skill5:['',"","","",""],
+				elements:['','wk','dr','','','',''],
+				type:'attack',
+				fusion:false
 			},
             {
 				name:'ティターニア',
@@ -2885,7 +2958,8 @@ export default [
 			['幽鬼','邪神'],
 			['地靈','鬼女']
         ],
-        fusion:true,
+		fusion:true,
+		highlight:true,
 		devils:[
             {
 				name:'マッドガッサー',
@@ -2928,6 +3002,20 @@ export default [
 				elements:['rs','','','wk','','wk','nu'],
 				type:'support',
 				fusion:true
+			},
+			{
+				name:'ジャック・リパー',
+				name_tw:'開膛手傑克',
+				name_en:'Jack the Ripper',
+				rarity:2,
+				grade:22,
+				icon:'gedou_jyaku_ripa.png',
+				skills:["暴れまくり","突撃","ロンドンの恐怖"],
+				skill4:["コロシの愉悦","","","",""],
+				skill5:['',"","","",""],
+				elements:['','wk','','','','wk','rs'],
+				type:'support',
+				fusion:false
 			},
             {
 				name:'ブロブ',
@@ -3906,6 +3994,86 @@ export default [
 				skill5:['','','','',''],
 				elements:['','rs','','','','rs','rs'],
 				type:'attack',
+				fusion:false
+			}
+        ]
+	},
+	{
+        name:'天魔',
+        name_tw:'天魔',
+        name_en:'Tenma',
+        formulas:[],
+        highlight:true,
+        fusion:false,
+		devils:[
+			{
+                name:'マハカーラ',   
+                name_tw:'大黑天', 
+                name_en:'Mahakala', 
+                rarity:5, 
+                grade:92, 
+                icon:'tenma_mahakara.png', 
+                skills:["火炎ハイブースタ","大いなる暗黒","憤怒の劫火"], 
+                skill4:["三段の賢魔","マハラギダイン","コンセントレイト","無慈悲な一撃","呪殺吸収"], 
+                skill5:["","大虐殺者","火炎エンハンス","魅了無効","大暗殺者"],
+                elements:["","dr","","rs","","","nu"], 
+                type:"attack",
+				fusion:false
+			},
+            {
+                name:'インドラジット',   
+                name_tw:'因陀羅耆特', 
+                name_en:'Indrajit', 
+                rarity:5, 
+                grade:88, 
+                icon:'tenma_indorajyeto.png', 
+                skills:["無慈悲な一撃","雲の咆哮","轟雷"], 
+                skill4:["三段の猛速","マハジオンガ","コンセントレイト","大暗殺者","氷結吸収"], 
+                skill5:["","電撃ハイブースタ","電撃エンハンス","裁きの雷火","緊縛無効"],
+                elements:["rs","","wk","dr","","rs","rs"], 
+                type:"attack",
+				fusion:false
+			},
+			{
+                name:'ヤマ',   
+                name_tw:'閻羅王', 
+                name_en:'Yama', 
+                rarity:5, 
+                grade:84, 
+                icon:'tenma_yama.png', 
+                skills:["ムドダイン","閻王の司法","断罪"], 
+                skill4:["地獄の業火","マハムドダイン","ジャッジメント","呪殺貫通","火炎吸収"], 
+                skill5:["","呪殺ハイブースタ","呪殺エンハンス","奈落のマスク","テトラカシフト"],
+                elements:["","nu","","","","","nu"], 
+                type:"attack",
+				fusion:false
+			},
+			{
+                name:'アスラ',   
+                name_tw:'阿修羅', 
+                name_en:'Asura', 
+                rarity:5, 
+                grade:80, 
+                icon:'tenma_asura.png', 
+                skills:["勝利のチャクラ","三面六臂の型","阿修羅"], 
+                skill4:["三段の剛力","ギガントマキア","早手の舞い","千発千中","物理反射"], 
+                skill5:["","破壊の権化","タルカオート","物理ハイブースタ","野獣の勘"],
+                elements:["rs","rp","wk","","","nu","nu"], 
+                type:"attack",
+				fusion:false
+			},
+			{
+                name:'アグニ',   
+                name_tw:'火天', 
+                name_en:'Agni', 
+                rarity:4, 
+                grade:70, 
+                icon:'tenma_aguni.png', 
+                skills:["火炎ブースタ","マハラギオン","イグナイト"], 
+                skill4:["アギダイン","地獄の業火","フォッグブレス","ラクンダオート","破魔吸収"], 
+                skill5:["","虐殺者","マハラギダイン","狂戦士","氷結耐性"],
+                elements:["","dr","wk","","","nu",""], 
+                type:"attack",
 				fusion:false
 			}
         ]

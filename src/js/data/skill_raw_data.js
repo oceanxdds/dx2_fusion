@@ -473,6 +473,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"阿修羅",
+				name_tw:"阿修羅",
+				desc:"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力50で与える。攻撃に成功した場合、敵全体のステータス強化効果を解除し、つぎの連動効果が発動する。ランダムな敵に10回、クリティカル率50%の物理属性の打撃型ダメージを威力25で与える。このスキルによるダメージは物理貫通を得る。",
+				name_en:"Ashura",
+				desc_en:"Inflicts Phys (Physical) damage (Power: 50) with 30% crit rate on all enemies. When an attack is successful, removes all stat buffs from all enemies and activates the following Chain Effect: Inflict Phys (Physical) damage (Power: 25) with 50% crit rate on random enemies 10 times. This skill will have Phys Pierce effect.",
+				mp:8,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -580,6 +590,26 @@ export default [
 				mp:7,
 				point:null,
 				element:"火炎"
+			},
+			{
+				name:"憤怒の劫火",
+				name_tw:"憤怒的劫火",
+				desc:"敵単体に3回、火炎属性の魔法型ダメージを威力60で与える。攻撃に成功した場合、3ターンの間、敵全体の防御力を20%減少させる。",
+				name_en:"Wrathful Flame",
+				desc_en:"Inflicts Fire(Magic) damage 3 times on a single enemy. Reduce DEF of all enemies by 20% if the attack is successful. (3 turns) Power: 60",
+				mp:6,
+				point:null,
+				element:"火炎"
+			},
+			{
+				name:"サンライズ",
+				name_tw:"日昇之際",
+				desc:"敵全体に火炎貫通を得た火炎属性の魔法型ダメージを威力120で与える。攻撃成功時、死亡しているランダムな味方単体をHP25%で復活させる。",
+				name_en:"Sunrise",
+				desc_en:"Inflicts Fire (Magic) damage with Fire Pierce effect on all enemies. Revives an ally at random with 25% HP if the attack is successful. Power: 120",
+				mp:7,
+				point:null,
+				element:"火炎"
 			}
         ]
     },
@@ -684,6 +714,16 @@ export default [
 				desc:"敵全体に氷結属性の魔法型ダメージを威力130で与え、3ターンの間、敵全体の防御力を20％減少させる。",
 				name_en:"Cold World",
 				desc_en:"Inflicts Ice (Magic) damage with 130 power on All Enemies and reduces enemy's DEF 20% for 3 turns.",
+				mp:7,
+				point:null,
+				element:"氷結"
+			},
+			{
+				name:"マハフロストン",
+				name_tw:"瑪哈冰霜爆",
+				desc:"敵全体に2回、氷結属性の魔法型ダメージを威力50で与える。",
+				name_en:"MahaFrosty",
+				desc_en:" Inflicts Ice (Magic) damage with 50 power on All Enemies twice.",
 				mp:7,
 				point:null,
 				element:"氷結"
@@ -804,6 +844,16 @@ export default [
 				mp:7,
 				point:null,
 				element:"電撃"
+			},
+			{
+				name:"轟雷",
+				name_tw:"轟雷",
+				desc:"敵単体に5回、電撃属性の魔法型ダメージを威力40で与え、敵単体を基礎確率30%で緊縛状態にする。",
+				name_en:"Lightning Shower",
+				desc_en:"Inflicts Elec (Magic) damage 5 times on a single enemy and 30% chance to inflict Bind on a single enemy. Power: 40",
+				mp:null,
+				point:null,
+				element:"電撃"
 			}
         ]
     },
@@ -919,6 +969,16 @@ export default [
 				name_en:"Tempest",
 				desc_en:"Inflicts Force (Magic) damage on all enemies. Reduces EV/AC of all enemies by 20% when the attack is successful. (3 turns)	This skill will have Force Pierce effect. Power: 130",
 				mp:8,
+				point:null,
+				element:"衝撃"
+			},
+			{
+				name:"テイルウインド",
+				name_tw:"順風擊",
+				desc:"ランダムな敵に4回、衝撃貫通を得た衝撃属性の魔法型ダメージを威力45で与える。攻撃成功時、死亡しているランダムな味方単体をHP25%で復活させる。(回数制限:6回)",
+				name_en:"Tailwind",
+				desc_en:"Inflicts Force (Magic) damage 4 times with Force Pierce effect on random enemy/ies. Revives an ally at random with 25% HP if the attack is successful.",
+				mp:6,
 				point:null,
 				element:"衝撃"
 			}
@@ -1046,6 +1106,16 @@ export default [
 				name_en:"Soul Judgement",
 				desc_en:"Inflicts Magic Light damage 7 times with 30 power on Random Enemy/ies.",
 				mp:5,
+				point:null,
+				element:"破魔"
+			},
+			{
+				name:"アセンション",
+				name_tw:"崛起",
+				desc:"敵単体に破魔貫通を得た破魔属性の魔法型ダメージを威力160で与える。攻撃成功時、死亡しているランダムな味方単体をHP25%で復活させる。",
+				name_en:"Ascension",
+				desc_en:"Inflicts Light (Magic) damage with Light Pierce effect on a single enemy. Revives an ally at random with 25% HP if the attack is successful.",
+				mp:6,
 				point:null,
 				element:"破魔"
 			}
@@ -2651,6 +2721,56 @@ export default [
 				point:"21",
 				element:"パシップ"
 			},
+			{
+				name:"火炎エンハンス",
+				name_tw:"火炎增幅",
+				desc:"火炎属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Fire Enhancement",
+				desc_en:"+15% to Fire damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"電撃エンハンス",
+				name_tw:"電擊增幅",
+				desc:"電撃属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Elec Enhancement",
+				desc_en:"+15% to Elec damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"衝撃エンハンス",
+				name_tw:"衝擊增幅",
+				desc:"衝撃属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Force Enhancement",
+				desc_en:"+15% to Force damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"破魔エンハンス",
+				name_tw:"破魔增幅",
+				desc:"破魔属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Light Enhancement",
+				desc_en:"+15% to Light damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"呪殺エンハンス",
+				name_tw:"咒殺增幅",
+				desc:"呪殺属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Dark Enhancement",
+				desc_en:"+15% to Dark damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
             {
 				name:"物理貫通",
 				name_tw:"物理貫通",
@@ -2707,6 +2827,16 @@ export default [
 				desc:"衝撃貫通を得る。",
 				name_en:"Force Pierce",
 				desc_en:"Force attacks bypass resistances",
+				mp:null,
+				point:"32",
+				element:"パシップ"
+			},
+			{
+				name:"呪殺貫通",
+				name_tw:"咒殺貫通",
+				desc:"呪殺貫通を得る。",
+				name_en:"Dark Pierce",
+				desc_en:"Dark attacks bypass resistances",
 				mp:null,
 				point:"32",
 				element:"パシップ"
@@ -3577,6 +3707,36 @@ export default [
 				mp:null,
 				point:"16",
 				element:"パシップ"
+			},
+			{
+				name:"三面六臂の型",
+				name_tw:"三頭六臂之型",
+				desc:"ランダム攻撃スキルで自身が受けるダメージが25%減少する。敵がランダム攻撃スキルを発動したとき、このスキルを持っている悪魔が優先的に対象になる。",
+				name_en:"Three Faces Six Arms",
+				desc_en:"Reduces damage received by 25% from skills that target all or random allies.When the enemy uses attacks that target random enemies, this demon will become the main target.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"断罪",
+				name_tw:"斷罪",
+				desc:"呪殺属性で与えるダメージが15%増加する。ボスバトル1ターン目開始時、次の連動効果が発動する。｢敵全体に呪殺属性の魔法型ダメージを威力150で与え、攻撃に成功した場合、敵全体を基礎確率100%で呪い状態にする。」",
+				name_en:"Guilty",
+				desc_en:"+15% to Dark damage. Activates the following Chain Effect at the beginning of the first turn in a boss battle: Inflicts Dark (Magic) damage (Power: 150) on all enemies. If the attack is successful, 100% chance to Curse all enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"破壊の権化",
+				name_tw:"破壞化身",
+				desc:"クリティカル率が20%増加し、物理属性で与えるダメージが15%増加する。",
+				name_en:"Epitome of Carnage",
+				desc_en:"+20% to Critical hit rate, +15% to Phys damage.",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },
@@ -3591,6 +3751,16 @@ export default [
 				desc:"単体攻撃スキルで与えるダメージが10％増加する。",
 				name_en:"Assassin",
 				desc_en:"+10% to single-target attack skill damage.",
+				mp:null,
+				point:8,
+				element:"パシップ"
+			},
+			{
+				name:"大暗殺者",
+				name_tw:"大暗殺者",
+				desc:"単体攻撃スキルで与えるダメージが20%増加する。",
+				name_en:"Master Assassin",
+				desc_en:"+20% to single-target attack skill damage.",
 				mp:null,
 				point:8,
 				element:"パシップ"
@@ -4268,6 +4438,96 @@ export default [
 				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「衝撃属性で与えるダメージが10%増加し、状態異常の自然回復率が10%増加する。」",
 				name_en:"Rains of Canaan",
 				desc_en:"While the demon with this skill is alive, all party members will receive the following effects: +10% to Force damage and +10% to status ailment auto cure rate.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ロンドンの恐怖",
+				name_tw:"倫敦的恐懼",
+				desc:"先攻でバトルを開始したとき、次の連動効果が発動する。 「ランダムな敵に1～3回、クリティカル率50%の物理属性の打撃型ダメージを威力40で与える。」",
+				name_en:"Terror of London",
+				desc_en:"Activates the following Chain Effect when attacking first: Inflict Phys (Physical) damage (power: 40) with 50% crit rate 1 to 3 times on random enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"韋駄天",
+				name_tw:"韋馱天",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。｢物理命中率が15%増加し、クリティカル率が20%増加する。」",
+				name_en:"Skanda",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect: +15% to Phys hit rate and +20% to Critical hit rate.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"イグナイト",
+				name_tw:"灼熱之焰",
+				desc:"2ターンごとの自分のターン開始時、次の連動効果が発動する。｢敵全体に火炎属性の魔法型ダメージを威力120で与える。攻撃に成功した場合、2ターンの間、敵全体の防御力を20%減少させる。」",
+				name_en:"Ignite",
+				desc_en:"Activates the following Chain Effect at the beginning of every second turn. Inflicts Fire (Magic) damage (Power: 120) on all enemies. Reduces DEF of all enemies by 20%. (2 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"閻王の司法",
+				name_tw:"閻羅王的司法",
+				desc:"1ターン目開始時、次の連動効果が発動する。｢3ターンの間、味方全体をスキルによる即死無効状態にする。」",
+				name_en:"Enma's Judgement",
+				desc_en:"Activates the following Chain Effect at the beginning of the 1st turn: All allies will Null Mortal. (3 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"雲の咆哮",
+				name_tw:"雲之咆嘯",
+				desc:"電撃貫通を得る。 このスキルを持っている悪魔が敵を倒したとき、次の連動効果が発動する。「自身のMPを3回復し、1ターンの間、味方全体を1度だけ万能を含む魔法がダメージを反射する状態にする。」",
+				name_en:"Lord of Clouds",
+				desc_en:"Activates the following Chain Effect when the demon with this skill downs an enemy: Recovers 3 MP and casts Repel Magic (including Almighty) effect on all allies. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"大いなる暗黒",
+				name_tw:"巨大黑暗",
+				desc:"火炎貫通を得る。3ターンごとの自分のターン開始時、次の連動効果が発動する。｢ランダムな敵に5回、火炎属性の魔法型ダメージを威力40で与える。攻撃に成功した場合、自身をコンセントレイト状態にし、次に与える魔法型ダメージを125%増加させる。」",
+				name_en:"The Great Darkness",
+				desc_en:"Adds Fire Pierce. Activates the following Chain Effect at the beginning of every third turn. Inflicts Fire (Magic) damage 5 times (Power: 40) on random enemies. Enters into a state of Concentrate, increasing next Mag attack damage by 125% if the attack is successful.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"神の炎",
+				name_tw:"神之火焰",
+				desc:"常時、火炎属性・破魔属性の与ダメージが10%増加。味方パーティに種族｢天使」｢大天使」の悪魔が3体以上生存時、自分のターン開始時に次の連動効果が発動。｢ランダムな敵に3回、火炎貫通を得た火炎属性の魔法型ダメージを威力50で与える。攻撃成功時、1ターンの間、味方全体の攻撃力を20%増加させる。」",
+				name_en:"God's Fire",
+				desc_en:"Increases all Fire and Light damage by 10%. When there are 3 or more Divine or Herald demons alive in your party, activates the following Chain Effect at the beginning of own turn: Inflicts Fire (Magic) damage 3 times (Power: 50) with Fire Pierce effect on random enemies. Increases own party's ATK by 20% if the attack is successful. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"神の伝令",
+				name_tw:"神之傳令",
+				desc:"常時、電撃属性・破魔属性の与ダメージが10%増加。味方パーティに種族｢天使」｢大天使」の悪魔が3体以上生存時、自分のターン開始時に次の連動効果が発動。｢敵全体に破魔貫通を得た破魔属性の魔法型ダメージを威力100で与える。攻撃成功時、1ターンの間、味方全体の回避と命中を20%増加させる。」",
+				name_en:"God's Word",
+				desc_en:"Increases all Elec and Light damage by 10%. When there are 3 or more Divine or Herald demons alive in your party, activates the following Chain Effect at the beginning of own turn: Inflicts Light (Magic) damage (Power: 100) with Light Pierce effect on all enemies. Increases own party's EV/AC by 20% if the attack is successful. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"神の癒し",
+				name_tw:"神之治癒",
+				desc:"常時、衝撃属性・破魔属性の与ダメージが10%増加。味方パーティに種族｢天使」｢大天使」の悪魔が3体以上生存時、自分のターン開始時に次の連動効果が発動。｢味方全体を回復力70で回復し、1ターンの間、味方全体の防御力を20%増加させる。」",
+				name_en:"God's Blessing",
+				desc_en:"Increases all Force and Light damage by 10%. When there are 3 or more Divine or Herald demons alive in your party, activates the following Chain Effect at the beginning of own turn: Heals all party members (Power: 70) and increases their DEF by 20%. (1 turn)",
 				mp:null,
 				point:null,
 				element:"パシップ"

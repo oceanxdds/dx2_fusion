@@ -55,13 +55,12 @@ class Skill{
         if(!this.name)
             return ''
 
-        let hint = i18n.t('message.element')
-        + ': '
+        let hint = '['+i18n.t('message.element')+']'
+        + ' : '
         + (this.type ? this.type.showName():'')
-        + ' MP: '
-        + this.mp+' ' 
-        + (this.point ? i18n.t('message.inherit') + ': '+this.point : '') 
-        +'\n'
+        + (this.mp ? ' [MP] : '+this.mp:'')
+        + (this.point ? ' ['+i18n.t('message.inherit') + '] : '+this.point : '') 
+        + ' ['+i18n.t('message.desc')+'] : '
         +this.showDesc();
 
         return hint;

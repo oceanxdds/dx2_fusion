@@ -6,9 +6,9 @@
                 {{ skill.showName() }}
             </div>
             <div class="small">
-                {{ $t('message.element') }}: {{ skill.type.showName() }} 
-                {{ skill.mp ? "MP: "+skill.mp : "" }} 
-                {{ skill.point ? $t('message.inherit') +": "+skill.point : "" }}
+                [{{ $t('message.element') }}] : {{ skill.type.showName() }} 
+                {{ skill.mp ? " [MP] : "+skill.mp : "" }} 
+                {{ skill.point ? " ["+$t('message.inherit') +"] : "+skill.point : "" }}
             </div>
         </b-card-body>
         <b-card-footer class="p-2">

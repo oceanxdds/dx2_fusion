@@ -25,7 +25,8 @@ export default {
 		fusion_mag_others:'合体料(他)',
 		fusion_mag_pure:'合体料(素)',
 		possess:'持有',
-		common_skills:'共通スキル'
+		common_skills:'共通スキル',
+		desc:'説明'
 	},
 	devil:{
 		attack:'攻擊',

@@ -25,7 +25,8 @@ export default {
         fusion_mag_others:'Fusion(Others)',
         fusion_mag_pure:'Fusion(Clear)',
         possess:'Possess',
-        common_skills:'Common Skills'
+        common_skills:'Common Skills',
+        desc:'Desc'
     },
     devil:{
         attack:'Attack',
