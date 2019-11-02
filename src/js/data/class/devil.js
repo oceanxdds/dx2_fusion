@@ -24,6 +24,10 @@ class Devil {
         this.costs = [null,null,null,null,null,null];
         this.pure_costs = [null,null,null,null,null,null];
         this.fusion = devil.fusion;
+        this.fusionAsMaterial = devil.fusionAsMaterial;
+        this.fusionMag = devil.fusionMag;
+        this.source = devil.source;
+        this.formula = devil.formula;
     }
 
      showName(){
@@ -76,11 +80,34 @@ class Devil {
     fission_formulas(){
         
         let d0 = this;
+        let formulas = [];
+
+        if(d0.source=='multi_fusion'){
+
+            let d1 = d0.formula[0];
+            let d2 = d0.formula[1];
+            let d3 = d0.formula[2];
+            let d4 = d0.formula[3];
+            let name = '';
+            switch(i18n.locale){
+                case 'ja': name = '多身合体'; break;
+                case 'tw': name = '多身合體'; break;
+                case 'en': name = 'Multi Fusion'; break;
+                default: name = '多身合体';
+            }
+
+            return [
+                { 
+                    'name': name,
+                    'boms': [new DevilBom(d0,d1,d2,d3,d4)] 
+                }
+            ];
+        }
 
         if(!d0.race.fusion||!d0.fusion)
-            return [];
+            return formulas;
 
-        let formulas = d0.race.formulas.map( f => {
+        formulas = d0.race.formulas.map( f => {
 
             let [r1,r2] = [f[0],f[1]];
 
@@ -88,7 +115,7 @@ class Devil {
                 return null; 
 
             let boms = r1.devils.flatMap( d1 => 
-                d1.fusion ? r2.devils.map( d2 => d2.fusion ? DevilBom.bom(d0,d1,d2) : null ) : null
+                d1.fusionAsMaterial ? r2.devils.map( d2 => d2.fusionAsMaterial ? DevilBom.bom(d0,d1,d2) : null ) : null
             ).filter(x=>x);
 
             return boms.length > 0 
@@ -106,7 +133,7 @@ class Devil {
         let d1 = this;
         let multi_formulas = [];
 
-        if(!d1.race.fusion||!d1.fusion)
+        if(!d1.race.fusion||!d1.fusionAsMaterial)
             return multi_formulas;
 
         // Target Race Loop
@@ -125,7 +152,7 @@ class Devil {
                     if(!r2.fusion)
                         return null;
 
-                    let boms = r2.devils.map( d2 => d2.fusion ? DevilBom.bom(d0, d1, d2) : null ).filter(x=>x);
+                    let boms = r2.devils.map( d2 => d2.fusionAsMaterial ? DevilBom.bom(d0, d1, d2) : null ).filter(x=>x);
 
                     return boms.length > 0 
                         ? { 'name': d1.race.showName() + ' x ' + r2.showName(),

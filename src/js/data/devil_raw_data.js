@@ -27,7 +27,9 @@ export default [
                 skill5:['','吸魔','マハラギダイン','マハジオダイン','物理耐性'],
                 elements:['','rs','rs','rs','rs','nu',''],
                 type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
             },
             {   
                 name:'ミカエル',        
@@ -41,7 +43,9 @@ export default [
                 skill5:['','ティタノマキア','三段の賢魔','ジオダイン','緊縛無効'], 
                 elements:['','','nu','nu','','rp','wk'], 
                 type:'attack',
-				fusion:true     
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'ガブリエル',
@@ -55,7 +59,9 @@ export default [
 				skill5:['','破魔エンハンス','スクンダオート','マハジオダイン','魅了無効'],
 				elements:['','','','rp','rs','rp','wk'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ラファエル',
@@ -69,7 +75,9 @@ export default [
 				skill5:['','破魔エンハンス','緊縛無効','マハザンダイン','タルンダオート'],
 				elements:['','','','rs','rp','rp','wk'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ウリエル',
@@ -83,7 +91,9 @@ export default [
 				skill5:['','破魔エンハンス','ラクンダオート','トリスアギオン','魔封無効'],
 				elements:['','rp','','','','rp','wk'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'マンセマット',
@@ -97,7 +107,9 @@ export default [
 				skill5:['','殺風激','乱れ狂い','ハマダイン','電撃耐性'],
 				elements:['','wk','nu','','rp','rp',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アズラエル',
@@ -111,7 +123,9 @@ export default [
 				skill5:['',"甘噛み","デクンダ","野獣の勘","審判の光"],
 				elements:['rs','rs','wk','','','rp','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'サンダルフォン',
@@ -125,7 +139,9 @@ export default [
 				skill5:['',"メポズムディ","反撃","ラクンダ","メガトンプレス"],
 				elements:['rs','','','rs','','rp','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ライラ',
@@ -139,7 +155,9 @@ export default [
 				skill5:['',"ザン","マハザン","ヒートウェイブ","ブフ"],
 				elements:['','','','wk','rs','nu','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -179,7 +197,9 @@ export default [
 				skill5:['',"ラクンダオート","静寂の祈り","マハジオダイン","リカームドラ"],
 				elements:['','wk','nu','','','rs','dr'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ラクシュミ',
@@ -193,7 +213,9 @@ export default [
 				skill5:['',"ジオダイン","ラクンダオート","虚弱無効","イービルアイ"],
 				elements:['','','','','wk','rs','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イシュタル',
@@ -207,7 +229,9 @@ export default [
 				skill5:['','アイスエイジ','マハマリカリオン','毒床無効','呪殺耐性'],
 				elements:['','','','nu','wk','nu','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'サラスヴァティ',
@@ -221,7 +245,9 @@ export default [
 				skill5:['',"メチャームディ","呪い耐性","ミナゴロシの愉悦","イービルアイ"],
 				elements:['','wk','nu','','','','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'パラスアテナ',
@@ -235,7 +261,9 @@ export default [
 				skill5:['',"五月雨斬り","静寂の祈り","毒針","ツイスター"],
 				elements:['rs','','','','','nu','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'パールヴァティ',
@@ -249,7 +277,11 @@ export default [
 				skill5:["","","","",""],
 				elements:['','wk','rs','','','rs','rs'],
 				type:'heal',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:true,
+				fusionMag:300000,
+				formula:['ガネーシャ','アプサラス','サラスヴァティ'],
+				source:'multi_fusion'
 			},
             {
 				name:'スカアハ',
@@ -263,7 +295,9 @@ export default [
 				skill5:['',"ブフ","反撃","自然治癒","暴れまくり"],
 				elements:['','','','wk','nu','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アリアンロッド',
@@ -277,7 +311,9 @@ export default [
 				skill5:['',"マハジオ","チャームディ","初段の恵体","クロズディ"],
 				elements:['rs','','','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ハトホル',
@@ -291,7 +327,9 @@ export default [
 				skill5:['',"ディア","初段の猛速","チャームディ","メウィークディ"],
 				elements:['wk','','rs','','rs','rs',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -327,7 +365,9 @@ export default [
 				skill5:['',"トリスアギオン","メギドラ","寸分の見切り","氷結耐性"],
 				elements:['','rp','wk','','nu','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヤタガラス',
@@ -341,7 +381,9 @@ export default [
 				skill5:['',"マハラギオン","一分の魔脈","ウィンドブレス","緊縛耐性"],
 				elements:['','nu','wk','','','rs',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {   name:'スザク',
 				name_tw:'朱雀',
@@ -354,7 +396,9 @@ export default [
 				skill5:['','コロシの愉悦','クロズディ','メパララディ','ジオ'],
 				elements:['wk','nu','wk','','','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ジャターユ',
@@ -368,7 +412,9 @@ export default [
 				skill5:['',"マハザン","乱れ狂い","メポズムディ","カースディ"],
 				elements:['','rs','','wk','rp','nu','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スパルナ',
@@ -382,7 +428,9 @@ export default [
 				skill5:['',"クロズディ","百発百中","ムド","突撃"],
 				elements:['','','','rs','','rs','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ハンサ',
@@ -396,7 +444,9 @@ export default [
 				skill5:['',"ディア","ジオ","ポズムディ","なぎ払い"],
 				elements:['','','','rs','','','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -433,7 +483,9 @@ export default [
 				skill5:['','地獄の業火','緊縛無効','ウィンドブレス','火炎耐性'],
 				elements:['','wk','dr','','','nu','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'バアル',
@@ -447,7 +499,11 @@ export default [
 				skill5:["","大暗殺者","衝撃エンハンス","勝利のチャクラ","超自然治癒"],
 				elements:['','','wk','nu','dr','rs',''],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:true,
+				fusionMag:5000000,
+				formula:['ヘケト','ベルゼブブ','セト'],
+				source:'multi_fusion'
 			},
             {
 				name:'アマテラス',
@@ -461,7 +517,9 @@ export default [
 				skill5:['','三段の強運','魅了無効','マハンマダイン','マハマカジャオン'],
 				elements:['','rp','','wk','','rs',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オーディン',
@@ -475,7 +533,9 @@ export default [
 				skill5:['',"イービルアイ","マハラギ","ブフーラ","ポズムディ"],
 				elements:['','','','rp','wk','rs','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'プロメテウス',
@@ -489,7 +549,9 @@ export default [
 				skill5:['',"電撃耐性","マハザンマ","乱れ狂い","毒耐性"],
 				elements:['','nu','wk','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ミトラ',
@@ -503,7 +565,9 @@ export default [
 				skill5:['',"メディア","ディア","マハジオ","初段の恵体"],
 				elements:['rp','','wk','','','rs','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ホルス',
@@ -517,7 +581,9 @@ export default [
 				skill5:['',"カースディ","パララディ","マハラギ","カースディ"],
 				elements:['rs','','','','','rp','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -554,7 +620,9 @@ export default [
 				skill5:['',"ブフダイン","マハシバブー","三段の恵体","衝撃耐性"],
 				elements:['rs','','','nu','wk','nu','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アヌビス',
@@ -568,7 +636,9 @@ export default [
 				skill5:['',"吸魔","ポイズマ","ディア","アギラオ"],
 				elements:['','','','','','nu','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'キマイラ',
@@ -582,7 +652,9 @@ export default [
 				skill5:['',"パララディ","マハンマ","メディア","自然治癒"],
 				elements:['','rs','','rs','wk','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'マカミ',
@@ -596,7 +668,9 @@ export default [
 				skill5:['',"パララディ","マハザン","ディア","アギ"],
 				elements:['','','','','','rs','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'シーサー',
@@ -610,7 +684,9 @@ export default [
 				skill5:['',"ブフ","アギ","百発百中","ジオ"],
 				elements:['','rs','','','rs','rs',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -648,7 +724,9 @@ export default [
 				skill5:['',"ジュ","メガトンプレス","氷結耐性","イービルアイ"],
 				elements:['','nu','wk','','','rp','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スレイプニル',
@@ -662,7 +740,9 @@ export default [
 				skill5:['',"ファイアブレ","暴飲暴食","ツイスター","マハシバブオン"],
 				elements:['','wk','','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ビャッコ',
@@ -676,7 +756,9 @@ export default [
 				skill5:['',"乱れ狂い","マハブフ","精神漏出","毒床歩き"],
 				elements:['','','','nu','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アピス',
@@ -690,7 +772,9 @@ export default [
 				skill5:['',"アギ","ポイズマオン","メディア","クロズディ"],
 				elements:['','','','','','rs','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ユニコーン',
@@ -704,10 +788,12 @@ export default [
 				skill5:['',"アギ","初段の賢魔","カースディ","なぎ払い"],
 				elements:['','','','wk','','nu','nu'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
-				name:'へケト',
+				name:'ヘケト',
 				name_tw:'海奎特',
 				name_en:'Heqet',
 				rarity:2,
@@ -718,7 +804,9 @@ export default [
 				skill5:['',"メチャームディ","なぎ払い","見切り","百発百中"],
 				elements:['','','','rs','wk','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -756,7 +844,9 @@ export default [
 				skill5:['',"ゴッドハンド","モータルジハード","衝撃ブースタ","破魔耐性"],
 				elements:['rs','','','','nu','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ツクヨミ',
@@ -770,7 +860,9 @@ export default [
 				skill5:['',"スクカジャ","自然治癒","ハマオン","ジオンガ"],
 				elements:['wk','nu','nu','rs','rs','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ハヌマーン',
@@ -784,7 +876,9 @@ export default [
 				skill5:['',"初段の恵体","イービルアイ","審判の光","虚弱耐性"],
 				elements:['','','','wk','nu','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'クルースニク',
@@ -798,7 +892,9 @@ export default [
 				skill5:['',"初段の恵体","マハムド","猛反撃","百発百中"],
 				elements:['','','','','wk','nu',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'タム・リン',
@@ -812,7 +908,9 @@ export default [
 				skill5:['',"マハザン","マハラギ","突撃","スラッシュ"],
 				elements:['','','','','','rs','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'クラマテング',
@@ -826,7 +924,9 @@ export default [
 				skill5:['',"メディア","マハブフ","パララディ","メチャームディ"],
 				elements:['','','','wk','nu','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -866,7 +966,9 @@ export default [
 				skill5:['','三段の剛力','モータルジハード','暴飲暴食','衝撃耐性'],
 				elements:['rs','dr','wk','dr','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ザオウゴンゲン',
@@ -880,7 +982,9 @@ export default [
 				skill5:['',"三段の剛力","タルカオート","地獄の業火","デスカウンター"],
 				elements:['nu','rp','','wk','','rs','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スサノオ',
@@ -894,7 +998,9 @@ export default [
 				skill5:['','緊縛追撃','三段の猛速','フォッグブレス','火炎耐性'],
 				elements:['rs','wk','','','dr','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'カルティケーヤ',
@@ -908,7 +1014,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['rs','','','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:true,
+				fusionMag:500000,
+				formula:['パールヴァティ','スパルナ','シヴァ'],
+				source:'multi_fusion'
 			},
             {
 				name:'ホクトセイクン',
@@ -922,7 +1032,9 @@ export default [
 				skill5:['',"破魔耐性","マハザン","ブフ","乱れ狂い"],
 				elements:['','wk','nu','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'セイテンタイセイ',
@@ -936,7 +1048,9 @@ export default [
 				skill5:['',"裁きの雷火","ヘルズアイ","マハラギ","毒追撃"],
 				elements:['rs','rs','','wk','rs','rs','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アレス',
@@ -950,7 +1064,9 @@ export default [
 				skill5:['',"地獄のマスク","セクシーダンス","シバブオン","暴れまくり"],
 				elements:['','','','','','rs','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -987,7 +1103,9 @@ export default [
 				skill5:['',"三段の賢魔","虐殺者","ヘルズアイ","不屈の闘志"],
 				elements:['','rs','rs','rs','rs','nu',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ケツアルカトル',
@@ -1001,7 +1119,9 @@ export default [
 				skill5:['',"マハブフダイン","追い打ち","魔封無効","マハムドダイン"],
 				elements:['rs','rs','','','rs','rs','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'グクマッツ',
@@ -1015,7 +1135,9 @@ export default [
 				skill5:['',"怪力乱神","タルンダ","猛反撃","メディラ"],
 				elements:['','wk','rs','','rs','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'セイリュウ',
@@ -1029,7 +1151,9 @@ export default [
 				skill5:['',"マハザンダイン","空間殺法","ジオダイン","マカラコワース"],
 				elements:['','','rs','wk','nu','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イルルヤンカシュ',
@@ -1043,7 +1167,9 @@ export default [
 				skill5:['',"ヒートウェイブ","見切り","ハマオン","野生の勘"],
 				elements:['','','rs','','rs','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'マカラ',
@@ -1057,7 +1183,9 @@ export default [
 				skill5:['',"ブフーラ","反撃","精神漏出","甘噛み"],
 				elements:['','wk','rs','','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'パトリムパス',
@@ -1071,7 +1199,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','wk','rs','','rs','','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1111,7 +1241,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['','dr','wk','','rs','nu','rs'],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:true,
+				fusionMag:1500000,
+				formula:['スフィンクス','アティス','アシェラト'],
+				source:'multi_fusion'
 			},
             {
 				name:'アシェラト',
@@ -1125,7 +1259,9 @@ export default [
 				skill5:['',"審判の光","地獄のマスク","二段の強運","緊縛追撃"],
 				elements:['','nu','wk','','nu','','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スカディ',
@@ -1139,7 +1275,9 @@ export default [
 				skill5:['',"放電","二段の剛力","メディラ","電撃耐性"],
 				elements:['','wk','rp','','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'キクリヒメ',
@@ -1153,7 +1291,9 @@ export default [
 				skill5:['',"火炎耐性","マハポイズマオン","捨て身の一撃","ラクカジャ"],
 				elements:['','','','wk','nu','','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イシス',
@@ -1167,21 +1307,25 @@ export default [
 				skill5:['',"初段の剛力","百発百中","メチャームディ","ザン"],
 				elements:['','rs','','nu','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
-				name:'クシナビヒメ',
+				name:'クシナダヒメ',
 				name_tw:'奇稻田姬',
 				name_en:'Kushinada',
 				rarity:3,
 				grade:47,
-				icon:'tibosin_kusinabihime.png',
+				icon:'tibosin_kusinadahime.png',
 				skills:["ディアラ","回復ブースタ","マハンマ"],
 				skill4:["メディア","ハマオン","リディア","自然治癒","破魔無効"],
 				skill5:['',"ムド","マハラギ","メパララディ","ジオ"],
 				elements:['','','','','','rs','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ペレ',
@@ -1195,7 +1339,9 @@ export default [
 				skill5:['',"メウィークディ","マハザン","毒床歩き","初段の賢魔"],
 				elements:['','rs','wk','','','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1233,7 +1379,9 @@ export default [
 				skill5:['',"マハンマダイン","ラクカオート","電撃ブースタ","衝撃耐性"],
 				elements:['rs','nu','','dr','wk','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ショウキ',
@@ -1247,7 +1395,9 @@ export default [
 				skill5:['',"マハムドダイン","毒床渡り","魔封追撃","マハンマオン"],
 				elements:['','rs','','','wk','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ビシャモンテン',
@@ -1261,7 +1411,9 @@ export default [
 				skill5:['',"エナジードレイン","マカジャマオン","メチャームディ","衝撃耐性"],
 				elements:['','wk','nu','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ジコクテン',
@@ -1275,7 +1427,9 @@ export default [
 				skill5:['',"バインドクロー","メディアラハン","ホワイトノイズ","吸血"],
 				elements:['','','','wk','nu','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'コウモクテン',
@@ -1289,7 +1443,9 @@ export default [
 				skill5:['',"初段の強運","マハブフ","コロシの愉悦","ブフ"],
 				elements:['','','','nu','wk','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ゾウチョウテン',
@@ -1303,7 +1459,9 @@ export default [
 				skill5:['',"地獄のマスク","初段の剛力","メチャームディ","メチャームディ"],
 				elements:['','nu','wk','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'タケミナカタ',
@@ -1317,7 +1475,9 @@ export default [
 				skill5:['',"ザン","百発百中","突撃","マハブフ"],
 				elements:['','wk','','rs','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1352,7 +1512,9 @@ export default [
 				skill5:['',"雄叫び","氷結耐性","デスタッチ","野生の勘"],
 				elements:['','nu','wk','','','nu','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ドミニオン',
@@ -1366,7 +1528,9 @@ export default [
 				skill5:['',"メチャームディ","スラッシュ","初段の恵体","ブフ"],
 				elements:['','','','rs','wk','nu','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヴァーチャー',
@@ -1380,7 +1544,9 @@ export default [
 				skill5:['',"マハジオ","アギ","初段の強運","初段の猛速"],
 				elements:['','','','wk','nu','nu','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'パワー',
@@ -1394,7 +1560,9 @@ export default [
 				skill5:['',"メパララディ","ムド","初段の賢魔","自然治癒"],
 				elements:['','','','rs','wk','nu','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'プリンシパリティ',
@@ -1408,7 +1576,9 @@ export default [
 				skill5:['',"初段の賢魔","メウィークディ","毒床歩き","マハザン"],
 				elements:['','','','','','nu','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アークエンジェル',
@@ -1422,7 +1592,9 @@ export default [
 				skill5:['',"ザン","初段の賢魔","ブフ","百発百中"],
 				elements:['','','','','','nu','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'エンジェル',
@@ -1436,7 +1608,9 @@ export default [
 				skill5:['',"クロズディ","アギ","メチャームディ","マハブフ"],
 				elements:['','','','wk','','nu','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1472,7 +1646,9 @@ export default [
 				skill5:['',"メポズムディ","マハザンダイン","天罰","デゾレト"],
 				elements:['rs','','','wk','nu','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イフリート',
@@ -1486,7 +1662,9 @@ export default [
 				skill5:['',"なぎ払い","ヒートウェイブ","ザン","アウトブレイク"],
 				elements:['','rp','wk','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヴァルキリー',
@@ -1500,7 +1678,9 @@ export default [
 				skill5:['',"メウィークディ","スラッシュ","クロズディ","ウィークディ"],
 				elements:['rs','','','wk','rs','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ディース',
@@ -1514,7 +1694,9 @@ export default [
 				skill5:['',"チャームディ","初段の賢魔","初段の恵体","マハムド"],
 				elements:['','','rs','rs','','','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アプサラス',
@@ -1528,7 +1710,9 @@ export default [
 				skill5:['',"メポズムディ","マハブフ","野生の勘","見切り"],
 				elements:['','wk','rs','','','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'コッパテング',
@@ -1542,7 +1726,9 @@ export default [
 				skill5:['',"チャームディ","メクロズディ","マハジオ","パララディ"],
 				elements:['','','','wk','rs','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アガシオン',
@@ -1556,7 +1742,9 @@ export default [
 				skill5:['',"マハラギ","メクロズディ","ザン","初段の強運"],
 				elements:['','rs','wk','rs','','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1595,7 +1783,9 @@ export default [
 				skill5:['',"ギガントマキア","毒追撃","マハザンダイン","衝撃耐性"],
 				elements:['','','nu','nu','wk','nu',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ユルング',
@@ -1609,7 +1799,9 @@ export default [
 				skill5:['',"溶解ブレス","リカームドラ","毒追撃","マハンマ"],
 				elements:['','wk','nu','rs','','','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヤマタノオロチ',
@@ -1623,7 +1815,9 @@ export default [
 				skill5:['',"毒床歩き","デカジャ","吸魔","ミナゴロシの愉悦"],
 				elements:['','nu','nu','wk','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ゲンブ',
@@ -1637,7 +1831,9 @@ export default [
 				skill5:['',"毒床歩き","初段の剛力","スラッシュ","乱れ狂い"],
 				elements:['','wk','nu','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ナーガ',
@@ -1651,7 +1847,9 @@ export default [
 				skill5:['',"突撃","見切り","メポズムディ","ヒートウェイブ"],
 				elements:['','wk','rs','rs','wk','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ノズチ',
@@ -1665,7 +1863,9 @@ export default [
 				skill5:['',"マハザン","メチャームディ","なぎ払い","パララディ"],
 				elements:['rs','wk','rs','rs','wk','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1706,7 +1906,9 @@ export default [
 				skill5:['',"緊縛追撃","反撃","ヒートウェイブ","初段の猛速"],
 				elements:['','rp','wk','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アーマーン',
@@ -1720,7 +1922,9 @@ export default [
 				skill5:['',"ジオ","暴れまくり","初段の恵体","マハブフ"],
 				elements:['','','wk','nu','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オルトロス',
@@ -1734,7 +1938,9 @@ export default [
 				skill5:['',"メクロズディ","ウィークディ","初段の剛力","ヒートウェイブ"],
 				elements:['','nu','wk','','','','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'カブソ',
@@ -1748,7 +1954,9 @@ export default [
 				skill5:["","","","",""],
 				elements:['','','rs','wk','','',''],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'ネコマタ',
@@ -1762,7 +1970,9 @@ export default [
 				skill5:['',"マハブフ","乱れ狂い","暴れまくり","マハンマ"],
 				elements:['','rs','wk','wk','rs','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イヌガミ',
@@ -1776,7 +1986,9 @@ export default [
 				skill5:['',"地獄のマスク","初段の賢魔","メパララディ","ムド"],
 				elements:['','rs','wk','','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'カーシー',
@@ -1790,7 +2002,9 @@ export default [
 				skill5:['',"ポズムディ","地獄のマスク","初段の猛速","ディア"],
 				elements:['','','','','','nu',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -1830,7 +2044,9 @@ export default [
 				skill5:['',"スラッシュ","初段の恵体","タルカジャ","吸魔"],
 				elements:['','','','wk','rp','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'トリック・ランタン',
@@ -1844,7 +2060,9 @@ export default [
 				skill5:['',"","","",""],
 				elements:['','dr','wk','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
 			{
 				name:'おてつだいフロスト',
@@ -1858,7 +2076,9 @@ export default [
 				skill5:['',"","","",""],
 				elements:['','wk','dr','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'ティターニア',
@@ -1872,7 +2092,9 @@ export default [
 				skill5:['',"タルンダ","マハムド","絶命剣","放電"],
 				elements:['','','','','','rs','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'セタンタ',
@@ -1886,7 +2108,9 @@ export default [
 				skill5:['',"初段の恵体","ジオ","カースディ","ヒートウェイブ"],
 				elements:['','','','wk','nu','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'シルキー',
@@ -1900,7 +2124,9 @@ export default [
 				skill5:['',"コロシの愉悦","なぎ払い","毒床歩き","野生の勘"],
 				elements:['','wk','nu','','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ケルピー',
@@ -1914,7 +2140,9 @@ export default [
 				skill5:['',"百発百中","マハジオ","百発百中","ジオ"],
 				elements:['','','rs','','wk','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'ナジャ',
@@ -1928,7 +2156,9 @@ export default [
 				skill5:['',"","","",""],
 				elements:['','','wk','','rs','',''],
 				type:'heal',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'ハイピクシー',
@@ -1942,7 +2172,9 @@ export default [
 				skill5:['',"初段の賢魔","ムド","アギ","初段の剛力"],
 				elements:['','','','','rs','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ジャックランタン',
@@ -1956,7 +2188,9 @@ export default [
 				skill5:['',"マハンマ","クロズディ","初段の賢魔","自然治癒"],
 				elements:['','rs','wk','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ジャックフロスト',
@@ -1970,7 +2204,9 @@ export default [
 				skill5:['',"メカースディ","自然治癒","見切り","パララディ"],
 				elements:['','wk','rs','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ピクシー',
@@ -1984,7 +2220,9 @@ export default [
 				skill5:['',"初段の賢魔","メカースディ","メチャームディ","地獄のマスク"],
 				elements:['','','','rs','','','wk'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
 	},
@@ -2019,7 +2257,9 @@ export default [
 				skill5:["","準物理貫通","ラクカオート","強靭の権化","鋭気の権化"],
 				elements:['rs','wk','rp','nu','wk','','wk'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'トラルテクトリ',
@@ -2033,7 +2273,9 @@ export default [
 				skill5:["","地獄の業火","二分の活泉","ショックウェーブ","氷結耐性"],
 				elements:['rs','','wk','nu','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'ティターン',
@@ -2047,7 +2289,9 @@ export default [
 				skill5:["","物理ブースタ","三段の恵体","野生の勘","猛反撃"],
 				elements:['rs','','','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'カワンチャ',
@@ -2061,7 +2305,9 @@ export default [
 				skill5:["","二段の賢魔","乱れ狂い","地獄のマスク","毒追撃"],
 				elements:['','','','','wk','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'カハク',
@@ -2075,7 +2321,9 @@ export default [
 				skill5:["","火炎ブースタ","自然治癒","ファイアブレス","二段の猛速"],
 				elements:['','nu','','wk','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'コダマ',
@@ -2089,7 +2337,9 @@ export default [
 				skill5:["","","","",""],
 				elements:['','wk','','','nu','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'コロポックル',
@@ -2103,7 +2353,9 @@ export default [
 				skill5:["","","","",""],
 				elements:['','','','','','nu','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2141,7 +2393,9 @@ export default [
 				skill5:['','無慈悲な一撃','狂い咲き','アイスエイジ','破魔耐性'],
 				elements:['','rs','nu','','','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヘカトンケイル',
@@ -2155,7 +2409,9 @@ export default [
 				skill5:['','物理ブースタ','呪い追撃','溶解ブレス','破魔耐性'],
 				elements:['nu','','','','wk','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'クドラク',
@@ -2169,7 +2425,9 @@ export default [
 				skill5:['','呪い追撃','マハポイズマオン','追い打ち','破魔耐性'],
 				elements:['','rs','','','','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ラクシャーサ',
@@ -2183,7 +2441,9 @@ export default [
 				skill5:['','五月雨斬り','二段の猛速','呪い追撃','スピードスター'],
 				elements:['rs','','','wk','','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'グレンデル',
@@ -2197,7 +2457,9 @@ export default [
 				skill5:['','バインドクロー','食いしばり','猛反撃','野生の勘'],
 				elements:['rs','','','','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'イッポンダタラ',
@@ -2211,7 +2473,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','rs','','','','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'グレムリン',
@@ -2225,7 +2489,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','wk','rs','rs','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2265,7 +2531,9 @@ export default [
 				skill5:['',"ファイアブレス","ムドダイン","ウィンドブレス","回復ブースタ"],
 				elements:['','','','wk','','rp','rp'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ダンタリアン',
@@ -2279,7 +2547,9 @@ export default [
 				skill5:['',"バインドボイス","アイスブレス","挑発","二段の強運"],
 				elements:['','rs','rs','wk','nu','wk','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オセ',
@@ -2293,7 +2563,9 @@ export default [
 				skill5:['',"アギ","チャームディ","メディア","乱れ狂い"],
 				elements:['','','','','','','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'フォルネウス',
@@ -2307,7 +2579,9 @@ export default [
 				skill5:['',"初段の猛速","メクロズディ","ジオ","チャームディ"],
 				elements:['','','rp','wk','','','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'デカラビア',
@@ -2321,7 +2595,9 @@ export default [
 				skill5:['',"ディア","マハジオ","ポズムディ","パララディ"],
 				elements:['','','','','',"	弱",'rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'エリゴール',
@@ -2335,7 +2611,9 @@ export default [
 				skill5:['',"ディア","初段の賢魔","チャームディ","チャームディ"],
 				elements:['rs','','','wk','','','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'メルコム',
@@ -2349,7 +2627,9 @@ export default [
 				skill5:['',"毒床歩き","コロシの愉悦","スラッシュ","ムド"],
 				elements:['','rs','wk','','wk','wk','rs'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2388,7 +2668,9 @@ export default [
 				skill5:['',"反撃","魅了追撃","初段の強運","ウィンドブレス"],
 				elements:['rs','','rs','','rs','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ベルセルク',
@@ -2402,7 +2684,9 @@ export default [
 				skill5:['',"ソウルドレイン","初段の賢魔","クロズディ","野生の勘"],
 				elements:['nu','','','','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'シキオウジ',
@@ -2416,7 +2700,9 @@ export default [
 				skill5:['',"メウィークディ","マハラギ","祟り","ディア"],
 				elements:['nu','wk','wk','','','rs','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヨモツイクサ',
@@ -2430,7 +2716,9 @@ export default [
 				skill5:['',"クロズディ","初段の恵体","メカースディ","メウィークディ"],
 				elements:['','','','','wk','wk','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オ二',
@@ -2444,7 +2732,9 @@ export default [
 				skill5:['',"ヒートウェイブ","アギ","突撃","ポズムディ"],
 				elements:['','','','wk','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'モムノフ',
@@ -2458,7 +2748,9 @@ export default [
 				skill5:['',"見切り","アギ","メポズムディ","初段の恵体"],
 				elements:['rs','','','','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アズミ',
@@ -2472,7 +2764,9 @@ export default [
 				skill5:['',"ジオ","メパララディ","マハジオ","スラッシュ"],
 				elements:['','','rs','wk','','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2510,7 +2804,9 @@ export default [
 				skill5:['',"ウィンドブレス","マハブフーラ","デカジャ","吸魔"],
 				elements:['rp','','','wk','','',''] ,
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ダーキニー',
@@ -2524,7 +2820,9 @@ export default [
 				skill5:['',"毒ガスブレス","ショックウェーブ","初段の賢魔","野生の勘"],
 				elements:['rs','rp','wk','','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'マーメイド',
@@ -2538,7 +2836,9 @@ export default [
 				skill5:['',"クロズディ","暴れまくり","パララディ","暴れまくり"],
 				elements:['','','rs','wk','rs','',''] ,
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヤクシニー',
@@ -2552,7 +2852,9 @@ export default [
 				skill5:['',"ハマ","毒床歩き","マハラギ","初段の猛速"],
 				elements:['','','','wk','rs','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヨモツシコメ',
@@ -2566,7 +2868,9 @@ export default [
 				skill5:['',"突撃","アギ","パララディ","ザン"],
 				elements:['','wk','','','','wk','rs'] ,
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'リャナンシー',
@@ -2580,7 +2884,9 @@ export default [
 				skill5:['',"自然治癒","ハマ","地獄のマスク","なぎ払い"],
 				elements:['','','','','wk','',''],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2619,7 +2925,9 @@ export default [
 				skill5:['',"毒床渡り","タルンダ","煉獄","衝撃耐性"],
 				elements:['','rs','rs','rp','wk','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'サキュバス',
@@ -2633,7 +2941,9 @@ export default [
 				skill5:['',"吸血","マハブフーラ","野獣の勘","マハムドオン"],
 				elements:['','rs','rs','','','wk',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'リリム',
@@ -2647,7 +2957,9 @@ export default [
 				skill5:['',"初段の強運","ブフ","ウィークディ","ジオ"],
 				elements:['','','wk','','nu','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'キオン',
@@ -2661,7 +2973,9 @@ export default [
 				skill5:['',"初段の賢魔","初段の強運","コロシの愉悦","マハンマ"],
 				elements:['','','wk','','','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'フォーモリア',
@@ -2675,7 +2989,9 @@ export default [
 				skill5:['',"ムド","ザン","ブフ","マハラギ"],
 				elements:['','wk','rs','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'インキュバス',
@@ -2689,7 +3005,9 @@ export default [
 				skill5:['',"マハムド","乱れ狂い","地獄のマスク","コロシの愉悦"],
 				elements:['','','','wk','rs','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ザントマン',
@@ -2703,7 +3021,9 @@ export default [
 				skill5:['',"暴れまくり","ポズムディ","マハジオ","毒床歩き"],
 				elements:['','','','wk','rs','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'モコイ',
@@ -2717,7 +3037,9 @@ export default [
 				skill5:['',"ムド","ヒートウェイブ","毒床歩き","自然治癒"],
 				elements:['','','','rs','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2748,7 +3070,9 @@ export default [
 				skill5:['',"甘噛み","三段の強運","空間殺法","暗殺者"],
 				elements:['','wk','','nu','nu','','rp'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ギリメカラ',
@@ -2762,7 +3086,9 @@ export default [
 				skill5:['',"審判の光","アギダイン","クロズディ","ブフーラ"],
 				elements:['rp','','','wk','wk','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
             },
             {
 				name:'ミシャグジさま',
@@ -2776,7 +3102,9 @@ export default [
 				skill5:['',"テトラジャ","二分の魔脈","スピードスター","衝撃耐性"],
 				elements:['','','','nu','wk','wk','nu'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'パズス',
@@ -2790,7 +3118,9 @@ export default [
 				skill5:['',"魔封耐性","メディア","ザンマ","デスバウンド"],
 				elements:['','','wk','','nu','','nu'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アラハバキ',
@@ -2804,7 +3134,9 @@ export default [
 				skill5:['',"なぎ払い","乱れ狂い","ムド","メチャームディ"],
 				elements:['rs','wk','wk','wk','wk','rs','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'バフォメット',
@@ -2818,7 +3150,9 @@ export default [
 				skill5:['',"暴れまくり","マハブフ","野生の勘","ジオ"],
 				elements:['','','','','','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アブラクサス',
@@ -2832,7 +3166,9 @@ export default [
 				skill5:['',"マハラギ","初段の賢魔","マハラギ","乱れ狂い"],
 				elements:['rp','wk','wk','wk','wk','wk','wk'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2870,7 +3206,9 @@ export default [
 				skill5:['',"呪殺耐性","丸かじり","メウィークディ","ハマ"],
 				elements:['','wk','rp','rs','wk','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ピアレイ',
@@ -2884,7 +3222,9 @@ export default [
 				skill5:['',"ジオ","マハラギ","初段の猛速","毒床歩き"],
 				elements:['','wk','rs','','','wk',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'モスマン',
@@ -2898,7 +3238,9 @@ export default [
 				skill5:['',"ザン","ヒートウェイブ","見切り","メパララディ"],
 				elements:['','','','rs','wk','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ヌエ',
@@ -2912,7 +3254,9 @@ export default [
 				skill5:['',"メカースディ","スラッシュ","ポズムディ","野生の勘"],
 				elements:['','','','rs','wk','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ライジュウ',
@@ -2926,7 +3270,9 @@ export default [
 				skill5:['',"ハマ","クロズディ","初段の恵体","クロズディ"],
 				elements:['','','','rs','wk','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'バイコーン',
@@ -2940,7 +3286,9 @@ export default [
 				skill5:['',"ディア","メパララディ","メディア","メウィークディ"],
 				elements:['','','','','wk','','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'チャグリン',
@@ -2954,7 +3302,9 @@ export default [
 				skill5:['',"百発百中","暴れまくり","ヒートウェイブ","ポズムディ"],
 				elements:['','wk','','rs','','',''],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -2987,7 +3337,9 @@ export default [
 				skill5:['',"ジオ","ハマ","スクカジャ","メチャームディ"],
 				elements:['','','','','','wk','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'シャドウ',
@@ -3001,7 +3353,9 @@ export default [
 				skill5:['',"地獄のマスク","マハムド","ジオ","初段の強運"],
 				elements:['rs','','','','wk','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ブラックウーズ',
@@ -3015,7 +3369,9 @@ export default [
 				skill5:['',"マハザン","ヒートウェイブ","メウィークディ","メカースディ"],
 				elements:['rs','','','wk','','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
 			{
 				name:'ジャック・リパー',
@@ -3029,7 +3385,9 @@ export default [
 				skill5:['',"","","",""],
 				elements:['','wk','','','','wk','rs'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'ブロブ',
@@ -3043,7 +3401,9 @@ export default [
 				skill5:['',"ウィークディ","ブフ","マハムド","ジオ"],
 				elements:['rs','','wk','','','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ファントム',
@@ -3057,7 +3417,9 @@ export default [
 				skill5:['',"初段の強運","パララディ","マハムド","マハブフ"],
 				elements:['rs','','','','wk','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スライム',
@@ -3071,7 +3433,9 @@ export default [
 				skill5:['',"なぎ払い","野生の勘","初段の猛速","毒床歩き"],
 				elements:['wk','wk','wk','wk','wk','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -3105,7 +3469,9 @@ export default [
 				skill5:['',"ムドダイン","魅了無効","電撃ブースタ","マリンカリオン"],
 				elements:['rs','','','','','wk','rp'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'マーラ',
@@ -3119,7 +3485,9 @@ export default [
 				skill5:['',"三段の剛力",'千発千中',"物理ブースタ","物理耐性"],
 				elements:['','','wk','rp','','rs','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'スルト',
@@ -3133,7 +3501,9 @@ export default [
 				skill5:['',"地獄の業火","三段の賢魔","火炎ブースタ","丸かじり"],
 				elements:['','rp','wk','','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ロキ',
@@ -3147,7 +3517,9 @@ export default [
 				skill5:['',"コロシの愉悦","丸かじり","マハムドオン","ムドオン"],
 				elements:['','','nu','','rs','wk','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ベルゼブブ',
@@ -3161,7 +3533,9 @@ export default [
 				skill5:['',"マハデゾレトオン","物理耐性","コロシの愉悦","電撃耐性"],
 				elements:['','','','rs','rs','nu','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'キングフロスト',
@@ -3175,7 +3549,9 @@ export default [
 				skill5:['',"ブフダイン","暴飲暴食","地獄のマスク","緊縛耐性"],
 				elements:['','wk','nu','','','rs',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'アバドン',
@@ -3189,7 +3565,9 @@ export default [
 				skill5:['',"初段の猛速","地獄のマスク","ジュ","メクロズディ"],
 				elements:['','rp','','wk','','',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オーカス',
@@ -3203,7 +3581,9 @@ export default [
 				skill5:['',"マハブフ","ザン","野生の勘","自然治癒"],
 				elements:['rs','','wk','','','wk',''],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -3243,7 +3623,9 @@ export default [
 				skill5:['',"カースディ","初段の猛速","ヒートウェイブ","初段の猛速"],
 				elements:['','wk','','','','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ラフィン・スカル',
@@ -3257,7 +3639,9 @@ export default [
 				skill5:['',"なぎ払い","ポズムディ","暴れまくり","マハジオ"],
 				elements:['','rp','wk','','','wk','nu'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'レギオン',
@@ -3271,7 +3655,9 @@ export default [
 				skill5:['',"初段の強運","ヒートウェイブ","マハブフ","メウィークディ"],
 				elements:['','','','wk','','wk','rs'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ピシャーチャ',
@@ -3285,7 +3671,9 @@ export default [
 				skill5:['',"スラッシュ","地獄のマスク","ハマ","百発百中"],
 				elements:['','wk','','','nu','wk','rs'],
 				type:'support',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'モウリョウ',
@@ -3299,7 +3687,9 @@ export default [
 				skill5:['',"ウィークディ","暴れまくり","メクロズディ","見切り"],
 				elements:['','','','','','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'オバリヨン',
@@ -3313,7 +3703,9 @@ export default [
 				skill5:['',"乱れ狂い","メカースディ","地獄のマスク","マハンマ"],
 				elements:['','','wk','rs','','wk','nu'],
 				type:'heal',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			},
             {
 				name:'ガキ',
@@ -3327,7 +3719,9 @@ export default [
 				skill5:['',"ヒートウェイブ","メパララディ","マハムド","初段の剛力"],
 				elements:['','wk','rs','','wk','wk','nu'],
 				type:'attack',
-				fusion:true
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
 			}
         ]
     },
@@ -3351,7 +3745,9 @@ export default [
 				skill5:['','テトラカシフト','奈落のマスク','狂い咲き','マカラカシフト'],
 				elements:['nu','','','dr','wk','rs','rs'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'トランペッター',
@@ -3365,7 +3761,9 @@ export default [
 				skill5:['','寸分の見切り','タルンダオート','トリスアギオン','火炎耐性'],
 				elements:['','','','','','nu','nu'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ダンテ☆',
@@ -3379,7 +3777,9 @@ export default [
 				skill5:['','勝利の息吹','物理ハイブースタ','ミナゴロシの愉悦','火炎無効'],
 				elements:['','rs','','','','','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ネロ☆',
@@ -3393,7 +3793,9 @@ export default [
 				skill5:['','電撃ハイブースタ','勝利のチャクラ','無慈悲な一撃','電撃無効'],
 				elements:['','','','rs','','','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'アリス',
@@ -3407,7 +3809,9 @@ export default [
 				skill5:['','絶対零度','超自然治癒','野獣の勘','真理の雷'],
 				elements:['','','','','','wk','rp'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'だいそうじょう',
@@ -3421,7 +3825,9 @@ export default [
 				skill5:['','タルンダオート','回復ハイブースタ','リカームドラ','ダークゾーン無効'],
 				elements:['','','','','','nu','nu'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ヘルズエンジェル',
@@ -3435,7 +3841,9 @@ export default [
 				skill5:['','アギダイン','雄叫び','緊縛追撃','呪殺耐性'],
 				elements:['','rp','','','rs','wk',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ワイトナイト',
@@ -3449,7 +3857,9 @@ export default [
 				skill5:['','ブフーラ','百発百中','ヒートウェイブ','ブフ'],
 				elements:['','','','dr','wk','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ダンテ',
@@ -3463,7 +3873,9 @@ export default [
 				skill5:['','二段の剛力','五月雨斬り','二段の恵体','物理耐性'],
 				elements:['','rs','','','','','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'ネロ',
@@ -3477,7 +3889,9 @@ export default [
 				skill5:['','二段の猛速','二段の賢魔','ジオダイン','氷結耐性'],
 				elements:['','','','rs','','','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'マタドール',
@@ -3491,7 +3905,9 @@ export default [
 				skill5:['','魔封追撃','スピードスター','空間殺法','挑発'],
 				elements:['rs','','wk','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -3515,7 +3931,9 @@ export default [
 				skill5:['','ゴッドハンド','スクカオート','ミナゴロシの愉悦','氷結耐性'],
 				elements:['rs','','','','','nu','nu'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'コウテイ',
@@ -3529,7 +3947,9 @@ export default [
 				skill5:['','タルカオート','物理無効','虐殺者','奈落のマスク'],
 				elements:['','rs','rs','rs','rs','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ラーマ',
@@ -3543,7 +3963,9 @@ export default [
 				skill5:['','勝利のチャクラ','コンセントレイト','アイスエイジ','魔封無効'],
 				elements:['','nu','rs','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
 				name:'カンセイテイクン',
@@ -3557,7 +3979,9 @@ export default [
 				skill5:['','大虐殺者','物理ハイブースタ','千発千中','緊縛無効'],
 				elements:['nu','','','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ジークフリード',
@@ -3571,7 +3995,9 @@ export default [
 				skill5:['','千発千中','スクンダオート','刹那五月雨撃ち','呪殺耐性'],
 				elements:['dr','','','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ジャンヌ・ダルク',
@@ -3585,7 +4011,9 @@ export default [
 				skill5:['','精神漏出','メディラマ','煉獄','ザンマ'],
 				elements:['','wk','rs','rs','rs','',''],
 				type:'heal',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -3609,7 +4037,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['','wk','','','','wk','dr'],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:5000,
+				formula:['カンバリ','タケミナカタ','ライラ'],
+				source:'multi_fusion'
 			},
             {
 				name:'かみおとこ',
@@ -3623,7 +4055,11 @@ export default [
 				skill5:['','暴れまくり','ディア','マハンマ','コロシの愉悦'],
 				elements:['','','','','','wk','rp'],
 				type:'support',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:500,
+				formula:['オバリヨン','ファントム','モウリョウ'],
+				source:'multi_fusion'
 			}
         ]
     },
@@ -3646,7 +4082,11 @@ export default [
 				skill5:['','マハムド','マハンマ','メカースディ','メウィークディ'],
 				elements:['','wk','','','','',''],
 				type:'heal',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:5000,
+				formula:['ネコマタ','フォーモリア','マカミ'],
+				source:'multi_fusion'
 			},
             {
 				name:'チュパカブラ',
@@ -3660,7 +4100,11 @@ export default [
 				skill5:['','マハムド','メディア','初段の恵体','野生の勘'],
 				elements:['','','','wk','','',''],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:100,
+				formula:['スライム','メルコム','チャグリン'],
+				source:'multi_fusion'
 			}
         ]
     },
@@ -3683,7 +4127,11 @@ export default [
 				skill5:['','衝撃耐性','メポズムディ','毒針','タルンダ'],
 				elements:['rs','wk','','','','rs',''],
 				type:'support',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:200000,
+				formula:['ヤクシニー','ミトラ','ダーキニー','ランダ'],
+				source:'multi_fusion'
 			},
             {
 				name:'キンマモン',
@@ -3697,7 +4145,11 @@ export default [
 				skill5:['','初段の恵体','毒床歩き','乱れ狂い','カースディ'],
 				elements:['','nu','wk','','','rs','rs'],
 				type:'support',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:10000,
+				formula:['ヘケト','レギオン','モスマン','アラハバキ'],
+				source:'multi_fusion'
 			},
             {
 				name:'カンバリ',
@@ -3711,7 +4163,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['wk','','','','','rs','wk'],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:1000,
+				formula:['イヌガミ','コッパテング','ヨモツシコメ','クラマテング'],
+				source:'multi_fusion'
 			}
         ]
     },
@@ -3735,7 +4191,11 @@ export default [
 				skill5:['','二段の猛速','マハラギオン','毒床歩き','メチャームディ'],
 				elements:['rs','','','','','',''],
 				type:'attack',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:200000,
+				formula:['イシス','バフォメット','アリアンロッド','ベルセルク'],
+				source:'multi_fusion'
 			},
             {
 				name:'ディオニュソス',
@@ -3749,7 +4209,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['','nu','wk','nu','','',''],
 				type:'support',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:200000,
+				formula:['キマイラ','アレス','パラスアテナ'],
+				source:'multi_fusion'
 			}
         ]
     },
@@ -3772,7 +4236,11 @@ export default [
 				skill5:['','','','',''],
 				elements:['rs','','','','','rs','rs'],
 				type:'support',
-				fusion:false
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:500000,
+				formula:['サンダルフォン','アズラエル','ペレ','クシナダヒメ'],
+				source:'multi_fusion'
 			}
         ]
     },
@@ -3796,7 +4264,9 @@ export default [
 				skill5:['','三段の賢魔','ラクカオート','不屈の闘志','電撃耐性'],
 				elements:['rs','rs','','wk','rp','','rp'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'イシュタム',
@@ -3810,7 +4280,9 @@ export default [
 				skill5:['','暗殺者','狂い咲き','ラクンダオート','マハブフダイン'],
 				elements:['','','','','','wk','rp'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ネルガル',
@@ -3824,7 +4296,9 @@ export default [
 				skill5:['','ミナゴロシの愉悦','スクカオート','三段の剛力','氷結耐性'],
 				elements:['','rs','wk','','','rs','rp'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'オルクス',
@@ -3838,7 +4312,9 @@ export default [
 				skill5:['','タルンダオート','緊縛無効','ヘルズアイ','三段の恵体'],
 				elements:['rs','wk','rs','wk','rs','','nu'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ペルセポネー',
@@ -3852,7 +4328,9 @@ export default [
 				skill5:['','溶解ブレス','二分の活泉','雄叫び','電撃耐性'],
 				elements:['','','nu','wk','','','nu'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'チェルノボグ',
@@ -3866,7 +4344,9 @@ export default [
 				skill5:['','魔封追撃','毒床渡り','五月雨斬り','破魔耐性'],
 				elements:['','','','','','wk','nu'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ヘル',
@@ -3880,7 +4360,9 @@ export default [
 				skill5:['','無慈悲な一撃','不屈の闘志','ブフダイン','火炎耐性'],
 				elements:['','wk','nu','','','','nu'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -3904,7 +4386,9 @@ export default [
 				skill5:['','ラクンダオート','スクンダオート','タルカオート','ラクカオート'],
 				elements:['nu','','','','','rs','dr'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -3928,7 +4412,9 @@ export default [
 				skill5:['','狂戦士','緊縛追撃','猛反撃','破魔耐性'],
 				elements:['','','','rs','','wk','rp'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ボディコニアン',
@@ -3942,7 +4428,9 @@ export default [
 				skill5:['','百発百中','リディア','野生の勘','自然治癒'],
 				elements:['','wk','','','','wk','rs'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -3966,7 +4454,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','','','rs','','rs','rs'],
 				type:'support',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'battle'
 			},
             {
 				name:'クシミタマ',
@@ -3980,7 +4470,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','','','','rs','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'battle'
 			},
             {
 				name:'ニギミタマ',
@@ -3994,7 +4486,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','','rs','','','rs','rs'],
 				type:'heal',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'battle'
 			},
             {
 				name:'アラミタマ',
@@ -4008,7 +4502,9 @@ export default [
 				skill5:['','','','',''],
 				elements:['','rs','','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'battle'
 			}
         ]
 	},
@@ -4032,7 +4528,9 @@ export default [
                 skill5:["","大虐殺者","火炎エンハンス","魅了無効","大暗殺者"],
                 elements:["","dr","","rs","","","nu"], 
                 type:"attack",
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
                 name:'インドラジット',   
@@ -4046,7 +4544,9 @@ export default [
                 skill5:["","電撃ハイブースタ","電撃エンハンス","裁きの雷火","緊縛無効"],
                 elements:["rs","","wk","dr","","rs","rs"], 
                 type:"attack",
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
                 name:'ヤマ',   
@@ -4060,7 +4560,9 @@ export default [
                 skill5:["","呪殺ハイブースタ","呪殺エンハンス","奈落のマスク","テトラカシフト"],
                 elements:["","nu","","","","","nu"], 
                 type:"attack",
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
                 name:'アスラ',   
@@ -4074,7 +4576,9 @@ export default [
                 skill5:["","破壊の権化","タルカオート","物理ハイブースタ","野獣の勘"],
                 elements:["rs","rp","wk","","","nu","nu"], 
                 type:"attack",
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
                 name:'アグニ',   
@@ -4088,7 +4592,9 @@ export default [
                 skill5:["","虐殺者","マハラギダイン","狂戦士","氷結耐性"],
                 elements:["","dr","wk","","","nu",""], 
                 type:"attack",
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -4112,7 +4618,9 @@ export default [
                 skill5:['','三段の剛力','魅了追撃','暗殺者','ティタノマキア'],
                 elements:['','','','','','rs','rs'],
                 type:'attack',
-				fusion:false            
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
             },
             {
 				name:'ジャンヌ☆',
@@ -4126,7 +4634,9 @@ export default [
 				skill5:['','三段の賢魔','緊縛追撃','虐殺者','メギドラ'],
 				elements:['','','','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ベヨネッタ',
@@ -4140,7 +4650,9 @@ export default [
 				skill5:['','二段の剛力','魅了追撃','物理ブースタ','スピードスター'],
 				elements:['','','','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
             {
 				name:'ジャンヌ',
@@ -4154,7 +4666,9 @@ export default [
 				skill5:['','二段の賢魔','魔封追撃','猛反撃','スピードスター'],
 				elements:['','','','','','rs','rs'],
 				type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			}
         ]
     },
@@ -4178,7 +4692,9 @@ export default [
                 skill5:['','百発百中','物理ブースタ','野生の勘','地獄のマスク'],
                 elements:['rs','','','','','rs','wk'], 
                 type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
             }
         ]
 	},
@@ -4202,7 +4718,9 @@ export default [
                 skill5:['','大虐殺者','野獣の勘','メギドラオン','破魔無効'],
                 elements:['','','','','','rs','rs'], 
                 type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
 			},
 			{
                 name:'V',   
@@ -4216,7 +4734,9 @@ export default [
                 skill5:['','二段の賢魔','二段の強運','ハマダイン','衝撃耐性'],
                 elements:['','','','','','rs','rs'], 
                 type:'attack',
-				fusion:false
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
             }
         ]
     }

@@ -18,20 +18,17 @@ class Resource{
         let type_data = {};
         let skill_data = {};
 
-        //Race & Devil (Objectization)
+        //Race & Devil
+
         devil_raw_data = devil_raw_data.map( race => {
-            race.devils = race.devils.map( devil => new Devil(devil) );
+            race.devils = race.devils.map( devil => {
+                return devil_data[devil.name] = new Devil(devil);
+            });
             return race_data[race.name] = new Race(race);
         });
 
-        devil_raw_data.forEach( race => {
-            race.formulas.forEach( formula => {
-                formula[0] = race_data[formula[0]];
-                formula[1] = race_data[formula[1]];
-            });
-        });
+        //Skill Type & Skill
 
-        //Skill (Objectization)
         skill_raw_data = skill_raw_data.map( type => {
             type = new SkillType(type);
             type.skills = type.skills.map( skill => {
@@ -42,23 +39,26 @@ class Resource{
             return type_data[type.name] = type;
         });
 
-        devil_raw_data.forEach( r1 => {
+        //Details
 
-            //devil's fusion property
+        devil_raw_data.forEach( race => {
 
-            let devils_with_fusion = r1.devils.filter(d=>d.fusion);
-            
-            devils_with_fusion.forEach( (devil, index) => {
-
-                devil.max = devil.grade;
-                devil.min = (index==devils_with_fusion.length-1 ? 0 : devils_with_fusion[index+1].grade);
+            //Race
+            race.formulas.forEach( formula => {
+                formula[0] = race_data[formula[0]];
+                formula[1] = race_data[formula[1]];
             });
 
-            //devil's skill (Objectization)
+            //Devil
+            race.devils.forEach( devil => {
 
-            r1.devils.forEach( (devil, index) => {
+                devil.race = race;
 
-                devil.race = r1;
+                if(devil.source=='multi_fusion'){
+                    devil.formula = devil.formula.map(name=>{
+                        return devil_data[name];
+                    });
+                }
 
                 [devil.skills,devil.skill4,devil.skill5] =
                 [devil.skills,devil.skill4,devil.skill5].map( skill_list => {
@@ -68,11 +68,22 @@ class Resource{
                             : new Skill({name:name});
                     });
                 });
-
-                devil_data[devil.name] = devil;
             });
 
-            //race's usage (fusion options)
+            //devil's fusion property
+
+            let devils_with_fusion = race.devils.filter(d=>d.fusion&&d.source=='normal_fusion');
+            
+            devils_with_fusion.forEach( (devil, index) => {
+
+                devil.max = devil.grade;
+                devil.min = (index==devils_with_fusion.length-1 ? 0 : devils_with_fusion[index+1].grade);
+            });
+        });
+
+        //Race's usage (fusion options)
+
+        devil_raw_data.forEach( r1 => {
 
             let usage_temp = {};
 
@@ -125,8 +136,11 @@ class Resource{
                         
                         devil.fission_boms.forEach( bom => {
 
+                            if(!bom.auto)
+                                return ;
+
                             let l_pure_cost = bom.getCostPure(rarity);
-        
+                            
                             if(l_pure_cost==null) pass = false;
                             else if(pure_cost==null) pure_cost = l_pure_cost;
                             else pure_cost = pure_cost > l_pure_cost ? l_pure_cost : pure_cost;
@@ -137,7 +151,7 @@ class Resource{
                             else if(cost==null) cost = l_cost;
                             else                cost = cost > l_cost ? l_cost : cost;
                         });
-        
+
                         if(devil.rarity > rarity){
         
                             if(pure_cost!=null && devil.pure_costs[rarity] != pure_cost){

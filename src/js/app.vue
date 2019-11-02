@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'191027',
+        updated_at:'191103',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -485,6 +485,8 @@ export default {
                     boms = boms.concat(option.boms);
                 });
 
+                boms = boms.filter( x => x.auto );
+
                 boms.sort( (bom1, bom2) => {
                     let cost1 = type ? bom1.getCost(rarity) : bom1.getCostPure(rarity);
                     let cost2 = type ? bom2.getCost(rarity) : bom2.getCostPure(rarity);
@@ -494,7 +496,7 @@ export default {
                 if(boms.length>0){
                     bom.set(boms[0]);
                 }
-
+                
                 if(type==1){
                     //雜體
                     //var type1 = bom.pure_child == 1 ? 0 : 1;
@@ -503,11 +505,15 @@ export default {
                     type2=0; //TODO
                     this.auto_costdown(bom.child1, rarity, type1);
                     this.auto_costdown(bom.child2, rarity, type2);
+                    this.auto_costdown(bom.child3, rarity, type2);
+                    this.auto_costdown(bom.child4, rarity, type2);
                 }
                 else{
                     //純素體
                     this.auto_costdown(bom.child1, rarity, type);
                     this.auto_costdown(bom.child2, rarity, type);
+                    this.auto_costdown(bom.child3, rarity, type);
+                    this.auto_costdown(bom.child4, rarity, type);
                 }
             }
         }
@@ -596,7 +602,7 @@ export default {
                                     </b-list-group-item>
 
                                     <b-list-group-item class="p-2">
-                                        <devil-bom-builder :bom="builder_target" :parent_bom="null" usage="builder" @listen="listen"></devil-bom-builder>
+                                        <devil-bom-builder :bom="builder_target" :parent_bom="null" usage="builder" @listen="listen" source=""></devil-bom-builder>
                                     </b-list-group-item>
 
                                     <b-list-group-item class="p-0" v-if="builder_options.length">
