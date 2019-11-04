@@ -131,6 +131,7 @@ class Devil {
     fusion_formulas(){
 
         let d1 = this;
+
         let multi_formulas = [];
 
         if(!d1.race.fusion||!d1.fusionAsMaterial)
@@ -147,12 +148,25 @@ class Devil {
                 if(!d0.fusion)
                     return;
 
+                if(d0.source=='multi_fusion')
+                    return;
+
                 let formulas = usage.r2s.map( r2 => {
                     
                     if(!r2.fusion)
                         return null;
 
-                    let boms = r2.devils.map( d2 => d2.fusionAsMaterial ? DevilBom.bom(d0, d1, d2) : null ).filter(x=>x);
+                    let boms = r2.devils.map( d2 => {
+                        
+                        let bom = null;
+
+                        if(d2.fusionAsMaterial){
+                            bom = DevilBom.bom(d0, d1, d2);
+                        };
+                        
+                        return bom;
+
+                    }).filter(x=>x);
 
                     return boms.length > 0 
                         ? { 'name': d1.race.showName() + ' x ' + r2.showName(),
