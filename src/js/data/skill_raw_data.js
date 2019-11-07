@@ -3491,9 +3491,9 @@ export default [
             {
 				name:"野生の勘",
 				name_tw:"野生直覺",
-				desc:"自身が受ける攻撃のクリティカル率を15％減少させる。",
+				desc:"自身が受ける攻撃のクリティカル率を25％減少させる。",
 				name_en:"Wild Guess",
-				desc_en:"-15% to Critical hit rate of damage received.",
+				desc_en:"-25% to Critical hit rate of damage received.",
 				mp:null,
 				point:8,
 				element:"パシップ"
@@ -3501,9 +3501,9 @@ export default [
             {
 				name:"野獣の勘",
 				name_tw:"野獸直覺",
-				desc:"自身が受ける攻撃のクリティカル率を25％減少させる。",
+				desc:"自身が受ける攻撃のクリティカル率を75％減少させる。",
 				name_en:"Wild Instinct",
-				desc_en:"-25% to Critical hit rate of damage received.",
+				desc_en:"-75% to Critical hit rate of damage received.",
 				mp:null,
 				point:"14",
 				element:"パシップ"
