@@ -489,7 +489,7 @@ export default [
 				name_tw:"猛毒之擊",
 				desc:"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力100で与え、攻撃成功時、ヒットした敵を基礎確率30％で毒状態にする。",
 				name_en:"Blight",
-				desc_en:"While the demon with this skill is alive, +200% damage to Poisoned enemies.",
+				desc_en:"Inflicts Phys (Physical) damage with 30% crit rate on all enemies with 30% chance to inflict Poison on hit enemies. Power: 100",
 				mp:6,
 				point:null,
 				element:"物理"
