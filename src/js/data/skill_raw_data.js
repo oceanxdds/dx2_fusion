@@ -483,6 +483,16 @@ export default [
 				mp:8,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"ベノンザッパー",
+				name_tw:"猛毒之擊",
+				desc:"敵全体にクリティカル率30%の物理属性の打撃型ダメージを威力100で与え、攻撃成功時、ヒットした敵を基礎確率30％で毒状態にする。",
+				name_en:"Blight",
+				desc_en:"While the demon with this skill is alive, +200% damage to Poisoned enemies.",
+				mp:6,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -733,8 +743,18 @@ export default [
 				name_tw:"瑪哈冰霜爆",
 				desc:"敵全体に2回、氷結属性の魔法型ダメージを威力50で与える。",
 				name_en:"MahaFrosty",
-				desc_en:" Inflicts Ice (Magic) damage with 50 power on All Enemies twice.",
+				desc_en:"Inflicts Ice (Magic) damage with 50 power on All Enemies twice.",
 				mp:7,
+				point:null,
+				element:"氷結"
+			},
+			{
+				name:"ハラーハラ",
+				name_tw:"毒露",
+				desc:"ランダムな敵に5回、氷結属性の魔法型ダメージを威力40で与え、攻撃成功時、ヒットした敵を基礎確率50％で毒状態にする。",
+				name_en:"Halahala",
+				desc_en:"Inflicts Ice (Magic) damage 5 times on random enemy/ies with 50% chance to inflict Poison on hit enemies. Power: 40",
+				mp:6,
 				point:null,
 				element:"氷結"
 			}
@@ -4538,6 +4558,46 @@ export default [
 				desc:"常時、衝撃属性・破魔属性の与ダメージが10%増加。味方パーティに種族｢天使」｢大天使」の悪魔が3体以上生存時、自分のターン開始時に次の連動効果が発動。｢味方全体を回復力70で回復し、1ターンの間、味方全体の防御力を20%増加させる。」",
 				name_en:"God's Blessing",
 				desc_en:"Increases all Force and Light damage by 10%. When there are 3 or more Divine or Herald demons alive in your party, activates the following Chain Effect at the beginning of own turn: Heals all party members (Power: 70) and increases their DEF by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"熾天の園",
+				name_tw:"熾天之園",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「敵の弱点をついたとき、与えるダメージが10％増加する。自身が弱点をつかれたとき、受けるダメージが10％減少する。」",
+				name_en:"Garden of Eden",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect:+10% damage when attacking the enemy's weak point and -10% damage when a weak point is attacked.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"貪欲なる煌めき",
+				name_tw:"貪慾光輝",
+				desc:"このスキルを持っている悪魔が生きている間、毒状態の敵が受ける毒ダメージを200％増加させる。",
+				name_en:"Golden Greed",
+				desc_en:"While the demon with this skill is alive, +200% damage to Poisoned enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ナハルの裁き",
+				name_tw:"納哈爾的制裁",
+				desc:"2ターンごとの自分のターン開始時、次の連動効果が発動。「敵全体に氷結属性の魔法型ダメージを威力120で与える。攻撃成功時、2ターンの間、敵全体の回避と命中を20％減少させる。」",
+				name_en:"Judgement of Nahar",
+				desc_en:"Activates the following Chain Effect at the beginning of every second turn: Inflicts Ice (Magic) damage on all enemies and if the attack is successful, reduces all enemy EV/AC by 20%. (2 turns) Power: 120",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ナーストレンド",
+				name_tw:"毒蛇咬囓",
+				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「自身のHPを80％回復し、1ターンの間、自身をスキルによる即死無効状態にする。」",
+				name_en:"Nastrond",
+				desc_en:"Activates the following Chain Effect when an ally is downed: Heals own HP by 80% and become immune to Mortal skills. (1 turn)",
 				mp:null,
 				point:null,
 				element:"パシップ"

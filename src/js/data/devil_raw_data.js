@@ -30,7 +30,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
-            },
+			},
+			{   
+                name:'セラフ',        
+                name_tw:'熾天使', 
+                name_en:'Seraph',      
+                rarity:5,    
+                grade:95, 
+                icon:'daitensi_serahu.png', 
+                skills:["トリスアギオン","裁きの雷火","熾天の園"], 
+                skill4:["無慈悲な一撃","","","",""], 
+                skill5:['','','','',''], 
+                elements:['rs','dr','wk','','rs','dr','rs'], 
+                type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'event'
+			},
             {   
                 name:'ミカエル',        
                 name_tw:'米迦勒', 
@@ -172,7 +188,6 @@ export default [
             ['聖獸','大天使'],
             ['聖獸','神獸'],
             ['幻魔','靈鳥'],
-            ['龍神','天使'],
             ['地母神','魔神'],
             ['地母神','幻魔'],
             ['天使','大天使'],
@@ -349,7 +364,8 @@ export default [
             ['妖獸','龍王'],
             ['魔王','妖魔'],
 			['邪鬼','聖獸'],
-			['地靈','神獸']
+			['地靈','神獸'],
+			['邪龍','妖獸']
         ],
         fusion:true,
 		devils:[
@@ -947,12 +963,14 @@ export default [
             ['龍王','魔神'],
             ['墮天使','魔神'],
             ['邪神','女神'],
-            ['魔王','魔神'],
-            ['魔王','墮天使'],
+			['魔王','魔神'],
+			['邪龍','幻魔'],
+			['邪龍','鬼神'],
+			['邪龍','墮天使'],
             ['幽鬼','女神']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
             {
 				name:'シヴァ',
@@ -1078,16 +1096,18 @@ export default [
             ['破壞神','神獸'],
             ['破壞神','幻魔'],
             ['鬼神','神獸'],
-            ['龍王','聖獸'],
+			['龍王','聖獸'],
+			['地靈','墮天使'],
             ['邪鬼','鬼神'],
-            ['邪鬼','龍王'],
             ['墮天使','地母神'],
             ['墮天使','龍王'],
             ['妖鬼','地母神'],
             ['妖鬼','龍王'],
-            ['妖獸','鬼神'],
-			['幽鬼','鬼神'],
-			['地靈','墮天使']
+			['妖獸','鬼神'],
+			['邪龍','地母神'],
+			['邪龍','妖鬼'],
+			['邪龍','外道'],
+			['幽鬼','鬼神']
         ],
         fusion:true,
 		devils:[
@@ -1225,7 +1245,8 @@ export default [
             ['邪鬼','大天使'],
 			['邪鬼','妖精'],
 			['地靈','女神'],
-			['地靈','妖魔']
+			['地靈','妖魔'],
+			['邪龍','魔神']
         ],
         fusion:true,
 		devils:[
@@ -1356,14 +1377,15 @@ export default [
             ['龍王','靈鳥'],
             ['妖鬼','靈鳥'],
             ['妖鬼','神獸'],
-            ['鬼女','龍王'],
             ['夜魔','地母神'],
-            ['邪神','龍王'],
 			['外道','魔神'],
 			['外道','邪鬼'],
-            ['魔王','龍王'],
 			['邪鬼','地母神'],
-			['地靈','地母神']
+			['地靈','地母神'],
+			['邪龍','神獸'],
+			['邪龍','龍神'],
+			['邪龍','夜魔'],
+			['幽鬼','邪龍']
         ],
         fusion:true,
 		devils:[
@@ -1755,7 +1777,6 @@ export default [
         formulas:[
             ['龍神','墮天使'],
             ['龍神','邪神'],
-            ['龍神','外道'],
             ['天使','靈鳥'],
             ['妖魔','幻魔'],
             ['妖精','幻魔'],
@@ -1767,7 +1788,9 @@ export default [
             ['魔王','破壞神'],
             ['魔王','外道'],
 			['邪鬼','龍神'],
-			['地靈','鬼神']
+			['地靈','鬼神'],
+			['邪龍','大天使'],
+			['邪龍','地靈']
         ],
         fusion:true,
 		devils:[
@@ -1882,7 +1905,6 @@ export default [
             ['墮天使','鬼神'],
             ['妖鬼','幻魔'],
 			['妖獸','神獸'],
-			['妖獸','邪鬼'],
             ['妖獸','夜魔'],
             ['外道','妖獸'],
             ['魔王','聖獸'],
@@ -2030,7 +2052,7 @@ export default [
 			['地靈','外道']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
             {
 				name:'オベロン',
@@ -2241,6 +2263,7 @@ export default [
 			['鬼女','鬼神'],
 			['夜魔','聖獸'],
 			['夜魔','破壞神'],
+			['邪龍','靈鳥'],
 			['幽鬼','妖魔']
         ],
         fusion:true,
@@ -2377,7 +2400,8 @@ export default [
             ['幽鬼','天使'],
 			['地靈','邪神'],
 			['地靈','魔王'],
-			['地靈','幽鬼']
+			['地靈','幽鬼'],
+			['邪龍','聖獸']
         ],
         fusion:true,
 		devils:[
@@ -2515,7 +2539,8 @@ export default [
             ['外道','天使'],
 			['幽鬼','大天使'],
 			['地靈','天使'],
-			['地靈','龍王']
+			['地靈','龍王'],
+			['邪龍','天使']
         ],
         fusion:true,
 		devils:[
@@ -2907,8 +2932,8 @@ export default [
             ['鬼女','幻魔'],
             ['妖獸','魔神'],
             ['妖獸','墮天使'],
-            ['魔王','妖精'],
-			['魔王','妖獸'],
+			['魔王','妖精'],
+			['邪龍','妖精'],
 			['幽鬼','妖獸']
         ],
         fusion:true,
@@ -3053,8 +3078,8 @@ export default [
             ['魔王','天使'],
             ['魔王','魔獸'],
 			['邪鬼','神獸'],
-			['墮天使','邪鬼'],
-			['魔王','邪鬼']
+			['邪龍','女神'],
+			['邪龍','龍王']
         ],
         fusion:true,
 		devils:[
@@ -3188,7 +3213,9 @@ export default [
             ['外道','魔獸'],
             ['外道','妖鬼'],
             ['外道','鬼女'],
-            ['魔王','大天使'],
+			['魔王','大天使'],
+			['邪龍','邪神'],
+			['邪龍','魔王'],
             ['幽鬼','地母神'],
             ['幽鬼','魔獸']
         ],
@@ -3323,7 +3350,7 @@ export default [
 			['地靈','鬼女']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
             {
 				name:'マッドガッサー',
@@ -3453,7 +3480,9 @@ export default [
             ['龍王','破壞神'],
             ['墮天使','破壞神'],
 			['邪神','破壞神'],
-			['地靈','龍神']
+			['地靈','龍神'],
+			['邪龍','破壞神'],
+			['邪龍','邪鬼']
         ],
         fusion:true,
 		devils:[
@@ -3580,6 +3609,108 @@ export default [
 				skill4:["ラクカオート","捨て身の一撃","テトラコワース","二段の恵体","氷結無効"],
 				skill5:['',"マハブフ","ザン","野生の勘","自然治癒"],
 				elements:['rs','','wk','','','wk',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			}
+        ]
+	},
+	{
+        name:'邪龍',
+        name_tw:'邪龍',
+        name_en:'Drake',
+		highlight:true,
+		fusion:true,
+        formulas:[
+			['天使','龍神'],
+			['邪鬼','龍王'],
+			['墮天使','邪鬼'],
+			['鬼女','龍王'],
+			['邪神','龍王'],
+			['妖獸','邪鬼'],
+			['外道','龍神'],
+			['魔王','龍王'],
+			['魔王','邪鬼'],
+			['魔王','墮天使'],
+			['魔王','妖獸']
+		],
+		devils:[
+            {
+				name:'ヴァスキ',
+				name_tw:'婆蘇吉',
+				name_en:'Vasuki',
+				rarity:5,
+				grade:86,
+				icon:'jyaryuu_vasuki.png',
+				skills:['狂い咲き','氷結ブースタ','ハラーハラ'],
+				skill4:['アイスエイジ','マハブフダイン','コンセントレイト','大虐殺者','火炎無効'],
+				skill5:['','アイスエイジ','混沌の海','毒追撃','毒無効'],
+				elements:['','wk','dr','','','','rs'],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				name:'ファフニール',
+				name_tw:'法夫納',
+				name_en:'Fafnir',
+				rarity:5,
+				grade:81,
+				icon:'jyaryuu_fahuniru.png',
+				skills:['ベノンザッパー','龍の反応','貪欲なる煌めき'],
+				skill4:['毒ガスブレス','暴飲暴食','雄叫び','不屈の闘志','電撃反射'],
+				skill5:['','三段の剛力','血管断ち','デスカウンター','毒床無効'],
+				elements:['dr','','wk','wk','','',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				name:'ヤム',
+				name_tw:'雅姆',
+				name_en:'Ym',
+				rarity:4,
+				grade:77,
+				icon:'jyaryuu_yamu.png',
+				skills:['氷結ブースタ','マハブフーラ','ナハルの裁き'],
+				skill4:['ブフダイン','絶対零度','混沌の海','追い打ち','氷結吸収'],
+				skill5:['','ブフダイン','ソウルドレイン','不屈の闘志','衝撃耐性'],
+				elements:['','','nu','','wk','','rs'],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				name:'ニーズホッグ',
+				name_tw:'尼德霍格',
+				name_en:'Nidhoggr',
+				rarity:4,
+				grade:72,
+				icon:'jyaryuu_nizuhogu.png',
+				skills:['暴飲暴食','不屈の闘志','ナーストレンド'],
+				skill4:['三段の恵体','メガトンプレス','フォッグブレス','野獣の勘','電撃無効'],
+				skill5:['','捨て身の一撃','二分の活泉','マッスルパンチ','破魔耐性'],
+				elements:['nu','','nu','wk','','wk',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				name:'ティアマト',
+				name_tw:'提亞馬特',
+				name_en:'Tiamat',
+				rarity:3,
+				grade:58,
+				icon:'jyaryuu_teiamato.png',
+				skills:['マハブフーラ','氷結ブースタ','アイスブレス'],
+				skill4:['メギドラ','ブフダイン','静寂の祈り','勝利のチャクラ','氷結吸収'],
+				skill5:['','二段の賢魔','魅了耐性','メギド','ブフーラ'],
+				elements:['','nu','nu','wk','','','rs'],
 				type:'attack',
 				fusion:true,
 				fusionAsMaterial:true,
@@ -4513,7 +4644,7 @@ export default [
         name_tw:'天魔',
         name_en:'Tenma',
         formulas:[],
-        highlight:true,
+        highlight:false,
         fusion:false,
 		devils:[
 			{
