@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'191115',
+        updated_at:'191116',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -774,16 +774,11 @@ export default {
     </div>
     
     <!-- footer -->
-    <div class="container-fluid mw-1920 mb-3">
+    <div class="container-fluid mw-1920">
         <div class="d-flex">
-            
             <div class="mr-1 flex-grow-1">
                 <img v-for="(orb,index) in orbs.filter(x=>x.state)" :key="index" :src="orb.icon" style="width:30px">
             </div>
-
-            <div class="mx-1 p-1">
-                <span class="small">Version: {{ updated_at }}</span>
-            </div>  
             <div class="mx-1">
                 <a href="https://tl.hkrev.info/en/police-timeline/" target="_blank">
                     <img src="images/theme/hkdm-32px.png" title="Hong Kong Democratic Movement">
@@ -796,8 +791,13 @@ export default {
             </div>  
         </div>
     </div>
-
-    
+    <div class="container-fluid mw-1920 mb-3">
+        <div class="d-flex justify-content-end">
+             <div class="p-1">
+                <span class="small">Version: {{ updated_at }}</span>
+            </div>  
+        </div>
+    </div>
 
     <!-- Modal -->
     <devil-info :id="modal_id"></devil-info>

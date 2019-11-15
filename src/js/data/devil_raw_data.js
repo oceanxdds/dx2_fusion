@@ -972,6 +972,22 @@ export default [
 		fusion:true,
 		highlight:false,
 		devils:[
+			{
+				name:'異世界シヴァ',
+				name_tw:'濕婆',
+				name_en:'Shiva',
+				rarity:5,
+				grade:93,
+				icon:'hakaisin_siva2.png' ,
+				skills:["虐殺者","イーシュヴァラ","第三の目"],
+				skill4:["","ソウルドレイン","早手の舞い","ミナゴロシの愉悦","衝撃吸収"],
+				skill5:['','魔封無効','千発千中','勝利のチャクラ','魅了無効'],
+				elements:['rs','dr','','dr','wk','',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
+			},
             {
 				name:'シヴァ',
 				name_tw:'濕婆',
@@ -1931,6 +1947,22 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				name:'異世界ネコマタ',
+				name_tw:'貓怪',
+				name_en:'Nekomata',
+				rarity:4,
+				grade:60,
+				icon:'majyuu_nekomata2.png',
+				skills:["スピードスター","寸分の見切り","キャットウォーク"],
+				skill4:["野獣の勘","バインドクロー","マハマリンカリン","魅了無効","電撃反射"],
+				skill5:["","見切り","乱れ狂い","勇奮の鼓舞","早手の舞い"],
+				elements:['','rs','','wk','rs','',''],
+				type:'support',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'アーマーン',
@@ -3581,6 +3613,22 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				name:'異世界アバドン',
+				name_tw:'阿巴頓',
+				name_en:'Abaddon',
+				rarity:4,
+				grade:60,
+				icon:'maou_abadon2.png',
+				skills:["暴飲暴食","デスカウンター","奈落の王"],
+				skill4:["不屈の闘志","地獄の業火","ネクロ・ドグマ","奈落のマスク","物理反射"],
+				skill5:["","火炎ブースタ","二分の活泉","地獄のマスク","電撃耐性"],
+				elements:['nu','rp','','wk','','',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'アバドン',

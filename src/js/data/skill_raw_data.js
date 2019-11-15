@@ -1542,6 +1542,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"万能"
+			},
+			{
+				name:"第三の目",
+				name_tw:"第三隻眼",
+				desc:"敵全体に万能属性の打撃型ダメージを威力130で与える。このスキルによるダメージは魔法攻撃力に依存する。 このスキルはクリティカル、ミスが発生する場合があり、クリティカルはクリティカル率、命中は物理命中率に依存する。 このスキルは反撃効果の発動を無視する。",
+				name_en:"Third Eye",
+				desc_en:"Inflicts Almighty (Physical) damage on all enemies. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates. Counter effects will not work on this skill.",
+				mp:8,
+				point:null,
+				element:"万能"
 			}
         ]
     },
@@ -3131,6 +3141,16 @@ export default [
 				point:"20",
 				element:"パシップ"
 			},
+			{
+				name:"衝撃吸収",
+				name_tw:"衝擊吸收",
+				desc:"衝撃吸収を得る。",
+				name_en:"Drain Force",
+				desc_en:"Drain Force damage",
+				mp:null,
+				point:"20",
+				element:"パシップ"
+			},
             {
 				name:"破魔吸収",
 				name_tw:"破魔吸收",
@@ -4598,6 +4618,36 @@ export default [
 				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「自身のHPを80％回復し、1ターンの間、自身をスキルによる即死無効状態にする。」",
 				name_en:"Nastrond",
 				desc_en:"Activates the following Chain Effect when an ally is downed: Heals own HP by 80% and become immune to Mortal skills. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"キャットウォーク",
+				name_tw:"輕巧貓步",
+				desc:"このスキルを持っている悪魔が生きている間、味方全体は次の効果を発揮する。「物理回避率が20%増加する」",
+				name_en:"Pussyfoot",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect: +20% EV.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"奈落の王",
+				name_tw:"奈落之王",
+				desc:"ボスバトル1ターン目開始時、敵全体のステータス強化効果を解除し、3ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ減少させる。",
+				name_en:"Lord of the Abyss",
+				desc_en:"Removes all status buffs of all enemies at the beginning of the first turn in a boss battle and decreases the ATK, DEF and EV/AC of all enemies by 20%. (3 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"イーシュヴァラ",
+				name_tw:"伊什瓦拉",
+				desc:"クリティカル率が25％増加し、物理命中率が20％増加する。1ターン目開始時、自身にリベリオンが発動する。",
+				name_en:"Ishvara",
+				desc_en:"+25% to Critical hit rate, +20% to AC",
 				mp:null,
 				point:null,
 				element:"パシップ"
