@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'191107',
+        updated_at:'191115',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -785,8 +785,8 @@ export default {
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  
             <div class="mx-1">
-                <a href="https://extradition.g0vhk.io/index-en.html" target="_blank">
-                    <img src="images/theme/Bauhinia-32px.png" title="Hong Kong Anti Extradition Bill">
+                <a href="https://tl.hkrev.info/en/police-timeline/" target="_blank">
+                    <img src="images/theme/hkdm-32px.png" title="Hong Kong Democratic Movement">
                 </a>
             </div>
             <div class="ml-1">
@@ -796,6 +796,8 @@ export default {
             </div>  
         </div>
     </div>
+
+    
 
     <!-- Modal -->
     <devil-info :id="modal_id"></devil-info>
