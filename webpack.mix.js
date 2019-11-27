@@ -4,7 +4,7 @@ require('laravel-mix-polyfill');
 
 mix
   .js('src/js/index.js', 'dist/bundle.js')
-  .sass('src/scss/app.scss', 'dist/bundle.css')
+  //.sass('src/scss/app.scss', 'dist/bundle.css')
   .options({
     processCssUrls: false
   })

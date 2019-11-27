@@ -22,7 +22,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'191116',
+        updated_at:'191127',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -538,7 +538,7 @@ export default {
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
             <b-navbar-brand href="#" @click="route('home')" class="d-none d-md-block">Dx2</b-navbar-brand>
             <b-navbar-brand href="#" @click="searchBar=!searchBar" class="d-block d-md-none">{{ $t('message.search') }}</b-navbar-brand>
-
+            
             <b-collapse is-nav id="nav_collapse">
                 <b-navbar-nav>
                     <b-nav-item href="#" @click="route('fusion.devil')" :active="isRoute('fusion.devil')">{{ $t('message.devil') }}</b-nav-item>
@@ -793,7 +793,7 @@ export default {
     </div>
     <div class="container-fluid mw-1920 mb-3">
         <div class="d-flex justify-content-end">
-             <div class="p-1">
+            <div class="p-1">
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  
         </div>

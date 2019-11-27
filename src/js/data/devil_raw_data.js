@@ -13,7 +13,7 @@ export default [
             ['墮天使','聖獸']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
             {   
                 name:'メタトロン',
@@ -196,7 +196,7 @@ export default [
             ['鬼女','神獸'],
             ['鬼女','地母神'],
 			['鬼女','妖精'],
-			['妖鬼','邪鬼']
+			['幽鬼','邪鬼']
         ],
         fusion:true,
 		devils:[
@@ -3668,7 +3668,7 @@ export default [
         name:'邪龍',
         name_tw:'邪龍',
         name_en:'Drake',
-		highlight:true,
+		highlight:false,
 		fusion:true,
         formulas:[
 			['天使','龍神'],
@@ -3908,7 +3908,7 @@ export default [
         name:'魔人',
         name_tw:'魔人',
         name_en:'Fiend',
-        highlight:false,
+        highlight:true,
         formulas:[],
         fusion:false,
 		devils:[
@@ -3993,6 +3993,38 @@ export default [
 				source:'summon'
 			},
 			{
+				name:'ペイルライダー',
+				name_tw:'灰騎士',
+				name_en:'Pale Rider',
+				rarity:5,
+				grade:84,
+				icon:'majin_peiruraida.png',
+				skills:['ザンダイン','黄泉の訪れ','ペストクロップ'],
+				skill4:['三段の強運','マハザンダイン','ランダマイザ','ラクンダオート','電撃無効'],
+				skill5:['','衝撃ハイブースタ','狂乱の権化','殺風激','不屈の闘志'],
+				elements:['','','','wk','rp','rs','rs'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
+			{
+				name:'ブラックライダー',
+				name_tw:'黑騎士',
+				name_en:'Black Rider',
+				rarity:5,
+				grade:82,
+				icon:'majin_burakuraida.png',
+				skills:['ブフダイン','荒廃の訪れ','ソウルバランス'],
+				skill4:['三段の恵体','絶対零度','精神支配','タルンダオート','火炎無効'],
+				skill5:['','氷結ハイブースタ','強靭の権化','アイスエイジ','不屈の闘志'],
+				elements:['','wk','rp','','','rs','rs'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
+			{
 				name:'だいそうじょう',
 				name_tw:'大僧正',
 				name_en:'Daisoujou',
@@ -4004,6 +4036,22 @@ export default [
 				skill5:['','タルンダオート','回復ハイブースタ','リカームドラ','ダークゾーン無効'],
 				elements:['','','','','','nu','nu'],
 				type:'support',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
+			{
+				name:'レッドライダー',
+				name_tw:'紅騎士',
+				name_en:'Red Rider',
+				rarity:5,
+				grade:80,
+				icon:'majin_redoraida.png',
+				skills:['ミナゴロシの愉悦','鮮血の訪れ','テラーソード'],
+				skill4:['三段の剛力','絶命剣','チャージ','スクンダオート','氷結無効'],
+				skill5:['','物理ハイブースタ','破壊の権化','ゴッドハンド','不屈の闘志'],
+				elements:['','rp','wk','','','rs','rs'],
+				type:'attack',
 				fusion:false,
 				fusionAsMaterial:false,
 				source:'summon'

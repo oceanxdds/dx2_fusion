@@ -1554,7 +1554,24 @@ export default [
 				element:"万能"
 			}
         ]
-    },
+	},
+	{
+        name:"???",
+        name_tw:"???",
+        name_en:"???",
+        skills:[
+            {
+				name:"テラーソード",
+				name_tw:"恐懼之劍",
+				desc:"敵全体に、対象の現在HPの25%の割合ダメージ(最大1,000ダメージ)を与え、敵全体を基礎確率30%で緊縛状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。",
+				name_en:"Blade of Terror",
+				desc_en:"Inflicts 25% fractional damage (1,000 max) on all enemies based on their current HP with 30% chance to inflict Bind. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:6,
+				point:null,
+				element:"???"
+			}
+		]
+	},
     {
         name:"回復",
         namw_tw:"回復",
@@ -3749,6 +3766,16 @@ export default [
 				element:"パシップ"
 			},
 			{
+				name:"狂乱の権化",
+				name_tw:"狂亂的化身",
+				desc:"状態異常にする確率が15%増加し、物理回避率が15%増加する。",
+				name_en:"Epitome of Madness",
+				desc_en:"+15% chance to inflict status ailments, +15% to EV.",
+				mp:null,
+				point:"16",
+				element:"パシップ"
+			},
+			{
 				name:"鋭気の権化",
 				name_tw:"銳氣的化身",
 				desc:"物理命中率が15%増加し、状態異常になる確率が45%減少する。",
@@ -4648,6 +4675,56 @@ export default [
 				desc:"クリティカル率が25％増加し、物理命中率が20％増加する。1ターン目開始時、自身にリベリオンが発動する。",
 				name_en:"Ishvara",
 				desc_en:"+25% to Critical hit rate, +20% to AC",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"黄泉の訪れ",
+				name_tw:"黃泉到來",
+				desc:"自ターン終了時、次の連動効果が発動する。 「敵全体に、対象の現在HPの10%の割合ダメージ(最大200ダメージ)を与え、敵全体を基礎確率50%で毒状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				name_en:"Plague",
+				desc_en:"Activates the following Chain Effect at the end of own turn: Inflicts 10% fractional damage (200 max) on all enemies based on their current HP, with a 50% chance to inflict Poison. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ペストクロップ",
+				name_tw:"魂魄收割",
+				desc:"敵ターン終了時、次の連動効果が発動する。 「すべての毒状態の敵に、対象の最大HPの50%の割合ダメージ(最大2,000ダメージ)を与える。このスキルによるダメージは死亡時に踏みとどまるスキルを無視する。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				name_en:"Pestilence",
+				desc_en:"Activates the following Chain Effect at the end of an enemy turn: Inflicts 50% fractional damage (2,000 max) on all Poisoned enemies based on their max HP. Nullifies all death prevention skills. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"荒廃の訪れ",
+				name_tw:"荒廢到來",
+				desc:"敵ターン終了時、次の連動効果が発動する。 「敵全体に、対象の現在HPの10%の割合ダメージ(最大200ダメージ)を与え、敵のMPを1失わせる。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				name_en:"Famine",
+				desc_en:"Activates the following Chain Effect at the end of an enemy turn: Inflicts 10% fractional damage (200 max) on all enemies based on their current HP and reduces their MP by 1. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ソウルバランス",
+				name_tw:"靈魂之秤",
+				desc:"敵のHP回復効果を含む悪魔スキルを発動したとき、次の連動効果が発動する。 「敵全体に、対象の現在HPの50%の割合ダメージ(最大2,000ダメージ)を与える。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				name_en:"Soul Divide",
+				desc_en:"Activates the following Chain Effect when an enemy demon skill with an HP healing effect is used: Inflicts 50% fractional damage (2,000 max) on all enemies based on their current HP. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"鮮血の訪れ",
+				name_tw:"鮮血到來",
+				desc:"テラーソード発動後、次の連動効果が発動する。 「敵全体に、クリティカル率30%の物理属性の打撃型ダメージを威力70で与える。このスキルは反撃効果の発動を無視する。」",
+				name_en:"Bloodshed",
+				desc_en:"Activates the following Chain Effect after Blade of Terror is activated: Inflicts Phys (Physical) damage (power: 70) with 30% crit rate on all enemies. Counter effects will not work on this skill.",
 				mp:null,
 				point:null,
 				element:"パシップ"
