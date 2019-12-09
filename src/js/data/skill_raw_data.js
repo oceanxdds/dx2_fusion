@@ -4728,6 +4728,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"パシップ"
+			},
+			{
+				name:"将軍の号令",
+				name_tw:"將軍號令",
+				desc:"敵が魔封状態になったとき、次の連動効果が発動。「1ターンの間、味方全体の攻撃力・回避と命中をそれぞれ20%ずつ増加させる。」",
+				name_en:"Shogun's Order",
+				desc_en:"Activates the following Chain Effect when an enemy is Muted: Increases own party's ATK and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },

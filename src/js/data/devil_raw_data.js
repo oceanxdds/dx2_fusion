@@ -4360,6 +4360,24 @@ export default [
 				formula:['ヤクシニー','ミトラ','ダーキニー','ランダ'],
 				source:'multi_fusion'
 			},
+			{
+				name:'ネコショウグン',
+				name_tw:'貓將軍',
+				name_en:'Neko Shogun',
+				rarity:4,
+				grade:61,
+				icon:'hisin_nekosyouugun.png',
+				skills:['メディラマ','マハジオンガ','将軍の号令'],
+				skill4:['マハマカジャマ','放電','サマリカーム','野獣の勘','破魔反射'],
+				skill5:['','','','',''],
+				elements:['rs','','','rp','wk','nu','nu'],
+				type:'support',
+				fusion:true,
+				fusionAsMaterial:false,
+				fusionMag:300000,
+				formula:['サキミタマ','クシミタマ','ニギミタマ','アラミタマ'],
+				source:'multi_fusion'
+			},
             {
 				name:'キンマモン',
 				name_tw:'君真物',
