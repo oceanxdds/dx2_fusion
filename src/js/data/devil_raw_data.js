@@ -829,7 +829,8 @@ export default [
     {
         name:'幻魔',
         name_tw:'幻魔',
-        name_en:'Genma',
+		name_en:'Genma',
+		highlight:true,
         formulas:[
             ['龍神','妖魔'],
             ['龍神','幽鬼'],
@@ -863,6 +864,22 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				name:'フロストエース',
+				name_tw:'冰霜艾斯',
+				name_en:'Frost Ace',
+				rarity:5,
+				grade:80,
+				icon:'genma_furosutoesu.png',
+				skills:['氷結ブースタ','ごっかんソウル','復讐の氷拳'],
+				skill4:['マハンマオン','マハブフーラ','勇奮の鼓舞','大暗殺者','呪殺無効'],
+				skill5:['','氷結エンハンス','マハブフダイン','勝利のチャクラ','奈落のマスク'],
+				elements:['','rp','rp','','','rs','wk'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'ツクヨミ',
@@ -3908,7 +3925,7 @@ export default [
         name:'魔人',
         name_tw:'魔人',
         name_en:'Fiend',
-        highlight:true,
+        highlight:false,
         formulas:[],
         fusion:false,
 		devils:[

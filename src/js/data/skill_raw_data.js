@@ -493,6 +493,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"復讐の氷拳",
+				name_tw:"復仇冰拳",
+				desc:"敵単体に氷結属性の打撃型ダメージを威力130で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル、ミスが発生する場合がある。攻撃成功時、自身を会心状態にする。",
+				name_en:"Vengeful Frost Fist ",
+				desc_en:"Inflicts Ice (Physical) damage on a single enemy. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. *This skill has a chance of having a Critical effect or a Miss. *Casts Rebellion on self when the attack is successful.",
+				mp:5,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -2789,6 +2799,16 @@ export default [
 				element:"パシップ"
 			},
 			{
+				name:"氷結エンハンス",
+				name_tw:"冰凍增幅",
+				desc:"氷結属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
+				name_en:"Ice Enhancement",
+				desc_en:"+15% to Ice damage. +10% damage when attacking the enemy's weak point.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
 				name:"電撃エンハンス",
 				name_tw:"電擊增幅",
 				desc:"電撃属性で与えるダメージ15%増加、弱点をついたとき与えるダメージ10%増加",
@@ -4735,6 +4755,16 @@ export default [
 				desc:"敵が魔封状態になったとき、次の連動効果が発動。「1ターンの間、味方全体の攻撃力・回避と命中をそれぞれ20%ずつ増加させる。」",
 				name_en:"Shogun's Order",
 				desc_en:"Activates the following Chain Effect when an enemy is Muted: Increases own party's ATK and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ごっかんソウル",
+				name_tw:"酷寒靈魂",
+				desc:"自身が生存中、味方全体は次の効果を発揮する。｢氷結属性で与えるダメージが10%増加する。｣",
+				name_en:"Icy Rage",
+				desc_en:"While this demon is alive, all party members will receive the following effect: +10% to Ice damage.",
 				mp:null,
 				point:null,
 				element:"パシップ"
