@@ -498,9 +498,19 @@ export default [
 				name:"復讐の氷拳",
 				name_tw:"復仇冰拳",
 				desc:"敵単体に氷結属性の打撃型ダメージを威力130で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル、ミスが発生する場合がある。攻撃成功時、自身を会心状態にする。",
-				name_en:"Vengeful Frost Fist ",
+				name_en:"Vengeful Frost Fist",
 				desc_en:"Inflicts Ice (Physical) damage on a single enemy. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. *This skill has a chance of having a Critical effect or a Miss. *Casts Rebellion on self when the attack is successful.",
 				mp:5,
+				point:null,
+				element:"物理"
+			},
+			{
+				name:"荒れすさぶ一太刀",
+				name_tw:"狂放一太刀",
+				desc:"強化段階 0：敵単体にクリティカル率30％の物理属性の打撃型ダメージを威力150で与える。強化段階 1：敵単体にクリティカル率50％の物理属性の打撃型ダメージを威力180で与える。さらに死亡時に踏みとどまるスキルを無視。強化段階 2：敵単体にクリティカル率80％の物理属性の打撃型ダメージを威力220で与える。さらに死亡時に踏みとどまるスキルを無視、反撃効果を無視。",
+				name_en:"Violent Slash",
+				desc_en:"This skill will gain 1 Boost level with each use in the battle. The increased boost level remains when this demon revives by skills or items, or all party members revive when losing the battle. Current Boost level can be confirmed by holding the skill icon in the battle.",
+				mp:6,
 				point:null,
 				element:"物理"
 			}
@@ -1018,6 +1028,16 @@ export default [
 				desc:"ランダムな敵に4回、衝撃貫通を得た衝撃属性の魔法型ダメージを威力45で与える。攻撃成功時、死亡しているランダムな味方単体をHP25%で復活させる。(回数制限:6回)",
 				name_en:"Tailwind",
 				desc_en:"Inflicts Force (Magic) damage 4 times with Force Pierce effect on random enemy/ies. Revives an ally at random with 25% HP if the attack is successful.",
+				mp:6,
+				point:null,
+				element:"衝撃"
+			},
+			{
+				name:"疾風のガルクロー",
+				name_tw:"疾風迦樓爪",
+				desc:"強化段階 0：ランダムな敵に4回、衝撃属性の魔法型ダメージを威力40で与える。	強化段階 1：ランダムな敵に6回、衝撃属性の魔法型ダメージを威力40で与える。強化段階 2：ランダムな敵に8回、衝撃属性の魔法型ダメージを威力40で与える。",
+				name_en:"Gale Talon",
+				desc_en:"This skill will gain 1 Boost level with each use in the battle. The increased boost level remains when this demon revives by skills or items, or all party members revive when losing the battle. Current Boost level can be confirmed by holding the skill icon in the battle.",
 				mp:6,
 				point:null,
 				element:"衝撃"
@@ -1560,6 +1580,16 @@ export default [
 				name_en:"Third Eye",
 				desc_en:"Inflicts Almighty (Physical) damage on all enemies. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates. Counter effects will not work on this skill.",
 				mp:8,
+				point:null,
+				element:"万能"
+			},
+			{
+				name:"九曜天翔",
+				name_tw:"九曜天翔",
+				desc:"敵全体に万能属性の魔法型ダメージを威力80で与える。このスキルによるダメージは物理攻撃力に依存する。攻撃成功時、1ターンの間、敵全体の防御力・回避と命中を20%ずつ減少させ、味方全体の攻撃力・回避と命中を20%ずつ増加させる。",
+				name_en:"Kuyo Flash",
+				desc_en:" Inflicts Almighty (Magic) damage (Power: 80) on all enemies. When attack is successful, reduces DEF and EV/AC of all enemies by 20%, increases own party's ATK and EV/AC by 20%. (1 turn) *The damage inflicted by this skill is dependent on Phys ATK.",
+				mp:7,
 				point:null,
 				element:"万能"
 			}
@@ -3834,6 +3864,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"パシップ"
+			},
+			{
+				name:"迅速の権化",
+				name_tw:"迅速的化身",
+				desc:"悪魔のバトルスピードへの影響が25%増加し、物理回避率が10%増加する。",
+				name_en:"Epitome of Swiftness",
+				desc_en:"Increases this demon's effect on Battle Speed by 25%, +10% to Phys EV.",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },
@@ -4765,6 +4805,46 @@ export default [
 				desc:"自身が生存中、味方全体は次の効果を発揮する。｢氷結属性で与えるダメージが10%増加する。｣",
 				name_en:"Icy Rage",
 				desc_en:"While this demon is alive, all party members will receive the following effect: +10% to Ice damage.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"東国の守護神",
+				name_tw:"東國守護神",
+				desc:"物理貫通を得る。先攻でバトルを開始したとき、次の連動効果が発動。「味方のプレスターンアイコンを1つ増加させる。」",
+				name_en:"Guardian of the East",
+				desc_en:"Adds Phys Pierce. Activates the following Chain Effect when attacking first: Receive 1 additional Press Turn Icon.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"信義なる反撃",
+				name_tw:"信義之反擊",
+				desc:"敵の打撃型攻撃を受けたとき、次の反撃効果が発動する。「100%の確率で物理属性の打撃型ダメージを威力100で与える。」",
+				name_en:"Faithful Counter",
+				desc_en:"The following effect will activate when receiving a Phys Attack: 100% chance to counter dealing Phys (Physical) damage. Power: 100",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"高天原の剛勇",
+				name_tw:"高天原之英勇",
+				desc:"物理貫通を得る。敵がパスを使用したとき、次の連動効果が発動。「敵全体にクリティカル率30％の物理属性の打撃型ダメージを威力85で与える。」",
+				name_en:"Heavenly Valor",
+				desc_en:"Adds Phys Pierce. Activates the following Chain Effect when the enemy uses Pass: Inflicts Phys (Physical) damage with 30% crit rate on all enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"光輝なる翼",
+				name_tw:"光輝之翼",
+				desc:"衝撃貫通を得る。自身を含む味方が打撃型攻撃を回避したとき、次の連動効果が発動。「敵全体に衝撃属性の魔法型ダメージを威力70で与える。攻撃成功時、2ターンの間、敵全体の回避と命中を20％減少させる。」",
+				name_en:"Brilliant Wings",
+				desc_en:"Adds Force Pierce. Activates the following Chain Effect when a member of your party evades a Physical attack: Inflicts Force (Magic) damage on all enemies. Reduces EV/AC of all enemies by 20% if the attack is successful. (2 turns) Power: 70",
 				mp:null,
 				point:null,
 				element:"パシップ"

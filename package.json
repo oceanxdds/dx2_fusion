@@ -15,11 +15,11 @@
     "@babel/polyfill": "^7.7.0",
     "cross-env": "^5.2.1",
     "css-loader": "^2.1.1",
-    "laravel-mix": "^5.0.0",
+    "laravel-mix": "^5.0.1",
     "laravel-mix-bundle-analyzer": "^1.0.5",
     "laravel-mix-polyfill": "^1.1.0",
     "resolve-url-loader": "^2.3.2",
-    "sass": "^1.23.7",
+    "sass": "^1.24.2",
     "sass-loader": "^7.3.1",
     "serialize-javascript": "^2.1.2",
     "vue-template-compiler": "^2.6.11"
@@ -28,7 +28,7 @@
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.1.0",
     "vue": "^2.6.11",
-    "vue-i18n": "^8.15.1",
+    "vue-i18n": "^8.15.3",
     "vuex": "^3.1.2"
   }
 }

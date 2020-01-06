@@ -351,7 +351,8 @@ export default [
     {
         name:'靈鳥',
         name_tw:'靈鳥',
-        name_en:'Avian',
+		name_en:'Avian',
+		highlight:true,
         formulas:[
             ['神獸','大天使'],
             ['天使','神獸'],
@@ -369,6 +370,22 @@ export default [
         ],
         fusion:true,
 		devils:[
+			{
+				name:'異世界ガルーダ',
+				name_tw:'迦樓羅',
+				name_en:'Garuda',
+				rarity:5,
+				grade:80,
+				icon:'reityou_garuda2.png',
+				skills:["衝撃ハイブースタ","光輝なる翼","疾風のガルクロー"],
+				skill4:["","マハザンダイン","疾風の咆哮","大虐殺者","氷結無効"],
+				skill5:['',"無慈悲な一撃","寸分の見切り","スピードスター","スクカオート"],
+				elements:['','rp','wk','','dr','rs',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
+			},
             {
 				name:'ガルーダ',
 				name_tw:'迦樓羅',
@@ -830,7 +847,7 @@ export default [
         name:'幻魔',
         name_tw:'幻魔',
 		name_en:'Genma',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['龍神','妖魔'],
             ['龍神','幽鬼'],
@@ -987,7 +1004,7 @@ export default [
             ['幽鬼','女神']
         ],
 		fusion:true,
-		highlight:false,
+		highlight:true,
 		devils:[
 			{
 				name:'異世界シヴァ',
@@ -1036,6 +1053,22 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				name:'異世界スサノオ',
+				name_tw:'素盞嗚尊',
+				name_en:'Susano-o',
+				rarity:5,
+				grade:82,
+				icon:'hakaisin_susanoo2.png',
+				skills:["破壊の権化","高天原の剛勇","荒れすさぶ一太刀"],
+				skill4:["","空間殺法","雄叫び","大暗殺者","物理吸収"],
+				skill5:['','野獣の勘','鋭気の権化','緊縛無効','火炎無効'],
+				elements:['nu','wk','','','dr','',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'event'
 			},
             {
 				name:'スサノオ',
@@ -4161,8 +4194,24 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:false,
+		highlight:true,
 		devils:[
+			{
+				name:'マサカド☆',
+				name_tw:'平將門',
+				name_en:'Masakato',
+				rarity:5,
+				grade:99,
+				icon:'eiyuu_masakado.png',
+				skills:['大虐殺者','東国の守護神','九曜天翔'],
+				skill4:['','刹那五月雨撃ち','護国の咆哮','不屈の闘志','破魔吸収'],
+				skill5:['','信義なる反撃','強靭の権化','迅速の権化','鋭気の権化'],
+				elements:['nu','rs','rs','rs','rs','nu','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
             {
 				name:'ヨシツネ',
 				name_tw:'義經',
