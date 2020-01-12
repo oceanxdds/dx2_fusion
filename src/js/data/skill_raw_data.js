@@ -1125,7 +1125,7 @@ export default [
 				desc:"敵ランダムに２～４回、破魔属性の魔法型ダメージを威力45で与える。",
 				name_en:"Judgement Light",
 				desc_en:"Inflicts Magic Light damage 2 to 4 times with 45 power on Random Enemy/ies.",
-				mp:7,
+				mp:4,
 				point:7,
 				element:"破魔"
 			},
