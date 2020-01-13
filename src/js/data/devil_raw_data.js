@@ -1343,7 +1343,7 @@ export default [
 				icon:'tibosin_asyerato.jpg',
 				skills:["メディラマ","母なる創造","マハラギオン"],
 				skill4:["混沌の海","トリスアギオン","静寂の祈り","回復ハイブースタ","氷結反射"],
-				skill5:['',"審判の光","地獄のマスク","二段の強運","緊縛追撃"],
+				skill5:['',"三段の恵体","緊縛無効","三段の強運","呪殺耐性"],
 				elements:['','nu','wk','','nu','','wk'],
 				type:'heal',
 				fusion:true,

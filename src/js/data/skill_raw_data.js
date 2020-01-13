@@ -1773,7 +1773,7 @@ export default [
 				desc:"死亡している味方単体を完全回復で復活させ、リディア状態にした後、味方のプレスターンアイコンを1つ増加させる。",
 				name_en:"Mother's Creation",
 				desc_en:"After reviving a single party member with full HP and casting Lydia, receive 1 additional Press Turn Icon. (1 use)",
-				mp:8,
+				mp:7,
 				point:null,
 				element:"無"
 			},
