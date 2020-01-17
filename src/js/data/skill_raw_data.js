@@ -2423,7 +2423,7 @@ export default [
 			},
             {
 				name:"テトラジャ",
-				name_tw:'',
+				name_tw:'提特拉加',
 				desc:"１ターンの間、味方全体をスキルによる即死無效狀態にする。",
 				name_en:"Tetraja",
 				desc_en:"All Party Members will evade Instant Kill for 1 turn",
