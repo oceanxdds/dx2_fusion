@@ -352,7 +352,7 @@ export default [
         name:'靈鳥',
         name_tw:'靈鳥',
 		name_en:'Avian',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['神獸','大天使'],
             ['天使','神獸'],
@@ -1004,7 +1004,7 @@ export default [
             ['幽鬼','女神']
         ],
 		fusion:true,
-		highlight:true,
+		highlight:false,
 		devils:[
 			{
 				name:'異世界シヴァ',
@@ -4194,7 +4194,7 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:true,
+		highlight:false,
 		devils:[
 			{
 				name:'マサカド☆',
@@ -4824,9 +4824,25 @@ export default [
         name_tw:'天魔',
         name_en:'Tenma',
         formulas:[],
-        highlight:false,
+        highlight:true,
         fusion:false,
 		devils:[
+			{
+                name:'アスラおう',   
+                name_tw:'阿修羅王', 
+                name_en:'Asura Lord',
+                rarity:5, 
+                grade:95, 
+                icon:'tenma_asuraou.jpg', 
+                skills:["千発千中","修羅道","万物屠り"], 
+                skill4:["三段の剛力","ギガントマキア","チャージ","大暗殺者","物理吸収"], 
+                skill5:["","破壊の権化","タルカオート","スクカオート","魅了無効"],
+                elements:["nu","rp","","","","rp","nu"], 
+                type:"attack",
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
 			{
                 name:'マハカーラ',   
                 name_tw:'大黑天', 

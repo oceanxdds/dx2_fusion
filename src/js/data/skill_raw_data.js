@@ -1588,7 +1588,17 @@ export default [
 				name_tw:"九曜天翔",
 				desc:"敵全体に万能属性の魔法型ダメージを威力80で与える。このスキルによるダメージは物理攻撃力に依存する。攻撃成功時、1ターンの間、敵全体の防御力・回避と命中を20%ずつ減少させ、味方全体の攻撃力・回避と命中を20%ずつ増加させる。",
 				name_en:"Kuyo Flash",
-				desc_en:" Inflicts Almighty (Magic) damage (Power: 80) on all enemies. When attack is successful, reduces DEF and EV/AC of all enemies by 20%, increases own party's ATK and EV/AC by 20%. (1 turn) *The damage inflicted by this skill is dependent on Phys ATK.",
+				desc_en:"Inflicts Almighty (Magic) damage (Power: 80) on all enemies. When attack is successful, reduces DEF and EV/AC of all enemies by 20%, increases own party's ATK and EV/AC by 20%. (1 turn) *The damage inflicted by this skill is dependent on Phys ATK.",
+				mp:7,
+				point:null,
+				element:"万能"
+			},
+			{
+				name:"万物屠り",
+				name_tw:"屠戮萬物",
+				desc:"敵単体にクリティカル率30%の万能属性の打撃型ダメージを威力210で与える。このスキルによるダメージは物理攻撃力に依存し、死亡時にふみとどまるスキルを無視する。このスキルはクリティカル・ミスが発生する場合がある。",
+				name_en:"Slaughter All",
+				desc_en:"Inflicts Almighty (Physical) damage (Power: 210) with 30% crit rate on a single enemy. *The damage inflicted by this skill is dependent on Phys ATK. *Nullifies all death prevention skills. *This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.",
 				mp:7,
 				point:null,
 				element:"万能"
@@ -4845,6 +4855,16 @@ export default [
 				desc:"衝撃貫通を得る。自身を含む味方が打撃型攻撃を回避したとき、次の連動効果が発動。「敵全体に衝撃属性の魔法型ダメージを威力70で与える。攻撃成功時、2ターンの間、敵全体の回避と命中を20％減少させる。」",
 				name_en:"Brilliant Wings",
 				desc_en:"Adds Force Pierce. Activates the following Chain Effect when a member of your party evades a Physical attack: Inflicts Force (Magic) damage on all enemies. Reduces EV/AC of all enemies by 20% if the attack is successful. (2 turns) Power: 70",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"修羅道",
+				name_tw:"修羅道",
+				desc:"物理貫通を得る。自身が生存中、味方全体は次の効果を発揮する。｢クリティカル率が20%増加し、クリティカル時に与えるダメージが10%増加する。｣",
+				name_en:"Endless War",
+				desc_en:"Adds Phys Pierce. While this demon is alive, all party members will receive the following effect: +20% to Critical hit rate, +10% to Critical hit damage.",
 				mp:null,
 				point:null,
 				element:"パシップ"
