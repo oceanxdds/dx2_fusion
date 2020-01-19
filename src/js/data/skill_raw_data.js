@@ -2397,7 +2397,7 @@ export default [
 				desc:"１ターンの間、味方全体を万能属性も含めた魔法型ダメージ反射状態にする。",
 				name_en:"Five Elements ",
 				desc_en:"All Party Members repels Magic (including Almighty) damage for 1 turn.",
-				mp:null,
+				mp:6,
 				point:null,
 				element:"無"
 			},
