@@ -43,10 +43,6 @@ export default {
             {text: 'message.deny', value:'0'}
         ],
         cache_prevent_unload:'0',
-        prevent_unload_options:[
-            {text: 'message.allow', value:'1'},
-            {text: 'message.deny', value:'0'}
-        ],
         //router
         race_id:0,
         skillType_id:0,
@@ -735,19 +731,6 @@ export default {
                                 button-variant="outline-info"
                                 v-model="down_grade">
                                 <b-form-radio :value="option.value" v-for="(option,index) in down_grade_options" :key="index">
-                                    {{ $t(option.text) }}
-                                </b-form-radio>
-                            </b-form-radio-group>
-                        </div>
-                    </div>
-                    <div class="col-12 py-2">
-                        <div class="font-weight-bold py-2">{{ $t('message.prevent_unload') }}</div>
-                        <div>
-                            <b-form-radio-group
-                                buttons
-                                button-variant="outline-info"
-                                v-model="prevent_unload">
-                                <b-form-radio :value="option.value" v-for="(option,index) in prevent_unload_options" :key="index">
                                     {{ $t(option.text) }}
                                 </b-form-radio>
                             </b-form-radio-group>
