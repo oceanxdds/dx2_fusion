@@ -1613,9 +1613,9 @@ export default [
             {
 				name:"テラーソード",
 				name_tw:"恐懼之劍",
-				desc:"敵全体に、対象の現在HPの25%の割合ダメージ(最大1,000ダメージ)を与え、敵全体を基礎確率30%で緊縛状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。",
+				desc:"敵全体に、対象の現在HPの25%の割合ダメージ(最大1,000ダメージ)を与え、敵全体を基礎確率40%で緊縛状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。",
 				name_en:"Blade of Terror",
-				desc_en:"Inflicts 25% fractional damage (1,000 max) on all enemies based on their current HP with 30% chance to inflict Bind. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				desc_en:"Inflicts 25% fractional damage (1,000 max) on all enemies based on their current HP with 40% chance to inflict Bind. Fractional damage will not be affected by stat/damage increase or reduction effects.",
 				mp:6,
 				point:null,
 				element:"???"
@@ -4752,9 +4752,9 @@ export default [
 			{
 				name:"黄泉の訪れ",
 				name_tw:"黃泉到來",
-				desc:"自ターン終了時、次の連動効果が発動する。 「敵全体に、対象の現在HPの10%の割合ダメージ(最大200ダメージ)を与え、敵全体を基礎確率50%で毒状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				desc:"自ターン終了時、次の連動効果が発動する。 「敵全体に、対象の現在HPの10%の割合ダメージ(最大200ダメージ)を与え、敵全体を基礎確率70%で毒状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
 				name_en:"Plague",
-				desc_en:"Activates the following Chain Effect at the end of own turn: Inflicts 10% fractional damage (200 max) on all enemies based on their current HP, with a 50% chance to inflict Poison. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				desc_en:"Activates the following Chain Effect at the end of own turn: Inflicts 10% fractional damage (200 max) on all enemies based on their current HP, with a 70% chance to inflict Poison. Fractional damage will not be affected by stat/damage increase or reduction effects.",
 				mp:null,
 				point:null,
 				element:"パシップ"
@@ -4772,9 +4772,9 @@ export default [
 			{
 				name:"荒廃の訪れ",
 				name_tw:"荒廢到來",
-				desc:"敵ターン終了時、次の連動効果が発動する。 「敵全体に、対象の現在HPの10%の割合ダメージ(最大200ダメージ)を与え、敵のMPを1失わせる。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
+				desc:"敵ターン終了時、次の連動効果が発動する。 「敵全体に、対象の最大HPの10%の割合ダメージ(最大300ダメージ)を与え、敵のMPを2失わせる。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」",
 				name_en:"Famine",
-				desc_en:"Activates the following Chain Effect at the end of an enemy turn: Inflicts 10% fractional damage (200 max) on all enemies based on their current HP and reduces their MP by 1. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				desc_en:"Activates the following Chain Effect at the end of an enemy turn: Inflicts 10% fractional damage (300 max) on all enemies based on their max HP and reduces their MP by 2. Fractional damage will not be affected by stat/damage increase or reduction effects.",
 				mp:null,
 				point:null,
 				element:"パシップ"
@@ -4792,9 +4792,9 @@ export default [
 			{
 				name:"鮮血の訪れ",
 				name_tw:"鮮血到來",
-				desc:"テラーソード発動後、次の連動効果が発動する。 「敵全体に、クリティカル率30%の物理属性の打撃型ダメージを威力70で与える。このスキルは反撃効果の発動を無視する。」",
+				desc:"テラーソード発動後、次の連動効果が発動する。 「敵全体に、クリティカル率50%の物理属性の打撃型ダメージを威力80で与える。このスキルは反撃効果の発動を無視する。」",
 				name_en:"Bloodshed",
-				desc_en:"Activates the following Chain Effect after Blade of Terror is activated: Inflicts Phys (Physical) damage (power: 70) with 30% crit rate on all enemies. Counter effects will not work on this skill.",
+				desc_en:"Activates the following Chain Effect after Blade of Terror is activated: Inflicts Phys (Physical) damage (power: 80) with 50% crit rate on all enemies. Counter effects will not work on this skill.",
 				mp:null,
 				point:null,
 				element:"パシップ"
