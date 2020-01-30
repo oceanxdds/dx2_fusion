@@ -3554,7 +3554,7 @@ export default [
 			{
 				name:'マサカド☆',
 				name_tw:'平將門',
-				name_en:'Masakato',
+				name_en:'Masakado',
 				rarity:5,
 				grade:99,
 				icon:'eiyuu_masakado.jpg',
@@ -4494,7 +4494,7 @@ export default [
             {
 				name:'マサカド',
 				name_tw:'平將門',
-				name_en:'Masakato',
+				name_en:'Masakado',
 				rarity:5,
 				grade:98,
 				icon:'mousyou_masakado.jpg',
