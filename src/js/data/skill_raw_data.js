@@ -1602,6 +1602,16 @@ export default [
 				mp:7,
 				point:null,
 				element:"万能"
+			},
+			{
+				name:"メソポタミアの星",
+				name_tw:"美索布達米亞之星",
+				desc:"敵全体に万能属性の魔法型ダメージを威力100で与え、3ターンの間、敵全体の攻撃力を20%減少させ、味方全体の攻撃力を20%増加させる。",
+				name_en:"Mesopotamian Star",
+				desc_en:"Inflicts Almighty (Magic) damage with 100 power on All Enemies. Reduces all enemy ATK by 20% and increases own party's ATK by 20%. (3 turns)",
+				mp:8,
+				point:null,
+				element:"万能"
 			}
         ]
 	},
