@@ -1041,6 +1041,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"衝撃"
+			},
+			{
+				name:"裂棘の魔槍",
+				name_tw:"裂棘的魔槍",
+				desc:"敵全体に3回、衝撃貫通を得た衝撃属性の打撃型ダメージを威力35で与える。このスキルによるダメージは物理攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。このスキルは反撃効果の発動を無視する。",
+				name_en:"Barbed Spear",
+				desc_en:"Inflicts Force (Physical) Pierce damage (Power: 35) 3 times on all enemies.*The damage inflicted by this skill is dependent on Phys ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Counter effects will not work on this skill.",
+				mp:6,
+				point:null,
+				element:"衝撃"
 			}
         ]
     },
@@ -4875,6 +4885,16 @@ export default [
 				desc:"物理貫通を得る。自身が生存中、味方全体は次の効果を発揮する。｢クリティカル率が20%増加し、クリティカル時に与えるダメージが10%増加する。｣",
 				name_en:"Endless War",
 				desc_en:"Adds Phys Pierce. While this demon is alive, all party members will receive the following effect: +20% to Critical hit rate, +10% to Critical hit damage.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"クランの猛犬",
+				name_tw:"庫林的猛犬",
+				desc:"物理貫通を得る。自ターン終了時、次の連動効果が発動。「自身をチャージ状態にする。」",
+				name_en:"Culann's Hound",
+				desc_en:"Gains Phys Pierce. Activates the following Chain Effect at the end of own turn: Enters a state of Charge.",
 				mp:null,
 				point:null,
 				element:"パシップ"
