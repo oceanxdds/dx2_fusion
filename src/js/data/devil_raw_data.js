@@ -712,7 +712,7 @@ export default [
         name:'幻魔',
         name_tw:'幻魔',
 		name_en:'Genma',
-		highlight:false,
+		highlight:true,
         formulas:[
             ['龍神','妖魔'],
             ['龍神','幽鬼'],
@@ -731,6 +731,22 @@ export default [
         ],
         fusion:true,
 		devils:[
+			{
+				name:'クー・フーリン [異世界]',
+				name_tw:'庫夫林 [異世界]',
+				name_en:'Cu Chulainn [Dimensional]',
+				rarity:5,
+				grade:81,
+				icon:'genma_kuhurin2.jpg',
+				skills:["鋭気の権化","クランの猛犬","裂棘の魔槍"],
+				skill4:["","怪力乱神","早手の舞い","不屈の闘志","物理吸収"],
+				skill5:['',"ミナゴロシの愉悦","ラクカオート","強靭の権化","デスカウンター"],
+				elements:['nu','','','','nu','',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
 				name:'クー・フーリン',
 				name_tw:'庫夫林',
@@ -872,9 +888,9 @@ export default [
 		highlight:false,
 		devils:[
 			{
-				name:'異世界シヴァ',
-				name_tw:'濕婆',
-				name_en:'Shiva',
+				name:'シヴァ [異世界]',
+				name_tw:'濕婆 [異世界]',
+				name_en:'Shiva [Dimensional]',
 				rarity:5,
 				grade:93,
 				icon:'hakaisin_siva2.jpg' ,
@@ -920,9 +936,9 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				name:'異世界スサノオ',
-				name_tw:'素盞嗚尊',
-				name_en:'Susano-o',
+				name:'スサノオ [異世界]',
+				name_tw:'素盞嗚尊 [異世界]',
+				name_en:'Susano-o [Dimensional]',
 				rarity:5,
 				grade:82,
 				icon:'hakaisin_susanoo2.jpg',
@@ -1727,9 +1743,9 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				name:'異世界ネコマタ',
-				name_tw:'貓怪',
-				name_en:'Nekomata',
+				name:'ネコマタ [異世界]',
+				name_tw:'貓怪 [異世界]',
+				name_en:'Nekomata [Dimensional]',
 				rarity:4,
 				grade:60,
 				icon:'majyuu_nekomata2.jpg',
@@ -3122,9 +3138,9 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				name:'異世界アバドン',
-				name_tw:'阿巴頓',
-				name_en:'Abaddon',
+				name:'アバドン [異世界]',
+				name_tw:'阿巴頓 [異世界]',
+				name_en:'Abaddon [Dimensional]',
 				rarity:4,
 				grade:60,
 				icon:'maou_abadon2.jpg',
@@ -3860,9 +3876,9 @@ export default [
         fusion:true,
 		devils:[
 			{
-				name:'異世界ガルーダ',
-				name_tw:'迦樓羅',
-				name_en:'Garuda',
+				name:'ガルーダ [異世界]',
+				name_tw:'迦樓羅 [異世界]',
+				name_en:'Garuda [Dimensional]',
 				rarity:5,
 				grade:80,
 				icon:'reityou_garuda2.jpg',
@@ -4864,7 +4880,7 @@ export default [
         name_tw:'天魔',
         name_en:'Tenma',
         formulas:[],
-        highlight:true,
+        highlight:false,
         fusion:false,
 		devils:[
 			{
