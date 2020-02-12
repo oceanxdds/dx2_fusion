@@ -901,7 +901,7 @@ export default [
 				desc:"敵単体に5回、電撃属性の魔法型ダメージを威力40で与え、敵単体を基礎確率30%で緊縛状態にする。",
 				name_en:"Lightning Shower",
 				desc_en:"Inflicts Elec (Magic) damage 5 times on a single enemy and 30% chance to inflict Bind on a single enemy. Power: 40",
-				mp:null,
+				mp:6,
 				point:null,
 				element:"電撃"
 			}
@@ -1739,11 +1739,11 @@ export default [
 			},
             {
 				name:"オルレアンの祈り",
-				name_tw:'',
+				name_tw:'奧爾良的祈禱',
 				desc:"味方単体のHPを回復力130で回復すると同時にMPを3回復する。",
 				name_en:"Orlean Prayer",
 				desc_en:"Heals a Single Party Member with 130 power and recovers 3 MP. (6 uses)",
-				mp:null,
+				mp:6,
 				point:null,
 				element:"無"
 			},
@@ -1809,11 +1809,11 @@ export default [
 			},
             {
 				name:"セアカトルの再臨",
-				name_tw:'',
+				name_tw:'雪阿卡特年在臨',
 				desc:"死亡している味方全体を完全回復で復活(使用した悪魔も死なない)。",
 				name_en:"Ce Acatls' Return",
 				desc_en:"Revive All Party Members with full HP. (1 use)",
-				mp:null,
+				mp:7,
 				point:null,
 				element:"無"
 			},
@@ -2447,7 +2447,7 @@ export default [
 				desc:"１ターンの間、味方全体をスキルによる即死無效狀態にする。",
 				name_en:"Tetraja",
 				desc_en:"All Party Members will evade Instant Kill for 1 turn",
-				mp:null,
+				mp:4,
 				point:null,
 				element:"無"
 			},
@@ -4391,7 +4391,7 @@ export default [
 			},
             {
 				name:"富の信仰",
-				name_tw:'',
+				name_tw:'財富信仰',
 				desc:"最大HPが10%増加する。敵のスキル効果によってこちらのプレスターンアイコンが減少するたび、味方全体のMPを1回復する。",
 				name_en:"Faith in Wealth",
 				desc_en:"Increases max HP by 10%. Recover 1 MP every time your Press Turn Icon decreases due to enemy skills.",
