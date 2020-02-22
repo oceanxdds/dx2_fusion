@@ -1,5 +1,6 @@
 <script>
 
+import 'url-search-params-polyfill';
 import {mapState} from './store';
 import {getCookie, setCookie} from './utility';
 import VueDevil from './components/devil.vue';
@@ -22,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'200208',
+        updated_at:'200222',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -97,8 +98,34 @@ export default {
         let utc = now.getTime() + now.getTimezoneOffset() * 60000;
         this.now = new Date( utc + 9 * 3600000 );
 
+        //Timer
         myApp.tick();
         setInterval(()=>{ myApp.tick(); },60000);
+
+        //User Query
+        let params, route, dname, rname, races, race, devils, devil;
+        
+        params = new URLSearchParams(window.location.search);
+        route = params.get('route');
+        dname = params.get('devil') ? params.get('devil') : params.get('demon');
+        rname = params.get('race');
+    
+        if(rname){
+            races = this.races.filter(r=>r.name==rname||r.name_tw==rname||r.name_en==rname);
+            race = races.length > 0 ? races[0] : null;
+        }
+        if(dname){
+            devils = (race ? race.devils : this.devils ).filter(d=>d.name==dname||d.name_tw==dname||d.name_en==dname);
+            devil = devils.length > 0 ? devils[0] : null;
+        }
+        if(route=='fission'){
+            if(devil)
+                this.start_bom(devil);
+        }
+        else if(route=='fusion'){
+            if(devil)
+                this.fusion(devil);
+        }
     },
     watch:{
 
