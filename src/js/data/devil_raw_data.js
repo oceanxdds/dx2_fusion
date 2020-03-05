@@ -712,7 +712,7 @@ export default [
         name:'幻魔',
         name_tw:'幻魔',
 		name_en:'Genma',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['龍神','妖魔'],
             ['龍神','幽鬼'],
@@ -2000,7 +2000,7 @@ export default [
 				grade:30,
 				icon:'yousei_najya.jpg' ,
 				skills:["メポズムディ","ディアラ","希望の始まり"],
-				skill4:["毒床渡り","マハザン","メディア","自然治癒","衝撃無効"],
+				skill4:["毒床無効","マハザン","メディア","自然治癒","衝撃無効"],
 				skill5:['',"","","",""],
 				elements:['','','wk','','rs','',''],
 				type:'heal',
@@ -4064,7 +4064,8 @@ export default [
 	{
         name:'龍神',
         name_tw:'龍神',
-        name_en:'Dragon',
+		name_en:'Dragon',
+		highlight:true,
         formulas:[
             ['破壞神','神獸'],
             ['破壞神','幻魔'],
@@ -4099,6 +4100,22 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				name:'ケツアルカトル [異世界]',
+				name_tw:'羽蛇神 [異世界]',
+				name_en:'Quetzalcoatl [Dimensional]',
+				rarity:5,
+				grade:80,
+				icon:'ryuusin_kezuarukatoru2.jpg' ,
+				skills:["火炎ハイブースタ","一の葦の刻","アステカの鼓動"],
+				skill4:["","トリスアギオン","リカームドラ","大虐殺者","呪殺無効"],
+				skill5:["","無慈悲な一撃","魅了無効","タルカオート","物理無効"],
+				elements:['rs','dr','','','rs','rs','wk'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				name:'ケツアルカトル',
