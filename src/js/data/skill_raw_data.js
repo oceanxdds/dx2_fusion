@@ -650,6 +650,16 @@ export default [
 				mp:7,
 				point:null,
 				element:"火炎"
+			},
+			{
+				name:"アステカの鼓動",
+				name_tw:"阿茲特克的脈動",
+				desc:"本スキルはバトルを終了するまで、使用する度に強化段階が増加します。スキルやアイテムによる蘇生、敗北からの復活時にも強化段階を継続します。現在の強化段階はバトル中のスキルアイコン長押しで確認できます。強化段階 0：敵全体に火炎属性の魔法型ダメージを威力100で与える。強化段階 1：威力120に変化。強化段階 2：威力140に変化、さらに「攻撃成功時、1ターンの間、敵全体の防御力を20％減少させる。」効果が追加",
+				name_en:"Aztec Pulse",
+				desc_en:"This skill will gain 1 Boost level with each use in the battle. The increased boost level remains when this demon revives by skills or items, or all party members revive when losing the battle.Current Boost level can be confirmed by holding the skill icon in the battle.Boost Level 0: Inflicts Fire (Magic) damage (power: 100) on all enemies.Boost Level 1: Increases Power to 120.Boost Level 2: Increases Power to 140. Reduces DEF of all enemies by 20% when attack is successful. (1 turn)",
+				mp:6,
+				point:null,
+				element:"火炎"
 			}
         ]
     },
@@ -1479,7 +1489,7 @@ export default [
 				desc:"敵全体に万能属性の魔法型ダメージを威力120で与え、基礎確率40％で魔封状態にする。",
 				name_en:"Apocalypse",
 				desc_en:"Inflicts Magic Almighty damage with 110 power on All Enemies with 30% chance to inflict Mute.",
-				mp:8,
+				mp:7,
 				point:null,
 				element:"万能"
 			},
@@ -4522,9 +4532,9 @@ export default [
 			{
 				name:"希望の始まり",
 				name_tw:"希望的開端",
-				desc:"このスキルを持っている悪魔が死亡したとき、次の連動効果が発動する。 「味方全体のHPを15%回復する。」ただし、全滅時にはこの効果は発動しない。",
+				desc:"このスキルを持っている悪魔が死亡したとき、次の連動効果が発動する。 「味方全体のHPを30%回復する。」ただし、全滅時にはこの効果は発動しない。",
 				name_en:"New Hope",
-				desc_en:"Activates the following Chain Effect when this demon is downed:Heals Hp of all party members by 15%.Won't activate when your party is wiped out.",
+				desc_en:"Activates the following Chain Effect when this demon is downed:Heals Hp of all party members by 30%.Won't activate when your party is wiped out.",
 				mp:null,
 				point:null,
 				element:"パシップ"
@@ -4895,6 +4905,16 @@ export default [
 				desc:"物理貫通を得る。自ターン終了時、次の連動効果が発動。「自身をチャージ状態にする。」",
 				name_en:"Culann's Hound",
 				desc_en:"Gains Phys Pierce. Activates the following Chain Effect at the end of own turn: Enters a state of Charge.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"一の葦の刻",
+				name_tw:"一蘆葦之際",
+				desc:"火炎貫通を得る。自ターン開始時、自身が死亡していた場合、次の連動効果が発動。「自身をHP100％で復活させ、味方のプレスターンアイコンを1つ増加する。」この連動効果の発動は、バトル中1回まで。",
+				name_en:"Ce Acatl",
+				desc_en:"Gains Fire Pierce.	Activates the following Chain Effect at the start of own turn when downed:Revive self with full HP and receive 1 additional Press Turn Icon. This Chain Effect can only be activated once per battle.",
 				mp:null,
 				point:null,
 				element:"パシップ"
