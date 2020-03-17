@@ -23,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'200305',
+        updated_at:'200317',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -820,6 +820,9 @@ export default {
     </div>
     <div class="container-fluid mw-1920 mb-3">
         <div class="d-flex justify-content-end">
+            <div class="p-1">
+                <a class="small" href="https://oceanxdds.github.io/dx2_beta" target="_blank">Beta</a>
+            </div>
             <div class="p-1">
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  

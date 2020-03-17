@@ -16,6 +16,7 @@ export default [
 		highlight:false,
 		devils:[
             {   
+				id:'5',
                 name:'メタトロン',
                 name_tw:'梅塔特隆',
                 name_en:'Metatron',
@@ -32,6 +33,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{   
+				id:'239',
                 name:'セラフ',        
                 name_tw:'熾天使', 
                 name_en:'Seraph',      
@@ -48,6 +50,7 @@ export default [
 				source:'event'
 			},
             {   
+				id:'4',
                 name:'ミカエル',        
                 name_tw:'米迦勒', 
                 name_en:'Michael',      
@@ -64,6 +67,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'233',
 				name:'ガブリエル',
 				name_tw:'加百列',
 				name_en:'Gabriel',
@@ -80,6 +84,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'232',
 				name:'ラファエル',
 				name_tw:'拉婓爾',
 				name_en:'Raphael',
@@ -96,6 +101,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'231',
 				name:'ウリエル',
 				name_tw:'尤利爾',
 				name_en:'Uriel',
@@ -112,6 +118,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'169',
 				name:'マンセマット',
 				name_tw:'莫塞瑪特',
 				name_en:'Mastema',
@@ -128,6 +135,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'3',
 				name:'アズラエル',
 				name_tw:'阿斯萊爾',
 				name_en:'Azrael',
@@ -144,6 +152,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'2',
 				name:'サンダルフォン',
 				name_tw:'聖達芬',
 				name_en:'Sandalphon',
@@ -160,6 +169,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'1',
 				name:'ライラ',
 				name_tw:'萊拉',
 				name_en:'Lailah',
@@ -201,6 +211,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'191',
 				name:'イザナミ',
 				name_tw:'伊邪那美',
 				name_en:'Izanami',
@@ -217,6 +228,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'12',
 				name:'ラクシュミ',
 				name_tw:'吉祥天',
 				name_en:'Lakshmi',
@@ -233,6 +245,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'11',
 				name:'イシュタル',
 				name_tw:'伊絲塔',
 				name_en:'Ishtar',
@@ -249,6 +262,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'10',
 				name:'サラスヴァティ',
 				name_tw:'妙音天女',
 				name_en:'Sarasvati',
@@ -265,6 +279,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'9',
 				name:'パラスアテナ',
 				name_tw:'帕拉斯雅典娜',
 				name_en:'Pallas Athena',
@@ -281,6 +296,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'213',
 				name:'パールヴァティ',
 				name_tw:'帕爾瓦蒂',
 				name_en:'Parvati',
@@ -299,6 +315,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'8',
 				name:'スカアハ',
 				name_tw:'斯卡哈',
 				name_en:'Scathach',
@@ -315,6 +332,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'7',
 				name:'アリアンロッド',
 				name_tw:'阿麗安蘿德',
 				name_en:'Arianrhod',
@@ -331,6 +349,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'6',
 				name:'ハトホル',
 				name_tw:'哈索爾',
 				name_en:'Hathor',
@@ -370,6 +389,7 @@ export default [
 		highlight:false,
 		devils:[
             {
+				id:'18',
 				name:'ヴィシュヌ',
 				name_tw:'毘濕奴',
 				name_en:'Vishnu',
@@ -386,6 +406,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'230',
 				name:'バアル',
 				name_tw:'巴力',
 				name_en:'Baal',
@@ -404,6 +425,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'17',
 				name:'アマテラス',
 				name_tw:'天照',
 				name_en:'Amaterasu',
@@ -420,6 +442,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'16',
 				name:'オーディン',
 				name_tw:'奧丁',
 				name_en:'Odin',
@@ -436,6 +459,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'15',
 				name:'プロメテウス',
 				name_tw:'普羅米修斯',
 				name_en:'Prometheus',
@@ -452,6 +476,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'14',
 				name:'ミトラ',
 				name_tw:'密特拉',
 				name_en:'Mitra',
@@ -468,6 +493,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'13',
 				name:'ホルス',
 				name_tw:'荷魯斯',
 				name_en:'Horus',
@@ -507,6 +533,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'23',
 				name:'バロン',
 				name_tw:'巴隆',
 				name_en:'Barong',
@@ -523,6 +550,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'22',
 				name:'アヌビス',
 				name_tw:'阿努比斯',
 				name_en:'Anubis',
@@ -539,6 +567,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'21',
 				name:'キマイラ',
 				name_tw:'奇美拉',
 				name_en:'Chimera',
@@ -555,6 +584,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'20',
 				name:'マカミ',
 				name_tw:'真神',
 				name_en:'Makami',
@@ -571,6 +601,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'19',
 				name:'シーサー',
 				name_tw:'獅爺',
 				name_en:'Shiisaa',
@@ -611,6 +642,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'29',
 				name:'スフィンクス',
 				name_tw:'斯芬克斯',
 				name_en:'Sphinx',
@@ -627,6 +659,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'28',
 				name:'スレイプニル',
 				name_tw:'八腳天馬',
 				name_en:'Sleipnir',
@@ -643,6 +676,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'27',
 				name:'ビャッコ',
 				name_tw:'白虎',
 				name_en:'Baihu',
@@ -659,6 +693,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'26',
 				name:'アピス',
 				name_tw:'阿庇斯',
 				name_en:'Apis',
@@ -675,6 +710,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'25',
 				name:'ユニコーン',
 				name_tw:'獨角獸',
 				name_en:'Unicorn',
@@ -691,6 +727,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'24',
 				name:'ヘケト',
 				name_tw:'海奎特',
 				name_en:'Heqet',
@@ -732,6 +769,7 @@ export default [
         fusion:true,
 		devils:[
 			{
+				id:'35a',
 				name:'クー・フーリン [異世界]',
 				name_tw:'庫夫林 [異世界]',
 				name_en:'Cu Chulainn [Dimensional]',
@@ -748,6 +786,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'35',
 				name:'クー・フーリン',
 				name_tw:'庫夫林',
 				name_en:'Cu Chulainn',
@@ -764,6 +803,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'244',
 				name:'フロストエース',
 				name_tw:'冰霜艾斯',
 				name_en:'Frost Ace',
@@ -780,6 +820,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'34',
 				name:'ツクヨミ',
 				name_tw:'月讀',
 				name_en:'Tsukuyomi',
@@ -796,6 +837,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'33',
 				name:'ハヌマーン',
 				name_tw:'哈奴曼',
 				name_en:'Hanuman',
@@ -812,6 +854,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'32',
 				name:'クルースニク',
 				name_tw:'克雷斯尼克',
 				name_en:'Kresnik',
@@ -828,6 +871,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'31',
 				name:'タム・リン',
 				name_tw:'塔姆林',
 				name_en:'Tam Lin',
@@ -844,6 +888,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'30',
 				name:'クラマテング',
 				name_tw:'鞍馬天狗',
 				name_en:'Kurama Tengu',
@@ -888,6 +933,7 @@ export default [
 		highlight:false,
 		devils:[
 			{
+				id:'40a',
 				name:'シヴァ [異世界]',
 				name_tw:'濕婆 [異世界]',
 				name_en:'Shiva [Dimensional]',
@@ -904,6 +950,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'40',
 				name:'シヴァ',
 				name_tw:'濕婆',
 				name_en:'Shiva',
@@ -920,6 +967,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'180',
 				name:'ザオウゴンゲン',
 				name_tw:'藏王權現',
 				name_en:'Zaou-Gongen',
@@ -936,6 +984,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'39a',
 				name:'スサノオ [異世界]',
 				name_tw:'素盞嗚尊 [異世界]',
 				name_en:'Susano-o [Dimensional]',
@@ -952,6 +1001,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'39',
 				name:'スサノオ',
 				name_tw:'素盞嗚尊',
 				name_en:'Susano-o',
@@ -968,6 +1018,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'224',
 				name:'カルティケーヤ',
 				name_tw:'室建陀',
 				name_en:'Kartikeya',
@@ -986,6 +1037,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'38',
 				name:'ホクトセイクン',
 				name_tw:'北斗星君',
 				name_en:'Beiji-Weng',
@@ -1002,6 +1054,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'37',
 				name:'セイテンタイセイ',
 				name_tw:'齊天大聖',
 				name_en:'Wu Kong',
@@ -1018,6 +1071,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'36',
 				name:'アレス',
 				name_tw:'阿瑞斯',
 				name_en:'Ares',
@@ -1061,6 +1115,7 @@ export default [
         fusion:true,
 		devils:[
 			{
+				id:'222',
 				name:'キュベレ',
 				name_tw:'丘蓓蕾',
 				name_en:'Cybele',
@@ -1079,6 +1134,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'46',
 				name:'アシェラト',
 				name_tw:'亞舍拉',
 				name_en:'Asherah',
@@ -1095,6 +1151,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'45',
 				name:'スカディ',
 				name_tw:'絲卡蒂',
 				name_en:'Skadi',
@@ -1111,6 +1168,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'44',
 				name:'キクリヒメ',
 				name_tw:'菊理媛',
 				name_en:'Kikuri-Hime',
@@ -1127,6 +1185,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'43',
 				name:'イシス',
 				name_tw:'伊西斯',
 				name_en:'Isis',
@@ -1143,6 +1202,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'42',
 				name:'クシナダヒメ',
 				name_tw:'奇稻田姬',
 				name_en:'Kushinada',
@@ -1159,6 +1219,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'41',
 				name:'ペレ',
 				name_tw:'佩蕾',
 				name_en:'Pele',
@@ -1200,6 +1261,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'53',
 				name:'トール',
 				name_tw:'索爾',
 				name_en:'Thor',
@@ -1216,6 +1278,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'52',
 				name:'ショウキ',
 				name_tw:'鍾馗',
 				name_en:'Zhong Kui',
@@ -1232,6 +1295,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'51',
 				name:'ビシャモンテン',
 				name_tw:'毘沙門天',
 				name_en:'Bishamonten',
@@ -1248,6 +1312,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'50',
 				name:'ジコクテン',
 				name_tw:'持國天',
 				name_en:'Jikokuten',
@@ -1264,6 +1329,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'49',
 				name:'コウモクテン',
 				name_tw:'廣目天',
 				name_en:'Koumokuten',
@@ -1280,6 +1346,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'48',
 				name:'ゾウチョウテン',
 				name_tw:'增長天',
 				name_en:'Zouchouten',
@@ -1296,6 +1363,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'47',
 				name:'タケミナカタ',
 				name_tw:'建御名方',
 				name_en:'Take-Minakata',
@@ -1333,6 +1401,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'60',
 				name:'ソロネ',
 				name_tw:'座天使',
 				name_en:'Throne',
@@ -1349,6 +1418,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'59',
 				name:'ドミニオン',
 				name_tw:'主天使',
 				name_en:'Dominion',
@@ -1365,6 +1435,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'58',
 				name:'ヴァーチャー',
 				name_tw:'力天使',
 				name_en:'Virtue',
@@ -1381,6 +1452,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'57',
 				name:'パワー',
 				name_tw:'能天使',
 				name_en:'Power',
@@ -1397,6 +1469,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'56',
 				name:'プリンシパリティ',
 				name_tw:'權天使',
 				name_en:'Principality',
@@ -1413,6 +1486,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'55',
 				name:'アークエンジェル',
 				name_tw:'大天使',
 				name_en:'Archangel',
@@ -1429,6 +1503,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'54',
 				name:'エンジェル',
 				name_tw:'天使',
 				name_en:'Angel',
@@ -4901,6 +4976,7 @@ export default [
         fusion:false,
 		devils:[
 			{
+				id:'246',
                 name:'アスラおう',   
                 name_tw:'阿修羅王', 
                 name_en:'Asura Lord',
@@ -4917,6 +4993,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'228',
                 name:'マハカーラ',   
                 name_tw:'大黑天', 
                 name_en:'Mahakala', 
@@ -4933,6 +5010,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'223',
                 name:'インドラジット',   
                 name_tw:'因陀羅耆特', 
                 name_en:'Indrajit', 
@@ -4949,6 +5027,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'226',
                 name:'ヤマ',   
                 name_tw:'閻羅王', 
                 name_en:'Yama', 
@@ -4965,6 +5044,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'225',
                 name:'アスラ',   
                 name_tw:'阿修羅', 
                 name_en:'Asura', 
@@ -4981,6 +5061,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'227',
                 name:'アグニ',   
                 name_tw:'火天', 
                 name_en:'Agni', 
