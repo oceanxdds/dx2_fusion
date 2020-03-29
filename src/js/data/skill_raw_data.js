@@ -1329,9 +1329,9 @@ export default [
             {
 				name:"ごーとぅーへる",
 				name_tw:"Go to Hell",
-				desc:"敵全体に呪殺属性の魔法型ダメージを威力100で与え、基礎確率80%で呪い状態にする。このスキルによるダメージは呪殺貫通を得る。",
+				desc:"敵全体に呪殺属性の魔法型ダメージを威力110で与え、基礎確率80%で呪い状態にする。このスキルによるダメージは呪殺貫通を得る。",
 				name_en:"Go to Hell!",
-				desc_en:"Inflicts Dark (Magic) damage with 100 power on All Enemies with a 80% chance to inflict Curse. This skill has the Dark Pierce effect.",
+				desc_en:"Inflicts Dark (Magic) damage with 110 power on All Enemies with a 80% chance to inflict Curse. This skill has the Dark Pierce effect.",
 				mp:8,
 				point:null,
 				element:"呪殺"
