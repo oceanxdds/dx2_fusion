@@ -513,6 +513,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"外敵粉砕",
+				name_tw:"殲滅外敵",
+				desc:"敵に1ターン全ステータス弱体化効果＋連動効果で物理貫通を得た物理全体攻撃",
+				name_en:"Enemy annihilation",
+				desc_en:"Decreases all enemy stats (1 turn). Inflict physical damage with Physical Pierce on all enemies.",
+				mp:null,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -1335,6 +1345,16 @@ export default [
 				mp:8,
 				point:null,
 				element:"呪殺"
+			},
+			{
+				name:"ヘルズトリウィア",
+				name_tw:"地獄三岔路",
+				desc:"呪殺貫通を得た呪殺単体攻撃＋連動効果で呪殺全体攻撃",
+				name_en:"Hell's Trivia",
+				desc_en:"Inflicts Dark damage with Dark Pierce effect on a single enemy to trigger an extra Dark Pierce attack on all enemies as a Chain Effect.",
+				mp:null,
+				point:null,
+				element:"呪殺"
 			}
         ]
     },
@@ -1632,6 +1652,16 @@ export default [
 				mp:8,
 				point:null,
 				element:"万能"
+			},
+			{
+				name:"後光の導き",
+				name_tw:"佛光指引",
+				desc:"味方に1ターン全ステータス強化効果＋連動効果で万能全体攻撃",
+				name_en:"Path of Prominence",
+				desc_en:"Increases every stat of all party members. Inflict Almighty damage on all enemies as a Chain Effect.",
+				mp:null,
+				point:null,
+				element:"万能"
 			}
         ]
 	},
@@ -1646,6 +1676,16 @@ export default [
 				desc:"敵全体に、対象の現在HPの25%の割合ダメージ(最大1,000ダメージ)を与え、敵全体を基礎確率40%で緊縛状態にする。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。",
 				name_en:"Blade of Terror",
 				desc_en:"Inflicts 25% fractional damage (1,000 max) on all enemies based on their current HP with 40% chance to inflict Bind. Fractional damage will not be affected by stat/damage increase or reduction effects.",
+				mp:6,
+				point:null,
+				element:"???"
+			},
+			{
+				name:"自爆",
+				name_tw:"自爆",
+				desc:"敵全体に、対象の現在HPの30％の割合ダメージを与えた後、自身は死亡する。（最大1,000ダメージ） 割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。",
+				name_en:"Last Resort",
+				desc_en:"Inflicts 30% fractional damage (1,000 max) on all enemies based on their current HP. The demon with this skill will be downed upon activation.	Fractional damage will not be affected by stat/damage increase or reduction effects.",
 				mp:6,
 				point:null,
 				element:"???"
@@ -4915,6 +4955,66 @@ export default [
 				desc:"火炎貫通を得る。自ターン開始時、自身が死亡していた場合、次の連動効果が発動。「自身をHP100％で復活させ、味方のプレスターンアイコンを1つ増加する。」この連動効果の発動は、バトル中1回まで。",
 				name_en:"Ce Acatl",
 				desc_en:"Gains Fire Pierce.	Activates the following Chain Effect at the start of own turn when downed:Revive self with full HP and receive 1 additional Press Turn Icon. This Chain Effect can only be activated once per battle.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"光明真言",
+				name_tw:"光明真言",
+				desc:"敵ターン開始時、デカジャ＆デクンダの連動効果を発動",
+				name_en:"Radiant Mantra",
+				desc_en:"Activate Dekaja and Dekunda as a Chain Effect at the start of enemy turn.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"軍神の加護",
+				name_tw:"軍神之庇佑",
+				desc:"命中増加＋生存中相手の貫通攻撃に対して味方の属性反射が有効になる",
+				name_en:"War Aid",
+				desc_en:"Increases Phys hit rate. While the demon is alive, Pierce will have no effect on any party member that can repel the attribute they are attacked with.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"月光の目覚め",
+				name_tw:"月光甦醒",
+				desc:"敵ターン終了時、自身のHP割合回復＆全状態異常を回復",
+				name_en:"Lunar Awakening",
+				desc_en:"Heals own HP by a certain percentage and cures all status ailments at the end of enemy turn.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"北端の凍てつく風",
+				name_tw:"北端寒風",
+				desc:"敵が死亡したとき、次の連動効果が発動。「敵全体に氷結属性の魔法型ダメージを威力60で与える。」",
+				name_en:"North Wind",
+				desc_en:"Activates the following chain effect when an enemy is downed: Inflict Ice (Magic) damage (Power: 60) on all enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ヤクシャの凶爪",
+				name_tw:"夜叉的凶爪",
+				desc:"敵が毒状態になったとき、次の連動効果が発動。「ランダムな敵に3回、物理属性の打撃型ダメージを威力35で与える。攻撃成功時、ヒットした敵を基礎確率30％で緊縛状態にする。」",
+				name_en:"Yaksa Claw",
+				desc_en:"Activates the following Chain Effect when enemy is poisoned: Inflict Phys (Physical) damage (Power: 35) 3 times on random enemies with 30% chance to inflict Bind to demon(s) that were hit when attack is successful.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"天命の雷光",
+				name_tw:"天命的雷光",
+				desc:"2ターンごとの自分のターン開始時、次の連動効果が発動。「敵全体に電撃属性の魔法型ダメージを威力120で与える。攻撃に成功した場合、2ターンの間、敵全体の回避と命中を20％減少させる。」",
+				name_en:"Thunder of Destiny",
+				desc_en:"Activates the following Chain Effect at the beginning of every second own turn: Inflict Elec (Magic) damage (Power: 120) on all enemies. Reduces EV/AC of all enemies by 20% when attack is successful. (2 turns)",
 				mp:null,
 				point:null,
 				element:"パシップ"
