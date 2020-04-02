@@ -206,7 +206,8 @@ export default [
             ['鬼女','神獸'],
             ['鬼女','地母神'],
 			['鬼女','妖精'],
-			['幽鬼','邪鬼']
+			['幽鬼','邪鬼'],
+			['兇鳥','靈鳥']
         ],
         fusion:true,
 		devils:[
@@ -406,6 +407,23 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'249',
+				name:'ヴィローシャナ',
+				name_tw:'毗盧遮那',
+				name_en:'Vairocana',
+				rarity:5,
+				grade:93,
+				icon:'majin_birosyana.jpg',
+				skills:["不屈の闘志","光明真言","後光の導き"],
+				skill4:["三段の賢魔","混沌の海","メディアラハン","大虐殺者","呪殺反射"],
+				skill5:['','マカラカシフト','ラクカオート','マハラギダイン','魅了無効'],
+				elements:['','rp','','','','rp','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
+			{
 				id:'230',
 				name:'バアル',
 				name_tw:'巴力',
@@ -423,6 +441,23 @@ export default [
 				fusionMag:5000000,
 				formula:['ヘケト','ベルゼブブ','セト'],
 				source:'multi_fusion'
+			},
+			{
+				id:'248',
+				name:'アタバク',
+				name_tw:'大元帥明王',
+				name_en:'Atavaka',
+				rarity:5,
+				grade:84,
+				icon:'majin_atabaku.jpg',
+				skills:["千発千中","軍神の加護","外敵粉砕"],
+				skill4:["三段の剛力","怪力乱神","チャージ","威圧の構え","氷結無効"],
+				skill5:['','物理ハイブースタ','スクカオート','ゴッドハンド','勝利のチャクラ'],
+				elements:['nu','','wk','','','nu',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'17',
@@ -526,7 +561,6 @@ export default [
             ['夜魔','妖魔'],
             ['邪神','魔神'],
             ['妖獸','靈鳥'],
-            ['妖獸','邪神'],
 			['外道','聖獸'],
 			['地靈','幻魔']
         ],
@@ -637,7 +671,8 @@ export default [
             ['夜魔','神獸'],
             ['夜魔','幻魔'],
             ['妖獸','女神'],
-            ['幽鬼','妖精']
+			['幽鬼','妖精'],
+			['邪龍','兇鳥']
         ],
         fusion:true,
 		devils:[
@@ -759,7 +794,6 @@ export default [
             ['妖魔','魔神'],
             ['邪神','地母神'],
             ['邪神','鬼神'],
-            ['外道','神獸'],
             ['外道','墮天使'],
             ['魔王','神獸'],
             ['魔王','地母神'],
@@ -926,8 +960,9 @@ export default [
 			['魔王','魔神'],
 			['邪龍','幻魔'],
 			['邪龍','鬼神'],
-			['邪龍','墮天使'],
-            ['幽鬼','女神']
+			['幽鬼','女神'],
+			['兇鳥','龍神'],
+			['兇鳥','龍王']
         ],
 		fusion:true,
 		highlight:false,
@@ -1110,7 +1145,8 @@ export default [
 			['邪鬼','妖精'],
 			['地靈','女神'],
 			['地靈','妖魔'],
-			['邪龍','魔神']
+			['邪龍','魔神'],
+			['兇鳥','幻魔']
         ],
         fusion:true,
 		devils:[
@@ -1256,7 +1292,8 @@ export default [
 			['邪龍','神獸'],
 			['邪龍','龍神'],
 			['邪龍','夜魔'],
-			['幽鬼','邪龍']
+			['幽鬼','邪龍'],
+			['兇鳥','地母神']
         ],
         fusion:true,
 		devils:[
@@ -1396,7 +1433,8 @@ export default [
             ['外道','大天使'],
             ['外道','龍王'],
             ['幽鬼','神獸'],
-            ['幽鬼','聖獸']
+			['幽鬼','聖獸'],
+			['兇鳥','大天使']
         ],
         fusion:true,
 		devils:[
@@ -1542,6 +1580,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'67',
 				name:'ガネーシャ',
 				name_tw:'象頭神',
 				name_en:'Ganesha',
@@ -1558,6 +1597,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'66',
 				name:'イフリート',
 				name_tw:'伊弗利特',
 				name_en:'Efreet',
@@ -1574,6 +1614,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'65',
 				name:'ヴァルキリー',
 				name_tw:'女武神',
 				name_en:'Valkyrie',
@@ -1590,6 +1631,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'64',
 				name:'ディース',
 				name_tw:'迪絲',
 				name_en:'Dis',
@@ -1606,6 +1648,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'63',
 				name:'アプサラス',
 				name_tw:'飛天女神',
 				name_en:'Apsaras',
@@ -1622,6 +1665,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'62',
 				name:'コッパテング',
 				name_tw:'木葉天狗',
 				name_en:'Koppa Tengu',
@@ -1638,6 +1682,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'61',
 				name:'アガシオン',
 				name_tw:'阿珈席翁',
 				name_en:'Agathion',
@@ -1665,7 +1710,6 @@ export default [
             ['天使','靈鳥'],
             ['妖魔','幻魔'],
             ['妖精','幻魔'],
-            ['墮天使','靈鳥'],
             ['妖鬼','墮天使'],
             ['夜魔','天使'],
             ['外道','幻魔'],
@@ -1675,11 +1719,13 @@ export default [
 			['邪鬼','龍神'],
 			['地靈','鬼神'],
 			['邪龍','大天使'],
-			['邪龍','地靈']
+			['邪龍','地靈'],
+			['魔王','兇鳥']
         ],
         fusion:true,
 		devils:[
             {
+				id:'73',
 				name:'アナンタ',
 				name_tw:'阿南塔',
 				name_en:'Ananta',
@@ -1696,6 +1742,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'72',
 				name:'ユルング',
 				name_tw:'虹蛇',
 				name_en:'Yurlungur',
@@ -1712,6 +1759,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'71',
 				name:'ヤマタノオロチ',
 				name_tw:'八岐大蛇',
 				name_en:'Orochi',
@@ -1728,6 +1776,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'70',
 				name:'ゲンブ',
 				name_tw:'玄武',
 				name_en:'Gui Xian',
@@ -1744,6 +1793,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'69',
 				name:'ナーガ',
 				name_tw:'那迦',
 				name_en:'Naga',
@@ -1760,6 +1810,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'68',
 				name:'ノズチ',
 				name_tw:'野槌',
 				name_en:'Nozuchi',
@@ -1802,6 +1853,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'79',
 				name:'ケルベロス',
 				name_tw:'地獄犬',
 				name_en:'Cerberus',
@@ -1818,6 +1870,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'76a',
 				name:'ネコマタ [異世界]',
 				name_tw:'貓怪 [異世界]',
 				name_en:'Nekomata [Dimensional]',
@@ -1834,6 +1887,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'78',
 				name:'アーマーン',
 				name_tw:'阿米特',
 				name_en:'Ammut',
@@ -1850,6 +1904,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'77',
 				name:'オルトロス',
 				name_tw:'雙頭犬',
 				name_en:'Orthrus',
@@ -1866,6 +1921,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'221',
 				name:'カブソ',
 				name_tw:'川童',
 				name_en:'Kabuso',
@@ -1882,6 +1938,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'76',
 				name:'ネコマタ',
 				name_tw:'貓怪',
 				name_en:'Nekomata',
@@ -1898,6 +1955,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'75',
 				name:'イヌガミ',
 				name_tw:'犬神',
 				name_en:'Inugami',
@@ -1914,6 +1972,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'74',
 				name:'カーシー',
 				name_tw:'犬妖',
 				name_en:'Cu Sith',
@@ -1944,7 +2003,6 @@ export default [
             ['鬼女','女神'],
             ['夜魔','龍王'],
             ['夜魔','魔獸'],
-            ['妖獸','天使'],
             ['妖獸','妖鬼'],
             ['外道','鬼神'],
 			['魔王','靈鳥'],
@@ -1956,6 +2014,7 @@ export default [
 		highlight:false,
 		devils:[
             {
+				id:'88',
 				name:'オベロン',
 				name_tw:'奧伯隆',
 				name_en:'Oberon',
@@ -1972,6 +2031,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'82a',
 				name:'トリック・ランタン',
 				name_tw:'搗蛋燈籠傑克',
 				name_en:'Halloween Jack',
@@ -1988,6 +2048,7 @@ export default [
 				source:'event'
 			},
 			{
+				id:'81a',
 				name:'おてつだいフロスト',
 				name_tw:'幫手雪人仔',
 				name_en:'Helper Frost',
@@ -2004,6 +2065,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'87',
 				name:'ティターニア',
 				name_tw:'提泰妮婭',
 				name_en:'Titania',
@@ -2020,6 +2082,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'86',
 				name:'セタンタ',
 				name_tw:'瑟坦特',
 				name_en:'Setanta',
@@ -2036,6 +2099,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'85',
 				name:'シルキー',
 				name_tw:'希路奇',
 				name_en:'Silky',
@@ -2052,6 +2116,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'84',
 				name:'ケルピー',
 				name_tw:'凱爾皮',
 				name_en:'Kelpie',
@@ -2068,6 +2133,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'210',
 				name:'ナジャ',
 				name_tw:'娜嘉',
 				name_en:'Nadja',
@@ -2084,6 +2150,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'83',
 				name:'ハイピクシー',
 				name_tw:'高等皮克希',
 				name_en:'High Pixie',
@@ -2100,6 +2167,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'82',
 				name:'ジャックランタン',
 				name_tw:'燈籠傑克',
 				name_en:'Pyro Jack',
@@ -2116,6 +2184,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'81',
 				name:'ジャックフロスト',
 				name_tw:'冰霜傑克',
 				name_en:'Jack Frost',
@@ -2132,6 +2201,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'80',
 				name:'ピクシー',
 				name_tw:'皮克希',
 				name_en:'Pixie',
@@ -2163,18 +2233,17 @@ export default [
             ['夜魔','大天使'],
             ['夜魔','女神'],
             ['邪神','幻魔'],
-            ['邪神','天使'],
             ['妖獸','鬼女'],
             ['外道','女神'],
             ['外道','天使'],
 			['幽鬼','大天使'],
 			['地靈','天使'],
-			['地靈','龍王'],
-			['邪龍','天使']
+			['地靈','龍王']
         ],
         fusion:true,
 		devils:[
             {
+				id:'95',
 				name:'サマエル',
 				name_tw:'薩麥爾',
 				name_en:'Samael',
@@ -2191,6 +2260,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'94',
 				name:'ダンタリアン',
 				name_tw:'但他林',
 				name_en:'Dantalian',
@@ -2207,6 +2277,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'93',
 				name:'オセ',
 				name_tw:'歐賽',
 				name_en:'Ose',
@@ -2223,6 +2294,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'92',
 				name:'フォルネウス',
 				name_tw:'佛鈕司',
 				name_en:'Forneus',
@@ -2239,6 +2311,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'91',
 				name:'デカラビア',
 				name_tw:'丹卡拉比',
 				name_en:'Decarabia',
@@ -2255,6 +2328,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'90',
 				name:'エリゴール',
 				name_tw:'埃力格',
 				name_en:'Eligor',
@@ -2271,6 +2345,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'89',
 				name:'メルコム',
 				name_tw:'梅爾克',
 				name_en:'Melchom',
@@ -2299,7 +2374,6 @@ export default [
             ['妖精','鬼神'],
             ['鬼女','靈鳥'],
             ['鬼女','妖魔'],
-            ['邪神','墮天使'],
             ['邪神','鬼女'],
             ['妖獸','聖獸'],
             ['幽鬼','龍王'],
@@ -2312,6 +2386,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'102',
 				name:'オンギョウキ',
 				name_tw:'隱形鬼',
 				name_en:'Ongyo-Ki',
@@ -2328,6 +2403,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'101',
 				name:'ベルセルク',
 				name_tw:'狂戰士',
 				name_en:'Berserker',
@@ -2344,6 +2420,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'100',
 				name:'シキオウジ',
 				name_tw:'式王子',
 				name_en:'Shiki-Ougi',
@@ -2360,6 +2437,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'99',
 				name:'ヨモツイクサ',
 				name_tw:'黃泉軍',
 				name_en:'Ikusa',
@@ -2376,6 +2454,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'98',
 				name:'オ二',
 				name_tw:'鬼',
 				name_en:'Oni',
@@ -2392,6 +2471,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'97',
 				name:'モムノフ',
 				name_tw:'桃生',
 				name_en:'Momunofu',
@@ -2408,6 +2488,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'96',
 				name:'アズミ',
 				name_tw:'安曇神',
 				name_en:'Azumi',
@@ -2440,7 +2521,6 @@ export default [
             ['墮天使','女神'],
             ['妖鬼','女神'],
             ['妖鬼','妖魔'],
-            ['夜魔','靈鳥'],
             ['夜魔','鬼神'],
             ['幽鬼','幻魔'],
             ['幽鬼','夜魔']
@@ -2448,6 +2528,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'108',
 				name:'ランダ',
 				name_tw:'讓特',
 				name_en:'Rangda',
@@ -2464,6 +2545,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'107',
 				name:'ダーキニー',
 				name_tw:'荼吉尼',
 				name_en:'Dakini',
@@ -2480,6 +2562,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'106',
 				name:'マーメイド',
 				name_tw:'美人魚',
 				name_en:'Mermaid',
@@ -2496,6 +2579,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'105',
 				name:'ヤクシニー',
 				name_tw:'夜叉女',
 				name_en:'Yaksini',
@@ -2512,6 +2596,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'104',
 				name:'ヨモツシコメ',
 				name_tw:'黃泉醜女',
 				name_en:'Shikome',
@@ -2528,6 +2613,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'103',
 				name:'リャナンシー',
 				name_tw:'菈南希',
 				name_en:'Leanan Sidhe',
@@ -2561,14 +2647,15 @@ export default [
             ['妖鬼','妖精'],
             ['鬼女','幻魔'],
             ['妖獸','魔神'],
-            ['妖獸','墮天使'],
 			['魔王','妖精'],
 			['邪龍','妖精'],
-			['幽鬼','妖獸']
+			['幽鬼','妖獸'],
+			['兇鳥','妖精']
         ],
         fusion:true,
 		devils:[
             {
+				id:'116',
 				name:'リリス',
 				name_tw:'莉莉絲',
 				name_en:'Lilith',
@@ -2585,6 +2672,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'115',
 				name:'サキュバス',
 				name_tw:'女夢魔',
 				name_en:'Succubus',
@@ -2601,6 +2689,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'114',
 				name:'リリム',
 				name_tw:'莉莉姆',
 				name_en:'Lilim',
@@ -2617,6 +2706,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'113',
 				name:'キオン',
 				name_tw:'迦溫',
 				name_en:'Kaiwan',
@@ -2633,6 +2723,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'112',
 				name:'フォーモリア',
 				name_tw:'弗莫爾',
 				name_en:'Fomorian',
@@ -2649,6 +2740,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'111',
 				name:'インキュバス',
 				name_tw:'男夢魔',
 				name_en:'Incubus',
@@ -2665,6 +2757,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'110',
 				name:'ザントマン',
 				name_tw:'睡魔',
 				name_en:'Sandman',
@@ -2681,6 +2774,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'109',
 				name:'モコイ',
 				name_tw:'惡靈',
 				name_en:'Mokoi',
@@ -2705,15 +2799,16 @@ export default [
         formulas:[
             ['天使','破壞神'],
             ['妖獸','魔獸'],
-            ['魔王','天使'],
             ['魔王','魔獸'],
 			['邪鬼','神獸'],
 			['邪龍','女神'],
-			['邪龍','龍王']
+			['邪龍','龍王'],
+			['兇鳥','夜魔']
         ],
         fusion:true,
 		devils:[
             {
+				id:'122',
 				name:'セト',
 				name_tw:'賽特',
 				name_en:'Seth',
@@ -2730,6 +2825,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'121',
 				name:'ギリメカラ',
 				name_tw:'獨眼魔象',
 				name_en:'Girimehkala',
@@ -2746,6 +2842,7 @@ export default [
 				source:'normal_fusion'
             },
             {
+				id:'201',
 				name:'ミシャグジさま',
 				name_tw:'御社宮司神',
 				name_en:'Mishaguji',
@@ -2762,6 +2859,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'120',
 				name:'パズス',
 				name_tw:'帕祖祖',
 				name_en:'Pazuzu',
@@ -2778,6 +2876,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'119',
 				name:'アラハバキ',
 				name_tw:'荒霸吐',
 				name_en:'Arahabaki',
@@ -2794,6 +2893,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'118',
 				name:'バフォメット',
 				name_tw:'巴風特',
 				name_en:'Baphomet',
@@ -2810,6 +2910,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'117',
 				name:'アブラクサス',
 				name_tw:'亞布拉薩',
 				name_en:'Abraxas',
@@ -2839,7 +2940,6 @@ export default [
             ['鬼女','墮天使'],
             ['夜魔','魔神'],
             ['邪神','妖魔'],
-            ['外道','靈鳥'],
             ['外道','魔獸'],
             ['外道','妖鬼'],
             ['外道','鬼女'],
@@ -2847,11 +2947,15 @@ export default [
 			['邪龍','邪神'],
 			['邪龍','魔王'],
             ['幽鬼','地母神'],
-            ['幽鬼','魔獸']
+			['幽鬼','魔獸'],
+			['兇鳥','神獸'],
+			['兇鳥','聖獸'],
+			['幽鬼','兇鳥']
         ],
         fusion:true,
 		devils:[
             {
+				id:'129',
 				name:'フェンリル',
 				name_tw:'芬里爾',
 				name_en:'Fenrir',
@@ -2868,6 +2972,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'128',
 				name:'ピアレイ',
 				name_tw:'皮亞雷',
 				name_en:'Peallaidh',
@@ -2884,6 +2989,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'127',
 				name:'モスマン',
 				name_tw:'天蛾人',
 				name_en:'Mothman',
@@ -2900,6 +3006,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'126',
 				name:'ヌエ',
 				name_tw:'鵺',
 				name_en:'Nue',
@@ -2916,6 +3023,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'125',
 				name:'ライジュウ',
 				name_tw:'雷獸',
 				name_en:'Raijuu',
@@ -2932,6 +3040,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'124',
 				name:'バイコーン',
 				name_tw:'雙角獸',
 				name_en:'Bicorn',
@@ -2948,6 +3057,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'123',
 				name:'チャグリン',
 				name_tw:'恰古林',
 				name_en:'Chagrin',
@@ -2976,13 +3086,16 @@ export default [
             ['妖獸','妖精'],
             ['幽鬼','妖鬼'],
             ['幽鬼','鬼女'],
-			['幽鬼','邪神'],
-			['地靈','鬼女']
+			['地靈','鬼女'],
+			['兇鳥','天使'],
+			['兇鳥','地靈'],
+			['兇鳥','鬼女']
         ],
 		fusion:true,
 		highlight:false,
 		devils:[
             {
+				id:'135',
 				name:'マッドガッサー',
 				name_tw:'毒氣怪客',
 				name_en:'Mad Gasser',
@@ -2999,6 +3112,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'134',
 				name:'シャドウ',
 				name_tw:'黑影',
 				name_en:'Shadow',
@@ -3015,6 +3129,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'133',
 				name:'ブラックウーズ',
 				name_tw:'黑泥怪',
 				name_en:'Black Ooze',
@@ -3031,6 +3146,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'229',
 				name:'ジャック・リパー',
 				name_tw:'開膛手傑克',
 				name_en:'Jack the Ripper',
@@ -3047,6 +3163,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'132',
 				name:'ブロブ',
 				name_tw:'果凍怪',
 				name_en:'Blob',
@@ -3063,6 +3180,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'131',
 				name:'ファントム',
 				name_tw:'鬼魅',
 				name_en:'Phantom',
@@ -3079,6 +3197,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'130',
 				name:'スライム',
 				name_tw:'軟泥怪',
 				name_en:'Slime',
@@ -3099,7 +3218,8 @@ export default [
     {
         name:'魔王',
         name_tw:'魔王',
-        name_en:'Tyrant',
+		name_en:'Tyrant',
+		highlight:false,
         formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
@@ -3112,11 +3232,16 @@ export default [
 			['邪神','破壞神'],
 			['地靈','龍神'],
 			['邪龍','破壞神'],
-			['邪龍','邪鬼']
+			['邪龍','邪鬼'],
+			['兇鳥','女神'],
+			['兇鳥','魔神'],
+			['兇鳥','破壞神'],
+			['兇鳥','鬼神']
         ],
         fusion:true,
 		devils:[
             {
+				id:'142',
 				name:'ルシファー',
 				name_tw:'露西法',
 				name_en:'Lucifer',
@@ -3133,6 +3258,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'141',
 				name:'マーラ',
 				name_tw:'魔羅',
 				name_en:'Mara',
@@ -3149,6 +3275,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'140',
 				name:'スルト',
 				name_tw:'史爾特爾',
 				name_en:'Surt',
@@ -3164,7 +3291,25 @@ export default [
 				fusionAsMaterial:true,
 				source:'normal_fusion'
 			},
+			{
+				id:'247',
+				name:'ヘカーテ',
+				name_tw:'赫卡忒',
+				name_en:'Hecate',
+				rarity:5,
+				grade:81,
+				icon:'majin_hekate.jpg',
+				skills:["緊縛無効","月光の目覚め","ヘルズトリウィア"],
+				skill4:["三段の賢魔","マハムドダイン","マハマリンカリン","呪殺エンハンス","破魔無効"],
+				skill5:['','呪殺ハイブースタ','タルカオート','無慈悲な一撃','野獣の勘'],
+				elements:['','nu','','','','wk','rp'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
+				id:'139',
 				name:'ロキ',
 				name_tw:'洛基',
 				name_en:'Loki',
@@ -3181,6 +3326,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'138',
 				name:'ベルゼブブ',
 				name_tw:'別西卜',
 				name_en:'Beelzebub',
@@ -3197,6 +3343,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'172',
 				name:'キングフロスト',
 				name_tw:'冰傑克王',
 				name_en:'King Frost',
@@ -3213,6 +3360,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'137a',
 				name:'アバドン [異世界]',
 				name_tw:'阿巴頓 [異世界]',
 				name_en:'Abaddon [Dimensional]',
@@ -3229,6 +3377,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'137',
 				name:'アバドン',
 				name_tw:'阿巴頓',
 				name_en:'Abaddon',
@@ -3245,6 +3394,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'136',
 				name:'オーカス',
 				name_tw:'奧迦斯',
 				name_en:'Horkos',
@@ -3282,11 +3432,14 @@ export default [
 			['地靈','邪鬼'],
 			['妖鬼','邪鬼'],
 			['鬼女','邪鬼'],
-			['邪神','邪鬼']
+			['邪神','邪鬼'],
+			['兇鳥','妖魔'],
+			['兇鳥','妖鬼']
         ],
         fusion:true,
 		devils:[
             {
+				id:'149',
 				name:'ヴェータラ',
 				name_tw:'毘陀羅',
 				name_en:'Vetala',
@@ -3303,6 +3456,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'148',
 				name:'ラフィン・スカル',
 				name_tw:'笑面骷髏',
 				name_en:'Chatterskull',
@@ -3319,6 +3473,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'147',
 				name:'レギオン',
 				name_tw:'惡靈軍團',
 				name_en:'Legion',
@@ -3335,6 +3490,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'146',
 				name:'ピシャーチャ',
 				name_tw:'畢舍遮',
 				name_en:'Pisaca',
@@ -3351,6 +3507,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'145',
 				name:'モウリョウ',
 				name_tw:'魍魎',
 				name_en:'Mou-Ryo',
@@ -3367,6 +3524,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'144',
 				name:'オバリヨン',
 				name_tw:'背負小鬼',
 				name_en:'Obariyon',
@@ -3383,6 +3541,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'143',
 				name:'ガキ',
 				name_tw:'餓鬼',
 				name_en:'Preta',
@@ -3409,6 +3568,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'190',
 				name:'マザーハーロット',
 				name_tw:'巴比倫大淫婦',
 				name_en:'Mother Harlot',
@@ -3425,6 +3585,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'152',
 				name:'トランペッター',
 				name_tw:'吹號者',
 				name_en:'Trumpeter',
@@ -3441,6 +3602,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'',
 				name:'ダンテ☆',
 				name_tw:'Dante☆',
 				name_en:'Dante☆',
@@ -3457,6 +3619,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'',
 				name:'ネロ☆',
 				name_tw:'Nero☆',
 				name_en:'Nero☆',
@@ -3473,6 +3636,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'151',
 				name:'アリス',
 				name_tw:'愛麗絲',
 				name_en:'Alice',
@@ -3489,6 +3653,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'242',
 				name:'ペイルライダー',
 				name_tw:'灰騎士',
 				name_en:'Pale Rider',
@@ -3505,6 +3670,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'241',
 				name:'ブラックライダー',
 				name_tw:'黑騎士',
 				name_en:'Black Rider',
@@ -3521,6 +3687,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'211',
 				name:'だいそうじょう',
 				name_tw:'大僧正',
 				name_en:'Daisoujou',
@@ -3537,6 +3704,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'240',
 				name:'レッドライダー',
 				name_tw:'紅騎士',
 				name_en:'Red Rider',
@@ -3553,6 +3721,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'181',
 				name:'ヘルズエンジェル',
 				name_tw:'地獄天使',
 				name_en:'Hell Biker',
@@ -3569,6 +3738,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'150',
 				name:'ワイトナイト',
 				name_tw:'白騎士',
 				name_en:'White Rider',
@@ -3585,6 +3755,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'',
 				name:'ダンテ',
 				name_tw:'Dante',
 				name_en:'Dante',
@@ -3601,6 +3772,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'',
 				name:'ネロ',
 				name_tw:'Nero',
 				name_en:'Nero',
@@ -3617,6 +3789,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'209',
 				name:'マタドール',
 				name_tw:'鬥牛士',
 				name_en:'Matador',
@@ -3643,6 +3816,7 @@ export default [
 		highlight:false,
 		devils:[
 			{
+				id:'245',
 				name:'マサカド☆',
 				name_tw:'平將門',
 				name_en:'Masakado',
@@ -3659,6 +3833,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'154',
 				name:'ヨシツネ',
 				name_tw:'義經',
 				name_en:'Yoshitsune',
@@ -3675,6 +3850,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'171',
 				name:'コウテイ',
 				name_tw:'皇帝',
 				name_en:'Huang Di',
@@ -3691,6 +3867,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'182',
 				name:'ラーマ',
 				name_tw:'羅摩',
 				name_en:'Rama',
@@ -3707,6 +3884,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'212',
 				name:'カンセイテイクン',
 				name_tw:'關聖帝君',
 				name_en:'Guan Yu',
@@ -3723,6 +3901,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'153',
 				name:'ジークフリード',
 				name_tw:'齊格飛',
 				name_en:'Siegfried',
@@ -3739,6 +3918,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'170',
 				name:'ジャンヌ・ダルク',
 				name_tw:'貞德',
 				name_en:"Jeanne d'Arc",
@@ -3765,6 +3945,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'192',
 				name:'カシマレイコ',
 				name_tw:'鹿島零子',
 				name_en:'Reiko Kashima',
@@ -3783,6 +3964,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'155',
 				name:'かみおとこ',
 				name_tw:'啃咬魔',
 				name_en:'Kamiotoko',
@@ -3810,6 +3992,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'157',
 				name:'イナバシロウサギ',
 				name_tw:'因幡白兔',
 				name_en:'Hare of Inaba',
@@ -3828,6 +4011,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'156',
 				name:'チュパカブラ',
 				name_tw:'卓柏卡布拉',
 				name_en:'Chupacabra',
@@ -3855,6 +4039,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'160',
 				name:'カーマ',
 				name_tw:'伽摩',
 				name_en:'Kama',
@@ -3873,6 +4058,7 @@ export default [
 				source:'multi_fusion'
 			},
 			{
+				id:'243',
 				name:'ネコショウグン',
 				name_tw:'貓將軍',
 				name_en:'Neko Shogun',
@@ -3891,6 +4077,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'159',
 				name:'キンマモン',
 				name_tw:'君真物',
 				name_en:'Kinmamon',
@@ -3909,6 +4096,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'158',
 				name:'カンバリ',
 				name_tw:'加牟波理',
 				name_en:'Kanbari',
@@ -3946,11 +4134,15 @@ export default [
             ['魔王','妖魔'],
 			['邪鬼','聖獸'],
 			['地靈','神獸'],
-			['邪龍','妖獸']
+			['邪龍','妖獸'],
+			['兇鳥','魔獸'],
+			['兇鳥','邪鬼'],
+			['外道','兇鳥']
         ],
         fusion:true,
 		devils:[
 			{
+				id:'166a',
 				name:'ガルーダ [異世界]',
 				name_tw:'迦樓羅 [異世界]',
 				name_en:'Garuda [Dimensional]',
@@ -3967,6 +4159,7 @@ export default [
 				source:'event'
 			},
             {
+				id:'166',
 				name:'ガルーダ',
 				name_tw:'迦樓羅',
 				name_en:'Garuda',
@@ -3983,6 +4176,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'165',
 				name:'ヤタガラス',
 				name_tw:'八咫烏',
 				name_en:'Yatagarasu',
@@ -3998,7 +4192,9 @@ export default [
 				fusionAsMaterial:true,
 				source:'normal_fusion'
 			},
-            {   name:'スザク',
+            {   
+				id:'164',
+				name:'スザク',
 				name_tw:'朱雀',
 				name_en:'Feng Huang',
 				rarity:3,
@@ -4014,6 +4210,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'163',
 				name:'ジャターユ',
 				name_tw:'佳塔由',
 				name_en:'Jatayu',
@@ -4030,6 +4227,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'162',
 				name:'スパルナ',
 				name_tw:'金翅鳥',
 				name_en:'Sparna',
@@ -4046,6 +4244,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'161',
 				name:'ハンサ',
 				name_tw:'漢薩',
 				name_en:'Hamsa',
@@ -4072,6 +4271,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'167',
 				name:'アティス',
 				name_tw:'阿提斯',
 				name_en:'Attis',
@@ -4090,6 +4290,7 @@ export default [
 				source:'multi_fusion'
 			},
             {
+				id:'193',
 				name:'ディオニュソス',
 				name_tw:'戴奧尼索斯',
 				name_en:'Dionysus',
@@ -4117,6 +4318,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'168',
 				name:'アリラト',
 				name_tw:'阿利拉特',
 				name_en:'Alilat',
@@ -4140,7 +4342,7 @@ export default [
         name:'龍神',
         name_tw:'龍神',
 		name_en:'Dragon',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['破壞神','神獸'],
             ['破壞神','幻魔'],
@@ -4156,11 +4358,13 @@ export default [
 			['邪龍','地母神'],
 			['邪龍','妖鬼'],
 			['邪龍','外道'],
-			['幽鬼','鬼神']
+			['幽鬼','鬼神'],
+			['妖獸','兇鳥']
         ],
         fusion:true,
 		devils:[
             {
+				id:'179',
 				name:'コウリュウ',
 				name_tw:'黃龍',
 				name_en:'Huang Long',
@@ -4177,6 +4381,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'178a',
 				name:'ケツアルカトル [異世界]',
 				name_tw:'羽蛇神 [異世界]',
 				name_en:'Quetzalcoatl [Dimensional]',
@@ -4193,6 +4398,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'178',
 				name:'ケツアルカトル',
 				name_tw:'羽蛇神',
 				name_en:'Quetzalcoatl',
@@ -4209,6 +4415,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'177',
 				name:'グクマッツ',
 				name_tw:'庫庫爾坎',
 				name_en:'Gucumatz',
@@ -4225,6 +4432,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'176',
 				name:'セイリュウ',
 				name_tw:'青龍',
 				name_en:'Long',
@@ -4241,6 +4449,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'175',
 				name:'イルルヤンカシュ',
 				name_tw:'伊虛延卡',
 				name_en:'Illuyanka',
@@ -4257,6 +4466,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'174',
 				name:'マカラ',
 				name_tw:'摩伽羅',
 				name_en:'Makara',
@@ -4273,6 +4483,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'173',
 				name:'パトリムパス',
 				name_tw:'帕托利姆帕斯',
 				name_en:'Patrimpas',
@@ -4314,6 +4525,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'189',
 				name:'じゃあくフロスト',
 				name_tw:'邪惡傑克',
 				name_en:'Black Frost',
@@ -4330,6 +4542,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'188',
 				name:'ヘカトンケイル',
 				name_tw:'百臂巨人',
 				name_en:'Hecatoncheires',
@@ -4346,6 +4559,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'187',
 				name:'クドラク',
 				name_tw:'古德拉克',
 				name_en:'Kudlak',
@@ -4362,6 +4576,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'186',
 				name:'ラクシャーサ',
 				name_tw:'羅剎',
 				name_en:'Rakshasa',
@@ -4378,6 +4593,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'185',
 				name:'グレンデル',
 				name_tw:'格倫戴爾',
 				name_en:'Grendel',
@@ -4394,6 +4610,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'184',
 				name:'イッポンダタラ',
 				name_tw:'一本踏鞴',
 				name_en:'Ippon-Datara',
@@ -4410,6 +4627,7 @@ export default [
 				source:'normal_fusion'
 			},
             {
+				id:'183',
 				name:'グレムリン',
 				name_tw:'小精靈',
 				name_en:'Gremlin',
@@ -4436,6 +4654,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'198',
 				name:'モト',
 				name_tw:'莫特',
 				name_en:'Mot',
@@ -4452,6 +4671,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'200',
 				name:'イシュタム',
 				name_tw:'伊休妲',
 				name_en:'Ixtab',
@@ -4468,6 +4688,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'197',
 				name:'ネルガル',
 				name_tw:'內爾伽勒',
 				name_en:'Nergal',
@@ -4484,6 +4705,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'199',
 				name:'オルクス',
 				name_tw:'歐卡斯',
 				name_en:'Orcus',
@@ -4500,6 +4722,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'196',
 				name:'ペルセポネー',
 				name_tw:'珀耳塞福涅',
 				name_en:'Persephone',
@@ -4516,6 +4739,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'195',
 				name:'チェルノボグ',
 				name_tw:'切爾諾伯格',
 				name_en:'Chernobog',
@@ -4532,6 +4756,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'194',
 				name:'ヘル',
 				name_tw:'赫爾',
 				name_en:'Hel',
@@ -4558,6 +4783,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'203',
 				name:'マンイーター',
 				name_tw:'辣妹食人鬼',
 				name_en:'Man Eater',
@@ -4574,6 +4800,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'202',
 				name:'ボディコニアン',
 				name_tw:'短裙辣妹殭屍',
 				name_en:'Bodyconian',
@@ -4600,6 +4827,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'204',
 				name:'マサカド',
 				name_tw:'平將門',
 				name_en:'Masakado',
@@ -4626,6 +4854,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'208',
 				name:'サキミタマ',
 				name_tw:'幸魂',
 				name_en:'Saki Mitama',
@@ -4642,6 +4871,7 @@ export default [
 				source:'battle'
 			},
             {
+				id:'207',
 				name:'クシミタマ',
 				name_tw:'奇魂',
 				name_en:'Kusi Mitama',
@@ -4658,6 +4888,7 @@ export default [
 				source:'battle'
 			},
             {
+				id:'206',
 				name:'ニギミタマ',
 				name_tw:'和魂',
 				name_en:'Nigi Mitama',
@@ -4674,6 +4905,7 @@ export default [
 				source:'battle'
 			},
             {
+				id:'205',
 				name:'アラミタマ',
 				name_tw:'荒魂',
 				name_en:'Ara Mitama',
@@ -4700,6 +4932,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'',
                 name:'ベヨネッタ☆',
                 name_tw:'蓓優妮塔☆',
                 name_en:'Bayonetta☆',
@@ -4716,6 +4949,7 @@ export default [
 				source:'summon'
             },
             {
+				id:'',
 				name:'ジャンヌ☆',
 				name_tw:'貞德☆',
 				name_en:'Jeanne☆',
@@ -4732,6 +4966,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'',
 				name:'ベヨネッタ',
 				name_tw:'蓓優妮塔',
 				name_en:'Bayonetta',
@@ -4748,6 +4983,7 @@ export default [
 				source:'summon'
 			},
             {
+				id:'',
 				name:'ジャンヌ',
 				name_tw:'貞德',
 				name_en:'Jeanne',
@@ -4774,6 +5010,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'',
                 name:'ビラブド',   
                 name_tw:'畢拉維德', 
                 name_en:'Beloved', 
@@ -4800,6 +5037,7 @@ export default [
         fusion:false,
 		devils:[
             {
+				id:'',
                 name:'V☆',   
                 name_tw:'V☆', 
                 name_en:'V☆', 
@@ -4816,6 +5054,7 @@ export default [
 				source:'summon'
 			},
 			{
+				id:'',
                 name:'V',   
                 name_tw:'V', 
                 name_en:'V', 
@@ -4854,6 +5093,7 @@ export default [
         fusion:true,
 		devils:[
             {
+				id:'220',
 				name:'ゴグマゴグ',
 				name_tw:'歌革瑪各',
 				name_en:'Gogmagog',
@@ -4870,6 +5110,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'219',
 				name:'トラルテクトリ',
 				name_tw:'特拉爾特庫特利',
 				name_en:'Tlaltecuhtli',
@@ -4886,6 +5127,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'218',
 				name:'ティターン',
 				name_tw:'泰坦',
 				name_en:'Titan',
@@ -4902,6 +5144,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'217',
 				name:'カワンチャ',
 				name_tw:'骷髏病魔',
 				name_en:'Kwancha',
@@ -4918,6 +5161,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'216',
 				name:'カハク',
 				name_tw:'花魄',
 				name_en:'Hua Po',
@@ -4934,6 +5178,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'215',
 				name:'コダマ',
 				name_tw:'木靈',
 				name_en:'Kodama',
@@ -4950,6 +5195,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'214',
 				name:'コロポックル',
 				name_tw:'克魯波克魯',
 				name_en:'Koropokkur',
@@ -5096,10 +5342,13 @@ export default [
 			['魔王','龍王'],
 			['魔王','邪鬼'],
 			['魔王','墮天使'],
-			['魔王','妖獸']
+			['魔王','妖獸'],
+			['兇鳥','墮天使'],
+			['兇鳥','邪神']
 		],
 		devils:[
             {
+				id:'238',
 				name:'ヴァスキ',
 				name_tw:'婆蘇吉',
 				name_en:'Vasuki',
@@ -5116,6 +5365,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'237',
 				name:'ファフニール',
 				name_tw:'法夫納',
 				name_en:'Fafnir',
@@ -5132,6 +5382,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'236',
 				name:'ヤム',
 				name_tw:'雅姆',
 				name_en:'Ym',
@@ -5148,6 +5399,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'235',
 				name:'ニーズホッグ',
 				name_tw:'尼德霍格',
 				name_en:'Nidhoggr',
@@ -5164,6 +5416,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
+				id:'234',
 				name:'ティアマト',
 				name_tw:'提亞馬特',
 				name_en:'Tiamat',
@@ -5174,6 +5427,115 @@ export default [
 				skill4:['メギドラ','ブフダイン','静寂の祈り','勝利のチャクラ','氷結吸収'],
 				skill5:['','二段の賢魔','魅了耐性','メギド','ブフーラ'],
 				elements:['','nu','nu','wk','','','rs'],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			}
+        ]
+	},
+	{
+        name:'兇鳥',
+        name_tw:'兇鳥',
+        name_en:'Raptor',
+		highlight:true,
+		fusion:true,
+        formulas:[
+			['墮天使','靈鳥'],
+			['夜魔','靈鳥'],
+			['邪神','天使'],
+			['邪神','墮天使'],
+			['妖獸','天使'],
+			['妖獸','墮天使'],
+			['妖獸','邪神'],
+			['外道','靈鳥'],
+			['外道','神獸'],
+			['魔王','天使'],
+			['邪龍','天使'],
+			['邪龍','墮天使'],
+			['幽鬼','邪神']
+		],
+		devils:[
+            {
+				id:'',
+				name:'フレスベルグ',
+				name_tw:'弗雷斯貝爾格',
+				name_en:'Hresvelgr',
+				rarity:5,
+				grade:84,
+				icon:'kyoutyou_huresuberugu.jpg',
+				skills:['ブフダイン','氷結ブースタ','北端の凍てつく風'],
+				skill4:['三段の賢魔','マハザンダイン','雄叫び','ラクンダオート','衝撃吸収'],
+				skill5:['','マハブフダイン','スピードスター','絶対零度','物理耐性'],
+				elements:['wk','wk','dr','','nu','',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				id:'',
+				name:'グルル',
+				name_tw:'格魯魯',
+				name_en:'Gurr',
+				rarity:4,
+				grade:71,
+				icon:'kyoutyou_gururu.jpg',
+				skills:['毒針','スピードスター','ヤクシャの凶爪'],
+				skill4:['虚空爪激','ベノンザッパー','バインドクロー','スクンダオート','衝撃反射'],
+				skill5:['','毒追撃','緊縛追撃','二段の猛速','破魔耐性'],
+				elements:['wk','','','','nu','wk',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				id:'',
+				name:'アンズー',
+				name_tw:'安祖',
+				name_en:'Anzu',
+				rarity:4,
+				grade:60,
+				icon:'kyoutyou_anzu.jpg',
+				skills:['ジオダイン','雄叫び','天命の雷光'],
+				skill4:['野獣の勘','マハジオンガ','溶解ブレス','電撃ブースタ','電撃反射'],
+				skill5:['','ショックウェーブ','追い打ち','二段の賢魔','衝撃耐性'],
+				elements:['','','','nu','wk','',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				id:'',
+				name:'モー・ショボー',
+				name_tw:'莫索保',
+				name_en:'Moh Shuvuu',
+				rarity:3,
+				grade:49,
+				icon:'kyoutyou_mosyobo.jpg',
+				skills:['ザンマ','マハザン','吸血'],
+				skill4:['ディアラマ','自爆','マハマリンカリン','タルンダオート','衝撃吸収'],
+				skill5:['','食いしばり','乱れ狂い','野生の勘','ウィンドブレス'],
+				elements:['','wk','','','nu','',''],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				source:'normal_fusion'
+			},
+			{
+				id:'',
+				name:'カマソッソ',
+				name_tw:'坎馬卓茲',
+				name_en:'Camazotz',
+				rarity:3,
+				grade:42,
+				icon:'kyoutyou_kamasoso.jpg',
+				skills:['毒ガスブレス','乱れ狂い','丸かじり'],
+				skill4:['猛反撃','毒針','甘噛み','毒追撃','物理反射'],
+				skill5:['','狂乱の剛爪','百発百中','毒耐性','コロシの愉悦'],
+				elements:['wk','','','wk','','wk',''],
 				type:'attack',
 				fusion:true,
 				fusionAsMaterial:true,
