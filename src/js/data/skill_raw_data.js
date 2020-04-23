@@ -1208,6 +1208,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"破魔"
+			},
+			{
+				name:"天草一揆",
+				name_tw:"天草一揆",
+				desc:"敵単体に破魔貫通を得た破魔属性の打撃型ダメージを威力140で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。攻撃成功時、2ターンの間、味方全体の攻撃力・回避と命中を20％ずつ増加させる。",
+				name_en:"Amakusa Uprising",
+				desc_en:"Inflicts Light (Physical) damage (Power: 140) with Light Pierce effect on a single enemy. *The damage inflicted by this skill is dependent on Mag ATK. *This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates. When attack is successful, increases own party's ATK and EV/AC by 20%. (2 turn)",
+				mp:6,
+				point:null,
+				element:"破魔"
 			}
         ]
     },
@@ -1352,7 +1362,17 @@ export default [
 				desc:"呪殺貫通を得た呪殺単体攻撃＋連動効果で呪殺全体攻撃",
 				name_en:"Hell's Trivia",
 				desc_en:"Inflicts Dark damage with Dark Pierce effect on a single enemy to trigger an extra Dark Pierce attack on all enemies as a Chain Effect.",
-				mp:null,
+				mp:6,
+				point:null,
+				element:"呪殺"
+			},
+			{
+				name:"光を喰らう闇",
+				name_tw:"噬光之闇",
+				desc:"敵単体に呪殺貫通を得た呪殺属性の魔法型ダメージを威力150で与え、そのダメージの50％分、自身を回復する。",
+				name_en:"Light Devourer",
+				desc_en:"Inflicts Dark (Magic) damage (Power: 150) with Dark Pierce effect on a single enemy, while healing caster 50% of damage dealt.",
+				mp:6,
 				point:null,
 				element:"呪殺"
 			}
@@ -4111,6 +4131,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"パシップ"
+			},
+			{
+				name:"致命の一撃",
+				name_tw:"致命一擊",
+				desc:"クリティカル時に与えるダメージが20％増加する。",
+				name_en:"Death Blow",
+				desc_en:"+20% to critical hit damage.",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },
@@ -5015,6 +5045,36 @@ export default [
 				desc:"2ターンごとの自分のターン開始時、次の連動効果が発動。「敵全体に電撃属性の魔法型ダメージを威力120で与える。攻撃に成功した場合、2ターンの間、敵全体の回避と命中を20％減少させる。」",
 				name_en:"Thunder of Destiny",
 				desc_en:"Activates the following Chain Effect at the beginning of every second own turn: Inflict Elec (Magic) damage (Power: 120) on all enemies. Reduces EV/AC of all enemies by 20% when attack is successful. (2 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"救世の旗印",
+				name_tw:"救世的旗印",
+				desc:"自身が生存中、味方全体は次の効果を発揮する。「破魔属性で与えるダメージが10％増加する。ウェーブをまたぐとき、MPが1回復する。」",
+				name_en:"Flag of Salvation",
+				desc_en:"While the demon with this skill is alive, all party members will receive the following effect: +10% to Light damage. Recovers 1 MP when clearing a wave.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"リベリオート",
+				name_tw:"自動反叛",
+				desc:"1ターン目開始時、次の連動効果が発動する。「自身を会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。」",
+				name_en:"Auto-Rebellion",
+				desc_en:"Activates the following Chain Effect at the beginning of the 1st turn: Self enters a state of Might. The next Phys attack will have a Critical effect.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"地獄の宰相",
+				name_tw:"地獄宰相",
+				desc:"自身が生存中、味方パーティの種族「魔王」の悪魔は次の効果を発揮する。「自身が受けるすべてのダメージが10％減少する。万能属性スキルで消費するMPが1減少する。」",
+				name_en:"Hell's Ministry",
+				desc_en:"While the demon with this skill is alive, all party members of the Tyrant race will receive the following effect: -10% to all damage received. Reduces the cost of Almighty skills by 1MP.",
 				mp:null,
 				point:null,
 				element:"パシップ"

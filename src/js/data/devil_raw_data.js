@@ -3219,7 +3219,7 @@ export default [
         name:'魔王',
         name_tw:'魔王',
 		name_en:'Tyrant',
-		highlight:false,
+		highlight:true,
         formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
@@ -3256,6 +3256,25 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'255',
+				name:'ルキフグス',
+				name_tw:'羅弗寇',
+				name_en:'Lucifuge',
+				rarity:5,
+				grade:92,
+				icon:'maou_rukifugusu.jpg',
+				skills:["呪殺ハイブースタ","地獄の宰相","光を喰らう闇"],
+				skill4:["ネクロ・ドグマ","","","",""],
+				skill5:['',"","","",""],
+				elements:['','','','','nu','wk','dr'],
+				type:'attack',
+				fusion:true,
+				fusionAsMaterial:true,
+				fusionMag:1000000,
+				formula:['バアル','ダンタリアン','アバドン'],
+				source:'multi_fusion'
 			},
             {
 				id:'141',
@@ -3813,7 +3832,7 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:false,
+		highlight:true,
 		devils:[
 			{
 				id:'245',
@@ -3844,6 +3863,23 @@ export default [
 				skill4:['不屈の闘志','ギガントマキア','チャージ','物理ハイブースタ','物理吸収'],
 				skill5:['','ゴッドハンド','スクカオート','ミナゴロシの愉悦','氷結耐性'],
 				elements:['rs','','','','','nu','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
+			{
+				id:'256',
+				name:'トキサダ',
+				name_tw:'天草四郎時貞',
+				name_en:'Tokisada',
+				rarity:5,
+				grade:92,
+				icon:'eiyuu_tokisada.jpg',
+				skills:['致命の一撃','救世の旗印','天草一揆'],
+				skill4:['三段の賢魔','マハンマダイン','ランダマイザ','破魔ハイブースタ','破魔反射'],
+				skill5:['','無慈悲な一撃','リベリオート','勝利の息吹','破魔エンハンス'],
+				elements:['','','','rs','rs','nu',''],
 				type:'attack',
 				fusion:false,
 				fusionAsMaterial:false,
@@ -5438,7 +5474,7 @@ export default [
         name:'兇鳥',
         name_tw:'兇鳥',
         name_en:'Raptor',
-		highlight:true,
+		highlight:false,
 		fusion:true,
         formulas:[
 			['墮天使','靈鳥'],
@@ -5457,7 +5493,7 @@ export default [
 		],
 		devils:[
             {
-				id:'',
+				id:'254',
 				name:'フレスベルグ',
 				name_tw:'弗雷斯貝爾格',
 				name_en:'Hresvelgr',
@@ -5474,7 +5510,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				id:'',
+				id:'253',
 				name:'グルル',
 				name_tw:'格魯魯',
 				name_en:'Gurr',
@@ -5491,7 +5527,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				id:'',
+				id:'252',
 				name:'アンズー',
 				name_tw:'安祖',
 				name_en:'Anzu',
@@ -5508,7 +5544,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				id:'',
+				id:'251',
 				name:'モー・ショボー',
 				name_tw:'莫索保',
 				name_en:'Moh Shuvuu',
@@ -5525,7 +5561,7 @@ export default [
 				source:'normal_fusion'
 			},
 			{
-				id:'',
+				id:'250',
 				name:'カマソッソ',
 				name_tw:'坎馬卓茲',
 				name_en:'Camazotz',
