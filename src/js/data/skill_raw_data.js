@@ -3487,6 +3487,16 @@ export default [
 				mp:null,
 				point:"null",
 				element:"パシップ"
+			},
+			{
+				name:"即死無効",
+				name_tw:"即死無效",
+				desc:"即死無効を得る。",
+				name_en:"Null Mortal",
+				desc_en:"Adds Null Mortal",
+				mp:null,
+				point:"null",
+				element:"パシップ"
 			}
         ]
     },
