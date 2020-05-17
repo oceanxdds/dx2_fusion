@@ -191,7 +191,7 @@ export default [
         name:'女神',
         name_tw:'女神',
         name_en:'Megami',
-        highlight:false,
+        highlight:true,
         formulas:[
             ['靈鳥','大天使'],
             ['魔神','靈鳥'],
@@ -244,6 +244,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'257',
+				name:'アナト',
+				name_tw:'阿娜特',
+				name_en:'Anat',
+				rarity:5,
+				grade:84,
+				icon:'megami_anato.jpg',
+				skills:['電撃ハイブースタ','殺戮の衝動','サンダーストーム'],
+				skill4:['三段の賢魔','真理の雷','ラスタキャンディ','無慈悲な一撃','衝撃無効'],
+				skill5:['','大暗殺者','電撃エンハンス','勝利のチャクラ','奈落のマスク'],
+				elements:['','','','dr','wk','nu','rs'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'11',
@@ -3219,7 +3236,7 @@ export default [
         name:'魔王',
         name_tw:'魔王',
 		name_en:'Tyrant',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
@@ -3832,7 +3849,7 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:true,
+		highlight:false,
 		devils:[
 			{
 				id:'245',
