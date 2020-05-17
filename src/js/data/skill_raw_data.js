@@ -924,6 +924,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"電撃"
+			},
+			{
+				name:"サンダーストーム",
+				name_tw:"雷暴颶雨",
+				desc:"敵全体に電撃貫通を得た電撃属性の魔法型ダメージを威力130で与える。攻撃成功時、3ターンの間、敵全体の攻撃力を20％減少させる。",
+				name_en:"Thunderstorm",
+				desc_en:"Inflicts Elec (Magic) damage (Power: 130) with Elec Pierce effect on all enemies.Reduces ATK of all enemies by 20% if the attack is successful. (3 turns)",
+				mp:8,
+				point:null,
+				element:"電撃"
 			}
         ]
     },
@@ -5085,6 +5095,16 @@ export default [
 				desc:"自身が生存中、味方パーティの種族「魔王」の悪魔は次の効果を発揮する。「自身が受けるすべてのダメージが10％減少する。万能属性スキルで消費するMPが1減少する。」",
 				name_en:"Hell's Ministry",
 				desc_en:"While the demon with this skill is alive, all party members of the Tyrant race will receive the following effect: -10% to all damage received. Reduces the cost of Almighty skills by 1MP.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"殺戮の衝動",
+				name_tw:"殺戮的衝動",
+				desc:"自身が敵を倒したとき、次の連動効果が発動。「ランダムな敵に4回、電撃貫通を得た電撃属性の魔法型ダメージを威力25で与える。」※連続で最大2回まで発生",
+				name_en:"Killer Impulse",
+				desc_en:"Activates the following Chain Effect when this demon downs an enemy:Inflict Elec (Magic) damage (Power: 25) with Elec Pierce effect 4 times on random enemies.*Consecutive activation limit: 2",
 				mp:null,
 				point:null,
 				element:"パシップ"
