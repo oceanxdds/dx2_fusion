@@ -523,6 +523,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"ドラゴンころし",
+				name_tw:"斬龍劍",
+				desc:"本スキルはバトルを終了するまで、使用する度に強化段階が増加します。スキルやアイテムによる蘇生、敗北からの復活時にも強化段階を継続します。強化段階 0：敵全体にクリティカル率30％の物理貫通を得た物理属性の打撃型ダメージを威力115で与える。このスキルによるダメージは反撃効果を無視する。このスキルを使用すると強化段階が増加する。強化段階 1：クリティカル率50％、威力135に変化、さらに死亡時に踏みとどまるスキル無視が追加",
+				name_en:"Dragon Slayer",
+				desc_en:"This skill will gain 1 Boost level with each use. Boost Levels will last for the entirety of the battle, and will still remain after revivals and continues. Boost Level 0: Inflicts Phys (Physical) damage (Power: 115) with 30% crit rate on all enemies. This skill will have Phys Pierce effect.Counter effects will not work on this skill.This skill will gain 1 Boost level with each use.Boost Level 1: Increases crit rate to 50% and Power to 135. Nullifies all death prevention skills.",
+				mp:6,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -668,6 +678,26 @@ export default [
 				name_en:"Aztec Pulse",
 				desc_en:"This skill will gain 1 Boost level with each use in the battle. The increased boost level remains when this demon revives by skills or items, or all party members revive when losing the battle.Current Boost level can be confirmed by holding the skill icon in the battle.Boost Level 0: Inflicts Fire (Magic) damage (power: 100) on all enemies.Boost Level 1: Increases Power to 120.Boost Level 2: Increases Power to 140. Reduces DEF of all enemies by 20% when attack is successful. (1 turn)",
 				mp:6,
+				point:null,
+				element:"火炎"
+			},
+			{
+				name:"元素魔法",
+				name_tw:"元素魔法",
+				desc:"状況によって、下記の効果のいずれかが自動で選択される。【火の光】敵全体に威力100の火炎属性の魔法型ダメージ【水の光】敵全体に威力100の氷結属性の魔法型ダメージ【風の光】敵全体に威力100の衝撃属性の魔法型ダメージ",
+				name_en:"Elemental Magic",
+				desc_en:"Automatically selects one of the following effects to activate depending on the situation. Fire Light Inflicts Fire (Magic) damage (Power: 100) on all enemies. Water Light Inflicts Ice (Magic) damage (Power: 100) on all enemies. Wind Light Inflicts Force (Magic) damage (Power: 100) on all enemies.",
+				mp:5,
+				point:null,
+				element:"火炎"
+			},
+			{
+				name:"精霊大召喚",
+				name_tw:"精靈大召喚",
+				desc:"このスキルは2ターン毎に使用可能になる。状況によって、下記の効果のいずれかが自動で選択される。【火の精霊】敵全体に威力140の火炎貫通属性の魔法型ダメージ 攻撃成功時、3ターンの間敵全体の防御力を20％減少【水の精霊】敵全体に威力140の氷結貫通属性の魔法型ダメージ 攻撃成功時、3ターンの間敵全体の攻撃力を20％減少【風の精霊】敵全体に威力140の衝撃貫通属性の魔法型ダメージ 攻撃成功時、3ターンの間敵全体の回避と命中を20％減少",
+				name_en:"Summon Elementals",
+				desc_en:"Can be used every 2 turns. Automatically selects one of the following effects to activate depending on the situation. Salamander Inflicts Fire (Magic) damage (Power: 140) with Fire Pierce effect on all enemies. Reduces DEF of all enemies by 20% if the attack is successful. (3 turns) Undine Inflicts Ice (Magic) damage (Power: 140) with Ice Pierce effect on all enemies. Reduces ATK of all enemies by 20% if the attack is successful. (3 turns) Sylph Inflicts Force (Magic) damage (Power: 140) with Force Pierce effect on all enemies. Reduces EV/AC of all enemies by 20% if the attack is successful. (3 turns)",
+				mp:7,
 				point:null,
 				element:"火炎"
 			}
@@ -1690,6 +1720,16 @@ export default [
 				name_en:"Path of Prominence",
 				desc_en:"Increases every stat of all party members. Inflict Almighty damage on all enemies as a Chain Effect.",
 				mp:null,
+				point:null,
+				element:"万能"
+			},
+			{
+				name:"喚び水の剣",
+				name_tw:"喚水之劍",
+				desc:"敵単体に万能属性の打撃型ダメージを威力160で与える。このスキルによるダメージは物理攻撃力に依存し、死亡時にふみとどまるスキルを無視する。このスキルはクリティカル・ミスが発生する場合がある。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。",
+				name_en:"Sword of Actuation",
+				desc_en:"Inflicts Almighty (Physical) damage (Power: 160) on a single enemy. *The damage inflicted by this skill is dependent on Phys ATK. *Nullifies all death prevention skills. *This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates. *Enemies downed by this skill will not be able to revive.",
+				mp:6,
 				point:null,
 				element:"万能"
 			}
@@ -5105,6 +5145,46 @@ export default [
 				desc:"自身が敵を倒したとき、次の連動効果が発動。「ランダムな敵に4回、電撃貫通を得た電撃属性の魔法型ダメージを威力25で与える。」※連続で最大2回まで発生",
 				name_en:"Killer Impulse",
 				desc_en:"Activates the following Chain Effect when this demon downs an enemy:Inflict Elec (Magic) damage (Power: 25) with Elec Pierce effect 4 times on random enemies.*Consecutive activation limit: 2",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"踠くもの",
+				name_tw:"不斷掙扎之人",
+				desc:"クリティカル率が25％増加し、物理命中率が20％増加する。自身が死亡するとき、一度だけHPが300回復して踏みとどまる。",
+				name_en:"The Struggler",
+				desc_en:"Increases Critical hit rate by 25% and Phys hit rate by 20%. Heals 300 HP upon receiving the first killing blow.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"魔に仇成す者",
+				name_tw:"向魔復仇之人",
+				desc:"物理貫通を得る。敵ターン開始時、次の連動効果が発動。「1ターンの間、味方全体の防御力・回避と命中をそれぞれ20％ずつ増加させる。」",
+				name_en:"Foe of Demons",
+				desc_en:"Adds Phys Pierce. Activates the following Chain Effect at the start of enemy turn: Increases ATK, DEF and EV/AC of all party members by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"血の経典",
+				name_tw:"血聖書",
+				desc:"自身のHPが100％のとき、次の効果を発揮する。「自身が与えるすべてのダメージが15％増加する。自身が受けるすべてのダメージが30％減少する。」",
+				name_en:"Bloody Scripture",
+				desc_en:"Activates the following Chain Effect when own HP is at 100%: Increases damage of all attacks by 15% and decreases all damage received by 30%.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"神千手砲",
+				name_tw:"神千手砲",
+				desc:"敵がクリティカルを発生させたとき、次の連動効果が発動。「ランダムな敵に6回、クリティカル率30％の物理貫通を得た物理属性の打撃型ダメージを威力20で与える。このスキルによるダメージは物理防御力に依存する。」",
+				name_en:"God 1000 Fist Cannon",
+				desc_en:"Activates the following Chain Effect when an enemy makes a critical hit: Inflicts Phys (Physical) damage (power: 20) with 30% crit rate 6 times on random enemies. *This skill will have Phys Pierce effect. *The damage inflicted by this skill is dependent on Phys DEF.",
 				mp:null,
 				point:null,
 				element:"パシップ"
