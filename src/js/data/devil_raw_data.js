@@ -191,7 +191,7 @@ export default [
         name:'女神',
         name_tw:'女神',
         name_en:'Megami',
-        highlight:false,
+        highlight:true,
         formulas:[
             ['靈鳥','大天使'],
             ['魔神','靈鳥'],
@@ -227,6 +227,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'',
+				name:'ラクシュミ [異世界]',
+				name_tw:'吉祥天 [異世界]',
+				name_en:'Lakshmi [Dimensional]',
+				rarity:5,
+				grade:85,
+				icon:'megami_rakusyumi2.jpg',
+				skills:["回復ハイブースタ","ディーワーリー","福徳の華"],
+				skill4:["","デスタッチ","護国の咆哮","超自然治癒","破魔吸収"],
+				skill5:["","タルンダオート","緊縛無効","寸分の見切り","衝撃無効"],
+				elements:['','','','','wk','nu','rs'],
+				type:'support',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'12',
@@ -3599,7 +3616,7 @@ export default [
         name:'魔人',
         name_tw:'魔人',
         name_en:'Fiend',
-        highlight:true,
+        highlight:false,
         formulas:[],
         fusion:false,
 		devils:[
@@ -3883,7 +3900,7 @@ export default [
         name_en:'Hero',
         formulas:[],
 		fusion:false,
-		highlight:true,
+		highlight:false,
 		devils:[
 			{
 				id:'245',
@@ -5032,7 +5049,7 @@ export default [
         name_tw:'魔女',
         name_en:'Witch',
         formulas:[],
-        highlight:true,
+        highlight:false,
         fusion:false,
 		devils:[
             {

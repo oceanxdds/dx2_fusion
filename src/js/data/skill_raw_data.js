@@ -2116,6 +2116,16 @@ export default [
 				mp:5,
 				point:null,
 				element:"無"
+			},
+			{
+				name:"福徳の華",
+				name_tw:"福德之華",
+				desc:"本スキルはバトルを終了するまで、使用する度に強化段階が増加します。スキルやアイテムによる蘇生、敗北からの復活時にも強化段階を継続します。現在の強化段階はバトル中のスキルアイコン長押しで確認できます。強化段階 0：味方全体を回復力50で回復し、1ターンの間、スキルによる即死無効状態にする。強化段階 1：回復力75に変化、さらに味方全体の全状態異常解除が追加。強化段階 2：回復力100に変化、さらに味方全体の全状態異常解除、1ターンの間1度だけ万能を含む魔法型ダメージ反射状態付与が追加",
+				name_en:"Virtuous Prosperity",
+				desc_en:"This skill will gain 1 Boost Level with each use. Boost Levels will be retained even after being revived with items, skills or Continues.The current Boost Level can be viewed by pressing and holding the skill icon of this skill.Boost Level 0: Heals (Power: 50) and adds Mortal immunity to all allies. (1 turn) Boost Level 1: Increases Power to 75 and removes all status ailments from all allies.Boost Level 2: Increases Power to 100, removes all status ailments and casts Repel Magic (including Almighty) effect on all allies. (1 turn)",
+				mp:6,
+				point:null,
+				element:"無"
 			}
         ]
     },
@@ -5185,6 +5195,16 @@ export default [
 				desc:"敵がクリティカルを発生させたとき、次の連動効果が発動。「ランダムな敵に6回、クリティカル率30％の物理貫通を得た物理属性の打撃型ダメージを威力20で与える。このスキルによるダメージは物理防御力に依存する。」",
 				name_en:"God 1000 Fist Cannon",
 				desc_en:"Activates the following Chain Effect when an enemy makes a critical hit: Inflicts Phys (Physical) damage (power: 20) with 30% crit rate 6 times on random enemies. *This skill will have Phys Pierce effect. *The damage inflicted by this skill is dependent on Phys DEF.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ディーワーリー",
+				name_tw:"萬燈光明",
+				desc:"自身を含む味方がHP回復効果を含む悪魔スキルを発動したとき、次の連動効果が発動。「味方全体のMPが1回復する。」勝利の息吹などによるウェーブまたぎ時のHP回復や、不屈の闘志などによる食いしばり時のHP回復では発動しない。※Ｄ×２スキルによる回復、リディアによる回復、蘇生による回復も対象外となります。",
+				name_en:"Diwali",
+				desc_en:"Activates the following Chain Effect when a party member (including self) activates an HP healing effect: All party members recover 1 MP. Skills that heal HP when clearing a wave, like Life Aid, and skills that Heal HP upon receiving the first killing blow, like Enduring Soul, do not apply. *Healing effects from Dx2 Skills, Lydia and Revival skills also do not apply.",
 				mp:null,
 				point:null,
 				element:"パシップ"
