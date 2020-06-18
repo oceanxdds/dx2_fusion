@@ -2954,7 +2954,7 @@ export default [
 				skills:["デクンダ","タルカジャ","ブフーラ"],
 				skill4:["ラクカジャ","金剛発破","アムリタ","地獄のマスク","呪殺無効"],
 				skill5:['',"マハラギ","初段の賢魔","マハラギ","乱れ狂い"],
-				elements:['rp','wk','wk','wk','wk','wk','wk'],
+				elements:['dr','wk','wk','wk','wk','wk','wk'],
 				type:'support',
 				fusion:true,
 				fusionAsMaterial:true,
