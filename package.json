@@ -19,11 +19,11 @@
     "laravel-mix-bundle-analyzer": "^1.0.5",
     "laravel-mix-polyfill": "^1.1.1",
     "resolve-url-loader": "^2.3.2",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "sass-loader": "^7.3.1",
     "serialize-javascript": "^2.1.2",
     "vue-template-compiler": "^2.6.11",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
