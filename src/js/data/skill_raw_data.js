@@ -2443,6 +2443,16 @@ export default [
 				mp:6,
 				point:7,
 				element:"無"
+			},
+			{
+				name:"暗黒の予兆",
+				name_tw:"暗黒的預兆",
+				desc:"このスキルは自身のHPが50%以下の間は【災禍の日蝕】に変化する。【暗黒の予兆】敵全体を基礎確率50%で魔封状態にした後、連動効果が発動「自身に現在HPの51%の割合ダメージを与える。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」【災禍の日蝕】敵全体に貫通を得た呪殺属性の魔法型ダメージを威力100で与える。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。",
+				name_en:"Dark Premonition",
+				desc_en:"This Skill becomes [Disastrous Eclipse] while own HP is 50% or lower.Dark Premonition:50% chance to inflict Mute on all enemies. Then activates the Chain Effect of Inflicting 51% fractional damage on self based on own current HP. Fractional damage will not be affected by stat/damage increase or reduction effects.Disastrous Eclipse: Inflicts Dark (Magic) damage (Power: 100) with Dark Pierce effect on all enemies. *Enemies downed by this skill will not be able to revive.",
+				mp:6,
+				point:null,
+				element:"無"
 			}
         ]
     },
@@ -5205,6 +5215,16 @@ export default [
 				desc:"自身を含む味方がHP回復効果を含む悪魔スキルを発動したとき、次の連動効果が発動。「味方全体のMPが1回復する。」勝利の息吹などによるウェーブまたぎ時のHP回復や、不屈の闘志などによる食いしばり時のHP回復では発動しない。※Ｄ×２スキルによる回復、リディアによる回復、蘇生による回復も対象外となります。",
 				name_en:"Diwali",
 				desc_en:"Activates the following Chain Effect when a party member (including self) activates an HP healing effect: All party members recover 1 MP. Skills that heal HP when clearing a wave, like Life Aid, and skills that Heal HP upon receiving the first killing blow, like Enduring Soul, do not apply. *Healing effects from Dx2 Skills, Lydia and Revival skills also do not apply.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"暗闇の星",
+				name_tw:"闇色之星",
+				desc:"自身のHPが50％以下のとき、次の効果を発揮する。「呪殺属性で与えるダメージが30％増加し、物理回避率が25％増加する。」",
+				name_en:"Star of Darkness",
+				desc_en:"Activates the following effect when own HP is at 50% or lower: +30% to Dark damage and +25% Phys evasion rate.",
 				mp:null,
 				point:null,
 				element:"パシップ"
