@@ -2256,7 +2256,9 @@ export default [
     {
         name:'墮天使',
         name_tw:'墮天使',
-        name_en:'Fallen',
+		name_en:'Fallen',
+		fusion:true,
+		highlight:true,
         formulas:[
             ['龍神','破壞神'],
             ['龍神','魔王'],
@@ -2274,7 +2276,6 @@ export default [
 			['地靈','天使'],
 			['地靈','龍王']
         ],
-        fusion:true,
 		devils:[
             {
 				id:'95',
@@ -2292,6 +2293,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'259',
+				name:'ネビロス',
+				name_tw:'奈比洛斯',
+				name_en:'Nebiros',
+				rarity:5,
+				grade:81,
+				icon:'datensi_nebirosu.jpg',
+				skills:["狂乱の権化","死霊の呼び声","栄光の手"],
+				skill4:["","デスタッチ","悪魔の産声","緊縛無効","破魔無効"],
+				skill5:["","タルンダオート","強靭の権化","魅了無効","ネクロ・ドグマ"],
+				elements:['','','','','','wk','rp'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'94',
@@ -3326,6 +3344,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'260',
+				name:'ベリアル',
+				name_tw:'貝利亞',
+				name_en:'Belial',
+				rarity:5,
+				grade:85,
+				icon:'maou_beriaru.jpg',
+				skills:["鋭気の権化","ソドムの罪過","ゴモラの獄炎"],
+				skill4:["","空間殺法","早手の舞い","火炎ハイブースタ","呪殺反射"],
+				skill5:["","千発千中","火炎エンハンス","ミナゴロシの愉悦","氷結無効"],
+				elements:['','rp','wk','','','','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'140',
@@ -4916,10 +4951,27 @@ export default [
         name:'屍鬼',
         name_tw:'屍鬼',
         name_en:'Undead',
-        highlight:false,
+        highlight:true,
         formulas:[],
         fusion:false,
 		devils:[
+			{
+				id:'261',
+				name:'アリス☆',
+				name_tw:'愛麗絲',
+				name_en:'Alice',
+				rarity:5,
+				grade:89,
+				icon:'siki_arisu2.jpg',
+				skills:['狂い咲き','宝石ちょうだい？','お願いがあるの'],
+				skill4:['','ヘルズアイ','混沌の海','即死無効','破魔反射'],
+				skill5:['','準呪殺貫通','不動の権化','超自然治癒','三分の活泉'],
+				elements:['','','','','','wk','rp'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'summon'
+			},
             {
 				id:'203',
 				name:'マンイーター',

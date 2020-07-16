@@ -700,6 +700,16 @@ export default [
 				mp:7,
 				point:null,
 				element:"火炎"
+			},
+			{
+				name:"ゴモラの獄炎",
+				name_tw:"蛾摩拉的獄炎",
+				desc:"敵全体に火炎貫通を得た火炎属性の打撃型ダメージを威力110で与え、攻撃がヒットした敵を基礎確率80％で呪い状態にする。このスキルによるダメージは物理攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。",
+				name_en:"Flames of Gomorrah",
+				desc_en:"Inflicts Fire (Physical) damage (Power: 110) on all enemies with an 80% chance to inflict Curse on hit enemies. This skill will have Fire Pierce effect.*The damage inflicted by this skill is dependent on Phys ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.",
+				mp:6,
+				point:null,
+				element:"火炎"
 			}
         ]
     },
@@ -1757,6 +1767,16 @@ export default [
 				name_en:"Last Resort",
 				desc_en:"Inflicts 30% fractional damage (1,000 max) on all enemies based on their current HP. The demon with this skill will be downed upon activation.	Fractional damage will not be affected by stat/damage increase or reduction effects.",
 				mp:6,
+				point:null,
+				element:"???"
+			},
+			{
+				name:"お願いがあるの",
+				name_tw:"我有個請求",
+				desc:"呪い状態の敵がいない場合【遊んでくれる？】、呪い状態の敵がいる場合【お友達になって】が発動。【遊んでくれる？】敵全体に、対象の現在HPの30％の割合ダメージ（最大1,500ダメージ）を与え、基礎確率80％で呪い状態。【お友達になって】全ての呪い状態の敵に、対象の最大HPの30％の割合ダメージ（最大1,500ダメージ）を与え、死亡時に踏みとどまるスキルを無視して100％の確率で即死。",
+				name_en:"Do Me A Favor",
+				desc_en:"Activates [Be My Friend] when there is a Cursed enemy, activates [Play With Me?] when there isn't.Play With Me?:Inflicts 30% fractional damage (1500 max) on all enemies based on their current HP with 80% chance to inflict Curse.Be My Friend: Inflicts 30% fractional damage (1500 max) on all Cursed enemies based on their max HP with 100% chance to inflict Mortal. Nullifies all death prevention skills.",
+				mp:9,
 				point:null,
 				element:"???"
 			}
@@ -5225,6 +5245,56 @@ export default [
 				desc:"自身のHPが50％以下のとき、次の効果を発揮する。「呪殺属性で与えるダメージが30％増加し、物理回避率が25％増加する。」",
 				name_en:"Star of Darkness",
 				desc_en:"Activates the following effect when own HP is at 50% or lower: +30% to Dark damage and +25% Phys evasion rate.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"宝石ちょうだい？",
+				name_tw:"拿出寶石來？",
+				desc:"敵ターン開始時、次の連動効果が発動。「敵全体に、対象の現在HPの10％の割合ダメージ（最大300ダメージ）を与え、MPを1奪う。」",
+				name_en:"Give me Jewels?",
+				desc_en:"Activates the following Chain Effect at the start of enemy turn:Inflicts 10% fractional damage (300 max) on all enemies based on their current HP and drains 1 MP.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"不動の権化",
+				name_tw:"不動的化身",
+				desc:"悪魔のバトルスピードへの影響が25％減少し、最大HPが20％増加する。",
+				name_en:"Epitome of Endurance",
+				desc_en:"-25% to this demon's affect on Battle Speed. +20% to max HP.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"ソドムの罪過",
+				name_tw:"所多瑪的罪過",
+				desc:"物理貫通を得る。自ターン開始時、呪い状態の敵がいた場合、次の連動効果が発動。「敵全体のバリア状態・グッドステータスによる即死無効状態を解除し、1ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ減少させる。」",
+				name_en:"Sins of Sodom",
+				desc_en:"Gains Phys Pierce.Activates the following Chain Effect at the start of own turn when there is a Cursed enemy:Removes Mortal nullifying effects gained by Barriers and Good Statuses from all enemies and reduces their ATK, DEF and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"死霊の呼び声",
+				name_tw:"死靈的呼喚",
+				desc:"敵ターン終了時、呪い状態の敵がいた場合、次の連動効果が発動。「死亡している味方全体をHP10％で復活させる。」",
+				name_en:"Call of the Dead",
+				desc_en:"Activates the following Chain Effect at the end of enemy turn when there is a Cursed enemy:Revives all party members with 10% HP.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"栄光の手",
+				name_tw:"榮光之手",
+				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「敵全体を基礎確率80％で呪い状態にし、1ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。」",
+				name_en:"Hand of Glory",
+				desc_en:"Activates the following Chain Effect when another party member is downed:80% chance to inflict Curse on all enemies and increases ATK, DEF and EV/AC of all party members by 20%. (1 turn)",
 				mp:null,
 				point:null,
 				element:"パシップ"
