@@ -278,6 +278,7 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				formula:['イシュタル','ヤム','ティアマト'],
+				fusionMag:5000000,
 				source:'multi_fusion'
 			},
             {
@@ -3413,6 +3414,7 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				formula:['ケツアルカトル','ユルング','ランダ'],
+				fusionMag:1500000,
 				source:'multi_fusion'
 			},
             {
