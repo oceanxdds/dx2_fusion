@@ -26,8 +26,10 @@
             </div>
         </div>
         <b-card-footer class="p-1 text-right">
-            <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="font-weight-bold small py-0">⚝</b-button>
-            <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="font-weight-bold small py-0">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="font-weight-bold small py-0" v-if="bom.child1">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="font-weight-bold small py-0" v-if="bom.child2">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child3.devil)" class="font-weight-bold small py-0" v-if="bom.child3">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child4.devil)" class="font-weight-bold small py-0" v-if="bom.child4">⚝</b-button>
             <span v-if="bom.mag_pure!=bom.mag">
                 <b-badge variant="success"> {{ $t('archetype.common') }} </b-badge> 
                 <span class="small"> {{ bom.showMagPure() }}  </span>
