@@ -275,9 +275,10 @@ export default [
 				skill5:['','大暗殺者','電撃エンハンス','勝利のチャクラ','奈落のマスク'],
 				elements:['','','','dr','wk','nu','rs'],
 				type:'attack',
-				fusion:false,
+				fusion:true,
 				fusionAsMaterial:true,
-				source:'summon'
+				formula:['イシュタル','ヤム','ティアマト'],
+				source:'multi_fusion'
 			},
             {
 				id:'11',
@@ -3409,9 +3410,10 @@ export default [
 				skill5:['','呪殺エンハンス','狂乱の権化','ヘルズアイ','三分の活泉'],
 				elements:['','','','','','wk','nu'],
 				type:'attack',
-				fusion:false,
+				fusion:true,
 				fusionAsMaterial:true,
-				source:'summon'
+				formula:['ケツアルカトル','ユルング','ランダ'],
+				source:'multi_fusion'
 			},
             {
 				id:'139',
