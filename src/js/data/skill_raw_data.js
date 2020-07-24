@@ -4326,7 +4326,7 @@ export default [
 				name_en:"Enduring Soul",
 				desc_en:"Heals 200 HP upon receiving the first killing blow.",
 				mp:null,
-				point:"18",
+				point:"12",
 				element:"パシップ"
 			},
             {
