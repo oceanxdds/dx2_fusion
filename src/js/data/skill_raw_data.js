@@ -533,6 +533,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"暴虐なる舞踊",
+				name_tw:"暴虐之舞",
+				desc:"敵単体に6回、クリティカル率30%の物理属性の打撃型ダメージを威力35で与え、攻撃成功時、自身を会心状態にする。このスキルは反撃効果の発動を無視する。",
+				name_en:"Violent Dance",
+				desc_en:"Inflicts Phys (Physical) damage (Power: 35) with 30% crit rate on a single enemy 6 times. Enters a state of Might when attack is successful. Counter effects will not work on this skill. Counter effects will not work on this skill.",
+				mp:6,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -2717,7 +2727,7 @@ export default [
 				desc:"味方全体のステータス弱体化効果を解除し、6ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ増加させる。",
 				name_en:"Tenson Kourin",
 				desc_en:"Increases ATK, DEF, EV/AC of All Party Members by 20% for 6 turns. (3 uses)",
-				mp:8,
+				mp:7,
 				point:null,
 				element:"無"
 			},
@@ -2837,6 +2847,16 @@ export default [
 				desc:"3ターンの間、敵全体の回避と命中を20%減少させ、味方全体の回避と命中を20%増加させる。",
 				name_en:"Agile Cry",
 				desc_en:"Reduces all enemy EV/AC and increases own parties EV/AC by 20%. (3 turns)",
+				mp:7,
+				point:null,
+				element:"無"
+			},
+			{
+				name:"女仙の扇風",
+				name_tw:"仙女扇風",
+				desc:"敵全体のステータス強化効果を解除し、6ターンの間、敵全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ減少させる。",
+				name_en:"Goddess' Fan",
+				desc_en:"Remove all status buffs of all enemies and decrease the ATK, DEF and EV/AC of all enemies by 20%. (6 turns)",
 				mp:7,
 				point:null,
 				element:"無"
@@ -5295,6 +5315,26 @@ export default [
 				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「敵全体を基礎確率80％で呪い状態にし、1ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20％ずつ増加させる。」",
 				name_en:"Hand of Glory",
 				desc_en:"Activates the following Chain Effect when another party member is downed:80% chance to inflict Curse on all enemies and increases ATK, DEF and EV/AC of all party members by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"殺戮の母神",
+				name_tw:"殺戮母神",
+				desc:"物理貫通を得る。自身が会心状態のとき、クリティカル時に与えるダメージが10％増加する。敵が会心状態になったとき、次の連動効果が発動。「自身を会心状態にし、次に行う打撃型攻撃を必ずクリティカルにする。」",
+				name_en:"Goddess of Slaughter",
+				desc_en:"Adds Phys Pierce. When in a state of Might, +10% to critical hit damage. Activates the following Chain Effect when an enemy enters a state of Might: Enters a state of Might. The next Phys attack will have a Critical effect.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"不死の蟠桃",
+				name_tw:"不死蟠桃",
+				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「死亡しているランダムな味方単体をHP100％で復活させる。」この連動効果の発動は、バトル中2回まで。",
+				name_en:"Peach of Immortality",
+				desc_en:"Activates the following Chain Effect when an ally is downed: Revives a random party member with 100% HP. This Chain Effect will only activate up to 2 times per battle.",
 				mp:null,
 				point:null,
 				element:"パシップ"

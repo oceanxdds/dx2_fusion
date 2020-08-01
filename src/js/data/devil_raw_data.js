@@ -1164,7 +1164,7 @@ export default [
         name:'地母神',
         name_tw:'地母神',
 		name_en:'Lady',
-		highlight:false,
+		highlight:true,
         formulas:[
             ['聖獸','靈鳥'],
             ['龍神','龍王'],
@@ -1186,6 +1186,40 @@ export default [
         ],
         fusion:true,
 		devils:[
+			{
+				id:'263',
+				name:'カーリー',
+				name_tw:'迦梨',
+				name_en:'Kali',
+				rarity:5,
+				grade:89,
+				icon:'tibosin_kari.jpg',
+				skills:["千発千中","殺戮の母神","暴虐なる舞踊"],
+				skill4:["三段の剛力","冥界破","雄叫び","物理ハイブースタ","呪殺反射"],
+				skill5:['','デスカウンター','致命の一撃','ギガントマキア','スクカオート'],
+				elements:['','nu','wk','','','rs','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
+			{
+				id:'262',
+				name:'セイオウボ',
+				name_tw:'西王母',
+				name_en:'Xi Wangmu',
+				rarity:5,
+				grade:86,
+				icon:'tibosin_seioubo.jpg',
+				skills:["メディラマ","不死の蟠桃","女仙の扇風"],
+				skill4:["三段の賢魔","先見の啓示","常世の祈り","即死無効","破魔吸収"],
+				skill5:['','強靭の権化','緊縛無効','回復ハイブースタ','ラクカオート'],
+				elements:['','','','','','nu','rs'],
+				type:'support',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
 			{
 				id:'222',
 				name:'キュベレ',
@@ -2260,7 +2294,7 @@ export default [
         name_tw:'墮天使',
 		name_en:'Fallen',
 		fusion:true,
-		highlight:true,
+		highlight:false,
         formulas:[
             ['龍神','破壞神'],
             ['龍神','魔王'],
@@ -3273,7 +3307,7 @@ export default [
         name:'魔王',
         name_tw:'魔王',
 		name_en:'Tyrant',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
@@ -4955,7 +4989,7 @@ export default [
         name:'屍鬼',
         name_tw:'屍鬼',
         name_en:'Undead',
-        highlight:true,
+        highlight:false,
         formulas:[],
         fusion:false,
 		devils:[

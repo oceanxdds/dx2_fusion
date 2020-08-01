@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
-    "bootstrap-vue": "^2.15.0",
+    "bootstrap-vue": "^2.16.0",
     "url-search-params-polyfill": "^8.1.0",
     "vue": "^2.6.11",
-    "vue-i18n": "^8.18.2",
+    "vue-i18n": "^8.20.0",
     "vuex": "^3.5.1"
   }
 }
