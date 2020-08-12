@@ -21,7 +21,7 @@
     "resolve-url-loader": "^2.3.2",
     "sass": "^1.26.10",
     "sass-loader": "^7.3.1",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "vue-template-compiler": "^2.6.11",
     "webpack-cli": "^3.3.12"
   },
