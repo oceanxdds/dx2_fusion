@@ -15,22 +15,22 @@
     "@babel/polyfill": "^7.10.4",
     "cross-env": "^7.0.2",
     "css-loader": "^2.1.1",
-    "laravel-mix": "^5.0.4",
+    "laravel-mix": "^5.0.5",
     "laravel-mix-bundle-analyzer": "^1.0.5",
     "laravel-mix-polyfill": "^1.1.1",
     "resolve-url-loader": "^2.3.2",
     "sass": "^1.26.10",
     "sass-loader": "^7.3.1",
     "serialize-javascript": "^2.1.2",
-    "vue-template-compiler": "^2.6.11",
+    "vue-template-compiler": "^2.6.12",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "url-search-params-polyfill": "^8.1.0",
-    "vue": "^2.6.11",
-    "vue-i18n": "^8.20.0",
+    "vue": "^2.6.12",
+    "vue-i18n": "^8.21.0",
     "vuex": "^3.5.1"
   }
 }

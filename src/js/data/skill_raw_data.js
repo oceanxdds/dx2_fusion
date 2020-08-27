@@ -543,6 +543,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"てっけんせいさい",
+				name_tw:"鐵拳制裁",
+				desc:"敵単体にクリティカル率30％の物理貫通を得た物理属性の打撃型ダメージを威力150で与え、攻撃がヒットした敵を基礎確率50％で緊縛状態にする。",
+				name_en:"Iron Judgement",
+				desc_en:"Inflicts Phys (Physical) damage (Power: 150) with 30% crit rate on a single enemy and 50% chance to inflict Bind on hit enemies. This skill will have Phys Pierce effect.",
+				mp:5,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -5335,6 +5345,36 @@ export default [
 				desc:"自身以外の味方が死亡したとき、次の連動効果が発動。「死亡しているランダムな味方単体をHP100％で復活させる。」この連動効果の発動は、バトル中2回まで。",
 				name_en:"Peach of Immortality",
 				desc_en:"Activates the following Chain Effect when an ally is downed: Revives a random party member with 100% HP. This Chain Effect will only activate up to 2 times per battle.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"うちまくり",
+				name_tw:"猛烈射擊",
+				desc:"自ターン終了時、次の連動効果が発動。「ランダムな敵に3～8回、クリティカル率30％の万能属性の打撃型ダメージを威力25で与える。このスキルによるダメージは物理攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。このスキルは反撃効果の発動を無視する。」",
+				name_en:"Desperate Hit",
+				desc_en:"Activates the following Chain Effect at the end of own turn:Inflicts Almighty (Physical) damage (Power: 25) with 30% crit rate 3 to 8 times on random enemies.*The damage inflicted by this skill is dependent on Phys ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.Counter effects will not work on this skill.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"虚妄の世界",
+				name_tw:"虛妄的世界",
+				desc:"状態異常にする確率が15％増加する。自身を含む味方が魔封状態になったとき、次の連動効果が発動。「味方全体を魔封状態から回復した後、敵全体に万能属性の魔法型ダメージを威力80で与える。」",
+				name_en:"Illusionary World",
+				desc_en:"+15% chance to inflict status ailments.Activates the following Chain Effect when a party member (including self) is Muted:Cures all party members of Mute, then inflicts Almighty (Magic) damage (Power: 80) on all enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"幻惑なる誘い",
+				name_tw:"蠱惑誘引",
+				desc:"アタック（通常攻撃）が次の効果になる。「敵全体に万能属性の魔法型ダメージを威力60で与え、攻撃がヒットした敵を基礎確率20％で魅了状態にする。」",
+				name_en:"Glamorous Allure",
+				desc_en:"The effect of normal Attacks will be changed to the following:Inflicts Almighty (Magic) damage (Power: 60) on all enemies with 20% chance to inflict Charm on hit enemies.",
 				mp:null,
 				point:null,
 				element:"パシップ"
