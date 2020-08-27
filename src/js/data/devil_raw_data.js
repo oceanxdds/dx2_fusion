@@ -1164,7 +1164,7 @@ export default [
         name:'地母神',
         name_tw:'地母神',
 		name_en:'Lady',
-		highlight:true,
+		highlight:false,
         formulas:[
             ['聖獸','靈鳥'],
             ['龍神','龍王'],
@@ -2063,7 +2063,9 @@ export default [
     {
         name:'妖精',
         name_tw:'妖精',
-        name_en:'Fairy',
+		name_en:'Fairy',
+		fusion:true,
+		highlight:true,
         formulas:[
             ['妖魔','天使'],
             ['龍王','女神'],
@@ -2080,9 +2082,24 @@ export default [
 			['地靈','夜魔'],
 			['地靈','外道']
         ],
-		fusion:true,
-		highlight:false,
 		devils:[
+			{
+				id:'264',
+				name:'デモニホ',
+				name_tw:'Demonee-Ho',
+				name_en:'Demonee-Ho',
+				rarity:5,
+				grade:84,
+				icon:'yousei_demoniho.jpg',
+				skills:["鋭気の権化","うちまくり","てっけんせいさい"],
+				skill4:["三段の剛力","刹那五月雨撃ち","チャージ","大虐殺者","物理反射"],
+				skill5:["","タルカオート","奈落のマスク","千発千中","火炎無効"],
+				elements:['nu','rs','','','','',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
 				id:'88',
 				name:'オベロン',
@@ -2722,7 +2739,9 @@ export default [
     {
         name:'夜魔',
         name_tw:'夜魔',
-        name_en:'Night',
+		name_en:'Night',
+		fusion:true,
+		highlight:true,
         formulas:[
             ['龍神','妖精'],
             ['龍神','妖鬼'],
@@ -2740,8 +2759,24 @@ export default [
 			['幽鬼','妖獸'],
 			['兇鳥','妖精']
         ],
-        fusion:true,
 		devils:[
+			{
+				id:'265',
+				name:'マーヤー',
+				name_tw:'摩耶',
+				name_en:'Maya',
+				rarity:5,
+				grade:86,
+				icon:'yoma_maya.jpg',
+				skills:["魅了無効","虚妄の世界","幻惑なる誘い"],
+				skill4:["セクシーダンス","メギドラオン","ラスタキャンディ","緊縛無効","呪殺吸収"],
+				skill5:["","大虐殺者","狂い咲き","ディスタブ","呪い無効"],
+				elements:['','','','nu','','','rs'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
 				id:'116',
 				name:'リリス',

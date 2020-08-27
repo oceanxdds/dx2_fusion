@@ -23,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'200801',
+        updated_at:'200827',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -806,11 +806,6 @@ export default {
             <div class="mr-1 flex-grow-1">
                 <img v-for="(orb,index) in orbs.filter(x=>x.state)" :key="index" :src="orb.icon" style="width:30px">
             </div>
-            <div class="mx-1">
-                <a href="https://tl.hkrev.info/en/police-timeline/" target="_blank">
-                    <img src="images/theme/hkdm-32px.png" title="Hong Kong Democratic Movement">
-                </a>
-            </div>
             <div class="ml-1">
                 <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
                     <img src="images/theme/GitHub-Mark-32px.png" alt="GitHub">
@@ -820,11 +815,6 @@ export default {
     </div>
     <div class="container-fluid mw-1920 mb-3">
         <div class="d-flex justify-content-end">
-            <!--
-            <div class="p-1">
-                <a class="small" href="https://oceanxdds.github.io/dx2_beta" target="_blank">Beta</a>
-            </div>
-            -->
             <div class="p-1">
                 <span class="small">Version: {{ updated_at }}</span>
             </div>  
