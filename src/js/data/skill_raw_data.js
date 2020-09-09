@@ -5378,6 +5378,16 @@ export default [
 				mp:null,
 				point:null,
 				element:"パシップ"
+			},
+			{
+				name:"運命の刻",
+				name_tw:"命運之刻",
+				desc:"破魔属性・呪殺属性で受けるダメージが30%減少する。 ボスバトル1ターン目開始時、次の連動効果が発動。 「味方全体のステータス弱体効果を解除し、3ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ増加させる。」",
+				name_en:"Moment of Fate",
+				desc_en:"-30% to Light/Dark damage received. Activates the following Chain Effect at the beginning of the first turn in a boss battle: Removes debuffs and increases the ATK, DEF and EV/AC of all party members by 20%. (3 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
 			}
         ]
     },
