@@ -191,7 +191,7 @@ export default [
         name:'女神',
         name_tw:'女神',
         name_en:'Megami',
-        highlight:false,
+        highlight:true,
         formulas:[
             ['靈鳥','大天使'],
             ['魔神','靈鳥'],
@@ -227,6 +227,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'266',
+				name:'ノルン',
+				name_tw:'諾倫',
+				name_en:'Norn',
+				rarity:5,
+				grade:86,
+				icon:'megami_norun.jpg',
+				skills:["回復ハイブースタ","無慈悲な一撃","運命の刻"],
+				skill4:["メディアラハン","","","",""],
+				skill5:["","","","",""],
+				elements:['','','','','','nu','nu'],
+				type:'heal',
+				fusion:false,
+				fusionAsMaterial:false,
+				source:'event'
 			},
 			{
 				id:'',
@@ -2065,7 +2082,7 @@ export default [
         name_tw:'妖精',
 		name_en:'Fairy',
 		fusion:true,
-		highlight:true,
+		highlight:false,
         formulas:[
             ['妖魔','天使'],
             ['龍王','女神'],
@@ -2741,7 +2758,7 @@ export default [
         name_tw:'夜魔',
 		name_en:'Night',
 		fusion:true,
-		highlight:true,
+		highlight:false,
         formulas:[
             ['龍神','妖精'],
             ['龍神','妖鬼'],
