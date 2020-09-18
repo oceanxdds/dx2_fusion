@@ -43,11 +43,11 @@ export default {
 	element:{
 		phys:'物',
 		fire:'火',
-		ice:'冰',
+		ice:'氷',
 		elec:'電',
 		force:'衝',
 		light:'破',
-		dark:'咒',
+		dark:'呪',
 		wk:'弱',
 		rs:'耐',
 		nu:'無',
