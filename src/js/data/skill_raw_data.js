@@ -2497,7 +2497,7 @@ export default [
         ]
     },
     {
-        name:"增強",
+        name:"増強",
         name_tw:"增強",
         name_en:"Support",
         skills:[
