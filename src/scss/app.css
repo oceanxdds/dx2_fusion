@@ -4,3 +4,4 @@
 .skill_only{ background:url('../images/theme/icon-skill-only.png') no-repeat; background-size:16px 18px; }
 .skill_lock{ background:url('../images/theme/icon-skill-lock.png') no-repeat; background-size:16px 18px;}
 .skill_possible{ background:url('../images/theme/icon-skill-possible.png') no-repeat; background-size:16px 18px;}
+.card-body .font-weight-bold, .card-body .small{ text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px -1px 0 #FFF, 0px 1px 0 #FFF,  0-1px 0 #FFF, -1px 0 0 #FFF, 1px 0 0 #FFF; }
