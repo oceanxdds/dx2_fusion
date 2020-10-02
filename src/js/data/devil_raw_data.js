@@ -3968,7 +3968,7 @@ export default [
 			},
             {
 				id:'150',
-				name:'ワイトナイト',
+				name:'ホワイトライダー',
 				name_tw:'白騎士',
 				name_en:'White Rider',
 				rarity:4,
@@ -4046,7 +4046,7 @@ export default [
 		devils:[
 			{
 				id:'245',
-				name:'マサカド☆',
+				name:'マサカド',
 				name_tw:'平將門',
 				name_en:'Masakado',
 				rarity:5,
@@ -5047,7 +5047,7 @@ export default [
 		devils:[
 			{
 				id:'261',
-				name:'アリス☆',
+				name:'アリス',
 				name_tw:'愛麗絲',
 				name_en:'Alice',
 				rarity:5,
