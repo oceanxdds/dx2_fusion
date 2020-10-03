@@ -191,7 +191,7 @@ export default [
         name:'女神',
         name_tw:'女神',
         name_en:'Megami',
-        highlight:true,
+        highlight:false,
         formulas:[
             ['靈鳥','大天使'],
             ['魔神','靈鳥'],
@@ -240,7 +240,7 @@ export default [
 				skill4:["メディアラハン","","","",""],
 				skill5:["","","","",""],
 				elements:['','','','','','nu','nu'],
-				type:'heal',
+				type:'support',
 				fusion:false,
 				fusionAsMaterial:false,
 				source:'event'
@@ -1363,7 +1363,9 @@ export default [
     {
         name:'鬼神',
         name_tw:'鬼神',
-        name_en:'Kishin',
+		name_en:'Kishin',
+		highlight:true,
+		fusion:true,
         formulas:[
             ['幻魔','神獸'],
             ['破壞神','聖獸'],
@@ -1382,8 +1384,24 @@ export default [
 			['幽鬼','邪龍'],
 			['兇鳥','地母神']
         ],
-        fusion:true,
 		devils:[
+			{
+				id:'267',
+				name:'マリシテン',
+				name_tw:'摩利支天',
+				name_en:'Marici',
+				rarity:5,
+				grade:90,
+				icon:'kisin_marisiten.jpg',
+				skills:["不屈の闘志・改","陽炎の矢","日天の刃"],
+				skill4:["三段の強運","刹那五月雨撃ち","早手の舞い","千発千中","破魔吸収"],
+				skill5:["","スクカオート","リベリオート","無慈悲な一撃","緊縛無効"],
+				elements:['','nu','','','','rs',''],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
 				id:'53',
 				name:'トール',

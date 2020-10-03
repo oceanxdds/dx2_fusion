@@ -553,6 +553,16 @@ export default [
 				mp:5,
 				point:null,
 				element:"物理"
+			},
+			{
+				name:"日天の刃",
+				name_tw:"日天之刃",
+				desc:"敵単体にクリティカル率30％の貫通を得た物理属性の打撃型ダメージを威力120で与え、攻撃成功時、自身をコンセントレイト状態にし、次に与える魔法型ダメージを125％増加させる。",
+				name_en:"Daylight Blade",
+				desc_en:"Inflicts Phys (Physical) damage (Power: 120) with 30% crit rate on a single enemy and enters into a state of Concentrate if the attack is successful, increasing next Mag attack damage by 125%. This skill will have Phys Pierce effect.",
+				mp:7,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -5385,6 +5395,26 @@ export default [
 				desc:"破魔属性・呪殺属性で受けるダメージが30%減少する。 ボスバトル1ターン目開始時、次の連動効果が発動。 「味方全体のステータス弱体効果を解除し、3ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ増加させる。」",
 				name_en:"Moment of Fate",
 				desc_en:"-30% to Light/Dark damage received. Activates the following Chain Effect at the beginning of the first turn in a boss battle: Removes debuffs and increases the ATK, DEF and EV/AC of all party members by 20%. (3 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"陽炎の矢",
+				name_tw:"陽炎之矢",
+				desc:"自身を含む味方が物理属性のスキルを発動したとき、次の連動効果が発動。「敵単体に貫通を得た破魔属性の魔法型ダメージを威力80で与える。このスキルによるダメージは物理攻撃力に依存し、死亡時に踏みとどまるスキルを無視する。」※アタック(通常攻撃)、反撃効果は発動条件には含まれない。",
+				name_en:"Shimmer Arrow",
+				desc_en:"Activates the following Chain Effect when a member of your party (including self) activates a Phys skill: Inflicts Light (Magic) damage (Power: 80) with Light Pierce effect on a single enemy. The damage inflicted by this skill is dependent on Phys ATK. *Nullifies all death prevention skills. *Regular Attacks and Counter Effects will not activate this effect.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"不屈の闘志・改",
+				name_tw:"不屈的鬪志 改",
+				desc:"自身が死亡するとき、一度だけHPが500回復する。",
+				name_en:"Enduring Soul +",
+				desc_en:"Heals 500 HP upon receiving the first killing blow.",
 				mp:null,
 				point:null,
 				element:"パシップ"
