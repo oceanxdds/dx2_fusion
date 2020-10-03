@@ -22,11 +22,11 @@
         <b-card-body class="p-0" @click="click">
             <div v-if="!(usage=='builder'&&source=='multi_fusion')" class="p-2" :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
-                <div class="font-weight-bold">
-                    {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} <span class="devil_name">{{ devil.showName() }}</span>
+                <div class="font-weight-bold text_shadow">
+                    {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
                 <div class="small">
-                    {{ devil.showGrade() }} <span class="rarity">{{ devil.showRarity() }}</span>
+                    <span class="text_shadow">{{ devil.showGrade() }} {{ devil.showRarity() }}</span>
                     <span class="ml-2" v-if="usage=='info'">AI: {{ $t('devil.'+devil.type) }}</span>
                     <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>
                     <span v-if="usage=='skill'">
