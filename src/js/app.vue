@@ -23,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'201003',
+        updated_at:'201201',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -599,7 +599,12 @@ export default {
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
                                 <b-tabs pills card v-model="race_id" content-class="d-none">
-                                    <b-tab :title="race.showName()" v-for="(race,index) in races" :key="index" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab>
+                                    <!-- <b-tab :title="race.showName()" v-for="(race,index) in races" :key="index" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab> -->
+                                    <b-tab v-for="(race,index) in races" :key="index">
+                                        <template #title>
+                                            <span v-bind:style="{'text-decoration':race.highlight?'underline':'none'}">{{ race.showName() }} </span>
+                                        </template>
+                                    </b-tab>
                                 </b-tabs>
                                 <devil-list :devils="devils_by_race" usage="fission" @listen="listen"></devil-list>
                             </b-card>

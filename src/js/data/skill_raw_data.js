@@ -495,16 +495,6 @@ export default [
 				element:"物理"
 			},
 			{
-				name:"復讐の氷拳",
-				name_tw:"復仇冰拳",
-				desc:"敵単体に氷結属性の打撃型ダメージを威力130で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル、ミスが発生する場合がある。攻撃成功時、自身を会心状態にする。",
-				name_en:"Vengeful Frost Fist",
-				desc_en:"Inflicts Ice (Physical) damage on a single enemy. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. *This skill has a chance of having a Critical effect or a Miss. *Casts Rebellion on self when the attack is successful.",
-				mp:5,
-				point:null,
-				element:"物理"
-			},
-			{
 				name:"荒れすさぶ一太刀",
 				name_tw:"狂放一太刀",
 				desc:"強化段階 0：敵単体にクリティカル率30％の物理属性の打撃型ダメージを威力150で与える。強化段階 1：敵単体にクリティカル率50％の物理属性の打撃型ダメージを威力180で与える。さらに死亡時に踏みとどまるスキルを無視。強化段階 2：敵単体にクリティカル率80％の物理属性の打撃型ダメージを威力220で与える。さらに死亡時に踏みとどまるスキルを無視、反撃効果を無視。",
@@ -740,6 +730,26 @@ export default [
 				mp:6,
 				point:null,
 				element:"火炎"
+			},
+			{
+				name:"ギロチンブレイズ",
+				name_tw:"斷頭台之炎",
+				desc:"敵単体にクリティカル率50%の貫通を得た火炎属性の打撃型ダメージを威力150で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。このスキルは死亡時にふみとどまるスキルを無視する。",
+				name_en:"Guillotine Blaze",
+				desc_en:"Inflicts Fire (Physical) Pierce effect damage (Power: 150) with 50% crit rate on a single enemy.*The damage inflicted by this skill is dependent on Mag ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Nullifies all death prevention skills.",
+				mp:6,
+				point:null,
+				element:"火炎"
+			},
+			{
+				name:"断たれし運命",
+				name_tw:"被剪斷的命運",
+				desc:"敵単体に貫通を得たいずれかの属性の魔法型ダメージを威力160で与える。属性は、火炎・氷結・電撃・衝撃の中から、状況によって自動で選択される。",
+				name_en:"Severed Fate",
+				desc_en:"Inflicts Magic damage (Power:160) of a chosen Attribute with Pierce effect on a single enemy.Automatically selects an Attribute from Fire, Ice, Elec and Force depending on the situation.",
+				mp:6,
+				point:null,
+				element:"火炎"
 			}
         ]
     },
@@ -867,6 +877,16 @@ export default [
 				mp:6,
 				point:null,
 				element:"氷結"
+			},
+			{
+				name:"復讐の氷拳",
+				name_tw:"復仇冰拳",
+				desc:"敵単体に氷結属性の打撃型ダメージを威力130で与える。このスキルによるダメージは魔法攻撃力に依存する。このスキルはクリティカル、ミスが発生する場合がある。攻撃成功時、自身を会心状態にする。",
+				name_en:"Vengeful Frost Fist",
+				desc_en:"Inflicts Ice (Physical) damage on a single enemy. Power: 130 *The damage inflicted by this skill is dependent on Mag ATK. *This skill has a chance of having a Critical effect or a Miss. *Casts Rebellion on self when the attack is successful.",
+				mp:5,
+				point:null,
+				element:"物理"
 			}
         ]
     },
@@ -1002,6 +1022,16 @@ export default [
 				name_en:"Thunderstorm",
 				desc_en:"Inflicts Elec (Magic) damage (Power: 130) with Elec Pierce effect on all enemies.Reduces ATK of all enemies by 20% if the attack is successful. (3 turns)",
 				mp:8,
+				point:null,
+				element:"電撃"
+			},
+			{
+				name:"グローリーボルト",
+				name_tw:"榮耀電光",
+				desc:"敵単体に電撃貫通を得た電撃属性の魔法型ダメージを威力160で与える。攻撃成功時、味方全体のMPを1回復する。",
+				name_en:"Glorious Bolt",
+				desc_en:"Inflicts Elec (Magic) damage (Power: 160) with Elec Pierce effect on a single enemy. All party members recover 1 MP if attack is successful.",
+				mp:6,
 				point:null,
 				element:"電撃"
 			}
@@ -2176,6 +2206,26 @@ export default [
 				mp:6,
 				point:null,
 				element:"無"
+			},
+			{
+				name:"測られし運命",
+				name_tw:"被丈量的命運",
+				desc:"味方全体のステータス弱体化効果を解除する。敵全体のステータス強化効果を解除し、敵全体のグッドステータスによる即死無効状態を解除する。",
+				name_en:"Measured Fate",
+				desc_en:"Removes debuffs from all party members.Removes buffs and Good Status Null Mortal effects from all enemies.",
+				mp:6,
+				point:null,
+				element:"無"
+			},
+			{
+				name:"紡がれし運命",
+				name_tw:"被紡織的命運",
+				desc:"味方全体を回復力75で回復した後、死亡しているランダムな味方単体をHP50%で復活させる。",
+				name_en:"Woven Fate",
+				desc_en:"Heals all party members (Power: 75), then revives an ally at random with 50% HP.",
+				mp:6,
+				point:null,
+				element:"無"
 			}
         ]
     },
@@ -2500,6 +2550,16 @@ export default [
 				desc:"このスキルは自身のHPが50%以下の間は【災禍の日蝕】に変化する。【暗黒の予兆】敵全体を基礎確率50%で魔封状態にした後、連動効果が発動「自身に現在HPの51%の割合ダメージを与える。割合ダメージは、ダメージ増減効果やステータス強化弱体化などの影響を受けない。」【災禍の日蝕】敵全体に貫通を得た呪殺属性の魔法型ダメージを威力100で与える。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。",
 				name_en:"Dark Premonition",
 				desc_en:"This Skill becomes [Disastrous Eclipse] while own HP is 50% or lower.Dark Premonition:50% chance to inflict Mute on all enemies. Then activates the Chain Effect of Inflicting 51% fractional damage on self based on own current HP. Fractional damage will not be affected by stat/damage increase or reduction effects.Disastrous Eclipse: Inflicts Dark (Magic) damage (Power: 100) with Dark Pierce effect on all enemies. *Enemies downed by this skill will not be able to revive.",
+				mp:6,
+				point:null,
+				element:"無"
+			},
+			{
+				name:"灰舞う子守唄",
+				name_tw:"灰舞搖籃曲",
+				desc:"敵全体を基礎確率30%で魔封状態にし、味方全体を回復力75で回復する。",
+				name_en:"Black Lullaby",
+				desc_en:"30% chance to inflict Mute on all enemies. Heals all party members (Power: 75).",
 				mp:6,
 				point:null,
 				element:"無"
@@ -5415,6 +5475,106 @@ export default [
 				desc:"自身が死亡するとき、一度だけHPが500回復する。",
 				name_en:"Enduring Soul +",
 				desc_en:"Heals 500 HP upon receiving the first killing blow.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"神の優美",
+				name_tw:"神之優美",
+				desc:"常時、自身の電撃属性・破魔属性の与ダメージが10％増加。味方パーティに種族「天使」「大天使」の悪魔が3体以上生存時、敵ターン開始時に次の連動効果が発動。「味方全体のMPを1回復し、1ターンの間、味方全体を1度だけ万能を含む魔法型ダメージを反射する状態にする。」",
+				name_en:"God's Grace",
+				desc_en:"Increases all Elec and Light damage by 10%.When there are 3 or more Divine or Herald demons alive in your party, activates the following Chain Effect at the beginning of enemy turn:All party members recover 1 MP, casts Repel Magic (including Almighty) effect on all allies. (1 time only effect for 1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"堕天のグリゴリ",
+				name_tw:"墮天的古理戈利",
+				desc:"自身が死亡するとき、一度だけHPが300回復して踏みとどまる。自ターン終了時、自身のHPが50%以下のとき、次の連動効果が発動。「自身のHPを30%回復、MPを3回復し、自身を会心状態にする。」",
+				name_en:"Fallen Grigori",
+				desc_en:"Heals 300 HP upon receiving the first killing blow.Activates the following Chain Effect at the end of own turn when own HP is at 50% or lower:Heals 30% of own HP, recovers 3MP and enters a state of Might.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"陽光の繁栄",
+				name_tw:"陽光之繁榮",
+				desc:"先攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、味方全体の攻撃力・回避と命中をそれぞれ20%ずつ増加させる。」",
+				name_en:"Solar Prosperity",
+				desc_en:"Activates the following Chain Effect when attacking first:Increases own party's ATK and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"黒き誘い",
+				name_tw:"黑色邀約",
+				desc:"自ターン終了時、連動効果が発動「敵全体に対象の現在HPの10%の割合ダメージ（最大200）」自ターン開始時、強化段階が1増加する。",
+				name_en:"Black Beckoning",
+				desc_en:"Activates the following Chain Effect at the end of own turn:Inflicts 10% fractional damage (200 max) on all enemies based on their current HP.This skill will gain 1 Boost level at the start of own turn.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"愛憎の憤怒",
+				name_tw:"愛恨的憤怒",
+				desc:"常時、火炎・氷結・電撃・衝撃属性の与ダメージが5%増加。味方パーティに種族「鬼女」「地母神」の悪魔が3体以上生存時、敵ターン開始時に次の連動効果が発動。「敵全体に貫通を得た電撃属性の魔法型ダメージを威力60で与える。攻撃成功時、敵全体に貫通を得た火炎属性の魔法型ダメージを威力60で与える。 」",
+				name_en:"Passionate Rage",
+				desc_en:"+5% to Fire/Ice/Elec/Force damage.Activates the following Chain Effect at the start of enemy turn when there are 3 or more surviving Femme/Lady demons in your party:Inflicts Elec (Magic) damage (Power: 60) with Elec Pierce effect on all enemies. Inflicts Fire (Magic) damage (Power: 60) with Fire Pierce effect on all enemies if the attack is successful.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"四源相生",
+				name_tw:"四源相生",
+				desc:"火炎・氷結・電撃・衝撃属性で与えるダメージが15%増加する。",
+				name_en:"Elemental Cycle",
+				desc_en:"+15% to Fire/Ice/Elec/Force damage.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"愛憎の抱擁",
+				name_tw:"愛恨的擁抱",
+				desc:"常時、最大HPが10%増加。味方パーティに種族「鬼女」「地母神」の悪魔が3体以上生存時、敵ターン開始時に次の連動効果が発動。「2ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させ、味方全体の攻撃力・防御力をそれぞれ20%ずつ増加させる。」",
+				name_en:"Passionate Embrace",
+				desc_en:"+10% to max HP.Activates the following Chain Effect at the start of enemy turn when there are 3 or more surviving Femme/Lady demons in your party:Reduces all enemy ATK/DEF and increases own party's ATK/DEF by 20%. (2 turns)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"月影の衰退",
+				name_tw:"月影之衰退",
+				desc:"後攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、敵全体の攻撃力・回避と命中をそれぞれ20%ずつ減少させる。」",
+				name_en:"Lunar Downfall",
+				desc_en:"Activates the following Chain Effect at the beginning of a battle if the enemy attacks first:Reduces all enemy ATK and EV/AC by 20%. (1 turn)",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"愛憎の誘惑",
+				name_tw:"愛恨的誘惑",
+				desc:"常時、回復スキルのHP回復量が10%増加。味方パーティに種族「鬼女」「地母神」の悪魔が3体以上生存時、敵ターン終了時に次の連動効果が発動。「敵全体のバリア状態を解除した後、敵全体を基礎確率50%で魅了・毒状態にする。」",
+				name_en:"Passionate Allure",
+				desc_en:"+10% to Healing skill effectiveness.Activates the following Chain Effect at the end of enemy turn when there are 3 or more surviving Femme/Lady demons in your party:50% chance to inflict Charm/Poison on all enemies after removing Barriers from all enemies.",
+				mp:null,
+				point:null,
+				element:"パシップ"
+			},
+			{
+				name:"月影の繁栄",
+				name_tw:"月影之繁榮",
+				desc:"後攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、味方全体の防御力・回避と命中をそれぞれ20%ずつ増加させる。」",
+				name_en:"Lunar Prosperity",
+				desc_en:"Activates the following Chain Effect at the beginning of a battle if the enemy attacks first:Increases own party's DEF and EV/AC by 20%. (1 turn)",
 				mp:null,
 				point:null,
 				element:"パシップ"
