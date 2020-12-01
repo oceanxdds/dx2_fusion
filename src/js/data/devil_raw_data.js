@@ -13,7 +13,7 @@ export default [
             ['墮天使','聖獸']
         ],
 		fusion:true,
-		highlight:false,
+		highlight:true,
 		devils:[
             {   
 				id:'5',
@@ -115,6 +115,23 @@ export default [
 				type:'attack',
 				fusion:false,
 				fusionAsMaterial:false,
+				source:'summon'
+			},
+			{
+				id:'268',
+				name:'ハニエル',
+				name_tw:'漢尼爾',
+				name_en:'Aniel',
+				rarity:5,
+				grade:85,
+				icon:'daitensi_hanieru.jpg',
+				skills:["裁きの雷火","神の優美","グローリーボルト"],
+				skill4:["マハンマダイン","マハジオダイン","メディラマ","破魔エンハンス","呪殺反射"],
+				skill5:["","電撃エンハンス","ラクカオート","マハンマダイン","緊縛無効"],
+				elements:['','','','rp','','rp','wk'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
 				source:'summon'
 			},
             {
@@ -1181,7 +1198,8 @@ export default [
         name:'地母神',
         name_tw:'地母神',
 		name_en:'Lady',
-		highlight:false,
+		highlight:true,
+		fusion:true,
         formulas:[
             ['聖獸','靈鳥'],
             ['龍神','龍王'],
@@ -1201,7 +1219,6 @@ export default [
 			['邪龍','魔神'],
 			['兇鳥','幻魔']
         ],
-        fusion:true,
 		devils:[
 			{
 				id:'263',
@@ -1272,6 +1289,23 @@ export default [
 				fusion:true,
 				fusionAsMaterial:true,
 				source:'normal_fusion'
+			},
+			{
+				id:'272',
+				name:'ブラックマリア',
+				name_tw:'黑聖母瑪麗亞',
+				name_en:'Black Maria',
+				rarity:5,
+				grade:80,
+				icon:'tibosin_burakumaria.jpg',
+				skills:["回復ハイブースタ","黒き誘い","灰舞う子守唄"],
+				skill4:["サマリカーム","デスタッチ","リカームドラ","狂い咲き","衝撃無効"],
+				skill5:["","混沌の海","幻影の権化","狂乱の権化","常世の祈り"],
+				elements:['','','','nu','wk','nu','rs'],
+				type:'heal',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
 			},
             {
 				id:'45',
@@ -1364,7 +1398,7 @@ export default [
         name:'鬼神',
         name_tw:'鬼神',
 		name_en:'Kishin',
-		highlight:true,
+		highlight:false,
 		fusion:true,
         formulas:[
             ['幻魔','神獸'],
@@ -2649,7 +2683,9 @@ export default [
     {
         name:'鬼女',
         name_tw:'鬼女',
-        name_en:'Femme',
+		name_en:'Femme',
+		highlight:true,
+		fusion:true,
         formulas:[
             ['龍神','夜魔'],
             ['妖魔','鬼神'],
@@ -2665,8 +2701,58 @@ export default [
             ['幽鬼','幻魔'],
             ['幽鬼','夜魔']
         ],
-        fusion:true,
 		devils:[
+			{
+				id:'271',
+				name:'アトロポス',
+				name_tw:'阿特羅波斯',
+				name_en:'Atropos',
+				rarity:5,
+				grade:84,
+				icon:'kijyo_atoroposu.jpg',
+				skills:["無慈悲な一撃","愛憎の憤怒","断たれし運命"],
+				skill4:["三段の強運","ジャッジメント","コンセントレイト","無限のチャクラ","破魔吸収"],
+				skill5:["","大虐殺者","マハザンダイン","マハブフダイン","四源相生"],
+				elements:['','','','','','nu','nu'] ,
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
+			{
+				id:'270',
+				name:'ラケシス',
+				name_tw:'拉克西斯',
+				name_en:'Lachesis',
+				rarity:5,
+				grade:82,
+				icon:'kijyo_rakesisu.jpg',
+				skills:["マカラカシフト","愛憎の抱擁","測られし運命"],
+				skill4:["三段の強運","ディスタブ","疾風の咆哮","威圧の構え","破魔吸収"],
+				skill5:["","強靭の権化","寸分の見切り","リカームドラ","月影の衰退"],
+				elements:['','','','','','nu','nu'] ,
+				type:'support',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
+			{
+				id:'269',
+				name:'クロト',
+				name_tw:'可羅索',
+				name_en:'Clotho',
+				rarity:5,
+				grade:80,
+				icon:'kijyo_kuroto.jpg',
+				skills:["回復ハイブースタ","愛憎の誘惑","紡がれし運命"],
+				skill4:["三段の強運","先見の啓示","精神支配","狂い咲き","破魔吸収"],
+				skill5:["","狂乱の権化","常世の祈り","野獣の勘","月影の繁栄"],
+				elements:['','','','','','nu','nu'] ,
+				type:'support',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
             {
 				id:'108',
 				name:'ランダ',
@@ -3377,7 +3463,8 @@ export default [
         name:'魔王',
         name_tw:'魔王',
 		name_en:'Tyrant',
-		highlight:false,
+		highlight:true,
+		fusion:true,
         formulas:[
             ['幻魔','魔神'],
             ['破壞神','大天使'],
@@ -3396,7 +3483,6 @@ export default [
 			['兇鳥','破壞神'],
 			['兇鳥','鬼神']
         ],
-        fusion:true,
 		devils:[
             {
 				id:'142',
@@ -3463,6 +3549,23 @@ export default [
 				skill4:["","空間殺法","早手の舞い","火炎ハイブースタ","呪殺反射"],
 				skill5:["","千発千中","火炎エンハンス","ミナゴロシの愉悦","氷結無効"],
 				elements:['','rp','wk','','','','nu'],
+				type:'attack',
+				fusion:false,
+				fusionAsMaterial:true,
+				source:'summon'
+			},
+			{
+				id:'273',
+				name:'アザゼル',
+				name_tw:'阿撒瀉勒',
+				name_en:'Azazel',
+				rarity:5,
+				grade:84,
+				icon:'maou_azazeru.jpg',
+				skills:["火炎ハイブースタ","堕天のグリゴリ","ギロチンブレイズ"],
+				skill4:["三段の恵体","マハラギダイン","ディスタブ","不屈の闘志・改","電撃無効"],
+				skill5:["","火炎エンハンス","陽光の繁栄","緊縛無効","三分の活泉"],
+				elements:['','rp','','wk','','','nu'],
 				type:'attack',
 				fusion:false,
 				fusionAsMaterial:true,
