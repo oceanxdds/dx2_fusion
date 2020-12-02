@@ -5,8 +5,7 @@ class Race {
     constructor(race){
         
         this.name = race.name;
-        this.name_tw = race.name_tw;
-        this.name_en = race.name_en;
+        this.names = race.names;
         this.highlight = race.highlight;
         this.formulas = race.formulas;
         this.devils = race.devils;
@@ -15,16 +14,9 @@ class Race {
 
     showName(){
 
-        let name;
-
-        switch(i18n.locale){
-            case 'ja': name = this.name; break;
-            case 'tw': name = this.name_tw; break;
-            case 'en': name = this.name_en; break;
-            default: name = this.name;
-        }
-    
-        return name ? name : this.name;
+        return this.names
+            ? (this.names[i18n.locale] || this.names[i18n.defaultLocale])
+            : '';
     }
 }
 

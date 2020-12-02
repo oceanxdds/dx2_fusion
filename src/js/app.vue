@@ -23,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'201201',
+        updated_at:'201202',
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -111,11 +111,11 @@ export default {
         rname = params.get('race');
     
         if(rname){
-            races = this.races.filter(r=>r.name==rname||r.name_tw==rname||r.name_en==rname);
+            races = this.races.filter(r=>Object.values(r.names).includes(rname))
             race = races.length > 0 ? races[0] : null;
         }
         if(dname){
-            devils = (race ? race.devils : this.devils ).filter(d=>d.name==dname||d.name_tw==dname||d.name_en==dname);
+            devils = (race ? race.devils : this.devils ).filter(d=>Object.values(d.names).includes(dname));
             devil = devils.length > 0 ? devils[0] : null;
         }
         if(route=='fission'){
@@ -217,7 +217,7 @@ export default {
 
             if(keyword){
                 keyword = new RegExp(keyword, 'i');
-                result = this.devils.filter( d => d.name.match(keyword)||d.name_tw.match(keyword)||d.name_en.match(keyword) );
+                result = this.devils.filter( d => Object.values(d.names).join().match(keyword) );
             }
 
             return result;
@@ -230,7 +230,9 @@ export default {
 
             if(keyword){
                 keyword = new RegExp(keyword, 'i');
-                result = this.skills.filter( s => s.name.match(keyword)||s.name_tw.match(keyword)||s.name_en.match(keyword) );
+                result = this.skills.filter( 
+                    s => Object.values(s.names).join().match(keyword)
+                );
             }
 
             return result;

@@ -18,6 +18,8 @@ import store from './store'
 import i18n from './lang';
 import App from './app.vue';
 
+i18n.defaultLocale = 'ja';
+
 new Vue({
     el:'#app',
     i18n,
