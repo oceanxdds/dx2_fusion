@@ -6,8 +6,7 @@ class Devil {
     constructor(devil){
     
         this.name = devil.name;
-        this.name_tw = devil.name_tw;
-        this.name_en = devil.name_en;
+        this.names = devil.names;
         this.rarity = devil.rarity;
         this.grade = devil.grade;
         this.icon = devil.icon;
@@ -30,20 +29,11 @@ class Devil {
         this.formula = devil.formula;
     }
 
-     showName(){
+    showName(){
     
-        let name;
- 
-        switch(i18n.locale){
-            case 'ja': name = this.name; break;
-            case 'tw': name = this.name_tw; break;
-            case 'en': name = this.name_en; break;
-            default: name = this.name;
-        }
-        if(!name)
-            name = this.name;
-
-        return name;
+        return this.names
+            ? (this.names[i18n.locale]||this.names[i18n.defaultLocale])
+            : '';
     }
 
     showGrade(){
@@ -53,10 +43,7 @@ class Devil {
 
     showRarity(){
 
-        let rarity = '';
-        for(let i=0; i<this.rarity;i++)
-            rarity += '★';
-        return rarity;
+        return '★'.repeat(this.rarity);
     }
 
     showCost(rarity){
@@ -79,33 +66,32 @@ class Devil {
 
     fission_formulas(){
         
-        let d0 = this;
-        let formulas = [];
+        let d0 = this
+        let formulas = []
 
         if(d0.source=='multi_fusion'){
 
-            let d1 = d0.formula[0];
-            let d2 = d0.formula[1];
-            let d3 = d0.formula[2];
-            let d4 = d0.formula[3];
-            let name = '';
-            switch(i18n.locale){
-                case 'ja': name = '多身合体'; break;
-                case 'tw': name = '多身合體'; break;
-                case 'en': name = 'Multi Fusion'; break;
-                default: name = '多身合体';
+            let d1 = d0.formula[0]
+            let d2 = d0.formula[1]
+            let d3 = d0.formula[2]
+            let d4 = d0.formula[3]
+            let names = {
+                'ja':'多身合体',
+                'tw':'多身合體',
+                'en':'Multi Fusion'
             }
+            let name = names[i18n.locale] || names[defaultLocale]
 
             return [
                 { 
                     'name': name,
                     'boms': [new DevilBom(d0,d1,d2,d3,d4)] 
                 }
-            ];
+            ]
         }
 
         if(!d0.race.fusion||!d0.fusion)
-            return formulas;
+            return formulas
 
         formulas = d0.race.formulas.map( f => {
 

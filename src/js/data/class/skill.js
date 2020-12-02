@@ -5,11 +5,8 @@ class Skill{
     constructor(skill){
 
         this.name = skill.name;
-        this.name_tw = skill.name_tw==null ? '' : skill.name_tw;
-        this.name_en = skill.name_en==null ? '' : skill.name_en;
-        this.desc = skill.desc==null ? '' : skill.desc;
-        this.desc_tw = skill.desc_tw==null ? '' : skill.desc_tw;
-        this.desc_en = skill.desc_en==null ? '' : skill.desc_en;
+        this.names = skill.names;
+        this.descs = skill.descs;
         this.mp = skill.mp==null ? '' : skill.mp;
         this.point = skill.point == null ? '' : skill.point;
         this.element = skill.element == null ? '' : skill.element;
@@ -18,36 +15,17 @@ class Skill{
     }
 
     showName(){
-        
-        switch(i18n.locale){
-            case 'ja': name = this.name; break;
-            case 'tw': name = this.name_tw; break;
-            case 'en': name = this.name_en; break;
-            default: name = this.name;
-        }
-        if(!name)
-            name = this.name;
-        if(!name)
-            name = '--------------------';
-        return name;
+
+        return this.names 
+            ? (this.names[i18n.locale] || this.names[i18n.defaultLocale])
+            : '';
     }
 
     showDesc(){
-    
-        let desc = '';
 
-        switch(i18n.locale){
-            case 'ja': desc = this.desc; break;
-            case 'tw': desc = this.desc_tw; break;
-            case 'en': desc = this.desc_en; break;
-            default: desc = this.desc;
-        }
-        if(!desc)
-            desc = this.desc;
-        if(!desc)
-            desc = '';
-    
-        return desc;
+        return this.descs
+            ? (this.descs[i18n.locale] || this.descs[i18n.defaultLocale])
+            : '';
     }
 
     showHint(){
