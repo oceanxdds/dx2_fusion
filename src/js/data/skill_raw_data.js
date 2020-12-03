@@ -2370,6 +2370,22 @@ export default [
 				"mp": 6,
 				"point": null,
 				"element": "呪殺"
+			},
+			{
+				"name": "原罪へ誘う蛇",
+				"names": {
+					"ja": "原罪へ誘う蛇",
+					"tw": "誘惑原罪之蛇",
+					"en": "Temptation"
+				},
+				"descs": {
+					"ja": "敵単体に呪殺属性の打撃型ダメージを威力130で与え、攻撃成功時、敵全体を基礎確率50%で魅了状態にする。このスキルによるダメージは魔法攻撃力に依存し、死亡時にふみとどまるスキルを無視する。このスキルはクリティカル・ミスが発生する場合がある。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。",
+					"tw": "對敵方單體進行咒殺屬性的打擊型攻擊，以130威力給予傷害，攻擊若成功，以50%的基礎機率對敵方全體附加魅惑狀態。此技能造成的傷害取決於魔法攻擊力，敵人若因此技能死亡，死亡時不會發動強忍類技能。此技能可能會發生會心或落空。因此技能死亡的敵人無法復活。",
+					"en": "Inflicts Dark (Physical) damage (Power: 130) on a single enemy with 50% chance to inflict Charm on all enemies if the attack is successful.*The damage inflicted by this skill is dependent on Mag ATK.*Nullifies all death prevention skills.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Enemies downed by this skill will not be able to revive."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "呪殺"
 			}
 		]
 	},
@@ -6680,6 +6696,22 @@ export default [
 				"mp": null,
 				"point": null,
 				"element": "パシップ"
+			},
+			{
+				"name": "彗眼の権化",
+				"names": {
+					"ja": "彗眼の権化",
+					"tw": "慧眼的化身",
+					"en": "Epitome of Wisdom"
+				},
+				"descs": {
+					"ja": "物理命中率が15%増加し、状態異常にする確率が15%増加する。",
+					"tw": "物理命中率提升15%，賦予異常狀態的機率提升15%。",
+					"en": "+15% to Phys hit rate. +15% chance to inflict status ailments."
+				},
+				"mp": null,
+				"point": null,
+				"element": "無"
 			}
 		]
 	},
@@ -8920,6 +8952,22 @@ export default [
 					"ja": "後攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、味方全体の防御力・回避と命中をそれぞれ20%ずつ増加させる。」",
 					"tw": "",
 					"en": "Activates the following Chain Effect at the beginning of a battle if the enemy attacks first:Increases own party's DEF and EV/AC by 20%. (1 turn)"
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "禁断の果実",
+				"names": {
+					"ja": "禁断の果実",
+					"tw": "禁忌果實",
+					"en": "Forbidden Fruit"
+				},
+				"descs": {
+					"ja": "呪殺貫通を得る。自ターン終了時、魅了状態の敵がいた場合、連動効果として「原罪へ誘う蛇」が発動する。",
+					"tw": "附著咒殺貫通。自己的回合結束時，如有敵人陷入魅惑狀態，發動「誘惑原罪之蛇」做為連鎖效果。",
+					"en": "Gains Dark Pierce.Activates Temptation as a Chain Effect at the end of own turn when there is a Charmed enemy."
 				},
 				"mp": null,
 				"point": null,

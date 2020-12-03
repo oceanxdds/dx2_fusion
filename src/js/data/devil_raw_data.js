@@ -7,7 +7,7 @@ export default [
 			"en": "Herald"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["神獸","女神"],["神獸","魔神"],["聖獸","女神"],["龍神","女神"],["天使","女神"],["天使","聖獸"],["墮天使","聖獸"]],
 		"devils": [
 			{
@@ -1432,7 +1432,7 @@ export default [
 			"en": "Lady"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["聖獸","靈鳥"],["龍神","龍王"],["鬼神","女神"],["鬼神","靈鳥"],["鬼神","聖獸"],["鬼神","破壞神"],["墮天使","大天使"],["妖鬼","破壞神"],["鬼女","魔神"],["鬼女","破壞神"],["魔王","鬼女"],["邪鬼","大天使"],["邪鬼","妖精"],["地靈","女神"],["地靈","妖魔"],["邪龍","魔神"],["兇鳥","幻魔"]],
 		"devils": [
 			{
@@ -3177,7 +3177,7 @@ export default [
 			"en": "Femme"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["龍神","夜魔"],["妖魔","鬼神"],["龍王","地母神"],["龍王","鬼神"],["魔獸","靈鳥"],["魔獸","地母神"],["邪鬼","女神"],["墮天使","女神"],["妖鬼","女神"],["妖鬼","妖魔"],["夜魔","鬼神"],["幽鬼","幻魔"],["幽鬼","夜魔"]],
 		"devils": [
 			{
@@ -4098,7 +4098,7 @@ export default [
 			"en": "Tyrant"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["幻魔","魔神"],["破壞神","大天使"],["破壞神","魔神"],["龍神","聖獸"],["鬼神","地母神"],["邪鬼","幻魔"],["龍王","破壞神"],["墮天使","破壞神"],["邪神","破壞神"],["地靈","龍神"],["邪龍","破壞神"],["邪龍","邪鬼"],["兇鳥","女神"],["兇鳥","魔神"],["兇鳥","破壞神"],["兇鳥","鬼神"]],
 		"devils": [
 			{
@@ -6428,7 +6428,7 @@ export default [
 			"en": "Witch"
 		},
 		"fusion": false,
-		"highlight": false,
+		"highlight": true,
 		"formulas": [],
 		"devils": [
 			{
@@ -6493,6 +6493,28 @@ export default [
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "274",
+				"name": "リリス(魔女)",
+				"names": {
+					"ja": "リリス",
+					"tw": "莉莉絲",
+					"en": "Lilith"
+				},
+				"rarity": 5,
+				"grade": 80,
+				"icon": "majyo_ririsu2.jpg",
+				"skills": ["鋭気の権化","禁断の果実","原罪へ誘う蛇"],
+				"skill4": ["三段の賢魔","マハムドダイン","ランダマイザ","呪殺ハイブースタ","破魔無効"],
+				"skill5": ["","呪殺エンハンス","慧眼の権化","ミナゴロシの愉悦","奈落のマスク"],
+				"elements": ["","rs","rs","dr","","wk","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
 				"formula": [],
 				"fusionMag": 0,
 				"source": "summon"
