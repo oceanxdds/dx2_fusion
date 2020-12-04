@@ -61,11 +61,11 @@ export default {
         //orb
         now:null,
         orbs:[
-            {'name':'ライト', icon:'images/theme/light.png', state:false, days:[0,1,3,5,6]},
-            {'name':'ダーク', icon:'images/theme/dark.png', state:false, days:[0,1,3,5,6]},
-            {'name':'ニュートラル', icon:'images/theme/natural.png', state:false, days:[0,1,2,3,4,5,6] },
-            {'name':'ロー', icon:'images/theme/law.png', state:false, days:[0,2,4,6]},
-            {'name':'カオス', icon:'images/theme/chaos.png', state:false, days:[0,2,4,6]}
+            {'name':'ライト', icon:'public/images/theme/light.png', state:false, days:[0,1,3,5,6]},
+            {'name':'ダーク', icon:'public/images/theme/dark.png', state:false, days:[0,1,3,5,6]},
+            {'name':'ニュートラル', icon:'public/images/theme/natural.png', state:false, days:[0,1,2,3,4,5,6] },
+            {'name':'ロー', icon:'public/images/theme/law.png', state:false, days:[0,2,4,6]},
+            {'name':'カオス', icon:'public/images/theme/chaos.png', state:false, days:[0,2,4,6]}
         ],
     }},
     created:function(){
@@ -748,7 +748,7 @@ export default {
 
             <b-tab no-body class="p-2">
             
-                <div class="row no-gutters" style="background:url('images/theme/steven.png') no-repeat right center; background-size:auto 300px">
+                <div class="row no-gutters" style="background:url('public/images/theme/steven.png') no-repeat right center; background-size:auto 300px">
                     <div class="col-12 py-2">
                         <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
                         <div>
@@ -814,7 +814,7 @@ export default {
             </div>
             <div class="ml-1">
                 <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
-                    <img src="images/theme/GitHub-Mark-32px.png" alt="GitHub">
+                    <img src="public/images/theme/GitHub-Mark-32px.png" alt="GitHub">
                 </a>
             </div>  
         </div>
