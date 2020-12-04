@@ -6,7 +6,7 @@
             <div v-for="(devil,index) in [bom.child1.devil,bom.child2.devil]" :key="index"
                 class="col-6 p-2"
                 :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
-                :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
+                :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                     <div class="font-weight-bold">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
@@ -19,7 +19,7 @@
                     class="p-2" 
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
-                    :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}">
+                    :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}">
                     <div class="font-weight-bold">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>

@@ -20,7 +20,7 @@
         -->
 
         <b-card-body class="p-0" @click="click">
-            <div v-if="!(usage=='builder'&&source=='multi_fusion')" class="p-2" :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
+            <div v-if="!(usage=='builder'&&source=='multi_fusion')" class="p-2" :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="font-weight-bold text_shadow">
                     {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} {{ devil.showName() }}
@@ -35,7 +35,7 @@
                     </span>
                 </div>
             </div>
-            <div v-if="usage=='builder'&&source=='multi_fusion'" class="p-1" :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
+            <div v-if="usage=='builder'&&source=='multi_fusion'" class="p-1" :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
                 <div class="small">
                     {{ devil.grade }}
