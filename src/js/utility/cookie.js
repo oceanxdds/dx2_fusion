@@ -1,11 +1,9 @@
-// Cookie
-
-const Days = 365;
+const one_year = 365*24*60*60*1000;
 
 function setCookie(name,value)
 {
     let exp  = new Date();
-    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    exp.setTime(exp.getTime() + one_year);
     document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
 }
 

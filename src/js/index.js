@@ -14,8 +14,8 @@ Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false;
 
-import store from './store'
-import i18n from './lang';
+import store from './utility/store'
+import i18n from './utility/i18n';
 import App from './app.vue';
 
 i18n.defaultLocale = 'ja';
