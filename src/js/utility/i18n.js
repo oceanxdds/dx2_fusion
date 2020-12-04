@@ -1,6 +1,6 @@
-import lang_en from './en';
-import lang_ja from './ja';
-import lang_tw from './tw';
+import lang_en from '../lang/en';
+import lang_ja from '../lang/ja';
+import lang_tw from '../lang/tw';
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 

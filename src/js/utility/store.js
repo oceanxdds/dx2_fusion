@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import resource from '../data';
+import Resource from '../class/resource';
+import devil_raw_data from '../data/devil_raw_data';
+import skill_raw_data from '../data/skill_raw_data';
 
 Vue.use(Vuex);
 
@@ -8,6 +10,8 @@ const _state = {
     builder_options:[],
     fusion_options:[]
 };
+
+const resource = new Resource(devil_raw_data, skill_raw_data);
 
 const store = new Vuex.Store({
     state:{

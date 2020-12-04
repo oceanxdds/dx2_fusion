@@ -1,5 +1,5 @@
 import DevilBom from './devil_bom';
-import i18n from '../../lang';
+import i18n from '../utility/i18n';
 
 class Devil {
     

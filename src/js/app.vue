@@ -1,14 +1,14 @@
 <script>
-
 import 'url-search-params-polyfill';
-import {mapState} from './store';
-import {getCookie, setCookie} from './utility';
+import {mapState} from './utility/store';
+import {getCookie, setCookie} from './utility/cookie';
 import VueDevil from './components/devil.vue';
 import VueSkillList from './components/skill_list.vue';
 import VueDevilList from './components/devil_list.vue';
 import VueDevilBomBuilder from './components/devil_bom_builder.vue';
 import VueDevilBomOptions from './components/devil_bom_options.vue';
 import VueDevilInfo from './components/devil_info.vue';
+import Version from './version';
 
 export default {
 
@@ -23,7 +23,7 @@ export default {
     data:function(){
         return {
 
-        updated_at:'201203',
+        updated_at: Version.version,
         //modal
         modal_id:'modal_devil_info',
         //builder
@@ -31,7 +31,6 @@ export default {
         //fusion
         fusion_rarity_options:[],        
         //setting
-        //lang_value:'ja',
         cache_lang_value:'ja',
         lang_options:[
             {text:'日本語', value:'ja'},

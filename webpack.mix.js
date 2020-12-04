@@ -3,8 +3,8 @@ const mix = require('laravel-mix');
 require('laravel-mix-polyfill');
 
 mix
-  .js('src/js/index.js', 'dist/bundle.js')
-  .sass('src/scss/app.scss', 'dist/bundle.css')
+  .js('src/js/index.js', 'public/js/bundle.js')
+  .sass('src/scss/app.scss', 'public/css/bundle.css')
   .options({
     processCssUrls: false
   })

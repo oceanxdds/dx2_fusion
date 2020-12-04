@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import {mapState} from '../store';
+import {mapState} from '../utility/store';
 import VueDevil from './devil.vue';
 
 export default {
