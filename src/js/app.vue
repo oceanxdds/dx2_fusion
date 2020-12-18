@@ -155,7 +155,7 @@ export default {
                 if(this.lang_options.map(x=>x.value).includes(value)){
                     
                     this.cache_lang_value = value;
-                    setCookie('lang_value', value);
+                    Cookie.setCookie('lang_value', value);
                     
                     this.$i18n.locale = value;
                 }
@@ -172,7 +172,7 @@ export default {
                 if(this.down_grade_options.map(x=>x.value).includes(value)){
                     
                     this.cache_down_grade = value;
-                    setCookie('allow_down_grade', value);
+                    Cookie.setCookie('allow_down_grade', value);
 
                     this.update_builder_filter();
                     this.update_fusion_filter();
@@ -190,7 +190,7 @@ export default {
                 if(this.prevent_unload_options.map(x=>x.value).includes(value)){
                     
                     this.cache_prevent_unload = value
-                    setCookie('allow_prevent_unload', value);
+                    Cookie.setCookie('allow_prevent_unload', value);
                 }
             }
         },
