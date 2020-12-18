@@ -2822,8 +2822,24 @@ export default [
 			"en": "Fallen"
 		},
 		"fusion": true,
-		"highlight": false,
-		"formulas": [["龍神","破壞神"],["龍神","魔王"],["魔神","大天使"],["魔獸","天使"],["魔獸","妖魔"],["妖鬼","魔獸"],["夜魔","大天使"],["夜魔","女神"],["邪神","幻魔"],["妖獸","鬼女"],["外道","女神"],["外道","天使"],["幽鬼","大天使"],["地靈","天使"],["地靈","龍王"]],
+		"highlight": true,
+		"formulas": [
+			["龍神","破壞神"],
+			["龍神","魔王"],
+			["魔神","大天使"],
+			["魔獸","天使"],
+			["魔獸","妖魔"],
+			["妖鬼","魔獸"],
+			["夜魔","大天使"],
+			["夜魔","女神"],
+			["邪神","幻魔"],
+			["妖獸","鬼女"],
+			["外道","女神"],
+			["外道","天使"],
+			["幽鬼","大天使"],
+			["地靈","天使"],
+			["地靈","龍王"]
+		],
 		"devils": [
 			{
 				"id": "95",
@@ -2846,6 +2862,28 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "normal_fusion"
+			},
+			{
+				"id": "275",
+				"name": "フラロウス",
+				"names": {
+					"ja": "フラロウス",
+					"tw": "佛勞洛斯",
+					"en": "Flauros"
+				},
+				"rarity": 5,
+				"grade": 82,
+				"icon": "datensi_hurarousu.jpg",
+				"skills": ["デスカウンター","地獄の豹公","アイアンフィスト"],
+				"skill4": ["強靭の権化","冥界破","雄叫び","破壊の権化","氷結無効"],
+				"skill5": ["","物理ハイブースタ","不屈の闘志・改","ゴッドハンド","緊縛無効"],
+				"elements": ["rs","nu","wk","","","","rp"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			},
 			{
 				"id": "259",
@@ -6428,7 +6466,7 @@ export default [
 			"en": "Witch"
 		},
 		"fusion": false,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [],
 		"devils": [
 			{
@@ -7212,6 +7250,76 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "normal_fusion"
+			}
+		]
+	},
+	{
+		"name": "義體",
+		"names": {
+			"ja": "義体",
+			"tw": "義體",
+			"en": "Cyborg"
+		},
+		"fusion": false,
+		"highlight": true,
+		"formulas": [],
+		"devils": [
+			{
+				"id": "",
+				"name": "草薙素子",
+				"names": {
+					"ja": "草薙素子",
+					"tw": "草薙素子",
+					"en": "Motoko Kusanagi"
+				},
+				"rarity": 5,
+				"grade": 85,
+				"icon": "gitai_kusanagi.jpg",
+				"skills": ["鋭気の権化","光学迷彩","ゴーストハック"],
+				"skill4": ["","空間殺法","チャージ","物理貫通","物理反射"],
+				"skill5": ["","破壊の権化","ラクンダオート","刹那五月雨撃ち","超自然治癒"],
+				"elements": ["rs","","","","","rs","rs"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			}
+		]
+	},
+	{
+		"name": "機械",
+		"names": {
+			"ja": "マシン",
+			"tw": "機械",
+			"en": "Machine"
+		},
+		"fusion": false,
+		"highlight": true,
+		"formulas": [],
+		"devils": [
+			{
+				"id": "",
+				"name": "タチコマ",
+				"names": {
+					"ja": "タチコマ",
+					"tw": "塔奇克馬",
+					"en": "Tachikoma"
+				},
+				"rarity": 4,
+				"grade": 70,
+				"icon": "masin_tatikoma.jpg",
+				"skills": ["百発百中","メガトンプレス","50mm擲弾"],
+				"skill4": ["物理ブースタ","捨て身の一撃","勇奮の鼓舞","寸分の見切り","物理無効"],
+				"skill5": ["","火炎ブースタ","スピードスター","自然治癒","二段の恵体"],
+				"elements": ["rs","","","","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			}
 		]
 	}

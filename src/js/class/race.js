@@ -1,4 +1,4 @@
-import i18n from '../utility/i18n';
+import i18n from '../utility/i18n'
 
 class Race {
     

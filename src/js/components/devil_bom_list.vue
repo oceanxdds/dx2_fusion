@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import VueDevilBom from './devil_bom.vue';
+import VueDevilBom from './devil_bom.vue'
 
 export default {
     components:{'DevilBom': VueDevilBom },

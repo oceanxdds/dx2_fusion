@@ -1,7 +1,7 @@
-import Race from './race';
-import Devil from './devil';
-import Skill from './skill';
-import SkillType from './skill_type';
+import Race from './race'
+import Devil from './devil'
+import Skill from './skill'
+import SkillType from './skill_type'
 
 class Resource{
     

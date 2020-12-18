@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import VueDevilBomList from './devil_bom_list.vue';
+import VueDevilBomList from './devil_bom_list.vue'
 
 export default {
     components:{'devil-bom-list': VueDevilBomList},
