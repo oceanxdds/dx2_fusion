@@ -1,14 +1,14 @@
 <script>
-import 'url-search-params-polyfill';
-import {mapState} from './utility/store';
-import {getCookie, setCookie} from './utility/cookie';
-import VueDevil from './components/devil.vue';
-import VueSkillList from './components/skill_list.vue';
-import VueDevilList from './components/devil_list.vue';
-import VueDevilBomBuilder from './components/devil_bom_builder.vue';
-import VueDevilBomOptions from './components/devil_bom_options.vue';
-import VueDevilInfo from './components/devil_info.vue';
-import Version from './version';
+import 'url-search-params-polyfill'
+import {mapState} from './utility/store'
+import Cookie from './utility/cookie'
+import VueDevil from './components/devil.vue'
+import VueSkillList from './components/skill_list.vue'
+import VueDevilList from './components/devil_list.vue'
+import VueDevilBomBuilder from './components/devil_bom_builder.vue'
+import VueDevilBomOptions from './components/devil_bom_options.vue'
+import VueDevilInfo from './components/devil_info.vue'
+import Version from './version'
 
 export default {
 
@@ -84,13 +84,13 @@ export default {
         //Lang
         this.lang_value = window.location.hash 
             ? window.location.hash.substring(1)
-            : getCookie('lang_value'); 
+            : Cookie.getCookie('lang_value'); 
 
         //allow down grade
-        this.down_grade = getCookie('allow_down_grade');
+        this.down_grade = Cookie.getCookie('allow_down_grade');
 
         //prevent unload
-        this.prevent_unload = getCookie('allow_prevent_unload');
+        this.prevent_unload = Cookie.getCookie('allow_prevent_unload');
 
         //Orbs
         let now = new Date();

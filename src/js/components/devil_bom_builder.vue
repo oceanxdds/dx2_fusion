@@ -56,8 +56,8 @@
 
 
 <script>
-import {mapGetters} from 'vuex';
-import VueDevil from './devil.vue';
+import {mapGetters} from 'vuex'
+import VueDevil from './devil.vue'
 
 export default {
     name:'devil-bom-builder',

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import VueDevil from './devil.vue';
+import VueDevil from './devil.vue'
 
 export default {
     components:{'devil':VueDevil},

@@ -1,5 +1,5 @@
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.0.0
+ * BootstrapVue Icons, generated from Bootstrap Icons 1.2.1
  *
  * @link https://icons.getbootstrap.com/
  * @license MIT
@@ -13,13 +13,13 @@
  */
 
 /*!
- * vue-i18n v8.21.1 
+ * vue-i18n v8.22.2 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
 
 /*!
- * vuex v3.5.1
+ * vuex v3.6.0
  * (c) 2020 Evan You
  * @license MIT
  */

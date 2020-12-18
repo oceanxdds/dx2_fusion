@@ -886,6 +886,22 @@ export default [
 				"mp": 7,
 				"point": null,
 				"element": "物理"
+			},
+			{
+				"name": "アイアンフィスト",
+				"names": {
+					"ja": "アイアンフィスト",
+					"tw": "鋼鐵之拳",
+					"en": "Iron Fist"
+				},
+				"descs": {
+					"ja": "敵単体にクリティカル率30%の貫通を得た物理属性の打撃型ダメージを威力120で与え、攻撃成功時、2ターンの間、味方全体の攻撃力・回避と命中を20%ずつ増加させる。",
+					"tw": "對敵方單體進行會心率30％，物理屬性附加貫通的打擊型攻擊，以120威力給予傷害，攻擊若成功，2回合內使我方全體的攻擊力、迴避/命中各提升20%。",
+					"en": "Inflicts Phys (Physical) Pierce effect damage (Power: 120) with 30% crit rate on a single enemy. Increases own party's ATK and EV/AC by 20% if the attack is successful. (2 turns)"
+				},
+				"mp": 6,
+				"point": null,
+				"element": "物理"
 			}
 		]
 	},
@@ -1198,6 +1214,22 @@ export default [
 					"en": "Inflicts Magic damage (Power:160) of a chosen Attribute with Pierce effect on a single enemy.Automatically selects an Attribute from Fire, Ice, Elec and Force depending on the situation."
 				},
 				"mp": 6,
+				"point": null,
+				"element": "火炎"
+			},
+			{
+				"name": "50mm擲弾",
+				"names": {
+					"ja": "50mm擲弾",
+					"tw": "50mm榴彈",
+					"en": "50 mm Grenade Launcher"
+				},
+				"descs": {
+					"ja": "敵全体にクリティカル率30％の貫通を得た火炎属性の打撃型ダメージを威力80で与える。このスキルによるダメージは物理攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。このスキルは反撃効果の発動を無視する。",
+					"tw": "對敵方全體進行會心率30%，火炎屬性附加貫通的打擊型攻擊，以80威力給予傷害。此技能造成的傷害取決於物理攻擊力。此技能可能會發生會心或落空。此技能將無視反擊效果的發動。",
+					"en": "Inflicts Fire (Physical) Pierce effect damage (Power: 80) with 30% crit rate on all enemies.*The damage inflicted by this skill is dependent on Phys ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Counter effects will not work on this skill."
+				},
+				"mp": 5,
 				"point": null,
 				"element": "火炎"
 			}
@@ -4102,6 +4134,22 @@ export default [
 					"ja": "敵全体を基礎確率30%で魔封状態にし、味方全体を回復力75で回復する。",
 					"tw": "",
 					"en": "30% chance to inflict Mute on all enemies. Heals all party members (Power: 75)."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "無"
+			},
+			{
+				"name": "ゴーストハック",
+				"names": {
+					"ja": "ゴーストハック",
+					"tw": "鬼魂入侵",
+					"en": "Ghost Hack"
+				},
+				"descs": {
+					"ja": "敵全体のバリア状態を解除した後、敵全体を基礎確率50%で魔封・緊縛状態にする。",
+					"tw": "解除敵方全體的防壁狀態後，以50％的基礎機率使敵方全體陷入魔封、束縛狀態。",
+					"en": "50% chance to inflict Mute/Bind on all enemies after removing Barriers from all enemies."
 				},
 				"mp": 6,
 				"point": null,
@@ -8968,6 +9016,38 @@ export default [
 					"ja": "呪殺貫通を得る。自ターン終了時、魅了状態の敵がいた場合、連動効果として「原罪へ誘う蛇」が発動する。",
 					"tw": "附著咒殺貫通。自己的回合結束時，如有敵人陷入魅惑狀態，發動「誘惑原罪之蛇」做為連鎖效果。",
 					"en": "Gains Dark Pierce.Activates Temptation as a Chain Effect at the end of own turn when there is a Charmed enemy."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "地獄の豹公",
+				"names": {
+					"ja": "地獄の豹公",
+					"tw": "地獄豹公",
+					"en": "Hell Leopard"
+				},
+				"descs": {
+					"ja": "物理命中率が20%増加する。「アイアンフィスト」発動後、次の連動効果が発動。「敵全体にクリティカル率30%の貫通を得た物理属性の打撃型ダメージを威力40で与え、攻撃成功時、自身を会心状態にする。」",
+					"tw": "物理命中率提升20％。發動「鋼鐵之拳」後，會發動以下連鎖效果。「對敵方全體進行會心率30%，物理屬性附加貫通的打擊型攻擊，以40威力給予傷害，攻擊成功時，自身附著會心狀態。」",
+					"en": "+20% to Phys hit rate.Activates the following Chain Effect after Iron Fist is activated:Inflicts Phys (Physical) Pierce effect damage (Power: 40) with 30% crit rate on all enemies and enters a state of Might if the attack is successful."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "光学迷彩",
+				"names": {
+					"ja": "光学迷彩",
+					"tw": "光學迷彩",
+					"en": "Optical Camouflage"
+				},
+				"descs": {
+					"ja": "物理回避率が20%増加する。自ターン終了時、バッドステータス状態の敵がいた場合、次の連動効果が発動。「全てのバッドステータス状態の敵に、クリティカル率30%の貫通を得た物理属性の打撃型ダメージを威力100で与える。このスキルは反撃効果の発動を無視する。」",
+					"tw": "物理迴避率提升20%。自己的回合結束時，場上若有陷入異常狀態的敵人，會發動以下連鎖效果。「對所有異常狀態的敵人進行會心率30%，物理屬性附加貫通的打擊型攻擊，以100威力給予傷害。此技能將無視反擊效果的發動。」",
+					"en": "+20% Phys evasion rate.Activates the following Chain Effect at the end of own turn when there is an enemy with an ailment:Inflicts Phys (Physical) Pierce effect damage (Power: 100) with 30% crit rate on all enemies with an ailment. Counter effects will not work on this skill."
 				},
 				"mp": null,
 				"point": null,

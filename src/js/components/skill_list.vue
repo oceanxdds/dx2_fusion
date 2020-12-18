@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import VueSkill from './skill.vue';
-import VueDevil from './devil.vue';
+import VueSkill from './skill.vue'
+import VueDevil from './devil.vue'
 
 export default {
     components:{'skill':VueSkill, 'devil':VueDevil},

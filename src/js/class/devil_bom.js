@@ -19,7 +19,7 @@ class DevilBom {
             }
             return child;
         });
-        
+
         this.child1 = d1;
         this.child2 = d2;
         this.child3 = d3;
