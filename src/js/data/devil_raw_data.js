@@ -547,7 +547,7 @@ export default [
 			"en": "Deity"
 		},
 		"fusion": true,
-		"highlight": false,
+		"highlight": true,
 		"formulas": [["女神","大天使"],["靈鳥","女神"],["破壞神","女神"],["邪鬼","破壞神"],["地母神","大天使"],["魔獸","大天使"],["墮天使","魔獸"],["妖鬼","鬼神"],["夜魔","墮天使"],["邪神","神獸"],["邪神","魔獸"],["地靈","大天使"]],
 		"devils": [
 			{
@@ -560,7 +560,7 @@ export default [
 				},
 				"rarity": 5,
 				"grade": 97,
-				"icon": "majin_visyunu.jpg",
+				"icon": "masin_visyunu.jpg",
 				"skills": ["ブフダイン","天罰","アヴァターラ"],
 				"skill4": ["ムドダイン","メギドラオン","勇奮の鼓舞","魔封無効","呪殺反射"],
 				"skill5": ["","地獄の業火","緊縛無効","ウィンドブレス","火炎耐性"],
@@ -573,6 +573,28 @@ export default [
 				"source": "normal_fusion"
 			},
 			{
+				"id": "276",
+				"name": "アルダー",
+				"names": {
+					"ja": "アルダー",
+					"tw": "阿爾達",
+					"en": "Ardha"
+				},
+				"rarity": 5,
+				"grade": 95,
+				"icon": "masin_aruda.jpg",
+				"skills": ["破壊の権化","サハスラーラ","破壊と天恵"],
+				"skill4": ["三段の賢魔","メギドラオン","ラスタキャンディ","無慈悲な一撃","物理吸収"],
+				"skill5": ["","大虐殺者","嗜虐の一撃","大暗殺者","強靭の権化"],
+				"elements": ["nu","dr","","dr","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "249",
 				"name": "ヴィローシャナ",
 				"names": {
@@ -582,7 +604,7 @@ export default [
 				},
 				"rarity": 5,
 				"grade": 93,
-				"icon": "majin_birosyana.jpg",
+				"icon": "masin_birosyana.jpg",
 				"skills": ["不屈の闘志","光明真言","後光の導き"],
 				"skill4": ["三段の賢魔","混沌の海","メディアラハン","大虐殺者","呪殺反射"],
 				"skill5": ["","マカラカシフト","ラクカオート","マハラギダイン","魅了無効"],
@@ -604,7 +626,7 @@ export default [
 				},
 				"rarity": 5,
 				"grade": 86,
-				"icon": "majin_baaru.jpg",
+				"icon": "masin_baaru.jpg",
 				"skills": ["衝撃ハイブースタ","カナンの慈雨","テンペスト"],
 				"skill4": ["三段の賢魔","殺風激","ランダマイザ","無慈悲な一撃","氷結無効"],
 				"skill5": ["","大暗殺者","衝撃エンハンス","勝利のチャクラ","超自然治癒"],
@@ -630,7 +652,7 @@ export default [
 				},
 				"rarity": 5,
 				"grade": 84,
-				"icon": "majin_atabaku.jpg",
+				"icon": "masin_atabaku.jpg",
 				"skills": ["千発千中","軍神の加護","外敵粉砕"],
 				"skill4": ["三段の剛力","怪力乱神","チャージ","威圧の構え","氷結無効"],
 				"skill5": ["","物理ハイブースタ","スクカオート","ゴッドハンド","勝利のチャクラ"],
@@ -652,7 +674,7 @@ export default [
 				},
 				"rarity": 5,
 				"grade": 82,
-				"icon": "majin_amaterasu.jpg",
+				"icon": "masin_amaterasu.jpg",
 				"skills": ["マハラギオン","タルンダ","天孫降臨"],
 				"skill4": ["スクカオート","トリスアギオン","メディアラハン","三段の賢魔","電撃無効"],
 				"skill5": ["","三段の強運","魅了無効","マハンマダイン","マハマカジャオン"],
@@ -674,7 +696,7 @@ export default [
 				},
 				"rarity": 4,
 				"grade": 73,
-				"icon": "majin_odein.jpg",
+				"icon": "masin_odein.jpg",
 				"skills": ["氷結耐性","ショックウェーブ","グングニル"],
 				"skill4": ["無慈悲な一撃","メガトンレイド","タルカジャ","千発千中","呪殺無効"],
 				"skill5": ["","イービルアイ","マハラギ","ブフーラ","ポズムディ"],
@@ -696,7 +718,7 @@ export default [
 				},
 				"rarity": 4,
 				"grade": 67,
-				"icon": "majin_purometeusu.jpg",
+				"icon": "masin_purometeusu.jpg",
 				"skills": ["火炎ブースタ","マカラカシフト","アギダイン"],
 				"skill4": ["三段の恵体","マハラギダイン","リカームドラ","無限のチャクラ","火炎吸収"],
 				"skill5": ["","電撃耐性","マハザンマ","乱れ狂い","毒耐性"],
@@ -718,7 +740,7 @@ export default [
 				},
 				"rarity": 3,
 				"grade": 55,
-				"icon": "majin_mitora.jpg",
+				"icon": "masin_mitora.jpg",
 				"skills": ["マハジュ","バリアコワース","イービルアイ"],
 				"skill4": ["メギド","マハンマオン","フォッグブレス","狂い咲き","衝撃耐性"],
 				"skill5": ["","メディア","ディア","マハジオ","初段の恵体"],
@@ -740,7 +762,7 @@ export default [
 				},
 				"rarity": 3,
 				"grade": 49,
-				"icon": "majin_horusu.jpg",
+				"icon": "masin_horusu.jpg",
 				"skills": ["ディアラマ","デクンダ","マハンマ"],
 				"skill4": ["二分の魔脈","ハマダイン","アムリタ","破魔ブースタ","電撃無効\\t"],
 				"skill5": ["","カースディ","パララディ","マハラギ","カースディ"],
@@ -2822,7 +2844,7 @@ export default [
 			"en": "Fallen"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [
 			["龍神","破壞神"],
 			["龍神","魔王"],
@@ -3636,9 +3658,33 @@ export default [
 			"tw": "邪神",
 			"en": "Vile"
 		},
+		"highlight": true,
 		"fusion": true,
-		"formulas": [["天使","破壞神"],["妖獸","魔獸"],["魔王","魔獸"],["邪鬼","神獸"],["邪龍","女神"],["邪龍","龍王"],["兇鳥","夜魔"]],
+		"formulas": [
+			["天使","破壞神"],["妖獸","魔獸"],["魔王","魔獸"],["邪鬼","神獸"],["邪龍","女神"],["邪龍","龍王"],["兇鳥","夜魔"]],
 		"devils": [
+			{
+				"id": "278",
+				"name": "デミウルゴス",
+				"names": {
+					"ja": "デミウルゴス",
+					"tw": "德謬哥",
+					"en": "Demiurge"
+				},
+				"rarity": 5,
+				"grade": 99,
+				"icon": "jyasin_demiurugosu.jpg",
+				"skills": ["メギドラオン","反宇宙の偽神","至高なる造物主"],
+				"skill4": ["三段の賢魔","アルス・マグナ","インベージョン","即死無効","電撃・衝撃無効"],
+				"skill5": ["","万能ブースタ","不動の権化","奈落のマスク","物理無効"],
+				"elements": ["","nu","nu","rs","rs","nu","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
 			{
 				"id": "122",
 				"name": "セト",
@@ -4136,7 +4182,7 @@ export default [
 			"en": "Tyrant"
 		},
 		"fusion": true,
-		"highlight": false,
+		"highlight": true,
 		"formulas": [["幻魔","魔神"],["破壞神","大天使"],["破壞神","魔神"],["龍神","聖獸"],["鬼神","地母神"],["邪鬼","幻魔"],["龍王","破壞神"],["墮天使","破壞神"],["邪神","破壞神"],["地靈","龍神"],["邪龍","破壞神"],["邪龍","邪鬼"],["兇鳥","女神"],["兇鳥","魔神"],["兇鳥","破壞神"],["兇鳥","鬼神"]],
 		"devils": [
 			{
@@ -4160,6 +4206,28 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "normal_fusion"
+			},
+			{
+				"id": "277",
+				"name": "アンリ・マンユ",
+				"names": {
+					"ja": "アンリ・マンユ",
+					"tw": "阿里曼",
+					"en": "Angra Mainyu"
+				},
+				"rarity": 5,
+				"grade": 96,
+				"icon": "maou_anrimanyu.jpg",
+				"skills": ["狂乱の権化","全ての悪","十六の災難"],
+				"skill4": ["三段の賢魔","メギドラオン","ランダマイザ","奈落のマスク","破魔無効"],
+				"skill5": ["","迅速の権化","陽光の衰退","狂い咲き","寸分の見切り"],
+				"elements": ["","","rp","rp","","wk","rp"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			},
 			{
 				"id": "255",
@@ -7261,7 +7329,7 @@ export default [
 			"en": "Cyborg"
 		},
 		"fusion": false,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [],
 		"devils": [
 			{
@@ -7296,7 +7364,7 @@ export default [
 			"en": "Machine"
 		},
 		"fusion": false,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [],
 		"devils": [
 			{
