@@ -902,6 +902,22 @@ export default [
 				"mp": 6,
 				"point": null,
 				"element": "物理"
+			},
+			{
+				"name": "破壊と天恵",
+				"names": {
+					"ja": "破壊と天恵",
+					"tw": "破壞與恩賜",
+					"en": "Ruin and Grace"
+				},
+				"descs": {
+					"ja": "敵単体にクリティカル率50%の貫通を得た物理属性の打撃型ダメージを威力200で与え、攻撃成功時、味方全体を回復力80で回復する。このスキルによるダメージ・回復力は魔法攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。",
+					"tw": "「對敵方單體進行會心率50%，物理屬性附加貫通的打擊型攻擊，以200威力給予傷害，攻擊成功時，以80回復力回復我方全體。」此技能造成的傷害、回復力取決於魔法攻擊力。此技能可能會發生會心或落空。",
+					"en": "Inflicts Phys (Physical) Pierce effect damage (Power: 200) with 50% crit rate on a single enemy, and Heals all party members (Power: 80) if the attack is successful.*The damage/heal effect inflicted by this skill is dependent on Mag ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates."
+				},
+				"mp": 7,
+				"point": null,
+				"element": "物理"
 			}
 		]
 	},
@@ -2924,6 +2940,22 @@ export default [
 				"mp": 6,
 				"point": null,
 				"element": "万能"
+			},
+			{
+				"name": "アルス・マグナ",
+				"names": {
+					"ja": "アルス・マグナ",
+					"tw": "宏偉之術",
+					"en": "Ars Magna"
+				},
+				"descs": {
+					"ja": "敵単体に万能属性の魔法型ダメージを威力180で与える。",
+					"tw": "對單體敵人以威力180給予萬能屬性的魔法型傷害。",
+					"en": "Inflicts Almighty (Magic) damage (Power: 180) on a single enemy."
+				},
+				"mp": 8,
+				"point": null,
+				"element": "万能"
 			}
 		]
 	},
@@ -2980,6 +3012,22 @@ export default [
 					"en": "Activates [Be My Friend] when there is a Cursed enemy, activates [Play With Me?] when there isn't.Play With Me?:Inflicts 30% fractional damage (1500 max) on all enemies based on their current HP with 80% chance to inflict Curse.Be My Friend: Inflicts 30% fractional damage (1500 max) on all Cursed enemies based on their max HP with 100% chance to inflict Mortal. Nullifies all death prevention skills."
 				},
 				"mp": 9,
+				"point": null,
+				"element": "???"
+			},
+			{
+				"name": "十六の災難",
+				"names": {
+					"ja": "十六の災難",
+					"tw": "十六災難",
+					"en": "16 Scourges"
+				},
+				"descs": {
+					"ja": "敵全体に対象の最大HPの25%の割合ダメージ（最大1,000）を与え、敵全体を基礎確率20%で毒・緊縛・魅了・魔封・呪い・虚弱状態にする。",
+					"tw": "對敵方全體造成HP上限的25%比例傷害(最大1000傷害)，對敵方全體以20%的基礎機率附加中毒、束縛、魅惑、魔封、詛咒與虛弱狀態。",
+					"en": "Inflicts 25% fractional damage (1,000 max) on all enemies based on their max HP with 20% chance to inflict Poison, Bind, Charm, Mute, Curse and Weak."
+				},
+				"mp": 8,
 				"point": null,
 				"element": "???"
 			}
@@ -4756,6 +4804,22 @@ export default [
 				"mp": 7,
 				"point": null,
 				"element": "無"
+			},
+			{
+				"name": "インベージョン",
+				"names": {
+					"ja": "インベージョン",
+					"tw": "侵入蛀蝕",
+					"en": "Invasion"
+				},
+				"descs": {
+					"ja": "1ターンの間、味方全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ増加させ、敵全体の攻撃力・防御力・回避と命中をそれぞれ20%ずつ減少させる。",
+					"tw": "1回合內，使我方全體的攻擊力、防禦力、迴避/命中各提升20%，使敵方全體的攻擊力、防禦力、迴避/命中各減少20%。",
+					"en": "Increases ATK, DEF and EV/AC of all party members by 20% and reduces all enemy ATK, DEF and EV/AC by 20%. (1 turn)"
+				},
+				"mp": 8,
+				"point": null,
+				"element": "無"
 			}
 		]
 	},
@@ -4989,6 +5053,22 @@ export default [
 				},
 				"mp": null,
 				"point": "21",
+				"element": "パシップ"
+			},
+			{
+				"name": "万能ブースタ",
+				"names": {
+					"ja": "万能ブースタ",
+					"tw": "萬能強化",
+					"en": "Almighty Boost"
+				},
+				"descs": {
+					"ja": "万能属性で与えるダメージが15%増加する。",
+					"tw": "萬能屬性給予的傷害提升15%。",
+					"en": "+15% to Almighty damage."
+				},
+				"mp": null,
+				"point": 6,
 				"element": "パシップ"
 			},
 			{
@@ -5485,6 +5565,22 @@ export default [
 				},
 				"mp": null,
 				"point": "12",
+				"element": "パシップ"
+			},
+			{
+				"name": "電撃・衝撃無効",
+				"names": {
+					"ja": "電撃・衝撃無効",
+					"tw": "電擊・衝擊無效",
+					"en": "Null Elec/Force"
+				},
+				"descs": {
+					"ja": "電撃無効・衝撃無効を得る。",
+					"tw": "附著電擊無效、衝擊無效。",
+					"en": "Adds Null Elec/Null Force."
+				},
+				"mp": null,
+				"point": null,
 				"element": "パシップ"
 			},
 			{
@@ -6676,6 +6772,22 @@ export default [
 					"ja": "物理命中率が15%増加し、状態異常になる確率が45%減少する。",
 					"tw": "",
 					"en": "+15% to Phys hit rate, -45% chance of receiving status ailments."
+				},
+				"mp": null,
+				"point": "16",
+				"element": "パシップ"
+			},
+			{
+				"name": "幻影の権化",
+				"names": {
+					"ja": "幻影の権化",
+					"tw": "幻影的化身",
+					"en": "Epitome of Illusion"
+				},
+				"descs": {
+					"ja": "状態異常にする確率が15%増加し、物理回避率が15%増加する。",
+					"tw": "物理迴避率提升15%，陷入異常狀態的機率降低45%。",
+					"en": "+15% to Phys evasion rate. -45% chance of receiving status ailments."
 				},
 				"mp": null,
 				"point": "16",
@@ -9048,6 +9160,102 @@ export default [
 					"ja": "物理回避率が20%増加する。自ターン終了時、バッドステータス状態の敵がいた場合、次の連動効果が発動。「全てのバッドステータス状態の敵に、クリティカル率30%の貫通を得た物理属性の打撃型ダメージを威力100で与える。このスキルは反撃効果の発動を無視する。」",
 					"tw": "物理迴避率提升20%。自己的回合結束時，場上若有陷入異常狀態的敵人，會發動以下連鎖效果。「對所有異常狀態的敵人進行會心率30%，物理屬性附加貫通的打擊型攻擊，以100威力給予傷害。此技能將無視反擊效果的發動。」",
 					"en": "+20% Phys evasion rate.Activates the following Chain Effect at the end of own turn when there is an enemy with an ailment:Inflicts Phys (Physical) Pierce effect damage (Power: 100) with 30% crit rate on all enemies with an ailment. Counter effects will not work on this skill."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "反宇宙の偽神",
+				"names": {
+					"ja": "反宇宙の偽神",
+					"tw": "反宇宙的偽神",
+					"en": "False God"
+				},
+				"descs": {
+					"ja": "万能属性で与えるダメージが10%増加する。自身が生存中、味方全体の属性反射が貫通に対しても効果を発揮する。※ブレイクシステムのあるバトルでは効果を発揮しない。自身を含む味方が攻撃を反射したとき、次の連動効果が発動。「敵全体に万能属性の魔法型ダメージを威力100で与える。」",
+					"tw": "萬能屬性給予的傷害提升10%。自身存活的狀態下，我方全體的屬性反射也會對貫通發揮效果。※在有爆發系統的戰鬥中不會發揮效果。當我方成員(包含自己)反射攻擊時，會發動以下連鎖效果。「對敵方全體進行萬能屬性的魔法型攻擊，以100威力給予傷害。」",
+					"en": "+10% to Almighty damage.While the demon with this skill is alive, Pierce will have no effect on any party member that can repel the attribute they are attacked with. *Will not activate in battles with Break System.Activates the following Chain Effect when a party member (Including self) Repels an enemy attack:Inflict Almighty (Magic) damage (Power: 100) on all enemies."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "至高なる造物主",
+				"names": {
+					"ja": "至高なる造物主",
+					"tw": "崇高造物主",
+					"en": "Supreme Creator"
+				},
+				"descs": {
+					"ja": "全てのスキルで消費するMPが1減少する。自身が生存中、味方全体の属性吸収が貫通に対しても効果を発揮する。※ブレイクシステムのあるバトルでは効果を発揮しない。自身を含む味方が攻撃を吸収したとき、次の連動効果が発動。「味方全体のHPを回復力75で回復し、MPを1回復する。」",
+					"tw": "所有技能的MP消耗量比平時減少1。自身存活的狀態下，我方全體的屬性吸收也會對貫通發揮效果。※在有爆發系統的戰鬥中不會發揮效果。當我方成員(包含自己)吸收攻擊時，會發動以下連鎖效果。「我方全體以回復力75回復HP，並回復1MP。」",
+					"en": "Reduces the cost of all skills by 1MP.While the one with this skill is alive, Pierce will have no effect on any party member that can drain the attribute they are attacked with.*Will not activate in battles with Break System.Activates the following Chain Effect when a party member (Including self) Drains an enemy attack:Heals HP of all party members (Power: 75), and MP by 1."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "サハスラーラ",
+				"names": {
+					"ja": "サハスラーラ",
+					"tw": "生殖輪",
+					"en": "Sahasrara"
+				},
+				"descs": {
+					"ja": "全ての与ダメージが10%増加し、物理命中率が20%増加する。回復スキルによるHP回復量が20%増加し、MPの自然回復量が1増加する。",
+					"tw": "所有給予的傷害提升10%，物理命中率提升20%。回復技能的HP回復量提升20％，MP的自然回復量比平時提升1。",
+					"en": "+10% to all damage. +20% to Phys hit rate.+20% to HP Healing skill effectiveness. Increases natural MP recovery by 1."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "嗜虐の一撃",
+				"names": {
+					"ja": "嗜虐の一撃",
+					"tw": "嗜虐的一擊",
+					"en": "Sadistic Blow"
+				},
+				"descs": {
+					"ja": "クリティカル時に与えるダメージが15%増加する。敵の弱点をついたとき、ダメージが10%増加する。",
+					"tw": "會心攻擊時給予的傷害提升15%。命中敵人弱點時，傷害會提升10%。",
+					"en": "+15% to critical hit damage. +10% damage when attacking the enemy's weak point."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "全ての悪",
+				"names": {
+					"ja": "全ての悪",
+					"tw": "所有之惡",
+					"en": "Everything Evil"
+				},
+				"descs": {
+					"ja": "自ターン開始時、次の連動効果が発動。「味方全体のMPを2回復する。」この連動効果の発動は、バトル中2回まで。",
+					"tw": "進入我方回合時，會發動以下連鎖效果。「我方全體的MP回復2。」此連鎖效果在戰鬥中僅會發動2次。",
+					"en": "Activates the following Chain Effect at the beginning of own turn:All party members recover 2 MP.This Chain Effect will only activate up to 2 times per battle."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "陽光の衰退",
+				"names": {
+					"ja": "陽光の衰退",
+					"tw": "陽光之衰退",
+					"en": "Solar Downfall"
+				},
+				"descs": {
+					"ja": "先攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、敵全体の防御力・回避と命中をそれぞれ20%ずつ減少させる。」",
+					"tw": "以先攻開始戰鬥時，會發動以下連鎖效果。「1回合內使敵方全體的防禦力、迴避/命中各減少20%。」",
+					"en": "Activates the following Chain Effect when attacking first:Reduces all enemy DEF and EV/AC by 20%. (1 turn)"
 				},
 				"mp": null,
 				"point": null,
