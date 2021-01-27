@@ -2901,11 +2901,15 @@ export default [
 				"skill5": ["","物理ハイブースタ","不屈の闘志・改","ゴッドハンド","緊縛無効"],
 				"elements": ["rs","nu","wk","","","","rp"],
 				"type": "attack",
-				"fusion": false,
+				"fusion": true,
 				"fusionAsMaterial": true,
-				"formula": [],
+				"formula": [
+					"サマエル",
+					"ロキ",
+					"オセ"
+				],
 				"fusionMag": 0,
-				"source": "summon"
+				"source": "multi_fusion"
 			},
 			{
 				"id": "259",
@@ -3486,7 +3490,7 @@ export default [
 				"icon": "yoma_ririsu.jpg",
 				"skills": ["マハジオダイン","エナジードレイン","肉体の解放"],
 				"skill4": ["狂い咲き","精神漏出","サマリカーム","三段の強運","破魔無効"],
-				"skill5": ["","毒床渡り","タルンダ","煉獄","衝撃耐性"],
+				"skill5": ["","魅了追撃","マハデゾレトオン","三段の猛速","衝撃耐性"],
 				"elements": ["","rs","rs","rp","wk","wk","nu"],
 				"type": "support",
 				"fusion": true,
