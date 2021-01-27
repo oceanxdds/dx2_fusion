@@ -2901,11 +2901,15 @@ export default [
 				"skill5": ["","物理ハイブースタ","不屈の闘志・改","ゴッドハンド","緊縛無効"],
 				"elements": ["rs","nu","wk","","","","rp"],
 				"type": "attack",
-				"fusion": false,
+				"fusion": true,
 				"fusionAsMaterial": true,
-				"formula": [],
+				"formula": [
+					"サマエル",
+					"ロキ",
+					"オセ"
+				],
 				"fusionMag": 0,
-				"source": "summon"
+				"source": "multi_fusion"
 			},
 			{
 				"id": "259",

@@ -20,18 +20,18 @@
     "laravel-mix-polyfill": "^1.1.1",
     "node-fetch": ">=2.6.1",
     "resolve-url-loader": "^2.3.2",
-    "sass": "^1.30.0",
+    "sass": "^1.32.5",
     "sass-loader": "^7.3.1",
     "serialize-javascript": "^5.0.1",
     "vue-template-compiler": "^2.6.12",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "bootstrap": "^4.5.3",
-    "bootstrap-vue": "^2.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "url-search-params-polyfill": "^8.1.0",
     "vue": "^2.6.12",
-    "vue-i18n": "^8.22.2",
-    "vuex": "^3.6.0"
+    "vue-i18n": "^8.22.4",
+    "vuex": "^3.6.2"
   }
 }
