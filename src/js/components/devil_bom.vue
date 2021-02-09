@@ -8,7 +8,7 @@
                 :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                 :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
-                    <div class="font-weight-bold">{{ devil.showName() }}</div>
+                    <div class="font-weight-bold text_shadow">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
             </div>
         </div>
@@ -20,7 +20,7 @@
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
                     :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}">
-                    <div class="font-weight-bold">{{ devil.showName() }}</div>
+                    <div class="font-weight-bold text_shadow">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
             </div>
