@@ -547,7 +547,7 @@ export default [
 			"en": "Deity"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["女神","大天使"],["靈鳥","女神"],["破壞神","女神"],["邪鬼","破壞神"],["地母神","大天使"],["魔獸","大天使"],["墮天使","魔獸"],["妖鬼","鬼神"],["夜魔","墮天使"],["邪神","神獸"],["邪神","魔獸"],["地靈","大天使"]],
 		"devils": [
 			{
@@ -901,7 +901,7 @@ export default [
 	{
 		"name": "聖獸",
 		"names": {
-			"ja": "聖獸",
+			"ja": "聖獣",
 			"tw": "聖獸",
 			"en": "Holy"
 		},
@@ -1234,7 +1234,7 @@ export default [
 	{
 		"name": "破壞神",
 		"names": {
-			"ja": "破壞神",
+			"ja": "破壊神",
 			"tw": "破壞神",
 			"en": "Fury"
 		},
@@ -2049,6 +2049,28 @@ export default [
 		"formulas": [["幻魔","聖獸"],["鬼神","幻魔"],["墮天使","幻魔"],["邪神","靈鳥"],["邪神","聖獸"],["妖獸","幻魔"],["外道","夜魔"],["外道","破壞神"],["魔王","幻魔"],["地靈","靈鳥"],["地靈","魔獸"],["夜魔","邪鬼"]],
 		"devils": [
 			{
+				"id": "281",
+				"name": "マスターテリオン",
+				"names": {
+					"ja": "マスターテリオン",
+					"tw": "啟示錄之獸",
+					"en": "Master Therion"
+				},
+				"rarity": 5,
+				"grade": 82,
+				"icon": "youma_masutaterion.jpg",
+				"skills": ["魔封無効","獣の烙印","ブラスフェミー"],
+				"skill4": ["","マハブフダイン","マハシバブー","狂乱の権化","火炎吸収"],
+				"skill5": ["","四源相生","狂い咲き","マハラギダイン","破魔無効"],
+				"elements": ["","nu","dr","","","wk","rs"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "67",
 				"name": "ガネーシャ",
 				"names": {
@@ -2351,7 +2373,7 @@ export default [
 	{
 		"name": "魔獸",
 		"names": {
-			"ja": "魔獸",
+			"ja": "魔獣",
 			"tw": "魔獸",
 			"en": "Beast"
 		},
@@ -3662,7 +3684,7 @@ export default [
 			"tw": "邪神",
 			"en": "Vile"
 		},
-		"highlight": true,
+		"highlight": false,
 		"fusion": true,
 		"formulas": [
 			["天使","破壞神"],["妖獸","魔獸"],["魔王","魔獸"],["邪鬼","神獸"],["邪龍","女神"],["邪龍","龍王"],["兇鳥","夜魔"]],
@@ -3848,7 +3870,7 @@ export default [
 	{
 		"name": "妖獸",
 		"names": {
-			"ja": "妖獸",
+			"ja": "妖獣",
 			"tw": "妖獸",
 			"en": "Wilder"
 		},
@@ -4186,7 +4208,7 @@ export default [
 			"en": "Tyrant"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [["幻魔","魔神"],["破壞神","大天使"],["破壞神","魔神"],["龍神","聖獸"],["鬼神","地母神"],["邪鬼","幻魔"],["龍王","破壞神"],["墮天使","破壞神"],["邪神","破壞神"],["地靈","龍神"],["邪龍","破壞神"],["邪龍","邪鬼"],["兇鳥","女神"],["兇鳥","魔神"],["兇鳥","破壞神"],["兇鳥","鬼神"]],
 		"devils": [
 			{
@@ -4796,6 +4818,28 @@ export default [
 			},
 			{
 				"id": "",
+				"name": "狂戦士ガッツ",
+				"names": {
+					"ja": "狂戦士ガッツ",
+					"tw": "狂戰士凱茲",
+					"en": "Berserker Guts"
+				},
+				"rarity": 5,
+				"grade": 90,
+				"icon": "majin_kyousensi_gatu.jpg",
+				"skills": ["千発千中","狂戦士の甲冑","ベルセルク"],
+				"skill4": ["","暴飲暴食","討滅の咆哮","致命の一撃","物理反射"],
+				"skill5": ["","デスカウンター","龍の反応","ギガントマキア","破壊の権化"],
+				"elements": ["nu","","","","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
 				"name": "髑髏の騎士",
 				"names": {
 					"ja": "髑髏の騎士",
@@ -4809,6 +4853,28 @@ export default [
 				"skill4": ["","冥界破","討滅の咆哮","大暗殺者","物理反射"],
 				"skill5": ["","ゴッドハンド","奈落のマスク","不屈の闘志","破魔無効"],
 				"elements": ["nu","","","","","rs","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
+				"name": "ゾッド",
+				"names": {
+					"ja": "ゾッド",
+					"tw": "索特",
+					"en": "Zodd"
+				},
+				"rarity": 5,
+				"grade": 90,
+				"icon": "majin_zodo.jpg",
+				"skills": ["破壊の権化","不死者","引きちぎり"],
+				"skill4": ["勝利のチャクラ","メガトンレイド","チャージ","即死無効","物理吸収"],
+				"skill5": ["","物理ハイブースタ","強靭の権化","超自然治癒","ミナゴロシの愉悦"],
+				"elements": ["nu","","","","","","nu"],
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": false,
@@ -5108,6 +5174,28 @@ export default [
 				"skill4": ["不屈の闘志","ギガントマキア","チャージ","物理ハイブースタ","物理吸収"],
 				"skill5": ["","ゴッドハンド","スクカオート","ミナゴロシの愉悦","氷結耐性"],
 				"elements": ["rs","","","","","nu","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
+				"name": "グリフィス",
+				"names": {
+					"ja": "グリフィス",
+					"tw": "古力菲斯",
+					"en": "Griffith"
+				},
+				"rarity": 5,
+				"grade": 95,
+				"icon": "eiyuu_gurihuisu.jpg",
+				"skills": ["寸分の見切り","光の鷹","絶対者の剣"],
+				"skill4": ["","空間殺法","疾風の咆哮","信義なる反撃","物理反射"],
+				"skill5": ["","致命の一撃","大暗殺者","鋭気の権化","魔封無効"],
+				"elements": ["nu","","","","","dr","nu"],
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": false,
@@ -5523,7 +5611,7 @@ export default [
 	{
 		"name": "靈鳥",
 		"names": {
-			"ja": "靈鳥",
+			"ja": "霊鳥",
 			"tw": "靈鳥",
 			"en": "Avian"
 		},
@@ -5756,7 +5844,7 @@ export default [
 	{
 		"name": "威靈",
 		"names": {
-			"ja": "威靈",
+			"ja": "威霊",
 			"tw": "威靈",
 			"en": "Entity"
 		},
@@ -6770,7 +6858,7 @@ export default [
 	{
 		"name": "地靈",
 		"names": {
-			"ja": "地靈",
+			"ja": "地霊",
 			"tw": "地靈",
 			"en": "Jirae"
 		},
@@ -7386,6 +7474,63 @@ export default [
 				"skill4": ["物理ブースタ","捨て身の一撃","勇奮の鼓舞","寸分の見切り","物理無効"],
 				"skill5": ["","火炎ブースタ","スピードスター","自然治癒","二段の恵体"],
 				"elements": ["rs","","","","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			}
+		]
+	},
+	{
+		"name": "熾天使",
+		"names": {
+			"ja": "熾天使",
+			"tw": "熾天使",
+			"en": "Seraph"
+		},
+		"fusion": false,
+		"highlight": false,
+		"formulas": [],
+		"devils": [
+			{
+				"id": "280",
+				"name": "フラロウス・ハレル",
+				"names": {
+					"ja": "フラロウス・ハレル",
+					"tw": "佛勞洛斯哈雷路",
+					"en": "Flauros Hallel"
+				},
+				"rarity": 5,
+				"grade": 91,
+				"icon": "sitensi_hurarousu_hareru.jpg",
+				"skills": ["不屈の闘志・改","賛美の光輪","バプテスマ"],
+				"skill4": ["","マハンマダイン","コンセントレイト","魅了無効","電撃反射"],
+				"skill5": ["","破魔ハイブースタ","ラクカオート","緊縛無効","三分の活泉"],
+				"elements": ["","","nu","nu","","rp","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "279",
+				"name": "オセ・ハレル",
+				"names": {
+					"ja": "オセ・ハレル",
+					"tw": "歐賽哈雷路",
+					"en": "Ose Hallel"
+				},
+				"rarity": 5,
+				"grade": 90,
+				"icon": "sitensi_ose_hareru.jpg",
+				"skills": ["不屈の闘志・改","賛美の剣","ヘブンリーソード"],
+				"skill4": ["","冥界破","リカームドラ","物理ハイブースタ","物理反射"],
+				"skill5": ["","致命の一撃","スクンダオート","千発千中","デスカウンター"],
+				"elements": ["","","","","","rp","nu"],
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": false,

@@ -7,13 +7,13 @@
  */
 
 /*!
- * Vue.js v2.6.12
- * (c) 2014-2020 Evan You
+ * Vue.js v2.6.13
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 
 /*!
- * vue-i18n v8.22.4 
+ * vue-i18n v8.24.4 
  * (c) 2021 kazuya kawaguchi
  * Released under the MIT License.
  */

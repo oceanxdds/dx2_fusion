@@ -918,6 +918,54 @@ export default [
 				"mp": 7,
 				"point": null,
 				"element": "物理"
+			},
+			{
+				"name": "ヘブンリーソード",
+				"names": {
+					"ja": "ヘブンリーソード",
+					"tw": "天國之劍",
+					"en": "Heavenly Sword"
+				},
+				"descs": {
+					"ja": "敵単体に物理属性の打撃型ダメージを威力120で与える。このスキルによるダメージは死亡時にふみとどまるスキルを無視する。攻撃成功時、自身を会心状態とチャージ状態にし、「賛美の剣」の強化段階が1増加する。",
+					"tw": "對敵方單體進行物理屬性的打擊型攻擊，以120威力給予傷害。敵人若因此技能死亡，死亡時不會發動強忍類技能。攻擊若成功，使自身附著會心及蓄力狀態，且「讚美之劍」的強化層級提升1。",
+					"en": "Inflicts Phys (Physical) damage (Power: 120) on a single enemy. *Damage from this skill ignores all death prevention skills. *Enters a state of Might and Charge, and gains 1 Boost level for Sword of Hallel if the attack is successful."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "物理"
+			},
+			{
+				"name": "ベルセルク",
+				"names": {
+					"ja": "ベルセルク",
+					"tw": "烙印勇士",
+					"en": "Berserk"
+				},
+				"descs": {
+					"ja": "敵単体にクリティカル率30％の物理属性の打撃型ダメージを威力140で与える。攻撃成功時、次の連動効果が発動「敵単体にクリティカル率50％の物理属性の打撃型ダメージを威力160で与える。」連動効果も含む、このスキルによるダメージは反撃効果・死亡時に踏みとどまるスキルを無視する。",
+					"tw": "對敵方單體進行會心率30%，物理屬性的打擊型攻擊，以140威力給予傷害。攻擊若成功，會發動以下連鎖效果。「對敵方單體進行會心率50％，物理屬性的打擊型攻擊，以160威力給予傷害。」包含連鎖效果，此技能造成的傷害無視反擊效果的發動，若因此技能死亡，死亡時不會發動強忍類技能。",
+					"en": "Inflicts Phys (Physical) damage (Power: 140) with 30% crit rate on a single enemy. Activates the following Chain Effect when the attack is successful: Inflicts Phys (Physical) damage (Power: 160) with 50% crit rate on a single enemy. Damage inflicted by this skill (Chain Effect included) will ignore Counter effects and all death prevention skills."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "物理"
+			},
+			{
+				"name": "引きちぎり",
+				"names": {
+					"ja": "引きちぎり",
+					"tw": "撕扯之力",
+					"en": "Rip"
+				},
+				"descs": {
+					"ja": "敵全体にクリティカル率30％の貫通を得た物理属性の打撃型ダメージを威力110で与え、そのダメージの50％分、自身を回復する。",
+					"tw": "對敵方全體進行會心率30%，物理屬性附加貫通的打擊型攻擊，以110威力給予傷害，利用其中50％的傷害為自身回復。",
+					"en": "Inflicts Phys (Physical) Pierce effect damage (Power: 110) with 30% crit rate on all enemies, while healing caster 50% of damage dealt."
+				},
+				"mp": 7,
+				"point": null,
+				"element": "物理"
 			}
 		]
 	},
@@ -1246,6 +1294,22 @@ export default [
 					"en": "Inflicts Fire (Physical) Pierce effect damage (Power: 80) with 30% crit rate on all enemies.*The damage inflicted by this skill is dependent on Phys ATK.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Counter effects will not work on this skill."
 				},
 				"mp": 5,
+				"point": null,
+				"element": "火炎"
+			},
+			{
+				"name": "ブラスフェミー",
+				"names": {
+					"ja": "ブラスフェミー",
+					"tw": "褻瀆之言",
+					"en": "Blasphemy"
+				},
+				"descs": {
+					"ja": "敵単体に火炎属性または氷結属性の魔法型ダメージを威力160で与え、攻撃成功時、敵全体を基礎確率40%で毒状態・魅了状態にする。属性は状況によって自動で選択される。このスキルによるダメージは属性貫通を得る。",
+					"tw": "對敵方單體進行火炎屬性或冰凍屬性的魔法型攻擊，以160威力給予傷害，攻擊若成功，以40%的基礎機率對敵方全體附加中毒/魅惑狀態。會依狀況自動選擇屬性。此技能造成的傷害附加屬性貫通。",
+					"en": "Inflicts Fire (Magic) or Ice (Magic) damage on a single enemy (Power: 160) with 40% chance to inflict Charm/Poison on all enemies if the attack is successful. The attribute will be selected automatically based on the situation. This skill will have attribute piercing effect."
+				},
+				"mp": 6,
 				"point": null,
 				"element": "火炎"
 			}
@@ -2168,6 +2232,22 @@ export default [
 				"mp": 6,
 				"point": null,
 				"element": "破魔"
+			},
+			{
+				"name": "バプテスマ",
+				"names": {
+					"ja": "バプテスマ",
+					"tw": "洗禮",
+					"en": "Baptisma"
+				},
+				"descs": {
+					"ja": "敵単体に破魔属性の魔法型ダメージを威力160で与える。このスキルによるダメージは死亡時にふみとどまるスキルを無視する。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。攻撃成功時、「賛美の光輪」の強化段階が1増加する。",
+					"tw": "對敵方單體進行破魔屬性的魔法型攻擊，以160威力給予傷害。敵人若因此技能死亡，死亡時不會發動強忍類技能。因此技能死亡的敵人無法復活。攻擊若成功，使「讚美之光環」的強化層級提升1。",
+					"en": "Inflicts Light (Magic) damage (Power: 160) on a single enemy. *Damage from this skill ignores all death prevention skills. *Enemies downed by this skill will not be able to revive. *Gains 1 Boost level for Halo of Hallel if the attack is successful."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "破魔"
 			}
 		]
 	},
@@ -2954,6 +3034,22 @@ export default [
 					"en": "Inflicts Almighty (Magic) damage (Power: 180) on a single enemy."
 				},
 				"mp": 8,
+				"point": null,
+				"element": "万能"
+			},
+			{
+				"name": "絶対者の剣",
+				"names": {
+					"ja": "絶対者の剣",
+					"tw": "絕對者之劍",
+					"en": "Blade of the Absolute"
+				},
+				"descs": {
+					"ja": "敵単体に5回、命中率の高いクリティカル率50％の万能属性の打撃型ダメージを威力35で与える。このスキルによるダメージは物理攻撃力に依存する。このスキルはクリティカル・ミスが発生する場合がある。このスキルは反撃効果の発動を無視する。",
+					"tw": "對敵方單體進行5次命中率高會心率50％的萬能屬性打擊型攻擊，以35威力給予傷害。此技能造成的傷害取決於物理攻擊力。此技能可能會發生會心或落空。此技能將無視反擊效果的發動。",
+					"en": "Inflicts Almighty (Physical) damage (Power: 35) 5 times with high accuracy and 50% crit rate on a single enemy. *The damage inflicted by this skill is dependent on Phys ATK. *This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates. Counter effects will not work on this skill."
+				},
+				"mp": 6,
 				"point": null,
 				"element": "万能"
 			}
@@ -9256,6 +9352,102 @@ export default [
 					"ja": "先攻でバトルを開始したとき、次の連動効果が発動。「1ターンの間、敵全体の防御力・回避と命中をそれぞれ20%ずつ減少させる。」",
 					"tw": "以先攻開始戰鬥時，會發動以下連鎖效果。「1回合內使敵方全體的防禦力、迴避/命中各減少20%。」",
 					"en": "Activates the following Chain Effect when attacking first:Reduces all enemy DEF and EV/AC by 20%. (1 turn)"
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "賛美の光輪",
+				"names": {
+					"ja": "賛美の光輪",
+					"tw": "讚美之光環",
+					"en": "Halo of Hallel"
+				},
+				"descs": {
+					"ja": "破魔貫通を得る。自ターン開始時、連動効果「自身をリディア状態にする」が発動し、強化段階が1増加。強化段階 1：呪い無効を得る 強化段階 2：リディアの対象が味方全体に変化 強化段階 3：自ターン開始時に連動効果「1ターンの間、味方全体の攻撃力・防御力・回避と命中を20%ずつ増加」が追加 ※連動効果は、自ターン開始直前の強化段階に依存。",
+					"tw": "附著破魔貫通。自身回合開始時，會發動連鎖效果「自身附著利迪亞狀態」，且強化層級提升1。強化層級 1：詛咒狀態無效。強化層級 2：利迪亞的對象變為我方全體 強化層級 3：自身回合開始時，會追加以下連鎖效果。「1回合內，我方全體的攻擊力、防禦力、迴避/命中各提升20%。」※連鎖效果取決於自身回合開始前的強化階段。",
+					"en": "Adds Light Pierce. Activates the Chain Effect 'Enters a state of Lydia.' at the beginning of own turn and gains 1 Boost level. Boost Level 1: Adds Null Curse. Boost Level 2: Lydia will target all party members. Boost Level 3: Activates the Chain Effect 'Increases ATK, DEF and EV/AC of all party members by 20%. (1 turn)' at the beginning of own turn. *Chain Effect activation is dependent on Boost level before start of own turn."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "賛美の剣",
+				"names": {
+					"ja": "賛美の剣",
+					"tw": "讚美之劍",
+					"en": "Sword of Hallel"
+				},
+				"descs": {
+					"ja": "物理貫通を得る。自ターン開始時、連動効果「自身を会心状態にする」が発動し、強化段階が1増加。 強化段階 1：物理命中率20%増加が追加 強化段階 2：物理与ダメージ20%増加が追加 強化段階 3：自ターン開始時に連動効果「1ターンの間、敵全体の攻撃力・防御力・回避と命中を20%ずつ減少」が追加 ※連動効果は、自ターン開始直前の強化段階に依存。",
+					"tw": "附著物理貫通。自身回合開始時，會發動連鎖效果「自身附著會心狀態」，且強化層級提升1。 強化層級 1：追加物理命中率提升20％ 強化層級 2：追加物理給予的傷害提升20％ 強化層級 3：追加當自己的回合開始時，發動以下連鎖效果。「1回合內使敵方全體的攻擊力、防禦力及迴避/命中各減少20%」 ※連鎖效果取決於自身回合開始前的強化階段。",
+					"en": "Adds Phys Pierce.Activates the Chain Effect 'Enters a state of Might.' at the beginning of own turn and gains 1 Boost level.Boost Level 1: +20% to Phys hit rate.Boost Level 2: +20% to Phys damage.Boost Level 3: Activates the Chain Effect 'Reduces ATK, DEF and EV/AC of all enemies by 20%. (1 turn)' at the beginning of own turn.*Chain Effect activation is dependent on Boost level before start of own turn."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "獣の烙印",
+				"names": {
+					"ja": "獣の烙印",
+					"tw": "野獸烙印",
+					"en": "Mark of the Beast"
+				},
+				"descs": {
+					"ja": "自ターン終了時、次の連動効果が発動。「全ての毒状態の敵を基礎確率66%で魔封状態にする。」「全ての魅了状態の敵に666の固定ダメージを与える。このスキルによるダメージは死亡時にふみとどまるスキルを無視する。」",
+					"tw": "自己的回合結束後，發動以下連鎖效果。「對所有中毒狀態的敵人以66%的基礎機率附加魔封狀態。」「對所有魅惑狀態的敵人造成666的固定傷害。若敵人因此技能造成的傷害死亡，死亡時不會發動強忍類技能。」",
+					"en": "Activates the following Chain Effect at the end of own turn: 66% chance to Mute all Poisoned enemies. Inflicts 666 fixed damage on all Charmed enemies. *Damage from this skill ignores all death prevention skills."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "狂戦士の甲冑",
+				"names": {
+					"ja": "狂戦士の甲冑",
+					"tw": "狂戰士的甲冑",
+					"en": "Berserker Armor"
+				},
+				"descs": {
+					"ja": "物理貫通を得る。クリティカル率が50％増加する。自身が受けるダメージが40％減少する。敵ターン終了時、次の連動効果が発動「自身に最大HPの40％の割合ダメージを与える。このスキルによるダメージは死亡時に踏みとどまるスキルを無視し、このダメージで死亡した場合、復活が出来なくなる。」",
+					"tw": "附著物理貫通。會心率增加50%。使自身受到的傷害減少40％。敵方回合結束時，會發動以下連鎖效果「對自身造成HP上限的40%比例傷害。若因此技能死亡，會無法復活，且死亡時不會發動強忍類技能。」",
+					"en": "Adds Phys Pierce. Increases crit rate by 50%. Reduces damage received by 40%. Activates the following Chain Effect at the end of an enemy turn: Inflicts 40% fractional damage on self based on own max HP. Damage inflicted by this effect will ignore all death prevention skills. This character will not be able to revive when downed by this effect."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "光の鷹",
+				"names": {
+					"ja": "光の鷹",
+					"tw": "光之鷹",
+					"en": "Hawk of Light"
+				},
+				"descs": {
+					"ja": "物理貫通を得る。物理回避率が15％増加する。自身が敵を倒したとき、次の連動効果が発動「自身のMPを3回復し、1ターンの間、味方全体を1度だけ万能を含む打撃型ダメージを反射する状態にする。」",
+					"tw": "附著物理貫通。物理迴避率提升15%。自身擊敗敵人時，會發動以下連鎖效果「自身的MP回復3，1回合內為我方全體附加1次反射打擊型傷害(含萬能)的狀態。」",
+					"en": "Adds Phys Pierce. +15% Phys evasion rate. Activates the following Chain Effect when this character downs an enemy: Recovers 3 MP and casts Repel Physical (including Almighty) effect on all allies. (1 turn)"
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "不死者",
+				"names": {
+					"ja": "不死者",
+					"tw": "不死者",
+					"en": "Nosferatu"
+				},
+				"descs": {
+					"ja": "自身が死亡するとき、一度だけHPが300回復して踏みとどまる。 自ターン開始時、自身が与えるダメージが10％増加する。（最大50％まで） ※与えるダメージが増加する効果は、ウェーブをまたぐときにリセットされる。",
+					"tw": "自身死亡時，僅有一次機會可回復300HP存活。 當自己的回合開始時，自身給予的傷害提升10%。（最大50%） ※提升給予傷害的效果，在進入下一個Wave時會重置。",
+					"en": "Heals 300 HP upon receiving the first killing blow. Increases damage dealt by this character by 10% at the start of own turn. (Max: 50%) *Damage increase effect will reset when clearing a wave."
 				},
 				"mp": null,
 				"point": null,
