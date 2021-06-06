@@ -901,7 +901,7 @@ export default [
 	{
 		"name": "聖獸",
 		"names": {
-			"ja": "聖獸",
+			"ja": "聖獣",
 			"tw": "聖獸",
 			"en": "Holy"
 		},
@@ -1234,7 +1234,7 @@ export default [
 	{
 		"name": "破壞神",
 		"names": {
-			"ja": "破壞神",
+			"ja": "破壊神",
 			"tw": "破壞神",
 			"en": "Fury"
 		},
@@ -2351,7 +2351,7 @@ export default [
 	{
 		"name": "魔獸",
 		"names": {
-			"ja": "魔獸",
+			"ja": "魔獣",
 			"tw": "魔獸",
 			"en": "Beast"
 		},
@@ -3848,7 +3848,7 @@ export default [
 	{
 		"name": "妖獸",
 		"names": {
-			"ja": "妖獸",
+			"ja": "妖獣",
 			"tw": "妖獸",
 			"en": "Wilder"
 		},
@@ -5523,7 +5523,7 @@ export default [
 	{
 		"name": "靈鳥",
 		"names": {
-			"ja": "靈鳥",
+			"ja": "霊鳥",
 			"tw": "靈鳥",
 			"en": "Avian"
 		},
@@ -5756,7 +5756,7 @@ export default [
 	{
 		"name": "威靈",
 		"names": {
-			"ja": "威靈",
+			"ja": "威霊",
 			"tw": "威靈",
 			"en": "Entity"
 		},
@@ -6770,7 +6770,7 @@ export default [
 	{
 		"name": "地靈",
 		"names": {
-			"ja": "地靈",
+			"ja": "地霊",
 			"tw": "地靈",
 			"en": "Jirae"
 		},
