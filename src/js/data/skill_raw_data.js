@@ -966,6 +966,22 @@ export default [
 				"mp": 7,
 				"point": null,
 				"element": "物理"
+			},
+			{
+				"name": "ソウルブレイク",
+				"names": {
+					"ja": "ソウルブレイク",
+					"tw": "靈魂破壞",
+					"en": "Soul Break"
+				},
+				"descs": {
+					"ja": "敵単体にクリティカル率30％の貫通を得た物理属性の打撃型ダメージを威力145で与え、MPを3失わせる。",
+					"tw": "對敵方單體進行會心率30%，物理屬性附加貫通的打擊型攻擊，以145威力給予傷害，使對象失去3MP。",
+					"en": "Inflicts Phys (Physical) Pierce effect damage (Power: 145) with 30% crit rate on a single enemy and reduces MP by 3."
+				},
+				"mp": 5,
+				"point": null,
+				"element": "物理"
 			}
 		]
 	},
@@ -1998,6 +2014,22 @@ export default [
 				"mp": 6,
 				"point": null,
 				"element": "衝撃"
+			},
+			{
+				"name": "慈愛の旋風",
+				"names": {
+					"ja": "慈愛の旋風",
+					"tw": "慈愛旋風",
+					"en": "Blossoming Cyclone"
+				},
+				"descs": {
+					"ja": "敵単体に貫通を得た衝撃属性の魔法型ダメージを威力170で与え、攻撃成功時、味方全体を回復力70で回復する。",
+					"tw": "對單體敵人進行附加貫通的衝擊屬性魔法型攻擊，以170威力給予傷害，攻擊成功時，以70回復力回復我方全體。",
+					"en": "Inflicts Force (Magic) Pierce effect damage (Power: 170) on a single enemy, and Heals all party members (Power: 70) if the attack is successful."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "衝撃"
 			}
 		]
 	},
@@ -2510,6 +2542,22 @@ export default [
 					"ja": "敵単体に呪殺属性の打撃型ダメージを威力130で与え、攻撃成功時、敵全体を基礎確率50%で魅了状態にする。このスキルによるダメージは魔法攻撃力に依存し、死亡時にふみとどまるスキルを無視する。このスキルはクリティカル・ミスが発生する場合がある。このスキルで敵を死亡させた場合、その敵は復活が出来なくなる。",
 					"tw": "對敵方單體進行咒殺屬性的打擊型攻擊，以130威力給予傷害，攻擊若成功，以50%的基礎機率對敵方全體附加魅惑狀態。此技能造成的傷害取決於魔法攻擊力，敵人若因此技能死亡，死亡時不會發動強忍類技能。此技能可能會發生會心或落空。因此技能死亡的敵人無法復活。",
 					"en": "Inflicts Dark (Physical) damage (Power: 130) on a single enemy with 50% chance to inflict Charm on all enemies if the attack is successful.*The damage inflicted by this skill is dependent on Mag ATK.*Nullifies all death prevention skills.*This skill has a chance of having a Critical effect or a Miss which are dependent on their respective rates.*Enemies downed by this skill will not be able to revive."
+				},
+				"mp": 6,
+				"point": null,
+				"element": "呪殺"
+			},
+			{
+				"name": "死魂の狩猟",
+				"names": {
+					"ja": "死魂の狩猟",
+					"tw": "死魂的狩獵",
+					"en": "Soul Hunt"
+				},
+				"descs": {
+					"ja": "敵単体に貫通を得た呪殺属性の魔法型ダメージを威力170で与え、攻撃成功時、3ターンの間、敵全体の攻撃力・防御力をそれぞれ20%ずつ減少させる。このスキルによるダメージは死亡時にふみとどまるスキルを無視する。",
+					"tw": "對單體敵人進行附加貫通咒殺屬性的魔法型攻擊，以170威力給予傷害。攻擊若成功，3回合內，敵人全體的攻擊力、防禦力各減少２０%。若敵人因此技能造成的傷害死亡，死亡時不會發動強忍類技能。",
+					"en": "Inflicts Dark (Magic) Pierce effect damage (Power:170) on a single enemy and reduces ATK/DEF of all enemies by 20% if the attack is successful. (3 turns) *Damage from this skill ignores all death prevention skills."
 				},
 				"mp": 6,
 				"point": null,
@@ -3029,9 +3077,9 @@ export default [
 					"en": "Ars Magna"
 				},
 				"descs": {
-					"ja": "敵単体に万能属性の魔法型ダメージを威力180で与える。",
-					"tw": "對單體敵人以威力180給予萬能屬性的魔法型傷害。",
-					"en": "Inflicts Almighty (Magic) damage (Power: 180) on a single enemy."
+					"ja": "敵単体に万能属性の魔法型ダメージを威力200で与える。",
+					"tw": "對單體敵人以威力200給予萬能屬性的魔法型傷害。",
+					"en": "Inflicts Almighty (Magic) damage (Power: 200) on a single enemy."
 				},
 				"mp": 8,
 				"point": null,
@@ -6968,6 +7016,22 @@ export default [
 				"mp": null,
 				"point": null,
 				"element": "無"
+			},
+			{
+				"name": "強壮の権化",
+				"names": {
+					"ja": "強壮の権化",
+					"tw": "強壯的化身",
+					"en": "Epitome of Hardiness"
+				},
+				"descs": {
+					"ja": "最大HPが20％増加し、回復スキルのHP回復量が20％増加する。",
+					"tw": "HP最大值提升20%，回復技能的HP回復量提升20%。",
+					"en": "+20% to max HP. +20% to HP Healing skill effectiveness."
+				},
+				"mp": null,
+				"point": null,
+				"element": "無"
 			}
 		]
 	},
@@ -9448,6 +9512,166 @@ export default [
 					"ja": "自身が死亡するとき、一度だけHPが300回復して踏みとどまる。 自ターン開始時、自身が与えるダメージが10％増加する。（最大50％まで） ※与えるダメージが増加する効果は、ウェーブをまたぐときにリセットされる。",
 					"tw": "自身死亡時，僅有一次機會可回復300HP存活。 當自己的回合開始時，自身給予的傷害提升10%。（最大50%） ※提升給予傷害的效果，在進入下一個Wave時會重置。",
 					"en": "Heals 300 HP upon receiving the first killing blow. Increases damage dealt by this character by 10% at the start of own turn. (Max: 50%) *Damage increase effect will reset when clearing a wave."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "死魂の裁定",
+				"names": {
+					"ja": "死魂の裁定",
+					"tw": "死魂的裁定",
+					"en": "Soul Judgement"
+				},
+				"descs": {
+					"ja": "自身を含む味方が敵を倒したとき、次の連動効果が発動。「敵全体にクリティカル率30％の貫通を得た物理属性の打撃型ダメージを威力60で与える。」",
+					"tw": "當我方成員（包含自己）擊敗敵人時，會發動以下連鎖效果「對敵方全體進行會心率30%，物理屬性附加貫通的打擊型攻擊，以60威力給予傷害。」",
+					"en": "Activates the following Chain Effect when a member of your party (including self) downs an enemy: Inflicts Phys (Physical) Pierce effect damage (Power: 60) with 30% crit rate on all enemies."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "孔雀明王",
+				"names": {
+					"ja": "孔雀明王",
+					"tw": "孔雀明王",
+					"en": "Kujaku Myo-o"
+				},
+				"descs": {
+					"ja": "全ての状態異常にかからなくなる。自ターン開始時、次の連動効果が発動する。「味方全体の状態異常を全て回復する。」",
+					"tw": "所有的異常狀態無效。自身回合開始時，發動以下連鎖效果。「解除我方全體的異常狀態。」",
+					"en": "Becomes immune to all status ailments.Activates the following Chain Effect at the beginning of own turn:Cures all status ailments of all party members."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "死生の扉",
+				"names": {
+					"ja": "死生の扉",
+					"tw": "死生之門",
+					"en": "Life & Death"
+				},
+				"descs": {
+					"ja": "敵が死亡したとき、次の連動効果が発動。「自身のMPを1回復し、死亡しているランダムな味方単体をHP50%で復活させる。」",
+					"tw": "敵人死亡後，發動以下的連鎖效果。「自身回復１MP，隨機讓1名我方已死亡的隊友復活並回復50%HP。」",
+					"en": "Activates the following Chain Effect when an enemy is downed: Recovers 1 MP and revives an ally at random with 50% HP."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "邪神殿の威光",
+				"names": {
+					"ja": "邪神殿の威光",
+					"tw": "邪神殿的威光",
+					"en": "Vile Glare"
+				},
+				"descs": {
+					"ja": "後攻でバトルを開始したとき、味方パーティに種族「邪神」「邪鬼」「邪龍」の悪魔が2体以上生存していた場合、次の連動効果が発動。「3ターンの間、敵全体の攻撃力を20％減少。敵のプレスターンアイコンを1つ減少。」3体以上生存時、追加で次の効果が発動。「3ターンの間、敵全体の防御力を20％減少。敵のプレスターンアイコンを1つ減少。」※プレスターンアイコンを減少させる効果は合計2つまでしか発動しない。",
+					"tw": "以後攻開始進行戰鬥時，我方隊伍內若有2隻以上的「邪神」「邪鬼」「邪龍」種族存活，會發動以下連鎖效果。「3回合內，敵方全體的攻擊力減少20%，減少敵方1個行動回合格。」3隻以上存活時，追加發動以下的效果。「3回合內，敵方全體的防禦力減少20%，減少敵方1個行動回合格。」※減少行動回合格的效果最多共只能發動2次。",
+					"en": "When there are 2 or more Vile/Jaki/Drake demons alive in your party, activates the following Chain Effect at the beginning of a battle if the enemy attacks first: Reduces ATK of all enemies by 20%. (3 turns) Reduces 1 enemy Press Turn Icon. When there are 3 or more alive in your party, activates the following additional effect: Reduces DEF of all enemies by 20%. (3 turns) Reduces 1 enemy Press Turn Icon. * Only up to 2 Press Turn Icons can be reduced by skills or effects."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "貧者の号哭",
+				"names": {
+					"ja": "貧者の号哭",
+					"tw": "貧者的號哭",
+					"en": "Cry of the Poor"
+				},
+				"descs": {
+					"ja": "自ターン終了時、味方パーティに種族「邪神」「邪鬼」「邪龍」の悪魔が2体以上生存していた場合、次の連動効果が発動。 「敵全体に対象の最大HPの15％の割合ダメージ（最大300）」 3体以上生存時、追加で次の効果が発動。 「敵全体に対象の最大HPの15％の割合ダメージ（最大300）」",
+					"tw": "自身回合結束時，，我方隊伍內若有2隻以上的「邪神」「邪鬼」「邪龍」種族存活，會發動以下連鎖效果。「對敵方全體造成HP最大值的15%比例傷害（最大300傷害）」3隻以上存活時，追加發動以下的效果。「對敵方全體造成HP最大值的15%比例傷害（最大300傷害）」",
+					"en": "When there are 2 or more Vile/Jaki/Drake demons alive in your party, activates the following Chain Effect at the end of own turn: Inflicts 15% fractional damage (300 max) on all enemies based on their max HP. When there are 3 or more alive in your party, activates the following additional effect: Inflicts 15% fractional damage (300 max) on all enemies based on their max HP."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "快癒サバイバ",
+				"names": {
+					"ja": "快癒サバイバ",
+					"tw": "痊癒倖存者",
+					"en": "Rallying Survivor"
+				},
+				"descs": {
+					"ja": "状態異常の自然回復率が25％増加し、自身が死亡するとき、一度だけHP1で踏みとどまる。",
+					"tw": "異常狀態的自然回復率提升25%，自身死亡時，僅有一次機會以1HP存活。",
+					"en": "+25% to status ailment auto cure rate and HP stops at 1 HP upon receiving the first killing blow."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "生命の妖力",
+				"names": {
+					"ja": "生命の妖力",
+					"tw": "生命妖力",
+					"en": "Power of Life"
+				},
+				"descs": {
+					"ja": "状態異常になる確率が30%減少する。１ターン目開始時、次の連動効果が発動する。「自身をリディア状態にする。」",
+					"tw": "陷入異常狀態的機率減少30%。第1回合開始時，會發動以下連鎖效果。「自身附著利迪亞狀態。」",
+					"en": "-30% chance of receiving status ailments. Activates the following Chain Effect at the beginning of the 1st turn: Enters a state of Lydia."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "ハンノキの王",
+				"names": {
+					"ja": "ハンノキの王",
+					"tw": "榿木之王",
+					"en": "Alder King"
+				},
+				"descs": {
+					"ja": "自ターン開始時、次の連動効果が発動する。「味方全体のHPを15%回復する。」敵ターン開始時、次の連動効果が発動する。「１ターンの間、敵全体の攻撃力を20％減少させる。」",
+					"tw": "進入我方回合時，會發動以下連鎖效果。「我方全體回復15%HP。」敵方回合開始時，發動以下連鎖效果。「1回合內使敵方全體的攻擊力減少20%。」",
+					"en": "Activates the following Chain Effect at the beginning of own turn: Heals 15% HP of all party members. Activates the following Chain Effect at the start of enemy turn: Reduces ATK of all enemies by 20%. (1 turn)"
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "自我の侵食",
+				"names": {
+					"ja": "自我の侵食",
+					"tw": "侵蝕自我",
+					"en": "Ego Erosion"
+				},
+				"descs": {
+					"ja": "自身が生存中、敵の状態異常が回復する確率を10％減少させる。",
+					"tw": "自身存活的狀態下，敵方的異常狀態回復機率減少10%。",
+					"en": "While the one with this skill is alive, enemy's natural recovery rate of status ailments reduced by 10%."
+				},
+				"mp": null,
+				"point": null,
+				"element": "パシップ"
+			},
+			{
+				"name": "甘美な囁き",
+				"names": {
+					"ja": "甘美な囁き",
+					"tw": "甜美絮語",
+					"en": "Sweet Whisper"
+				},
+				"descs": {
+					"ja": "自身以外の味方が死亡したとき、次の連動効果が発動。「敵全体を基礎確率30％の確率で魅了状態にし、３ターンの間、敵全体の防御力を20％減少させる。」",
+					"tw": "當隊友死亡時，會發動以下連鎖效果。「以30%的基礎機率使敵方全體陷入魅惑狀態，3回合內使敵方全體的防禦力減少20%。」",
+					"en": "Activates the following Chain Effect when an ally is downed: 30% chance to Charm all enemies. Reduces DEF of all enemies by 20%. (3 turns)"
 				},
 				"mp": null,
 				"point": null,
