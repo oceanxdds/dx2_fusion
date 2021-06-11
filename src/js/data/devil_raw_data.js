@@ -7801,15 +7801,11 @@ export default [
 				"skill5": ["","破魔ハイブースタ","ラクカオート","緊縛無効","三分の活泉"],
 				"elements": ["","","nu","nu","","rp","nu"],
 				"type": "attack",
-				"fusion": true,
+				"fusion": false,
 				"fusionAsMaterial": false,
-				"formula": [
-					"ロキ",
-					"サマエル",
-					"オセ"
-				],
-				"fusionMag": 2500000,
-				"source": "multi_fusion"
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			},
 			{
 				"id": "279",
