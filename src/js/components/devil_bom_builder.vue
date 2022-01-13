@@ -1,7 +1,7 @@
 <template>
     <div v-if="bom">
-        <div class="row no-gutters justify-content-md-center pt-1">
-            <div class="col-auto col-md align-self-center pr-md-1">
+        <div class="row g-1 justify-content-md-center pt-1">
+            <div class="col-auto col-md align-self-center pe-md-1">
                 <hr v-if="bom.parent?!bom.parent.isFirstBom(bom):false">
             </div>
             <div class="col-auto item">
@@ -11,10 +11,10 @@
                     v-b-popover.hover.top="bom.devil.race.showName()+' '+bom.devil.showName()+'\n'+$t('message.fusion_mag_others')+': '+bom.showMag()+'\n'+$t('message.fusion_mag_pure')+': '+bom.showMagPure()">
                 </devil>
             </div>
-            <div class="col-auto col-md align-self-center pl-1">
-                <div class="row no-gutters">
-                    <div class="col-auto pr-1" v-if="isCurrent()">
-                        <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold">⚝</b-button>
+            <div class="col-auto col-md align-self-center ps-1">
+                <div class="row g-1">
+                    <div class="col-auto pe-1" v-if="isCurrent()">
+                        <b-button variant="info" size="sm" @click.stop="info()" class="fw-bold">⚝</b-button>
                     </div>
                     <div class="col-auto" v-if="isResettable()">
                         <b-button size="sm" @click="reset_bom()" class="">✕</b-button>
@@ -29,17 +29,17 @@
             </div>
             
         </div>
-        <div class="row no-gutters justify-content-md-center" v-if="!collapsed">
-            <div class="col-12 col-md-auto pl-3 pl-md-0 border-left-md-none" v-if="bom.child1">
+        <div class="row g-1 justify-content-md-center" v-if="!collapsed">
+            <div class="col-12 col-md-auto ps-3 ps-md-0 border-left-md-none" v-if="bom.child1">
                 <devil-bom-builder :bom="bom.child1" @listen="listen" :parent_bom="bom" :source="(source=='multi_fusion'||bom.devil.source=='multi_fusion')?'multi_fusion':''"></devil-bom-builder>
             </div>
-            <div class="col-12 col-md-auto pl-3 pl-md-0 border-left-md-none" v-if="bom.child2">
+            <div class="col-12 col-md-auto ps-3 ps-md-0 border-left-md-none" v-if="bom.child2">
                 <devil-bom-builder :bom="bom.child2" @listen="listen" :parent_bom="bom" :source="(source=='multi_fusion'||bom.devil.source=='multi_fusion')?'multi_fusion':''"></devil-bom-builder>
             </div>
-            <div class="col-12 col-md-auto pl-3 pl-md-0 border-left-md-none" v-if="bom.child3">
+            <div class="col-12 col-md-auto ps-3 ps-md-0 border-left-md-none" v-if="bom.child3">
                 <devil-bom-builder :bom="bom.child3" @listen="listen" :parent_bom="bom" :source="(source=='multi_fusion'||bom.devil.source=='multi_fusion')?'multi_fusion':''"></devil-bom-builder>
             </div>
-            <div class="col-12 col-md-auto pl-3 pl-md-0 border-left-md-none" v-if="bom.child4">
+            <div class="col-12 col-md-auto ps-3 ps-md-0 border-left-md-none" v-if="bom.child4">
                 <devil-bom-builder :bom="bom.child4" @listen="listen" :parent_bom="bom" :source="(source=='multi_fusion'||bom.devil.source=='multi_fusion')?'multi_fusion':''"></devil-bom-builder>
             </div>
         </div>

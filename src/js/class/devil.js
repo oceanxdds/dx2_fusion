@@ -1,4 +1,4 @@
-import DevilBom from './devil_bom'
+import DevilBom from './devil_bom.js'
 import i18n from '../utility/i18n'
 
 class Devil {

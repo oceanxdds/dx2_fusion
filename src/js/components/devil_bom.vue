@@ -2,17 +2,17 @@
     <b-card v-if="bom" no-body 
         :class="{'border-primary':bom.upgrade, 'border-danger':bom.downgrade,'border-dark':!(bom.upgrade||bom.downgrade)}"
         @click="click()">
-        <div class="row no-gutters">
+        <div class="row g-1">
             <div v-for="(devil,index) in [bom.child1.devil,bom.child2.devil]" :key="index"
                 class="col-6 p-2"
                 :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                 :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
-                    <div class="font-weight-bold text_shadow">{{ devil.showName() }}</div>
+                    <div class="fw-bold text_shadow">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
             </div>
         </div>
-        <div class="row no-gutters">
+        <div class="row g-1">
             <div class="col-6" v-for="(devil,index) in [bom.child3?bom.child3.devil:null,bom.child4?bom.child4.devil:null]" 
                 :key="index">
                 <div v-if="devil" 
@@ -20,16 +20,16 @@
                     :class="{'text-primary':bom.upgrade,'text-danger':bom.downgrade}"
                     style="background-position:right;background-repeat:no-repeat;background-size:contain"
                     :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:usage=='builder'?'pointer':''}">
-                    <div class="font-weight-bold text_shadow">{{ devil.showName() }}</div>
+                    <div class="fw-bold text_shadow">{{ devil.showName() }}</div>
                     <div class="small">{{ devil.showGrade() }} {{ devil.showRarity() }}</div>
                 </div>
             </div>
         </div>
         <b-card-footer class="p-1 text-right">
-            <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="font-weight-bold small py-0" v-if="bom.child1">⚝</b-button>
-            <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="font-weight-bold small py-0" v-if="bom.child2">⚝</b-button>
-            <b-button variant="info" size="sm" @click.stop="info(bom.child3.devil)" class="font-weight-bold small py-0" v-if="bom.child3">⚝</b-button>
-            <b-button variant="info" size="sm" @click.stop="info(bom.child4.devil)" class="font-weight-bold small py-0" v-if="bom.child4">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child1.devil)" class="fw-bold small py-0" v-if="bom.child1">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child2.devil)" class="fw-bold small py-0" v-if="bom.child2">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child3.devil)" class="fw-bold small py-0" v-if="bom.child3">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info(bom.child4.devil)" class="fw-bold small py-0" v-if="bom.child4">⚝</b-button>
             <span v-if="bom.mag_pure!=bom.mag">
                 <b-badge variant="success"> {{ $t('archetype.common') }} </b-badge> 
                 <span class="small"> {{ bom.showMagPure() }}  </span>

@@ -2,7 +2,7 @@
 
     <b-card no-body class="border-secondary">
         <b-card-body class="p-2">                
-            <div class="font-weight-bold">
+            <div class="fw-bold">
                 {{ skill.showName() }}
             </div>
             <div class="small">

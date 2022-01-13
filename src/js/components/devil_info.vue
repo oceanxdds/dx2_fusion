@@ -17,7 +17,7 @@
                             <tr class="text-center">
                                 <td width="14%" v-for="(ele,index) in info_devil.elements" :key="index">
                                     <div class="py-1">
-                                        <span class="font-weight-bold" :class="{'text-primary':(ele=='nu'||ele=='rp'||ele=='dr'),'text-danger':ele=='wk'}">{{ ele ? $t('element.'+ele) : 'ー' }}</span>
+                                        <span class="fw-bold" :class="{'text-primary':(ele=='nu'||ele=='rp'||ele=='dr'),'text-danger':ele=='wk'}">{{ ele ? $t('element.'+ele) : 'ー' }}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -29,10 +29,10 @@
                     <table class="table table-sm table-bordered my-0">
                         <tbody>
                             <tr>
-                                <td width="30%" class="text-center align-middle font-weight-bold">{{ $t('message.common_skills') }}</td>
+                                <td width="30%" class="text-center align-middle fw-bold">{{ $t('message.common_skills') }}</td>
                                 <td>
                                     <div v-for="(skill, index) in info_devil.skills" :key="index">
-                                        <span class="pl-4 small" :class="{'skill_only':index==0}" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
+                                        <span class="ps-4 small" :class="{'skill_only':index==0}" v-b-popover.hover.top="skill.showHint()">{{skill.showName()}}</span>
                                     </div>
                                 </td>
                             </tr>
@@ -41,8 +41,8 @@
                                     <h4><b-badge class="text-white" :style=" type.style ">{{ $t( type.slug ) }}</b-badge></h4>
                                 </td>
                                 <td>
-                                    <span class="pl-4 skill_lock small" v-b-popover.hover.top="info_devil.skill4[index].showHint()">{{ info_devil.skill4[index].showName() }}</span><br>
-                                    <span class="pl-4 skill_possible small" v-b-popover.hover.top="info_devil.skill5[index].showHint()">{{ info_devil.skill5[index].showName() }}</span>
+                                    <span class="ps-4 skill_lock small" v-b-popover.hover.top="info_devil.skill4[index].showHint()">{{ info_devil.skill4[index].showName() }}</span><br>
+                                    <span class="ps-4 skill_possible small" v-b-popover.hover.top="info_devil.skill5[index].showHint()">{{ info_devil.skill5[index].showName() }}</span>
                                 </td>
                             </tr>
                         </tbody>

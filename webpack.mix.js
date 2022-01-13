@@ -21,6 +21,6 @@ mix
     enabled: true,
     useBuiltIns: "usage",
     targets: {"ie": 11}
-  });
+  }).vue({version:2});
 
   //mix.bundleAnalyzer();

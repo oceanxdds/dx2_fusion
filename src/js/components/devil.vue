@@ -1,37 +1,19 @@
 <template>
     <b-card no-body class="border-secondary">
-        <!--
-        <b-card-body class="p-2" @click="click"
-            :style="{backgroundImage:'url(\'images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
-            style="background-position:right;background-repeat:no-repeat;background-size:contain">
-            <div class="font-weight-bold">
-                {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} {{ devil.showName() }}
-            </div>
-            <div class="small">
-                {{ devil.showGrade() }} {{ devil.showRarity() }}
-                <span class="ml-2" v-if="usage=='info'">AI: {{ $t('devil.'+devil.type) }}</span>
-                <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>
-                <span v-if="usage=='skill'">
-                    <b-badge class="ml-2" variant="success" v-if="isSkillAvailable(0)">{{ $t('message.possess') }}</b-badge>
-                    <b-badge class="ml-2" variant="warning" v-if="isSkillAvailable(1)">{{ $t('message.inherit') }}</b-badge>
-                </span>
-            </div>
-        </b-card-body>
-        -->
 
         <b-card-body class="p-0" @click="click">
             <div v-if="!(usage=='builder'&&source=='multi_fusion')" class="p-2" :style="{backgroundImage:'url(\'public/images/devil/'+devil.icon+'\')',cursor:(usage=='fission'||usage=='builder')?'pointer':''}" 
                 style="background-position:right;background-repeat:no-repeat;background-size:contain">
-                <div class="font-weight-bold text_shadow">
+                <div class="fw-bold text_shadow">
                     {{usage=='fusion'||usage=='fission'||usage=='info'||usage=='skill'?devil.race.showName():''}} {{ devil.showName() }}
                 </div>
                 <div class="small">
                     <span class="text_shadow">{{ devil.showGrade() }} {{ devil.showRarity() }}</span>
-                    <span class="ml-2" v-if="usage=='info'">AI: {{ $t('devil.'+devil.type) }}</span>
-                    <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="font-weight-bold small py-0">⚝</b-button>
+                    <span class="ms-2" v-if="usage=='info'">AI: {{ $t('devil.'+devil.type) }}</span>
+                    <b-button v-if="usage=='fusion'||usage=='skill'" variant="info" size="sm" @click.stop="info()" class="fw-bold small py-0">⚝</b-button>
                     <span v-if="usage=='skill'">
-                        <b-badge class="ml-2" variant="success" v-if="isSkillAvailable(0)">{{ $t('message.possess') }}</b-badge>
-                        <b-badge class="ml-2" variant="warning" v-if="isSkillAvailable(1)">{{ $t('message.inherit') }}</b-badge>
+                        <b-badge class="ms-2" variant="success" v-if="isSkillAvailable(0)">{{ $t('message.possess') }}</b-badge>
+                        <b-badge class="ms-2" variant="warning" v-if="isSkillAvailable(1)">{{ $t('message.inherit') }}</b-badge>
                     </span>
                 </div>
             </div>
@@ -48,7 +30,7 @@
 
         <b-card-footer class="p-1" v-if="usage=='fission'">
             <slot></slot>
-            <b-button variant="info" size="sm" @click.stop="info()" class="font-weight-bold small">⚝</b-button>
+            <b-button variant="info" size="sm" @click.stop="info()" class="fw-bold small">⚝</b-button>
         </b-card-footer>
 
     </b-card>

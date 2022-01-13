@@ -1,5 +1,5 @@
 <template>
-    <div class="row no-gutters">
+    <div class="row g-1">
         <div class="col-12 p-2" :class="{'col-md-6 col-lg-4 col-xl-3':usage!='fusion'}" v-for="(bom,index) in boms" :key="index">
             <devil-bom :bom="bom" :usage="usage" @listen="listen"></devil-bom>
         </div>

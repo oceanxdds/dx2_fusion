@@ -1,4 +1,6 @@
-//Bootstrap Custom
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import "node_modules/bootstrap-vue/dist/bootstrap-vue";
-@import './app.css';
+//Bootstrap Custom Scss
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-vue/dist/bootstrap-vue";
+
+//Custom CSS
+@import 'app.css';

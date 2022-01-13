@@ -292,6 +292,28 @@ export default [
 		"formulas": [["靈鳥","大天使"],["魔神","靈鳥"],["聖獸","大天使"],["聖獸","神獸"],["幻魔","靈鳥"],["地母神","魔神"],["地母神","幻魔"],["天使","大天使"],["墮天使","天使"],["鬼女","大天使"],["鬼女","神獸"],["鬼女","地母神"],["鬼女","妖精"],["幽鬼","邪鬼"],["兇鳥","靈鳥"]],
 		"devils": [
 			{
+				"id": "302",
+				"name": "マリア",
+				"names": {
+					"ja": "マリア",
+					"tw": "瑪麗亞",
+					"en": "Maria"
+				},
+				"rarity": 5,
+				"grade": 95,
+				"icon": "megami_maria.jpg",
+				"skills": ["メシアライザー","ステラ・マリス","ファティマの奇跡"],
+				"skill4": ["マハンマダイン","メギドラオン","女神の抱擁","回復ハイブースタ","破魔吸収"],
+				"skill5": ["","大いなるイデア","強壮の権化","回復サバイバ","強靭の権化"],
+				"elements": ["rs","","","","nu","nu","rs"],
+				"type": "heal",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "191",
 				"name": "イザナミ",
 				"names": {
@@ -1184,6 +1206,28 @@ export default [
 				"source": "event"
 			},
 			{
+				"id": "296",
+				"name": "バルドル",
+				"names": {
+					"ja": "バルドル",
+					"tw": "巴德爾",
+					"en": "Baldur"
+				},
+				"rarity": 4,
+				"grade": 70,
+				"icon": "genma_barudoru.jpg",
+				"skills": ["破魔ブースタ","ハマダイン","光の神"],
+				"skill4": ["三段の賢魔","マハンマダイン","勇奮の鼓舞","ダークゾーン無効","呪殺無効"],
+				"skill5": ["","裁きの雷火","陽光の衰退","無慈悲な一撃","不屈の闘志"],
+				"elements": ["rs","","","rs","","dr","wk"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "34",
 				"name": "ツクヨミ",
 				"names": {
@@ -1773,6 +1817,50 @@ export default [
 				"skill4": ["三段の強運","刹那五月雨撃ち","早手の舞い","千発千中","破魔吸収"],
 				"skill5": ["","スクカオート","リベリオート","無慈悲な一撃","緊縛無効"],
 				"elements": ["","nu","","","","rs",""],
+				"type": "attack",
+				"fusion": true,
+				"fusionAsMaterial": true,
+				"formula": ["カーマ","ザオウゴンゲン","ラクシュミ"],
+				"fusionMag": 1000000,
+				"source": "multi_fusion"
+			},
+			{
+				"id": "300",
+				"name": "フツヌシ",
+				"names": {
+					"ja": "フツヌシ",
+					"tw": "經津主",
+					"en": "Futsunushi"
+				},
+				"rarity": 5,
+				"grade": 85,
+				"icon": "kisin_hutunusi.jpg",
+				"skills": ["怪力乱神","剣神の武威","流刃返し"],
+				"skill4": ["三段の剛力","五月雨斬り・改","居合一心","不屈の闘志・改","呪殺無効"],
+				"skill5": ["","物理サバイバ","嗜虐の一撃","反気旺盛","ラクンダオート"],
+				"elements": ["rp","","","","","nu","wk"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
+				"name": "トール [異世界]",
+				"names": {
+					"ja": "トール [異世界]",
+					"tw": "索爾 [異世界]",
+					"en": "Thor [Dimensional]"
+				},
+				"rarity": 5,
+				"grade": 83,
+				"icon": "kisin_toru_2.jpg",
+				"skills": ["三分の活泉","メギンギョルズ","雷神の戦鎚"],
+				"skill4": ["","ギガントマキア","タルカオート","電撃ハイブースタ","物理吸収"],
+				"skill5": ["","嗜虐の一撃","陽光の繁栄","千発千中","衝撃無効"],
+				"elements": ["nu","nu","","dr","wk","rs",""],
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": true,
@@ -2382,6 +2470,28 @@ export default [
 				"source": "normal_fusion"
 			},
 			{
+				"id": "290",
+				"name": "ヴィーヴル",
+				"names": {
+					"ja": "ヴィーヴル",
+					"tw": "薇薇爾",
+					"en": "Vouivre"
+				},
+				"rarity": 4,
+				"grade": 60,
+				"icon": "ryuuou_vaivaru.jpg",
+				"skills": ["毒針","マリンカリン","ガーネットの共鳴"],
+				"skill4": ["ベノンザッパー","虚空爪激","マハシバブー","毒追撃","氷結無効"],
+				"skill5": ["","","","",""],
+				"elements": ["","","wk","rs","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "70",
 				"name": "ゲンブ",
 				"names": {
@@ -2980,6 +3090,28 @@ export default [
 		],
 		"devils": [
 			{
+				"id": "301",
+				"name": "アドラメレク",
+				"names": {
+					"ja": "アドラメレク",
+					"tw": "亞得米勒",
+					"en": "Adramelech"
+				},
+				"rarity": 5,
+				"grade": 85,
+				"icon": "datensi_adoramereku.jpg",
+				"skills": ["火炎サバイバ","太陽神の威厳","贄喰らいの炎"],
+				"skill4": ["三段の賢魔","マハラギダイン","ラスタキャンディ","大暗殺者","氷結無効"],
+				"skill5": ["","火炎ハイブースタ","ランダマイザ","火炎エンハンス","バリアサバイバ"],
+				"elements": ["","dr","wk","","","","rs"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "95",
 				"name": "サマエル",
 				"names": {
@@ -3000,6 +3132,50 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "normal_fusion"
+			},
+			{
+				"id": "293",
+				"name": "ゴモリー",
+				"names": {
+					"ja": "ゴモリー",
+					"tw": "格莫瑞",
+					"en": "Gemori"
+				},
+				"rarity": 5,
+				"grade": 83,
+				"icon": "datensi_gomori.jpg",
+				"skills": ["メディラマ","全知なる導き","貴婦人の加護"],
+				"skill4": ["三段の強運","メギドラオン","常世の祈り","幻影の権化","氷結無効"],
+				"skill5": ["","氷結無効","奈落のマスク","寸分の見切り","強壮の権化"],
+				"elements": ["","nu","wk","","","rs","nu"],
+				"type": "heal",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "294",
+				"name": "ムールムール",
+				"names": {
+					"ja": "ムールムール",
+					"tw": "毛莫",
+					"en": "Murmur"
+				},
+				"rarity": 5,
+				"grade": 83,
+				"icon": "datensi_murumuru.jpg",
+				"skills": ["鋭気の権化","地獄の公爵","流転邪槍"],
+				"skill4": ["三段の剛力","冥界破","スクンダオート","即死無効","呪殺吸収"],
+				"skill5": ["","千発千中","タルカオート","強靭の権化","呪殺ハイブースタ"],
+				"elements": ["","wk","","rp","rs","wk","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			},
 			{
 				"id": "275",
@@ -3845,6 +4021,28 @@ export default [
 				"source": "summon"
 			},
 			{
+				"id": "299",
+				"name": "エキドナ",
+				"names": {
+					"ja": "エキドナ",
+					"tw": "厄喀德那",
+					"en": "Echidna"
+				},
+				"rarity": 5,
+				"grade": 87,
+				"icon": "jyasin_ekidona.jpg",
+				"skills": ["不動の権化","万生母胎","フリーズゲイル"],
+				"skill4": ["毒ガスブレス","アイスエイジ","月影の繁栄","大虐殺者","電撃反射"],
+				"skill5": ["","氷結エンハンス","六感サバイバ","氷結サバイバ","三分の活泉"],
+				"elements": ["","","dr","wk","","nu","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "122",
 				"name": "セト",
 				"names": {
@@ -4421,6 +4619,50 @@ export default [
 				"source": "normal_fusion"
 			},
 			{
+				"id": "303",
+				"name": "アスタロト",
+				"names": {
+					"ja": "アスタロト",
+					"tw": "亞斯塔洛",
+					"en": "Astaroth"
+				},
+				"rarity": 5,
+				"grade": 97,
+				"icon": "maou_asutarosu.jpg",
+				"skills": ["物理アクセラ","魔界の支配者","ロードアスタロト"],
+				"skill4": ["三段の剛力","神気裂斬","陽光の衰退","物理ハイブースタ","物理反射"],
+				"skill5": ["","修羅の一撃","迅速の権化","破壊の権化","技巧の権化"],
+				"elements": ["nu","","","","","nu","dr"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "292",
+				"name": "ベルゼブブ★5",
+				"names": {
+					"ja": "ベルゼブブ",
+					"tw": "別西卜",
+					"en": "Beelzebub"
+				},
+				"rarity": 5,
+				"grade": 97,
+				"icon": "maou_beruzebubu_2.jpg",
+				"skills": ["大虐殺者","地獄の王","死蠅の葬列"],
+				"skill4": ["三段の賢魔","アルス・マグナ","ラスタキャンディ","即死無効","物理吸収"],
+				"skill5": ["","","","",""],
+				"elements": ["nu","","","","","rp","rp"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": ["ベルゼブブ","ベルゼブブ(人)"],
+				"fusionMag": 1000000,
+				"source": "multi_fusion"
+			},
+			{
 				"id": "277",
 				"name": "アンリ・マンユ",
 				"names": {
@@ -4491,6 +4733,28 @@ export default [
 				"source": "normal_fusion"
 			},
 			{
+				"id": "291",
+				"name": "ベルゼブブ(人)",
+				"names": {
+					"ja": "ベルゼブブ(人)",
+					"tw": "別西卜(人)",
+					"en": "Beelzebub(Human)"
+				},
+				"rarity": 5,
+				"grade": 86,
+				"icon": "maou_beruzebubu_human.jpg",
+				"skills": ["狂い咲き","死霊の王","大いなる混沌"],
+				"skill4": ["三段の剛力","メギドラオン","月影の衰退","威圧の構え","電撃吸収"],
+				"skill5": ["","万能サバイバ","快癒サバイバ","強靭の権化","不動の権化"],
+				"elements": ["","","","nu","","nu","rp"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "260",
 				"name": "ベリアル",
 				"names": {
@@ -4527,6 +4791,28 @@ export default [
 				"skill4": ["三段の恵体","マハラギダイン","ディスタブ","不屈の闘志・改","電撃無効"],
 				"skill5": ["","火炎エンハンス","陽光の繁栄","緊縛無効","三分の活泉"],
 				"elements": ["","rp","","wk","","","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
+				"name": "スルト [異世界]",
+				"names": {
+					"ja": "スルト [異世界]",
+					"tw": "史爾特爾 [異世界]",
+					"en": "Surt [Dimensional]"
+				},
+				"rarity": 5,
+				"grade": 83,
+				"icon": "maou_suruto_2.jpg",
+				"skills": ["火炎ハイブースタ","黄昏の焔","イラプション"],
+				"skill4": ["","トリスアギオン","コンセントレイト","威圧の構え","氷結反射"],
+				"skill5": ["","火炎エンハンス","大虐殺者","魔封無効","月影の衰退"],
+				"elements": ["nu","rp","wk","","","",""],
 				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": true,
@@ -5171,6 +5457,28 @@ export default [
 				"skill5": ["","タルンダオート","回復ハイブースタ","リカームドラ","ダークゾーン無効"],
 				"elements": ["","","","","","nu","nu"],
 				"type": "support",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "297",
+				"name": "デイビット",
+				"names": {
+					"ja": "デイビット",
+					"tw": "大衛",
+					"en": "David"
+				},
+				"rarity": 5,
+				"grade": 80,
+				"icon": "majin_deibito.jpg",
+				"skills": ["狂乱の権化","死の旋律","惑乱ラプソディ"],
+				"skill4": ["三段の強運","精神支配","マハマカジャマ","狂い咲き","電撃無効"],
+				"skill5": ["","異常サバイバ","迅速の権化","寸分の見切り","奈落のマスク"],
+				"elements": ["","rs","rs","wk","","rs","rs"],
+				"type": "attack",
 				"fusion": false,
 				"fusionAsMaterial": false,
 				"formula": [],
@@ -6119,6 +6427,28 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "normal_fusion"
+			},
+			{
+				"id": "295",
+				"name": "コウガサブロウ",
+				"names": {
+					"ja": "コウガサブロウ",
+					"tw": "甲賀三郎",
+					"en": "Koga Saburo"
+				},
+				"rarity": 5,
+				"grade": 87,
+				"icon": "ryuusin_kougasaburou.jpg",
+				"skills": ["龍の反応","霊的国防の龍神","双刃天駆"],
+				"skill4": ["三段の剛力","空間殺法","陽光の繁栄","衝撃ハイブースタ","電撃吸収"],
+				"skill5": ["","技巧の権化","迅速の権化","大虐殺者","氷結無効"],
+				"elements": ["","","wk","rs","rp","","nu"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			},
 			{
 				"id": "178a",
@@ -7078,6 +7408,28 @@ export default [
 			},
 			{
 				"id": "",
+				"name": "ソニック",
+				"names": {
+					"ja": "ソニック",
+					"tw": "索尼克",
+					"en": "Sonic"
+				},
+				"rarity": 4,
+				"grade": 70,
+				"icon": "qq_soniku.jpg",
+				"skills": ["スピードスター","音速のハリネズミ","スピンダッシュ"],
+				"skill4": ["","空間殺法","チャージ","衝撃ブースタ","衝撃無効"],
+				"skill5": ["","虐殺者","二段の猛速","百発百中","食いしばり"],
+				"elements": ["","","","","rs","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
+				"id": "",
 				"name": "V",
 				"names": {
 					"ja": "V",
@@ -7476,6 +7828,28 @@ export default [
 				"source": "normal_fusion"
 			},
 			{
+				"id": "298",
+				"name": "ラドン",
+				"names": {
+					"ja": "ラドン",
+					"tw": "拉頓",
+					"en": "Ladon"
+				},
+				"rarity": 5,
+				"grade": 83,
+				"icon": "jyaryuu_radon.jpg",
+				"skills": ["緊縛無効","ヘスペリアの巨竜","ヒューリーレイド"],
+				"skill4": ["雄叫び","暴飲暴食","チャージ","威圧の構え","物理吸収"],
+				"skill5": ["","物理バッデス","強靭の権化","物理ハイブースタ","氷結無効"],
+				"elements": ["nu","dr","wk","","","rs","rs"],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": true,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
+			},
+			{
 				"id": "237",
 				"name": "ファフニール",
 				"names": {
@@ -7736,6 +8110,28 @@ export default [
 				"formula": [],
 				"fusionMag": 0,
 				"source": "summon"
+			},
+			{
+				"id": "",
+				"name": "バトー",
+				"names": {
+					"ja": "バトー",
+					"tw": "巴特",
+					"en": "Batou"
+				},
+				"rarity": 5,
+				"grade": 84,
+				"icon": "gitai_bato.jpg",
+				"skills": ["強靭の権化","タチコマの援護","セブロ C-40A"],
+				"skill4": ["","怪力乱神","タルンダオート","致命の一撃","物理反射"],
+				"skill5": ["","物理サバイバ","陽光の繁栄","ギガントマキア","千発千中"],
+				"elements": ["nu","","","","","",""],
+				"type": "attack",
+				"fusion": false,
+				"fusionAsMaterial": false,
+				"formula": [],
+				"fusionMag": 0,
+				"source": "summon"
 			}
 		]
 	},
@@ -7839,7 +8235,7 @@ export default [
 			"en": "Wood"
 		},
 		"fusion": true,
-		"highlight": true,
+		"highlight": false,
 		"formulas": [
 			["龍王","女神"],
 			["兇鳥","妖魔"],

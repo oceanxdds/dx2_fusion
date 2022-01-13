@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="(option,index) in options" :key="index">
-            <div class="row no-gutters">
+            <div class="row g-1">
                 <div class="col-12 p-2">
                     <h6 class="m-0">{{ option.name }}</h6>
                 </div>

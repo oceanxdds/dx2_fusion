@@ -1,5 +1,5 @@
 <script>
-import 'url-search-params-polyfill'
+// import 'url-search-params-polyfill'
 import {mapState} from './utility/store'
 import Cookie from './utility/cookie'
 import VueDevil from './components/devil.vue'
@@ -550,19 +550,12 @@ export default {
 
 </script>
 
-<style>
-.mw-1920{
-    max-width: 1920px;
-}
-</style>
-
-
 <template>
     
 <div>
-    <div class="container-fluid px-0 mw-1920">
-        <b-navbar toggleable="md" type="dark" variant="info">
 
+    <b-navbar toggleable="md" type="dark" variant="info">
+        <div class="container-xxl">
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
             <b-navbar-brand href="#" @click="route('home')" class="d-none d-md-block">Dx2</b-navbar-brand>
             <b-navbar-brand href="#" @click="searchBar=!searchBar" class="d-block d-md-none">{{ $t('message.search') }}</b-navbar-brand>
@@ -574,14 +567,17 @@ export default {
                     <b-nav-item href="#" @click="route('fusion.fusion')" :active="isRoute('fusion.fusion')">{{ $t('message.normal_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('skill')" :active="isRoute('skill')">{{ $t('message.skill') }}</b-nav-item>
                 </b-navbar-nav>
-                <b-navbar-nav class="ml-auto">
+                <b-navbar-nav class="ms-auto">
                     <b-nav-form action="#" class="d-none d-md-block">
                         <b-form-input v-model="input_keyword" type="text" :placeholder="$t('message.search')" @focus="searchFocus()" @blur="searchBlur()"></b-form-input>
                     </b-nav-form>
                     <b-nav-item href="#" @click="route('setting')" :active="isRoute('setting')">{{ $t('message.setting') }}</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
-        </b-navbar>
+        </div>
+    </b-navbar>
+
+    <div class="container-xxl px-0">
 
         <b-tabs v-model="index_main" nav-wrapper-class="d-none">
             <div class="d-block d-md-none p-2 bg-info" v-if="searchBar">
@@ -599,15 +595,17 @@ export default {
 
                         <b-tab :title="$t('message.devil')" no-body>
                             <b-card no-body>
+
                                 <b-tabs pills card v-model="race_id" content-class="d-none">
-                                    <!-- <b-tab :title="race.showName()" v-for="(race,index) in races" :key="index" :title-link-class="{'font-weight-bold':race.highlight}"></b-tab> -->
                                     <b-tab v-for="(race,index) in races" :key="index">
                                         <template #title>
                                             <span v-bind:style="{'text-decoration':race.highlight?'underline':'none'}">{{ race.showName() }} </span>
                                         </template>
                                     </b-tab>
                                 </b-tabs>
+
                                 <devil-list :devils="devils_by_race" usage="fission" @listen="listen"></devil-list>
+
                             </b-card>
                         </b-tab>
 
@@ -639,7 +637,7 @@ export default {
                                     </b-list-group-item>
 
                                     <b-list-group-item class="p-0" v-if="builder_options.length">
-                                        <div class="row no-gutters justify-content-center">
+                                        <div class="row g-1 justify-content-center">
                                             <div class="col-auto p-1" v-for="(option,index) in builder_rarity_options.filter(x=>x.active)" :key="index">
                                                 <b-button :pressed="option.state"
                                                     @click="builder_rarity_option_click(option)"
@@ -665,7 +663,7 @@ export default {
                             <b-card no-body v-if="fusion_target">
                                 <b-list-group flush>
                                     <b-list-group-item class="p-2" v-if="fusion_options.length">
-                                        <div class="row no-gutters justify-content-center">
+                                        <div class="row g-1 justify-content-center">
                                             <div class="col-auto p-1"
                                             v-for="(option,index) in fusion_rarity_options.filter(x=>x.active)" :key="index"> 
                                                 <b-button :pressed="option.state" 
@@ -678,11 +676,11 @@ export default {
                                     </b-list-group-item>    
                                     <b-list-group-item class="p-2" v-if="filtered_fusion_options.length">
 
-                                        <div class="row no-gutters">
+                                        <div class="row g-1">
                                             <div v-for="(option, index) in filtered_fusion_options" :key="index"
                                                 class="col-12 col-md-6 col-lg-4 col-xl-3">
 
-                                                <div class="row no-gutters">
+                                                <div class="row g-1">
                                                     <div class="col-12 p-2">
                                                         <devil :devil="option.devil" usage="fusion" style="cursor:pointer"
                                                             v-b-toggle="'fusion_'+index" @listen="listen">
@@ -748,9 +746,9 @@ export default {
 
             <b-tab no-body class="p-2">
             
-                <div class="row no-gutters" style="background:url('public/images/theme/steven.png') no-repeat right center; background-size:auto 300px">
+                <div class="row g-1" style="background:url('public/images/theme/steven.png') no-repeat right center; background-size:auto 300px">
                     <div class="col-12 py-2">
-                        <div class="font-weight-bold py-2">{{ $t('message.language') }}</div>
+                        <div class="fw-bold py-2">{{ $t('message.language') }}</div>
                         <div>
                             <b-form-radio-group
                                 buttons
@@ -761,7 +759,7 @@ export default {
                         </div>
                     </div>
                     <div class="col-12 py-2">
-                        <div class="font-weight-bold py-2">{{ $t('message.downgrade_fusion') }}</div>
+                        <div class="fw-bold py-2">{{ $t('message.downgrade_fusion') }}</div>
                         <div>
                             <b-form-radio-group
                                 buttons
@@ -774,7 +772,7 @@ export default {
                         </div>
                     </div>
                     <div class="col-12 py-2">
-                        <div class="font-weight-bold py-2">{{ $t('message.prevent_unload') }}</div>
+                        <div class="fw-bold py-2">{{ $t('message.prevent_unload') }}</div>
                         <div>
                             <b-form-radio-group
                                 buttons
@@ -807,19 +805,19 @@ export default {
     </div>
     
     <!-- footer -->
-    <div class="container-fluid mw-1920">
+    <div class="container-xxl">
         <div class="d-flex">
-            <div class="mr-1 flex-grow-1">
+            <div class="me-1 flex-grow-1">
                 <img v-for="(orb,index) in orbs.filter(x=>x.state)" :key="index" :src="orb.icon" style="width:30px">
             </div>
-            <div class="ml-1">
+            <div class="ms-1">
                 <a href="https://github.com/oceanxdds/dx2_fusion" target="_blank">
                     <img src="public/images/theme/GitHub-Mark-32px.png" alt="GitHub">
                 </a>
             </div>  
         </div>
     </div>
-    <div class="container-fluid mw-1920 mb-3">
+    <div class="container-xxl mb-3">
         <div class="d-flex justify-content-end">
             <div class="p-1">
                 <span class="small">Version: {{ updated_at }}</span>
