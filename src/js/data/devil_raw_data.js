@@ -4656,7 +4656,7 @@ export default [
 				"skill5": ["","","","",""],
 				"elements": ["nu","","","","","rp","rp"],
 				"type": "attack",
-				"fusion": false,
+				"fusion": true,
 				"fusionAsMaterial": true,
 				"formula": ["ベルゼブブ","ベルゼブブ(人)"],
 				"fusionMag": 1000000,
