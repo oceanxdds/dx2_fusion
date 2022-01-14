@@ -4657,7 +4657,7 @@ export default [
 				"elements": ["nu","","","","","rp","rp"],
 				"type": "attack",
 				"fusion": true,
-				"fusionAsMaterial": true,
+				"fusionAsMaterial": false,
 				"formula": ["ベルゼブブ","ベルゼブブ(人)"],
 				"fusionMag": 1000000,
 				"source": "multi_fusion"
