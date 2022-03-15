@@ -738,9 +738,16 @@ export default {
                             Please share this information with those who need help in Ukraine.
                         </b-card-sub-title>
                         <b-card-text>
-                            
-                            <span class="fw-bold">G-NEWS</span> (Latest Information)<br>
-                            <a href="https://gnews.org/zh-hans/2115789/" target="_blank">gnews.org/zh-hans/2115789/</a>
+
+                            <span class="fw-bold">24-Hour Emergency Rescue Hotline</span><br>
+                            <span class="text-primary">+1(719)-224-4232</span> OR <span class="text-primary">+1(720)-657-6776</span><br>
+                            <span class="text-primary">+48 508-532-712</span> OR <span class="text-primary">+48 508-531-518</span>
+                            <br><br>
+
+                            <span class="fw-bold">E-mail</span><br>
+                            <a href="mailto:UkraineRescue01@protonmail.com">UkraineRescue01@protonmail.com</a>
+                            <br>OR<br>
+                            <a href="mailto:UkraineRescue02@protonmail.com">UkraineRescue02@protonmail.com</a>
                             <br><br>
 
                             <span class="fw-bold">Telegram</span> (Online Help)<br>
@@ -751,15 +758,8 @@ export default {
                             <a href="https://gettr.com/user/ukrainerescue" target="_blank">gettr.com/user/UkraineRescue</a>
                             <br><br>
 
-                            <span class="fw-bold">24-Hour Emergency Rescue Hotline</span><br>
-                            <span class="text-primary">+1(719)-224-4232</span> OR <span class="text-primary">+1(720)-657-6776</span><br>
-                            <span class="text-primary">+48 508-532-712</span> OR <span class="text-primary">+48 508-531-518</span>
-                            <br><br>
-
-                            <span class="fw-bold">E-mail</span><br>
-                            <a href="mailto:UkraineRescue01@protonmail.com">UkraineRescue01@protonmail.com</a><br>
-                            OR<br>
-                            <a href="mailto:UkraineRescue02@protonmail.com">UkraineRescue02@protonmail.com</a>
+                            <span class="fw-bold">G-NEWS</span> (Latest Information)<br>
+                            <a href="https://gnews.org/zh-hans/2160453/" target="_blank">gnews.org/zh-hans/2160453/</a>
 
                         </b-card-text>
 
@@ -770,17 +770,12 @@ export default {
                 <b-card class="mt-3">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-10 text-center">
-                            <a href="https://media.gettr.com/group9/getter/2022/03/08/19/cf570dcc-4900-396b-4304-662c51bb0f0d/5eb452a2ac1a9e2a00bcd201619bebfd.jpg" target="_blank">
-                                <img class="img-fluid" src="https://media.gettr.com/group9/getter/2022/03/08/19/cf570dcc-4900-396b-4304-662c51bb0f0d/5eb452a2ac1a9e2a00bcd201619bebfd.jpg">
+                            <a href="https://media.gettr.com/group15/getter/2022/03/14/15/240104cc-740f-f145-02b8-b6bd95595849/adbf196e5c425324e295e27468514c2c_500x0.jpg" target="_blank">
+                                <img class="img-fluid" src="https://media.gettr.com/group15/getter/2022/03/14/15/240104cc-740f-f145-02b8-b6bd95595849/adbf196e5c425324e295e27468514c2c_500x0.jpg">
                             </a>
                         </div>
                         <div class="col-12"></div>
-                        <div class="col-12 col-lg-10 text-center">
-                            <a href="https://media.gettr.com/group12/getter/2022/03/08/18/2a3a4c78-a73b-bfe9-c865-81b48e1a3fed/bf8438731408b60f88add86c97561f40.jpg" target="_blank">
-                                <img class="img-fluid" src="https://media.gettr.com/group12/getter/2022/03/08/18/2a3a4c78-a73b-bfe9-c865-81b48e1a3fed/bf8438731408b60f88add86c97561f40.jpg">
-                            </a>
-                            
-                        </div>
+
                     </div>
                     
                 </b-card>
