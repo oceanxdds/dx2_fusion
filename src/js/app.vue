@@ -337,7 +337,6 @@ export default {
                 case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
                 case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
                 case 'skill':           index_main = 1;                     break;
-                case 'ukrainerescue':   index_main = 2;                     break;
                 case 'search':          index_main = 3;                     break;
                 case 'setting':         index_main = 4;                     break;
                 case 'last':            index_main = this.index_main_last;
@@ -364,7 +363,6 @@ export default {
                 case 'fusion.fission':  index_main = 0; index_fusion = 1;   break;
                 case 'fusion.fusion':   index_main = 0; index_fusion = 2;   break;
                 case 'skill':           index_main = 1;                     break;
-                case 'ukrainerescue':   index_main = 2;                     break;
                 case 'search':          index_main = 3;                     break;
                 case 'setting':         index_main = 4;                     break;
                 default:                index_main = 0; index_fusion = 0;   break;
@@ -558,7 +556,6 @@ export default {
         <div class="container-xxl">
             <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
             <b-navbar-brand href="#" @click="route('home')" class="d-none d-md-block">Dx2</b-navbar-brand>
-            <b-navbar-brand href="#" @click="route('ukrainerescue')" class="d-block d-md-none">Ukraine Rescue</b-navbar-brand>
             <b-navbar-brand href="#" @click="searchBar=!searchBar" class="d-block d-md-none">{{ $t('message.search') }}</b-navbar-brand>
             
             <b-collapse is-nav id="nav_collapse">
@@ -567,7 +564,6 @@ export default {
                     <b-nav-item href="#" @click="route('fusion.fission')" :active="isRoute('fusion.fission')">{{ $t('message.reverse_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('fusion.fusion')" :active="isRoute('fusion.fusion')">{{ $t('message.normal_fusion') }}</b-nav-item>
                     <b-nav-item href="#" @click="route('skill')" :active="isRoute('skill')">{{ $t('message.skill') }}</b-nav-item>
-                    <b-nav-item href="#" @click="route('ukrainerescue')" :active="isRoute('ukrainerescue')">Ukraine Rescue</b-nav-item>
                 </b-navbar-nav>
                 <b-navbar-nav class="ms-auto">
                     <b-nav-form action="#" class="d-none d-md-block">
@@ -726,59 +722,9 @@ export default {
 
             </b-tab>
 
-            <!-- index_main : 2 // customize:ukraine rescue-->
+            <!-- index_main : 2 // customize:-->
 
             <b-tab no-body class="p-2">
-
-                <b-card no-body>
-
-                    <b-card-body>
-                        <b-card-title class="fw-bold">Ukraine Rescue</b-card-title>
-                        <b-card-sub-title class="mb-3">
-                            Please share this information with those who need help in Ukraine.
-                        </b-card-sub-title>
-                        <b-card-text>
-
-                            <span class="fw-bold">24-Hour Emergency Rescue Hotline</span><br>
-                            <span class="text-primary">+1(719)-224-4232</span> OR <span class="text-primary">+1(720)-657-6776</span><br>
-                            <span class="text-primary">+48 508-532-712</span> OR <span class="text-primary">+48 508-531-518</span>
-                            <br><br>
-
-                            <span class="fw-bold">E-mail</span><br>
-                            <a href="mailto:UkraineRescue01@protonmail.com">UkraineRescue01@protonmail.com</a>
-                            <br>OR<br>
-                            <a href="mailto:UkraineRescue02@protonmail.com">UkraineRescue02@protonmail.com</a>
-                            <br><br>
-
-                            <span class="fw-bold">Telegram</span> (Online Help)<br>
-                            <a href="https://t.me/UkraineRescue" target="_blank">t.me/UkraineRescue</a>
-                            <br><br>
-
-                            <span class="fw-bold">GETTR</span> (Social Media)<br>
-                            <a href="https://gettr.com/user/ukrainerescue" target="_blank">gettr.com/user/UkraineRescue</a>
-                            <br><br>
-
-                            <span class="fw-bold">G-NEWS</span> (Latest Information)<br>
-                            <a href="https://gnews.org/zh-hans/2160453/" target="_blank">gnews.org/zh-hans/2160453/</a>
-
-                        </b-card-text>
-
-                    </b-card-body>
-
-                </b-card>
-
-                <b-card class="mt-3">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-lg-10 text-center">
-                            <a href="https://media.gettr.com/group15/getter/2022/03/14/15/240104cc-740f-f145-02b8-b6bd95595849/adbf196e5c425324e295e27468514c2c_500x0.jpg" target="_blank">
-                                <img class="img-fluid" src="https://media.gettr.com/group15/getter/2022/03/14/15/240104cc-740f-f145-02b8-b6bd95595849/adbf196e5c425324e295e27468514c2c_500x0.jpg">
-                            </a>
-                        </div>
-                        <div class="col-12"></div>
-
-                    </div>
-                    
-                </b-card>
 
             </b-tab>
 
