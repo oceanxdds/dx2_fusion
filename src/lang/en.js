@@ -1,0 +1,57 @@
+export default {
+  
+    message: {
+        fusion: 'Fusion',
+        skill:'Skill',
+        reverse:'Reverse',
+        normal:'Normal',
+        reverse_fusion: 'Reverse Fusion',
+        normal_fusion: 'Normal Fusion',
+        devil: 'Demon',
+        search:'Search',
+        language: 'Language',
+        downgrade_fusion: 'Downgrade Fusion',
+        allow: 'Allow',
+        deny: 'Deny',
+        element:'Element',
+        elements:'Resistance',
+        inherit:'Transfer',
+        description:'Description',
+        last_updated:'Last updated',
+        cost:'Cost',
+        cost_others:'Cost(Others)',
+        cost_pure:'Cost(Clear)',
+        fusion_mag:'Fusion',
+        fusion_mag_others:'Fusion(Others)',
+        fusion_mag_pure:'Fusion(Clear)',
+        possess:'Possess',
+        skill_common:'Common Skills',
+        desc:'Desc',
+        loading:'Loading...',
+        select_devil_for_fusion:'Select a demon to see its fusion combinations',
+        select_devil_for_reverse_fusion:'Select a demon to break it down into materials',
+        combination:'Combination',
+        profile:'Profile'
+    },
+    archetype:{
+        common:'Common',
+        aragami:'Aragami',
+        protector:'Protector',
+        psychic:'Psychic',
+        elementalist:'Elementalist'
+    },
+    element:{
+        phys:'Phys',
+        fire:'Fire',
+        ice:'Ice',
+        elec:'Elec',
+        force:'Force',
+        light:'Light',
+        dark:'Dark',
+        wk:'Wk',
+        rs:'Rs',
+        nu:'Nu',
+        rp:'Rp',
+        dr:'Dr'
+    }
+};

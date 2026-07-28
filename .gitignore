@@ -1,2 +1,13 @@
 node_modules/
-mix-manifest.json
+dist/
+dist-ssr/
+*.local
+coverage/
+
+.claude/
+
+.vscode/*
+.idea/
+
+.DS_Store
+Thumbs.db

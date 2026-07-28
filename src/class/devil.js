@@ -1,0 +1,170 @@
+import DevilBom from './devil_bom.js'
+import { i18nLocale, i18nDefaultLocale } from '../utility/i18n'
+
+class Devil {
+    
+    constructor(devil){
+
+        this.id = devil.id;
+        this.names = devil.names;
+        this.rarity = devil.rarity;
+        this.grade = devil.grade;
+        this.icon = devil.icon;
+        this.elements = devil.elements;
+        this.skills = devil.skills;
+        this.skill4 = devil.skill4;
+        this.skill5 = devil.skill5;
+        this.max = null;
+        this.min = null;
+        this.race = null;
+        this.cost = null;
+        this.cost_pure = null;
+        this.costs = [null,null,null,null,null,null];
+        this.pure_costs = [null,null,null,null,null,null];
+        this.fusion = devil.fusion;
+        this.fusionAsMaterial = devil.fusionAsMaterial;
+        this.fusionMag = devil.fusionMag;
+        this.source = devil.source;
+        this.formula = devil.formula;
+    }
+
+    showName(){
+    
+        return this.names
+            ? (this.names[i18nLocale()]||this.names[i18nDefaultLocale()])
+            : '';
+    }
+
+    showGrade(){
+    
+        return 'G.'+this.grade;
+    }
+
+    showRarity(){
+
+        return '★'.repeat(this.rarity);
+    }
+
+    showCost(){
+
+        return (this.cost/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    showCostPure(){
+
+        return (this.cost_pure/1).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    bom(){
+        return new DevilBom(this);
+    }
+
+    fission_formulas(){
+        
+        let d0 = this
+        let formulas = []
+
+        if(d0.source=='multi_fusion'){
+
+            let d1 = d0.formula[0]
+            let d2 = d0.formula[1]
+            let d3 = d0.formula[2]
+            let d4 = d0.formula[3]
+            let names = {
+                'ja':'多身合体',
+                'tw':'多身合體',
+                'en':'Multi Fusion'
+            }
+            let name = names[i18nLocale()] || names[i18nDefaultLocale()]
+
+            return [
+                { 
+                    'name': name,
+                    'boms': [new DevilBom(d0,d1,d2,d3,d4)] 
+                }
+            ]
+        }
+
+        if(!d0.race.fusion||!d0.fusion)
+            return formulas
+
+        formulas = d0.race.formulas.map( f => {
+
+            let [r1,r2] = [f[0],f[1]];
+
+            if(!r1.fusion || !r2.fusion)
+                return null; 
+
+            let boms = r1.devils.flatMap( d1 => 
+                d1.fusionAsMaterial ? r2.devils.map( d2 => d2.fusionAsMaterial ? DevilBom.bom(d0,d1,d2) : null ) : null
+            ).filter(x=>x);
+
+            return boms.length > 0 
+                ? { 'name': r1.showName() + ' x ' + r2.showName(),
+                    'boms':boms.sort( (bom1,bom2) => bom1.order - bom2.order ) }
+                : null ;
+  
+        }).filter(x=>x);
+
+        return formulas;
+    }
+
+    fusion_formulas(){
+
+        let d1 = this;
+
+        let multi_formulas = [];
+
+        if(!d1.race.fusion||!d1.fusionAsMaterial)
+            return multi_formulas;
+
+        // Target Race Loop
+        d1.race.usage.forEach( usage => {
+
+            if(!usage.r0.fusion)
+                return;
+
+            usage.r0.devils.forEach( d0 => {
+
+                if(!d0.fusion)
+                    return;
+
+                if(d0.source=='multi_fusion')
+                    return;
+
+                let formulas = usage.r2s.map( r2 => {
+                    
+                    if(!r2.fusion)
+                        return null;
+
+                    let boms = r2.devils.map( d2 => {
+                        
+                        let bom = null;
+
+                        if(d2.fusionAsMaterial){
+                            bom = DevilBom.bom(d0, d1, d2);
+                        };
+                        
+                        return bom;
+
+                    }).filter(x=>x);
+
+                    return boms.length > 0 
+                        ? { 'name': d1.race.showName() + ' x ' + r2.showName(),
+                            'boms': boms.sort( (bom1,bom2) => (bom1.order - bom2.order) ) }
+                        : null ;
+                        
+                }).filter(x=>x) ;
+
+                if(formulas.length>0){
+                    multi_formulas.push({devil:d0,formulas:formulas});
+                }
+            });
+
+        });
+
+        return multi_formulas;
+    }
+}
+
+export default Devil;
