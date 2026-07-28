@@ -18,8 +18,8 @@
                   <IconShield class="h-5 w-5 text-slate-400" />
                   {{ $t('message.elements') }}
                 </div>
-                <div class="grid grid-cols-7 gap-1.5">
-                  <div v-for="(ele, index) in elements" :key="index" class="overflow-hidden rounded-lg border border-slate-200">
+                <div class="grid grid-cols-7 divide-x divide-slate-200 overflow-hidden rounded-lg border border-slate-200">
+                  <div v-for="(ele, index) in elements" :key="index">
                     <div class="py-1.5 text-center text-base font-bold" :style="{ backgroundColor: ele.bg, color: ele.color }">{{ $t(ele.slug) }}</div>
                     <div class="bg-white py-1.5 text-center text-base font-semibold" :class="resistClass(info_devil.elements[index])">
                       {{ info_devil.elements[index] ? $t('element.' + info_devil.elements[index]) : 'ー' }}
@@ -28,15 +28,17 @@
                 </div>
               </div>
 
-              <div class="overflow-hidden rounded-xl border border-slate-200">
-                <div v-for="(group, gIndex) in skillGroups" :key="gIndex" class="p-3">
-                  <div class="mb-2 flex items-center gap-2 font-semibold text-slate-800">
-                    <IconSparkles class="h-5 w-5 text-slate-400" />
-                    <span v-if="group.archetypeSlug">{{ $t(group.archetypeSlug) }}{{ $t('message.skill') }}</span>
-                    <span v-else>{{ $t('message.skill_common') }}</span>
-                  </div>
-                  <div class="grid grid-cols-1 gap-1.5 md:grid-cols-2">
-                    <SkillCard v-for="skill in group.skills" :key="skill.id" :skill="skill" :expandable="false" compact></SkillCard>
+              <div class="rounded-xl border border-slate-200 p-4">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <div v-for="(group, gIndex) in skillGroups" :key="gIndex">
+                    <div class="mb-2 flex items-center gap-2 font-semibold text-slate-800">
+                      <IconSparkles class="h-5 w-5 text-slate-400" />
+                      <span v-if="group.archetypeSlug">{{ $t(group.archetypeSlug) }}{{ $t('message.skill') }}</span>
+                      <span v-else>{{ $t('message.skill_common') }}</span>
+                    </div>
+                    <div class="flex flex-col gap-1.5">
+                      <SkillCard v-for="skill in group.skills" :key="skill.id" :skill="skill" :expandable="false" compact></SkillCard>
+                    </div>
                   </div>
                 </div>
               </div>
