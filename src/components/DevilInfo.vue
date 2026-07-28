@@ -13,32 +13,34 @@
             <DevilCard :devil="info_devil" usage="info"></DevilCard>
 
             <div class="space-y-4">
-              <div class="rounded-xl border border-slate-200 p-4">
-                <div class="mb-3 flex items-center gap-2 font-semibold text-slate-800">
-                  <IconShield class="h-5 w-5 text-slate-400" />
-                  {{ $t('message.elements') }}
-                </div>
-                <div class="grid grid-cols-7 divide-x divide-slate-200 overflow-hidden rounded-lg border border-slate-200">
-                  <div v-for="(ele, index) in elements" :key="index">
-                    <div class="py-1.5 text-center text-base font-bold" :style="{ backgroundColor: ele.bg, color: ele.color }">{{ $t(ele.slug) }}</div>
-                    <div class="bg-white py-1.5 text-center text-base font-semibold" :class="resistClass(info_devil.elements[index])">
-                      {{ info_devil.elements[index] ? $t('element.' + info_devil.elements[index]) : 'ー' }}
-                    </div>
+              <div class="mb-3 flex items-center gap-2 font-semibold text-slate-800">
+                <IconShield class="h-5 w-5 text-slate-400" />
+                {{ $t('message.elements') }}
+              </div>
+              <div class="grid grid-cols-7 divide-x divide-slate-200 overflow-hidden rounded-lg border border-slate-200">
+                <div v-for="(ele, index) in elements" :key="index">
+                  <div class="py-1.5 text-center text-base font-bold" :style="{ backgroundColor: ele.bg, color: ele.color }">{{ $t(ele.slug) }}</div>
+                  <div class="bg-white py-1.5 text-center text-base font-semibold" :class="resistClass(info_devil.elements[index])">
+                    {{ info_devil.elements[index] ? $t('element.' + info_devil.elements[index]) : 'ー' }}
                   </div>
                 </div>
               </div>
 
-              <div class="rounded-xl border border-slate-200 p-4">
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <div v-for="(group, gIndex) in skillGroups" :key="gIndex">
-                    <div class="mb-2 flex items-center gap-2 font-semibold text-slate-800">
-                      <IconSparkles class="h-5 w-5 text-slate-400" />
-                      <span v-if="group.archetypeSlug">{{ $t(group.archetypeSlug) }}{{ $t('message.skill') }}</span>
-                      <span v-else>{{ $t('message.skill_common') }}</span>
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                      <SkillCard v-for="skill in group.skills" :key="skill.id" :skill="skill" :expandable="false" compact></SkillCard>
-                    </div>
+              <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div v-for="(group, gIndex) in skillGroups" :key="gIndex"
+                  :class="['rounded-lg p-3', group.archetypeSlug ? '' : 'border border-slate-200']"
+                  :style="group.archetypeSlug ? { backgroundImage: archetypeStyles[group.archetypeSlug].section } : {}">
+                  <div v-if="group.archetypeSlug" class="mb-2 inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-semibold text-white"
+                    :style="{ backgroundImage: archetypeStyles[group.archetypeSlug].badge }">
+                    <IconSparkles class="h-4 w-4" />
+                    {{ $t(group.archetypeSlug) }}{{ $t('message.skill') }}
+                  </div>
+                  <div v-else class="mb-2 flex items-center gap-2 font-semibold text-slate-800">
+                    <IconSparkles class="h-5 w-5 text-slate-400" />
+                    {{ $t('message.skill_common') }}
+                  </div>
+                  <div class="flex flex-col gap-1.5">
+                    <SkillCard v-for="skill in group.skills" :key="skill.id" :skill="skill" :expandable="false" compact></SkillCard>
                   </div>
                 </div>
               </div>
@@ -72,6 +74,14 @@ onMounted(() => {
 })
 
 const archetypeSlugs = ['archetype.common', 'archetype.aragami', 'archetype.protector', 'archetype.psychic', 'archetype.elementalist']
+
+const archetypeStyles = {
+    'archetype.common': { badge: 'linear-gradient(#4a545b, #8e989f)', section: 'linear-gradient(to right, #e9ebec, #f6f7f7)' },
+    'archetype.aragami': { badge: 'linear-gradient(#8c1030, #be104b)', section: 'linear-gradient(to right, #f9c9d3, #fce3e8)' },
+    'archetype.protector': { badge: 'linear-gradient(#8a5c27, #be8f30)', section: 'linear-gradient(to right, #fbe0ae, #fcedcd)' },
+    'archetype.psychic': { badge: 'linear-gradient(#7c3089, #1db4bd)', section: 'linear-gradient(to right, #f2c9f5, #f9e3fa)' },
+    'archetype.elementalist': { badge: 'linear-gradient(#1d7974, #1db4b2)', section: 'linear-gradient(to right, #b9f0ec, #dcf8f5)' }
+}
 
 const skillGroups = computed(() => {
     if (!info_devil.value) return []
