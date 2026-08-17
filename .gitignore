@@ -4,6 +4,7 @@ dist-ssr/
 *.local
 coverage/
 
+CLAUDE.md
 .claude/
 
 .vscode/*
