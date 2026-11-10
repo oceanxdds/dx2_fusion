@@ -27,11 +27,11 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.39.5",
     "@vitejs/plugin-vue": "^6.0.8",
-    "@vue/test-utils": "^2.4.11",
+    "@vue/test-utils": "^2.5.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^10.8.0",
+    "eslint": "^9.39.5",
     "eslint-plugin-vue": "^10.10.0",
     "gh-pages": "^6.3.0",
     "globals": "^17.7.0",
@@ -42,5 +42,19 @@
     "vite": "^8.1.5",
     "vite-plugin-vue-devtools": "^8.1.5",
     "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "js-beautify": {
+      "glob": "^14.0.2"
+    },
+    "editorconfig": {
+      "minimatch": "^11.0.1"
+    },
+    "glob": {
+      "minimatch": "^11.0.1"
+    }
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true
   }
 }
